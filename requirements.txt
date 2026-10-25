@@ -1,5 +1,5 @@
-# Core tier: sound effects, the mix, subtitles, contact sheets. Install: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
-# More tiers: requirements-voice.txt (deps voice), requirements-music.txt (deps music), requirements-dev.txt (maintainers).
+# 核心依赖：音效、混音、字幕和镜头接触表。安装命令：sh plugin/skills/lemo-opuscar/scripts/setup.sh deps
+# 其他依赖：requirements-voice.txt（配音，deps voice）、requirements-music.txt（配乐，deps music）、requirements-dev.txt（维护者使用）。
 numpy
 scipy
 soundfile

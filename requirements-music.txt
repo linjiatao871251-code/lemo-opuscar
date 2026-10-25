@@ -1,3 +1,3 @@
-# Music tier: core/audio/pluck.py (numba). core/audio/sampler.py needs only the core tier plus its sample libraries
-# (sh tools/fetch.sh instruments <lib>). Install: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps music
+# 配乐依赖：core/audio/pluck.py 使用 numba。core/audio/sampler.py 只需要核心依赖和相应采样音色库。
+# 音色库下载：sh tools/fetch.sh instruments <lib>。安装配乐依赖：sh plugin/skills/lemo-opuscar/scripts/setup.sh deps music
 numba

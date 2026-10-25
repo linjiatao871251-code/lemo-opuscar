@@ -1,6 +1,6 @@
-# Voice tier: core/tts/tts.py (Kokoro, offline), tts_zh.py (edge-tts, online), asr_check.py (Whisper).
-# Install: sh plugin/skills/lemo-opuscar/scripts/setup.sh deps voice   (kokoro-onnx needs Python 3.11-3.13)
+# 配音依赖：core/tts/tts.py（Kokoro，离线）、tts_zh.py（edge-tts，在线）、asr_check.py（Whisper 语音检查）。
+# 安装命令：sh plugin/skills/lemo-opuscar/scripts/setup.sh deps voice（kokoro-onnx 需要 Python 3.11–3.13）
 kokoro-onnx
 edge-tts
 faster-whisper
-av<19   # av 19 dropped an option faster-whisper 1.2 passes when it opens a file (TypeError: metadata_errors)
+av<19   # av 19 移除了 faster-whisper 1.2 打开文件时使用的参数，会导致 TypeError: metadata_errors，因此限定版本低于 19。

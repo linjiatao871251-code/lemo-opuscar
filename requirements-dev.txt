@@ -1,2 +1,2 @@
-# Maintainers only: rebuilding core/audio/instruments/index.json (sampler.build_index) uses librosa.
+# 仅供维护者使用：重建 core/audio/instruments/index.json（sampler.build_index）需要 librosa。
 librosa
