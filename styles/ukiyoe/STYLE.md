@@ -1,110 +1,122 @@
-# Ukiyo-e — Style Prompt
+<a id="ukiyo-e--style-prompt"></a>
+# 浮世绘：风格提示词
 
-> Edo-period woodblock prints brought to life: flat colour blocks, carved ink lines, bokashi skies, paper you can feel, and a camera that moves over the print like an unrolling handscroll.
-> References (grammar only): Hokusai's *Thirty-six Views* (one constant subject placed differently each time; bold geometric cropping); Hiroshige's *Fifty-three Stations* and *Hundred Famous Views* (small figures, rain lines, extreme foreground framing); the anime *Mononoke* (2007) (print texture alive in motion, flat layers sliding, seals as screen language). Never reproduce a specific famous print (no copy of *The Great Wave*, *Red Fuji*, *Sudden Shower over Ōhashi*), and never copy their characters or compositions.
+> 江户时期的木刻版画栩栩如生：平面色块、雕刻的墨线、博卡西天空、您可以感觉到的纸张，以及像展开的手卷一样在版画上移动的摄影机。
+> 参考文献（仅语法）：葛饰北斋的*三十六观*（一个恒定的主题每次都以不同的方式放置；大胆的几何裁剪）；广重的《五十三次》和《百景》（小人物、雨线、极端前景取景）；动画 *Mononoke* (2007)（运动中的打印纹理、平坦的层滑动、密封作为屏幕语言）。切勿复制特定的著名印刷品（不得复制《巨浪》、《红富士》、《大桥骤雨》），也切勿复制其中的人物或构图。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Every shot is **a complete woodblock print**: a sheet of washi, a thin double ink border, flat areas of colour printed from separate blocks, a black key-block line on top, a vertical title cartouche and a red seal. The world is flat on purpose. Depth comes from stacked horizontal layers, mist bands and bold cropping, never from perspective rendering, lighting or shading.
+每张镜头都是 **完整的木版印刷品**：一张和纸、薄双墨边框、由单独块印刷的平坦颜色区域、顶部的黑色键块线、垂直标题漩涡花饰和红色印章。世界是故意平坦的。深度来自堆叠的水平层、雾带和大胆的裁剪，而不是来自透视渲染、照明或阴影。
 
-What makes it read as *printed* rather than *vector*:
-- **Paper** is always visible: warm washi, long fibres, slight edge ageing.
-- **Each colour is its own block**, slightly **out of register** (1.5–2.5 px) with the key line.
-- Large colour areas show **woodgrain** and **baren rubbing** (uneven ink density, circular streaks) and fine **goma-zuri** specks.
-- **Bokashi**, hand-wiped gradients, in skies and water.
+是什么让它读作*打印*而不是*矢量*：
+- **纸张** 始终可见：温暖的和纸、长纤维、边缘轻微老化。
+- **每个颜色是它自己的块**，稍微**与关键线寄存器**（1.5–2.5像素）无关。
+- 大颜色区域显示**木纹**和**baren摩擦**（油墨密度不均匀，圆形条纹）和细**戈马苏里**斑点。
+- **博卡西**，手擦渐变，在天空和水中。
 
-Not a flat vector illustration with a paper overlay (no woodgrain, no misregistration), not Chinese ink wash (no bleeding washes, colour is printed, not painted), not anime cel shading (no light and shadow on forms).
+不是带有纸张覆盖的平面矢量插图（没有木纹，没有套准错误），不是中国墨水水彩晕染（没有渗色水彩晕染，颜色是打印出来的，不是绘制的），不是动画 cel 着色（表格上没有光和阴影）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **The sheet is the frame**: the print fills the screen at zoom 1, inside a thick + thin ink border, with a paper margin beyond. Sheets can sit on a long mounting scroll (darker tan paper, a roller at one end), so the camera can travel from print to print.
-- **Blocks**: draw each colour group into its own offscreen canvas, cached once (key lines; blues; greens / secondary; reds / figures). Composite each with a small fixed registration offset (1.5–2.5 px, a different direction per block).
-- **Texture every colour block**: woodgrain (`source-atop`, strongest in sky and water) → baren streaks → goma-zuri specks (both `destination-out`); the key block gets specks only; light paper fibres over the finished sheet so paper shows through the ink. Big dynamic fills get the same textures inside their clip. Woodgrain = iso-lines of a warped noise field; baren = blurred circular arcs + zigzag streaks (recipe and alphas in [DEMO.md](DEMO.md#palette--props)).
-- **Bokashi** is generated per pixel: a gradient whose top edge wanders by low-frequency noise per column (±20–30 px). Never strips of `fillRect` (vertical seams).
-- **Line**: key lines 2.4–3 px; large contours are variable-width filled strokes, tapered at both ends, with ±20–35 % low-frequency width jitter. Distant things get a grey key line or none.
-- **Motifs of the medium**: mist as long rounded flat bands (suyari-gasumi) fading at both ends; pines with flat-topped **needle pads**; fields as high, flat, parallel layers whose cross lines are **parallel and slanted**, never converging; rain as two sets of fine straight lines at slightly different angles under a sumi bokashi sky; water as banded blues with bokashi between bands, foam and spray left as paper.
-- **Seal**: characters cut out of red, chipped edges. **Figures** are small in the landscape (roughly 80–130 px at full sheet), flat, with a clear silhouette; faces in a few strokes.
+- **该纸张为框架**：打印在缩放 1 时填满屏幕，位于厚 + 薄墨水边框内，并有纸张边距。纸张可以放在一个长的安装卷轴上（较深的棕褐色纸张，一端有一个滚筒），因此摄影机可以在打印之间移动。
+- **积木**：将每个颜色组绘制到自己的屏幕外画布中，缓存一次（关键线；蓝色；绿色/次要；红色/数字）。每个都具有小的固定配准偏移（1.5–2.5 px，每个块不同的方向）进行合成。
+- **对每个色块进行纹理**：木纹（`source-atop`，天空和水中最强）→裸露条纹→goma-zuri斑点（均为`destination-out`）；钥匙块仅出现斑点；成品纸上覆盖有轻质纸纤维，因此纸张可以透过墨水显现出来。大动态填充在其剪辑内获得相同的纹理。木纹 = 扭曲噪声场的等值线； baren = 模糊的圆弧 + 之字形条纹（[DEMO.md](DEMO.md#palette--props) 中的配方和 alpha）。
+- **博卡西** 是按像素生成的：顶部边缘因每列低频噪声而漂移的梯度 (±20–30 px)。切勿剥离 `fillRect`（垂直接缝）。
+- **线**：关键线 2.4–3 px；大轮廓是可变宽度填充笔划，两端逐渐变细，低频宽度抖动为±20-35%。远处的事物有一条灰色的关键线或没有。
+- **中号图案**：雾状长圆形扁平带（suyari-gasumi）在两端褪色；平顶松木 **针垫**；场为高、平坦、平行层，其交叉线为**平行和倾斜**，永不会聚；墨雨天空下，雨如两组角度略有不同的细直线；水呈带状蓝色，带间有波卡西，泡沫和喷雾留下作为纸。
+- **海豹**：用​​红色、缺口边缘切出的字符。 **人物**在风景中很小（全张大约80-130像素），平坦，轮廓清晰；几笔画出脸。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **A pigment set, not a colour wheel**: 6–9 flat hues, each printed from its own block, over the paper ground. No gradients except bokashi, no shading on forms.
-- **Sumi key line** over everything; **paper is the white** (no white pigment for foam, snow, mist, blank sky).
-- **One dominant hue family** carries sky and water (in the 19th-century prints, Prussian blue); **red is rare**: seals, a sun, one garment or tab.
-- Far layers pale and low-contrast, near layers saturated with dark key lines.
-- Examples, one per film: an indigo-and-beni landscape (Prussian blue, pale blue, beni red, ochre, greens, sumi); a bijin-ga interior (pale pink, mauve, grey-green, lacquer black, a mica-grey ground); an autumn surimono (persimmon, ochre, grey-green, deep brown, one blue).
+- **A 颜料套装，不是色轮**：6-9 种平面色调，每种色调都从其自己的块中打印在纸底上。除了 bokashi 之外没有渐变，表格上没有阴影。
+- **Sumi钥匙线**胜过一切； **纸为白色**（泡沫、雪、薄雾、空白天空无白色颜料）。
+- **一个主色调系列**承载天空和水（在19世纪的版画中，普鲁士蓝）； **红色很罕见**：海豹、太阳、一件衣服或标签。
+- 远处的图层苍白且对比度低，近处的图层充满深色关键线。
+- 例如，每个影片一个：靛蓝和贝尼景观（普鲁士蓝、淡蓝色、贝尼红、赭色、绿色、墨色）；美人画内饰（淡粉色、淡紫色、灰绿色、漆黑色、云母灰色底）；秋季折物（柿色、赭色、灰绿色、深棕色、一种蓝色）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Subtitle = a horizontal cartouche**: a cream slip with a thick + thin ink border and a small red seal at the left; Shippori Mincho (500) in sumi, centred near the bottom. It "prints" in with the reveal mask and fades out. Hold ≥ max(1.8 s, speech + 0.6 s). It covers the bottom ~150 px: keep ground lines and figures above it.
-- **View cartouche**: vertical cream slip, thick + thin border, a pale tab with the series title, the view title below in a brush font (e.g. Yuji Syuku), a seal beside: the "full stop" of each view. Titles live on the print as cartouches and seals, never as floating type.
+- **Subtitle = 水平漩涡花饰**：带有厚+薄墨水边框的奶油色滑条，左侧有一个红色小印章； Shippori Mincho (500) 呈墨色，位于底部附近。它与显示蒙版一起“打印”并淡出。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。它覆盖底部约 150 像素：将地面线和图形保留在其上方。
+- **查看漩涡花饰**：垂直奶油色滑动，粗+细边框，带有系列标题的浅色标签，下面的画笔字体视图标题（例如Yuji Syuku），旁边的印章：每个视图的“句号”。标题以漩涡花饰和印章的形式出现在印刷品上，而不是浮动字体。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- Prints are still. **Most of the frame does not move**; each view has one or two small actions (steam, rain, a lantern, a falling leaf).
-- **Figures and nature step at 8 fps**; rain and fast water at **12 fps**; **the camera moves on ones (24 fps)**. A stepped camera judders.
-- **Printing reveal**: each block appears over ~0.3 s with a diagonal baren sweep with a noisy edge, sliding 5–6 px into registration as it lands (pure noise looks like mould).
-- Cartouches drop in (fade + a short slide); a seal *stamps* (scale ~1.35 → 1 in 0.2 s).
-- A native move needs a **held beat of about a second** to be read; a peak flashed in under a second reads as noise.
+- 印迹依旧。 **大部分框架不动**；每个视图都有一两个小动作（蒸汽、雨、灯笼、落叶）。
+- **人物和自然步长为 8 fps**； **12 fps**的降雨和急流；**、摄影机运动上的 (24 fps)**。一个阶梯状的摄影机颤抖起来。
+- **打印揭示**：每个块出现约0.3秒，带有对角线空扫，边缘有噪声，在落地时滑动5-6像素进行配准（纯噪声看起来像霉菌）。
+- 漩涡花饰掉落（淡入淡出+短幻灯片）；印章*印记*（0.2 秒内刻度 ~1.35 → 1）。
+- 风格特有表现手法需要 **保持大约一秒的节拍** 才能读取；一秒钟内闪现的峰值被视为噪音。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-The camera moves *over* prints and between them; it never rotates in 3D space inside one. Opening and ending come from the topic.
+摄影机运动 *覆盖*打印并位于它们之间；它永远不会在 3D 空间中旋转。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Locked frame on one sheet | Reading a print on a wall | a place; a portrait; a still moment |
-| Handscroll slide, right → left through the mounting gap (shorter slides = urgency) | Travel, the next station | a journey; a sequence of steps; a race |
-| Very slow push toward a framing device (a window, a fan, a gate) | Attention narrowing | discovery; longing; a detail that matters |
-| Tilt past the border into the mount | Something larger than the print | a flood; a rumour; a giant |
-| Pull-back from one sheet to many | The series seen whole | a summary; a timeline; a collection |
-| Crash-zoom into the texture (grain, specks, fibres) | The medium itself becomes the image | a dream; a breakdown; a memory dissolving |
-| Pan across a triptych (three sheets side by side) | One scene too wide for one sheet | a procession; a battle; a festival |
-| Hard cut to a blank sheet | Ma (間), a held breath | aftermath; a pause before a decision |
+|锁定框架在一张纸上|阅读墙上的印刷品|一个地方；肖像；静止的一刻|
+|手卷滑轨，从右 → 左穿过安装间隙（较短的滑轨=紧急）|旅行，下一站|一次旅行；一系列步骤；一场比赛|
+|非常缓慢地推向框架装置（窗户、风扇、门）|注意力缩小|发现;渴望;重要的细节|
+|倾斜越过边界进入安装座|比印刷品更大的东西|洪水；谣言；一个巨人|
+|从一张纸拉回到多张纸|该系列已整体看过|总结；时间表；一个集合|
+|快速放大纹理（颗粒、斑点、纤维）|表现媒介本身成为图像|一个梦；故障；记忆正在消解|
+|平移三联画（三张并排）|一个场景对于一张纸来说太宽|游行；一场战斗；一个节日|
+|硬剪切到一张空白纸上|间，屏住呼吸|后果;做出决定之前的停顿|
 
-Framing: bold cropping and extreme foreground elements (a branch, a post, a lantern crossing the frame) are native; depth by stacking, never by perspective. Allowed transitions: scroll slides, printing reveals, a wash back to paper, a cut to blank. No cross-dissolves, no 3D flips.
+取景：大胆的裁剪和极端的前景元素（树枝、柱子、穿过框架的灯笼）是原生的；深度是通过堆叠，而不是透视。允许的过渡：滚动幻灯片、打印显示、水彩晕染回到纸上、剪切为空白。没有交叉溶解，没有 3D 翻转。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Japanese instruments, not piano and pads**: shamisen (`core/audio/pluck.py shamisen`, with sawari buzz), shakuhachi, koto, taiko and shime-daiko, kotsuzumi / ōtsuzumi calls, hyōshigi (wooden clappers), a small bell.
-- **Modes**: miyako-bushi (in scale), yō, ritsu; long breathy tones with a slide into each note and *meri* drops at phrase ends suit the shakuhachi; the shamisen can hold a pulse or an ostinato.
-- **Techniques, as options**: absolute silence as *ma* (cut reverb tails too); a single sawari note left ringing; free-rhythm breath phrases against a steady pulse; clappers that accelerate (the kabuki curtain call); a taiko heartbeat that tightens into a roll; a koto glissando for a turn of season; a drum call (*kakegoe*) before an entrance.
-- **Foley follows the material**: paper (baren rub = band-passed noise with a slow circular modulation; scroll slide; seal = low thump + tacky peel), wood (block set down, hollow steps), glass (wind chime), water, birds and insects of the season.
-- **Voice**: calm, few short lines, like a poem written beside the print. Duck music ~8 dB under voice, ambience ~4 dB. Loudness −14 LUFS; `mux.sh` grain **0** (the paper is the grain).
+- **日本乐器，不是钢琴和打击垫**：三味线（`core/audio/pluck.py shamisen`，带锯片嗡嗡声），尺八，古筝，太鼓和志大鼓，小津/大津的叫声，hyōshigi（木板），小铃。
+- **模式**：miyako-bushi（按比例）、yō、ritsu；长长的呼吸声，每个音符都带有滑音，乐句末尾的“meri”滴落适合尺八；三味线可以保持脉冲或固定音。
+- **技术，作为选项**：绝对静音为*ma*（也剪切混响尾音）；一个单一的锯齿音响起；自由节奏的呼吸乐句与稳定的脉搏相对应；加速的拍板（歌舞伎谢幕）；太鼓的心跳收紧成一卷；季节交替时的古筝滑奏；入口前的鼓声（*kakegoe*）。
+- **Foley 遵循材料**：纸（baren rub = 带通噪声，缓慢循环调制；滚动幻灯片；密封 = 低重击 + 俗气的剥离）、木材（放置的块、空心台阶）、玻璃（风铃）、水、季节的鸟类和昆虫。
+- **嗓音**：平静，几行短句，像一首诗写在印刷品旁边。声音下的鸭子音乐 ~8 dB，氛围 ~4 dB。响度−14 LUFS； `mux.sh` 纹**0**（纸张为纹）。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **A series of views.** One constant subject in different compositions; the story is told by *where it sits in the frame* each time. *Fits content like:* one building through a century; a product in five homes; the same street in four seasons.
-- **The handscroll.** Scenes don't cut; the camera slides right to left and the next print arrives. *Fits content like:* a supply chain; the stations of a pilgrimage; the steps of a recipe.
-- **Printing, block by block.** Key line first, then each colour lands slightly off and snaps into register. *Fits content like:* a building going up; an idea taking shape; a character being "made" for the story.
-- **Paper is the white.** Foam, snow, mist and blank sky are unprinted paper; white can flood the frame and wash the print back to a blank sheet. *Fits content like:* a snowfall that erases a town; forgetting; a clean start.
-- **The frame is an object.** Border, cartouche and seal are physical; something big enough breaks out of the border into the mount. *Fits content like:* a festival that can't be contained; a legend; a runaway success.
-- **Alternate impressions.** The same key block reprinted with different colour blocks (day → night, spring → winter). *Fits content like:* before and after; a city lit at night; two lives in one house.
-- **The triptych.** A scene split across three sheets that join. *Fits content like:* three generations; a panorama of a harbour; a debate between three voices.
+- **A系列视图。** 不同构图中的一个不变主题；故事每次都是通过*它在画面中的位置*来讲述的。 *适合以下内容：* 一座建筑经历了一个世纪；五个家庭的产品；四个季节的同一条街。
+- **手卷。** 场景不剪切； 摄影机从右向左滑动，下一张打印到达。 *适合以下内容：*供应链；朝圣的站点；食谱的步骤。
+- **逐块打印。** 首先是关键线，然后每种颜色稍微偏离并卡入套准。 *适合以下内容：*一座建筑物正在拔地而起；一个正在形成的想法；为故事“创造”的角色。
+- **纸是白色的。**泡沫、雪花、薄雾、空白的天空都是无印的纸；白色会淹没框架并且水彩晕染打印回一张空白纸。 *适合以下内容：*一场降雪摧毁了一座城镇；*忘记；一个干净的开始。
+- **框架是一个对象。** 边框、漩涡花饰和印章是物理的；有足够大的东西突破边界进入山上。 *适合以下内容：*无法容纳的节日；一个传奇；取得了巨大的成功。
+- **替代印象。** 相同的按键块用不同的色块重印（白天→夜晚，春天→冬天）。 *适合以下内容：*之前和之后；夜晚灯火通明的城市；一所房子里有两个人的生活。
+- **三联画。** 场景分为三张相连的纸张。 *适合以下内容：*三代；海港全景；三种声音之间的辩论。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Bokashi from `fillRect` strips leaves vertical seams → build it per pixel.
-- Too much speckle or fibre makes dark areas look like sandpaper or scratched film → specks α ≈ 0.3, fibres α ≈ 0.09.
-- A perspective grid for fields looks digital → parallel, slanted, flat layering.
-- Pine clusters drawn as half-discs look like parasols → flat pads with needle fans.
-- Offset curves self-intersect at tight bends → build inner lines from the gentle side of the contour; force control points x-monotonic.
-- Breaking out of the print must escape **both** the sheet clip and the frame clip.
-- A seal drawn with `multiply` vanishes on dark ground → `source-over` there.
+- `fillRect` 的 Bokashi 条带留下垂直接缝→按像素构建。
+- 太多的斑点或纤维使深色区域看起来像砂纸或划伤的影片 → 斑点 α ≈ 0.3，纤维 α ≈ 0.09。
+- 字段的透视网格看起来是数字→平行、倾斜、平坦的分层。
+- 画成半圆盘的松簇看起来像阳伞→带有针扇的平垫。
+- 偏移曲线在急弯处自相交→从轮廓的柔和一侧构建内部线条；力控制点 x 单调。
+- 冲破印迹必须逃走**两个都**片材夹和框架夹。
+- 用`multiply`绘制的印章消失在黑暗的地面→`source-over`那里。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `print.js` (paper, woodgrain, baren, specks, blocks, bokashi, carved lines, reveal masks, cartouche, seals: the reusable core), `nature.js` (mountains, pines, rocks, rain, birds), `wave.js` (banded water, fractal claws, spray), `traveler.js` (flat figure rig), `views.js` (prints as cached blocks + per-frame `paint()`), `main.js` (camera, scroll, reveal, subtitles), `music/score.py`. Instrument recipes and commands: [DEMO.md](DEMO.md#build-notes).
+在`demo/`中：`print.js`（纸、木纹、裸露、斑点、块、博卡西、雕刻线、揭示面具、涡旋花、密封：可重复使用的核心）、`nature.js`（山、松树、岩石、雨、鸟）、`wave.js`（带状水、分形爪、喷雾），`traveler.js`（平面图形骨骼绑定结构），`views.js`（打印为缓存块+每帧`paint()`），`main.js`（摄影机，滚动，显示，字幕），`music/score.py`。仪器配方和命令：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the constant subject (or none), the number of views, the characters, the opening, the ending, the camera path, the pacing and the pigment set. All far from our demo:
+您可以决定恒定的主题（或没有）、视图数量、角色、开头、结尾、摄影机路径、节奏和颜料设置。与我们的示范相去甚远：
 
-- Structures: **alternate impressions** (one key block of a single street, reprinted for dawn, rain, festival night and snow); **a triptych unfolding** (three sheets revealed one at a time, the story only readable when all three join); **a print being made** (the carver's blocks, one per shot, each block's colour telling one chapter).
-- Openings: **a close crop** (an extreme foreground detail, a lantern or a sleeve, fills the sheet; the pull-back finds the print); **the bare block** (carved wood inked, the paper laid on, the baren rubs; lifted to reveal the first print); **the mount first** (a closed scroll unrolls to its first sheet).
-- Endings: **a seal alone** (the print fades back to paper, only the red seal remains); **the album closes** (sheets stack like pages, the cover lands); **the last print left unfinished** (key line only, colour blocks never land).
+- 结构：**交替印象**（单街的一个关键街区，黎明、雨、节夜和雪转载）； **三联画展开**（三张纸一次显示一张，只有当三张纸全部加入时故事才可读）； **正在制作**（雕刻者的块，每个镜头一个，每个块的颜色讲述一章）。
+- 开口：**a 近剪裁**（极端的前景细节，灯笼或袖子，填满纸张；向后拉找到印刷品）； **裸块**（刻木上墨，铺纸，裸露摩擦；抬起以露出第一幅印刷品）； **首先安装**（闭合卷轴展开到其第一页）。
+- 结局：**单独印章**（印刷品褪回纸上，仅保留红色印章）； **专辑关闭**（纸张像页面一样堆叠，封面落地）； **最后一张打印未完成**（仅关键线，色块从未落地）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

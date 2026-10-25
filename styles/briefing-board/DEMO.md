@@ -1,66 +1,73 @@
-# Engineering Briefing Board — our demo
+<a id="engineering-briefing-board--our-demo"></a>
+# 工程简报板 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Ship Decides* (船说了算, 40.0 s) · `briefing-board.mp4` · source in [`demo/`](demo/)
+示范：*船决定*（船随意算，40.0 s）·`briefing-board.mp4`·来源[`demo/`](demo/)
 
-A river 1,000 m wide needs a bridge. The first instinct, piers all the way across, is stamped out the moment a container ship sails into one of them. The new rule: no piers in the channel, one span. Four bridge types are tested against the river's width, drawn to one scale. The river set the question; the ship sets the span.
+1000米宽的河流需要一座桥梁。当一艘集装箱船驶入其中的那一刻，第一本能，即横跨桥墩的直觉就被扑灭了。新规则：航道内无桥墩，一跨。四种桥梁类型根据河流宽度进行测试，按比例绘制。河流提出了问题；船设定了跨度。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Shape: an elimination that turns early. Hook (0–1 s): the river's width snaps across in the first quarter-second. Setup (1–8 s): "1,000 米", a pier-by-pier beam crossing. Turn (8 s): after a second of near-silence the ship touches the centre pier and a red stamp lands. Development (11–27 s): the rule is written, the piers pop off, a steel ruler is laid bank to bank; dashed projection lines carry the banks down into an elevation "test bench" where four photographed bridges land one after another, each met close by the camera as it lands, then judged in a held frame that shows the whole bridge, the two bank lines (the 1,000 m "door"), its dimension line drawn to its record main span, and the verdict landing after the camera has settled. Each judgement frame is wider than the last, so the widening is the rhythm: the cable-stayed line crawls just past the far bank, the suspension line rockets past it and throws the camera. Ending (32.8–40 s): down at the waterline a side-view container ship comes out from behind the far tower and sails under the suspension span; half a second of room tone; then the only pull-back, starting from the ship, to the whole wall, where the verdict "船决定跨度" is written beside the results. The final frame is the poster.
+形状：早转的消除。 Hook（0-1 秒）：河流宽度在第一个四分之一秒内突然变宽。设置（1–8 秒）：“1,000 米”，逐个桥墩的梁交叉。转弯（8 秒）：经过一秒钟的近乎寂静后，船舶接触中心码头，红色印章落地。发展（11-27秒）：规则写好，桥墩弹出，钢尺从岸到岸放置；虚线投影线将河岸带入高程“测试台”，四座拍摄的桥梁相继着陆，每座桥梁在着陆时都与摄影机靠近，然后在显示整座桥梁、两条岸线（1,000 m“门”）、其记录主跨的尺寸线以及摄影机稳定后着陆的判定框架中进行判断。每个判断框架都比上一个更宽，因此加宽就是节奏：斜拉索缓缓爬过远处的河岸，悬索飞速掠过它并抛出摄影机。结局（32.8-40秒）：在水线下方，一艘侧视集装箱船从远处的塔后面出来，在悬跨下航行；半秒的室内音调；然后是唯一的回拉，从船开始，到整面墙，结果旁边写着“船决定跨度”的判决。最后一帧是海报。
 
-Why it fits the style: one continuous wall holds a plan view (top-down ship, river, crossing) above an elevation view (side-on bridges) with projection lines between them — a real drafting convention, so a top-down ship and side-on bridges share one board without breaking geometry. The same ship appears in both views: the problem in plan, the answer in elevation. Native moves spent: magnets as countable things, the stamp, erase to a ghost, the physical answer (the ruler), projection lines, ride the dimension line (four times), the subject passes through the answer, leader to the verdict, and the whole-wall reveal as the signature shot.
+为什么它适合这种风格：一堵连续的墙在立面视图（侧面的桥梁）上方保留了平面图（俯视图的船舶、河流、交叉口），它们之间有投影线——这是一种真正的绘图惯例，因此俯视图的船和侧面的桥梁共享一块板，而不会破坏几何形状。同一艘船出现在两个视图中：平面图中的问题，立面图中的答案。 风格特有表现手法用了：磁铁作为可数的东西，印记，擦去鬼魂，物理答案（尺子），投影线，骑尺寸线（四次），主题穿过答案，导致判决，整面墙显示为标志性镜头。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-One continuous camera, no cuts. Times in seconds; zoom 1 = 1,920 board px across.
+连续一张摄影机，无剪切。时间以秒为单位；缩放 1 = 1,920 板宽度。
 
-| # | Time | Shot | Camera | Native move / note |
+|#|时间|镜头|摄影机|风格特有表现手法/注|
 |---|---|---|---|---|
-| 1 | 0.0–1.2 | ECU on the left bank, the dimension arrow already leaving it | z 2.6, roll −3°; whips right with the line as it snaps across (0.25), overshoots, settles (z 1.32) | the hook: line, brass hit and kick in the first 0.25 s |
-| 2 | 1.2–2.9 | MCU on "1,000 米" being written | push in (z 1.42), roll +1° | |
-| 3 | 2.9–5.5 | MS of the crossing | tilt down as the deck draws, then track right along seven pier magnets (eighths) | magnets as countable things |
-| 4 | 5.5–8.0 | MS → CU up the channel | tilt up as the horn sounds (J-cut), then a slow push to z 2.05 with a −1.6° Dutch tilt | silence 7.0–8.0 |
-| 5 | 8.0–10.7 | CU on the bow, the pier and the stamp → the whole ship | impact shake, then a pull back along the hull (z 1.42) | the stamp; the centre pier jolts |
-| 6 | 10.75–14.4 | MS: the rule; the river edge | pull back right (z 1.0), ride the marker as the rule is written, drift back as the piers pop | erase to a ghost; the ruler drops at 14.0 |
-| 7 | 14.4–15.25 | ECU: the beam's pier foot as the print lands (15.0) | tilt down the dashed projection lines into it (z 2.05) | projection lines; two magnets pin each print |
-| 8 | 15.25–18.45 | **Judgement: beam** — whole bridge, both bank lines, 330 m line, tag, number | pull out (z 1.09), **hold 15.85–18.45 (2.6 s)** with a slow push | line 15.875–16.25; red strike and dashed shortfall at 17.125 |
-| 9 | 18.45–19.25 | CU: the arch rib and hangers as it lands (19.0) | crane down (z 1.6) | |
-| 10 | 19.25–22.45 | **Judgement: arch**, with the beam's result above | pull out (z 0.99), **hold 19.85–22.45 (2.6 s)** | line 19.875–20.25; strike 21.125 |
-| 11 | 22.45–23.4 | CU: the pylon top and its fan as it lands (23.125) | crane down (z 1.8) | |
-| 12 | 23.4–28.2 | **Judgement: cable-stayed**, with the arch's result above | pull out (z 0.81), **hold 24.08–28.2 (4.1 s)** | the line crawls 24.125–25.625 just past the right bank line; "勉强" at 26.0 |
-| 13 | 28.2–29.1 | CU: the near tower and its long hangers as the heaviest print lands (28.875) | crane down (z 1.38, capped by rescheck) | |
-| 14 | 29.1–32.8 | **Judgement: suspension**, with the cable-stayed result above | pull out (z 0.60), **hold 29.83–32.83 (3.0 s)**; thrown right as the line passes the bank (30.175), settles back | the line rockets 29.875–30.375; ring 31.25; the horn (32.0) brings the side-view ship in at the right edge |
-| 15 | 32.8–35.75 | CU at the waterline: the far tower, hangers, the side-view ship | down to the water (z 1.42), then pan left with the ship under the main span | the subject passes through the answer; silence 35.25–35.75 |
-| 16 | 35.75–37.8 | the whole wall | the only pull-back, from the ship (z 1.42 → 0.2795, 2.05 s) | **signature shot**: both side edges first in frame at 37.17 s; leader (36.7) and verdict (36.875–37.875) drawn during it |
-| 17 | 38.15–40.0 | the whole wall | a slow push (×1.025) that keeps the wall whole; a cloud shadow crosses the wall | the end card is part of the wall |
+|1|0.0–1.2|ECU在左岸，尺寸箭头已经离开它|z 2.6，滚动-3°；当线突然穿过 (0.25)、超调、稳定 (z 1.32) 时，向右鞭打|钩子：前 0.25 秒内的线、黄铜击打和踢击|
+|2|1.2–2.9|MCU正在编写“1000米”|推入 (z 1.42)，滚动 +1°| |
+|3|2.9–5.5|穿越的MS|当甲板牵引时向下倾斜，然后沿着七个码头磁铁（八分之一）向右移动|磁铁是可数的东西|
+|4|5.5–8.0|MS → CU 向上通道|当喇叭响起时向上倾斜（J-cut），然后缓慢推至 z 2.05，荷兰式倾斜为 -1.6°|沉默 7.0–8.0|
+|5|8.0–10.7|船头、码头、印章上的CU→全船|冲击震动，然后沿船体向后拉 (z 1.42)|邮票；中心码头震动|
+|6|10.75–14.4|MS：规则；河边|向右拉回（z 1.0），按照规则写入标记，随着桥墩弹出而向后漂移|抹去幽灵；标尺下降到 14.0|
+|7|14.4–15.25|ECU：打印着陆时梁的墩脚 (15.0)|将虚线投影线向下倾斜 (z 2.05)|投影线；每个印刷品都用两个磁铁固定|
+|8|15.25–18.45|**判断：梁**— 全桥、双岸线、330 m 线、标签、编号|拉出 (z 1.09)，**缓慢推动，保持 15.85–18.45 (2.6 s)**|15.875–16.25 行；红色罢工和虚线缺口在 17.125|
+|9|18.45–19.25|CU：落地时的拱肋和吊架 (19.0)|起重机向下 (z 1.6)| |
+|10|19.25–22.45|**判断：arch**，梁结果如上|拉出 (z 0.99)，**保持 19.85–22.45 (2.6 s)**|19.875–20.25 行；罢工 21.125|
+|11|22.45–23.4|CU：塔顶及其落地时的风扇 (23.125)|起重机向下 (z 1.8)| |
+|12|23.4–28.2|**判断：斜拉**，拱形结果如上|拉出 (z 0.81)，**保持 24.08–28.2 (4.1 s)**|该线在 24.125–25.625 处爬行，刚好越过右岸线； “勉强” 26.0|
+|13|28.2–29.1|CU：近塔及其长吊架是最重的打印区域 (28.875)|起重机向下（z 1.38，通过重新检查限制）| |
+|14|29.1–32.8|**判断：悬吊**，斜拉结果如上|拉出 (z 0.60)，**保持 29.83–32.83 (3.0 s)**；当线经过河岸时向右抛出 (30.175)，然后向后稳定|直线火箭 29.875–30.375；环31.25；喇叭 (32.0) 将侧视船带入右侧边缘|
+|15|32.8–35.75|水线处的CU：远塔、机库、侧视船|下到水面（z 1.42），然后向左平移，使船在主跨下|主题通过答案；沉默 35.25–35.75|
+|16|35.75–37.8|整面墙|唯一的回拉，来自船上 (z 1.42 → 0.2795, 2.05 s)|**签名镜头**：两侧边缘在37.17秒处首先进入帧；领导者 (36.7) 和期间得出的判决 (36.875–37.875)|
+|17 号|38.15–40.0|整面墙|缓慢推动（×1.025），保持墙完整；云影越墙|片尾卡是墙的一部分|
 
-Judgement frames widen 1,768 → 1,945 → 2,361 → 3,205 board px (28 % → 50 % of the wall's width). `tools/camcheck.mjs` checks each one: the whole box (print, both bank lines, dimension line, labels, verdict) stays in frame and above the subtitle strip for the whole hold. Before 35.75 s the camera never shows more than 51.4 % of the board's width, never both side edges and none of the right zone (prints, cards, notes, verdict, end card). `tools/rescheck.mjs` checks that no frame shows any photo at less than one source pixel per screen pixel (lowest: the stretched suspension span, 1.03, at its landing).
+判断框架加宽 1,768 → 1,945 → 2,361 → 3,205 板像素（墙宽度的 28 % → 50 %）。 `tools/camcheck.mjs` 检查每一项：整个框（打印、两侧银行线、尺寸线、标签、判决）保持在框架中并在整个保留的字幕条上方。在 35.75 秒之前，摄影机从未显示超过棋盘宽度的 51.4%，从不显示两侧边缘，也没有显示任何右侧区域（印刷品、卡片、注释、判决、片尾卡）。 `tools/rescheck.mjs` 检查没有帧显示每个屏幕像素少于一个源像素的任何照片（最低：在着陆时拉伸的悬挂跨度 1.03）。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- 120 BPM, 4/4, D minor → D major at the reveal. Instruments: electric bass (eighth-note figure), MuldjordKit kick/snare/hats, claves, shaker, low brass stabs (trombone, tuba, horn), timpani, gran cassa, crash, tubular bells, glockenspiel, vibraphone. No piano, no string pad.
-- Arc: the hook (Dm brass stab, low tom, kick with the snapping line at 0.25) → groove A → low-pass dive → **silence 7.0–8.0** → stamp: Dm brass stab + timpani + gran cassa → half time (held D, low toms) → groove A rebuilt under the rule → groove B (kit) under the test bench, one brass stab per landing in the bar's chord, a sour trombone blat (D + E♭) per strike → the cable crawl: bass climbs chromatically in eighths G1 → G2 with a shaker swell → "just enough": two horn notes → snare sixteenths into the suspension's line (A, dominant, on the landing) → the line lands: crash + a bright B♭ chord (VI) → vibraphone pair on the ring → bass whole notes and soft trombone fifths under the last line and the ship → **silence 35.25–35.75** → the reveal: the ship's horn tuned to D (root and fifth) with a D-major brass chord, timpani and tubular bells → the verdict is written to a horn line A–F♯–E–D–A → glockenspiel D–F♯–A–D while the wall settles.
-- Hits: every landing, pin, stamp, arrow, strike and tag sits on the 16th-note grid (`tools/cuecheck.py`: 27/27 at 0 ms).
-- Foley (procedural, `audio/mix.py`): felt-tip squeaks scaled to stroke length, nib taps, magnet clacks pitched per pier, two pin clacks after every landing, suction pops, print landings (board thump + paper slap, heavier for the suspension), the steel ruler's ring, eraser felt, rubber stamp, ship horn (far and near), diesel rumble, water lapping, whooshes, room tone with distant traffic.
-- J-cuts: the horn at 5.75 before the top-down ship is seen; the horn at 32.0 before the side-view ship comes out from behind the tower. L-cuts: the eraser over the move into the bench; the reveal horn over the whole pull-back.
-- Mix: music about 9 dB under the voice and ducked; foley ducked under speech; room tone (air conditioning on the right, traffic through the window on the left) about 20 dB under the voice and never ducked; silences gated to that room tone; −14 LUFS integrated.
-- Voice: Kokoro `af_heart`, nine lines; numbers spelled out for TTS and written as digits in the subtitles.
+- 120 BPM，4/4，D 小调 → D 大调。乐器：电贝司（八分音符）、MuldjordKit kick/snare/hats、小号、摇弦器、低音铜管乐器（长号、大号、圆号）、定音鼓、gran cassa、crash、管钟、钟琴、电颤琴。没有钢琴，没有弦垫。
+- 弧线：钩子（Dm铜管刺，低音通鼓，用0.25的弹线踢）→凹槽A→低通下潜→**静音7.0–8.0**→标记：Dm铜管刺+定音鼓+格兰卡萨→半场（保持D，低音通鼓）→在规则下重建凹槽A→测试下的凹槽B（套件）长凳，在小节和弦上每落地一次铜管刺，每次敲击一个酸长号（D + E♭）→电缆爬行：低音在八度音阶上爬行G1→G2，带有振动器膨胀→“刚刚好”：两个喇叭音符→小军鼓十六分之一进入悬挂线（A，主导，在落地上）→线路落地：崩溃+明亮的B♭和弦（VI）→电颤琴对在铃声 → 最后一行和船下的低音全音符和柔和的长号五度 → **silence 35.25–35.75** → 揭示：船的号角调至 D（根音和五度），带有 D 大调铜管和弦、定音鼓和管状钟声 → 判决被写入号线 A–F♯–E–D–A →当墙稳定下来时，钟琴 D–F♯–A–D。
+- 命中：每个着陆、图钉、印记、箭头、打击和标签都位于 16 分音符网格上（`tools/cuecheck.py`：0 毫秒时的 27/27）。
+- 拟音（程序，`audio/mix.py`）：按行程长度缩放的毡尖吱吱声、笔尖敲击声、每个桥墩倾斜的磁铁咔哒声、每次着陆后两根针的咔哒声、吸力爆裂声、打印着陆（木板重击声+纸拍击声，悬挂更重）、钢尺环、橡皮擦毛毡、橡皮图章、船喇叭（远距离）和附近），柴油机隆隆声，水流拍打声，呼啸声，远处交通的房间音调。
+- J-cuts：在看到自上而下的船之前，喇叭在 5.75 处； 32.0 号角响起，侧视船从塔后面出来。 L-cuts：将橡皮擦移到长凳上；整个拉回过程中的揭示喇叭。
+- 混音：音乐约9分贝以下的声音和闪避； 拟音回避讲话；房间音调（右边是空调，左边是窗外的交通声）比声音低约 20 分贝，并且从不闪避；沉默与房间的基调有关； −14 LUFS 集成。
+- 语音：Kokoro `af_heart`，九线；为 TTS 拼写并在字幕中写为数字的数字。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Board 6,400 × 3,600 board px (16:9, so the final pull-back fills the frame); enamel `#F3F1EB`; wall `#8F8B83`; ink graphite `#23272E`, blue `#1F4FC8`, red `#D33A21`, water hatching `#5F86DA`, drafting grey `#6C727B`.
-- Plan view (top left): river 1,240 px = 1,000 m between two blue banks with grey ground hatching; "1,000 米" above; crossing with seven graphite magnets; the top-down ship scaled to 500 px (about true scale); stamp "否决" (Noto Sans SC 900, pitted red). Rule "新规矩" red with an underline, "航道不立墩" graphite (LXGW Marker Gothic). The ruler: brushed steel with engraved graduations, a magnet at each end.
-- Elevation (left two-thirds): projection lines dashed blue; four rows scaled so each main span is its record length at 1.24 px per metre (330, 600, 1,208, 2,023 m); each print pinned by two magnets; under each arrow end a label block: a name tag (Noto Sans SC 700, 78 px) and the number in blue marker (100 px), the tag placed by the number's measured width so they never touch. The side-view ship is 340 px long (about true scale) on a hand-drawn waterline. The cable-stayed bridge is a mirrored composite of a single-pylon photo and the suspension bridge's main span is stretched ×1.7 (see `demo/CREDITS`).
-- Right third (never in shot before the reveal): four photo prints with magnets (suspension, cable-stayed, arch, and the side-view ship whose lettering was wiped), a source card ("数据来源"), two sticky notes with the sums (1,208 − 1,000 = 208; 2,023 ÷ 1,000 ≈ 2), a small navigation-clearance sketch without numbers, the verdict "船决定跨度" (400 px, "船" red) at the right middle with a leader from the circled 2,023, and the end card.
-- Subtitles: frosted strip, Chinese Noto Sans SC 500 42 px over English Archivo 500 29 px, blue tick at left; every cue measured on one line per language (`tools/subcheck.mjs`).
+- 板 6,400 × 3,600 板像素（16:9，因此最终拉回填充框架）；搪瓷`#F3F1EB`；墙`#8F8B83`；墨水石墨`#23272E`、蓝色`#1F4FC8`、红色`#D33A21`、水孵化`#5F86DA`、绘图灰色`#6C727B`。
+- 平面图（左上）：两条蓝色河岸之间的河流 1,240 px = 1,000 m，带有灰色地面孵化； “1000米”以上；与七个石墨磁铁交叉；自上而下的船缩放至 500 px（大约真实比例）；印章“否决”（Noto Sans SC 900，有坑红色）。规则“新规矩”红色带下划线，“航道不立墩”石墨（LXGW Marker Gothic）。尺子：拉丝钢，刻有刻度，两端各有一个磁铁。
+- 立面图（左三分之二）：蓝色虚线投影线；四行按比例缩放，因此每个主跨度的记录长度为每米 1.24 像素（330、600、1,208、2,023 m）；每个印刷品都由两块磁铁固定；每个箭头末端下方有一个标签块：名称标签（Noto Sans SC 700，78 像素）和蓝色标记中的数字（100 像素），标签按数字的测量宽度放置，这样它们就不会接触。手绘水线上的侧视图船长 340 像素（大约是真实比例）。斜拉桥是单塔照片的镜像合成，悬索桥主跨拉伸×1.7（见`demo/CREDITS`）。
+- 右三分之一（在揭晓之前从未出现在镜头中）：四张带有磁铁的照片打印件（悬挂、斜拉、拱门和被擦掉字样的侧视船）、一张源卡（“数据来源”）、两张写有总和的便签纸（1,208 − 1,000 = 208；2,023 ÷ 1,000 ≈ 2），一个小导航间隙草图没有数字，判决“船决定跨度”（400 px，“船”红色）位于右中间，带有圈出的 2,023 中的领导者和片尾卡。
+- 字幕：磨砂条，中文 Noto Sans SC 500 42 px，英文 Archivo 500 29 px，左侧蓝色勾号；每个提示在每种语言的一行上测量 (`tools/subcheck.mjs`)。
 
-## Title card
+<a id="title-card"></a>
+## 标题卡
 
-A printed card pinned at the bottom right of the wall from the start, seen only in the reveal: "船说了算", a red rule, "ENGINEERING / BRIEFING BOARD", "工程简报板", "LemoLab × Claude Opus 5.5". It is part of the final wall (the poster) and is on screen for the last three seconds. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+从一开始就钉在墙右下角的印刷卡片，只能在显示中看到：“船说了算”，一条红色规则，“ENGINEERING / Briefing BOARD”，“工程简报板”，“LemoLab × Claude Opus 5.5”。它是最后一面墙（海报）的一部分，并在屏幕上显示最后三秒。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -77,8 +84,8 @@ demo/
                         the six used ones with sha256); photos, masks and derived/ are downloaded or rebuilt
 ```
 
-1. `sh demo/build.sh` (library set up with `setup.sh deps voice music`): fetches what git does not hold — fonts from Google Fonts (`fetch_fonts.py`: Archivo and IBM Plex Mono from github.com/google/fonts, the CJK subsets through the CSS API), the six photos from Commons (`fetch_sources.py`, ~470 MB), a private `demo/.venv` with onnxruntime and the BiRefNet model (`kit_env.sh`, ~970 MB unless cached), the voice model and the freepats / vsco2ce / vcsl samples — and cuts the objects again (`rebuild_objects.sh`); then speech check → scene → cue check → reading check → camera check (incl. judgement frames) → resolution check → events → render (960 frames, 5 workers) → mix → subtitles (+ one-line check) → mux (−14 LUFS, grain 1) → poster and styleframe → rhythm report → speech check on the final mix → camera plot.
-2. Objects: `sh demo/kit/tools/rebuild_objects.sh` recreates every cut-out from the photos at their own resolution (BiRefNet masks are cached in `sources/masks/`; a recomputed mask can differ by a pixel or two from ours).
-3. Stills and thumbnails: a scene JSON that `extends` `scenes/film.json` with its own `cam` and `t`, rendered by `node demo/kit/batch.mjs`.
+1. `sh demo/build.sh`（使用 `setup.sh deps voice music` 设置的库）：获取 git 不包含的内容 — 来自 Google Fonts 的字体（`fetch_fonts.py`：来自 github.com/google/fonts 的 Archivo 和 IBM Plex Mono，通过 CSS API 的 CJK 子集），来自 Commons 的六张照片（`fetch_sources.py`， ~470 MB），带有 onnxruntime 的私有 `demo/.venv` 和 BiRefNet 模型（`kit_env.sh`，~970 MB，除非缓存），语音模型和 freepats / vsco2ce / vcsl 样本 - 并再次剪切对象（`rebuild_objects.sh`）；然后语音检查→场景→提示检查→阅读检查→摄影机检查（包括判断帧）→分辨率检查→事件→渲染（960帧，5个工作人员）→混合→字幕（+单行检查）→复用器（−14 LUFS，颗粒1）→海报和风格定帧→节奏报告→最终混音上的语音检查→ 摄影机情节。
+2. 对象：`sh demo/kit/tools/rebuild_objects.sh` 以自己的分辨率重新创建照片中的每个剪切图（BiRefNet 蒙版缓存在 `sources/masks/` 中；重新计算的蒙版可能与我们的蒙版相差一两个像素）。
+3. 剧照和缩略图：`extends` `scenes/film.json` 及其自己的 `cam` 和 `t` 的场景 JSON，由 `node demo/kit/batch.mjs` 渲染。
 
-Bridge-specific choices: each landing is met close on a pylon top, an arch rib, the hangers or a pier's foot; stays, main cables and hangers are redrawn as clean lines at the positions measured in the photos. Pitfalls tied to this demo: the first cut rode each dimension line close and never showed the cable-stayed or suspension bridge whole; viewers lost what was being tested ("too fast"). The fix was the judgement frame per bridge, held, widening each time, with the voice and the verdict inside the hold. Text first glimpsed during a move failed the reading check, so every label block is pinned where the camera rests and each new row is framed with the previous row's result. The first cut-outs were downscaled and the close-ups upsampled them (a blocky ship); every object is now cut at full resolution and `rescheck.mjs` caps each zoom. Keyed stays turned into stair-steps and arch hangers vanished against the hills; stays and suspension cables are now measured and redrawn, the arch hangers continued to the deck. Name tags at a fixed offset overlapped the wider numbers; they are placed from the number's measured advance width. The stretched suspension photo allows z 1.38 at most, so its landing close-up is on the near tower, which is not stretched. The photographed suspension bridge has the proportions of a 500 m span; scaled uniformly to 2,023 m its towers would be far too tall, so only the main span is stretched. A road sign, a water-level gauge, a ship's name and container logos were removed (lettering). The pier clacks masked "piers" in the voice; they were lowered.
+桥梁特定的选择：每个平台都靠近塔顶、拱肋、吊架或桥墩脚；支柱、主缆和吊架在照片中测量的位置处被重新绘制为干净的线条。与此示范相关的陷阱：第一个切口靠近每个尺寸线，从未显示出整个斜拉桥或悬索桥；观众丢失了正在测试的内容（“太快”）。解决方案是每座桥的判断框架，每次都扩大，声音和判决在保持内。在移动过程中第一次看到的文本未通过读取检查，因此每个标签块都固定在摄影机所在的位置，并且每个新行都与前一行的结果框在一起。第一个剪切图被缩小了比例，而特写镜头则对它们进行了放大采样（一艘块状船）；现在，每个对象都以全分辨率进行切割，并且 `rescheck.mjs` 限制了每个缩放。带钥匙的支柱变成了楼梯，拱形衣架消失在山峦的映衬下；现在测量并重新绘制了撑杆和吊索，拱形吊架一直延伸到甲板。固定偏移处的姓名标签与较宽的数字重叠；它们是根据数字测量的前进宽度放置的。拉伸后的悬挂照片允许 z 最大为 1.38，因此它的着陆特写是在近塔上，未拉伸。拍摄的吊桥跨度为 500 m；如果统一缩放为 2,023 m，其塔楼就太高了，因此仅拉伸主跨。路标、水位计、船名和集装箱标志均被移除（刻字）。码头的嘎嘎声掩盖了“码头”的声音；他们被降低了。

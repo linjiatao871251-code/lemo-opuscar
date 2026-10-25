@@ -1,88 +1,94 @@
-# Lemo-Opuscar: instructions for agents
+<a id="lemo-opuscar-instructions-for-agents"></a>
+# Lemo-Opuscar：智能体使用指南
 
-This repository is a library of film styles. Each style has a `styles/<slug>/STYLE.md` (what the style is) and one demo film made entirely in code (`DEMO.md` and `demo/`). People pick a style and ask for a film about **their own** topic. Your job is to direct and produce that film.
+本仓库是一个影片风格库。每种风格都包含 `styles/<slug>/STYLE.md`（风格定义），以及一部完全用代码制作的示范短片（`DEMO.md` 和 `demo/`）。用户选择一种风格，然后要求你围绕**他们自己的主题**制作影片。你的工作是执导并完成这部影片。
 
-| The request | Go to |
+| 用户需求 | 阅读位置 |
 |---|---|
-| Any request: first see the user's own styles; no request yet: offer the ways in | **Start** below |
-| A film about the user's topic (the normal case) | **Style and story**, **Workflow** below |
-| "Which styles are there?" / no style chosen | **Finding the style** below |
-| Directing: story, sound, rhythm, camera, checks, delivery | [`DIRECTOR.md`](DIRECTOR.md) |
-| Building: install, pages, voice, music, mix | [`TECHNIQUE.md`](TECHNIQUE.md) |
-| Tool commands and flags | [`core/README.md`](core/README.md) |
-| The user wants to change a style and keep it as their own, or make their own style from a blank page, or names a style in `~/lemo-my-styles/` | [`MY-STYLES.md`](MY-STYLES.md) |
-| Adding a style to the library (owner only) | [`MAINTAINING.md`](MAINTAINING.md) |
+| 任何请求：先查用户自有风格；尚未提出具体需求：介绍可选入口 | 下文的**开始** |
+| 围绕用户的主题制作影片（通常情况） | 下文的**风格与故事**、**工作流程** |
+| “有哪些风格？”或尚未选定风格 | 下文的**选择风格** |
+| 导演工作：故事、声音、节奏、摄影、表演、检查和交付 | [`DIRECTOR.md`](DIRECTOR.md) |
+| 制作技术：安装、页面、配音、配乐和混音 | [`TECHNIQUE.md`](TECHNIQUE.md) |
+| 工具命令与参数 | [`core/README.md`](core/README.md) |
+| 改编现有风格并保存、从零设计风格，或使用 `~/lemo-my-styles/` 中的自有风格 | [`MY-STYLES.md`](MY-STYLES.md) |
+| 向官方风格库添加风格（仅限维护者） | [`MAINTAINING.md`](MAINTAINING.md) |
 
-**Films outside `styles/` are the user's: no LemoLab credit, no watermark.**
+**`styles/` 目录之外制作的影片属于用户：不添加 LemoLab 署名或水印。**
 
-## Start
+<a id="start"></a>
+## 开始
 
-- **Their own styles first.** If `~/lemo-my-styles/README.md` exists, read it: it lists every style the user has saved, wherever it's kept, and their own styles ([`MY-STYLES.md`](MY-STYLES.md)) count like library styles. When they name a style, look there first, then in the library.
-- **Their language.** Talk to them in the language they write in. When they started the skill without writing anything, your first question is always the language, even when their settings, memory or earlier messages suggest one: the `AskUserQuestion` tool, a question of its own headed "Language 语言" with two options, 中文 and English (the tool adds Other, where they type any other language). Use it from then on, and as the film's default language.
-- **No request yet** (they only started the skill, or said hello): offer the ways in with one question, using the `AskUserQuestion` tool, in their language, with the first as the recommended one:
-  1. a film in a library style (**Finding the style**);
-  2. change a library style and keep it as their own ([`MY-STYLES.md`](MY-STYLES.md));
-  3. make their own style from a blank page ([`MY-STYLES.md`](MY-STYLES.md));
-  4. a film in one of their own styles, only when they have some (name them).
+- **优先检查用户自有风格。** 如果 `~/lemo-my-styles/README.md` 存在，先读取它。这里列出用户保存的全部风格及其存放位置。自有风格与库中风格同等对待，规则见 [`MY-STYLES.md`](MY-STYLES.md)。用户指定风格时，先查自有风格，再查本库。
+- **使用用户的语言。** 用用户发消息时使用的语言交流。如果用户只启动技能、没有输入任何内容，第一问必须是语言，即使设置、记忆或之前的消息已有语言线索：使用 `AskUserQuestion` 单独提问，标题为“Language 语言”，选项为“中文”和“English”；工具提供的 Other 选项允许输入其他语言。后续交流及影片默认使用所选语言。
+- **尚无具体需求时**（只启动技能或打招呼），用用户的语言，通过 `AskUserQuestion` 介绍以下入口，第一项为推荐项：
+  1. 用库中风格制作影片（见**选择风格**）；
+  2. 改编库中风格，保存为自己的风格（见 [`MY-STYLES.md`](MY-STYLES.md)）；
+  3. 从零创建自己的风格（见 [`MY-STYLES.md`](MY-STYLES.md)）；
+  4. 用已有的自有风格制作影片；仅在用户确实有自有风格时列出，并注明名称。
 
-  When their request already says which, skip the question.
+  用户已明确选择入口时，跳过这个问题。
 
-## Style and story
+<a id="style-and-story"></a>
+## 风格与故事
 
-- **`STYLE.md` is fixed**: the style's invariants (look, colour, type, motion, camera grammar, sound palette, native moves, pitfalls). Keep all of it.
-- **Everything else is yours to direct** from the user's topic: story, structure, characters, settings, shots, timings, references, how data is charted. Never bend the topic toward the demo.
-- **Treatment first, demo later.** Write your own `TREATMENT.md`, with three candidate structures and your choice (DIRECTOR.md §4), before you open `DEMO.md` or the demo code. Then use the demo only to learn techniques (a brush engine, a rig, a shader, a mix), never its story, arc, shots, props or timeline. One exception: a style cut from real material (Edit & Documentary) needs its material before the treatment, so the tools its `STYLE.md` names in `demo/tools/` for finding and logging material (`footage.py` and the like) may be used first, copied into the project folder and run there; still read `DEMO.md` and the rest of the demo only after the treatment is written.
-- **Scene styles** (a set-up guide, a spec walkthrough, a museum plate, a trail guide) list use cases in their `STYLE.md`. Read them as grammar for the order in which information arrives and how long each part needs on screen, then build the user's content in your own structure. Swapping text into a demo's `content.json` is only a technical check, never the way to deliver.
-- Never build inside `styles/`: copy what you need into the film's project folder.
+- **`STYLE.md` 中的风格约束不可变更**：外观、色彩、字体、运动、镜头语言、声音体系、风格特有的表现手法和禁忌都必须保留。
+- **其他内容由你围绕用户主题执导**：故事、结构、角色、场景、镜头、时长、参考资料以及数据的可视化方式。不能为了套用示范短片而改变用户主题。
+- **先写创作方案，再看示范。** 在打开 `DEMO.md` 或示范代码之前，先编写自己的 `TREATMENT.md`，提出三种候选结构并说明最终选择（见 DIRECTOR.md §4）。之后仅学习示范中的技术，如画笔引擎、骨骼绑定、着色器和混音；不得照搬故事、情节弧线、镜头、道具或时间轴。例外：剪辑与纪实类风格需先获取真实素材，因此可先使用其 `STYLE.md` 指定的 `demo/tools/` 素材搜索与编目工具（如 `footage.py`），复制到项目文件夹后运行；仍须写完创作方案，才能阅读 `DEMO.md` 及其余示范代码。
+- **场景型风格**（安装指南、规格讲解、博物馆展板、步道导览等）的 `STYLE.md` 会列出适用场景。把这些内容理解为信息呈现顺序和屏幕停留时长的规则，再用自己的结构呈现用户内容。替换示范 `content.json` 中的文字只能用于技术验证，不能作为最终交付方式。
+- 不得在 `styles/` 中制作用户影片。把所需内容复制到影片项目文件夹。
 
-## Finding the style
+<a id="finding-the-style"></a>
+## 选择风格
 
-Users name a style by its gallery name in English or Chinese ("Impasto Oil Painting", "油画厚涂") or by its folder (`impasto`). Look it up in [`styles/README.md`](styles/README.md). If nothing matches clearly, show the closest two or three and ask.
+用户可使用风格的英文名、中文名或文件夹名，例如“Impasto Oil Painting”“油画厚涂”或 `impasto`。在 [`styles/README.md`](styles/README.md) 中查找；没有明确匹配时，展示最接近的两三种，请用户选择。
 
-If the user hasn't picked a style:
-- Suggest two or three that fit their topic.
-- If they have their own styles, list those first, under "My styles" (in their language).
-- Show them the full list below in the chat, in the user's language only: English names (and English category names) for someone writing in English, Chinese names for someone writing in Chinese. Don't drop, merge or rename anything.
-- Link the gallery, where every style has its demo film: https://lemomo-ai.github.io/lemo-opuscar/
-- Then ask them to type the name. The list goes in your own message (a command's output isn't shown to them), and the question is plain text, not `AskUserQuestion`: its few options would hide the rest of the list.
+用户尚未选定风格时：
+- 推荐两三种适合主题的风格。
+- 如果存在自有风格，先在“我的风格”下列出。
+- 在聊天消息中展示下面的完整列表。英文用户使用英文风格名和分类名，中文用户使用中文名称；不得删减、合并或擅自改名。
+- 提供[风格图鉴](https://lemomo-ai.github.io/lemo-opuscar/)，其中可观看各风格示范影片。
+- 请用户直接输入风格名。列表必须出现在你的消息中，不能只出现在命令输出里。此处用普通文字提问，不使用 `AskUserQuestion`，避免有限的选项隐藏其余风格。
 
 <!-- style-list:start -->
-All 59 styles · 全部风格:
+全部 59 种风格：
 
-- **剪辑与纪实 Edit & Documentary** (8): 字幕新闻 Caption News, 1920s 新闻影片 1920s Newsreel, 实时倒计时分屏 Live Countdown Split-screen, 延时交响 Time-lapse Symphony, 视觉调查 Visual Investigation, 构成主义蒙太奇 Constructivist Montage, 体育战术板 Sports Telestrator, 电视新闻包装 Broadcast News Package
-- **实证影像 Evidence Films** (8): 卫星简报 Satellite Briefing, 工程简报板 Engineering Briefing Board, 点云测绘 LiDAR Survey, 白模投影 Projection on White Model, 数据实物化 Data Physicalization, 产品拆解 Exploded Teardown, 显微叙事 Microscope Story, 档案灯台 Archive Light Table
-- **手绘与绘画 Hand-drawn & Painting** (7): 蜡笔儿童绘本 Crayon Picture Book, 水彩笔刷 Watercolor Brush, 中国水墨 Chinese Ink Wash, 油画厚涂 Impasto Oil Painting, 一笔画 One-line Drawing, 白板讲解 Whiteboard Explainer, 钢笔淡彩 Urban Sketch · Pen & Wash
-- **东方传统 East Asian Traditions** (4): 皮影戏 Shadow Puppetry, 浮世绘 Ukiyo-e, 红色窗花剪纸 Red Paper-cut, 纸雕灯影 Paper-cut Lightbox
-- **印刷与版画 Print & Printmaking** (5): Risograph 孔版印刷 Risograph Print, 复古半调案卷 Halftone Dossier, 木刻版画 Woodcut Print, 铜版画 Copperplate Engraving, 丝印旅行海报 Silkscreen Travel Poster
-- **图形与排版 Graphic & Type** (7): 瑞士动态排版 Swiss Motion Graphics, 60s 间谍片头 60s Spy Title Sequence, 装饰艺术 Art Deco, 蓝图 / 工程制图 Blueprint, 彩色玻璃窗 Stained Glass, 象形运动图形 Pictogram Motion, ASCII / CRT 终端 ASCII / CRT Terminal
-- **信息与发布 Information & Keynote** (5): 数据叙事 Data Storytelling, 等距信息图 Isometric Infographic, 暗色科技发布 Dark Tech Keynote, 活体实机录屏 Living Screencast, 科幻全息界面 Sci-fi Hologram HUD
-- **卡通与动画 Cartoon & Anime** (4): 1930s 橡皮管卡通 1930s Rubber Hose Cartoon, 80 年代赛璐璐动画 80s Cel Anime, 科幻情景喜剧卡通 Sci-Fi Sitcom Toon, 50s 扁平卡通 Mid-century Cartoon
-- **游戏 Games** (4): 16-bit 像素 RPG 16-bit Pixel RPG, HD-2D, 微游戏快闪 Microgame Frenzy, 综艺节奏扁平 Game Show Flat
-- **电影与时代 Cinema & Eras** (2): 1920s 默片 1920s Silent Film, 后室 / 新怪谈 Liminal Found Footage
-- **材质与 3D Materials & 3D** (5): 积木玩具 Brick Toy, 纸片立体书 Paper Pop-up Book, 移轴微缩 Tilt-Shift Miniature, 低多边形等距 Low-poly Isometric Island, 玻璃质感产品 Glass Product Render
+- **剪辑与纪实**（8）：字幕新闻、延时交响、实时倒计时分屏、构成主义蒙太奇、电视新闻包装、1920s 新闻影片、体育战术板、视觉调查
+- **实证影像**（8）：档案灯台、工程简报板、数据实物化、点云测绘、显微叙事、卫星简报、产品拆解、白模投影
+- **手绘与绘画**（7）：蜡笔儿童绘本、油画厚涂、中国水墨、一笔画、钢笔淡彩、水彩笔刷、白板讲解
+- **东方传统**（4）：纸雕灯影、红色窗花剪纸、皮影戏、浮世绘
+- **印刷与版画**（5）：铜版画、复古半调案卷、Risograph 孔版印刷、丝印旅行海报、木刻版画
+- **图形与排版**（8）：我的风格、装饰艺术、ASCII / CRT 终端、蓝图 / 工程制图、象形运动图形、60s 间谍片头、彩色玻璃窗、瑞士动态排版
+- **信息与发布**（5）：暗色科技发布、数据叙事、科幻全息界面、等距信息图、活体实机录屏
+- **卡通与动画**（4）：80 年代赛璐璐动画、50s 扁平卡通、1930s 橡皮管卡通、科幻情景喜剧卡通
+- **游戏**（4）：综艺节奏扁平、HD-2D、微游戏快闪、16-bit 像素 RPG
+- **电影与时代**（2）：后室 / 新怪谈、1920s 默片
+- **材质与 3D**（5）：积木玩具、玻璃质感产品、低多边形等距、纸片立体书、移轴微缩
 <!-- style-list:end -->
 
-## Workflow
+<a id="workflow"></a>
+## 工作流程
 
-1. **Brief.** Make sure the style and the topic are clear, then ask the user once, in a single message (DIRECTOR.md §1):
-   - anything about the topic you can't decide yourself (facts; names, logos or products that must appear);
-   - whether they have material of their own: a voice recording or a preferred voice, music, photos, logos, fonts, and for a style built from real material, their own data or scans;
-   - the film's language, if it isn't obvious (default: the language they write in or chose, for voice and subtitles);
-   - whether they want to review a storyboard first (default: no);
-   - anything missing on their machine: first run `sh plugin/skills/lemo-opuscar/scripts/setup.sh deps` from the library root (core only) and include what it reports. Add the voice and music tiers later, only if the film needs them (TECHNIQUE.md §1).
+1. **确认需求。** 明确风格与主题，然后在一条消息中一次性询问（DIRECTOR.md §1）：
+   - 无法自行决定的事实、名称、标志、产品或其他必备内容；
+   - 用户是否有录音或指定音色、音乐、照片、标志和字体；真实素材类风格还需确认自有数据或扫描文件；
+   - 影片语言（如果尚不明确）；默认配音与字幕使用用户当前语言或已选语言；
+   - 是否需要先审分镜；默认不需要；
+   - 机器缺少哪些必备工具：先在库根目录运行 `sh plugin/skills/lemo-opuscar/scripts/setup.sh deps`，只安装核心依赖，并把检测出的缺项一起列入问题。配音与配乐依赖仅在影片需要时添加（TECHNIQUE.md §1）。
 
-   Skip what their request already answers. Wait for the reply, fill every other gap with a sensible default, sum up the brief in a few lines and start. Don't come back with more questions.
-2. **Treatment.** Write `TREATMENT.md` in the project folder (DIRECTOR.md §4), before you open the demo (an Edit & Documentary style gathers its material first: **Treatment first** above).
-3. **Look.** Render style frames or a model sheet with the real drawing code and check them against `STYLE.md` (DIRECTOR.md §5).
-4. **Storyboard, only if the user asked for it** (DIRECTOR.md §5). **Stop and wait for approval.** Otherwise don't stop.
-5. **Produce.** Voice → check → score (can run in parallel) → animation → mix → render (TECHNIQUE.md).
-6. **Self-check and deliver** (DIRECTOR.md §11).
+   跳过用户已经回答的内容，等待回复。其余细节使用合理默认值，用几句话概括需求后开始，不再反复提问。
+2. **创作方案。** 在项目文件夹中编写 `TREATMENT.md`（DIRECTOR.md §4），完成前不得阅读示范；剪辑与纪实类先收集素材，规则见上文。
+3. **视觉定稿。** 用实际绘图代码渲染风格帧或角色设定页，对照 `STYLE.md` 检查（DIRECTOR.md §5）。
+4. **分镜审核，仅在用户提出时进行**（DIRECTOR.md §5）。**此时停下，等待用户批准。** 未要求审分镜时，不停下等待。
+5. **制作。** 配音 → 检查 → 配乐（可与其他制作并行）→ 动画 → 混音 → 渲染（TECHNIQUE.md）。
+6. **自检并交付**（DIRECTOR.md §11）。
 
-Report progress in the user's language. If a step fails, read the error, fix the cause and retry; go back to the user only for a decision or something only they can provide.
+用用户的语言汇报进度。步骤失败时，阅读错误、修复原因并重试；只有需要用户作决定或提供你无法获得的内容时，才返回询问。
 
-## Where things go
+<a id="where-things-go"></a>
+## 文件存放位置
 
-- The film's project folder is `films/<name>/` in a clone (ignored by git), or `<name>/` in the user's folder in skill mode (see the skill's `SKILL.md`). Wherever a guide says `films/<name>/`, read "the project folder". Work only there, unless the user asks you to work in their own project.
-- Run `node core/…` and `sh tools/…` from the library root (`$LIB` in skill mode).
-- `core/` has ready-made tools (rendering, TTS, speech check, sampler, sfx, mux). Use them or your own stack, but don't edit `core/` or `styles/` for a user's film.
-- Never kill processes you didn't start. Don't leave background processes running.
+- 克隆仓库模式下，影片项目放在 `films/<name>/`（已被 Git 忽略）；技能模式下，放在用户工作文件夹的 `<name>/` 中，见技能的 `SKILL.md`。指南中的 `films/<name>/` 均指影片项目文件夹。只在该文件夹中工作，除非用户要求操作其他项目。
+- 在库根目录运行 `node core/…` 和 `sh tools/…`；技能模式下库根目录由 `$LIB` 指定。
+- `core/` 提供渲染、TTS、语音检查、采样器、音效与封装等工具。可使用这些工具或自己的技术栈，但不能为制作用户影片而修改 `core/` 或 `styles/`。
+- 不得结束非自己启动的进程；工作结束后不要遗留后台进程。

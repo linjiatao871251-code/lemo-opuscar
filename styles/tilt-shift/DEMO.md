@@ -1,62 +1,69 @@
-# Tilt-Shift Miniature — our demo
+<a id="tilt-shift-miniature--our-demo"></a>
+# 移轴微型 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Toy Town Rush Hour* (38 s) · `tilt-shift.mp4` · source in [`demo/`](demo/)
+示范：*玩具城高峰时间*（38秒）·`tilt-shift.mp4`·来源在[`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-An original procedural town wakes up at dawn and builds to rush-hour gridlock; at the peak, time crashes to real speed on a family of ducks crossing the main avenue in front of a hero car, then releases and rises until the town is a circuit board.
+一个原始的程序化城镇在黎明时分醒来，并逐渐陷入高峰时段的交通堵塞；在高峰期，时间以真正的速度在一群鸭子在一辆英雄汽车前面穿过主干道时加速，然后释放并上升，直到小镇变成一块电路板。
 
-The old guide's adaptation recipe, kept as one example: make the topic a *system with many small actors*, then find the *one tiny actor* the system bends around (a product launch → the city's traffic flowing toward one shop; a love story → two commuters crossing on the same crosswalk every morning; a history lesson → one street time-lapsed across a century).
+旧指南的改编秘诀，保留作为一个例子：让主题成为一个“有许多小演员的系统”，然后找到系统围绕的“一个小演员”（产品发布→城市的交通流向一家商店；一个爱情故事→每天早上两个通勤者穿过同一个人行横道；一堂历史课→一条跨越一个世纪的时间流逝）。
 
-Arc (38 s): quiet (one light trail at dawn) → the system wakes up (actors multiply, rhythm builds) → maximum density → **hard drop to real time on one detail** (the ducks, with a failed hop before success as the comedy beat) → release back to fast-forward → rise to a scale reveal. One subject, one goal, one twist.
+弧线（38秒）：安静（黎明时的一条光迹）→系统醒来（演员倍增，节奏建立）→最大密度→**在一个细节上难以实时下降**（鸭子，在喜剧节拍成功之前跳跃失败）→释放回到快进→上升到规模揭示。一个主题，一个目标，一个转折。
 
-Native powers spent: long-exposure light (the dawn car trail is the whole opening), the blur band (follows the car; narrowest on the ducks), time-lapse speed (×24–×40 with the ×40 → ×1 drop at the peak), god's-eye scale (rotating top-down at peak density, the final rise).
+所消耗的原生能力：长曝光光（黎明的汽车轨迹是整个开口），模糊带（跟随汽车；鸭子上最窄），延时速度（×24–×40，峰值时×40→×1下降），天眼刻度（以峰值密度自上而下旋转，最终上升）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | High oblique wide at dawn, very slow slide; the band follows the single hero car's light trail, routed on the lane nearest the camera |
-| Title | Oblique across rooftops onto an **in-world neon sign** on a building facing a wide avenue, letters lighting one per 8th note; road-sign tag "A TILT-SHIFT MINIATURE" |
-| System waking up | Medium-high oblique on an intersection and a station, slow push; the band on the stop lines / platform edge; commuter train |
-| Peak density | **Straight top-down, slowly rotating**, gridlock |
-| Real-time detail | One continuous **dive** from the top-down into a low medium close-up over the hero car's hood, the car's front and lights as blurred foreground. The eye-line lands on the ducks before the body does (look target eases out faster than position). Speed ramps ×40 → ×1 during the dive; land on the narrowest band. The top-down was rotated so it ends facing the close shot's direction |
-| Ending | **Vertical rise** with logarithmic height (40 m → 820 m) through a thin cloud layer until the town becomes a circuit-board pattern; end card |
+|开幕|黎明时高斜宽，滑行速度极慢；乐队沿着单英雄汽车的光迹行驶，走在最靠近摄影机的车道上|
+|标题|倾斜穿过屋顶，到达面向宽阔大道的建筑物上的**in-world霓虹灯标志**，每个八分之一音符点亮一个字母；路标标签“倾斜移位微型”|
+|系统唤醒|表现媒介-路口、车站高斜，慢推；停止线/站台边缘的带子；通勤列车|
+|峰值密度|**直上向下，缓慢旋转**，僵局|
+|实时细节|一张连续的**潜水**从上到下进入一个低表现媒介特写镜头在英雄汽车的引擎盖上，汽车的前部和灯光作为模糊的前景。视线先于身体落在鸭子身上（注视目标比位置移动得更快）。潜水期间速度斜坡 ×40 → ×1；降落在最窄的带上。自上而下旋转，使其末端面向近距离镜头的方向|
+|结束|**垂直上升**以对数高度（40 m → 820 m）穿过薄薄的云层，直到城镇变成电路板图案； 片尾卡|
 
-Close-up numbers used: camera ~1.7 m up, 6–8 m away, ~12° pitch, 17° FOV, near plane 0.08 m; the ducks fill ~1/4–1/3 of frame height. Oblique shots: 45–55° pitch, 110–200 m from the subject, 27–30° vertical FOV.
+使用的特写号码：摄影机 ~1.7 m向上，6-8 m远，~12°俯仰，17° FOV，近平面0.08 m；鸭子填充框架高度的~1/4–1/3。倾斜镜头：45–55° 俯仰角，距离拍摄对象 110–200 m，27–30° 垂直 FOV。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Sampled minimalist marimba ensemble (`demo/music/score.py`), 120 BPM, so the 8 Hz time-lapse stutter is exactly a 16th note. **Fixed phrase skeleton; city events decide which notes sound**: cars crossing stop lines gate marimba A, green lights play woodblock accents, crowds trigger glockenspiel, train carriages play the bass; each section has a base fill rate.
+采样极简马林巴合奏 (`demo/music/score.py`)，120 BPM，因此 8 Hz 延时口吃恰好是 16 分音符。 **固定短语骨架；城市事件决定哪些音符发出声音**：汽车穿过停车线马林巴A门，绿灯演奏木版口音，人群触发钟琴，火车车厢演奏低音；每个部分都有一个基本填充率。
 
-- At peak density the skeleton is full, with phased marimba B and tuned car-horn chords (sampled brass staccato pulsing 8ths).
-- The real-time drop is a **tape-stop**: varispeed 1 → 0.22, voices drop out one by one, then true silence. During the rest only one soft note per story event plays, each duck hop a step up the scale.
-- The first note of the film is the top note of the final chord.
+- 在峰值密度时，骨架是完整的，带有定相马林巴 B 和调音的汽车喇叭和弦（采样的铜管断奏脉冲八度）。
+- 实时下降是**磁带停止**：变速1→0.22，声音一个接一个地消失，然后真正的静音。在剩下的时间里，每个故事事件只播放一个轻柔的音符，每只鸭子都会在音阶上跳跃一个台阶。
+- 影片的第一个音符是最终和弦的最高音符。
 
-Sound design: time-lapse = music first with a faint granular sped-up city hiss, rail clacks, relay clicks; real time = idling engines, distant city, sparrows, tiny quacks and peeps, webbed feet patting asphalt; release = engines rev, wind sweeps up during the rise.
+声音设计：延时=音乐首先带有微弱的颗粒状加速的城市嘶嘶声、铁路的咔嗒声、继电器的咔嗒声；实时 = 空转的引擎、遥远的城市、麻雀、小江湖和窥视、有蹼的脚拍打沥青；释放=发动机转速，上升过程中风扫过。
 
-Voice: relaxed American male, Kokoro `am_adam`, speed 0.9–0.95, 5–6 short lines, music ducked ~8 dB.
+声音：轻松的美国男声，Kokoro `am_adam`，速度0.9-0.95，5-6短句，音乐闪避~8 dB。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Facades: warm whites, cream, terracotta, brick, pale yellow, mint, sky blue. Cars: white, silver, black, red, blue, yellow taxis. Park green `#6fa24a`. Asphalt `#4b4e53`. People: 0.5 m colour capsules.
-- Grade: NeutralToneMapping, saturation ×1.55, soft contrast +0.42, slight warm highlights, vignette 0.3.
-- Band values: half-width `w` 0.055 (0.035 on the ducks), `amp` 30, `mix` 0.55–0.7, `aper` 5000–9000 (metres), CoC clamp 30 px; 128 spiral taps.
-- Light: 4096 shadow map fitted per shot, hemisphere fill ~0.6. Dawn: sun ~3.5° below the horizon, pink-orange east fill `#ffb48c`, ~9 % of windows lit, sodium street-light pools.
-- Facade shader: punched / ribbon / curtain-wall / brick window types, glass roughness 0.08–0.22, metalness 0.35; manholes, asphalt patches, oil stains; GTAO.
-- Traffic: IDM car-following pre-computed per clip, lights on a 96 s cycle, "don't block the box" logic, a pedestrian crossing that stops all lanes; heavy inflow plus box-blocking gives honest gridlock. Crowds are closed-form: they gather at corners on red and surge on green. Stepping: 8 Hz in fast-forward, 12 Hz between ×2 and ×6, smooth below ×2.
-- Hero actors: a dawn car on a scripted path, a commuter train with kinematics fitted through beat times, lathe-turned ducks with a sheen fuzz material (`MeshPhysicalMaterial`, sheen 1, sheenRoughness 0.55), hop = anticipation squash (0.28 s) → stretch jump → land squash → settle, a second failed attempt before success.
+- 外墙：暖白色、奶油色、赤土色、砖色、浅黄色、薄荷色、天蓝色。汽车：白色、银色、黑色、红色、蓝色、黄色出租车。公园绿`#6fa24a`。沥青 `#4b4e53`。人：0.5 m 彩色胶囊。
+- 等级：NeutralToneMapping，饱和度×1.55，柔和对比度+0.42，轻微暖色高光，晕影0.3。
+- 带值：半宽 `w` 0.055（鸭子上为 0.035）、`amp` 30、`mix` 0.55–0.7、`aper` 5000–9000（米）、CoC 夹 30 像素； 128 个螺旋丝锥。
+- 光照：根据镜头安装 4096 个阴影贴图，半球填充 ~0.6。黎明：太阳低于地平线约 3.5°，粉橙色东方填充 `#ffb48c`，约 9% 的窗户亮起，钠路灯池。
+- 立面着色器：冲孔/带状/幕墙/砖窗类型，玻璃粗糙度0.08–0.22，金属度0.35；沙井、沥青斑块、油渍； GTAO。
+- 交通：每个片段预先计算的 IDM 跟车、96 秒周期的灯、“不要挡住盒子”逻辑、停止所有车道的行人过路处；大量资金流入加上盒子阻塞造成了诚实的僵局。人群是封闭的：红色时他们聚集在角落，绿色时他们涌动。步进：快进时为 8 Hz，×2 和 ×6 之间为 12 Hz，×2 以下平滑。
+- 英雄演员：在脚本路径上行驶的黎明汽车、通过节拍时间调整运动学的通勤火车、带有光泽绒毛材料的车床车削鸭子（`MeshPhysicalMaterial`，光泽 1，光泽粗糙度 0.55），跳跃 = 预期挤压（0.28 秒）→ 伸展跳跃 → 陆地挤压 → 稳定，成功之前的第二次失败尝试。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- Subtitles: a green `#0f5e3c` rounded road-sign panel with an inset white keyline, Overpass 600 44 px white, a tiny traffic-light icon lit green on the left, 118 px above the bottom inside the lower blur band.
-- Time-lapse clock top-left (Overpass Mono): `07:12` with small seconds, `×24 TIME-LAPSE` in amber, `×1 REAL TIME` in green.
-- End card: the same road-sign language over the top-down town: the title, the style name and `LemoLab × Claude Opus 5.5`. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+- 字幕：绿色 `#0f5e3c` 圆形路标面板，内嵌白色关键线，Overpass 600 44 px 白色，左侧有一个呈绿色亮起的微小交通灯图标，位于下部模糊带内底部上方 118 px 处。
+- 延时时钟左上角（Overpass Mono）：`07:12`，带小秒针，`×24 TIME-LAPSE` 为琥珀色，`×1 REAL TIME` 为绿色。
+- 片尾卡：自上而下的城镇上空相同的路标语言：标题、风格名称和`LemoLab × Claude Opus 5.5`。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/tilt-shift/demo/
@@ -68,17 +75,17 @@ styles/tilt-shift/demo/
   music/score.py  sampled marimba score (skeleton + event gating)   subs.mjs  subtitle export
 ```
 
-1. `sh styles/tilt-shift/demo/build.sh` rebuilds everything from scratch: TTS → whisper → events → subtitles → score → mix → 912-frame render (~60–80 s on an M-series GPU with 3 workers) → mux (−14 LUFS, grain 1) → styleframe and poster.
-2. Iterate with `node core/render/still.mjs styles/tilt-shift/demo <t…> --q noev` (`noev` skips the event scan). Debug flags: `nohud`, `nodof`, `nostep`, `az=<deg>`, `cam=x,y,z,lx,ly,lz,fov`, `aper=`, `bamp=`, `bmix=`.
+1. `sh styles/tilt-shift/demo/build.sh` 从头开始​​重建一切：TTS → Whisper 语音识别 → 事件 → 字幕 → 配乐 → 混合 → 912 帧渲染（在具有 3 个工作线程的 M 系列 GPU 上约 60–80 秒）→ mux（−14 LUFS，grain 1）→ 风格定帧和海报。
+2. 使用 `node core/render/still.mjs styles/tilt-shift/demo <t…> --q noev` 进行迭代（`noev` 跳过事件扫描）。调试标志：`nohud`、`nodof`、`nostep`、`az=<deg>`、`cam=x,y,z,lx,ly,lz,fov`、`aper=`、`bamp=`、`bmix=`。
 
-Pitfalls tied to this demo's props:
-- The first pass was a skyscraper forest with no streets visible.
-- The dawn car was hidden in a street canyon until routed on the camera-side lane.
-- The neon sign was occluded until moved to face a wide avenue.
-- The instance cap (1,400 vs 2,800 cars alive) silently dropped the hero car.
-- Cars stopped 2 m short of the ducks' crossing (IDM jam gap): the stop line was moved closer and the jam gap subtracted.
-- Gridlock left the story lane empty: box-blocking starved the segment in front of the crossing, so the main avenue was exempted and the queue formed behind the hero.
-- The top-down → oblique dive first twisted 180°.
-- The peak first used a high long-lens view with the ducks at 1/15 of the frame. Headlights were moved to the car's top front edge so they read from above, and the hero car was held until the rising camera lifted clear of it.
-- Clouds washed out the ending; streetlight pools read as bubbles; street furniture cluttered the close-up area and was removed.
-- One fixed sun left half the film backlit and grey; the first dawn read as midnight (fixed by the pink east fill and ~3× fewer lit windows).
+与示范的道具相关的陷阱：
+- 第一关是一片高楼林立，看不到街道。
+- 黎明车隐藏在街道峡谷中，直到驶入摄影机侧车道。
+- 霓虹灯标志被遮挡，直到移动到一条宽阔的大道上。
+- 实例上限（1,400 辆 vs 2,800 辆活着的汽车）默默地掉落了英雄汽车。
+- 汽车停在距鸭子路口 2 m 处（IDM 堵塞间隙）：停车线移近并减少堵塞间隙。
+- 交通堵塞使故事巷空无一人：封锁使十字路口前面的路段挨饿，因此主干道被豁免，队列在英雄后面形成。
+- 自上而下→斜潜先扭转180°。
+- 山顶首先使用了高长镜头视图，鸭子位于画面的 1/15 处。头灯被移至汽车的顶部前缘，以便从上方读取信息，英雄汽车被固定住，直到上升的摄影机升空。
+- 云彩冲淡了结局；路灯池读起来就像气泡；街道设施堆满了特写区域并被拆除。
+- 一颗固定的太阳留下一半的影片背光和灰色；第一个黎明读作午夜（由粉红色的东填充和〜3×更少的亮着的窗户固定）。

@@ -1,125 +1,137 @@
-# Exploded Teardown — Style Prompt
+<a id="exploded-teardown--style-prompt"></a>
+# 产品拆解：风格提示词
 
-> A real product, built from its own engineering files (CAD, PCB layout, bill of materials), lit like a studio packshot and taken apart in front of the camera: the layers lift on one axis, the camera travels between them, every part is named with the numbers its files contain, and it closes again into one object.
-> References (grammar only): hardware-launch exploded films (layer stagger, orbit timing), repair-guide teardowns (opening order, the macro on the part that matters), engineering drawing (leaders, dimension lines). Never copy their products, layouts, typefaces or music, or name them in the film.
+> 一个真实的产品，根据自己的工程文件（CAD、PCB 布局、物料清单）构建，像工作室打包照片一样点亮，并在摄影机前面拆开：层在一个轴上升起，摄影机在它们之间移动，每个部件都以其文件包含的编号命名，然后再次闭合为一个对象。
+> 参考资料（仅语法）：硬件发射分解影片（层交错、轨道计时）、维修指南拆卸（打开顺序、重要部分的宏）、工程图（引线、尺寸线）。切勿复制他们的产品、布局、字体或音乐，或在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A frame reads as this style when:
+在以下情况下，框架将显示为这种风格：
 
-- **the object is real and exact**: geometry, positions and counts come from the product's own files (STEP, KiCad, BOM, assembly guide). Nothing is eyeballed that a file can give;
-- **it is shown apart**: layers float on one axis with even, readable gaps, each still oriented as it sits in the product;
-- **it is photographed, not drawn**: physically based materials, a studio key light, a cool rim, an HDRI reflection, soft contact shadow on an invisible floor;
-- **the numbers live on the object**: thin leader lines from a dot on the part, dimension lines with ticks drawn in the scene's own perspective, never a table beside it;
-- **the camera never stops travelling**: one or a few continuous moves, orbit outside, macro inside.
+- **该对象是真实且准确的**：几何形状、位置和计数来自产品自己的文件（STEP、KiCad、BOM、装配指南）。文件无法提供任何直观的信息；
+- **it 分开显示**：各层漂浮在一个轴上，具有均匀、可读的间隙，每个层仍按其位于产品中的方向定向；
+- **it 是拍摄的，不是绘制的**：基于物理的材质、工作室主光、酷炫的边缘、HDRI 反射、隐形地板上的柔和接触阴影；
+- **数字位于对象上**：来自零件上的点的细引出线，在场景自身的视角中绘制带有刻度的尺寸线，旁边没有桌子；
+- **摄影机永不停止旅行**：一次或几次连续移动，外轨道，内宏。
 
-It is not a glass product render (one object, material beauty, no disassembly), not a blueprint (line drawing on a grid, no light), not a keynote (slides, headline type, a stage), not an assembly manual (step numbers, arrows, hands).
+它不是玻璃产品渲染图（一个物体，材质美，无需拆卸），不是蓝图（网格上画线，没有灯光），不是主题演讲（幻灯片，标题类型，舞台），不是组装手册（步骤编号，箭头，手）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- Real-time PBR (three.js `MeshPhysicalMaterial`) at 2× and downsampled, ambient occlusion, a depth of field with one aperture for wide and macro (blur follows 1/focus − 1/z, so it grows as the camera comes close), a high-threshold bloom for emitters only, a vignette.
-- Each material keeps its character: plastics with soft sheen (roughness 0.55–0.7), boards with a thin clearcoat and traces as a raised, lighter relief under the mask, metallic pads, tight highlights on machined metal, matte rubber.
-- **Boards are painted from their layout files**: copper pours, every trace, via, pad and drill, silkscreen, on both sides, at 14–20 px per millimetre, with roughness, metalness and bump maps from the same drawing. Components stand at their footprint positions with their package sizes.
-- Light: a warm key from above front, a cool rectangular rim behind that follows the camera so edges separate from the ground, a soft top light, a low HDRI for reflections; a practical fill only where the camera goes inside.
-- Background: a dark graphite seamless sweep (screen-space radial gradient), floor visible only as soft shadow.
-- Effects anchored to the world (leaders, dimension lines, glows) are projected from 3D points every frame; only subtitles and title cards live in screen space.
+- 实时 PBR (three.js `MeshPhysicalMaterial`) 为 2 倍且下采样、环境光遮蔽、广角和微距具有一个光圈的景深（模糊遵循 1/focus − 1/z，因此随着摄影机接近而增长）、发射器的高阈值光晕只是，一个小插曲。
+- 每种材料都保持其特性：具有柔和光泽的塑料（粗糙度 0.55-0.7）、具有薄透明涂层和掩模下凸起的浅浮雕痕迹的板、金属垫、机加工金属上的紧密高光、哑光橡胶。
+- **电路板是根据其布局文件**绘制的：铜浇注，每条迹线，过孔，焊盘和钻孔，丝网印刷，两侧，每毫米14-20像素，具有来自同一绘图的粗糙度，金属度和凹凸贴图。组件以其封装尺寸站立在其足迹位置。
+- 灯光：前面上方的暖色调，后面有一个冷色矩形边缘，遵循摄影机，因此边缘与地面分开，柔和的顶光，用于反射的低 HDRI；仅在摄影机进入的地方进行实用填充。
+- 背景：深色石墨无缝扫描（屏幕空间径向渐变），地板仅作为软阴影可见。
+- 锚定到世界的效果（引线、尺寸线、发光）每帧从 3D 点投射；只有字幕和标题卡存在于屏幕空间中。
 
-**Where the geometry comes from.** For the user's own product, ask for its STEP / IGES / KiCad / other CAD exports, BOM and spec sheet before anything else. For a public product, look for open hardware (GitHub, GitLab, OSHWA certification list, Hackaday.io, Printables/Thingiverse sources with the original CAD) and component datasheets from the maker. CC0, public domain, CC BY and MIT are fine with credit; CERN-OHL (-P, -W, -S), CC BY-SA, GPL hardware and "no known restrictions" are not the same thing: name the terms to the user and ask before using them. Without files, build only from published dimensions (datasheet, spec page), say on screen or in the voice that it is a model, and show no number you could not source. Never stand in a generated image for the real part.
+**几何形状来自哪里。** 对于用户自己的产品，首先要索取其STEP / IGES / KiCad /其他CAD导出、BOM和规格表。对于公共产品，请查找制造商的开放硬件（GitHub、GitLab、OSHWA 认证列表、Hackaday.io、Printables/Thingiverse 源以及原始 CAD）和组件数据表。 CC0、公共领域、CC BY 和 MIT 信用良好； CERN-OHL（-P、-W、-S）、CC BY-SA、GPL 硬件和“无已知限制”不是一回事：向用户命名术语并在使用前询问。如果没有文件，则仅根据已发布的尺寸（数据表、规格页面）进行构建，在屏幕上或通过声音说明它是一个模型，并且不显示任何您无法获取的数字。切勿站在生成的图像中作为真实零件。
 
-Keep a FACTS.md in the project folder (claim, source URL, quoted wording, or the measurement method for anything measured from the CAD) and deliver it with the film.
+将 FACTS.md 保留在项目文件夹中（声明、源 URL、引用的措辞或通过 CAD 测量的任何内容的测量方法），并将其与影片一起交付。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- The product brings its own colours; the frame around it is neutral and dark, so the product is always the brightest, most saturated thing.
-- Interface ink is one warm white at two strengths (names at full, specs at about 60 %), plus **one accent** reserved for measured things: dimension lines, label indices and one matching detail on the product itself.
-- Values are ordered: ground darkest, product mid to light, labels lightest. Never put text on a busy, bright part without a dark backing.
-- Example (our demo): ground #34363a → #0d0e10, ink #f1efe9, accent #ff6b3d.
+- 产品自带颜色；它周围的框架是中性和深色的，所以产品总是最亮、最饱和的东西。
+- 界面墨水是一种暖白色，具有两种强度（名称完整，规格约 60%），加上 **one 强调** 保留用于测量的东西：尺寸线、标签索引和产品本身的一个匹配细节。
+- 值按顺序排列：地面最深、产品中到浅、标签最浅。切勿将文字放在没有深色背景的繁忙、明亮的部分上。
+- 示例（我们的示范）：地面 #34363a → #0d0e10，墨水 #f1efe9，重音 #ff6b3d。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Names: a clean sans at medium weight in the film's script (28–32 px; Noto Sans SC 500 in our demo). Specs and numbers: a monospaced face (15–22 px; JetBrains Mono) so digits line up and read as measurement. A neutral grotesque (Inter) for Latin running text.
-- Label structure is fixed: a two-digit index in the accent, the name, one spec line. Units always written (mm, MB, ×n for counts). A label carries at most one fact the voice does not say.
-- Dimension text sits on a small dark plate, follows the line's angle and is never upside down.
-- Subtitles: a centred strip at the bottom with a soft shadow and no box; if the film is bilingual, the film's language on top. Hold every cue ≥ max(1.8 s, speech + 0.6 s); every label stays fully in frame for CJK ÷ 4.5 + other ÷ 15 + 1.5 s.
+- 名称：影片脚本中粗细为表现媒介的干净 sans（28–32 像素；我们的示范中的 Noto Sans SC 500）。规格和数字：等宽面（15-22 像素；JetBrains Mono），因此数字对齐并读取为测量值。拉丁运行文本的中性怪诞（Inter）。
+- 标签结构是固定的：重音中的两位数索引、名称、一条规格线。始终以单位书写（mm、MB、×n 表示计数）。标签最多承载一个声音没有说出的事实。
+- 尺寸文本位于一个小黑板上，遵循线条的角度，并且永远不会颠倒。
+- 字幕：底部居中的条带，带有柔和的阴影，无框；如果影片是双语的，则影片的语言位于顶部。保持每个提示 ≥ max(1.8 s, 语音 + 0.6 s);每个标签在 CJK ÷ 4.5 + other ÷ 15 + 1.5 秒内完全保持在框架内。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 24 fps on ones; everything is smooth and deterministic.
-- **Separation**: smooth start, fast middle, long settle (ease-in-out cubed); layers leave top first, 0.15–0.2 s apart; repeated parts (keys, screws) fan out in a wave ordered by distance from a corner.
-- **Closing**: bottom first, quicker (about 1 s per layer), the last layer lands with a real mechanical response (a key travels its stroke and returns; nothing bounces like rubber unless it is rubber).
-- While held apart, layers may float a millimetre or two with offset phases; during macro shots they hold perfectly still.
-- Labels draw in (anchor dot, leader growing, text sliding 10 px) and fade out before the parts move again.
-- Never moves: the floor, the light rig's relation to the camera, the label column's x position.
+- 24 fps；一切都是顺利且确定的。
+- **分离**：平滑启动，快速中间，长稳定（缓入出立方）；各层首先离开顶部，间隔 0.15–0.2 秒；重复的零件（钥匙、螺钉）按距角的距离排列成波浪状散开。
+- **闭幕式**：底部优先，更快（每层约 1 秒），最后一层以真正的机械响应着陆（按键行进并返回；没有什么东西像橡胶那样弹跳，除非它是橡胶）。
+- 当保持分开时，各层可能会浮动一毫米或两毫米，并且相位偏移；在宏镜头期间，它们保持完全静止。
+- 标签绘制（锚点、引线增长、文本滑动 10 像素）并在部件再次移动之前淡出。
+- 永远不会移动：地板、灯骨骼绑定结构与摄影机的关系、标签列的 x 位置。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Orbit while layers separate | the whole, its order of assembly | a reveal; a structure overview |
-| Grazing macro dolly | touch, material, finish | an opening; a texture |
-| Dive between layers | being inside | a hidden component; how it works |
-| Slow push on one still part | the part that matters | a chip, a sensor, a seal |
-| Rise through the stack | one subsystem to the next | a transition between stops |
-| Fast pull back | return, synthesis | a closing; a before/after |
-| High three-quarter drift | scale and precision | sizes, pitch, thickness |
+|层分离时绕轨道运行|整体及其组装顺序|揭示；结构概述|
+|放牧微距小车|触感、材质、表面处理|一个开口；纹理|
+|潜入各层之间|在里面|隐藏组件；它是如何运作的|
+|缓慢推动静止部分|重要的部分|芯片、传感器、密封件|
+|通过堆栈上升|从一个子系统到下一个子系统|停靠点之间的过渡|
+|快速回拉|返回、合成|结束； before/after|
+|高四分之三漂移|规模和精度|尺寸、间距、厚度|
 
-- At key moments the subject fills at least a third of the frame height. Labels live in a column on the free side (shift the projection with a view offset rather than moving the object), subtitles in the bottom 12 %.
-- Transitions are camera moves through the object itself. No cuts to black, no slide transitions, no split screens.
-- The camera path is keyed in the product's own coordinates and interpolated without overshoot (monotone cubic), so a held macro really holds.
+- 在关键时刻，拍摄对象至少占据画面高度的三分之一。标签位于自由端的一列中（通过视图偏移来移动投影而不是移动对象），字幕位于底部 12%。
+- 过渡是通过对象本身的摄影机运动。没有剪切到黑色，没有幻灯片过渡，没有分屏。
+- 摄影机路径键入产品自身的坐标并进行插值而不会出现过冲（单调三次），因此保留的宏确实有效。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- Instruments: tuned mallets (marimba, vibraphone, glockenspiel, glass), a round bass, a short synthetic kick and small dry percussion. Precise and dry outside the object; sustained and airy inside it.
-- Foley is the material: hollow plastic clacks for keycaps or housings, a switch click with a low thock, dry taps for boards, inharmonic rings for small machined metal, a soft thud for the enclosure, airy swooshes for layers lifting and for camera dives, a fine pen hiss when a dimension line draws, a tiny tick per label.
-- Every separation and every landing has its sound, panned to where the part is.
-- Silence: at least two near-silences (room tone only) before the big separations or the turn back; the first sound after each is the most important hit around it.
-- Mix: voice clearly on top (music about 10 dB under it while it speaks), music bus ducked, sub-bass kept lean (20–60 Hz well under the full band), loudness −14 LUFS.
-- Voice: calm, close, unhurried, short sentences; numbers spoken as words, written as digits.
+- 乐器：调音木槌（马林巴琴、电颤琴、钟琴、玻璃琴）、圆形贝司、短合成底鼓和小型干打击乐器。物体外精确、干燥；其内部持续且通风。
+- 拟音是这样的材料：用于键帽或外壳的中空塑料咔嗒声、具有低冲击力的开关咔嗒声、用于电路板的干水龙头、用于小型机加工金属的不和谐环、用于外壳的轻柔撞击声、用于分层提升和用于摄影机潜水的轻快的旋风、绘制尺寸线时发出的细笔嘶嘶声、每个标签上的微小刻度。
+- 每次分离和每次着陆都有其声音，平移到该部分所在的位置。
+- 沉默：在大分离或折返之前至少有两次近乎沉默（仅限室内音调）；每个声音之后的第一个声音是周围最重要的打击。
+- 混音：声音清晰位于顶部（说话时音乐在其下方约 10 dB），音乐总线闪避，低音保持倾斜（20-60 Hz 远低于整个频段），响度 -14 LUFS。
+- 声音：平静、亲密、不紧不慢、短句；数字以文字形式表达，以数字形式书写。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **The wave lift.** Repeated parts rise in a wave across the object. *Fits content like:* battery cells; solar tiles; the drawers of a modular shelf.
-- **Inside the gap.** The camera enters the space between two lifted layers to see a hidden face. *Fits content like:* the back of a logic board; the inside of a drone arm; the underside of a sensor module.
-- **The leader that lands on the part.** A macro label whose line ends on the component. *Fits content like:* a pressure sensor in a shoe; a gasket in a waterproof case; a motor driver.
-- **Dimensions drawn on the thing.** After closing, the real outline gets dimension lines in perspective. *Fits content like:* the thickness of a laptop lid; the footprint of a router; the bore of a valve.
-- **One real motion.** A part performs its true mechanical motion once (a press, a hinge, a latch). *Fits content like:* a camera shutter; a buckle; a folding hinge.
-- **Lights on inside.** Emitters inside the product switch on while it is apart. *Fits content like:* status LEDs; a backlit display; an indicator ring.
+- **波浪升力。** 重复部件以波浪形式上升穿过物体。 *适合以下内容：*电池；太阳能瓦；模块化架子的抽屉。
+- **在间隙内。** 摄影机进入两个提升层之间的空间以看到隐藏的面孔。 *适合以下内容：*逻辑板的背面；无人机手臂的内部；传感器模块的底面。
+- **落在零件上的引线。** 行在元件上结束的宏标签。 *适合以下内容：*鞋中的压力传感器；防水盒中的垫圈；电机驱动器。
+- **在物体上绘制的尺寸。** 关闭后，真实轮廓得到透视尺寸线。 *适合以下内容：*笔记本电脑盖子的厚度；路由器的占地面积；阀门的孔。
+- **一次真实运动。** 零件执行一次真实机械运动（压力机、铰链、闩锁）。 *适合以下内容：* 摄影机快门；带扣；折叠铰链。
+- **内部灯亮。** 产品内部的发射器在分离时打开。 *适合以下内容：*状态 LED；背光显示屏；指示环。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Invented numbers.** A size that no file gives. Fix: measure it from the CAD and say "measured" in the facts file, or leave it out.
-- **Mixed-up revisions.** Plates, cases and boards from different versions of a project. Fix: check hole positions and stack heights across the files (they must coincide), and pin the commit.
-- **Panelised boards.** Layout files may hold a panel with breakaway tabs. Fix: take the outline from a plate or case of the same revision, or flood-fill from an interior point.
-- **Zero-length edges.** Duplicate outline points give zero normals → NaN → black squares after bloom. Fix: clean outlines, repair zero normals, scan frames for one-frame black tiles.
-- **Overshooting camera splines.** Catmull-Rom over unevenly spaced keys flies past a macro stop. Fix: monotone interpolation per component.
-- **Labels too short.** Macro stops last about three seconds. Fix: one fact per label, opened before the camera settles; check with `readcheck`.
-- **Over-bright light sweeps.** Area lights blow plastics to white. Fix: sweeps at a fraction of the key, bloom threshold above the brightest diffuse surface.
-- **Brand marks on parts.** Chip tops and connector shells carry trademarks. Fix: plain package tops; drop logo footprints unless the product is the user's own.
-- **Crushed blacks.** Black plastics against a black ground disappear. Fix: lift them to a dark grey and let the rim light separate them.
+- **发明的数字。** 没有文件给出的尺寸。修复：从 CAD 进行测量并在事实文件中注明“测量”，或者将其省略。
+- **混合修订版。** 来自项目不同版本的板、箱和板。修复：检查文件中的孔位置和堆栈高度（它们必须一致），并固定提交。
+- **面板化板。** 布局文件可能包含带有分离选项卡的面板。修复：从相同版本的板或箱中获取轮廓，或从内部点进行洪水填充。
+- **零长度边。** 重复的轮廓点在绽放后给出零法线 → NaN → 黑色方块。修复：清理轮廓、修复零法线、扫描帧以查找一帧黑​​色瓷砖。
+- **过冲摄影机样条线。** Catmull-Rom 在不均匀间隔的键上飞过宏停止点。修复：每个组件的单调插值。
+- **标签太短。** 宏停止持续约三秒。修复：每个标签一个事实，在摄影机结算之前打开；检查 `readcheck`。
+- **过亮的光线扫过。** 区域灯将塑料吹成白色。修复：在关键点的一小部分处进行扫描，光晕阈值高于最亮的漫反射表面。
+- **零件上有品牌标记。** 芯片顶部和连接器外壳带有商标。修复：普通包装顶部；除非产品是用户自己的，否则不要留下徽标足迹。
+- **压碎的黑色。** 黑色塑料在黑色地面上消失。修复：将它们提升为深灰色，然后让边缘光将它们分开。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-All in `demo/src/` (three.js r170, the library's `core/three/post.js` and `core/lib.js`):
+全部在`demo/src/`（three.js r170，库的`core/three/post.js`和`core/lib.js`）中：
 
-- `parts.js`: `keycapGeometry(w, d, h)` (lofted shell with a spherical dish and a stem), `switchGeometries()`, `loft(rings)`, `shapeFrom(outline, holes, circles)` (KiCad outline to extrusion), `inset`, `hexSpacer`, `screwGeometry`.
-- `pcbtex.js`: `paintPCB(data, side, outline, box, ppm)` paints colour, roughness/metalness and bump maps from extracted layout data.
-- `comps.js`: `buildBackParts(data, group, y, materials)` places package bodies at footprint positions and returns anchors.
-- `overlay.js`: anchored labels (`label`), perspective dimension lines (`dimension`), subtitles, title card, readcheck texts, subtitle width check.
-- `main.js`: layers, explode and gap functions, the camera keys (orbit or eye/target, monotone), lights, `window.EV` for the mixer.
-- `tools/extract_pcb.py`, `kicad_geom.py`, `sexp.py`: read any `.kicad_pcb` (outlines, tracks, zones, pads, silkscreen, footprints; plain Python). `tools/step2mesh.mjs`: STEP to mesh.
+- `parts.js`：`keycapGeometry(w, d, h)`（带有球形盘和茎的放样壳体）、`switchGeometries()`、`loft(rings)`、`shapeFrom(outline, holes, circles)`（KiCad 挤出轮廓）、`inset`、`hexSpacer`、 `screwGeometry`。
+- `pcbtex.js`：`paintPCB(data, side, outline, box, ppm)` 根据提取的布局数据绘制颜色、roughness/metalness 和凹凸贴图。
+- `comps.js`：`buildBackParts(data, group, y, materials)` 将封装体放置在封装位置并返回锚点。
+- `overlay.js`：锚定标签（`label`）、透视尺寸线（`dimension`）、字幕、标题卡、阅读检查文本、字幕宽度检查。
+- `main.js`：图层、爆炸和间隙功能，摄影机键（轨道或 eye/target，单调），灯光，`window.EV` 用于混音器。
+- `tools/extract_pcb.py`、`kicad_geom.py`、`sexp.py`：读取任何 `.kicad_pcb`（轮廓、轨道、区域、焊盘、丝印、足迹；纯 Python）。 `tools/step2mesh.mjs`：网格划分步骤。
 
-**Extra packages and packs**, beyond `setup.sh deps [voice] [music]`: `occt-import-js` (npm, LGPL-2.1, not in the library's package.json) to triangulate STEP files, and the studio HDRI (`sh tools/fetch.sh hdri`). Install the npm package yourself into a private `node_modules` in the project folder (as `tools/fetch_cad.sh` does in a temp folder), never into `$LIB`.
+**Extra 包和包**，超越`setup.sh deps [voice] [music]`：`occt-import-js`（npm，LGPL-2.1，不在库的package.json中）对STEP文件进行三角测量，以及工作室HDRI（`sh tools/fetch.sh hdri`）。将 npm 包自行安装到项目文件夹中的私有 `node_modules` 中（就像 `tools/fetch_cad.sh` 在临时文件夹中所做的那样），而不是安装到 `$LIB` 中。
 
-Minimal example, not in the demo: read a plate file with `extract_pcb.py`, extrude `shapeFrom(outline, cutouts)` 1.5 mm as aluminium (`metalness: 1, roughness: .35`) and orbit it with three `CAM` keys.
+最小的示例，不在示范中：使用 `extract_pcb.py` 读取板文件，将 `shapeFrom(outline, cutouts)` 1.5 毫米挤压为铝 (`metalness: 1, roughness: .35`)，并使用三个 `CAM` 键绕其运行。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-Decided per film: which product and revision, which layers to separate and in what order, how many stops inside and which parts deserve them, the camera route, whether to open from the whole or from a detail, the product's palette and the accent, the voice.
+根据影片决定：哪个产品和版本、要分离哪些层以及按什么顺序、内部有多少个站点以及哪些部分值得它们、摄影机路线、是从整体还是从细节打开、产品的调色板和口音、声音。
 
-- **Three structures**: one orbit with two stops; a "how it works" path following a signal or flow through the layers; two revisions taken apart side by side, each held still before a difference is named.
-- **Three openings**: a part performing its real motion in macro; the closed product turning in silence on the seamless; a single component floating alone before the rest of the product assembles around it.
-- **Three endings**: closed with its dimensions drawn on it; closing into a top view that becomes a technical drawing; apart one last time, frozen, every part labelled like a printable sheet.
+- **三种结构**：一轨两停；遵循信号或流经各层的“工作原理”路径；两个修订版并排分开，在指出差异之前，每个修订版都保持静止。
+- **三个开口**：在宏中执行实际运动的零件；封闭的产品在无缝上默默转动；在产品的其余部分围绕其组装之前，单个组件单独漂浮。
+- **三个结局**：封闭，其尺寸绘制在其上；关闭成为技术图纸的俯视图；最后一次分开，冷冻，每个部分都像一张可打印的纸一样贴上标签。
 
 ---
 
-How our demo was made (story, shots, score, title card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、标题卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

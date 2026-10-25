@@ -1,107 +1,119 @@
-# 1920s Silent Film — Style Prompt
+<a id="1920s-silent-film--style-prompt"></a>
+# 1920s 默片：风格提示词
 
-> An engraved-illustration silent film projected in a picture house: ink line and silver wash, a 4:3 print that flickers and weaves between velvet curtains, intertitles instead of voices, and a cinema pianist who plays every beat.
-> References (grammar only): **Buster Keaton**, *The General* (1926) and *Sherlock Jr.* (1924) — the whole gag in one locked-off wide shot, a deadpan face, a body that does the acting; **Harold Lloyd**, *Safety Last!* (1923) — the near-miss; **Georges Méliès** — the iris and the trick shot; **The Artist** (2011) — how few intertitles a modern audience needs; **1920s photoplay piano cue sheets** — music by mood section, the piano doing the sound effects. Never use the Tramp look (bowler, toothbrush moustache, cane), any real film's gags, or any published melody.
+> 在电影院中投影的雕刻插图无声影片：墨线和银色水彩晕染、在天鹅绒窗帘之间闪烁和编织的 4:3 印刷品、字幕而不是声音，以及演奏每个节拍的电​​影钢琴家。
+> 参考文献（仅语法）：**Buster Keaton**，《将军》（1926 年）和 *小夏洛克*（1924 年）——整个笑料集中在一个锁定的宽镜头中，一张面无表情的脸，一个表演的身体； **Harold Lloyd**，*安全最后！* (1923) — 险些失手； **Georges Méliès**— 虹膜和技巧镜头；**艺术家**(2011) — 现代观众需要的字幕是多么少；**1920s photoplay钢琴提示表** — 音乐按心情部分，钢琴做音效。切勿使用流浪汉造型（圆顶硬礼帽、牙刷胡须、手杖）、任何真实的影片的笑点或任何已发布的旋律。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A one-reel film as it would look *projected*:
-- **A 4:3 print in a gate between theatre curtains**; the sides of the 16:9 frame are the picture house.
-- **An ink drawing with washed greys and hatching**, printed on silver stock that flickers, weaves, scratches and burns at the edges.
-- **Nobody speaks.** Beats are told by **action in wide shots** and by **intertitle cards**.
-- **The only sound is a cinema instrument** (piano, organ) and the projector in the booth.
+单卷轴影片看起来*投影*：
+- **A 4:3 打印在剧院窗帘之间的门上**； 16:9 画面的两侧是图片室。
+- **水墨画，带有水洗灰色和阴影线**，印刷在银纸上，边缘闪烁、编织、划痕和燃烧。
+- **没有人说话。**节拍由**广角镜头中的动作**和**字幕卡** 讲述。
+- **唯一的声音是电影乐器**（钢琴、风琴）和展位里的投影仪。
 
-Not a noir (no hard shadows as mood, no voice-over), not a sepia photo filter on modern animation (the drawing itself is engraved and inked), not a Chaplin pastiche.
+不是黑色电影（没有硬阴影作为情绪，没有画外音），不是现代动画上的棕褐色照片滤镜（绘画本身是雕刻和上墨的），不是卓别林的模仿作品。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Tonal painting + Redraw.** Scenes are painted in grey values only (print densities roughly: ink 0.07, dark cloth 0.15–0.3, mid wood 0.45–0.6, skin 0.8, white linen 0.9–0.95), with soft light gradients and a thin separation line. A **Redraw** pass (WebGL2) inks the whole frame: difference-of-Gaussians contours on the dark side of every edge, luminance posterised into ~5 soft wash steps, and 45° hatching (then crossed) in the darks, re-drawn every two frames like hand-redrawn animation. Real video frames can go through the same pass so footage and drawing share one hand.
-- **Print pass**: silver tone with a sepia amount between ~0.1 and ~0.36, print black ~0.055 and white ~0.93, S-curve, halation on highlights, uneven density, flicker, gate weave with occasional perforation jumps, broken vertical scratches (white = scraped emulsion, dark = dirt on the negative), brown burn creeping from the edges, vignette, two-octave silver grain; then dust, a hair in the gate, a rare blotch.
-- **Frame**: 1440×1080 in the centre of 1920×1080, a rounded aperture with a soft dark rim; velvet drapes at the sides lit by the screen's spill and by footlights. Curtains can part and close.
-- **Figures**: realistic proportions (7.5-head adults, ~5-head children) on a 2.5D rig (joints solved in 3D, projected with a yaw), silent-era make-up (pale skin, dark lids and lips); identity by silhouette marks (a hat, a garment, a tool).
+- **色调绘画+重画。**场景仅以灰度值绘制（打印浓度大致为：墨水0.07，深色布0.15-0.3，中木0.45-0.6，皮肤0.8，白色亚麻0.9-0.95），具有柔和的光线渐变和细分隔线。**重画** 通道 (WebGL2) 为整个帧上墨：每个边缘的暗侧上有高斯差分轮廓，亮度色调分离为约 5 个软水彩晕染步长，以及黑暗中的 45° 阴影线（然后交叉），每两帧重新绘制一次，就像手工重绘动画一样。真实的视频帧可以通过相同的通道，因此素材和绘图共用一只手。
+- **打印通道**：银色色调，棕褐色量在~0.1和~0.36之间，打印黑色~0.055和白色~0.93，S曲线，高光上的光晕，密度不均匀，闪烁，偶尔穿孔跳跃的栅极编织，破损的垂直划痕（白色=刮掉的乳剂，黑色=底片上的污垢），棕色烧伤从底片蔓延边缘、晕影、二八度银纹；然后是灰尘，门上的一根头发，一个罕见的斑点。
+- **框架**：1440×1080位于1920×1080的中心，圆形光圈，带有柔和的深色边缘；两侧的天鹅绒窗帘被屏幕的溢出物和脚灯照亮。窗帘可以分开和关闭。
+- **人物**：2.5D 骨骼绑定结构上的真实比例（7.5头成人，〜5头儿童）（3D解算关节，偏航投影），默片时代化妆（苍白皮肤，深色眼睑和嘴唇）；通过轮廓标记（帽子、衣服、工具）来识别身份。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Monochrome silver**, tinted only by the print: colder and harsher (more damage, less sepia) when things go wrong, warmer and cleaner when the film turns tender. Tint and damage are mood controls, set per section.
-- Values carry everything: dark clothes against pale walls, pale faces against dark interiors; check every shot as a thumbnail.
-- **One colour, at most**: an element drawn into a separate colour mask keeps its hue through the print (still getting grain, flicker, vignette). Use it for the single thing the film is about, or not at all.
-- Period tinting of whole scenes (amber for day interiors, blue for night, rose for romance) is a valid alternative to sepia; one tint per section.
+- **单色银色**，仅通过印刷着色：出现问题时更冷、更粗糙（损坏更多，棕褐色更少），当影片变得柔软时更温暖、更干净。色调和损坏是情绪控制，按部分设置。
+- 价值观承载着一切：深色的衣服搭配苍白的墙壁，苍白的脸庞搭配深色的内饰；检查每个镜头作为缩略图。
+- **最多一种颜色**：绘制到单独颜色蒙版中的元素在整个打印中保持其色调（仍然出现颗粒、闪烁、晕影）。将其用于影片的单一用途，或者根本不使用它。
+- 整个场景的时代色彩（琥珀色代表白天室内，蓝色代表夜晚，玫瑰色代表浪漫）是棕褐色的有效替代品；每个部分一种色调。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **The intertitles are the subtitles**; the `.srt` lists their text. A card holds 2.5–3.75 s (≥ max(1.8 s, reading time + 0.6 s)).
-- A black painted card with a deco border whose ornament follows the emotion: one heavy rule for a shout (the text shakes), a double rule with stepped corners and fans for narration, vines and small flowers for tenderness.
-- Period faces (OFL): a small-caps display serif (e.g. Playfair Display SC) for titles and shouts, an italic old-style serif (e.g. Old Standard TT Italic) for narration and dialogue.
-- A few words per card; three to five cards in a short film. A card never explains what the picture already shows.
+- **字幕为**； `.srt` 列出了它们的文本。一张卡可保存 2.5–3.75 秒（≥ max(1.8 秒，读取时间 + 0.6 秒)）。
+- 一张带有装饰边框的黑漆卡片，其装饰跟随情感：一条沉重的规则用于喊叫（文字颤抖），带有阶梯角和扇子的双重规则用于叙述，藤蔓和小花表示温柔。
+- 时期字体 (OFL)：用于标题和喊叫的小号显示衬线（例如 Playfair Display SC），用于旁白和对话的斜体老式衬线（例如 Old Standard TT Italic）。
+- 每张卡片上有几个单词；简短的影片中包含三到五张牌。卡片永远无法解释图片已经显示的内容。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Hand-cranked sampling**: character and camera motion sampled at 16 fps (18 or more to undercrank a fast scene); flicker, weave, grain and scratches change every output frame (24 fps). That mix makes it look projected rather than merely low-frame-rate.
-- **Speed is an emotion**: undercrank chases and panic (faster motion, faster flicker); return to 16 fps and a calmer print for tender scenes.
-- **Deadpan performance**: the face barely changes; the body acts (crouch before effort, held poses, the two-frame snap of a double take, hands on knees). Objects act too (a wobble before a fall, a ritardando to rest).
-- **Keyframed, eased poses**; only deliberate gags snap.
+- **手动采样**：以 16 fps 采样角色和摄影机运动（18 或更多以降低快速场景）；闪烁、编织、颗粒和划痕会改变每个输出帧 (24 fps)。这种混合使它看起来像是投影的，而不仅仅是低帧速率。
+- **速度是一种情感**：低速追逐和恐慌（更快的运动，更快的闪烁）；返回到 16 fps 并为柔和的场景提供更平静的打印效果。
+- **无表情表演**：脸部几乎没有变化；身体动作（用力前蹲下、保持姿势、双重拍摄的两帧快照、双手放在膝盖上）。物体也会行动（坠落前的摇晃，休息时的缓慢）。
+- **关键帧，缓和姿势**；只有故意的插科打诨。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. The period camera is heavy: most shots are locked. Opening and ending come from the topic.
+是词汇，而不是路线。周期摄影机很重：大多数镜头被锁定。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Locked-off extreme wide | cause and effect seen whole; the wait is the joke | a mechanical gag; a crowd; an elaborate process |
-| Locked full shot | the premise in one frame | a character's routine; a confrontation |
-| Tracking shot with foreground passing | pursuit; momentum | a chase; a race; a delivery against the clock |
-| Iris in / out | attention on one thing; a beginning or end of a thought | an object; a face; a memory |
-| Half-open iris, held | a character sharing a look with the audience | a wink; a secret; complicity |
-| Slow motivated push-in | tenderness; realisation | a kneel; a letter read; a decision |
-| Masked shot (keyhole, binoculars) | point of view; spying | a detective; curiosity; romance |
-| Split screen / double exposure | trickery; dream; two places at once | a phone call; a ghost; a daydream |
+|锁定极宽|因果关系整体可见；等待就是个笑话|机械堵嘴；一群人；一个复杂的过程|
+|锁定完整镜头|一帧中的前提|角色的日常活动；对抗|
+|通过前台传递跟踪镜头|追求；势头|一场追逐；一场比赛；争分夺秒的交货|
+|光圈输入/输出|专注于一件事；一个想法的开始或结束|一个物体；一张脸；一段记忆|
+|半开虹膜，保持|与观众分享表情的角色|眨眼；一个秘密；同谋|
+|缓慢的推动动力|压痛;实现|跪下；读过一封信；一个决定|
+|蒙面镜头（锁孔，双筒望远镜）|观点看法;间谍活动|一名侦探；好奇心;浪漫|
+|分屏/双重曝光|诡计;梦;同时在两个地方|一个电话；鬼魂；一个白日梦|
 
-Framing: wide and medium shots; big close-ups of rigged faces look like mannequins, so keep any close-up small or inside an iris. Transitions: iris, fade to black, straight cuts, the curtain. No dissolves between shots of the same scene, no modern whip pans.
+画框：宽表现媒介和镜头；脸部的大特写看起来就像人体模型，因此请将任何特写保持在较小的范围内或在虹膜内。过渡：虹膜、淡入黑色、直线剪切、幕布。同一场景的镜头之间没有溶解，没有现代鞭盘。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **The instrument is the sound design**, as in a picture house: an upright piano (optionally a reed organ, theatre organ, violin or small ensemble) plays every event. Mickey-mousing vocabulary (options): chromatic creep in the bass (sneaking), grace note (a wink), forearm cluster (a crash), swelling diminished tremolo (a wait), low rumbling tremolo (a storm, a machine), "plink … plonk" (emptiness), diminished sforzando (a shock), rolled chord (a door, a reveal), descending glissando (a fall), low "boing" (a bounce), nervous trill (hesitation), minor second (something breaking).
-- **Photoplay idiom**: stride left hand, music by mood section in the manner of cue sheets (Hurry, Misterioso, Agitato, Tenderly, Maestoso), a theme that returns changed. Original music only.
-- **No foley, no voice.** **The projector is the ambience**: lamp click, motor spin-up, claw-and-motor purr, film flapping on the take-up reel.
-- **Silence**: the music stops and the projector alone remains; it frames a held moment.
-- **Mix**: tame piano hammer transients with light compression before loudness normalisation (−14 LUFS). Grain goes in the picture (mux grain 1).
+- **该乐器是声音设计**，就像在电影院中一样：立式钢琴（可选择簧风琴、剧院风琴、小提琴或小型合奏团）演奏每个事件。米老鼠词汇（选项）：低音中的半音阶蠕动（偷偷摸摸），装饰音（眨眼），前臂簇（崩溃），肿胀减少颤音（等待），低沉隆隆颤音（风暴，机器），“叮当……砰”（空虚），减少斯福赞多（震惊），滚动和弦（门，揭示），下降滑音（坠落），低“boing”（弹跳），紧张的颤音（犹豫），小二度（某物破裂）。
+- **Photoplay成语**：左手迈开，按提示表方式按情绪部分音乐（Hurry、Misterioso、Agitato、Tenderly、Maestoso），返回的主题发生变化。仅原创音乐。
+- **没有拟音，没有声音。** **投影机是氛围**：灯点击，电机旋转，爪和电机发出咕噜声，影片在收纸轴上拍打。
+- **沉默**：音乐停止，只剩下投影仪；它勾画出一个固定的时刻。
+- **混音**：在响度标准化（−14 LUFS）之前通过轻压缩来抑制钢琴锤瞬态。谷物出现在图片中（mux 谷物 1）。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The chain in one take.** A triggers B, B leaves the frame, the audience waits, B returns and hits C. *Fits content like:* a supply chain gone wrong; how a rumour spreads; a Rube Goldberg invention.
-- **The near-miss.** A hand closes exactly where the object was a frame ago. *Fits content like:* catching a bus; a startup missing a deal; a goalkeeper.
-- **The intertitle twist.** A card reframes the next shot in a few words. *Fits content like:* "Meanwhile, in the lab…"; "The machine had other ideas."; a statistic as a punchline.
-- **Undercranked chaos.** Speed and damage rise together. *Fits content like:* rush hour; a kitchen at dinner service; a stock crash.
-- **Iris on the look.** An iris stops half-way so a character can glance at the audience. *Fits content like:* a product winking; a cat that knows; a scientist's secret.
-- **Redrawn footage.** Real video pushed through the ink pass becomes a period drawing. *Fits content like:* a company's archive; a family film; a sports clip.
-- **The echo gesture.** A gesture from the start repeated by someone else with a new meaning. *Fits content like:* a teacher and a pupil; a handover; a tradition.
+- **链条一气呵成。** A触发B，B离开画面，观众等待，B返回并击中C。 *适合以下内容：*供应链出了问题；谣言如何传播；鲁布·戈德堡的发明。
+- **险些错过。** 一只手准确地关闭了对象在一帧前的位置。 *适合以下内容：* 乘公共汽车；一家初创公司错过了一笔交易；守门员。
+- **字幕扭曲。** 一张卡片用几句话重新构建了下一个镜头。 *适合以下内容：*“同时，在实验室……”； “机器有其他想法。”；统计数据作为笑点。
+- **低速混乱。** 速度和伤害一起上升。 *适合以下内容：*高峰时间；提供晚餐服务的厨房；股市崩盘。
+- **外观上的虹膜。** 虹膜停在中途，以便角色可以扫视观众。 *适合以下内容：*产品眨眼；一只知道的猫；科学家的秘密。
+- **重画的镜头。** 真实的视频通过墨路推送成为一幅时期图画。 *适合以下内容：* 公司档案；一个家庭影片；体育剪辑。
+- **回声手势。** 从一开始就被其他人重复的手势，具有新的含义。 *适合以下内容：*老师和学生；交接；一个传统。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Too much content kills a silent film**: a many-step chain at small figure scale is noise in a thumbnail. One legible chain with a pause in the middle beats three busy ones.
-- **Puppet arms**: apply abduction before flexion, let the shoulder rise and swing forward as the arm goes up, slim the torso's shoulder corner on the raised side, hide the arm's contour where it lies over the torso. Raise arms sideways (or turn the figure) so they don't cross the face.
-- **Pose pops**: drive every figure by eased keyframe lists, never by `if` branches.
-- **Floating props**: hold a prop between the palms at the depth between the arms; tie a rolling object's rotation to distance (angle = distance / radius).
-- Brow angles flip with facing direction: check expressions in a crop at final size.
-- An iris must track its target in film coordinates after any camera zoom.
-- A grab must put the hand exactly where the object is at the beat, or it doesn't read.
-- Closed curtains lit only by a dark screen go pure black: add footlights.
-- Heavy grain makes huge files → re-encode with `-tune grain` at a higher CRF.
+- **太多的内容会杀死无声电影**：小数字尺度的多步骤链是缩略图中的噪音。一根中间有停顿的清晰链条胜过三根忙碌的链条。
+- **傀儡手臂**：先外展后屈，随着手臂的上升，让肩部抬起并向前摆动，在抬起的一侧使躯干的肩角变细，隐藏手臂在躯干上方的轮廓。将手臂向侧面举起（或转动人物），这样它们就不会穿过脸部。
+- **摆出流行姿势**：通过缓和的关键帧列表驱动每个人物，而不是通过 `if` 分支。
+- **漂浮道具**：在两臂之间的深度的手掌之间握住一个道具；将滚动物体的旋转与距离联系起来（角度=距离/半径）。
+- 眉毛角度随朝向方向翻转：检查最终尺寸的裁剪中的表情。
+- 在任何摄影机变焦之后，虹膜必须在影片坐标中跟踪其目标。
+- 抓取时必须将手准确地放在物体所在的位置，否则无法读取。
+- 仅由深色屏幕照亮的闭合窗帘会变成纯黑色：添加脚灯。
+- 重颗粒会产生巨大的文件 → 以更高的 CRF 重新编码 `-tune grain`。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/engine/`: `ink.js` (tonal forms, ink line, wash, hatch; `drawShape()` draws any path in this style), `redraw.js` (`Redraw`: tonal painting or real footage → ink drawing, WebGL2), `film.js` (`FilmPost` print pass + `damage()`, stackable on any 2D canvas, with an optional colour mask), `cards.js` (intertitles, deco borders, iris, theatre), `figure.js` + `heads.js` (2.5D rig). `demo/timeline.js` is a cue sheet that drives both picture and score. API table and a minimal example (a one-colour shape through the whole pipeline): [DEMO.md](DEMO.md) "Engine reference".
+在`demo/engine/`中：`ink.js`（色调形式，墨线，水彩晕染，阴影线；`drawShape()`以这种风格绘制任何路径），`redraw.js`（`Redraw`：色调绘画或真实素材→墨迹绘制，WebGL2）， `film.js`（`FilmPost` 打印通行证 + `damage()`，可堆叠在任何 2D 画布上，带有可选颜色遮罩）、`cards.js`（字幕、装饰边框、虹膜、剧院）、`figure.js` + `heads.js`（2.5D） 骨骼绑定结构）。 `demo/timeline.js` 是一个提示表，可驱动图片和配乐。 API 表和一个最小示例（整个制作流程的单色形状）：[DEMO.md](DEMO.md)“引擎参考”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the genre (comedy, melodrama, adventure, newsreel), the characters, the gag or the drama, the cards, the tint plan, the opening and the ending. All far from our demo:
+您可以决定类型（喜剧、情节剧、冒险、新闻片）、角色、笑点或戏剧、卡片、色调计划、开头和结尾。与我们的示范相去甚远：
 
-- Structures: **a newsreel** (a sequence of "reports" with headline cards and a narrator card between them); **a melodrama in three reels** (each reel a tint: amber, blue, rose; a villain card, a rescue); **a trick film** (Méliès-style: one stage, a magician, objects appearing and transforming by substitution cuts).
-- Openings: **mid-chase**, the film already running and scratched, no title yet; **a single intertitle question** before any image; **the projectionist's view**: the beam from the booth, then the screen.
-- Endings: **the film breaks** (the print burns through and the lamp shows white); **a final card that addresses the audience** directly; **fade to black on a locked wide** with the piano holding one chord.
+- 结构：**新闻片**（一系列“报告”，中间有标题卡和旁白卡）； **三卷轴情节剧**（每个卷轴一种色调：琥珀色、蓝色、玫瑰色；一张反派牌、一张救援牌）； **一部特技电影**（梅里爱风格：一个舞台，一个魔术师，物体通过替换剪辑出现和变形）。
+- 开局：**中追**，影片已经运行并刮擦，还没有标题； **任何图像之前的单个字幕问题**； **放映员的视角**：光束来自展位，然后是屏幕。
+- 结局：**影片断裂**（打印烧穿，灯显示白色）； **直接向观众讲话的最终卡片**； **在锁定的宽** 上淡入黑色，钢琴保持一个和弦。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

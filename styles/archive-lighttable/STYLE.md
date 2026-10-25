@@ -1,107 +1,119 @@
-# Archive Light Table — Style Prompt
+<a id="archive-light-table--style-prompt"></a>
+# 档案灯台：风格提示词
 
-> Real archive objects (glass negatives, slides, letters, telegrams, clippings, drawings) lie on a cool, backlit light table. A loupe comes down on one of them, and inside the glass the object comes alive: a negative turns positive, a line of type lights up, a number lifts off the page, a photograph opens into depth. Precise catalogue numbers, dates and readings are pinned to the objects. Clean, modern and quiet, with no vintage filter.
-> References (grammar only): archive documentaries that push into still photographs; visual investigations that annotate real imagery (one line, one reading, one source per screen); product macro films (glass edges, transmitted light). Copy none of their layouts, typefaces, shots or music, and never name them in the film.
+> 真实的档案物品（玻璃底片、幻灯片、信件、电报、剪报、图画）位于凉爽的背光灯台上。放大镜落在其中一个上，玻璃内部的物体变得生动起来：负片变成正片，一行字体亮起，一个数字从页面上升起，一张照片进入深度。精确的目录号、日期和读数都固定在物体上。干净、现代、安静，没有老式过滤器。
+> 参考资料（仅语法）：将档案记录片融入静态照片中；注释真实图像的视觉研究（一行，一次阅读，每个屏幕一个来源）；产品宏影片（玻璃边缘，透射光）。请勿复制其布局、字体、镜头或音乐，并且切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The objects are real**: scans of public-domain or licensed archive items, at their true proportions, with their real damage (broken corners, emulsion edges, folds, pencil marks). Nothing in them is drawn or generated.
-- **Light comes from below**: the table glows a near-white cool grey; film and glass transmit it, paper glows warm at its edges, opaque things read darker than the table.
-- **The loupe is the camera's door**: every dive into an object goes through a loupe that lands on it. The inside of the lens is where the object changes state.
-- **Catalogue truth**: every object carries its real identifier, date and title from its holder; numbers on screen come from the record.
-- **One signal colour** for marks, readings and anchors; everything else is the archive's own greys and paper tones.
+- **这些物品是真实的**：公共领域或许可档案项目的扫描，按其真实比例，及其真实损坏（破损的角落、乳液边缘、折叠、铅笔痕迹）。其中没有任何内容被绘制或生成。
+- **光线来自下方**：桌子发出近白色的冷灰色； 影片和玻璃传输它，纸张边缘发出温暖的光，不透明的东西读起来比桌子更暗。
+- **放大镜是摄影机的门**：每次潜入物体都会经过落在其上的放大镜。镜头内部是物体改变状态的地方。
+- **目录真相**：每个物品都带有其持有者的真实标识符、日期和标题；屏幕上的数字来自记录。
+- **一种信号颜色**用于标记、读数和锚点；其他一切都是档案馆自己的灰色和纸色调。
 
-**Sources and licences.** Open collections with masters and catalogue records: the Library of Congress (files on `tile.loc.gov`; records from its SRU server `lx2.loc.gov:210/lcdb` when loc.gov pages are blocked), Smithsonian Open Access (CC0), the Rijksmuseum (CC0), NARA, Europeana (check each item's rights statement). CC0, public domain and CC BY (credited) are fine. "No known restrictions", CC BY-SA and other terms are not CC0: name the terms to the user and ask. For brand history, ask the user for their scans, archive numbers and right to use them. Never stand a generated image in for an archive object. Keep a `FACTS.md` in the project folder (claim, source URL, quoted wording, or how a figure was derived) and deliver it with the film.
+**来源和许可证。** 包含母版和目录记录的开放馆藏：美国国会风格库（`tile.loc.gov` 上的文件；loc.gov 页面被阻止时来自其 SRU 服务器 `lx2.loc.gov:210/lcdb` 的记录）、史密森尼开放获取 (CC0)、国立博物馆 (CC0)、NARA、欧洲（检查每个项目的权利声明）。 CC0、公共领域和 CC BY（来源）都可以。 “无已知限制”、CC BY-SA 等条款不是 CC0：向用户说出条款并询问。对于品牌历史，请询问用户的扫描件、档案号和使用权。切勿将生成的图像作为存档对象。将 `FACTS.md` 保留在项目文件夹中（声明、源 URL、引用的措辞或数字的导出方式），并将其与影片一起交付。
 
-Not Halftone Dossier (no newsprint dots, no aged-paper grade), not Satellite Briefing (objects on a table, not the ground from orbit), not Data Storytelling (no charts; the numbers live on the objects), not a keynote (no slides or header bars).
+不是半色调档案（没有新闻纸点，没有旧纸等级），不是卫星简报（桌子上的物体，而不是轨道上的地面），不是数据故事（没有图表；数字活在物体上），不是主题演讲（没有幻灯片或标题栏）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **One world, one camera**: every object is a textured quad on the table with a centre, rotation and scale (texture px → world units at true size). The camera is a 2D centre, zoom and roll; the table and every mark go through the same world → screen function.
-- **The light table**: an emissive surface (≈ 0.97 white, slightly cool), soft falloff, diffuser noise, an aluminium frame and a dark desk beyond. It can be switched off (ambient ≈ 0.04) and flicker on.
-- **Glass negatives**: transmission from the scan's positive, `T = 0.035 + 0.9 · (1 − pos)^1.25`, with a warm silver-gelatin tint; the emulsion mask comes from the scan (white margin touching the border = no glass), so broken corners show the table. Dust and scratches are procedural, anchored to the table.
-- **Paper**: backlit, its colour is transmission (paper tone × light); lit lines get darker ink and brighter paper; unlit text can dim to bring one line forward.
-- **The loupe**: inside the lens each pixel maps back to the table through the magnification (≈ 2.5×) with a pincushion term (k ≈ 0.16 at the rim), slightly different per RGB channel for colour fringes. Around it: a black ring with a bevel highlight and a clear acrylic skirt that refracts the table and glows at its foot. Landing and lifting, it scales by about 1.35× and casts a soft shadow.
-- **The photograph space**: after the push the lens stops being a lens. A photo gains depth from a ground-plane nearness map (zero at the horizon, linear in the row below it), cut-out layers for upright subjects and a filled background; a dolly and a lateral shift drive parallax, and a subject layer may drift. Things left on the ground plane lean: centre the dolly between them.
-- **Sampling**: all texture reads inside the branching lens code use explicit gradients (`textureGrad`), otherwise quads that cross a branch pick a wrong mip level and leave dashed seams.
-- **Marks** live on a 2D canvas above the picture: hairlines 1.5–3 px, rings, crop corners, underlines, leaders. Table marks are clipped out under the loupe; marks inside a photograph use its forward mapping, parallax included.
-- **Post**: a light vignette and fine moving grain (heavier inside photographs). No film damage, no sepia, no halftone.
+- **一个世界，一台相机**：每个对象都是桌子上的一个纹理四边形，具有中心、旋转和比例（纹理像素→真实大小的世界单位）。 摄影机是 2D 中心、缩放和滚动；表格和每个标记都经历同一个世界→屏幕功能。
+- **光桌**：发射表面（≈0.97白色，稍冷），柔和的衰减，漫射器噪音，铝制框架和远处的深色桌子。它可以关闭（环境 ≈ 0.04）并闪烁。
+- **玻璃负片**：来自扫描正片`T = 0.035 + 0.9 · (1 − pos)^1.25`的传输，具有温暖的银明胶色调；乳剂遮罩来自扫描（白色边缘接触边框=没有玻璃），因此断角显示表格。灰尘和划痕是程序性的，固定在桌子上。
+- **纸张**：背光，其颜色为透射（纸色调×光）；点亮的线条会出现较深的墨水和较亮的纸张；未点亮的文本可以变暗以向前移动一行。
+- **放大镜**：镜头内部的每个像素通过带有枕形项（边缘处的k ≈ 0.16）的放大倍数（≈ 2.5×）映射回桌面，每个RGB通道的彩色条纹略有不同。它周围：带有斜角高光的黑色环和透明的亚克力裙边，可以折射桌子并在其脚下发光。着陆和升起时，它会缩放约 1.35 倍并投射出柔和的阴影。
+- **拍照空间**：推动后镜头不再是镜头。照片从地平面接近度图（地平线为零，其下方的行呈线性）、直立主体的剪切图层和填充背景中获得深度；移动车和横向移动驱动视差，并且被摄体层可能会漂移。留在地平面上的东西倾斜：将小车置于它们之间。
+- **采样**：分支镜头代码内的所有纹理读取都使用显式渐变（`textureGrad`），否则穿过分支的四边形会选择错误的 mip 级别并留下虚线接缝。
+- **马克** 实时显示在图片上方的 2D 画布上：发际线 1.5–3 像素、环、裁剪角、下划线、引线。表格标记在放大镜下被剪掉；照片内的标记使用其前向映射，包括视差。
+- **邮政**：轻微的晕影和精细的移动颗粒（较重的内部照片）。 No 影片 damage, no sepia, no halftone.
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Neutral ground: the light table (near-white, cool) and the archive's own tones (silver greys, paper tans). Do not regrade the archive into a colour scheme.
-- **One signal colour** (e.g. a signal orange) for marks, readings, anchors and the verdict; never as a fill behind pictures, never for decoration.
-- Text is ink (near-black) on light areas and paper-white on dark caption plates; choose the contrast by the ground, never colour on colour.
-- Positives inside the lens may be gently levelled (black and white points) so a weak scan reads; negatives stay as the glass gives them.
+- 中性地面：浅色桌子（近白色，冷色）和档案馆自己的色调（银灰色，纸棕褐色）。不要将存档重新分级为配色方案。
+- **一种信号颜色**（例如信号橙色）用于标记、读数、锚点和判决；绝不作为图片背后的填充物，绝不用于装饰。
+- 浅色区域的文本为墨水（接近黑色），深色字幕板上的文本为纸白色；选择地面的对比度，而不是颜色上的颜色。
+- 镜头内的正片可能会被轻轻调平（黑点和白点），以便弱扫描读取；底片保留在玻璃上。
 
-Example (our demo): table #F7F9FB, ink #15171A, signal #FF5A1F, caption plates rgba(14,15,17,0.74).
+示例（我们的示范）：表 #F7F9FB，墨水 #15171A，信号 #FF5A1F，字幕板 rgba(14,15,17,0.74)。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Roles**: a monospace for identifiers, dates and readings (e.g. IBM Plex Mono, 17–34 px; readings 74–120 px); a sans for labels in the film's language (e.g. Noto Sans SC or Inter, 21–36 px); a serif only for titles and the one name a photograph carries (60–76 px). OFL, self-hosted, CJK subset when needed.
-- **Labels attach to objects**: an anchor dot and ring, a vertical leader, then the text. A reading sits in a dark caption plate with a small label above and the source (the catalogue number or the original wording) below.
-- **Subtitles** are a caption strip at the bottom centre, on a dark plate with a 3 px signal-coloured edge. If the film is bilingual, the film's language goes on top. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Quote the source when you can**: a crop of the actual line, or the record's wording in quotation marks, beats a paraphrase.
+- **角色**：用​​于标识符、日期和读数的等宽字体（例如 IBM Plex Mono，17–34 像素；读数 74–120 像素）； a sans 用于影片语言的标签（例如 Noto Sans SC 或 Inter，21–36 像素）；仅用于标题和照片上的一个名字的衬线（60-76 像素）。 OFL、自托管、需要时的 CJK 子集。
+- **标签附加到对象**：锚点和环、垂直引线，然后是文本。读数位于黑色标题板中，上方有一个小标签，下方有来源（目录号或原始措辞）。
+- **字幕** 是底部中心的字幕条，位于带有 3 px 信号色边缘的暗板上。如果影片是双语的，则影片的语言位于顶部。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **尽可能引用来源**：实际行的裁剪，或引号中记录的措辞，胜过释义。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 24 fps on ones; every camera parameter on smooth monotone curves through keys (no overshoot, no stepping).
-- The camera glides across the table, slows to let the loupe land, then pushes. Speed lives in the glides and pushes; holds are for reading.
-- The loupe lands with a fast ease-out (≈ 0.4 s), lifts the same way. Lines draw on in 0.3–0.6 s; text wipes in from its leader side; numbers count up and land with the voice.
-- What never moves: the archive's own content outside a photograph space, and the table itself.
+- 24 fps；通过按键平滑单调曲线上的每个摄影机参数（无过冲，无步进）。
+- 摄影机在桌子上滑行，减慢速度让放大镜落地，然后推动。速度在于滑行和推动；保留用于阅读。
+- 放大镜以快速缓出（约 0.4 秒）的方式着陆，以同样的方式抬起。线条在 0.3-0.6 秒内绘制；文本从其引导侧擦除；数字随着声音计数并降落。
+- 永远不会移动的东西：照片空间之外的档案本身的内容以及桌子本身。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| table glide (pan and roll) | surveying; moving to the next piece of evidence | a timeline of documents; a product family; an album |
-| loupe landing + push into the lens | choosing one object; "look closer" | the claim; the key photograph; a signature |
-| inside the lens: tracking along a line | reading | a letter, a ledger line, a caption, a spec |
-| photograph space: dolly + parallax | being there | the event itself; the founding moment; the place |
-| rise out of the lens | stepping back, the evidence noted | a transition; a summary |
-| pull back to the whole table | scale; everything at once | an index, a timeline, a closing |
+|桌子滑动（平移和滚动）|测量；移至下一个证据|文件的时间表；产品系列；一张专辑|
+|放大镜着陆+推入镜头|选择一个对象； “仔细看看”|索赔；关键照片；签名|
+|镜头内部：沿线跟踪|阅读|一封信、一条账本、一个标题、一个规格|
+|摄影空间：移动+视差|在那里|事件本身；创始时刻；这个地方|
+|从镜头中升起|退后一步，证据表明|一个过渡；总结|
+|拉回整个表|规模;全部一起|索引、时间线、结束语|
 
-Framing: at a reading moment the subject fills at least a third of the frame height; readings and labels stay clear of the subtitle strip (bottom 140 px). Transitions are made by the loupe (land, push, rise, lift) and the glide; no cuts, fades to black or page turns between objects.
+取景：在阅读时刻，主题至少占据画面高度的三分之一；读数和标签远离字幕条（底部 140 像素）。通过放大镜（着陆、推动、上升、提升）和滑行进行转换；对象之间没有剪切、淡入黑色或翻页。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Ambience**: the light table's ballast hum (100 Hz and harmonics), starter clicks, room tone. Inside a photograph the hum gives way to that place's air.
-- **Foley**: the loupe on glass (a clack with a high ring), paper sweeps for glides and lit lines, ticks for scales and counters, a pen stroke for a verdict, soft clicks as labels land.
-- **Music**: restrained and small: a felt piano, a few strings, glass or bowed metal for the moments of seeing. Build by subdivision and register, not by drums. Leave real silences before a reveal or a verdict; the first sound after them should be the loupe, the place or the verdict.
-- **Voice**: a calm narrator, short sentences that state what the object says. Music about 10 dB under the voice, ducked while it speaks; −14 LUFS.
+- **环境**：灯台的镇流器嗡嗡声（100 Hz 和谐波）、启动器喀哒声、房间音调。照片中的嗡嗡声被那个地方的空气所取代。
+- **弗利**：玻璃上的放大镜（带有高环的咔哒声），纸扫用于滑动和照亮线条，刻度线用于刻度和计数器，笔划用于判断，标签落地时轻柔的咔哒声。
+- **音乐**：内敛而小巧：一架毛毡钢琴、几根琴弦、玻璃或弓形金属，供观看时使用。通过细分和注册来构建，而不是通过鼓。在揭露或判决之前留下真正的沉默；他们之后的第一个声音应该是放大镜、地点或判决。
+- **嗓音**：冷静的叙述者，用简短的句子陈述对象所说的内容。音乐比声音低约 10 分贝，说话时会降低音量； −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **Negative to positive under the loupe.** A develop front spreads from the lens centre with a thin warm edge, turning the glass negative into its positive only inside the lens. *Fits content like:* a founder's portrait plate; a factory on a lantern slide; an X-ray film becoming the product inside.
-- **The line lights up.** On paper inside the lens one line of type brightens while the rest dims, an underline draws under it, and one word or number lifts out into a reading card. *Fits content like:* a ledger entry; a patent claim; the first order on an invoice.
-- **Into the photograph.** The lens rim grows past the frame while the view inside widens; the photograph gains layered depth and a subject drifts. *Fits content like:* the first shop front; a launch day crowd; an expedition camp.
-- **Measuring on the photograph.** A ruler laid on the ground plane in perspective, with ticks that crowd toward the horizon and a counter that lands on the recorded figure, marked as a schematic when it is one. *Fits content like:* a race distance; a bridge span; a building's height.
-- **Two records, held side by side.** Two caption cards, each with a crop of its source, held still until both are read before one is struck. *Fits content like:* a misprinted date; two versions of a founding story; specification against delivery.
-- **The table becomes the index.** Pull back to the whole table; each object's tag flies into one list with its identifier and its reading. *Fits content like:* a company timeline; a collection catalogue; a product family.
+- **放大镜下的负片到正片。** A 显影前端从镜头中心延伸，具有薄的暖边，仅在镜头内部将玻璃负片变为正片。 *适合以下内容：*创始人的肖像板；灯笼滑梯上的工厂； X射线影片成为里面的产品。
+- **线条亮起。** 在镜头内的纸张上，一行文字变亮，而其余线条变暗，在其下方绘制一条下划线，并且一个单词或数字升入阅读卡中。 *适合以下内容：* 分类帐条目；专利权利要求；发票上的第一笔订单。
+- **进入照片。** 画面超出画面，内部视野变宽；照片获得了层次感的深度，主题也随之漂移。 *适合以下内容：*第一个店面；发射日人群；一个探险营地。
+- **在照片上测量。** 一把尺子以透视方式放在地平面上，刻度线向地平线聚集，计数器落在记录的图形上，当它是一个时标记为示意图。 *适合以下内容：* 比赛距离；桥跨；建筑物的高度。
+- **两张唱片，并排放置。** 两张字幕卡，每张都有其来源的一部分，保持静止，直到在敲击一张之前读取两张字幕卡。 *适合以下内容：*打印错误的日期；创始故事的两个版本；交货时的规格。
+- **该表成为索引。** 拉回全表；每个对象的标签都会飞入一个列表，其中包含其标识符和读数。 *适合以下内容：* 公司时间表；收藏目录；一个产品系列。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Over-magnifying a weak scan**: keep the lens interior under about 1.5 screen px per scan px; choose items by scan size.
-- **The loupe sweeping over empty table**: lay objects close together, land the loupe straight onto the object (drop in, don't slide in), and glide the camera over objects, not gaps.
-- **Shear in the photograph space**: one depth map for a photo with people or machines in it tears them apart. Cut upright subjects into layers, fill behind them, and keep 2.5D moves small enough that the fill is barely seen.
-- **Labels that scroll away**: a label on a moving table leaves the frame before it is read; hold the camera, or fix the caption on screen.
-- **Vintage creep**: no sepia, no halftone, no paper-ageing overlay. The age is in the objects, not the grade.
+- **过度放大弱扫描**：将镜头内部保持在每次扫描像素约1.5屏幕像素以下；按扫描尺寸选择项目。
+- **放大镜扫过空桌子**：将物体靠近放置，将放大镜直接落在物体上（落入，不要滑入），然后将摄影机滑过物体，而不是间隙。
+- **在照片空间中剪切**：一张包含人或机器的照片的深度图将它们撕裂。将直立主体剪切成图层，在其后面进行填充，并保持 2.5D 移动足够小，以便几乎看不到填充。
+- **滚动离开的标签**：移动工作台上的标签在被读取之前离开框架；按住摄影机，或固定屏幕上的标题。
+- **复古蠕变**：无棕褐色，无半色调，无纸张老化覆盖。年龄在于物品，而不在于等级。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-- `demo/film.js`: `IT` (objects: centre, rotation, scale), `toW()` / `toT()` (texture ↔ world), `CAM` keys and `w2s()`, `dive()` (loupe point, land/lift times, lens interior as tracks), `shot(t)`, `int2s()` (photograph → screen for marks), the shader (`lightTable`, `paper`, `negative`, `parallax`, rim and skirt), the overlay (`annot`, `measure`, `compare`, `indexPanel`).
-- `demo/tools/prep.py`: emulsion masks from scans, difference matting of a subject against a smooth sky, ground-only cuts, push-pull fill.
-- Minimal example, not in the demo: put one 35 mm slide (`IT.slide = {c, r, k, size}`), a loupe landing with `dive(toW(IT.slide, p), t0, t1, keysS, keysC)`, and light one line with `band()`.
-- **Extra packages and packs**: none beyond `setup.sh deps voice music` (numpy, scipy, Pillow, soxr are in the core tier). A score in this palette needs sample libraries: `sh tools/fetch.sh instruments salamander` (piano), `vsco2ce` (strings), `vcsl` (glass, bowed vibraphone). Anything else a film needs goes into a private venv or `node_modules` in the project folder, never into `$LIB/.venv`.
+- `demo/film.js`：`IT`（对象：中心、旋转、缩放）、`toW()` / `toT()`（纹理 ↔ 世界）、`CAM` 按键和 `w2s()`、`dive()`（放大镜点、 land/lift 倍，镜头内部作为轨迹）、`shot(t)`、`int2s()`（照片 → 标记屏幕）、着色器（`lightTable`、`paper`、`negative`、`parallax`、边缘和裙边）、覆盖层（`annot`、`measure`、`compare`、`indexPanel`）。
+- `demo/tools/prep.py`：来自扫描的乳剂遮罩、对象与平滑天空的差异遮光、仅地面剪切、推拉填充。
+- 最小的例子，不在示范中：放置一张 35 毫米幻灯片 (`IT.slide = {c, r, k, size}`)、一个带有 `dive(toW(IT.slide, p), t0, t1, keysS, keysC)` 的放大镜，并用 `band()` 点亮一条线。
+- **Extra 包和包**：没有超出 `setup.sh deps voice music` 的包（numpy、scipy、Pillow、soxr 位于核心层）。此调色板中的配乐需要采样音色库：`sh tools/fetch.sh instruments salamander`（钢琴）、`vsco2ce`（弦乐）、`vcsl`（玻璃、弓形电颤琴）。 影片需要的任何其他内容都会进入项目文件夹中的私有 venv 或 `node_modules`，而不是进入 `$LIB/.venv`。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-The agent decides the objects, their order, the story, which native moves to spend and where, the camera path, the subject of the photograph space, and the signal colour.
+代理决定对象、它们的顺序、故事、花费哪个风格特有表现手法以及在哪里、摄影机路径、照片空间的主题以及信号颜色。
 
-- **Three structures**: a company's founding told as five objects in date order, each dive revealing one person; a single photograph explored in three dives (the place, the people, the date on the back); a before/after pair of plans and photographs of one building.
-- **Three openings**: the table switching on in the dark; a loupe already on a plate, rising to reveal the table; a hand-written date on an envelope filling the frame.
-- **Three endings**: the index of everything on the table; the last photograph held in depth with one line of text; the light table switching off, leaving one object glowing.
+- **三个结构**：一家公司的成立以日期顺序讲述为五个物体，每次潜水揭示一个人；一张在三次潜水中探索的照片（地点、人物、背面的日期）； before/after 一对一栋建筑的平面图和照片。
+- **三个开口**：桌子在黑暗中打开；放大镜已经放在盘子上，抬起来可以看到桌子；信封上的手写日期填满了整个框架。
+- **三个结局**：桌子上所有东西的索引；最后一张照片，带有一行文字；灯台关闭，留下一个物体发光。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

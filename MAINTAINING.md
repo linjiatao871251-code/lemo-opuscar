@@ -1,59 +1,66 @@
-# Maintaining the library
+<a id="maintaining-the-library"></a>
+# 维护库
 
-**For the repository owner only.** If you are making a film for a user, go back to [`AGENTS.md`](AGENTS.md): nothing here applies.
+**仅适用于存储库所有者。** 如果您正在为用户制作影片，请返回到 [`AGENTS.md`](AGENTS.md)：此处不适用。
 
-## Add a style
+<a id="add-a-style"></a>
+## 添加风格
 
-Work in `styles/<slug>/` (lowercase letters, digits, hyphens; unique). Start from the templates in `styles/_template/`.
+使用 `styles/<slug>/`（小写字母、数字、连字符；唯一）。从 `styles/_template/` 中的模板开始。
 
-| File | What it holds |
+|文件|它包含什么|
 |---|---|
-| `style.json` | the only metadata source: `slug`, `num`, `en`, `cn`, `category_en`, `category_cn`, `film`, `line`, `line_cn`, `uses`, `frame_sec`, `dur` |
-| `STYLE.md` | the style's invariants only: look, materials and rendering, colour logic, type, motion, camera grammar, sound palette, the medium's pitfalls, native moves, range of variation. No story, arc, beat table, durations or end card. Ends with a link to `DEMO.md` |
-| `DEMO.md` | opens with "One example among many. Don't reuse its story, arc, shots, props or timings." Then the demo's story and structure, shot list, score structure, palette and props, end card (the "LemoLab × Claude Opus 5.5" sign-off lives only here, as the library demo's), build notes and code entry points, and for a scene style the `content.json` fields |
-| `demo/` | the source, a one-command `build.sh` and `CREDITS` are committed, for agents to read. `TREATMENT.md`, `PRODUCTION_LOG.md`, fonts, audio, textures and models stay local (gitignored); `CREDITS` names every asset so it can be found again |
-| `demo/stills/` | stills the docs link (`styleframe.jpg` is the gallery card) |
-| `<slug>.mp4`, `<slug>.srt`, `poster.jpg` | the 1080p film, its subtitles when it is spoken, its poster |
+|`style.json`|唯一的元数据源：`slug`、`num`、`en`、`cn`、`category_en`、`category_cn`、`film`、`line`、 `line_cn`、`uses`、`frame_sec`、`dur`|
+|`STYLE.md`|仅限该风格的固定约束：外观、材料和渲染、颜色逻辑、类型、运动、镜头语言、声音体系、表现媒介的陷阱、风格特有表现手法、变化范围。没有故事、弧线、节拍表、持续时间或片尾卡。以 `DEMO.md` 的链接结束|
+|`DEMO.md`|以“众多例子中的一个为例。不要重复使用它的故事、弧线、镜头、道具或时间安排。”然后是示范的故事和结构、镜头列表、配乐结构、调色板和道具、片尾卡（“LemoLab × Claude Opus 5.5”签名仅存在于此，与库示范一样）、构建注释和代码入口点，以及`content.json` 字段的场景风格|
+|`demo/`|源中，提交了一条命令 `build.sh` 和 `CREDITS`，以供代理读取。 `TREATMENT.md`、`PRODUCTION_LOG.md`、字体、音频、纹理和模型保留本地（gitignored）； `CREDITS` 命名每个资产，以便可以再次找到它|
+|`demo/stills/`|静态文档链接（`styleframe.jpg` 是图库卡）|
+|`<slug>.mp4`、`<slug>.srt`、`poster.jpg`|1080p 影片，其说话时的字幕​​，其海报|
 
-Assets are CC0, CC BY or OFL only, each in `demo/CREDITS`. No watermark on any film. Real people, brands and events appear only in an unofficial fan film; its `DEMO.md` says so.
+资产仅限 CC0、CC BY 或 OFL，均位于 `demo/CREDITS` 中。 影片上没有水印。真实的人物、品牌和事件仅出现在非官方粉丝影片中；它的 `DEMO.md` 是这么说的。
 
-Rules for library demos only (a user's film follows `DIRECTOR.md`, not these):
+仅适用于库示范的规则（用户的影片遵循 `DIRECTOR.md`，而不是这些）：
 
-- **Bilingual subtitles, one line per language.** Each cue has one Chinese line and one English line, never wrapped. When a line is too long, split it into two cues.
-- **Comparisons hold still before the verdict.** When the film compares options (four bridges, three plans), each one is fully in frame and held at least 2.5 s before it is judged, so the viewer can read it.
+- **双语字幕，每种语言各一行。** 每个cue有中文一行和英文一行，不换行。当一行太长时，将其分成两个提示。
+- **比较在判决前保持不变。** 当影片比较选项（四座桥梁，三个平面图）时，每个选项都完全在框架中，并在判断之前保持至少 2.5 秒，以便观看者可以阅读。
 
-## Register
+<a id="register"></a>
+## 登记
 
-1. **Number.** `num` in `style.json` is the next free number after the highest in `styles/*/style.json` (two digits as a string, e.g. `"55"`); it orders the gallery within a category.
-2. `python3 styleboard/build.py` reads every `styles/*/style.json` and rewrites the gallery data, the grids and counts in `README.md` (English) and `README.zh-CN.md` (Chinese), `styles/README.md` and the style list in `AGENTS.md`. Never edit those generated parts by hand. The rest of the two READMEs is written by hand: change both together (e.g. the **New** line). Then `python3 styleboard/build.py --frames <slug>` (the README grid frame at `frame_sec`) and `sh styleboard/frames.sh <slug>` (the gallery card from `demo/stills/styleframe.jpg`).
-3. `sh tools/web_cuts.sh` makes the 720p web cut in `.release/web/` (only for films that are new or changed).
+1. **编号。** `style.json` 中的 `num` 是 `styles/*/style.json` 中最高值之后的下一个空闲号码（两个数字作为字符串，例如 `"55"`）；它对画廊进行排序。
+2. `python3 styleboard/build.py` 读取每个 `styles/*/style.json` 并重写 `README.md`（英文）和 `README.zh-CN.md`（中文）中的图库数据、网格和计数、`styles/README.md` 以及 `AGENTS.md` 中的风格列表。切勿手动编辑这些生成的部分。两个自述文件的其余部分是手写的：一起更改两者（例如 **新的** 行）。然后是 `python3 styleboard/build.py --frames <slug>`（`frame_sec` 的自述文件网格框架）和 `sh styleboard/frames.sh <slug>`（`demo/stills/styleframe.jpg` 的图库卡）。
+3. `sh tools/web_cuts.sh` 在 `.release/web/` 中进行 720p 卷筒纸剪切（仅适用于新的或更改的影片）。
 
-## Gates
+<a id="gates"></a>
+## 检查关卡
 
-- **Human:** approve the style frame before production, and the finished film.
-- **Machine:** `asr_check.py` passes on every line; `mux.sh` reports about −14 LUFS and no warning; `readcheck.mjs` passes; `python3 tools/release.py check --strict <slug>` is clean (it needs the Register steps above). It also stops images under `styles/` that no committed file names (by name or pattern), demo files that nothing reached from the style's entries (STYLE.md, DEMO.md, build.sh, index.html…) loads, and process wording (`PRODUCTION_LOG`, review notes; the list is `PROCESS_WORDS` in the script) in any committed text.
-- **Real events and products:** every fact on screen and in the voice-over comes from an official source, kept in `demo/FACTS.md` (claim, URL, quoted wording); check the final script against it before the last render.
+- **人：**在生产前批准风格定帧，以及成品影片。
+- **机器：** `asr_check.py`在每条线上通过； `mux.sh` 报告大约 -14 LUFS 并且没有警告； `readcheck.mjs` 通过； `python3 tools/release.py check --strict <slug>` 是干净的（它需要上面的注册步骤）。它还会停止 `styles/` 下没有提交文件名（按名称或模式）的图像、从风格条目（STYLE.md、DEMO.md、build.sh、index.html…）加载的示范文件，并处理措辞（`PRODUCTION_LOG`，审阅注释；脚本中的列表为 `PROCESS_WORDS`）在任何提交的文本中。
+- **真实事件和产品：** 屏幕上和画外音中的每个事实均来自官方来源，保存在 `demo/FACTS.md` 中（声明、URL、引用的措辞）；在最后一次渲染之前检查最终脚本。
 
-## Publish
+<a id="publish"></a>
+## 发布
 
-1. `sh tools/publish.sh` uploads the full films (`films` release) and the 720p web cuts (`web` release, used by the gallery), then verifies them. Per-demo resource packs are no longer published.
-2. `git status --short`, `git add -A`, commit.
-3. Push `main`, then watch CI (`gh run watch`): the gallery build fails when a card links a film that isn't on the `web` release.
+1. `sh tools/publish.sh` 上传完整的影片（`films` 版本）和 720p 网络剪辑（`web` 版本，由画廊使用），然后验证它们。 Per-示范资源包不再发布。
+2. `git status --short`、`git add -A`，提交。
+3. 推送 `main`，然后观看 CI (`gh run watch`)：当卡片链接不在 `web` 版本上的影片时，图库构建会失败。
 
-The Pages build (`build.py --site`) also writes the OPUSCAR 98 page (`opuscar98/`, from `styleboard/opuscar98.html`), `llms.txt` and `sitemap.xml`, and puts the canonical link, share-card tags and JSON-LD (upstream repo and author) in each page's head. They pick up the style count by themselves; the film's runtime is `FEATURE['dur']` in `build.py`.
+页面构建 (`build.py --site`) 还写入 OPUSCAR 98 页面（`opuscar98/`，来自 `styleboard/opuscar98.html`）、`llms.txt` 和 `sitemap.xml`，并将规范链接、共享卡标签和 JSON-LD（上游存储库和作者）放入每个页面的头部。他们自己挑选风格数量； 影片的运行时间是 `build.py` 中的 `FEATURE['dur']`。
 
-Don't push before the upload has finished, and don't commit `tools/assets.json` from a failed run.
+在上传完成之前不要推送，并且不要从失败的运行中提交 `tools/assets.json`。
 
-## Revise a style
+<a id="revise-a-style"></a>
+## 修改风格
 
-Back up first (old versions move out of the repository, not into git). Re-render, replace `<slug>.mp4`, and run `sh tools/publish.sh`: it re-uploads the film and refreshes its web cut.
+首先备份（旧版本移出存储库，而不是移入 git）。重新渲染，替换 `<slug>.mp4`，然后运行 ​​`sh tools/publish.sh`：它会重新上传影片并刷新其网页剪切。
 
-## Directory edition
+<a id="directory-edition"></a>
+## 目录版
 
-The Claude plugin directory lists a self-contained build of the plugin, on the orphan branch `directory` (the submission tracks that branch; `main` stays what visitors see). It carries the guides, every `STYLE.md` / `style.json` / `DEMO.md`, `core/` (without the Poly Haven models, which only demo code uses) and its own `README.md`, `SECURITY.md` and `SKILL.md`: nothing is cloned or fetched to tell the agent what to do, there are no demo sources, and Chinese edge-tts narration is used only with the user's consent. The sources of the plugin-only files are in `tools/directory/`; the build and its checks (file sizes, personal info) are in `tools/directory.py`.
+Claude 插件目录列出了孤立分支 `directory` 上插件的独立构建（提交跟踪该分支；`main` 保留访问者看到的内容）。它携带指南，每个 `STYLE.md` / `style.json` / `DEMO.md`、`core/`（不含 Poly Haven 型号，仅示范代码使用）及其自己的 `README.md`、`SECURITY.md` 和`SKILL.md`：不会克隆或获取任何内容来告诉代理要做什么，没有示范源，并且仅在用户同意的情况下才使用中文边缘 tts 旁白。仅插件文件的来源位于 `tools/directory/` 中；构建及其检查（文件大小、个人信息）位于 `tools/directory.py` 中。
 
-After a release on `main` (new styles, changed guides or tools):
+在 `main` 上发布后（新风格、更改的指南或工具）：
 
-1. `git worktree add ../lemo-opuscar-directory directory` (once; reuse it afterwards).
-2. `python3 tools/directory.py <version> --into ../lemo-opuscar-directory`, with a version above the branch's current `.claude-plugin/plugin.json` (new styles or features: 1.1.0; fixes only: 1.0.1). The directory treats each version number as a release, so the script refuses the same or a lower one; `--same-version` is only for fixing a version that was never published. It also stops when a guide changed so much that one of its edits no longer applies: update `EDITS` in the script.
-3. `claude plugin validate ../lemo-opuscar-directory`, then commit there (`Lemo-Opuscar <version>, plugin directory edition`) and push `directory`. The directory scans each push and publishes the new version.
+1. `git worktree add ../lemo-opuscar-directory directory`（一次；之后重复使用）。
+2. `python3 tools/directory.py <version> --into ../lemo-opuscar-directory`，其版本高于分支当前的 `.claude-plugin/plugin.json`（新风格或功能：1.1.0；仅修复：1.0.1）。该目录将每个版本号视为一个版本，因此脚本拒绝相同或较低的版本； `--same-version` 仅用于修复从未发布的版本。当指南更改太多以至于其中一项编辑不再适用时，它也会停止：更新脚本中的 `EDITS`。
+3. `claude plugin validate ../lemo-opuscar-directory`，然后在那里提交（`Lemo-Opuscar <version>, plugin directory edition`）并推送`directory`。该目录扫描每个推送并发布新版本。

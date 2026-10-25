@@ -1,113 +1,125 @@
-# Projection on White Model — Style Prompt
+<a id="projection-on-white-model--style-prompt"></a>
+# 白模投影：风格提示词
 
-> A pure white massing model of a real place stands on a plinth in a dark room, and a projector paints data onto it as light: one layer at a time, falling on the surfaces that face it, spilling a little past the plate. The model never changes; only the light on it does.
-> References (grammar only): projection-mapped planning models in city galleries (the dark room, the soft throw, colour only on white surfaces); macro model photography (shallow focus at rooftop height); editorial data graphics (one figure, one label, one source per layer). Copy none of their layouts, typefaces, colours or music, and never name them in the film.
+> 真实地点的纯白色体量模型矗立在暗室的底座上，投影仪将数据以光的形式绘制在其上：一次一层，落在面向它的表面上，稍微溢出到板之外。模型永远不会改变；只有它上面的灯才可以。
+> 参考资料（仅语法）：城市画廊中的投影映射规划模型（暗室、软投影、仅在白色表面上着色）；微距模型摄影（屋顶高度浅焦）；编辑数据图形（一张图、一个标签、每层一个来源）。请勿复制其布局、字体、颜色或音乐，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The model is real geometry of a real place**: building footprints and heights from open data (§2), extruded at a stated scale (1:1000, 1:2000…). Nothing on the model is invented or "representative", and no generated image ever stands in for the place.
-- **The model is white; data is light.** Colour is never painted into the material: it is projected, so it brightens surfaces that face the projector, fades on walls turned away, stops at the edge of the throw and reaches a little onto the plinth.
-- **Layers arrive one at a time**, each with its own gesture of light (a wash, a pop-on, a rising level, a moving sun), and each answers the question the last one raised.
-- **A physical room**: house lights, a projector that strikes and switches, a plinth, darkness around it. Lights out is where the data starts; lights up is where it ends.
-- **Every number on screen is computed from the same buildings** that are on the table.
+- **该模型是真实地点的真实几何形状**：根据开放数据（§2）计算建筑占地面积和高度，按规定比例（1:1000、1:2000…）进行挤压。模型上的任何内容都不是发明的或“代表性的”，也没有生成的图像可以代替该位置。
+- **型号为白色；数据是光。** 颜色永远不会被绘制到材料中：它被投影，因此它会使面向投影仪的表面变亮，在背对的墙壁上变淡，在投掷边缘停止并到达底座上一点。
+- **层一次到达一个**，每个层都有自己的光姿态（水彩晕染、弹出、上升的水平面、移动的太阳），并且每个层都回答最后一个提出的问题。
+- **A物理房间**：室内灯光、会启动和开关的投影仪、底座、周围的黑暗。熄灯是数据开始的地方；亮起就是结束的地方。
+- **屏幕上的每个数字都是根据表格上的相同建筑物** 计算得出的。
 
-Not Isometric Infographic (no diorama or icons), not Low-poly Island (no invented terrain), not Sci-fi Hologram HUD (no wireframes; light lands on matter), not Satellite Briefing (no imagery), not a laser-scan or point-cloud film (no scan lines; light is projected, not measured).
+不是等距信息图（没有西洋镜或图标），不是低多边形岛（没有发明地形），不是科幻全息图 HUD（没有线框；光落在物质上），不是卫星简报（没有图像），不是激光扫描或点云影片（没有扫描线；光是投射的，而不是测量的）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Model**: matte white (≈ #F3F3F1, roughness ≈ 0.9), crisp edges; water a darker satin inlay in the base plate; bridges low white slabs; a thin base plate on a dark satin plinth.
-- **Light model**: house light = one soft key + a neutral studio environment + AO on close shots. Projection = a term added to the lit surface in the shader: `colour × (0.42 + 0.58 · max(N·toProjector, 0)) × throw mask`, scaled by albedo, reduced on water. Never a texture on the mesh.
-- **Building data is the material.** First look for the place's own open 3D or footprint-with-height data: 3DBAG (Netherlands, CC BY 4.0), PLATEAU (Japan, CC BY 4.0-compatible), city open-data portals (footprints with heights or floors, zoning, plans). Fine: CC0, public domain, CC BY (credited in CREDITS and on screen). OpenStreetMap and Overture (ODbL), CC BY-SA and "no known restrictions" are not CC0: name the terms to the user and ask first. For their own site, ask the user for their data (plan, city model, survey heights).
-- **Layers depend on what exists.** Construction years per building are a Dutch luxury (BAG); elsewhere they are often missing. Substitute what the data does hold and the medium can still project: heights or floor counts, footprint area, zoning or plan status, a boundary, sun and shadow (always computable). Never invent a year layer.
-- **A layer is state, not a picture**: per-building attributes (year, height, rank, flags) live in vertex data; the shader decides each frame what colour the projector gives them.
-- **The sun is a real directional light** with shadow maps, computed from the place's latitude and a real date and time (NOAA/Meeus solar position). The projector can trace what the sun does (a shadow footprint) but never fakes a shadow.
-- **Post**: physical depth of field (stronger on close shots), bloom only above the projection highlights, vignette, light grain in ffmpeg. GTAO only on close shots: on wide grazing views it bands.
-- **Screen space only for the 2D layer**: readouts, pins, measured lines and subtitles go through the camera's world → screen function so they stay pinned to the model.
-- **Keep a FACTS.md in the project folder** (claim, source URL, quoted wording, or the measurement method) and deliver it with the film; every number on screen is computed by a script from the same data as the model.
+- **模型**：哑光白（≈#F3F3F1，粗糙度≈0.9），边缘清晰；在底板上浇上深色缎面镶嵌物；桥梁低矮的白色石板；深色缎面底座上的薄底板。
+- **灯光型号**：室内灯光=一个软键+中性工作室环境+关闭镜头上的AO。投影 = 添加到着色器中光照表面的术语：`colour × (0.42 + 0.58 · max(N·toProjector, 0)) × throw mask`，按反照率缩放，按水减少。网格上永远不会有纹理。
+- **建筑数据是材料。** 首先寻找该地方自己的开放3D或足迹与高度数据：3DBAG（荷兰，CC BY 4.0），PLATEAU（日本，CC BY 4.0兼容），城市开放数据门户（足迹与高度或楼层，分区，平面图）。精细：CC0、公共领域、CC BY（在片尾字幕和屏幕上注明）。 OpenStreetMap 和 Overture (ODbL)、CC BY-SA 和“无已知限制”不是 CC0：向用户说出术语并首先询问。对于他们自己的网站，向用户询问他们的数据（规划、城市模型、测量高度）。
+- **层数取决于存在的内容。** 每栋建筑的施工年限是荷兰奢侈品（BAG）；在其他地方，他们经常失踪。替换数据所保存的内容，表现媒介仍然可以投影：高度或楼层数、占地面积、分区或规划状态、边界、阳光和阴影（始终可计算）。永远不要发明年份层。
+- **A 层是状态，而不是图片**：每个建筑物的属性（年份、高度、等级、标志）存在于顶点数据中；着色器决定投影仪为每个帧提供的颜色。
+- **太阳是带有阴影贴图的真实定向光**，根据该地点的纬度以及真实日期和时间（NOAA/Meeus太阳位置）计算得出。投影仪可以追踪太阳的行为（影子足迹），但绝不会伪造影子。
+- **邮政**：物理景深（在近距离镜头上更强），仅在 ffmpeg 中的投影高光、晕影、光颗粒上方绽放。 GTAO 仅在近距离镜头上：在宽阔的放牧视野中，它呈带状。
+- **屏幕空间仅用于2D层**：读数、引脚、测量线和字幕通过摄影机的世界→屏幕功能，因此它们保持固定到模型。
+- **在项目文件夹中保留FACTS.md**（声明、来源URL、引用的措辞或测量方法）并与影片一起交付；屏幕上的每个数字都是由脚本根据与模型相同的数据计算得出的。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Neutral ground: white model, dark room (near black), dark plinth. Projector black level is a cool near-black on the plate.
-- **One hue family per layer**, chosen for the data: a single categorical accent for "the old/the exception" (e.g. warm amber), a sequential ramp for continuous data (blue → cyan → white for time, violet → magenta → peach for height).
-- **A colour may return** only with the same meaning (the "before" colour reused later marks the same set of buildings).
-- The sun is warm, its shade is a projected deep blue; data colours are put away when the sun arrives.
-- Never colour the model in the house light; never use more than two layer palettes on screen at once.
+- 中性地面：白色模型、暗室（接近黑色）、暗底座。投影仪黑电平在板上呈冷色近乎黑色。
+- **每层一个色调系列**，为数据选择：“old/the 例外”的单一分类重音（例如暖琥珀色），连续数据的顺序渐变（蓝色→青色→白色表示时间，紫色→品红色→桃色表示高度）。
+- **A 颜色可能会返回** 仅具有相同含义（稍后重复使用的“之前”颜色标记同一组建筑物）。
+- 阳光是温暖的，它的阴影投射出深蓝色；当太阳到来时，数据颜色被收起。
+- 切勿在室内灯光下给模型上色；切勿同时在屏幕上使用两个以上的图层调色板。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Roles**: a light grotesk for the figure (Inter Tight 200, 120–140 px), a sans for labels in the film's language (Noto Sans SC 300/500, 20–36 px), a monospace for instruments, years and coordinates (IBM Plex Mono, 18–22 px). OFL, self-hosted, CJK subset.
-- **Readout in the left third**, one per layer: index + layer name, one figure, one label, one source line, a legend bar.
-- **Pins**: a hairline from a roof or a ground point up to a tag on a dark plate (title 26 px + one sub line 20 px).
-- **Identity label** top-left, quiet: place, scale, data sources.
-- **Subtitles** centred at the bottom on a soft dark gradient, no box, measured with the real fonts; if the film is bilingual, the film's language on top, each language on a single line, split into two cues rather than wrap.
-- Nothing below 18 px at 1080p. Hold subtitles ≥ max(1.8 s, speech + 0.6 s); labels ≥ characters ÷ 4.5 + 1.5 s (CJK), letters ÷ 15 + 1.5 s (Latin).
+- **角色**：图形的浅色字体（Inter Tight 200, 120–140 px），影片语言中标签的 sans（Noto Sans SC 300/500, 20–36 px），用于仪器、年份和坐标的等宽字体（IBM Plex Mono，18–22 像素）。 OFL，自托管，CJK 子集。
+- **左第三个读出**，每层一个：索引+层名称，一个图形，一个标签，一个源代码行，一个图例栏。
+- **针脚**：从屋顶或地面点到暗板上标签的发际线（标题 26 像素 + 一条子线 20 像素）。
+- **身份标签**左上，安静：地点、比例、数据源。
+- **字幕**底部居中，柔和的深色渐变，无框，用真实字体测量；如果影片是双语的，则影片的语言位于顶部，每种语言在一行上，分成两个提示而不是换行。
+- 1080p 时任何内容均不低于 18 像素。保持字幕≥ max(1.8 s, 语音 + 0.6 s);标签 ≥ 字符 ÷ 4.5 + 1.5 秒（CJK），字母 ÷ 15 + 1.5 秒（拉丁语）。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- The camera moves continuously and slowly; it changes speed with the layers, never stops dead.
-- **Light is the actor.** Each layer arrives by a soft-edged gesture of light: a wash spreading from the projector axis, buildings switching on one by one with a short flash, a level climbing every facade, the sun's clock running. No hard line sweeping the table.
-- House lights cut fast (a relay, 0.25 s) and return slowly (1 s); the projector strikes with a brief flicker.
-- Counters roll while the light moves and land when it lands; measured lines grow from A to B with ticks.
-- What never moves: the model, the plinth, the pins' anchors on the model.
+- 摄影机运动连续缓慢；它随着层的变化而改变速度，永远不会停止。
+- **Light 是演员。** 每一层都以柔和边缘的光姿态到达：水彩晕染从投影仪轴传播，建筑物在短暂的闪光下逐一打开，每个立面都攀登一个高度，太阳的时钟在运转。没有强硬的立场。
+- 屋内灯光快速切断（继电器，0.25 秒）并缓慢返回（1 秒）；投影仪出现短暂闪烁。
+- 当光线移动时，计数器会滚动；当光线落地时，计数器也会落地；测量的线从 A 延伸到 B，带有刻度线。
+- 永远不会移动的东西：模型、底座、模型上的销钉锚点。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Macro glide at rooftop height, shallow focus | the model is a real object | an opening; a detail that matters |
-| Crane up and back | the whole pattern only seen from above | revealing a hole, a cluster, an edge |
-| Slow orbit with a rise | the city as a whole, layers accumulating | growth over time; comparisons across the model |
-| Boom down to a low angle against black | height, skyline | tall buildings, heights, a single tower |
-| Side-on track along a line | a measured distance on the model | a shadow, a corridor, a route, a view line |
-| Pull back as the house lights return | the data stops; the object remains | an ending; a reset between topics |
+|屋顶高度的微距滑翔，浅焦点|该模型是一个真实的物体|一个开口；重要的细节|
+|起重机向上和向后|整个图案只能从上面看到|揭示一个洞、一个簇、一个边缘|
+|缓慢上升的轨道|城市整体，层层堆积|随着时间的推移而增长；整个模型的比较|
+|低角度拍摄黑色|高度、天际线|高楼、高度、单塔|
+|沿着一条线的侧面轨道|模型上的测量距离|影子、走廊、路线、视线|
+|当房子灯光恢复时拉回来|数据停止；物体仍然存在|一个结局；主题之间的重置|
 
-At key moments the subject fills a third of the frame height; readouts left third, subtitles bottom centre, pins never over the readout. Transitions are light changes on one take (lights out, a layer replacing another, the projector going dark), not cuts, fades or wipes.
+在关键时刻，拍摄对象占据了画面高度的三分之一；读数位于左侧第三位，字幕位于底部中心，别针切勿位于读数上方。过渡是一次拍摄中的光线变化（灯光熄灭、一层替换另一层、投影仪变暗），而不是剪切、淡入淡出或擦除。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **The room**: room tone, the projector fan (hum + filtered air) rising when the lamp strikes, relays for the house lights, a lamp strike (zap + thump), the air of a light wash (sliding band-passed noise).
-- **Light as sound**: mallets and glass for things switching on, bowed vibraphone for held light, a rising mallet line and air riser for a climbing level, one glass note per highlighted building.
-- **Weight**: timpani, gran cassa, gong, low brass for a heavy fact; warm low brass for a turn.
-- **Floor**: contrabass and cellos only as a floor under the chords; no generic piano and strings melody.
-- **Silence**: the projector goes dark and everything stops but a thin fan hum before the turn; a short suck-out before the heaviest hit. The first sound after the silence is the turn.
-- **Mix**: voice about 10 dB over the music; the two designed impacts are the loudest moments; −14 LUFS, true peak ≤ −1.2 dB. Voice: calm, short declarative lines, numbers spoken plainly.
+- **房间**：房间音调，投影仪风扇（嗡嗡声+过滤空气）在灯亮起时上升，房屋灯继电器，灯亮起（扎普+重击），灯光的空气水彩晕染（滑动带通噪声）。
+- **光如声音**：用​​于开关的木槌和玻璃，用于保持灯光的弓形颤音琴，用于攀爬的上升木槌线和空气立管，每个突出显示的建筑物一张玻璃音符。
+- **重量**：定音鼓、大卡萨、锣、低音铜管乐器，适合沉重的事实；温暖低音铜管一圈。
+- **地面**：低音提琴和大提琴仅作为和弦下的地板；没有通用的钢琴和弦乐旋律。
+- **沉默**：投影仪变暗，一切都停止，但转动前有薄风扇嗡嗡声；在最严重的打击之前短暂的吸出。寂静之后的第一声声音就是轮到了。
+- **混音**：声音比音乐高出约10 dB；设计的两次撞击是最响亮的时刻； −14 LUFS，真实峰值 ≤ −1.2 dB。声音：平静、简短的陈述性台词、清楚地说出数字。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **Lights out, lamp on.** House light, a relay, darkness, the lamp strikes, the first layer arrives. *Fits content like:* a site before and after; a district before a plan is shown; any "now look closer".
-- **The hole.** Light only the set that answers a question (built before a date, owned by one party, inside a zone) and let the absence draw the shape. *Fits content like:* a war-damaged centre; a flood plain with no housing; land a company owns; a protected zone.
-- **Layers by time.** Buildings switch on in the decade they were built, each layer faster than the last, a year counter rolling. *Fits content like:* a new town's growth; a campus master plan by phase; a port's expansion; a developer's portfolio by year.
-- **The rising level.** A soft level of light climbs every facade at once; low buildings finish first, the tallest last, the reading rides up with it. *Fits content like:* building heights; sea-level or flood depth; floor counts; a height limit being tested.
-- **The sun clock.** A real sun at a real date sweeps the shadows; the projector then traces one shadow and measures it. *Fits content like:* a new tower's shadow on a park; winter light in a courtyard; solar panels' best roofs; a street's daylight hours.
-- **The pick-out.** One building or set lights alone while the rest stay dark, with a pin. *Fits content like:* a listed building; the plot for sale; the hospital in an evacuation plan.
-- **Lights up.** The data stops, the white model comes back. An ending or a reset.
+- **灯灭，灯亮。** 屋里亮灯，一个继电器，黑暗，灯亮，第一层到。 *适合以下内容：*前后的网站；计划展示前的地区；任何“现在仔细看看”。
+- **洞。** 只点亮回答问题的那一套（在某个日期之前建造，由一方拥有，在一个区域内）并让缺席绘制形状。 *适合以下内容：* 受战争破坏的中心；没有住房的洪泛平原；公司拥有的土地；保护区。
+- **按时间分层。** 建筑物在其建成的十年内开启，每一层都比上一层更快，一年反向滚动。 *适合以下内容：*新城镇的发展；分阶段的校园总体规划；港口的扩建；开发商的投资组合（按年份）。
+- **上升的楼层。** 柔和的光线立刻爬上每个立面；低矮的建筑物先完成，最高的建筑物最后完成，阅读量随之上升。 *适合以下内容：*建筑物高度；海平面或洪水深度；楼层计数；正在测试的高度限制。
+- **太阳钟。** 真实日期的真实太阳扫过阴影；然后投影仪追踪一个阴影并对其进行测量。 *适合以下内容：*公园上新塔的影子；庭院里的冬日灯光；太阳能电池板最好的屋顶；街道的白天时间。
+- **挑选。** 一座建筑物或单独设置灯光，而其余部分则保持黑暗，用一根别针。 *适合以下内容：* 一座受保护的建筑；待售地块；医院正在制定疏散计划。
+- **亮起。** 数据停止，白色模型回来。结束或重置。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Wall normals** wound the wrong way show inside faces (walls look hollow): derive the outward normal from ring orientation. **Shared walls** between parts z-fight: skip the overlap below the lower neighbour.
-- **Warm HDRIs turn the white model beige**: use a neutral studio environment.
-- **GTAO on wide grazing views** produces wedge-shaped dark bands; keep it on close shots only.
-- **A low sun lights facades, not roofs**: shoot from the sunlit side or side-on. **Narrow shadows vanish** among all the others: trace the one that matters (fill + edge) and measure it.
-- **Hairline scan lines read as laser scanning**: give every projection front a wide soft edge or switch buildings individually.
-- **Floating labels**: anchor pins on the tallest part of a building, not on its footprint centroid.
-- **Numbers from mixed sources** (official height vs measured roof): say which on screen ("roof", "measured").
+- **墙壁法线**以错误的方式缠绕显示内面（墙壁看起来是空心的）：从环方向导出向外法线。**共享墙** 零件之间的z-fight：跳过下部邻居下方的重叠。
+- **温暖的HDRI将白色模型变成米色**：使用中性工作室环境。
+- **GTAO 在宽阔的放牧视野中** 产生楔形暗带；仅将其保持在关闭状态镜头。
+- **A 低阳光照射的外墙，而不是屋顶**：从阳光照射的一侧或侧面拍摄。 **窄阴影消失** 在所有其他阴影中：追踪重要的阴影（填充+边缘）并测量它。
+- **H 线扫描线读作激光扫描**：为每个投影前端提供宽软边缘或单独切换建筑物。
+- **浮动标签**：将销钉固定在建筑物的最高部分，而不是其占地面积质心。
+- **来自混合来源的数字**（官方高度与测量的屋顶）：说出屏幕上的哪个（“屋顶”，“测量的”）。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-- `demo/studio.js` — `makeStudio(W, H, model)`: renderer, post, room, the projection material (`projMaterial(kind)` injects `projLight()` / `roofGlow()` into MeshStandardMaterial), the city mesh (`buildCity`: outward normals, shared walls removed), plate, plinth, house light (index 0) and sun (index 1). Uniforms `U` drive every layer.
-- `demo/tools/prep.py` — **3DBAG + BGT only**: it reads 3DBAG fields (`b3_h_70p`, `b3_h_maaiveld`, `oorspronkelijkbouwjaar`) and Dutch RD coordinates (`tools/rd.py`). Another source needs its own adapter that writes the same `model.json`: `{size:[w,d] model metres, b:[[year|0, height_m], …] per building, p:[[building_index, height_model_m, [[[x,z],…] outer ring, …holes]], …] per roof part, decks:[[[x,z],…]]}`, with x east, z south, 1 unit = 1 model metre; plus `water.png` (plate-sized mask) and a `stats.json` with every on-screen number. `tools/sun.py` (solar position, any place and date) and the heightfield shadow are source-independent.
-- `demo/overlay.js` — readout, pin, measured range line, subtitle strip, title card; registers texts for readcheck.
-- **Extra packages and packs**: none beyond `setup.sh deps` (+ `voice`, `music` for narration and score); downloads are plain `curl` from the data portal. Reprojecting another country's data may need pyproj or shapely: the agent installs them itself into a private venv in the project folder, not into `$LIB/.venv`.
-- Minimal example, not in the demo: set `U.uPreC` to a station and `U.uPreR` growing to light everything within walking distance; or put a flood height in `U.uHgtF` with `U.uHgtBand` held at 1 and leave it still.
+- `demo/studio.js` — `makeStudio(W, H, model)`：渲染器、柱子、房间、投影材质（`projMaterial(kind)` 将 `projLight()` / `roofGlow()` 注入 MeshStandardMaterial）、城市网格物体（`buildCity`：向外法线、删除共享墙）、板、底座、房屋灯光（索引 0）和太阳（索引 1）。制服 `U` 驱动每一层。
+- `demo/tools/prep.py` — 仅 **3DBAG + BGT**：读取 3DBAG 字段（`b3_h_70p`、`b3_h_maaiveld`、`oorspronkelijkbouwjaar`）和荷兰 RD 坐标（`tools/rd.py`）。另一个源需要自己的适配器，写入相同的 `model.json`：`{size:[w,d] model metres, b:[[year|0, height_m], …] per building, p:[[building_index, height_model_m, [[[x,z],…] outer ring, …holes]], …] per roof part, decks:[[[x,z],…]]}`，x 东，z 南，1 单位 = 1 模型米；加上 `water.png`（板大小的面罩）和带有每个屏幕编号的 `stats.json`。 `tools/sun.py`（太阳位置、任何地点和日期）和高度场阴影与源无关。
+- `demo/overlay.js` — 读数、引脚、测量范围线、字幕条、标题卡；注册文本以进行读取检查。
+- **额外的包和包**：没有超出`setup.sh deps`（+ `voice`，用于旁白的`music`和配乐）；从数据门户下载的内容是普通的 `curl`。重新投影另一个国家的数据可能需要 pyproj 或 shapely：代理将它们本身安装到项目文件夹中的私有 venv 中，而不是安装到 `$LIB/.venv` 中。
+- 最小的例子，不在示范中：将 `U.uPreC` 设置为一个站点，然后 `U.uPreR` 逐渐照亮步行距离内的所有物体；或者将淹没高度放入 `U.uHgtF` 中，并将 `U.uHgtBand` 保持为 1 并保持静止。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-Decide per film: place and scale, which layers in what order, their colours, the opening, the camera path, the ending, the pace.
+根据影片决定：位置和比例、分层顺序、颜色、开头、摄影机路径、结尾、节奏。
 
-- **Structures**: a question answered layer by layer; a plan versus today (the plan's buildings switching on in a second colour); one building's story told by its neighbours.
-- **Openings**: a macro glide over white roofs; darkness and a single pick-out; the plinth from across the room as the house lights fall.
-- **Endings**: lights up on the white model; one last layer left on alone; the camera rising until the model is an object on a table in a dark room.
+- **结构**：一个逐层回答的问题；计划与今天的对比（计划中的建筑物以第二种颜色亮起）；邻居讲述一栋建筑的故事。
+- **开口**：白色屋顶上的宏观滑行；黑暗和单一的选择；当房子的灯光落下时，从房间对面的底座看到。
+- **结局**：白色模型上亮起；最后一层单独留下； 摄影机不断上升，直到模型成为暗室中桌子上的物体。
 
 ---
 
-How our demo was made (story, shots, score, title card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、标题卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

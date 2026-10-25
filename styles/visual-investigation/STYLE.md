@@ -1,138 +1,152 @@
-# Visual Investigation — Style Prompt
+<a id="visual-investigation--style-prompt"></a>
+# 视觉调查：风格提示词
 
-> A cold investigation desk: footage, photographs, documents, sound and maps from one real event, laid out on one shared clock so they check each other. The clock lives inside the picture — timestamps on the evidence, a playhead on a data chart, a stopwatch over the decisive seconds; frozen frames are circled and magnified; quotes are highlighted on the page they come from; a plan shows where cameras stood and where they looked; what is known and what is not are kept apart; at the end every piece of evidence is pulled into one map.
-> References (grammar only): newspaper visual-investigation videos, forensic-architecture reconstructions, broadcast verification units. Never copy them, quote their names or use their branding.
+> 冷冰冰的调查台：来自一个真实事件的镜头、照片、文件、声音和地图，放在一个共享时钟上，以便他们互相检查。时钟存在于画面之中——证据上的时间戳、数据图表上的播放头、关键时刻的秒表；冻结的帧被圈出并放大；引用在其来源页面上突出显示；平面图显示了摄像机的放置位置和观察位置；已知的和未知的分开；最后，每一项证据都会被纳入一张地图中。
+> 参考资料（仅语法）：报纸视觉调查视频、法医建筑重建、广播验证单位。切勿复制他们、引用他们的名字或使用他们的品牌。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-1. **Sources meet at one moment.** The payoff of every section is two or more independent sources (a frame, a photo, a testimony, a report line, a sound) pointing at the same place or the same second. Cut points are sync points.
-2. **One clock, read in the picture.** Time is carried by large readouts that belong to the layout: the timestamp on each telegram card, a playhead with its clock on the data chart, a `T+xx.x` stopwatch over the decisive seconds, a frozen "32 s". The scale changes with the story (hours → minutes → seconds → days) at section cuts. A permanent timeline band under every shot is **optional and usually wrong**: it eats the bottom of the frame, adds a layer of small labels and goes empty once the story leaves the clock.
-3. **One finding per layout.** Each section says one thing; a heading is part of the layout, never a page header.
-4. **Uncertainty is drawn, not apologised for.** `≈`, *inferred*, *schematic*, dashed boxes. Known and unknown are separate columns. A source that does not cover a stretch simply is not on screen yet (it lights up late in its column); never an empty "no footage" box, which reads as a broken render.
-5. **Restraint.** Real disasters and real people: no slow motion of the catastrophe, no music that tells you to feel; fire only inside evidence frames; casualties as counted dots and numbers.
+1. **来源在同一时刻相遇。** 每个部分的回报都是两个或多个独立的来源（一个框架、一张照片、一个证词、一条报告线、一个声音）指向同一个地方或同一秒。剪切点是同步点。
+2. **一个时钟，在图片中读取。**时间由属于该布局的大型读数来承载：每张电报卡上的时间戳，数据图表上带有时钟的播放头，决定性秒数的`T+xx.x`秒表，冻结的“32秒”。比例尺随着故事情节的变化而变化（小时 → 分钟 → 秒 → 天）。每个镜头下的永久时间线带是**可选的，通常是错误的**：它会吃掉框架的底部，添加一层小标签，一旦故事离开时钟，它就会变空。
+3. **每个布局有一个发现。** 每个部分都说一件事；标题是布局的一部分，而不是页眉。
+4. **绘制了不确定性，不为此道歉。** `≈`，*推断*，*原理图*，虚线框。已知和未知是单独的列。没有覆盖一段延伸的源根本就没有出现在屏幕上（它在其列中较晚亮起）；永远不会有一个空的“无素材”框，它看起来像是一个损坏的渲染。
+5. **克制。** 真实的灾难和真实的人：没有灾难的慢动作，没有告诉你感受的音乐；仅在证据框架内开火；伤亡人数以点和数字表示。
 
-Not **Satellite Briefing** (no orbital imagery, no zoom from space). Not **Archive Light Table** (no paper on glass, loupes or hands: documents are flat evidence frames). Not **Halftone Dossier** (no print texture, stamps or collage). Not a newsreel package (no channel bug, ticker or anchor voice). Not a keynote: no centred title slides, no page turns.
+不是 **卫星简报**（没有轨道图像，没有太空变焦）。不是 **档案灯台**（玻璃、放大镜或手上没有纸：文件是平面证据框架）。不是 **H半色调档案**（无打印纹理、邮票或拼贴）。不是新闻片包（没有频道错误、股票行情或主播声音）。不是主题演讲：没有居中标题幻灯片，没有翻页。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Three kinds of source at least**: moving image (newsreel, CCTV, phone video, launch camera), documents (testimony, memo, telegram/teletype, report page), photographs. Add sound (original commentary, radio, recordings), data (weather, telemetry, counts) and maps whenever they exist.
-- **Documents**: a scanned page is shown as a strip or a page, never re-drawn; only the decisive line is highlighted (red, `multiply`, α ≈ 0.6, wiped left to right). Text that exists only as a transcription (a report, radiograms) is re-typeset by code and labelled as a transcription.
-- **Archival picture pipeline** (pre-1950 film, max ≈ 2.5×): deinterlace (`bwdif=0`) → crop borders → deblock (`hqdn3d=2:2:3:3`) → lanczos upscale → light unsharp (`5:5:0.5`) → greyscale; one grain for everything. Modern footage: ≤ 1.5×. Never colourised or "restored" copies.
-- **One grade** (canvas `ctx.filter`): footage and photos `grayscale(1) contrast(1.22) brightness(0.94)`; paper `grayscale(1) contrast(1.05) brightness(0.86)` (white pages pressed to light grey); maps greyscale, inverted, `brightness(.62)` so they read as dark line drawings.
-- **One grain**: six 256² Gaussian tiles rotated per frame, `overlay`, α 0.22 on footage/photos, 0.10 on paper. Grain only on sources, never on type or lines (`mux.sh … 0`).
-- **Drawn evidence** (plan, side schematic, charts, dot matrix) is thin line work on the panel colour, marked *schematic* when it is not measured.
-- Remove channel bugs, watermarks and the source's own title cards; never generate an image to stand in for a historical one.
+- **至少三种来源**：活动图像（新闻片、CCTV、电话视频、发射摄影机）、文件（证词、备忘录、telegram/teletype、报告页）、照片。添加声音（原始评论、广播、录音）、数据（天气、遥测、计数）和地图（只要存在）。
+- **文件**：扫描的页面显示为条带或页面，从不重新绘制；仅突出显示决定性的行（红色，`multiply`，α ≈ 0.6，从左到右擦拭）。仅作为转录存在的文本（报告、放射线照片）通过代码重新排版并标记为转录。
+- **档案图片管道**（1950年之前的影片，最大≈2.5×）：去隔行（`bwdif=0`）→裁剪边框→去块（`hqdn3d=2:2:3:3`）→lanczos高档→光不锐化(`5:5:0.5`) → 灰度；一粒万事。现代镜头：≤ 1.5×。切勿对副本进行着色或“恢复”。
+- **一级**（画布`ctx.filter`）：素材和照片`grayscale(1) contrast(1.22) brightness(0.94)`；纸张 `grayscale(1) contrast(1.05) brightness(0.86)`（白页压成浅灰色）；映射灰度、倒置、`brightness(.62)`，因此它们读取为暗线图。
+- **一粒**：每帧旋转六个256²高斯瓷砖，`overlay`，footage/photos上的α0.22，纸上的0.10。仅在来源上有纹理，从不在类型或线条上有纹理 (`mux.sh … 0`)。
+- **绘制证据**（平面图、侧面示意图、图表、点阵）是面板颜色上的细线作品，未测量时标记为*示意图*。
+- 删除频道错误、水印和来源自己的标题卡；永远不要生成一个图像来代替历史图像。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-| Use | Value |
+|使用|价值|
 |---|---|
-| Ground | `#0B0C0E` |
-| Panels | `#141619` |
-| Hairlines, frames | `#2E3238` |
-| Text | `#ECEAE4` |
-| Secondary text | `#8B9097` |
-| Ticks, *uncertain* | `#4A4F57` |
-| **The one accent: here / now / match** | `#FF4A2E` |
-| Paper cards (typeset telegrams) | `#E4E0D4` with ink `#1D1D1B` |
+|地面|`#0B0C0E`|
+|面板|`#141619`|
+|发际线、画面|`#2E3238`|
+|文本|`#ECEAE4`|
+|次要文本|`#8B9097`|
+|蜱虫，*不确定*|`#4A4F57`|
+|**单一口音：这里/现在/匹配**|`#FF4A2E`|
+|纸卡（排版电报）|`#E4E0D4` 带墨水 `#1D1D1B`|
 
-Sources are greyscale; red is the only colour and it only ever points: circles, the chart playhead, sync lines, highlights, ✓ badges (a drawn tick in a red box, no words), the zone everything converges on, the *unresolved* column, a strike-through on a wrong claim.
+来源是灰度的；红色是唯一的颜色，它只指向：圆圈、图表播放头、同步线、突出显示、✓ 徽章（红色框中画的勾号，没有文字）、所有内容汇聚的区域、*未解决的*列、错误声明上的删除线。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Chinese headings and findings: Noto Sans SC 700 (30–124 px). Tags, timecodes and ticks: IBM Plex Mono 400/600. Quotes: Source Serif 4 Italic for the original wording, Noto Serif SC 500 for a translation underneath in the secondary colour (only when the subtitles don't already say it). All OFL, subset to the words on screen.
-- **Few words per frame.** Each frame keeps only what this beat needs: the main readout or heading, the quoted original (the highlighted line), and one short source tag per piece of evidence. No eyebrow labels, no English twin under every Chinese label, no archive numbers, dates or "estimate / schematic / not to scale" footnotes unless the beat is about them, nothing the subtitle is saying at the same moment.
-- **Source tag**: a 6×12 chip + `type · source` in mono, ≤ about 12 characters (`照片 · Pasquarella`, `FBI 电传 · 1937-05-08`), sitting just above its frame. Full credits go on the end card, not on the panels.
-- **Lower third**: a red bar + place name (36 px bold) + one mono line (place code).
-- **Subtitles** (bilingual films): at the bottom of the frame (Chinese baseline y ≈ 984, English y ≈ 1022): Chinese 34 px bold over English 23 px, centred, 10 px black shadow; **one line per language**, measured in the page against 1,500 px; a long sentence becomes two cues. Original sound gets subtitles too, marked `【原声】` / `[1937 newsreel]`.
-- **Reading time**: every key text stays still and whole for CJK ÷ 4.5 + other ÷ 15 + 1.5 s (`readcheck.mjs`); verdict and comparison frames hold ≥ 2.5 s with every item fully in frame. Counters (timecode readouts, the stopwatch) and tick labels are exempt.
+- 中文标题和结果：Noto Sans SC 700 (30–124 px)。标签、时间码和刻度：IBM Plex Mono 400/600. 引用：Source Serif 4 Italic 表示原始措辞，Noto Serif SC 500 表示下方辅助颜色的翻译（仅当字幕尚未说明时）。所有 OFL，屏幕上文字的子集。
+- **每帧很少的单词。** 每帧仅保留此节拍所需的内容：主要读数或标题、引用的原文（突出显示的行）以及每件证据的一个短源标签。没有眉毛标签，每个中文标签下都没有英文双胞胎，没有档案编号、日期或“估计/示意图/不按比例”脚注，除非节拍是关于它们的，字幕同时没有说什么。
+- **源标签**：6×12芯片+单声道`type · source`，≤约12个字符（`照片 · Pasquarella`，`FBI 电传 · 1937-05-08`），位于其框架上方。全部积分都在片尾卡上，而不是在面板上。
+- **下三分之一**：红色条+地名（36像素粗体）+一条单线（地名代码）。
+- **字幕**（双语影片)：位于框架底部（中文基线 y ≈ 984，英文 y ≈ 1022）：中文 34 px 粗体，英文 23 px，居中，10 px 黑色阴影；**每种语言一行**，在页面中测量 1,500 像素；一个长句子变成两个提示。原声也有字幕，已标记`【原声】` / `[1937 newsreel]`.
+- **阅读时间**：每个关键文本保持静止且完整，CJK ÷ 4.5 + 其他 ÷ 15 + 1.5 秒（`readcheck.mjs`）；判决和比较帧保持 ≥ 2.5 秒，每个项目都完全在帧中。计数器（时间码读数、秒表）和刻度标签除外。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 30 fps. Elements **cut in** (≤ 0.1 s opacity) with a 3–4-frame white flash, as if pulled from the evidence locker; nothing flies, bounces or scale-pops.
-- Only things that are *drawn* are progressive: circles drawn clockwise in 0.5 s (ease-out cubic), leaders and links 0.4–0.8 s, plans stroke by stroke, highlights wiped, typewriter text for telegrams.
-- Inside a frame: a slow push (≤ 1.9× on a map, ≤ 1.06× on a photo) is allowed; the "camera" itself never moves. Layouts change on cuts.
-- The event clock (chart playhead, stopwatch) eases between keyframes and moves at constant speed inside a timed run (each tick = one real second).
-- Scale changes (minutes → seconds → days) happen on section cuts, carried by the readout changing form (clock → `T+` stopwatch → date), not by a zooming band.
-- Something changes at least every second; holds are for verdicts only.
+- 30 帧/秒。元素 **切入**（≤ 0.1 s 不透明度），带有 3-4 帧白色闪光，就像从证据柜中拉出来一样；没有任何东西会飞翔、弹跳或爆裂。
+- 只有“绘制”的东西才是渐进的：在 0.5 秒内顺时针绘制圆圈（缓出立方体）、引线和链接 0.4-0.8 秒、逐笔画计划、擦除高光、电报的打字机文本。
+- 帧内：允许慢速推送（地图上≤1.9×，照片上≤1.06×）； “摄影机”本身永远不会移动。布局因剪切而变化。
+- 事件时钟（图表播放头、秒表）在关键帧之间缓动，并在定时运行内以恒定速度移动（每个刻度 = 一秒）。
+- 刻度变化（分钟 → 秒 → 天）发生在剖面切割上，由读数变化形式（时钟 → `T+` 秒表 → 日期）承载，而不是由缩放带承载。
+- 至少每一秒都有一些变化；保留仅用于判决。
 
-## 6. Shot & layout grammar
+<a id="6-shot--layout-grammar"></a>
+## 6. 镜头 & 布局语法
 
-- 1920×1080, 60 px margins; content y 60–900, subtitles below it (y ≈ 950–1030). Layouts use the full height; no strip is reserved for a timeline. When a section has no subtitle, centre its content vertically.
-- Panels are hard-edged rectangles with 1 px frames; footage panels keep the source's aspect.
-- Typical layouts: **map → plan** (left) with a reference photo and a footage panel (right); **one big statement + one quote + one wide schematic**; **five-source board** (three evidence frames on top, sound and report below, schematic right, red links converging); **three-column sync grid** (report / photo / video under one stopwatch, each column lighting up when its source begins); **document strip + two-column verdict**; **claim card + fact-check card + dot matrix**; **evidence map** (plan, broken-axis mini timeline, schematic, thumbnails with links).
-- Avoid centred layouts, page headers and slide-like page turns. Transitions are hard cuts on a 0.5 s grid, white flashes and the rewind; no dissolves.
+- 1920×1080，60像素边距；内容 y 60–900，其下方的字幕 (y ≈ 950–1030)。布局使用完整高度；没有为时间线保留条带。当某个部分没有副标题时，将其内容垂直居中。
+- 面板是带有 1 px 框架的硬边矩形；素材面板保留源的外观。
+- 典型布局：**地图 → 计划**（左）带有参考照片和片段面板（右）；**一份大的陈述+一份引言+一张宽幅原理图**; **五源板**（顶部三个证据框架，下面是声音和报告，右侧示意图，红色链接汇聚）；**三列同步网格**（在一个秒表下报告/照片/视频，当其源开始时，每一列都会亮起）；**文件条+两栏判决书**; **索赔卡+事实核查卡+点阵**; **证据图**（平面图、断轴迷你时间线、原理图、带链接的缩略图）。
+- 避免居中布局、页眉和幻灯片式翻页。过渡是 0.5 秒网格上的硬剪切、白色闪光和倒带；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-1. **Bed**: low D held by contrabass and cellos; a filtered room tone about 30 dB under the voice.
-2. **Clockwork**: a pendulum tick every 0.5 s in the minute-scale sections, louder in the waiting minutes; in a timed run one tick per **event** second (accent every 5) — the audible stopwatch.
-3. **Harmony**: a quiet pizzicato ostinato in eighths (Dm – B♭ – Gm – A) under the slow sections; tremolo minor-second clusters for tension; slow sustained chords for the verdict columns; a resolving D minor add9 with vibraphone for the evidence map.
-4. **Foley** (procedural): paper for documents, a shutter for photos, Morse "dits" and keystrokes for telegrams, teletype chatter, a rewind sweep, pencil scratches for plans, one deep thump for the moment of impact — then near-silence.
-5. **Original sound** (archival commentary, radio, recorded sound): band-passed 180 Hz–5.5 kHz with sparse crackle, shown as a waveform with a red play-line and word-by-word lighting; music ducks −12 dB under it. Original sound and score alternate; never both loud.
-6. **Voice**: calm and flat (ours: Kokoro `am_michael`); music ducks about −9 dB under it; −14 LUFS, true peak ≤ −1.2 dB.
+1. **床**：低音D由低音提琴和大提琴演奏；过滤后的室内音调低于语音约 30 分贝。
+2. **发条**：分钟刻度部分每0.5秒摆锤滴答一声，等待分钟时声音更大；在定时运行中，每 **事件** 秒一次（每 5 重音一次）— 声音秒表。
+3. **和谐**：慢速部分下的八分之一安静拨奏固定音调 (Dm – B♭ – Gm – A)；小二度颤音簇表示紧张；判决栏的缓慢持续和弦；带有电颤琴的解析 D 小调 add9 作为证据图。
+4. **弗利**（程序）：用于文件的纸张、用于照片的快门、用于电报的莫尔斯“嘀”和击键、电传打字机的喋喋不休、倒带扫描、用于计划的铅笔划痕、撞击瞬间的一声重击——然后近乎沉默。
+5. **原声**（档案评论、广播、录音）：带通180 Hz–5.5 kHz，带有稀疏的裂纹，显示为带有红色播放线和逐字照明的波形；音乐低于它-12 dB。原声与配乐交替；从来都不会大声。
+6. **嗓音**：平静、平淡（我们的：Kokoro `am_michael`）；音乐在其下方约降低了−9 dB； −14 LUFS，真实峰值 ≤ −1.2 dB。
 
-## 8. Native moves (and how to code them)
+<a id="8-native-moves-and-how-to-code-them"></a>
+## 8. 风格特有表现手法（以及如何编码）
 
-- **Freeze, circle, magnify.** Freeze a frame with a white flash; draw a 2.5 px red circle clockwise; at 60 % a leader and a bold label appear; a ×2 loupe opens beside it, cropped from the same source pixels (never beyond 1 source px per screen px). *Fits:* a licence plate in CCTV; a crack in a weld.
-- **Hard sync point.** Pick one instant every source can recognise (impact, flash, a public clock, a gunshot peak) and align each source to it. A source that starts late just appears late; if the gap matters, say it in the voice or a subtitle. *Fits:* which phone started filming first; when the launch camera lost the vehicle.
-- **Three-column sync grid.** Document / photo / video side by side under one big stopwatch; each column cuts in (white flash) at the moment its source begins, so the grid fills left to right as the clock runs; freeze on the sync point with a red dashed line across the pictures. *Fits:* two dashcams and a police log.
-- **Readouts change scale.** The time readout changes form at each section cut — card timestamps and a chart playhead (minutes), a `T+` stopwatch (seconds), dates (days) — as the story narrows or widens. *Optional:* a bottom timeline band with tracks per source kind, only for a film that stays on one clock throughout; keep it free of labels and drop it when the clock stops. *Fits:* a market crash from the week to the minute.
-- **Rewind cold open.** Start on the decisive frozen frame, slam the other sources into a grid, sweep a sync line, then rewind (footage playing backwards, scan lines) to the start. *Fits:* any reconstruction.
-- **Telegrams on the clock.** Typeset radiograms / messages land at their timestamps with Morse and keystrokes; red dashed leaders tie each card to a pin at its time on the data chart's axis. *Fits:* chat logs, ATC calls, emails.
-- **Data chart with a playhead.** A chart (wind, speed, temperature) across the lower part of the frame with a time axis, event bands (storm, outage) labelled with one word, the message pins, and a red playhead carrying the clock. *Fits:* power-grid load before a blackout.
-- **Map → plan.** A real survey map pushes in to the site, then cuts to a measured plan with the subject's position, a bearing, a distance ring, a camera point and an inferred view cone; the map stays as a locator inset. *Fits:* where each witness stood.
-- **Evidence → model links.** Every circle in every source sends a red dashed link to the same zone of one schematic; ✓ badges land 0.12 s apart with small mallet notes. *Fits:* which room a fire started in.
-- **Then vs. record.** Play a period claim as original sound, then a fact-check card; strike through the wrong words in the claim. *Fits:* a press release against the filed numbers.
-- **Known / unresolved.** Two columns, ticked vs. dashed boxes, every item held whole for ≥ 2.5 s, one source tag for the board. *Fits:* any inquiry's conclusion.
-- **Dots for people.** One dot per person; the dead become red open rings one by one; a single large number. *Fits:* passengers, workers, victims of any event.
-- **Evidence map.** Plan, broken-axis mini timeline, schematic and thumbnails of every source, all links converging; the poster frame. *Fits:* the end of any investigation.
+- **冻结、圈出、放大。** 用白色闪光冻结一帧；顺时针绘制一个 2.5 px 的红色圆圈； 60% 时出现引导符和粗体标签；旁边会打开一个 ×2 放大镜，从相同的源像素中裁剪出来（每个屏幕像素不超过 1 个源像素）。 *适合：*闭路电视中的车牌；焊缝中的裂纹。
+- **Hard 同步点。** 选择每个源可以识别的一个瞬间（冲击、闪光、公共时钟、枪声峰值）并将每个源与其对齐。晚开始的来源只会出现晚；如果差距很重要，请用语音或字幕说出来。 *适合：*哪部手机先开始拍摄；当发射摄影机时丢失了车辆。
+- **三列同步网格。** 文档/照片/视频在一个大秒表下并排；每列在其源开始时切入（白色闪烁），因此随着时钟的运行，网格从左到右填充；冻结在同步点上，并在图片上画一条红色虚线。 *适合：*两个行车记录仪和一本警察日志。
+- **读数会改变比例。** 随着故事的变窄或变宽，时间读数在每个部分都会发生变化——卡片时间戳和图表播放头（分钟）、`T+` 秒表（秒）、日期（天）。 *可选：*底部时间线带，包含每种源类型的轨道，仅适用于始终保持在一个时钟上的影片；保持其上没有标签，并在时钟停止时将其扔掉。 *适合：*每周到每分钟的市场崩盘。
+- **冷开倒带。** 在决定性的冻结帧上开始，将其他源猛击到网格中，扫描同步线，然后倒回（向后播放素材，扫描线）到开始。 *适合：*任何重建。
+- **时钟上的电报。** 排版的放射图/消息通过摩尔斯电码和按键按时间戳降落；红色虚线引线将每张卡在数据图表轴上的某个时间绑定到一个销钉上。 *适合：*聊天记录、ATC 电话、电子邮件。
+- **带有播放头的数据图表。** 框架下部的图表（风、速度、温度），带有时间轴、用一个词标记的事件带（风暴、停电）、消息引脚和带有时钟的红色播放头。 *适合：*停电前的电网负载。
+- **地图→平面图。** 一张真实的测量地图推入现场，然后切割成测量平面图，其中包含主体位置、方位、距离环、摄影机点和推断的视锥；地图保留为定位器插图。 *适合：*每个证人站立的位置。
+- **Evidence → 模型链接。** 每个源中的每个圆圈都会向一个原理图的同一区域发送一个红色虚线链接； ✓ 徽章落地时间隔 0.12 秒，并带有小木槌音符。 *适合：*哪个房间发生火灾。
+- **然后与录音。** 播放一个时期声明作为原始声音，然后播放事实检查卡；删除权利要求中的错误词语。 *适合：*针对已提交数字的新闻稿。
+- **已知/未解决。** 两列，勾选与虚线框，每个项目保持完整≥ 2.5 s，板的一个源标签。 *适合：*任何调查的结论。
+- **人的点。** 每人一点；死者变成红色，一环一环地张开；一个大数字。 *适合：*乘客、工人、任何事件的受害者。
+- **E证据地图。**计划，断轴迷你时间线，每个来源的示意图和缩略图，所有链接汇聚；海报框架。 *适合：*任何调查的结束。
 
-## 9. Pitfalls
+<a id="9-pitfalls"></a>
+## 9. 陷阱
 
-- **Inference passed off as fact.** Camera positions, photo times and offsets need `≈ / inferred / unlocated` on screen and in `FACTS.md`.
-- **Early reports as facts.** The first-night memo and the period newsreel often disagree with the final report; use them as images or as claims to check, never as the source of a number.
-- **Faking a multi-camera event.** With one licensable film, do not borrow clips of unclear origin; cross-check film + photos + documents + sound instead. The structure still holds.
-- **Seams in "continuous" shots.** An exposure jump or splice breaks timing; time durations from the official record and state the alignment error.
-- **Time zones and clocks.** Old reports may use standard time while the place ran on daylight time; pick one and state it once on screen (`18:25:00 EST` on the first readout).
-- **Too much at once.** One layout, one finding; at most five sources on a board, and the subtitle never repeats the heading word for word.
-- **Too many words on screen.** Keep only what this beat needs (main readout or heading, the highlighted original, one short tag per source). Eyebrows, English twins of every label, archive numbers, footnotes and translations the subtitle already gives turn the frame into noise.
-- **Empty placeholder boxes for missing material.** A grey "no footage" or "waiting for photo" panel looks like a render error. Fill the slot with real material, change the layout, or let the source appear when it starts.
-- **A strip reserved at the bottom** (timeline band, caption rail) leaves an empty band when it has nothing to show. Content runs to y ≈ 900; nothing lives in the subtitle area (y ≈ 950–1030).
-- **Catastrophe as spectacle.** No slow motion of fire or impact, no full-screen flames, no sound effects on deaths.
+- **推断被假冒为事实。** 摄影机位置、拍照时间和偏移量需要 `≈ / inferred / unlocated` 在屏幕上和 `FACTS.md` 中。
+- **早期报道为事实。** 第一晚的备忘录和期间新闻片常常与最终报告不一致；将它们用作图像或声明来检查，切勿用作数字来源。
+- **伪造多摄影机事件。** 拥有一个可授权的影片，请勿借用来源不明的剪辑；交叉检查影片 + 照片 + 文档 + 声音。该结构仍然成立。
+- **“连续”接缝镜头.** 曝光跳跃或拼接中断计时；官方记录中的持续时间并说明对准误差。
+- **时区和时钟。** 旧报告可能使用标准时间，而该地点在夏令时运行；选择一个并在屏幕上注明一次（第一个读数上为 `18:25:00 EST`）。
+- **一次太多。** 一次布局，一次发现；板上最多有五个来源，并且副标题从不逐字重复标题。
+- **屏幕上的文字太多。** 仅保留此节拍所需的内容（主要读数或标题、突出显示的原始内容、每个源一个短标签）。眉毛、每个标签的英文双胞胎、档案编号、脚注和字幕已经给出的翻译将框架变成了噪音。
+- **E 缺少材质的空占位符框。** 灰色的“无素材”或“等待照片”面板看起来像是渲染错误。用真实的材料填充插槽，更改布局，或者让源在启动时出现。
+- **A 保留在底部的条**（时间线带、字幕栏）在没有任何内容可显示时会留下一个空带。内容运行至 y ≈ 900；字幕区域（y ≈ 950–1030）中没有任何内容。
+- **灾难如奇观。** 没有火焰或撞击的慢动作，没有全屏火焰，没有死亡音效。
 
-## 10. Footage (素材)
+<a id="10-footage-素材"></a>
+## 10. 素材（素材）
 
-1. **Ask the user first.** Before searching: does the user have their own footage, photos, documents, recordings or data (dashcam files, a report PDF, a spreadsheet of readings)? Their own material always comes first.
-2. **Where to look, and how to judge the licence.** Use `demo/tools/footage.py` (copy it into the project): `search archive|commons|nasa`, `files`, `fetch` (records licence, author and page into `SOURCES.jsonl`), `used`, `md` (writes `SOURCES.md`).
-   - **Internet Archive**: the item's `licenseurl` and collection. The NARA-donated Universal Newsreels (1929–1967) are public domain; other newsreel companies (Hearst, Pathé, Movietone, Paramount) are not, even when uploaders tag them PD. "stock footage" and YouTube-ripped items: skip.
-   - **Wikimedia Commons**: read the file page — author, source, licence template. U.S. federal work (Navy, NASA, NARA, NOAA, USGS) = public domain. PD claims resting on "not renewed" agency photos (AP, INS, Wide World): treat as uncertain and skip. Download big files through the API thumbnail URL (3840 px) to avoid 429s.
-   - **NASA** (images.nasa.gov): public domain except marked third-party items and logos.
-   - **Library of Congress / national archives**: read each item's rights statement; "no known restrictions" is **not** a licence — skip it.
-   - **USGS The National Map**: historical topographic maps as PDF (public domain); render the area you need with `pdftoppm -r 300 -x … -y … -W … -H …`.
-   - **Government reports and FBI files**: U.S. federal works are public domain; quote them, typeset transcriptions, show scans only as evidence frames.
-   - Allowed: public domain, CC0, CC BY (credited in full on the end card). Not allowed: CC BY-SA, "no known restrictions", unclear origin, colourised or restored copies.
-3. **Tell the user before downloading**: what (title, length or pages), from where (page URL) and under which licence; keep `raw/` under about 1.5 GB.
+1. **首先询问用户。** 在搜索之前：用户是否有自己的镜头、照片、文档、录音或数据（行车记录仪文件、PDF 报告、读数电子表格）？他们自己的材料永远是第一位的。
+2. **在哪里看，如何判断licence。** 使用`demo/tools/footage.py`（复制到项目中）：`search archive|commons|nasa`、`files`、`fetch`（将licence、作者和页面记录到`SOURCES.jsonl`)、`used`、`md`（写入 `SOURCES.md`）。
+   - **Internet Archive**：该项目的 `licenseurl` 和收藏。 NARA 捐赠的环球新闻片（1929-1967）属于公共领域；其他新闻片公司（赫斯特、百代、Movietone、派拉蒙）则不然，即使上传者将它们标记为 PD。 “库存素材”和 YouTube 翻录项目：跳过。
+   - **Wikimedia Commons**：阅读文件页面 - 作者、来源、许可证模板。美国联邦工作（海军、NASA、NARA、NOAA、USGS）= 公共领域。 PD 声称基于“未更新”的机构照片（美联社、INS、Wide World）：视为不确定并跳过。通过API缩略图URL（3840像素）下载大文件以避免429。
+   - **NASA** (images.nasa.gov)：公共领域，标记的第三方项目和徽标除外。
+   - **国会风格库/国家档案馆**：阅读每个项目的权利声明； “无已知限制”是 **不是** 许可证 - 跳过它。
+   - **USGS 国家地图**：历史地形图 PDF（公共领域）；使用 `pdftoppm -r 300 -x … -y … -W … -H …` 渲染您需要的区域。
+   - **政府报告和FBI文件**：美国联邦作品属于公共领域；引用它们，排版转录，仅将扫描结果显示为证据框架。
+   - 允许：公共领域、CC0、CC BY（完整记入片尾卡）。不允许：CC BY-SA、“无已知限制”、来源不明、彩色或修复副本。
+3. **在下载前告诉用户**：什么（标题、长度或页数）、来自哪里（页面URL）以及在哪个许可证下；将 `raw/` 保持在约 1.5 GB 以下。
 
-## 11. Facts
+<a id="11-facts"></a>
+## 11. 事实
 
-Keep `FACTS.md` (claim on screen or in the voice → source URL → quoted wording), list every inference separately, and check the final script and subtitles against it before the last render.
+保留`FACTS.md`（在屏幕或语音中声明→源URL→引用的措辞），分别列出每个推论，并在最后渲染之前检查最终的脚本和字幕。
 
-## 12. Engine
+<a id="12-engine"></a>
+## 12. 发动机
 
-- One Canvas-2D page (`demo/index.html`), `window.render(t)` deterministic, `window.TEXTS(t)` for `readcheck.mjs` (key texts only; counters exempt), `window.SUBCHECK()` for the one-line subtitle check; all timing in `demo/film.json` (sections, voice starts, original-sound clips, subtitles), shared by the page, the mix (`demo/audio/mix.py`) and the subtitles (`demo/tools/cues.py`).
-- Reusable parts in the page: `plate()` (grade + grain + flash), `ring()` (circle + leader label), `cover()` (fill a panel without stretching, returns a source → screen map for circles), `badge()`, `wave()` (waveform with play-line), `playhead()` (event-clock keyframes shared with the mix), `planPanel()`, `schematic()` (16-cell side view with zone/flutter), `push()`.
-- Prep: `demo/tools/prep.sh` (ffmpeg + pdftoppm + PIL), `demo/tools/wave.py` (waveform peaks), `demo/tools/fonts.py` (OFL subsets). Checks: `demo/tools/subcheck.mjs`, `demo/tools/final_asr.py` (speech check on the finished film, per line).
+- 一张Canvas-2D页面（`demo/index.html`），`window.render(t)`确定性，`window.TEXTS(t)`用于`readcheck.mjs`（仅限关键文本；计数器除外），`window.SUBCHECK()`用于单行字幕检查；所有时间均在 `demo/film.json` 中（部分、语音开始、原声剪辑、字幕），由页面、混音 (`demo/audio/mix.py`) 和字幕 (`demo/tools/cues.py`) 共享。
+- 页面中可重复使用的部分：`plate()`（等级+颗粒+闪光），`ring()`（圆圈+引导标签），`cover()`（填充面板而不拉伸，返回圆圈的源→屏幕图），`badge()`，`wave()`（带播放线的波形）， `playhead()`（与混音共享的事件时钟关键帧）、`planPanel()`、`schematic()`（与 zone/flutter 的 16 单元侧视图）、`push()`。
+- 准备：`demo/tools/prep.sh`（ffmpeg + pdftoppm + PIL）、`demo/tools/wave.py`（波形峰值）、`demo/tools/fonts.py`（OFL 子集）。检查：`demo/tools/subcheck.mjs`、`demo/tools/final_asr.py`（对完成的影片进行语音检查，每行）。
 
-## 13. Variation space
+<a id="13-variation-space"></a>
+## 13. 变异空间
 
-The agent decides per film: the event, the sources, the sync point, which time scales the clock passes through, the layouts, the opening and the ending.
+代理根据影片决定：事件、源、同步点、时钟经过的时间尺度、布局、开头和结尾。
 
-- **Three structures:** a cold open on the decisive frame, then rewind and rebuild; one question ("where did it start?") answered source by source; a strict clock (T−10 min → T+1 h) with findings dropping in where they happen.
-- **Three sync points:** an impact or flash frame; a sound peak heard in several recordings; a public clock or broadcast time signal.
-- **Three endings:** the evidence map; the known/unresolved board left on screen; back to the opening frame, now fully annotated.
-- **Other subjects:** a traffic collision (dashcams, CCTV, police report), a protest (phone videos, photos, statements), a disputed call in sport (camera angles, rulebook), a launch failure (tracking cameras, telemetry, accident report).
+- **三种结构：**冷开就决定帧，然后倒带并重建；一个问题（“它从哪里开始？”）逐条回答；严格的时钟（T−10 分钟 → T+1 小时），发现的结果会落在发生的地方。
+- **三个同步点：**冲击或闪光帧；在多个录音中听到的声音峰值；公共时钟或广播时间信号。
+- **三个结局：**证据图； known/unresolved 板留在屏幕上；回到开头的框架，现在已完全注释。
+- **其他科目：** 交通事故（行车记录仪、闭路电视、警方报告）、抗议（电话视频、照片、声明）、体育比赛中的争议电话（摄影机角度、规则手册）、发射失败（跟踪摄像机、遥测、事故报告）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

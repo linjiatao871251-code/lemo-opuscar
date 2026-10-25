@@ -1,21 +1,24 @@
-# Stained Glass — Style Prompt
+<a id="stained-glass--style-prompt"></a>
+# 彩色玻璃窗：风格提示词
 
-> A medieval stained-glass window seen from inside a dark stone hall, alive only where the sun touches it: light is the clock, the camera and the story.
-> References (grammar only): the window prologue of *Beauty and the Beast* (1991) (chapters pane by pane, a storyteller's pace); the glass knight of *Young Sherlock Holmes* (1985) (glass that cracks and recombines piece by piece); 12th–13th-century Chartres glass (colour logic, grisaille, leading). Copy none of their characters, compositions, subjects or music.
+> 从黑暗的石头大厅内看到的中世纪彩色玻璃窗，只有在阳光照射到的地方才充满活力：光就是时钟、摄影机和故事。
+> 参考资料（仅语法）：《美女与野兽》（1991）的窗口序言（章节逐格，讲故事的节奏）； 《少年夏洛克·福尔摩斯》（1985）中的玻璃骑士（一块一块破裂又重组的玻璃）； 12 至 13 世纪沙特尔玻璃（色彩逻辑、纯灰色、领先）。请勿复制他们的角色、作品、主题或音乐。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **Cut pieces of coloured glass in dark lead cames**, faces and folds **painted in brown grisaille**.
-- Glass has no light of its own: it **glows only when the sun is behind it** and throws a soft coloured copy onto the stone floor; unlit, it is dark and milky.
-- Figures move **piece by piece**, rigid and stepped.
-- The room is always there: stone, a splayed embrasure, iron saddle bars, a floor that catches light.
-- **Secular**: no crosses, saints, halos or other religious imagery; borrow the craft, not the subjects.
+- **用深色铅制成的彩色玻璃片**，表面和折痕**涂成棕色灰色画**。
+- 玻璃本身没有光：它**仅当太阳在其后面时才会发光**然后将柔和的彩色副本扔到石头地板上；没有点燃，它是黑暗的和乳白色的。
+- 人物**一块一块地移动**，刚性且呈阶梯状。
+- 房间总是在那里：石头、八字形的射孔、铁鞍杆、光线充足的地板。
+- **世俗**：无十字架、圣人、光环或其他宗教图像；借的是技艺，而不是科目。
 
-Not vector art with black outlines, not a kaleidoscope or Voronoi filter, not Tiffany Art Nouveau, not mosaic (mosaic reflects; glass transmits).
+不是带有黑色轮廓的矢量艺术，不是万花筒或沃罗诺伊滤镜，不是蒂芙尼新艺术风格，不是马赛克（马赛克反射；玻璃透射）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-One formula for everything (a WebGL compositor), so every element sits in the same light:
+一切皆有一个公式（WebGL 合成器），因此每个元素都处于相同的位置：
 
 ```
 glass   = tonemap( backlight(x,y,time) × transmittance × glass texture ) + weathering haze × room light
@@ -24,98 +27,107 @@ floor   = flagstones × (ambient + projected colour-patch map, blurred + halo)  
 + additive light shafts with dust · bloom (bright glass eats into the lead: the "irradiation" effect)
 ```
 
-- **Hue-preserving tone mapping**: per-channel `1-exp(-x)` turns cobalt pastel; blend to per-channel only at the very top so a sun disc burns white while blue stays jewel blue.
-- **Unlit panes**: weak sky light + room-lit weathering haze, figures ghostly but readable. **Lit panes**: backlight ~2–3×, a soft, slightly skewed moving band edge.
-- **Pieces**: smooth Catmull-Rom cuts (no deep concave corners). **Every piece is textured** (`multiply` in its clip): streaks at a per-piece angle, hue drift (±10 %), darker aged edges by the lead, ±9 % thickness variation. The shader adds seed bubbles, scratches and thickness clouds in world space; fade small features below ~0.6× zoom or they sparkle.
-- **Lead**: near-black, one planar network, thinner on small pieces, round joins, faint grey flange, solder blobs; only where colours meet (one colour = one piece).
-- **Grisaille**: tapered trace lines in translucent dark brown; **matting** (stippled wash, graded shade, soft band inside the lead); **scraped highlights** (a thin stroke beside each fold in the piece's own colour: the only highlight transmitted light allows). Patterns (mail, scales, plates) are grisaille arcs and bands.
-- **Faces**: almond eyes, heavy upper lid, big pupils, brow flowing into the nose. **Expression lives in brows and mouth**; change it by swapping the face piece, never morphing.
-- **Backgrounds**: hand-cut **lozenge quarries** (jittered lattice, shared vertices, a painted motif each); borders of a coloured band with pearls and a white fillet with a running vine.
-- **Room**: warm grey ashlar, a lighter embrasure, mullions; floor of **large irregular flagstones**, never the wall's running bond.
-- **Floor projection**: blurred, ~20 % desaturated, modulated by the stone, haloed, mirrored (the window's top lands farthest into the room). **Shafts**: additive with dust, near 0 at the window, peaking ~40 % down.
+- **H保留色调映射**：每通道`1-exp(-x)`变成钴粉彩；仅在最顶部混合到每个通道，因此太阳圆盘呈白色，而蓝色则保持宝石蓝色。
+- **不发光的玻璃**：微弱的天空光+室内照明的风化薄雾，数字幽灵般但可读。 **Lit 窗格**：背光~2–3×，柔和、略微倾斜的移动带边缘。
+- **件**：平滑的 Catmull-Rom 切割（无深凹角）。 **每件都有纹理**（夹子中的`multiply`）：每件角度的条纹，色调漂移（±10％），铅造成的较暗的老化边缘，±9％的厚度变化。着色器在世界空间中添加种子气泡、划痕和厚度云；低于 ~0.6 倍变焦的小特征会褪色或闪闪发光。
+- **带领**：近黑色，一个平面网络，小片较薄，圆形接缝，淡灰色凸缘，焊点；仅在颜色相遇的地方（一种颜色 = 一件）。
+- **灰色画**：半透明深棕色锥形痕迹线； **垫子**（点画水彩晕染，渐变色，引线内有软带）； **刮掉的高光**（在作品本身颜色的每个折叠旁边有一个细笔触：唯一的透射光允许的高光）。图案（邮件、鳞片、盘子）是纯灰色画的弧线和带状。
+- **面孔**：杏仁眼，上眼睑沉重，瞳孔大，眉毛流进鼻子。 **表情住在眉毛和嘴里**；通过更换脸部来改变它，永远不会变形。
+- **背景**：手工切割**菱形采石场**（抖动晶格，共享顶点，每个绘制图案）；镶有珍珠的彩色带子和带有运行藤蔓的白色圆角的边框。
+- **房间**：暖灰色方石、较浅的射孔、竖框；地板采用**大块不规则石板**，绝不与墙体粘连。
+- **地板投影**：模糊，约20％去饱和，由石头调制，光晕，镜像（窗户的顶部最远进入房间）。 **轴**：含有灰尘的添加剂，窗口处接近 0，峰值下降约 40%。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Two hues **carry the picture** (one deep, one hot); three or four more only as **small touches**. Example (Chartres logic): cobalt ground, ruby, touches of gold, green, murrey.
-- Greenish white glass sparingly (faces, fillets, sky). **Flesh darker than you think**, or backlit faces burn white.
-- A story light (candle, lamp, screen) may take a colour no glass uses, so it reads as a source.
-- **The sun's colour is the clock**: blue-white dawn, near-white brightest noon, gold afternoon, deep orange dusk (raise intensity rather than redness), weak blue moonlight. Patch length follows sun height.
-- Stone and lead take colour only from spilled or projected light.
+- 两种色调**带图**（一深一热）；三四只如**，小触及**。示例（沙特尔逻辑）：钴色、红宝石、金色、绿色、墨里色。
+- 少量绿白色玻璃（表面、圆角、天空）。 **肤色比你想象的更黑**，或者背光脸烧白。
+- 故事灯（蜡烛、灯、屏幕）可能采用玻璃不使用的颜色，因此它读取为光源。
+- **太阳的颜色是时钟**：蓝白色的黎明，近白色的最亮正午，金色的午后，深橙色的黄昏（提高强度而不是红色），微弱的蓝色月光。斑块长度取决于太阳高度。
+- 石头和铅只能从溢出或投射的光中获取颜色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Subtitles**: a parchment **banderole** near the bottom (curled ends, gentle sag, thin rule), IM Fell English ~44 px in dark ink. It unfurls from the centre; text fades in only once it is ≥ 75 % open; pad the ribbon well past the text. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Titles**: incised Roman capitals (Cinzel 600) in the stone, dark cut, light lower lip, gilding, revealed by a moving band of light; small lines ≥ 30 px on screen. In the glass, text only as grisaille on a white-glass scroll.
+- **字幕**：靠近底部的羊皮纸**班德罗勒**（卷曲末端，轻微下垂，细规则），IM Fell English ~44 px，深色墨水。它从中心展开；仅当打开 ≥ 75% 时，文本才会淡入；将丝带垫到文字上方。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **标题**：石材上雕刻的罗马大写字母（Cinzel 600），深色切割，浅色下唇，镀金，由移动的光带显示；屏幕上 ≥ 30 px 的小线条。在玻璃中，文字仅以白色玻璃卷轴上的纯灰色画形式出现。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Figures step at 8 fps**; light, camera, shafts and dust move on ones (24 fps): stepped light reads as flicker.
-- Rigid pieces on 2D FK (`setTransform(base · T(part))`, free draw order); long bodies are spine chains of banded pieces.
-- **Freeze rule**: a pane's figures use `min(t, t_lightLeft)`. Actions land on the beat.
-- **Crack**: jagged lines race from the impact in ~¼ s, bright with light, a short white flash and a 2-frame shake.
-- **Re-leading**: piece groups slide one beat each with a small outward bump along the lead, each ending in a weld spark; cracks become mending leads.
-- Glass never bends or morphs; things appear by being lit, not faded in.
+- **图形步长为 8 fps**；光，摄影机，轴和灰尘在其上移动（24 fps）：阶梯光读取为闪烁。
+- 2D FK 上的刚性件（`setTransform(base · T(part))`，自由抽签顺序）；长身体是带状碎片的脊柱链。
+- **冻结规则**：窗格的数字使用`min(t, t_lightLeft)`。动作随着节拍而发生。
+- **裂缝**：约 1/4 秒内撞击产生锯齿状线条，光线明亮，短暂的白色闪光和 2 帧抖动。
+- **重新领先**：工件组每滑动一拍，沿引线有一个向外的小凸块，每个以焊接火花结束；裂缝成为修补线索。
+- 玻璃永远不会弯曲或变形；事物通过被照亮而显现，而不是淡入。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Truck sideways with the band of light | Time passing, the story moving on | a sequence of steps; a day; chapters |
-| Locked close-up on one pane | This panel is "now" | a line being read; a character's decision; a detail |
-| Pull back to the whole window | The rule, or the whole story at once | learning the system; a summary; aftermath |
-| Tilt down the shafts to the floor, then top-down | The picture leaves the glass and becomes light | an event too big for its frame; a dream; a memory |
-| Hold through a crack, no cut | The event is the medium breaking | a turning point; a loss; a revelation |
-| Slow push toward a small light | Attention narrowing to one source | a discovery; a secret; hope |
-| Tilt up to a rose or tracery | Something above the panels governs them | a clock; a cycle; an overview |
-| Rack between two panes, one lit, one dark | Past and present side by side | before/after; two lives; cause and effect |
-| Low angle along the embrasure, glass raking | The window as architecture, scale | awe; an institution; a long history |
-| Return to an earlier framing under new light | The rhyme shows what changed | growth; nightfall; repair |
+|卡车侧向有光带|时间流逝，故事继续|一系列步骤；一天；章节|
+|锁定在一个窗格上的特写镜头|该面板是“现在”|正在读取的一行；角色的决定；一个细节|
+|拉回整个窗口|规则，或者整个故事|系统学习；总结；后果|
+|将轴倾斜到地板上，然后自上而下|画面离开玻璃，变成了光|一个对于它的框架来说太大的事件；一个梦；一段记忆|
+|抓住裂缝，不要割伤|该事件是表现媒介破解|一个转折点；损失；一个启示|
+|慢慢推向小光|注意力集中于一个来源|一个发现；一个秘密；希望|
+|倾斜到玫瑰或窗饰|面板上方的某些东西控制着它们|一个时钟；一个周期；概述|
+|两块窗格之间的架子，一块亮，一块暗|过去与现在并存|before/after；两个生命；因果|
+|沿射孔低角度，玻璃耙动|窗户作为建筑，规模|敬畏；一个机构；历史悠久|
+|在新的光线下返回到早期的取景|押韵表明发生了什么变化|生长;黄昏;维修|
 
-Framing: subjects big (close-ups ~1.3–2.3× a lancet width); in a narrow lancet stack figures diagonally; a revealed thing near centre, ≥ ~1/8 frame width with glow. Transitions: moving light, shafts, a crack, darkness; never a dissolve, wipe or flip.
+取景：主体大（特写镜头〜1.3–2.3×柳叶刀宽度）；在狭窄的柳叶刀堆中，数字对角线排列；靠近中心的显露物体，≥~1/8 框架宽度，带有发光。过渡：移动的光、竖井、裂缝、黑暗；切勿溶解、擦拭或翻转。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instruments**: organ (pedal drone, soft stops, full), harp, hand chimes, tubular bells, recorder or a chant-like voice, water-glass notes, timpani; also hurdy-gurdy drone, psaltery, portative organ. No generic piano or strings.
-- **Mode families**: church modes (Dorian, Mixolydian, Aeolian, Lydian), open fifths, drones, parallel organum.
-- **Options**: free unmetred chant for darkness; one note meaning "the light" each time a pane wakes; an organ pedal that holds and then cuts out; a rising scale, one step per lit piece.
-- **Foley, material first** (synthesizable): struck glass = inharmonic partials ~1 : 2.32 : 4.25 : 6.63 : 9.38; crack = snap + pane thump + rain of tinkles; lead = stick-slip creak; glass sliding in a came = gritty band noise + faint squeal; solder = hiss + tick; air on light moves; stone-hall ambience; birds in the vault; iron ticking as it cools.
-- **Silence**: a hard stop, reverb tails included, only the glass's own ring or creak inside; a single long-reverb bell can close it.
-- **Mix**: big and reverberant; heavy hits avoid word onsets; music ducked ~9 dB under voice; −14 LUFS. **Voice**: a gentle, even storyteller, few short lines.
+- **乐器**：风琴（踏板嗡嗡声，软停止，全），竖琴，手编钟，管铃，竖笛或类似圣歌的声音，水玻璃音符，定音鼓；还有 hurdy-gurdy 嗡嗡声、诗篇、移动管风琴。没有通用的钢琴或弦乐。
+- **模式系列**：教堂模式（Dorian、Mixolydian、Aeolian、Lydian）、开放五度、无人机、平行奥尔加努。
+- **选项**：免费无计量黑暗圣歌；每当一块玻璃被唤醒时，就会有一个意思是“光”的音符；风琴踏板可以按住然后切断；上升的音阶，每个点亮的部分一个台阶。
+- **Foley，材质优先**（可合成）：击打玻璃 = 不和谐分音 ~1 : 2.32 : 4.25 : 6.63 : 9.38；裂纹 = 折断 + 玻璃重击 + 叮叮当当的雨声；铅 = 粘滑嘎吱声；玻璃滑动的声音 = 沙砾带噪音 + 微弱的尖叫声；焊接=嘶嘶声+滴答声；空气轻移动；石厅氛围；避难所里的鸟儿；铁冷却时发出滴答声。
+- **沉默**：硬停止，包括混响尾音，内部只有玻璃本身的响声或吱吱声；一个长混响铃就可以关闭它。
+- **混音**：大而混响；重击避免单词开头；音乐在声音下降低了约 9 dB； −14 LUFS。 **嗓音**：一个温柔、均匀的讲故事的人，很少有简短的台词。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Light is time, and the camera.** Only the lit pane is alive; figures freeze when the light leaves. *Fits content like:* the steps of a recipe; a factory's shifts; four seasons of one farm.
-- **Glass projects onto stone.** A key scene plays in the floor patch, which stretches as the sun sinks. *Fits content like:* a memory seen larger than life; a sports play replayed as shadows; a data trend drawn by lengthening light.
-- **Glass cracks, lead mends.** Pieces slide along the leads into a new picture, leaving scars. *Fits content like:* a company's reinvention; an injury and recovery; an old building restored.
-- **A window holds its own light.** At night one pane glows from a source inside the story. *Fits content like:* a lighthouse keeper; a night-shift nurse; a server that never sleeps.
-- **The window as a diagram.** Lancets as columns, a rose as a wheel or dial, the border as a timeline. *Fits content like:* a product lineup; the parts of a cycle; a family tree.
+- **Light 是时间，而摄影机.** 只有点亮的窗格是活动的；当光线离开时，人物就会冻结。 *适合以下内容：*食谱的步骤；工厂的轮班；一个农场的四个季节。
+- **玻璃投射到石头上。** 地板上播放着一个关键场景，地板随着太阳下沉而伸展。 *适合以下内容：*比生活更广阔的记忆；体育比赛以影子的形式重播；通过延长光线绘制的数据趋势。
+- **玻璃裂纹，铅修复。** 碎片沿着铅滑入新的画面，留下疤痕。 *适合以下内容：*公司的重塑；受伤和康复；一座古老的建筑被修复。
+- **A 窗户拥有自己的灯光。** 晚上，一层玻璃会从故事内部的光源发光。 *适合以下内容：*灯塔看守人；夜班护士；永不休眠的服务器。
+- **窗口作为图表。** 柳叶刀作为柱子，玫瑰作为轮子或表盘，边框作为时间线。 *适合以下内容：* 产品阵容；循环的各个部分；家谱。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Hidden leads show through front pieces → erase the surface under each piece before stroking its lead.
-- Pastel glass → hue-preserving tone mapping; darker flesh. Red dusk × blue glass = mud → keep blue alive, raise intensity.
-- Voronoi reads as a filter; flat fills read as clip-art → hand-cut lozenges, texture on every piece, heavy grisaille.
-- A sharp floor patch looks like a decal → blur, desaturate, stone-modulate, halo. Shafts at full strength at the window wash out the pane.
-- Top-down projection is flipped → put the wall at the frame bottom so figures stand upright (mirrored, correct).
-- Patch-map canvas size mismatched with the code draws into a corner of the texture → one constant size.
-- Carved text in a dark wide is unreadable → push in, park a light on it.
+- 隐藏的引线通过前面的部件显示→在抚摸其引线之前擦除每个部件下面的表面。
+- 柔和的玻璃→保留色调的色调映射；肉色较深。红色黄昏×蓝色玻璃=泥土→保持蓝色活力，提高强度。
+- Voronoi 读作过滤器；平面填充读作剪贴画→手工切割菱形，每件作品都有纹理，厚重的灰色画。
+- 尖锐的地板补丁看起来像贴花→模糊、去饱和、石材调制、光晕。窗户水彩晕染的轴在窗玻璃外处于全力状态。
+- 自上而下的投影被翻转→将墙放在框架底部，使人物直立（镜像，正确）。
+- 与代码不匹配的补丁图画布尺寸会绘制到纹理的一角→一个恒定尺寸。
+- 深色宽幅雕刻的文字难以辨认→推入，在上面停一盏灯。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `glass.js` (pieces, textures, lead, grisaille, lozenges), `comp.js` (WebGL2 compositor), `window.js` (lancets, rose, borders, wall, carving), `scene.js` (camera, floor projection, shafts, dust), `subs.js` (banderole), `test.js` / `frames.js` (model sheets and style frames from the real engine), `music/score.py`, `mix.py` (glass/lead foley). `knight.js` / `dragon.js` show the rigid-piece FK rig pattern; build your own subjects with it.
+在`demo/`中：`glass.js`（碎片，纹理，铅，灰色，菱形），`comp.js`（WebGL2合成器），`window.js`（柳叶刀，玫瑰，边框，墙壁，雕刻），`scene.js` （摄影机，地板投影，轴，灰尘），`subs.js`（带），`test.js` / `frames.js`（角色设定表和风格定帧来自真实引擎），`music/score.py`， `mix.py` (glass/lead 拟音)。 `knight.js` / `dragon.js` 显示刚性件 FK 骨骼绑定结构图案；用它建立你自己的科目。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the window (lancets, a rose, a medallion, a clerestory), the subjects, the order of light, opening, ending, camera path and pacing. All far from our demo:
+您决定窗口（柳叶刀、玫瑰、奖章、天窗）、主题、光线顺序、开头、结尾、摄影机路径和节奏。与我们的示范相去甚远：
 
-- Structures: **a rose window as a dial** (petals lit in turn like hours, the centre the answer); **one tall lancet read bottom to top** (a tilt up a life or a process, medallion by medallion); **two windows facing each other** (the sun lights one side in the morning, the other in the evening; the floor between them holds their meeting).
-- Openings: **the floor first** (only a coloured patch on stone; tilt up to find its source); **a lit window from outside at night** (a figure passes a glowing pane, then we are inside); **the glazier's bench** (a single piece cut and leaded, becoming the first piece of the picture).
-- Endings: **clouds cover the sun** (every pane fades to grey at once; one line lingers); **a new pane leaded in** (an empty lancet filled with the last scene); **the camera leaves through the door** (the window small behind, its patch still on the floor).
+- 结构：**玫瑰窗为表盘**（花瓣依次点亮如小时，中心为答案）； **one高刺血针从下到上阅读**（向上倾斜生命或过程，逐个奖章）； **两扇相对的窗户**（太阳早上照亮一侧，晚上照亮另一侧；它们之间的地板举行会议）。
+- 开口：**地板第一**（只有石头上的彩色斑块；向上倾斜以找到其来源）； **夜间从外面照亮的窗户**（一个人影经过发光的窗格，然后我们就在里面）； **玻璃工工作台**（单件切割和引导，成为图片的第一件）。
+- 结局：**云遮日**（每一格立刻变成灰色，一行字徘徊）； ****中的一个新窗格（一把空柳叶刀，充满最后一个场景）；**摄影机从门**出去（后面的窗户很小，它的补丁仍然在地板上）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

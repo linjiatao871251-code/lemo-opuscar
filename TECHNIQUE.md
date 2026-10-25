@@ -1,6 +1,7 @@
-# Technique: how the films are built
+<a id="technique-how-the-films-are-built"></a>
+# 技术：影片的构建方式
 
-Every film here is made from code: no video generation, no stock footage. This page explains the pipeline, to reproduce with our tools in `core/` or in your own stack. Pair it with [`DIRECTOR.md`](DIRECTOR.md) and one `styles/<slug>/STYLE.md`. Every command and flag is in [`core/README.md`](core/README.md).
+这里的每个影片都是由代码制成的：没有视频生成，没有库存素材。本页介绍了制作流程，可以使用我们在 `core/` 或您自己的堆栈中的工具进行重现。与 [`DIRECTOR.md`](DIRECTOR.md) 和一个 `styles/<slug>/STYLE.md` 配对。每个命令和标志都在[`core/README.md`](core/README.md)中。
 
 ```
 timeline (single source of truth)
@@ -12,27 +13,29 @@ timeline (single source of truth)
 mix (duck, compress, balance) ──► mux with ffmpeg, two-pass loudnorm −14 LUFS ──► film.mp4
 ```
 
-## 1. Requirements and install
+<a id="1-requirements-and-install"></a>
+## 1. 要求及安装
 
-System tools, which the user installs: **Node 20+**, **ffmpeg**, and **Python 3.11+** or [uv](https://docs.astral.sh/uv/). Developed on macOS (Apple silicon); Linux should work; on Windows use WSL. 3D and shader-heavy styles want a GPU.
+用户安装的系统工具：**Node 20+**、**ffmpeg**、**Python 3.11+**或[uv](https://docs.astral.sh/uv/)。在 macOS（Apple 芯片）上开发； Linux 应该可以工作；在 Windows 上使用 WSL。 3D 和着色器密集型风格需要 GPU。
 
-Everything else installs in tiers, from the library root (`$LIB` in skill mode). Install a tier only when the film needs it:
+其他所有内容都从库根目录（技能模式下为 `$LIB`）开始分层安装。仅当影片需要时才安装层：
 
-| Command | Adds | Size |
+|命令|添加|尺寸|
 |---|---|---|
-| `sh plugin/skills/lemo-opuscar/scripts/setup.sh deps` | core: npm packages, headless browser, Python `.venv` (numpy, scipy, soundfile, soxr, pillow): render, synthesize sound, mux | ~350 MB |
-| `… setup.sh deps voice` | Kokoro + model (English, offline), edge-tts (Chinese, online), faster-whisper (voice check) | ~0.55 GB + a Whisper model on first check (~145 MB for English, ~480 MB for Chinese) |
-| `… setup.sh deps music` | numba, for plucked strings (`pluck.py`); the sampler itself needs only the core | ~140 MB |
-| `sh tools/fetch.sh instruments <lib>` | a sample library: `freepats`, `karoryfer`, `salamander`, `vcsl`, `vsco2ce` or `all` | 70–400 MB each |
-| `sh tools/fetch.sh hdri` | HDRIs for 3D styles | 12 MB |
+|`sh plugin/skills/lemo-opuscar/scripts/setup.sh deps`|核心：npm 包、无头浏览器、Python `.venv`（numpy、scipy、soundfile、soxr、pillow）：渲染、合成声音、mux|〜350MB|
+|`… setup.sh deps voice`|Kokoro + model（英语，离线），edge-tts（中文，在线），faster-whisper（语音检查）|约 0.55 GB + 首次检查时有一个 Whisper 模型（英语约 145 MB，中文约 480 MB）|
+|`… setup.sh deps music`|numba，用于拨弦 (`pluck.py`)；采样器本身只需要核心|〜140MB|
+|`sh tools/fetch.sh instruments <lib>`|a 采样音色库：`freepats`、`karoryfer`、`salamander`、`vcsl`、`vsco2ce` 或 `all`|每个 70–400 MB|
+|`sh tools/fetch.sh hdri`|3D 风格的 HDRI|12MB|
 
-Some styles need packages of their own (a LiDAR reader, a slide-scan decoder, a CAD importer); the style's `STYLE.md` lists them. They are packages, not system tools: install them yourself into a private venv or `node_modules` in the project folder, never into `$LIB/.venv`.
+有些风格需要自己的软件包（LiDAR 读取器、滑动扫描解码器、CAD 导入器）；风格的 `STYLE.md` 列出了它们。它们是软件包，而不是系统工具：您自己将它们安装到项目文件夹中的私有 venv 或 `node_modules` 中，而不是安装到 `$LIB/.venv` 中。
 
-A synthesized score needs no big download; `sampler.py` names the library to fetch when an instrument is missing. A pack needs about twice its size free while it unpacks. Downloads come from npm, PyPI, GitHub Releases and Hugging Face (`HF_ENDPOINT` sets a mirror).
+合成的配乐不需要大量下载； `sampler.py` 指定仪器丢失时要获取的库。一个包装在打开包装时需要大约两倍的空间。下载来自 npm、PyPI、GitHub Releases 和 Hugging Face（`HF_ENDPOINT` 设置镜像）。
 
-## 2. The picture is a function of time
+<a id="2-the-picture-is-a-function-of-time"></a>
+## 2. 图片是时间的函数
 
-Each film is a folder with an `index.html` (`<demo>` in the commands) that exposes:
+每个影片都是一个带有 `index.html`（命令中的 `<demo>`）的文件夹，该文件夹公开：
 
 ```js
 window.DUR = 54.2;                 // seconds
@@ -42,9 +45,9 @@ window.EV = [{t, type, ...}];      // optional: sound / cue events for the mixer
 window.TEXTS = (t) => [{id, text, x0, y0, x1, y1}];   // optional: every text visible at t, for readcheck
 ```
 
-**Paths:** pages reach library files with absolute URLs (`/core/lib.js`, `/node_modules/three/build/three.module.js`); scripts and `build.sh` use `$LIB`. Never `../..`.
+**路径：**页面到达具有绝对URL的库文件（`/core/lib.js`、`/node_modules/three/build/three.module.js`）；脚本和 `build.sh` 使用 `$LIB`。从来没有 `../..`。
 
-A `build.sh` that works in both modes (in skill mode, put `LIB=<path setup.sh printed>` at the top):
+可以在两种模式下工作的 `build.sh`（在技能模式下，将 `LIB=<path setup.sh printed>` 放在顶部）：
 
 ```sh
 #!/bin/sh
@@ -60,15 +63,15 @@ node core/render/video.mjs "$HERE" --fps 24 --out "$HERE/out/video.mp4"
 sh core/render/mux.sh "$HERE/out/video.mp4" "$HERE/out/mix.wav" "$HERE/<name>.mp4" 24
 ```
 
-Rules that keep it reliable:
+保持其可靠性的规则：
 
-- **Deterministic.** No `Date.now()`, no `Math.random()` without a seed (`core/lib.js` has `mulberry` and `hash`), no state carried from the previous frame. Any frame can be rendered alone, in any order, by any worker.
-- **Canvas 2D** for most 2D styles; **three.js** for 3D (§9); **WebGL2** shaders for post passes (film damage, CRT, ink redraw).
-- **Animate on twos where the style wants it** (12 fps stepping for stop-motion, pixel or cel looks), but keep the camera and light smooth every frame. A stepped camera reads as lag.
-- **One world → screen function.** Any effect that follows a subject (iris, zoom, spotlight) goes through it. Never hand-type screen coordinates.
-- **Draw for the frame you render.** The default is 1920×1080; for another size pass `--size WxH` (e.g. `1080x1920`) to every render tool and lay the page out from `innerWidth` × `innerHeight`.
+- **确定性的。** 没有 `Date.now()`，没有没有种子的 `Math.random()`（`core/lib.js` 有 `mulberry` 和 `hash`），没有从前一帧携带的状态。任何帧都可以由任何工作人员以任何顺序单独渲染。
+- **Canvas 2D**适用于大多数 2D 风格；**three.js**用于 3D (§9)；**WebGL2** 用于后期通道的着色器（影片损坏、CRT、墨水重绘）。
+- **在风格需要的地方进行动画处理**（12 fps 步进，用于定格动画、像素或 cel 外观），但保持摄影机和光线每帧都平滑。阶梯式摄影机读作滞后。
+- **一个世界 → 屏幕功能。** 任何跟随主体的效果（光圈、变焦、聚光灯）都会通过它。切勿手动输入屏幕坐标。
+- **为您渲染的帧绘制。** 默认为1920×1080；对于其他尺寸，将 `--size WxH`（例如 `1080x1920`）传递给每个渲染工具，并从 `innerWidth` × `innerHeight` 布局页面。
 
-Capture (`core/render/`):
+捕获（`core/render/`）：
 
 ```sh
 node core/render/still.mjs <demo> 1.5 12 --range 0:50:2   # review stills; exits on page errors
@@ -77,86 +80,96 @@ node core/render/events.mjs <demo>                         # export DUR + EV →
 node core/render/readcheck.mjs <demo>                      # every on-screen text stays long enough to read
 ```
 
-To render a second version with other content, pass it to the page and give it its own output: `--q 'content=content_alt.json' --out …/alt.mp4` (the same for `events.mjs`).
+要使用其他内容呈现第二个版本，请将其传递到页面并为其提供自己的输出：`--q 'content=content_alt.json' --out …/alt.mp4`（与 `events.mjs` 相同）。
 
-Capture is fast because of **JPEG screenshots**, **one browser per worker** and **grain added in ffmpeg**: grain drawn in the page makes every frame incompressible and slow.
+捕获速度很快，因为**JPEG 屏幕截图**, **每个工人一个浏览器**和**ffmpeg中添加的grain**：页面中绘制的颗粒使每一帧都不可压缩且缓慢。
 
-## 3. One timeline drives everything
+<a id="3-one-timeline-drives-everything"></a>
+## 3. 一条时间线驱动一切
 
-Keep sections, tempo, beats and hit points in one file (`timeline.js`). Export it to JSON and let the score, the mixer, the subtitles and the checks read the same numbers:
+将章节、节奏、节拍和击中点保存在一个文件中 (`timeline.js`)。将其导出为 JSON 并让配乐、混音器、字幕和检查读取相同的数字：
 
 ```js
 export const SECS = [{ id: 'chase', t: 12.0, bpm: 144, beats: 12 }, ...];
 export const HIT  = { pratfall: ['chase', 6], ... };   // section + beat
 ```
 
-A small script (`cuecheck.py`, in `styles/<slug>/demo/tools/` of several demos) compares every visual hit with the music cue it should land on. Aim for 0 ms.
+一个小脚本（`cuecheck.py`，在几个示范中的 `styles/<slug>/demo/tools/` 中）将每个视觉效果与其应该出现的音乐提示进行比较。目标是 0 毫秒。
 
-## 4. Voice
+<a id="4-voice"></a>
+## 4. 语音
 
-- **TTS is only the default.** If the user brings a recording or names a voice, use that. Otherwise:
-  - **English**: [Kokoro](https://github.com/thewh1teagle/kokoro-onnx), local, many voices (an unknown `voice` name makes `tts.py` print the full list; `af_` / `am_` are American, `bf_` / `bm_` British; cast the narrator for this film, not the demo's). `core/tts/tts.py lines.json out/` writes one WAV per line and a durations file. Its Chinese voices (`"lang": "cmn"`) work offline but sound plain.
-  - **Chinese**: `core/tts/tts_zh.py lines.json out/` uses [edge-tts](https://github.com/rany2/edge-tts) with Microsoft's neural voices (`zh-CN-XiaoxiaoNeural`, `zh-CN-YunxiNeural`…), with the same outputs as `tts.py`, a rate per line and the silence trimmed. **It needs a network connection.**
-- Spell numbers out in the TTS text and write them as digits in the subtitles.
-- **Check every line**: `core/tts/asr_check.py` transcribes each WAV with faster-whisper and compares it with the script (`--lang zh`: character by character); re-generate until it exits 0. A misheard character in a short Chinese line is normal: listen, and if it is right, put what the model heard in the line's `asr` field. It also writes word timestamps for placing lines and subtitles.
-- **Before mixing**: TTS has a high peak-to-average ratio. Compress the voice first, then balance by RMS: voice about 10 dB above the music.
+- **TTS 仅是默认值。** 如果用户带来录音或命名语音，请使用它。否则：
+  - **英语**：[Kokoro](https://github.com/thewh1teagle/kokoro-onnx)，本地，许多声音（未知的 `voice` 名字使 `tts.py` 打印完整列表；`af_` / `am_` 是美国人， `bf_` / `bm_` 英国；为这个影片配上旁白，而不是示范的）。 `core/tts/tts.py lines.json out/` 每行写入一个 WAV 和一个持续时间文件。它的中文语音（`"lang": "cmn"`）可以离线工作，但听起来很普通。
+  - **中国人**：`core/tts/tts_zh.py lines.json out/` 使用 [edge-tts](https://github.com/rany2/edge-tts) 和 Microsoft 的神经语音（`zh-CN-XiaoxiaoNeural`、`zh-CN-YunxiNeural`…），具有与 `tts.py` 相同的输出、每行速率和沉默渐渐平息。 **需要网络连接。**
+- 在 TTS 文本中拼写出数字，并将其以数字形式写在字幕中。
+- **检查每一行**：`core/tts/asr_check.py`用faster-whisper转录每个WAV并与脚本进行比较（`--lang zh`：逐个字符）；重新生成，直到退出 0。 在短中文行中听错字符是正常的：听，如果正确，则将模型听到的内容放入该行的 `asr` 字段中。它还会写入用于放置台词和字幕的单词时间戳。
+- **混合前**：TTS具有较高的峰均比。先压缩声音，然后用RMS进行平衡：声音比音乐高出大约10 dB。
 
-## 5. Music
+<a id="5-music"></a>
+## 5. 音乐
 
-Write an original score from the cue map, in the instruments of the style's sound palette; no generic piano and strings.
+在风格声音体系的乐器中，从音画节拍对照表编写原始配乐；没有通用的钢琴和弦乐。
 
-- **Samples**: `core/audio/sampler.py` plays real instruments from free libraries (VSCO 2 CE, VCSL, FreePats, Karoryfer, Salamander Grand Piano; list and licences in `core/audio/INSTRUMENTS.md`). Write the score as events `(time, instrument, pitch, duration, velocity, pan)`. Long notes are extended seamlessly, and round-robins avoid the machine-gun effect.
-- **Plucked and folk strings** (guqin, pipa, shamisen, banjo…): `core/audio/pluck.py`, physical modelling (Karplus–Strong) with bends and vibrato.
-- **Synthesis** with numpy for chip tunes, drones and effects; no download needed.
-- **Balance the low end.** Synthetic scores get bass-heavy quickly. Measure energy per band after mixing; keep 20–120 Hz around −3 dB relative to the rest, skip pad notes below MIDI 48, and give the bass some 2nd and 3rd harmonics so it speaks on small speakers.
+- **样品**：`core/audio/sampler.py` 可以演奏来自免费库的真实乐器（VSCO 2 CE、VCSL、FreePats、Karoryfer、Salamander 大钢琴；`core/audio/INSTRUMENTS.md` 中的列表和许可证）。 Write the 配乐 as events `(time, instrument, pitch, duration, velocity, pan)`.长音符可以无缝延伸，循环赛可以避免机枪效应。
+- **弹拨和民谣弦乐**（古琴、琵琶、三味线、班卓琴……）：`core/audio/pluck.py`，物理造型（Karplus-Strong），带有拉弦和颤音。
+- **合成** 与 numpy 用于芯片曲调、无人机和效果；无需下载。
+- **平衡低频。** 合成乐谱很快就会变得重低音。测量混合后每个频带的能量；相对于其余部分，将 20–120 Hz 保持在 −3 dB 左右，跳过 MIDI 48 以下的打击垫音符，并为低音提供一些第二和第三谐波，以便它在小扬声器上说话。
 
-## 6. Sound effects and mix
+<a id="6-sound-effects-and-mix"></a>
+## 6.音效与混音
 
-- `core/audio/sfx.py` synthesises foley procedurally (click, whoosh, thump, ding, paper, noise beds…) with filters, envelopes and `add(buffer, sound, at, gain, pan)`. Drive it from `window.EV`, so every sound sits exactly on its frame.
-- **Master**: `sh core/render/mux.sh video.mp4 mix.wav out.mp4 24 [grain]` muxes, runs a two-pass loudnorm to −14 LUFS with a true-peak limit, adds grain in ffmpeg and prints the measured loudness; it exits non-zero on any failure. On light backgrounds use less grain; for pixel and vector styles, none.
-- Films with grain baked into the picture compress badly; re-encode with `-tune grain` and a higher CRF.
+- `core/audio/sfx.py` 通过滤波器、包络和 `add(buffer, sound, at, gain, pan)` 以程序方式合成拟音（点击、嗖嗖、重击、叮当、纸张、噪音床……）。从 `window.EV` 驱动它，因此每个声音都准确地位于其框架上。
+- **掌握**：`sh core/render/mux.sh video.mp4 mix.wav out.mp4 24 [grain]` 复用器，运行两遍响度范数至 −14 LUFS，具有真实峰值限制，在 ffmpeg 中添加颗粒并打印测量的响度；任何失败时它都会以非零值退出。在浅色背景上使用较少的颗粒；对于像素和矢量风格，没有。
+- 影片有颗粒的烤进图片压缩严重；使用 `-tune grain` 和更高的 CRF 重新编码。
 
-## 7. Subtitles
+<a id="7-subtitles"></a>
+## 7. 字幕
 
-- Export `.srt` with `core/render/srt.py cues.json out.srt` (cues = `[{t0, t1, text}]`), and burn styled captions into the page itself: the caption design is part of the style.
-- Timing rules are in DIRECTOR.md §7.
+- 使用 `.srt` 导出 `core/render/srt.py cues.json out.srt`（提示 = `[{t0, t1, text}]`），并将风格化的标题刻录到页面本身中：标题设计是风格的一部分。
+- 时序规则参见 DIRECTOR.md §7。
 
-## 8. Review loop
+<a id="8-review-loop"></a>
+## 8. 审查循环
 
-1. Contact sheets: a frame every 1–2 s with `still.mjs --range`, tiled with `core/render/sheet.py`. At least two full passes.
-2. Frame strips at 0.2 s for every key action: hand-overs, falls, hits.
-3. On the final file: `ffmpeg -af ebur128` (loudness), `blackdetect` (blank frames), whisper again on the final mix if it has voice.
-4. Watch it once, at full speed, with sound.
+1. 接触表：每 1-2 秒一帧，带有 `still.mjs --range`，平铺为 `core/render/sheet.py`。至少两次完整通过。
+2. 每个关键动作的帧间隔为 0.2 秒：交接、摔倒、击打。
+3. 在最终文件上：`ffmpeg -af ebur128`（响度）、`blackdetect`（空白帧），如果最终混音有声音，请再次对它低语。
+4. 全速、有声地观看一次。
 
-## 9. 3D notes
+<a id="9-3d-notes"></a>
+## 9. 3D笔记
 
-- three.js r170 rendered headless through WebGL2 on the GPU; physical depth of field and GTAO from `core/three/post.js`, rendered at 2× and downsampled.
-- Lighting: soft area lights plus a Poly Haven HDRI at low intensity reads more "real" than bright ambient light.
-- `core/three/post.js` is written for a perspective camera. For an orthographic camera swap `perspectiveDepthToViewZ` for `orthographicDepthToViewZ` in its depth pass, or the depth of field silently breaks.
+- three.js r170 通过 GPU 上的 WebGL2 进行无头渲染；来自 `core/three/post.js` 的物理景深和 GTAO，以 2 倍渲染并下采样。
+- 照明：柔和的区域灯加上低强度的 Poly Haven HDRI 比明亮的环境光看起来更“真实”。
+- `core/three/post.js` 是为透视图摄影机编写的。对于正交摄影机，在其深度通道中将 `perspectiveDepthToViewZ` 替换为 `orthographicDepthToViewZ`，否则景深会悄然中断。
 
-## 10. Characters drawn in code
+<a id="10-characters-drawn-in-code"></a>
+## 10. 代码中绘制的字符
 
-- A 2.5D rig (torso, head, limbs solved per frame) is enough for pantomime.
-- Order the shoulder rotation as abduction, then flexion; the reverse order crosses raised arms into an X.
-- Let the shoulder girdle rise and move forward as the arm lifts, and don't outline the part of the arm that overlaps the torso: that line is what makes a joint look like a puppet seam.
+- 2.5D 骨骼绑定结构（每帧解析的躯干、头部、四肢）足以制作哑剧。
+- 肩部旋转顺序为先外展，后屈曲；相反的顺序是举起手臂交叉成X。
+- 当手臂抬起时，让肩胛带上升并向前移动，不要勾画出手臂与躯干重叠的部分：这条线使关节看起来像木偶接缝。
 
-## 11. Assets, credits and fonts
+<a id="11-assets-credits-and-fonts"></a>
+## 11. 资源、制作人员和字体
 
-Only CC0, CC BY or OFL material, each listed in the film's `CREDITS` with its source and licence; `core/audio/sampler.py credits(names)` writes the lines for the instruments you used. Public-domain works count as CC0; "no known restrictions" does not. Data or images under other open licences (ODbL, CC BY-SA, open-hardware licences) only after you have named the licence and its terms (attribution, share-alike) to the user and they agree. The user's own material is fine as it is.
+仅 CC0、CC BY 或 OFL 材料，每种材料均列在影片的 `CREDITS` 中及其来源和许可证； `core/audio/sampler.py credits(names)` 为您使用的仪器写入行。公共领域作品计为 CC0； “没有已知的限制”则不然。仅在您向用户指定许可证及其条款（归属、类似共享）并且他们同意后，才能使用其他开放许可证（ODbL、CC BY-SA、开放硬件许可证）下的数据或图像。用户自己的材料就可以了。
 
-A film that states facts (the Evidence Films styles) keeps a `FACTS.md` in the project folder: each claim with its source URL and the quoted wording, or the measurement that produced it.
+陈述事实的影片（证据影片风格）在项目文件夹中保留 `FACTS.md`：每个声明及其源 URL 和引用的措辞，或产生它的测量。
 
-Fonts: Google Fonts (OFL), self-hosted in the project. The typefaces a `STYLE.md` names are not in the library; download them (`https://github.com/google/fonts/tree/main/ofl/<family>`) into the project's `fonts/`. `core/fonts/` holds a few Latin display fonts and a Chinese display font with only about 200 glyphs, not enough for running Chinese text. For Chinese, subset a CJK font to the characters you use: the Google Fonts CSS API with `&text=` returns just those glyphs (`https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&text=<URL-encoded characters>`). Download the font file it points to into the project's `fonts/` and load it with `@font-face`; don't link Google Fonts at render time.
+字体：Google Fonts (OFL)，在项目中自行托管。 `STYLE.md` 名称的字体不在库中；将它们（`https://github.com/google/fonts/tree/main/ofl/<family>`）下载到项目的`fonts/`中。 `core/fonts/` 包含一些拉丁显示字体和一个中文显示字体，只有大约 200 个字形，不足以运行中文文本。对于中文，将 CJK 字体子集化为您使用的字符：带有 `&text=` 的 Google Fonts CSS API 仅返回这些字形 (`https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&text=<URL-encoded characters>`)。将其指向的字体文件下载到项目的`fonts/`中，并用`@font-face`加载；不要在渲染时链接 Google Fonts。
 
-## 12. Where to look in our demos
+<a id="12-where-to-look-in-our-demos"></a>
+## 12. 在我们的示范中哪里可以看到
 
-| If you need… | Look at |
+|如果您需要……|看看|
 |---|---|
-| 2D character animation and lip sync | `styles/scifi-toon/`, `styles/cel-anime-80s/` |
-| a timeline-driven score with cue checking | `styles/microgame/`, `styles/silent-film/` |
-| an image-to-ink redraw and film-damage post pass | `styles/silent-film/demo/engine/` |
-| a brush or stroke engine | `styles/watercolor/`, `styles/ink-wash/`, `styles/impasto/` |
-| 3D with depth of field and real materials | `styles/brick-toy/`, `styles/paper-popup/` |
-| a CRT or VHS look | `core/post/crt.js`, `styles/ascii-crt/`, `styles/backrooms/` |
+|2D 角色动画和口型同步|`styles/scifi-toon/`、`styles/cel-anime-80s/`|
+|具有提示检查功能的时间线驱动的配乐|`styles/microgame/`、`styles/silent-film/`|
+|图像到墨水重画和影片损坏后通道|`styles/silent-film/demo/engine/`|
+|刷式或冲程引擎|`styles/watercolor/`、`styles/ink-wash/`、`styles/impasto/`|
+|具有景深和真实材质的 3D|`styles/brick-toy/`、`styles/paper-popup/`|
+|CRT 或 VHS 外观|`core/post/crt.js`、`styles/ascii-crt/`、`styles/backrooms/`|
 
-Each style's `DEMO.md` says how its demo was built. Open it and the code only after your treatment exists, to learn a technique, never to rebuild our film (an Edit & Documentary style's material tools in `demo/tools/` come first: AGENTS.md, "Treatment first"). In skill mode, get the source with `sh <skill folder>/scripts/setup.sh demo <slug>`. Copied demo code often reaches the library with `../..`: replace that with `$LIB` or absolute URLs.
+每种风格的 `DEMO.md` 都说明了其示范的构建方式。只有在你的创作方案存在之后才打开它和代码，学习技术，永远不要重建我们的影片（`demo/tools/`中的剪辑与纪实风格的素材工具首先：AGENTS.md，“创作方案第一”）。在技​​能模式下，通过`sh <skill folder>/scripts/setup.sh demo <slug>`获取源。复制的示范代码通常会以 `../..` 的形式到达库：将其替换为 `$LIB` 或绝对 URL。

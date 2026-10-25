@@ -1,70 +1,78 @@
-# Glass Product Render — our demo
+<a id="glass-product-render--our-demo"></a>
+# 玻璃产品渲染图 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Aura — Hear the Light* (32 s) · `glass-product.mp4` · source in [`demo/`](demo/)
+示范：*光环 — 聆听光*（32 秒）·`glass-product.mp4`·来源在 [`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A fictional pair of stemless, lens-shaped glass earbuds in a pebble-shaped glass case. In the dark they only reflect other people's light; taken apart and snapped back together on the bass drop, they light up from inside: sound becomes light running inside the glass. Theme: transparency = nothing to hide; sound = light.
+一对虚构的无柄透镜状玻璃耳塞，装在卵石形玻璃盒中。在黑暗中，他们只反射别人的光芒；在低音吊环上拆开并重新组装在一起，它们从内部发光：声音变成在玻璃内运行的光。主题：透明度=没有什么可隐藏的；声音=光。
 
-The invisible thing made visible: sound as light pulses in the light guide. (The same move for other products: a battery → charge fills a glass cell; a watch → time as a light ring; a router → data as light threads; a perfume → scent as caustics.)
+看不见的东西变得可见：声音作为光导中的光脉冲。 （其他产品也是如此：电池 → 充电充满玻璃电池；手表 → 时间作为光环；路由器 → 数据作为光线；香水 → 气味作为焦散剂。）
 
-Arc (30–40 s): lit from outside in the dark (mystery) → opened (curiosity) → seen through (intimacy, macro) → taken apart (suspension, total silence) → **snaps together on the drop and lights up from inside** (release) → confident rhythm → returns home (settle, echo). One object, one goal (to emit its own light), one turn (reassembly).
+弧线（30-40秒）：在黑暗中从外部点亮（神秘）→打开（好奇）→看穿（亲密，宏观）→拆开（悬浮，完全沉默）→**在下降时一起捕捉并从内部点亮**（释放）→自信的节奏→返回家（稳定，回声）。一个物体，一个目标（发出自己的光），一圈（重新组装）。
 
-Bookend: it opens with a light sweep revealing the dark object and ends with the *same* sweep over the object that now glows by itself; the two earbuds drop back into their cradles (magnetic click) and the frosted base of the case glows as if charging.
+书挡：它以轻扫开始，露出黑暗的物体，最后以*相同的*扫过现在自行发光的物体；两个耳塞落回支架中（磁性点击），充电盒的磨砂底座会发光，就像在充电一样。
 
-In the old guide the demo's rule was "use at least four of the six native powers"; the demo spent all six (transparency, lensing, dispersion, light inside, caustics, exploded view).
+在旧指南中，示范的规则是“使用六种原生能力中的至少四种”； 示范花费了全部六项（透明度、透镜、色散、内部光线、焦散、分解图）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera | Why |
+|打|摄影机|为什么|
 |---|---|---|
-| Open (0–4 s) | Low 3/4 side, very slow push, ambient near zero; two sweeps | Only contours, no content: curiosity. Grab within 3 s. |
-| Reveal structure | High 3/4, slow 40° orbit while the lid opens | Explain the object in one move |
-| Macro | 25–45 mm away, rack focus from the glass surface to the part inside; a short sweep on every beat | Pulls the viewer *into* the glass |
-| Profile | Side macro orbit | Material contrasts: clear / metal band / frosted / soft tip |
-| Exploded view | 3/4, axis at ~40° to the view so parts form a diagonal with depth (near big, far small), spanning ~80 % of frame, slow orbit for parallax | Technical beauty; parallax sells the depth |
-| Hero front | Straight on, slight push | Declaration: the light ring complete |
-| Pattern macro | Top-down macro on the light channels | The concept at maximum size |
-| Pair | Medium two-shot, second earbud flies in on a downbeat | Stereo = left/right alternation |
-| Caustics | High top-down on the floor | The most memorable shot: sound spreading over the ground |
-| Hero end | Low 3/4, centred under the title, slow pull-back that makes room for credits | Name + slogan + product |
+|打开（0–4 秒）|3/4 侧低，推得很慢，环境接近零；两次扫荡|只有轮廓，没有内容：好奇心。 3秒内抓取。|
+|揭示结构|高 3/4，盖子打开时缓慢 40° 轨道|一招解释物体|
+|宏|25-45毫米远，机架焦点从玻璃表面到零件内部；每个节拍都进行短扫|将观看者“拉入”玻璃中|
+|轮廓|侧微距轨道|材质对比：透明/金属带/磨砂/软头|
+|分解图|3/4，轴与视图约 40°，因此零件与深度形成对角线（近大、远小），跨越约 80 % 的框架，慢轨道视差|技术之美；视差出售深度|
+|英雄前线|直行，轻轻一推|声明：灯环完整|
+|图案宏|光通道上的自上而下宏|最大尺寸的概念|
+|一对|表现媒介两个镜头，第二个耳塞在悲观的情况下飞入|立体声 = left/right 交替|
+|焦散|地板上自上而下的高度|最难忘的镜头：声音传遍地面|
+|英雄结局|低 3/4，位于标题下方，缓慢回调，为积分腾出空间|名称+口号+产品|
 
-The exploded shot was extended to 17.0 s so the parts rush back, snap at 16.0 and the light pattern first lights up in the same frame, cause and effect in one camera position, before the cut to the front. Magnetic click back into the cradle at 28.0.
+爆炸的镜头被延长到 17.0 秒，因此零件会冲回来，在 16.0 处捕捉，并且灯光图案首先在同一帧中亮起，因果关系在一个摄影机位置，然后切到前面。在 28.0 处通过磁性卡扣回到支架中。
 
-Motion numbers used: camera orbits 0.2–0.4 rad per shot; exploded-part tilts `sin(i·1.7)·0.32`, `cos(i·2.3)·0.28`; timing 3 s ease-out apart → 0.75 s hover (drifting +3 %) → **0.25 s ease-in snap** exactly on the downbeat of the drop; camera pushes in ~40 % during the 0.9 s after the snap; two frames of micro-shake on the snap. Magnetic lift 1.2–1.4 s (`eio`). Earbuds hover turned 3/4 toward camera so the lens face and light ring are visible; the lid stands at ~100° behind the case as a backlit halo.
+使用的运动编号：摄影机每镜头轨道 0.2–0.4 rad；分解部分倾斜 `sin(i·1.7)·0.32`、`cos(i·2.3)·0.28`；定时 3 秒缓出间隔 → 0.75 秒悬停（漂移 +3 %）→ **0.25 秒缓入 snap** 正好在下降的强拍上； 摄影机在卡扣后 0.9 秒内推入约 40%；两帧微抖就按扣了。磁力提升 1.2–1.4 秒 (`eio`)。耳塞悬停时将 3/4 转向摄影机，以便可以看到镜头面和灯环；盖子位于外壳后面约 100° 处，形成背光光环。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Original numpy score (`demo/music/score.py`), **120 BPM, minor key**. Sub drone + glass shimmer for the dark open; FM glass-pluck arpeggio with a low-pass opening over the build; soft short kicks on every beat under the macro sweeps; noise + saw risers over the exploded view; **half a bar of total silence (reverb tails cut too)** before the drop, with a long reverse whoosh inside it; **808 drop** with a syncopated pattern ([0, .75, 1, 1.5] per bar) that the light pulses follow exactly; clap on 2 & 4; a four-note glass-bell motif; a minor-9 pad for the reveal; a high glass ding on the final settle. One kick list shared between the score and the renderer (`story.js`, `cues.json`).
+原始 numpy 配乐 (`demo/music/score.py`)、**120 BPM、小调**。低音无人机+玻璃微光，适合黑暗开放； FM 玻璃拨弦琶音，在构建上具有低通开口；宏观扫描下每个节拍的轻柔短踢；分解图上的噪音+锯立管； **半小节完全沉默（混响尾声也被切断）** 在下降之前，里面有一个长长的反向嗖嗖声； **808 drop** 具有切分模式（每条 [0, .75, 1, 1.5]），光脉冲完全遵循；拍拍 2 和 4；四音玻璃钟形图案；一个小9垫用于揭示；最终沉降时发出高高的玻璃叮当声。 配乐和渲染器（`story.js`、`cues.json`）之间共享一份踢出列表。
 
-Foley as used: shimmer per sweep, lid friction, magnetic clicks, an air puff per exploded part, and on the snap a cluster of six clicks 15 ms apart + the inharmonic glass chord.
+拟音的使用情况：每次扫描时都会闪烁，盖子摩擦，磁性咔哒声，每个爆炸部件都会吹气，并且在按扣上有一组间隔 15 毫秒的六次咔哒声 + 不和谐的玻璃弦。
 
-Voice: Kokoro `am_michael`, speed 0.86–0.88, 3–4 very short lines. "Aura." alone was misheard as Laura / Dora, so the line became "Meet Aura." Music ducked −12 dB and foley −6 dB under the voice. The 808 peaks left no headroom and loudnorm fell back to dynamic mode (−13.7 LUFS); limiting the drop peaks ~3 dB in the mix fixed it. Grain 0 in mux.
+声音：Kokoro `am_michael`，速度0.86-0.88，3-4句很短的台词。 “灵气。”独自一人被误听为劳拉/朵拉，所以这句台词变成了“遇见奥拉”。音乐在声音下降低了−12 dB，拟音 −6 dB。 808 个峰值没有留下余量，响度范数回落至动态模式 (−13.7 LUFS)；限制混音中的峰值下降约 3 dB 修复了这个问题。 mux 中的 Grain 0。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Accent: ice blue `#62DCFF` → soft violet `#A98BFF`; everything else neutral.
-- Strip kit (sizes in mm, intensity): left & right tall strips 22×170, ×3.2; horizon strip 260×14, ×1.4; top box 160×70, ×1.1; low front card ×0.18 (0 when the concave case faces camera); top-front key 150×60, ×2.5 for exploded views only; sweep strip 26×240 on an arc ±1.35 rad behind the camera; accent card tinted by the guide colour, driven by the pulses.
-- Clear glass: roughness 0.015, IOR 1.52, thickness 3–4.5, dispersion 5, attenuation `#f3f8fb` at 160 mm. Frosted glass: transmission 0.82–0.9, roughness 0.4, tint `#eef2f5`, thickness 7–14, an opaque emissive disc inside.
-- Metals: satin titanium band (rough 0.16), mirror-chrome magnet (0.14; 0.05 blew out to a white disc), brushed steel and a champagne diaphragm with a concentric-brush roughness map, graphite PCB with gold traces.
-- Light guide: polished acrylic `#15181b`, clearcoat 1; comet pulse head σ = w/2, tail length 4w at 55 %, white-hot core head³ × 0.35, hue blue → violet with age.
-- Background sweep `#34383d → #16181b → #000` at 0–1.1; floor Reflector with a 12-tap blur, ×0.32, radial fade.
-- Post: DoF aperture 700–900 for macro, 70 for the exploded view, 160–300 for wides; bloom strength 0.16–0.3 above 1.1; Neutral tone mapping, exposure 1.1. Macro distances 25–45 mm.
-- Subtitle bar: 76 px tall, radius 38, `blur(18px) brightness(1.25)` + 10 % cool white, 1.2 px gradient stroke, blue → violet top line; Inter Tight 300, 40 px, tracking 1 px; held ≥ 1.9 s and ≥ speech + 0.7 s.
-- Titles: Inter Tight 200, 112–132 px, tracking 56–64 px; kickers 18–20 px, tracking 8–10 ("A GLASS PRODUCT FILM", "MEET").
+- 强调色：冰蓝色`#62DCFF`→柔和的紫罗兰色`#A98BFF`；其他一切都是中性的。
+- 条带套件（尺寸以毫米为单位，强度）：左右高条带22×170，×3.2；水平条260×14，×1.4；顶盒160×70，×1.1；低前卡×0.18（凹壳面向摄影机时为0）；顶部前键 150×60，×2.5 仅用于分解图；在摄影机后面 ±1.35 rad 的弧线上扫描条带 26×240；由脉冲驱动的引导色着色的强调卡。
+- 透明玻璃：粗糙度 0.015，折射率 1.52，厚度 3–4.5，色散 5，160 毫米处衰减 `#f3f8fb`。磨砂玻璃：透射率 0.82–0.9，粗糙度 0.4，色调 `#eef2f5`，厚度 7–14，内部有不透明发射盘。
+- 金属：缎面钛带（粗糙度 0.16）、镜面铬磁体（0.14；0.05 吹成白色圆盘）、拉丝钢和带有同心刷粗糙度图的香槟色隔膜、带有金色痕迹的石墨 PCB。
+- 光导：抛光亚克力`#15181b`，清漆1；彗星脉冲头 σ = w/2，55% 时尾长 4w，白热核心头 3 × 0.35，色调随时间变化为蓝色 → 紫色。
+- 背景扫描 `#34383d → #16181b → #000` 为 0–1.1；地板反射器，具有 12 点模糊、×0.32、径向淡入淡出。
+- 后置：微距景深为 700–900，分解图为 70，广角景深为 160–300；开花强度 0.16–0.3 以上 1.1；中性色调映射，曝光 1.1。宏观距离 25–45 毫米。
+- 字幕栏：76 px 高，半径 38，`blur(18px) brightness(1.25)` + 10% 冷白，1.2 px 渐变描边，蓝色 → 紫色顶线； Inter Tight 300、40 px、跟踪 1 px；保持时间 ≥ 1.9 秒且 ≥ 言语 + 0.7 秒。
+- 标题：Inter Tight 200，112–132 像素，跟踪 56–64 像素；踢球 18–20 像素，跟踪 8–10（“玻璃产品影片”、“MEET”）。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-The title stays; credits (style name, `LemoLab × Claude Opus 5.5`) fade in at the bottom over a soft dark gradient while the camera pulls back to make room; fade to black in the last 0.6 s. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+标题保留；制作人员名单（风格名称，`LemoLab × Claude Opus 5.5`）在底部淡入柔和的深色渐变，而摄影机向后拉以腾出空间；在最后 0.6 秒内渐变为黑色。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Rights
+<a id="rights"></a>
+## 权利
 
-Product, name and shape are all original. No stemmed earbud, no dot-matrix type, no red accent, no recognisable silhouette or pattern from the reference ads; no fonts, sounds, melodies or colour templates from any launch film. Fonts in `demo/fonts`, credits in `demo/CREDITS`.
+产品、名称、形状均为原创。没有带柄耳塞，没有点阵类型，没有红色口音，没有参考广告中可识别的轮廓或图案；任何启动影片都没有字体、声音、旋律或颜色模板。字体为 `demo/fonts`，制作人员为 `demo/CREDITS`。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/glass-product/demo/
@@ -77,17 +85,17 @@ styles/glass-product/demo/
   lines.json · subs.py · check_mix.py · build.sh
 ```
 
-1. Write the cue map and `story.js` first (BPM grid, kick list shared by score and renderer).
-2. `node core/render/still.mjs styles/glass-product/demo 9.3 14.6 26.8 [--q nosub=1]`: iterate stills; `--range 0.5:31.5:1` + `sheet.py` for overview passes.
-3. `.venv/bin/python core/tts/tts.py demo/lines.json demo/voices` → `core/tts/asr_check.py` until all OK.
+1. 首先写入音画节拍对照表和 `story.js`（BPM 网格、配乐和渲染器共享的踢列表）。
+2. `node core/render/still.mjs styles/glass-product/demo 9.3 14.6 26.8 [--q nosub=1]`：迭代剧照； `--range 0.5:31.5:1` + `sheet.py` 用于概览通行证。
+3. `.venv/bin/python core/tts/tts.py demo/lines.json demo/voices` → `core/tts/asr_check.py` 直至一切OK。
 4. `python demo/music/score.py` → `node core/render/events.mjs demo` → `python demo/mix.py`.
-5. `node core/render/video.mjs demo --fps 24 --workers 3` (768 frames with 2× SSAA, transmission, per-frame PMREM and mirror ≈ 30–45 s on an M-series Mac).
-6. `sh core/render/mux.sh out/video24.mp4 mix.wav glass-product.mp4 24 0`, then `python demo/check_mix.py glass-product.mp4`.
-7. Or simply `sh styles/glass-product/demo/build.sh`.
+5. `node core/render/video.mjs demo --fps 24 --workers 3`（768 帧，2× SSAA、传输、每帧 PMREM 和镜像在 M 系列 Mac 上约 30–45 秒）。
+6. `sh core/render/mux.sh out/video24.mp4 mix.wav glass-product.mp4 24 0`，然后 `python demo/check_mix.py glass-product.mp4`。
+7. 或者简单地称为 `sh styles/glass-product/demo/build.sh`。
 
-Pitfalls tied to this demo's props:
-- The cyan light strip first placed inside the frosted case base smeared a teal cast over the whole case; it became a cool-white dim disc.
-- The idle glow of the light ring was magnified by the lens dome into a pale-blue blob.
-- Hovering earbuds seen straight-on read as mushrooms; the lid lying flat behind the case read as a pot lid.
-- The second earbud first rose "from below" through the visible floor; it now flies in from the side.
-- "Aura." alone was misheard by ASR.
+与示范的道具相关的陷阱：
+- 青色灯条首先放置在磨砂表壳底座内，为整个表壳抹上了青色；它变成了一个冷白色的暗圆盘。
+- 光环的闲置光芒被透镜圆顶放大成淡蓝色的斑点。
+- 悬浮的耳塞直接看起来就像蘑菇；平放在盒子后面的盖子读作锅盖。
+- 第二个耳塞首先“从下面”升起，穿过可见的地板；现在它从侧面飞进来。
+- “灵气。”只有一个人被 ASR 听错了。

@@ -1,76 +1,85 @@
-# Style Name — Style Prompt
+<a id="style-name--style-prompt"></a>
+# 风格名称 - 风格提示
 
-> One or two sentences: what the medium is and what it does on screen. No demo title, no story.
-> References (grammar only): films, artists or traditions to learn the grammar from, and what to take from each. Never copy their characters, layouts, typefaces or music, and never name them in the film.
+> 一两句话：表现媒介是什么以及它在屏幕上的作用。没有示范标题，没有故事。
+> 参考文献（仅语法）：影片，向其学习语法的艺术家或传统，以及从中汲取的内容。切勿复制其字符、布局、字体或音乐，也切勿在影片中命名它们。
 
 <!--
-How to fill this template (delete this comment):
-- This file holds only what stays true for EVERY film in this style: look, material, colour logic, type, motion quality,
-  camera vocabulary, sound palette, the medium's native moves and pitfalls. 6–11 KB.
-- No story, arc, beat-by-beat shot table, prescribed opening or ending, score arc, BPM or key, demo durations, demo palette or props, end card or sign-off.
-  All of that goes to DEMO.md.
-- A number measured in the demo becomes a rule here ("the subject fills ≥ 1/3 of the frame"); the demo's actual value
-  can stay as an example in DEMO.md.
-- Write rules, not history. "Pitfalls" are pitfalls of the medium, not of one demo prop.
-- Section numbers are fixed: other guides refer to them.
+填写模板的方法（完成后删除本注释）：
+- 本文件只记录采用本风格制作的每部影片都须遵守的内容：外观、材质、色彩逻辑、字体、运动质量、镜头语言、声音体系、媒介特有表现手法和禁忌。长度约 6–11 KB。
+- 不写故事、情节弧线、逐拍分镜、指定开头或结尾、配乐走向、BPM、调性、示范时长、示范配色和道具、片尾卡或署名。这些内容放在 DEMO.md。
+- 将示范中测得的数据提炼成规则，例如“主体高度至少占画面三分之一”；示范的具体取值可作为例子保留在 DEMO.md。
+- 写规则，不写制作历史。“禁忌”应针对表现媒介，不针对某个示范道具。
+- 章节编号固定，其他指南会引用它们。
 -->
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-What makes a frame read as this style in one glance (3–5 defining traits). Then the styles it is easily confused with and the line between them ("not a keynote, not a blueprint, not a product render").
+是什么让框架一眼看上去就是这种风格（3-5 个定义特征）。然后是很容易混淆的风格以及它们之间的界限（“不是主题演讲，不是蓝图，不是产品渲染”）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-The physical medium and how code imitates it: surfaces, marks, layers, edges, texture, light. Name the rendering model (layers, blend modes, noise, stepping of marks). Say which effects must be procedural and anchored to the world, and which live in screen space.
+物理表现媒介以及代码如何模仿它：表面、标记、层、边缘、纹理、光线。命名渲染模型（图层、混合模式、噪声、标记步进）。说出哪些效果必须是程序性的并锚定于世界，哪些效果存在于屏幕空间中。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-Rules, not a palette: how many hues, what the neutral ground is, what the accent is reserved for, how values are ordered, what may never be coloured. Give one example palette at most, marked as an example.
+规则，而不是调色板：有多少种色调，中性底色是什么，保留重音的用途，值如何排序，什么可能永远不会被着色。最多给出一个示例调色板，标记为示例。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-Typefaces (licence-free), roles (title, subtitle, micro data), sizes as ranges, how subtitles belong to the world of the style (inscription, caption, HUD plate…), reading-time rule: hold ≥ max(1.8 s, speech + 0.6 s).
+字体（免许可）、角色（标题、副标题、微数据）、范围大小、字幕如何属于风格世界（铭文、标题、HUD 板……）、阅读时间规则：保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-Frame rate and stepping (on ones / twos, what boils), easing families, weight, jitter, how things appear and disappear. What never moves.
+帧速率和步进（一个/两个，什么沸腾），缓动家庭，重量，抖动，事物如何出现和消失。什么永远不会动。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route: the moves this medium does well, what each expresses, and a few kinds of moment it can serve. Opening and ending come from the topic.
+是一个词汇，而不是一条路线：表现媒介擅长的动作、每个动作表达的内容以及它可以服务的几种时刻。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| e.g. slow lateral pan | … | a journey; a list; time passing |
-| e.g. locked frame | … | a decision; a reveal; reading time |
-| e.g. push-in | … | tension; the one detail that matters |
+|例如慢速横向平移|……|一次旅行；一份清单；时间流逝|
+|例如锁定框架|……|决定；揭示；阅读时间|
+|例如推入式|……|紧张;重要的一个细节|
 
-No row names the single move for an opening, a climax or an ending. If the demo's route is worth keeping, it goes to DEMO.md "Shots". Framing rules that always hold (subject size, safe areas, where text lives). Allowed and forbidden transitions.
+没有一行指出开头、高潮或结尾的单个动作。如果示范的路由值得保留，则它会转到 DEMO.md“镜头”。始终适用的框架规则（主题大小、安全区域、文本所在的位置）。允许和禁止的转换。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-Instruments and timbres, articulations, tuning or mode families, foley materials (what the style's matter sounds like), ambience, silence as a tool (what it may contain, how it is cut), mix character (ducking, loudness −14 LUFS), voice character. A technique may be written as one option ("divide the beat to accelerate instead of changing tempo"). No score arc, no section sequence, no BPM or key: those are the demo's and go to DEMO.md "Score structure".
+乐器和音色、发音、调音或模式系列、拟音材料（风格的问题听起来是什么样的）、氛围、作为工具的静音（它可能包含什么、如何剪切）、混合特征（音量闪避，响度 -14 LUFS）、声音特征。一种技术可以写成一个选项（“划分节拍以加速而不是改变节奏”）。没有配乐弧，没有章节序列，没有 BPM 或调：这些是示范的，请转到 DEMO.md“配乐结构”。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu of moments only this medium can do: use the ones your story needs. For each: what it is, how to build it, and **fits content like…** with three or more examples unlike the demo.
+只有表现媒介才能做到的时刻菜单：使用您的故事需要的时刻。对于每个：它是什么，如何构建它，以及 **适合的内容，例如…**，其中包含三个或更多示例，与示范不同。
 
-- **Move name.** What it does on screen. *Fits content like:* a …; a …; a ….
+- **移动名称。** 它在屏幕上的作用。 *适合以下内容：* a …;一个……；一个……
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-Mistakes that come from the medium itself, each with its fix. Pitfalls tied to one demo prop go to DEMO.md.
+来自表现媒介本身的错误，每个错误都有其修复方法。与一个示范道具相关的陷阱转到 DEMO.md。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-Which files in `demo/` hold reusable recipes (engine, rig, compositor, sampler set-up), their main functions and parameters, and a minimal example that draws something that is not in the demo. Point to the code; don't restate it.
+`demo/` 中的哪些文件包含可重复使用的配方（引擎、骨骼绑定结构、合成器、采样器设置）、它们的主要功能和参数，以及绘制示范中不存在的内容的最小示例。指向代码；不要重述。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-What the agent decides for each film (structure, characters, opening, ending, camera path, pacing, palette within the colour logic). Then, one line each and all far from the demo: **three structures**, **three openings** and **three endings**, to show the range.
+代理为每个影片决定什么（结构、字符、开头、结尾、摄影机路径、节奏、颜色逻辑中的调色板）。然后，远离示范各一条线：**三个结构**、**三个开口**和**三个结尾**，以显示范围。
 
-Scene styles (a practical scene whose demo reads its words from `demo/content.json`) add here their **use cases** as information-order grammar: for each job, the order in which information arrives and how long each layer stays on screen. Swapping `content.json` is a technical check of the engine, not a way to make a film.
+场景风格（示范从 `demo/content.json` 读取单词的实际场景）在此处添加其 **用例** 作为信息顺序语法：对于每个作业，信息到达的顺序以及每层在屏幕上停留的时间。交换`content.json`是对发动机的技术检查，而不是制造影片的方法。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

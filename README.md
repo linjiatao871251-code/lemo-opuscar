@@ -2,342 +2,344 @@
 
 # Lemo-Opuscar
 
-**A toolbox of film styles made in code: <!--n-->59<!--/n--> ready to use, and your own.**<br>
-Pick a style or make one from scratch, bring your story, and let your coding agent direct.<br>
-<sub><!--n-->59<!--/n--> 种影片风格，每种都配一支完全用代码做出来的短片 · 🇨🇳 中文用户请看 <a href="README.zh-CN.md">简体中文说明</a></sub>
+> 本仓库为中文文档分支：已将制作指南、Skill 提示词和风格说明译为中文；项目与示范作品仍归原作者。安装本分支的 Skill 时，先设置 `LEMO_OPUSCAR_REPO=https://github.com/linjiatao871251-code/lemo-opuscar.git`，使工具库从本仓库获取。代码、命令、路径和必要的英文标识保留原样。
 
-<a href="https://lemomo-ai.github.io/lemo-opuscar/"><img alt="Watch the gallery" src="https://img.shields.io/badge/-%E2%96%B6%20Watch%20the%20gallery-E8553A?style=for-the-badge"></a> <a href="README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/README-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-555?style=for-the-badge"></a> <a href="https://github.com/lemomo-ai/lemo-opuscar/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lemomo-ai/lemo-opuscar?style=for-the-badge&color=F5B700&label=stars"></a> <a href="#licence"><img alt="MIT · CC BY 4.0" src="https://img.shields.io/badge/licence-MIT%20%C2%B7%20CC%20BY%204.0-2EA44F?style=for-the-badge"></a>
+**一套用代码做片的风格工具箱：<!--n-->59<!--/n--> 种现成风格，也能做出你自己的。**<br>
+选一个风格，或者从头做一个，带上你的故事，让编程 agent 来当导演。
+
+<a href="https://lemomo-ai.github.io/lemo-opuscar/"><img alt="看图鉴" src="https://img.shields.io/badge/-%E2%96%B6%20%E7%9C%8B%E5%9B%BE%E9%89%B4-E8553A?style=for-the-badge"></a> <a href="README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/README-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-555?style=for-the-badge"></a> <a href="https://github.com/lemomo-ai/lemo-opuscar/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lemomo-ai/lemo-opuscar?style=for-the-badge&color=F5B700&label=stars"></a> <a href="#授权"><img alt="MIT · CC BY 4.0" src="https://img.shields.io/badge/%E6%8E%88%E6%9D%83-MIT%20%C2%B7%20CC%20BY%204.0-2EA44F?style=for-the-badge"></a>
 
 <a href="https://trendshift.io/repositories/262645?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-262645" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/262645/daily?language=JavaScript" alt="lemomo-ai%2Flemo-opuscar | Trendshift" width="250" height="55"/></a>
 
-⚠️ **Built for Claude.** The styles are tuned for Claude Opus 5.5;<br>
-other models may not reproduce them well, so use them with care.
+⚠️ **本插件为 Claude 专用。** 风格都是按 Claude Opus 5.5 调出来的，<br>
+其他模型适配度不高，请谨慎使用。
 
-🆕 **2026-10-22 · [Edit & Documentary](https://lemomo-ai.github.io/lemo-opuscar/#edit-documentary)**: 8 styles cut from real footage, documents and data. [See them ↓](#edit--documentary)<br>
-🆕 **2026-10-22 · [Make a style your own](#make-a-style-your-own)**: change a style or start blank, and keep it. [See how ↓](#make-a-style-your-own)<br>
-🆕 **2026-10-16 · [Evidence Films](https://lemomo-ai.github.io/lemo-opuscar/#evidence-films)**: 8 styles that film real material, every number sourced. [See them ↓](#evidence-films)
+🆕 **2026-10-22 · 新分类[「剪辑与纪实」](https://lemomo-ai.github.io/lemo-opuscar/#edit-documentary)**：8 种风格，用真实的档案、文件和数据剪成。[往下看 ↓](#剪辑与纪实)<br>
+🆕 **2026-10-22 · 新玩法[「改成你自己的风格」](#改成你自己的风格)**：改库里的风格或从空白做，存成你自己的。[往下看 ↓](#改成你自己的风格)<br>
+🆕 **2026-10-16 · 新分类[「实证影像」](https://lemomo-ai.github.io/lemo-opuscar/#evidence-films)**：8 种风格，拍真实素材，每个数字都有出处。[往下看 ↓](#实证影像)
 
-<sub>Official repo: [github.com/lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) · by Lemomo ([@lemomo_ai](https://x.com/lemomo_ai))</sub>
+<sub>官方仓库：[github.com/lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) · 作者 Lemomo（[@lemomo_ai](https://x.com/lemomo_ai)）</sub>
 
 </div>
 
-## 🎬 Feature presentation: OPUSCAR 98
+## 🎬 特别放映：OPUSCAR 98
 
 <table><tr>
-<td width="50%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/opuscar98/"><img src="docs/opuscar98.jpg" alt="OPUSCAR 98 — 98 Years of Best Picture"></a><br><b>▶ The film</b> · 1927 – 2025 · 6:31<br><sub>One Clawd walks through all 98 Best Picture winners, each one redrawn in a style that fits the film.</sub></td>
-<td width="50%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/opuscar98/#styles"><img src="docs/opuscar98-styles.jpg" alt="OPUSCAR 98 — all 98 styles open"></a><br><b>All 98 styles, open</b> · 77 in 2D · 4 in 2.5D · 17 in 3D<br><sub>Each film's style, a frame and a style prompt to reuse on your own topic.</sub></td>
+<td width="50%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/opuscar98/"><img src="docs/opuscar98.jpg" alt="OPUSCAR 98：98 年最佳影片"></a><br><b>▶ 影片</b> · 1927 – 2025 · 6 分 31 秒<br><sub>一个 Clawd 走过 98 部最佳影片，每一部都换成贴合那部电影的画风。</sub></td>
+<td width="50%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/opuscar98/#styles"><img src="docs/opuscar98-styles.jpg" alt="OPUSCAR 98：98 种风格全部公开"></a><br><b>98 种风格全部公开</b> · 2D 77 · 2.5D 4 · 3D 17<br><sub>每部片的画风、截图和风格提示词，拿去拍你自己的题材。</sub></td>
 </tr></table>
 
 <div align="center">
 
-Every frame, every note and every cut was written in code by Claude Opus 5.5.<br>
-[**▶ Watch**](https://lemomo-ai.github.io/lemo-opuscar/opuscar98/) · [**All 98 styles**](https://lemomo-ai.github.io/lemo-opuscar/opuscar98/#styles) · [**Download 1080p**](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/opuscar98.mp4)
+每一帧画面、每一个音符、每一刀剪辑，都是 Claude Opus 5.5 写代码做出来的。<br>
+[**▶ 观看**](https://lemomo-ai.github.io/lemo-opuscar/opuscar98/) · [**98 种风格**](https://lemomo-ai.github.io/lemo-opuscar/opuscar98/#styles) · [**下载 1080p**](https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/opuscar98.mp4)
 
 </div>
 
-## 👋 About me
+## 👋 关于我
 
-I'm **Lemomo** ([@lemomo-ai](https://github.com/lemomo-ai)). More about me on my profile.
+我是 **Lemomo**，更多信息见我的 [GitHub 主页](https://github.com/lemomo-ai)。
 
-> **Not an awesome list.** Every film here was made by me, with Claude Opus 5.5.<br>
-> The styles are tuned for Opus 5.5; other models may not reproduce them.
+> **这不是一个 awesome 合集。** 这里所有的片子都是我自己用 Claude Opus 5.5 做的。<br>
+> 风格是按 Opus 5.5 调出来的，换成其他模型不保证能做出同样的效果。
 
-![All styles](docs/cover.jpg)
+![全部风格](docs/cover.jpg)
 
-Every film was directed, drawn, scored and mixed by an AI agent writing code:
+每一支片子都是 AI agent 写代码导演、作画、配乐、混音的：
 
-- 🎨 **Picture**: canvas and WebGL pages, rendered frame by frame
-- 🎵 **Music**: original scores from free sample libraries
-- 🎙️ **Voice**: text-to-speech narration
+- 🎨 **画面**：Canvas 和 WebGL 页面逐帧渲染
+- 🎵 **音乐**：用免费采样库写的原创配乐
+- 🎙️ **配音**：TTS 语音合成
 
-No video generation, no stock footage.
+不用视频生成，也不用素材库画面。
 
-## How to use
+## 怎么用
 
-Two ways in; the skill is the easiest.
+两种用法，推荐装 skill，最省事。
 
-### Option 1: install the skill (recommended)
+### 方式一：装成 skill（推荐）
 
-In your terminal:
+在终端里：
 
 ```sh
-claude plugin marketplace add lemomo-ai/lemo-opuscar
+claude plugin marketplace add linjiatao871251-code/lemo-opuscar
 claude plugin install lemo-opuscar@lemolab
 ```
 
-Then use it from any folder.
+之后在任何目录都能用。
 
-- On first use it downloads the guides, tools and style prompts to `~/lemo-opuscar`, shared by all your films.
-- Each film's project, from source to finished video, goes in the folder you started from.
-- For other agents, copy [`plugin/skills/lemo-opuscar/`](plugin/skills/lemo-opuscar/) into their skills folder.
+- 第一次使用时，它会把指南、工具和风格提示词下载到 `~/lemo-opuscar`，所有片子共用这一份。
+- 每支片子的工程，从源码到成片，都放在你发起时所在的文件夹里。
+- 其他 agent 可以把 [`plugin/skills/lemo-opuscar/`](plugin/skills/lemo-opuscar/) 复制到它们的 skills 目录。
 
-### Option 2: clone the repo
+### 方式二：clone 仓库
 
 ```sh
-git clone https://github.com/lemomo-ai/lemo-opuscar.git
+git clone https://github.com/linjiatao871251-code/lemo-opuscar.git
 cd lemo-opuscar
 claude
 ```
 
-Films go into `films/<name>/` inside the repo.
+片子做到仓库里的 `films/<名字>/`。
 
-### Then just say what you want
+### 然后直接说
 
-> Make a 45-second film in the **watercolor** style about the coffee farm my family runs. Warm female narrator.
+> 用**油画厚涂**风格做一支 30 秒的片子，讲我家那只每天在窗台等我下班的橘猫。
 
-> Make a 40-second **LiDAR Survey** film about the old quarry in the hills behind our town, from public laser-scan data.
+> 用**点云测绘**风格做一支 40 秒的片子，讲我们镇后山那座废弃的采石场，数据用公开的激光扫描。
 
-Name the style in English or Chinese; the [style index](styles/README.md) lists them all.
+风格用中文名、英文名或文件夹名都行，全部风格见[风格索引](styles/README.md)。
 
-Not sure yet? With the skill installed, type `/lemo-opuscar:lemo-opuscar` and nothing else. It asks which language to use, then what you'd like to do: a film in a library style, [make a style your own](#make-a-style-your-own), or a film in a style you've saved.
+还没想好也没关系：装成 skill 的，输入 `/lemo-opuscar:lemo-opuscar` 直接启动。它先问你用什么语言，再问这次想做什么：用库里的风格做片、[把风格改成你自己的](#改成你自己的风格)，或者用你存过的风格。
 
-It asks you once, up front:
+它开工前只问你一次：
 
-- anything it can't decide about your topic;
-- whether you have your own **voice, music or other material**;
-- whether you want to see a **storyboard** first. Say yes and it stops once to show you the key shots in the real style; otherwise it goes straight to the finished film.
+- 主题里它定不了的事；
+- 你有没有自己的**配音、音乐或其他素材**；
+- 要不要先看**分镜故事板**。要看的话，它会停一次，给你看用真实风格画出来的关键镜头；不看就直接做完成片。
 
-The agent reads three guides and works like a small studio:
+agent 会读三份指南，像一个小工作室一样开工。<br>
+指南是英文写给 agent 看的，你用中文跟它说就行，片子的配音和字幕默认跟你用的语言一致。
 
-| File | What it gives the agent |
+| 文件 | 给 agent 的东西 |
 |---|---|
-| [`DIRECTOR.md`](DIRECTOR.md) | how to direct: story, sound, rhythm, camera, performance, self-checks |
-| [`TECHNIQUE.md`](TECHNIQUE.md) | how to build: frame-by-frame rendering, voice, music, mixing |
-| `styles/<style>/STYLE.md` | what the style looks and sounds like; the story is yours |
+| [`DIRECTOR.md`](DIRECTOR.md) | 怎么导：故事、声音、节奏、镜头、表演、自检 |
+| [`TECHNIQUE.md`](TECHNIQUE.md) | 怎么做：逐帧渲染、配音、配乐、混音 |
+| `styles/<风格>/STYLE.md` | 这个风格长什么样、听起来什么样；故事由你定 |
 
-### Make a style your own
+### 改成你自己的风格
 
-Everyone wants something different: their own brand colours, logo, characters, the tone of their channel. Now you can change a library style into one that's only yours, or make one from a blank page that the library doesn't have. It's the same process I use to add a new style to the library.
+每个人想要的都不一样：有自己的品牌色、logo、IP 和账号调性。现在你可以把库里的风格改成只属于你的，或者从空白做一个库里没有的。走的就是我自己往库里加新风格的流程。
 
 <table><tr>
-<td width="50%" valign="top"><a href="https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/swiss-motion.mp4"><img src="docs/my-style-before.jpg" alt="A library style: Swiss Motion Graphics"></a><br><b>A library style</b> · Swiss Motion Graphics<br><sub>A flat grid, one signal colour, every move on the beat.</sub></td>
-<td width="50%" valign="top"><a href="https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/my-style-material-grid.mp4"><img src="docs/my-style-after.jpg" alt="My style: Material Grid"></a><br><b>My style</b> · Material Grid · ▶ 31 s demo film<br><sub>The Swiss grid, beat and type kept, the shapes made of clay, plastic, felt, glass and chrome: from above it reads as a poster, one tilt and it's a table of objects.</sub></td>
+<td width="50%" valign="top"><a href="https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/swiss-motion.mp4"><img src="docs/my-style-before.jpg" alt="库里的风格：瑞士动态排版"></a><br><b>库里的风格</b> · 瑞士动态排版<br><sub>平面网格、一个信号色、动作卡着节拍。</sub></td>
+<td width="50%" valign="top"><a href="https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/my-style-material-grid.mp4"><img src="docs/my-style-after.jpg" alt="我的风格：材质网格"></a><br><b>我的风格</b> · 材质网格 · ▶ 31 秒 demo 片<br><sub>留下瑞士排版的网格、节拍和字体，换成陶土、塑料、绒布、玻璃和铬的实物：俯视是一张海报，镜头一倾全是实物。</sub></td>
 </tr></table>
 
-**Two ways in.** Pick one after starting the skill, or say it in one line:
+**两个入口。** 启动 skill 后在入口里选，或者一句话直接说：
 
-> I want to change the **Ukiyo-e** style into my own version.
+> 我想把**浮世绘**风格改成我自己的版本。
 
-> Start from a blank page: a chalk-on-blackboard style, warm and slow.
+> 从空白开始，做一个黑板粉笔画的风格，暖一点、慢一点。
 
-- **Change a library style**: it lists all 59 with the gallery link, and you type the one to change.
-- **Start from a blank page**: describe the look in your own words, or share a picture or a film you like. Claude picks the closest library style as the technique base, tells you why, and you agree or pick another.
+- **改库里的风格**：它列出全部 59 种和画廊链接，你打字说改哪一个。
+- **从空白开始**：用你自己的话描述想要的样子，也可以给一张喜欢的图或一支片。Claude 从库里挑一个最接近的风格当技法底子，说清楚为什么选它，你点头或者换一个。
 
-**Then five steps:**
+**接下来五步：**
 
-1. **Plan it one question at a time.** Each question has a few options, the recommended one first, with the reason. Roughly:
-   - what it's for: what kind of films, which platform (vertical feeds want 1080×1920 or 1080×1440), any brand colours, logo, fonts or recurring characters;
-   - what to change: for a library style it first sorts the style into three groups, **safe to change** (palette, type, pace, sound, signature moves), **changes its character** (materials and rendering, the colour logic, camera grammar) and **can't change** (the style's essence: change that and it's a different style);
-   - which way to take each part, and last, a name.
+1. **一个问题一个问题定方案。** 每个问题都带几个选项，推荐的排第一，附上理由。大概会问：
+   - 拿来做什么：做什么片、发在哪个平台（竖屏就用 1080×1920 或 1080×1440），有没有品牌色、logo、字体或固定角色；
+   - 想改哪里：改库里风格时，它先把风格分成三组讲给你听，**放心改**（配色、字体、动作快慢、声音、标志镜头）、**一改就变味**（材质和画法、配色的逻辑、镜头语法）、**不能改**（风格的本质，改了就是另一个风格）；
+   - 每一项往哪个方向改，最后起名字。
 
-   Vague is fine: say "more premium" or "livelier" and it turns that into concrete changes to pick from. Too slow? Choose "free conversation", the last option on every question, and just talk it through; say "you decide" at any point and it fills in the rest with its recommendations. At most five changes a round when changing a library style; everything is drawn in code, no image generation.
-2. **Review the summary.** Each part before, after, and what it costs. Nothing is written until you agree.
-3. **See one style frame first**, drawn with the real code. When you changed a library style, the same frame is rendered in the original too, side by side: original left, yours right. Say what's off; if it still isn't right after two rounds, it says so and suggests a closer base.
-4. **A 15–30 second demo film.** Every change is on screen, with music and sound effects. It checks the film and fixes it once before handing it over.
-5. **Keep it when you're happy.** It asks: keep it as my style, another round, or not now. Until you say yes, everything stays in that project's folder.
+   说得模糊也行，比如「高级一点」「活泼一点」，它会翻译成具体的改法让你挑。嫌慢就选每题最后的「自由对话」，直接聊；随时说「你定」，剩下的它按推荐填好。改库里风格时一轮最多改五处；全部用代码画，不用生图。
+2. **看汇总，点头。** 每一项改前是什么、改后是什么、代价是什么，你点头了它才写下来。
+3. **先看一张风格图。** 用真实的绘制代码画出来。改库里风格的，同一个画面用原风格再出一张，左边原版、右边你的并排放。不满意就说，两轮还不对它会直说，建议换一个更接近的底子。
+4. **一支 15–30 秒的 demo 片。** 每一处改动都在画面里出现，配音乐和音效。它自己检查、修一轮再交给你。
+5. **满意了再固化。** 它问你：固化、再改一轮，还是先不固化。你点头之前，一切都只在这次的项目文件夹里。
 
-Once kept, the style lives in `~/lemo-my-styles/<name>/`, shaped like a library style: the style prompt, what changed, the demo film and its source, so later films can reuse the techniques. Then name it like any other style: *"Make a 30-second film in my **Night Ukiyo-e** style about…"*. When you pick a style, your own are listed first.
+固化以后，风格存在 `~/lemo-my-styles/<名字>/`，和库里的风格同一个结构：风格说明、改了什么、demo 片和它的源码，以后做片能接着用这些技法。之后像用库里的风格一样叫它的名字：“用我的**夜浮世绘**风格做一支 30 秒的片子，讲……”。挑风格时，你自己的风格排在最前面。
 
-Library updates and reinstalling never touch them. When the base style is updated later, Claude mentions it once and asks whether to bring the useful fixes into your copy. The steps Claude follows are in [`MY-STYLES.md`](MY-STYLES.md).
+库更新、重装 skill 都不会动它们。底子风格以后更新了，它会提一句，问你要不要把有用的修复同步过来。Claude 照着 [`MY-STYLES.md`](MY-STYLES.md) 一步步做。
 
-### Before you start
+### 开始之前
 
-- A film takes an agent about 30–60 minutes and a fair amount of tokens.
-- You need Node 20+, ffmpeg and Python 3.11+ (or [uv](https://docs.astral.sh/uv/)); the agent installs the rest.
-- Default output 1920×1080, 24 fps; other sizes on request.
+- 一支片子 agent 大约要做 30–60 分钟，token 用量不小。
+- 需要 Node 20+、ffmpeg 和 Python 3.11+（或 [uv](https://docs.astral.sh/uv/)），其余由 agent 安装。
+- 默认输出 1920×1080、24 fps，其他尺寸可以指定。
 
-### Update or uninstall
+### 更新和卸载
 
-Update, then restart Claude Code (the library in `~/lemo-opuscar` updates itself on the next film):
+更新，然后重启 Claude Code（`~/lemo-opuscar` 里的库会在下一次做片时自动更新）：
 
 ```sh
 claude plugin marketplace update lemolab && claude plugin update lemo-opuscar@lemolab
 ```
 
-After an update, ask for a film as usual; to make a style your own, see [above](#make-a-style-your-own).
+更新后照常说要做什么片；想把风格改成自己的，看[上面](#改成你自己的风格)。
 
-Uninstall, then delete `~/lemo-opuscar`:
+卸载，然后删除 `~/lemo-opuscar`：
 
 ```sh
 claude plugin uninstall lemo-opuscar@lemolab
 ```
 
-Your own styles in `~/lemo-my-styles/` stay through updates and uninstalls; delete that folder yourself if you don't want them.
+你自己的风格存在 `~/lemo-my-styles/`，更新和卸载都不会删；不要了就自己删掉这个文件夹。
 
-If a step stays stuck, [open an issue](https://github.com/lemomo-ai/lemo-opuscar/issues).
+一直卡住就[提个 issue](https://github.com/lemomo-ai/lemo-opuscar/issues)。
 
-## The styles
+## 风格
 
-Click a frame for its `STYLE.md`.
+点图片看它的 `STYLE.md`。
 
 <!-- styles:start -->
 
-### Edit & Documentary
+### 剪辑与纪实
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/caption-news/STYLE.md"><img src="docs/frames/caption-news.jpg" alt="Caption News"></a><br><b>Caption News</b><br><i>The Bee Ledger</i><br><sub>America lost 1.3 million bee colonies, yet the count rose 6 %: a news short that works with the sound off.</sub></td>
-<td width="33%" valign="top"><a href="styles/newsreel/STYLE.md"><img src="docs/frames/newsreel.jpg" alt="1920s Newsreel"></a><br><b>1920s Newsreel</b><br><i>Knock-Knee Alert</i><br><sub>1926: the papers say the Charleston will ruin America&#x27;s knees; at Ford&#x27;s own picnic the kids dance it anyway.</sub></td>
-<td width="33%" valign="top"><a href="styles/countdown/STYLE.md"><img src="docs/frames/countdown.jpg" alt="Live Countdown Split-screen"></a><br><b>Live Countdown Split-screen</b><br><i>Counting Itself Down</i><br><sub>The last minute of the Artemis II launch, uncut: one cell opens to nine, and they merge into one at ignition.</sub></td>
+<td width="33%" valign="top"><a href="styles/caption-news/STYLE.md"><img src="docs/frames/caption-news.jpg" alt="字幕新闻"></a><br><b>字幕新闻</b><br>Caption News<br><i>The Bee Ledger</i><br><sub>美国一年死掉 130 万箱蜜蜂，总数却涨了 6%：静音也能看懂的新闻。</sub></td>
+<td width="33%" valign="top"><a href="styles/newsreel/STYLE.md"><img src="docs/frames/newsreel.jpg" alt="1920s 新闻影片"></a><br><b>1920s 新闻影片</b><br>1920s Newsreel<br><i>Knock-Knee Alert</i><br><sub>1926 年报纸说查尔斯顿会跳坏膝盖，福特工人野餐会上的孩子照跳不误。</sub></td>
+<td width="33%" valign="top"><a href="styles/countdown/STYLE.md"><img src="docs/frames/countdown.jpg" alt="实时倒计时分屏"></a><br><b>实时倒计时分屏</b><br>Live Countdown Split-screen<br><i>Counting Itself Down</i><br><sub>阿尔忒弥斯二号发射的最后一分钟，一秒不剪：格子从 1 开到 9，点火合成 1。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/city-symphony/STYLE.md"><img src="docs/frames/city-symphony.jpg" alt="Time-lapse Symphony"></a><br><b>Time-lapse Symphony</b><br><i>One Day in New York</i><br><sub>One day in New York in time-lapse: rivers of light, a grid on the sixteenths, 1899 beside today.</sub></td>
-<td width="33%" valign="top"><a href="styles/visual-investigation/STYLE.md"><img src="docs/frames/visual-investigation.jpg" alt="Visual Investigation"></a><br><b>Visual Investigation</b><br><i>The Hindenburg: Four Minutes, 32 Seconds</i><br><sub>Newsreel, photos, testimony and the 1937 inquiry on one clock: five sources point to the same spot.</sub></td>
-<td width="33%" valign="top"><a href="styles/kino-montage/STYLE.md"><img src="docs/frames/kino-montage.jpg" alt="Constructivist Montage"></a><br><b>Constructivist Montage</b><br><i>410 Days</i><br><sub>The Empire State&#x27;s 1931 brochure credits its builders; the site film and Hine&#x27;s photos answer: 2,500 a day.</sub></td>
+<td width="33%" valign="top"><a href="styles/city-symphony/STYLE.md"><img src="docs/frames/city-symphony.jpg" alt="延时交响"></a><br><b>延时交响</b><br>Time-lapse Symphony<br><i>One Day in New York</i><br><sub>纽约的一天：延时光河、踩着十六分音符的网格，1899 年和今天并排。</sub></td>
+<td width="33%" valign="top"><a href="styles/visual-investigation/STYLE.md"><img src="docs/frames/visual-investigation.jpg" alt="视觉调查"></a><br><b>视觉调查</b><br>Visual Investigation<br><i>The Hindenburg: Four Minutes, 32 Seconds</i><br><sub>新闻片、照片、证词和调查报告排上同一条时间轴，五路来源指向一处。</sub></td>
+<td width="33%" valign="top"><a href="styles/kino-montage/STYLE.md"><img src="docs/frames/kino-montage.jpg" alt="构成主义蒙太奇"></a><br><b>构成主义蒙太奇</b><br>Constructivist Montage<br><i>410 Days</i><br><sub>帝国大厦的小册子写着建造者，工地实拍和老照片给出答案：每天 2,500 人。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/telestrator/STYLE.md"><img src="docs/frames/telestrator.jpg" alt="Sports Telestrator"></a><br><b>Sports Telestrator</b><br><i>Freeze Frame</i><br><sub>Down 3–0 at half-time, Fenerbahçe scored three in 12 minutes: freeze, draw, split screen, shot map.</sub></td>
-<td width="33%" valign="top"><a href="styles/news-package/STYLE.md"><img src="docs/frames/news-package.jpg" alt="Broadcast News Package"></a><br><b>Broadcast News Package</b><br><i>The Week in AI</i><br><sub>Four AI stories from one week in a full on-air package: rundown, headline strap, price board, spec card.</sub></td>
+<td width="33%" valign="top"><a href="styles/telestrator/STYLE.md"><img src="docs/frames/telestrator.jpg" alt="体育战术板"></a><br><b>体育战术板</b><br>Sports Telestrator<br><i>Freeze Frame</i><br><sub>半场 0–3，费内巴切 12 分钟连进三球：冻住画面、画线、分屏、射门图。</sub></td>
+<td width="33%" valign="top"><a href="styles/news-package/STYLE.md"><img src="docs/frames/news-package.jpg" alt="电视新闻包装"></a><br><b>电视新闻包装</b><br>Broadcast News Package<br><i>The Week in AI</i><br><sub>一周四条 AI 新闻，一整套电视台包装：串联单、标题条、翻牌价格表、规格卡。</sub></td>
 </tr>
 </table>
 
-### Evidence Films
+### 实证影像
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/frames/satellite-briefing.jpg" alt="Satellite Briefing"></a><br><b>Satellite Briefing</b><br><i>The Map Still Says Sea</i><br><sub>A satellite follows the map to the Aral Sea and finds a desert; only the part someone dammed came back.</sub></td>
-<td width="33%" valign="top"><a href="styles/briefing-board/STYLE.md"><img src="docs/frames/briefing-board.jpg" alt="Engineering Briefing Board"></a><br><b>Engineering Briefing Board</b><br><i>The Ship Decides</i><br><sub>Four bridge types are tested on one briefing wall, and the ship that must pass under picks the winner.</sub></td>
-<td width="33%" valign="top"><a href="styles/lidar-survey/STYLE.md"><img src="docs/frames/lidar-survey.jpg" alt="LiDAR Survey"></a><br><b>LiDAR Survey</b><br><i>The Fields Under the Forest</i><br><sub>A laser survey strips the canopy off a Connecticut forest and finds 3.4 km of old farm walls.</sub></td>
+<td width="33%" valign="top"><a href="styles/satellite-briefing/STYLE.md"><img src="docs/frames/satellite-briefing.jpg" alt="卫星简报"></a><br><b>卫星简报</b><br>Satellite Briefing<br><i>The Map Still Says Sea</i><br><sub>卫星照着地图去找咸海，找到的是沙漠；只有筑了坝的那一块回来了。</sub></td>
+<td width="33%" valign="top"><a href="styles/briefing-board/STYLE.md"><img src="docs/frames/briefing-board.jpg" alt="工程简报板"></a><br><b>工程简报板</b><br>Engineering Briefing Board<br><i>The Ship Decides</i><br><sub>一条河要架桥，四种桥型在一面简报墙上逐个受检，拍板的是桥下要过的船。</sub></td>
+<td width="33%" valign="top"><a href="styles/lidar-survey/STYLE.md"><img src="docs/frames/lidar-survey.jpg" alt="点云测绘"></a><br><b>点云测绘</b><br>LiDAR Survey<br><i>The Fields Under the Forest</i><br><sub>激光点云剥掉一片森林的树冠，露出当年农田的石墙：3.4 公里。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/white-model/STYLE.md"><img src="docs/frames/white-model.jpg" alt="Projection on White Model"></a><br><b>Projection on White Model</b><br><i>How a Flattened City Grew Back</i><br><sub>A projector paints Rotterdam&#x27;s white model layer by layer, from the 1940 gap to today&#x27;s towers.</sub></td>
-<td width="33%" valign="top"><a href="styles/data-physical/STYLE.md"><img src="docs/frames/data-physical.jpg" alt="Data Physicalization"></a><br><b>Data Physicalization</b><br><i>Two Spirals</i><br><sub>Twelve years of wind and solar stacked as real plates, spiralling round a walnut dial until solar overtakes.</sub></td>
-<td width="33%" valign="top"><a href="styles/teardown/STYLE.md"><img src="docs/frames/teardown.jpg" alt="Exploded Teardown"></a><br><b>Exploded Teardown</b><br><i>21 Keys, Opened</i><br><sub>Half an open-source keyboard comes apart in one orbit, down to the chip, then closes with its real dimensions.</sub></td>
+<td width="33%" valign="top"><a href="styles/white-model/STYLE.md"><img src="docs/frames/white-model.jpg" alt="白模投影"></a><br><b>白模投影</b><br>Projection on White Model<br><i>How a Flattened City Grew Back</i><br><sub>投影机把数据一层层刷上鹿特丹白模：从 1940 年的空洞到今天的塔楼。</sub></td>
+<td width="33%" valign="top"><a href="styles/data-physical/STYLE.md"><img src="docs/frames/data-physical.jpg" alt="数据实物化"></a><br><b>数据实物化</b><br>Data Physicalization<br><i>Two Spirals</i><br><sub>十二年风电和太阳能装机叠成实物，绕表盘升成两条螺旋，2021 年太阳能反超。</sub></td>
+<td width="33%" valign="top"><a href="styles/teardown/STYLE.md"><img src="docs/frames/teardown.jpg" alt="产品拆解"></a><br><b>产品拆解</b><br>Exploded Teardown<br><i>21 Keys, Opened</i><br><sub>开源键盘的一半在一次环绕中逐层拆开，看到主控再合拢，标上真实尺寸。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/microscope/STYLE.md"><img src="docs/frames/microscope.jpg" alt="Microscope Story"></a><br><b>Microscope Story</b><br><i>Measured Blue</i><br><sub>One continuous move from a liver slide to a single nucleus; two circles, counted pixel by pixel, differ 2.4 times in blue.</sub></td>
-<td width="33%" valign="top"><a href="styles/archive-lighttable/STYLE.md"><img src="docs/frames/archive-lighttable.jpg" alt="Archive Light Table"></a><br><b>Archive Light Table</b><br><i>Two Seconds Short</i><br><sub>The telegram said 57 seconds; under a loupe, the Wrights&#x27; glass negatives and the archive say 59.</sub></td>
+<td width="33%" valign="top"><a href="styles/microscope/STYLE.md"><img src="docs/frames/microscope.jpg" alt="显微叙事"></a><br><b>显微叙事</b><br>Microscope Story<br><i>Measured Blue</i><br><sub>一镜从肝组织玻片推到单个细胞核，两个圆逐像素数出 2.4 倍的蓝。</sub></td>
+<td width="33%" valign="top"><a href="styles/archive-lighttable/STYLE.md"><img src="docs/frames/archive-lighttable.jpg" alt="档案灯台"></a><br><b>档案灯台</b><br>Archive Light Table<br><i>Two Seconds Short</i><br><sub>电报说最长飞了 57 秒；放大镜下，莱特兄弟的底片和档案说是 59 秒。</sub></td>
 </tr>
 </table>
 
-### Hand-drawn & Painting
+### 手绘与绘画
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/crayon-book/STYLE.md"><img src="docs/frames/crayon-book.jpg" alt="Crayon Picture Book"></a><br><b>Crayon Picture Book</b><br><i>The Moon Can&#x27;t Sleep</i><br><sub>The moon can&#x27;t sleep, so a little girl climbs onto the roof to sing it a lullaby.</sub></td>
-<td width="33%" valign="top"><a href="styles/watercolor/STYLE.md"><img src="docs/frames/watercolor.jpg" alt="Watercolor Brush"></a><br><b>Watercolor Brush</b><br><i>Follow the Rain</i><br><sub>Follow the rain from Australia&#x27;s red desert heart to its green coast in one unbroken painted walk.</sub></td>
-<td width="33%" valign="top"><a href="styles/ink-wash/STYLE.md"><img src="docs/frames/ink-wash.jpg" alt="Chinese Ink Wash"></a><br><b>Chinese Ink Wash</b><br><i>The Swordsman and the River</i><br><sub>A swordsman crosses the river on the water and splits the current with a single stroke.</sub></td>
+<td width="33%" valign="top"><a href="styles/crayon-book/STYLE.md"><img src="docs/frames/crayon-book.jpg" alt="蜡笔儿童绘本"></a><br><b>蜡笔儿童绘本</b><br>Crayon Picture Book<br><i>The Moon Can&#x27;t Sleep</i><br><sub>月亮失眠了，小女孩爬上屋顶给它唱摇篮曲。</sub></td>
+<td width="33%" valign="top"><a href="styles/watercolor/STYLE.md"><img src="docs/frames/watercolor.jpg" alt="水彩笔刷"></a><br><b>水彩笔刷</b><br>Watercolor Brush<br><i>Follow the Rain</i><br><sub>跟着降雨从澳洲红色腹地一路画到绿色海岸，一镜到底。</sub></td>
+<td width="33%" valign="top"><a href="styles/ink-wash/STYLE.md"><img src="docs/frames/ink-wash.jpg" alt="中国水墨"></a><br><b>中国水墨</b><br>Chinese Ink Wash<br><i>The Swordsman and the River</i><br><sub>侠客踏水过江，一剑断流。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/impasto/STYLE.md"><img src="docs/frames/impasto.jpg" alt="Impasto Oil Painting"></a><br><b>Impasto Oil Painting</b><br><i>The Colour of Rain</i><br><sub>In a grey, rainy square one red umbrella opens, and a waltz paints the whole plaza in colour.</sub></td>
-<td width="33%" valign="top"><a href="styles/one-line/STYLE.md"><img src="docs/frames/one-line.jpg" alt="One-line Drawing"></a><br><b>One-line Drawing</b><br><i>The Line That Never Lifted</i><br><sub>One unbroken line draws a whole life, then the pen passes to a child.</sub></td>
-<td width="33%" valign="top"><a href="styles/whiteboard/STYLE.md"><img src="docs/frames/whiteboard.jpg" alt="Whiteboard Explainer"></a><br><b>Whiteboard Explainer</b><br><i>Einstein in Your Pocket</i><br><sub>How your phone knows where you are: GPS, atomic clocks, and the 38 microseconds relativity adds every day.</sub></td>
+<td width="33%" valign="top"><a href="styles/impasto/STYLE.md"><img src="docs/frames/impasto.jpg" alt="油画厚涂"></a><br><b>油画厚涂</b><br>Impasto Oil Painting<br><i>The Colour of Rain</i><br><sub>灰色雨中广场，第一把红伞撑开，圆舞曲把整个广场刷上颜色。</sub></td>
+<td width="33%" valign="top"><a href="styles/one-line/STYLE.md"><img src="docs/frames/one-line.jpg" alt="一笔画"></a><br><b>一笔画</b><br>One-line Drawing<br><i>The Line That Never Lifted</i><br><sub>一根不离纸的线画完一个人的一生，再把笔交给孩子。</sub></td>
+<td width="33%" valign="top"><a href="styles/whiteboard/STYLE.md"><img src="docs/frames/whiteboard.jpg" alt="白板讲解"></a><br><b>白板讲解</b><br>Whiteboard Explainer<br><i>Einstein in Your Pocket</i><br><sub>手机怎么知道你在哪：GPS、原子钟，和相对论每天多出的 38 微秒。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/urban-sketch/STYLE.md"><img src="docs/frames/urban-sketch.jpg" alt="Urban Sketch · Pen &amp; Wash"></a><br><b>Urban Sketch · Pen &amp; Wash</b><br><i>Where the Wind Went</i><br><sub>A park that is only a pen sketch; wherever the wind carries her straw hat, colour follows.</sub></td>
+<td width="33%" valign="top"><a href="styles/urban-sketch/STYLE.md"><img src="docs/frames/urban-sketch.jpg" alt="钢笔淡彩"></a><br><b>钢笔淡彩</b><br>Urban Sketch · Pen &amp; Wash<br><i>Where the Wind Went</i><br><sub>公园只是一张钢笔速写，风把草帽吹到哪里，哪里才有颜色。</sub></td>
 </tr>
 </table>
 
-### East Asian Traditions
+### 东方传统
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/shadow-puppet/STYLE.md"><img src="docs/frames/shadow-puppet.jpg" alt="Shadow Puppetry"></a><br><b>Shadow Puppetry</b><br><i>Hou Yi Shoots the Suns</i><br><sub>Ten suns scorch the earth until the archer Hou Yi draws his bow, told with leather puppets on a lit screen.</sub></td>
-<td width="33%" valign="top"><a href="styles/ukiyoe/STYLE.md"><img src="docs/frames/ukiyoe.jpg" alt="Ukiyo-e"></a><br><b>Ukiyo-e</b><br><i>Toward the Mountain</i><br><sub>A traveller walks toward a distant mountain; every shot is a woodblock print, a great wave at the climax, the mountain and the whole scroll at the end.</sub></td>
-<td width="33%" valign="top"><a href="styles/papercut-red/STYLE.md"><img src="docs/frames/papercut-red.jpg" alt="Red Paper-cut"></a><br><b>Red Paper-cut</b><br><i>Nian Comes to Town</i><br><sub>On New Year&#x27;s Eve the beast Nian comes to town, and one girl&#x27;s giant paper-cut lights up the village to scare it off.</sub></td>
+<td width="33%" valign="top"><a href="styles/shadow-puppet/STYLE.md"><img src="docs/frames/shadow-puppet.jpg" alt="皮影戏"></a><br><b>皮影戏</b><br>Shadow Puppetry<br><i>Hou Yi Shoots the Suns</i><br><sub>十日炙烤大地，后羿张弓射日。</sub></td>
+<td width="33%" valign="top"><a href="styles/ukiyoe/STYLE.md"><img src="docs/frames/ukiyoe.jpg" alt="浮世绘"></a><br><b>浮世绘</b><br>Ukiyo-e<br><i>Toward the Mountain</i><br><sub>旅人走向远山，每个镜头都是一幅版画；巨浪是高潮，结尾是远山与整幅画轴拉远。</sub></td>
+<td width="33%" valign="top"><a href="styles/papercut-red/STYLE.md"><img src="docs/frames/papercut-red.jpg" alt="红色窗花剪纸"></a><br><b>红色窗花剪纸</b><br>Red Paper-cut<br><i>Nian Comes to Town</i><br><sub>除夕年兽进村，小女孩剪出的大窗花照亮全村，把它吓跑。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/paper-lantern/STYLE.md"><img src="docs/frames/paper-lantern.jpg" alt="Paper-cut Lightbox"></a><br><b>Paper-cut Lightbox</b><br><i>A Mooncake&#x27;s Longing</i><br><sub>A single mooncake tells the Mid-Autumn story of reunion and longing inside a glowing paper-cut lightbox.</sub></td>
+<td width="33%" valign="top"><a href="styles/paper-lantern/STYLE.md"><img src="docs/frames/paper-lantern.jpg" alt="纸雕灯影"></a><br><b>纸雕灯影</b><br>Paper-cut Lightbox<br><i>A Mooncake&#x27;s Longing</i><br><sub>一枚月饼讲中秋的团圆与思念，纸雕灯箱层层透光。</sub></td>
 </tr>
 </table>
 
-### Print & Printmaking
+### 印刷与版画
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/risograph/STYLE.md"><img src="docs/frames/risograph.jpg" alt="Risograph Print"></a><br><b>Risograph Print</b><br><i>Sunday Ride</i><br><sub>A Sunday-morning bike ride through the city — bakery, park, riverside — each stop adding an ink until three misregistered plates overprint.</sub></td>
-<td width="33%" valign="top"><a href="styles/halftone-dossier/STYLE.md"><img src="docs/frames/halftone-dossier.jpg" alt="Halftone Dossier"></a><br><b>Halftone Dossier</b><br><i>Case File: Chubby</i><br><sub>A chubby orange cat stands trial for testing gravity and 4 a.m. parkour, and walks free.</sub></td>
-<td width="33%" valign="top"><a href="styles/woodcut/STYLE.md"><img src="docs/frames/woodcut.jpg" alt="Woodcut Print"></a><br><b>Woodcut Print</b><br><i>The Bell Founder</i><br><sub>A village spends a whole winter casting one bell; the first time it rings, the snow stops.</sub></td>
+<td width="33%" valign="top"><a href="styles/risograph/STYLE.md"><img src="docs/frames/risograph.jpg" alt="Risograph 孔版印刷"></a><br><b>Risograph 孔版印刷</b><br>Risograph Print<br><i>Sunday Ride</i><br><sub>周日早晨骑车穿过城市：面包店、公园、河边，每到一处加一版油墨，最后三版套印。</sub></td>
+<td width="33%" valign="top"><a href="styles/halftone-dossier/STYLE.md"><img src="docs/frames/halftone-dossier.jpg" alt="复古半调案卷"></a><br><b>复古半调案卷</b><br>Halftone Dossier<br><i>Case File: Chubby</i><br><sub>橘猫胖橘被立案审查：测试重力、凌晨跑酷，最后无罪释放。</sub></td>
+<td width="33%" valign="top"><a href="styles/woodcut/STYLE.md"><img src="docs/frames/woodcut.jpg" alt="木刻版画"></a><br><b>木刻版画</b><br>Woodcut Print<br><i>The Bell Founder</i><br><sub>村子用一整个冬天铸一口钟，钟声第一次响起，雪停了。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/engraving/STYLE.md"><img src="docs/frames/engraving.jpg" alt="Copperplate Engraving"></a><br><b>Copperplate Engraving</b><br><i>The Honeybee, Plate VII</i><br><sub>A natural-history plate engraves itself: the burin cuts the copper, the bee builds up line by line, and a watercolour wash brings it to life.</sub></td>
-<td width="33%" valign="top"><a href="styles/silkscreen-poster/STYLE.md"><img src="docs/frames/silkscreen-poster.jpg" alt="Silkscreen Travel Poster"></a><br><b>Silkscreen Travel Poster</b><br><i>Three Trails</i><br><sub>Three trail posters are screen-printed one ink at a time, then climbed in one long take from noon to dusk.</sub></td>
+<td width="33%" valign="top"><a href="styles/engraving/STYLE.md"><img src="docs/frames/engraving.jpg" alt="铜版画"></a><br><b>铜版画</b><br>Copperplate Engraving<br><i>The Honeybee, Plate VII</i><br><sub>一张博物志图版自己刻出来：雕刀推开铜版，蜜蜂一线线成形，最后手工水彩上色。</sub></td>
+<td width="33%" valign="top"><a href="styles/silkscreen-poster/STYLE.md"><img src="docs/frames/silkscreen-poster.jpg" alt="丝印旅行海报"></a><br><b>丝印旅行海报</b><br>Silkscreen Travel Poster<br><i>Three Trails</i><br><sub>三条步道各一张丝印海报，一色一刮印出来，再沿山脊一镜到底从正午爬到黄昏。</sub></td>
 </tr>
 </table>
 
-### Graphic & Type
+### 图形与排版
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/swiss-motion/STYLE.md"><img src="docs/frames/swiss-motion.jpg" alt="Swiss Motion Graphics"></a><br><b>Swiss Motion Graphics</b><br><i>Five Rules for a Poster</i><br><sub>A concert poster lays itself out by five Swiss design rules; the fifth is to break just one.</sub></td>
-<td width="33%" valign="top"><a href="styles/spy-titles/STYLE.md"><img src="docs/frames/spy-titles.jpg" alt="60s Spy Title Sequence"></a><br><b>60s Spy Title Sequence</b><br><i>The Velvet Cipher</i><br><sub>Opening titles for an imaginary 1964 spy film: a chase for a stolen key until the shapes lock into the title.</sub></td>
-<td width="33%" valign="top"><a href="styles/art-deco/STYLE.md"><img src="docs/frames/art-deco.jpg" alt="Art Deco"></a><br><b>Art Deco</b><br><i>Midnight at the Starlight Hotel</i><br><sub>A grand hotel, 1930: a bellboy races lifts and revolving doors to deliver one letter before midnight.</sub></td>
+<td width="33%" valign="top"><a href="styles/swiss-motion/STYLE.md"><img src="docs/frames/swiss-motion.jpg" alt="瑞士动态排版"></a><br><b>瑞士动态排版</b><br>Swiss Motion Graphics<br><i>Five Rules for a Poster</i><br><sub>一张音乐会海报按瑞士设计的五条规则自己排版，第五条是只打破一条。</sub></td>
+<td width="33%" valign="top"><a href="styles/spy-titles/STYLE.md"><img src="docs/frames/spy-titles.jpg" alt="60s 间谍片头"></a><br><b>60s 间谍片头</b><br>60s Spy Title Sequence<br><i>The Velvet Cipher</i><br><sub>虚构 1964 年间谍片的片头：追一把被偷的钥匙，几何碎片最后拼成片名。</sub></td>
+<td width="33%" valign="top"><a href="styles/art-deco/STYLE.md"><img src="docs/frames/art-deco.jpg" alt="装饰艺术"></a><br><b>装饰艺术</b><br>Art Deco<br><i>Midnight at the Starlight Hotel</i><br><sub>1930 年的大饭店，门童赶在午夜前把一封信送上顶楼。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/blueprint/STYLE.md"><img src="docs/frames/blueprint.jpg" alt="Blueprint"></a><br><b>Blueprint</b><br><i>Patent Pending: The Cloud Catcher</i><br><sub>An inventor&#x27;s blueprint draws, explodes and assembles a cloud-catching machine, and its revision cloud starts to rain.</sub></td>
-<td width="33%" valign="top"><a href="styles/stained-glass/STYLE.md"><img src="docs/frames/stained-glass.jpg" alt="Stained Glass"></a><br><b>Stained Glass</b><br><i>The Dragon of the East Window</i><br><sub>Sunlight crosses a cathedral window from dawn to dusk, waking each pane of a knight-and-dragon tale.</sub></td>
-<td width="33%" valign="top"><a href="styles/pictogram-motion/STYLE.md"><img src="docs/frames/pictogram-motion.jpg" alt="Pictogram Motion"></a><br><b>Pictogram Motion</b><br><i>Aichi-Nagoya 2026 — All 43 Sports</i><br><sub>All 43 sports of the 2026 Asian Games as beat-locked geometric pictograms.</sub></td>
+<td width="33%" valign="top"><a href="styles/blueprint/STYLE.md"><img src="docs/frames/blueprint.jpg" alt="蓝图 / 工程制图"></a><br><b>蓝图 / 工程制图</b><br>Blueprint<br><i>Patent Pending: The Cloud Catcher</i><br><sub>发明家的蓝图自己画出一台接云机器，修订云线变成了真的雨云。</sub></td>
+<td width="33%" valign="top"><a href="styles/stained-glass/STYLE.md"><img src="docs/frames/stained-glass.jpg" alt="彩色玻璃窗"></a><br><b>彩色玻璃窗</b><br>Stained Glass<br><i>The Dragon of the East Window</i><br><sub>阳光从清晨移到黄昏，照到哪一格花窗，哪一格的故事就动起来。</sub></td>
+<td width="33%" valign="top"><a href="styles/pictogram-motion/STYLE.md"><img src="docs/frames/pictogram-motion.jpg" alt="象形运动图形"></a><br><b>象形运动图形</b><br>Pictogram Motion<br><i>Aichi-Nagoya 2026 — All 43 Sports</i><br><sub>2026 亚运会 43 个大项，几何象形人卡着节拍快闪。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/ascii-crt/STYLE.md"><img src="docs/frames/ascii-crt.jpg" alt="ASCII / CRT Terminal"></a><br><b>ASCII / CRT Terminal</b><br><i>Tranquility.log</i><br><sub>A moon-base AI wakes after forty years to a signal from Earth, and replies by drawing “home” in characters.</sub></td>
+<td width="33%" valign="top"><a href="styles/ascii-crt/STYLE.md"><img src="docs/frames/ascii-crt.jpg" alt="ASCII / CRT 终端"></a><br><b>ASCII / CRT 终端</b><br>ASCII / CRT Terminal<br><i>Tranquility.log</i><br><sub>月球基地的 AI 沉睡 40 年后被唤醒，用字符画出“家”来回复。</sub></td>
 </tr>
 </table>
 
-### Information & Keynote
+### 信息与发布
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/dataviz/STYLE.md"><img src="docs/frames/dataviz.jpg" alt="Data Storytelling"></a><br><b>Data Storytelling</b><br><i>A Hundred Summers</i><br><sub>A hundred years of summer temperatures, where the chart itself tells the story.</sub></td>
-<td width="33%" valign="top"><a href="styles/iso-infographic/STYLE.md"><img src="docs/frames/iso-infographic.jpg" alt="Isometric Infographic"></a><br><b>Isometric Infographic</b><br><i>From Bean to Cup</i><br><sub>A coffee&#x27;s journey from the plantation to your hands, across one isometric world.</sub></td>
-<td width="33%" valign="top"><a href="styles/dark-keynote/STYLE.md"><img src="docs/frames/dark-keynote.jpg" alt="Dark Tech Keynote"></a><br><b>Dark Tech Keynote</b><br><i>Room to Think</i><br><sub>Launch film for Tidy, a fictional app: one buried cursor snaps hundreds of windows back into place.</sub></td>
+<td width="33%" valign="top"><a href="styles/dataviz/STYLE.md"><img src="docs/frames/dataviz.jpg" alt="数据叙事"></a><br><b>数据叙事</b><br>Data Storytelling<br><i>A Hundred Summers</i><br><sub>一百年的夏季气温，图表本身就是故事。</sub></td>
+<td width="33%" valign="top"><a href="styles/iso-infographic/STYLE.md"><img src="docs/frames/iso-infographic.jpg" alt="等距信息图"></a><br><b>等距信息图</b><br>Isometric Infographic<br><i>From Bean to Cup</i><br><sub>一杯咖啡从种植园到你手里的旅程。</sub></td>
+<td width="33%" valign="top"><a href="styles/dark-keynote/STYLE.md"><img src="docs/frames/dark-keynote.jpg" alt="暗色科技发布"></a><br><b>暗色科技发布</b><br>Dark Tech Keynote<br><i>Room to Think</i><br><sub>虚构 app Tidy 的发布片：被埋掉的光标一键把几百个窗口归位。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/living-screencast/STYLE.md"><img src="docs/frames/living-screencast.jpg" alt="Living Screencast"></a><br><b>Living Screencast</b><br><i>Clawd Moves In</i><br><sub>Clawd hops out of the terminal into the Claude app and acts out plan mode and self-checks in one take.</sub></td>
-<td width="33%" valign="top"><a href="styles/hologram-hud/STYLE.md"><img src="docs/frames/hologram-hud.jpg" alt="Sci-fi Hologram HUD"></a><br><b>Sci-fi Hologram HUD</b><br><i>Volt · Spec Scan</i><br><sub>An e-bike is scanned into a hologram; target boxes lock onto the battery, motor and brakes.</sub></td>
+<td width="33%" valign="top"><a href="styles/living-screencast/STYLE.md"><img src="docs/frames/living-screencast.jpg" alt="活体实机录屏"></a><br><b>活体实机录屏</b><br>Living Screencast<br><i>Clawd Moves In</i><br><sub>像素小人 Clawd 搬进 Claude 应用，一镜到底演示 Plan 模式和自检。</sub></td>
+<td width="33%" valign="top"><a href="styles/hologram-hud/STYLE.md"><img src="docs/frames/hologram-hud.jpg" alt="科幻全息界面"></a><br><b>科幻全息界面</b><br>Sci-fi Hologram HUD<br><i>Volt · Spec Scan</i><br><sub>电助力车被扫描成全息线框，目标框依次锁定电池、电机、刹车。</sub></td>
 </tr>
 </table>
 
-### Cartoon & Anime
+### 卡通与动画
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/rubber-hose/STYLE.md"><img src="docs/frames/rubber-hose.jpg" alt="1930s Rubber Hose Cartoon"></a><br><b>1930s Rubber Hose Cartoon</b><br><i>Coffee Cup Chase</i><br><sub>A coffee cup chases a runaway sugar cube around the kitchen, 1930s-cartoon style.</sub></td>
-<td width="33%" valign="top"><a href="styles/cel-anime-80s/STYLE.md"><img src="docs/frames/cel-anime-80s.jpg" alt="80s Cel Anime"></a><br><b>80s Cel Anime</b><br><i>City Lights, 1987</i><br><sub>A courier girl rides through a rain-soaked neon city to deliver a tape before the dawn launch.</sub></td>
-<td width="33%" valign="top"><a href="styles/scifi-toon/STYLE.md"><img src="docs/frames/scifi-toon.jpg" alt="Sci-Fi Sitcom Toon"></a><br><b>Sci-Fi Sitcom Toon</b><br><i>Coffee Run</i><br><sub>A jaded genius opens a portal just to buy coffee and tumbles through ever-stranger universes.</sub></td>
+<td width="33%" valign="top"><a href="styles/rubber-hose/STYLE.md"><img src="docs/frames/rubber-hose.jpg" alt="1930s 橡皮管卡通"></a><br><b>1930s 橡皮管卡通</b><br>1930s Rubber Hose Cartoon<br><i>Coffee Cup Chase</i><br><sub>一只咖啡杯满厨房追一块逃跑的方糖。</sub></td>
+<td width="33%" valign="top"><a href="styles/cel-anime-80s/STYLE.md"><img src="docs/frames/cel-anime-80s.jpg" alt="80 年代赛璐璐动画"></a><br><b>80 年代赛璐璐动画</b><br>80s Cel Anime<br><i>City Lights, 1987</i><br><sub>快递少女骑车穿过雨后霓虹都市，赶在黎明发射前送到一盘磁带。</sub></td>
+<td width="33%" valign="top"><a href="styles/scifi-toon/STYLE.md"><img src="docs/frames/scifi-toon.jpg" alt="科幻情景喜剧卡通"></a><br><b>科幻情景喜剧卡通</b><br>Sci-Fi Sitcom Toon<br><i>Coffee Run</i><br><sub>厌世天才开传送门只想买杯咖啡，却穿过越来越离谱的平行宇宙。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/midcentury-toon/STYLE.md"><img src="docs/frames/midcentury-toon.jpg" alt="Mid-century Cartoon"></a><br><b>Mid-century Cartoon</b><br><i>Meet Pip</i><br><sub>A robot vacuum set up in three steps, told like a 1950s classroom film.</sub></td>
+<td width="33%" valign="top"><a href="styles/midcentury-toon/STYLE.md"><img src="docs/frames/midcentury-toon.jpg" alt="50s 扁平卡通"></a><br><b>50s 扁平卡通</b><br>Mid-century Cartoon<br><i>Meet Pip</i><br><sub>用 50 年代教育片的口吻，三步教你装好一台扫地机。</sub></td>
 </tr>
 </table>
 
-### Games
+### 游戏
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/pixel-rpg/STYLE.md"><img src="docs/frames/pixel-rpg.jpg" alt="16-bit Pixel RPG"></a><br><b>16-bit Pixel RPG</b><br><i>The Last Save Point</i><br><sub>At the final boss door a hero saves the game, and the save screen replays the whole journey.</sub></td>
-<td width="33%" valign="top"><a href="styles/hd-2d/STYLE.md"><img src="docs/frames/hd-2d.jpg" alt="HD-2D"></a><br><b>HD-2D</b><br><i>The Lampbearer</i><br><sub>The lighthouse goes dark; a girl carries the last flame through a night forest and up the storm cliffs.</sub></td>
-<td width="33%" valign="top"><a href="styles/microgame/STYLE.md"><img src="docs/frames/microgame.jpg" alt="Microgame Frenzy"></a><br><b>Microgame Frenzy</b><br><i>Five-Second Astronaut</i><br><sub>A clumsy cadet survives a five-second boot camp, faster and faster, until the boss: landing home.</sub></td>
+<td width="33%" valign="top"><a href="styles/pixel-rpg/STYLE.md"><img src="docs/frames/pixel-rpg.jpg" alt="16-bit 像素 RPG"></a><br><b>16-bit 像素 RPG</b><br>16-bit Pixel RPG<br><i>The Last Save Point</i><br><sub>勇士在最终 Boss 门前存档，存档画面闪回一路冒险。</sub></td>
+<td width="33%" valign="top"><a href="styles/hd-2d/STYLE.md"><img src="docs/frames/hd-2d.jpg" alt="HD-2D"></a><br><b>HD-2D</b><br><i>The Lampbearer</i><br><sub>灯塔熄灭，孙女提着最后一簇火穿过夜林、爬上风暴悬崖。</sub></td>
+<td width="33%" valign="top"><a href="styles/microgame/STYLE.md"><img src="docs/frames/microgame.jpg" alt="微游戏快闪"></a><br><b>微游戏快闪</b><br>Microgame Frenzy<br><i>Five-Second Astronaut</i><br><sub>见习宇航员闯五秒训练营，越来越快，Boss 关亲手降落回地球。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/game-show/STYLE.md"><img src="docs/frames/game-show.jpg" alt="Game Show Flat"></a><br><b>Game Show Flat</b><br><i>Rhythm of AI, 1997 → 2026</i><br><sub>The history of AI as a rhythm game: models take the stage on the beat, and a report card closes the show.</sub></td>
+<td width="33%" valign="top"><a href="styles/game-show/STYLE.md"><img src="docs/frames/game-show.jpg" alt="综艺节奏扁平"></a><br><b>综艺节奏扁平</b><br>Game Show Flat<br><i>Rhythm of AI, 1997 → 2026</i><br><sub>把 AI 发展史做成一局节奏游戏，模型踩着拍登场，最后发成绩单。</sub></td>
 </tr>
 </table>
 
-### Cinema & Eras
+### 电影与时代
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/silent-film/STYLE.md"><img src="docs/frames/silent-film.jpg" alt="1920s Silent Film"></a><br><b>1920s Silent Film</b><br><i>The Runaway Loaf</i><br><sub>A baker&#x27;s boy chases a runaway loaf downhill, then breaks it in half for a hungry girl.</sub></td>
-<td width="33%" valign="top"><a href="styles/backrooms/STYLE.md"><img src="docs/frames/backrooms.jpg" alt="Liminal Found Footage"></a><br><b>Liminal Found Footage</b><br><i>Night Shift Orientation</i><br><sub>A new night-shift hire films their first night in an endless yellow office, following the rules on the wall.</sub></td>
+<td width="33%" valign="top"><a href="styles/silent-film/STYLE.md"><img src="docs/frames/silent-film.jpg" alt="1920s 默片"></a><br><b>1920s 默片</b><br>1920s Silent Film<br><i>The Runaway Loaf</i><br><sub>面包店学徒追一个滚走的面包，最后掰成两半分给饿肚子的小女孩。</sub></td>
+<td width="33%" valign="top"><a href="styles/backrooms/STYLE.md"><img src="docs/frames/backrooms.jpg" alt="后室 / 新怪谈"></a><br><b>后室 / 新怪谈</b><br>Liminal Found Footage<br><i>Night Shift Orientation</i><br><sub>新夜班员工拍下入职第一晚：无尽的黄色办公空间，和墙上的员工守则。</sub></td>
 </tr>
 </table>
 
-### Materials & 3D
+### 材质与 3D
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/brick-toy/STYLE.md"><img src="docs/frames/brick-toy.jpg" alt="Brick Toy"></a><br><b>Brick Toy</b><br><i>Rocket from Spare Parts</i><br><sub>A brick astronaut builds a rocket from spare parts and flies to a brick moon.</sub></td>
-<td width="33%" valign="top"><a href="styles/paper-popup/STYLE.md"><img src="docs/frames/paper-popup.jpg" alt="Paper Pop-up Book"></a><br><b>Paper Pop-up Book</b><br><i>Pip&#x27;s Paper Adventure</i><br><sub>A pop-up book opens on a desk; a sprite named Pip adventures through paper worlds and jumps out into ours.</sub></td>
-<td width="33%" valign="top"><a href="styles/tilt-shift/STYLE.md"><img src="docs/frames/tilt-shift.jpg" alt="Tilt-Shift Miniature"></a><br><b>Tilt-Shift Miniature</b><br><i>Toy Town Rush Hour</i><br><sub>Morning rush hour in a town that looks like a model: traffic, trains and tiny people.</sub></td>
+<td width="33%" valign="top"><a href="styles/brick-toy/STYLE.md"><img src="docs/frames/brick-toy.jpg" alt="积木玩具"></a><br><b>积木玩具</b><br>Brick Toy<br><i>Rocket from Spare Parts</i><br><sub>积木宇航员用零件拼出火箭，飞向积木月亮。</sub></td>
+<td width="33%" valign="top"><a href="styles/paper-popup/STYLE.md"><img src="docs/frames/paper-popup.jpg" alt="纸片立体书"></a><br><b>纸片立体书</b><br>Paper Pop-up Book<br><i>Pip&#x27;s Paper Adventure</i><br><sub>立体书在书桌上打开，小精灵 Pip 在纸片世界冒险，最后跳出书外。</sub></td>
+<td width="33%" valign="top"><a href="styles/tilt-shift/STYLE.md"><img src="docs/frames/tilt-shift.jpg" alt="移轴微缩"></a><br><b>移轴微缩</b><br>Tilt-Shift Miniature<br><i>Toy Town Rush Hour</i><br><sub>玩具城的早高峰，一切都像模型。</sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/lowpoly-island/STYLE.md"><img src="docs/frames/lowpoly-island.jpg" alt="Low-poly Isometric Island"></a><br><b>Low-poly Isometric Island</b><br><i>The Island That Grew</i><br><sub>An island and its village grow tile by tile from an empty sea, each tile a note, into a starry night.</sub></td>
-<td width="33%" valign="top"><a href="styles/glass-product/STYLE.md"><img src="docs/frames/glass-product.jpg" alt="Glass Product Render"></a><br><b>Glass Product Render</b><br><i>Aura — Hear the Light</i><br><sub>Unboxing and close-ups of Aura, fictional glass earbuds, in strip-light sweeps and caustics.</sub></td>
+<td width="33%" valign="top"><a href="styles/lowpoly-island/STYLE.md"><img src="docs/frames/lowpoly-island.jpg" alt="低多边形等距"></a><br><b>低多边形等距</b><br>Low-poly Isometric Island<br><i>The Island That Grew</i><br><sub>空海里一格格长出小岛和村庄，每放一块响一个音符，直到星空。</sub></td>
+<td width="33%" valign="top"><a href="styles/glass-product/STYLE.md"><img src="docs/frames/glass-product.jpg" alt="玻璃质感产品"></a><br><b>玻璃质感产品</b><br>Glass Product Render<br><i>Aura — Hear the Light</i><br><sub>虚构玻璃耳机 Aura 的开箱与特写。</sub></td>
 </tr>
 </table>
 <!-- styles:end -->
 
-## Star history
+## Star 增长
 
 <a href="https://www.star-history.com/#lemomo-ai/lemo-opuscar&Date">
  <picture>
@@ -347,44 +349,44 @@ Click a frame for its `STYLE.md`.
  </picture>
 </a>
 
-### Thank you for every star
+### 谢谢每一颗星
 
-A thank-you film at each milestone, made in code like everything here.<br>
-Click a poster to watch on the <a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/">thank-you page</a>.
+每到一个里程碑做一支感谢片，和库里所有片子一样全部用代码做成。<br>
+点海报到<a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/">感谢片页面</a>在线观看。
 
 <table><tr>
-<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars6000"><img src="docs/thanks/thanks-6000.jpg" alt="6,000 stars · The Quilt (50 s)"></a><br><sub>6,000 stars · The Quilt (50 s)</sub></td>
-<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars3000"><img src="docs/thanks/thanks-3000.jpg" alt="3,000 stars · Class Photo (48 s)"></a><br><sub>3,000 stars · Class Photo (48 s)</sub></td>
-<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars2000"><img src="docs/thanks/thanks-2000.jpg" alt="2000 stars · Refresh (50 s)"></a><br><sub>2,000 stars · Refresh (50 s)</sub></td>
-<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars800"><img src="docs/thanks/thanks-800.jpg" alt="800 stars · Reverse Shot (39 s)"></a><br><sub>800 stars · Reverse Shot (39 s)</sub></td>
-<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars300"><img src="docs/thanks/thanks-300.jpg" alt="300 stars · The Lamplighter (18 s)"></a><br><sub>300 stars · The Lamplighter (18 s)</sub></td>
+<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars6000"><img src="docs/thanks/thanks-6000.jpg" alt="6000 星 · 百家被（50 秒）"></a><br><sub>6000 星 · 百家被（50 秒）</sub></td>
+<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars3000"><img src="docs/thanks/thanks-3000.jpg" alt="3000 星 · 全家福（48 秒）"></a><br><sub>3000 星 · 全家福（48 秒）</sub></td>
+<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars2000"><img src="docs/thanks/thanks-2000.jpg" alt="2000 星 · 刷新（50 秒）"></a><br><sub>2000 星 · 刷新（50 秒）</sub></td>
+<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars800"><img src="docs/thanks/thanks-800.jpg" alt="800 星 · 反打（39 秒）"></a><br><sub>800 星 · 反打（39 秒）</sub></td>
+<td width="20%" valign="top"><a href="https://lemomo-ai.github.io/lemo-opuscar/thanks/#stars300"><img src="docs/thanks/thanks-300.jpg" alt="300 星 · 点灯人（18 秒）"></a><br><sub>300 星 · 点灯人（18 秒）</sub></td>
 </tr></table>
 
-## Licence
+## 授权
 
-Made by **LemoLab × Claude Opus 5.5**.
+**LemoLab × Claude Opus 5.5** 出品。
 
-- **Code and docs**: MIT.
-- **Demo films and their stills** (in `styles/`, the gallery and the Releases): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). You may share, adapt and use them commercially; credit **LemoLab** with a link to this repository, and say if you changed them.
-- **Films you make with the library**: yours, no credit needed.
-- **Third-party assets in the demos**: they keep their own licences (see each demo's `CREDITS`).
-- **Three voice tracks are not CC BY 4.0**: the shouts in Game Show Flat (macOS system voices, `say`), the narration in Paper-cut Lightbox (Microsoft Edge TTS), which will be re-voiced with Kokoro, and the narration in Broadcast News Package (Doubao TTS, under Volcengine's terms). They are excluded from the licence above. Don't reuse them; in your own films use Kokoro (the default) or a voice you have the right to use.
+- **代码和文档**：MIT 协议。
+- **样片视频及其静帧**（`styles/`、画廊页和 Releases 中的）：[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。可以转载、改编和商用，须署名 **LemoLab** 并附本仓库链接，改动过的须注明。
+- **你用本库做出的片子**：归你自己，无须署名。
+- **样片中的第三方素材**：沿用各自的授权，见各样片的 `CREDITS`。
+- **有三段配音不在 CC BY 4.0 范围内**：综艺节奏扁平（Game Show Flat）里的喊声（macOS 系统语音 `say`）、纸雕灯影（Paper-cut Lightbox）的旁白（微软 Edge TTS，计划用 Kokoro 重配），以及电视新闻包装（Broadcast News Package）的旁白（豆包 TTS，受火山引擎条款约束）。它们不适用上面的授权。请不要复用；你自己的片子请用 Kokoro（默认）或你有权使用的声音。
 
-You are responsible for the materials you use in your films.
+你在自己片子里使用的素材由你负责。
 
-## More from LemoLab
+## LemoLab 的其他项目
 
-- 📸 **[lemo-wake](https://github.com/lemomo-ai/lemo-wake)**: one picture in, a seamless loop of about five seconds out.
-- 🍋 **[lemo-mod](https://github.com/lemomo-ai/lemo-mod)**: re-skin Claude Code with 21 styles, in the terminal and the desktop app.
-- 🟥 **[Stampy](https://github.com/lemomo-ai/lemo-stampy)**: a tiny Mac menu bar stamp that marks your copies "For XX use only".
+- 📸 **[lemo-wake](https://github.com/lemomo-ai/lemo-wake)**：一张图进去，一段约 5 秒、无缝循环的动图出来。
+- 🍋 **[lemo-mod](https://github.com/lemomo-ai/lemo-mod)**：给 Claude Code 换上 21 套风格，终端和桌面 App 都能用。
+- 🟥 **[小章 Stampy](https://github.com/lemomo-ai/lemo-stampy)**：Mac 菜单栏小工具，在预览里点一下，给复印件盖上「仅供××使用」。
 
 ---
 
 <div align="center">
 
-⭐ **Star this repo**<br>
-👀 **Watch → Custom → Releases** to hear about new versions<br>
-𝕏 Follow [@lemomo_ai](https://x.com/lemomo_ai)
+⭐ **点个星**<br>
+👀 **Watch → Custom → Releases**，有新版本会通知你<br>
+𝕏 关注 [@lemomo_ai](https://x.com/lemomo_ai)
 
 <sub>LemoLab · by Lemomo</sub>
 

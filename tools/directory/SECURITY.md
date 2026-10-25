@@ -1,21 +1,26 @@
-# Lemo-Opuscar security policy · 安全问题报告
+<a id="lemo-opuscar-security-policy--安全问题报告"></a>
+# Lemo-Opuscar 安全政策 · 安全问题报告
 
-## How to report
+<a id="how-to-report"></a>
+## 如何举报
 
-Please don't open a public issue for a security problem. Report it privately: on the main repository's **Security** page, click **Report a vulnerability** ([direct link](https://github.com/lemomo-ai/lemo-opuscar/security/advisories/new)). Include the plugin version, what you asked for, and how to reproduce it.
+请不要针对安全问题打开公共问题。私下报告：在主存储库的**安全**页面上，单击**报告漏洞**（[直接链接](https://github.com/lemomo-ai/lemo-opuscar/security/advisories/new)）。包括插件版本、您要求的内容以及如何重现它。
 
-## What counts
+<a id="what-counts"></a>
+## 什么才算数
 
-- Your files, your topic or your film leaving your computer, other than the narration text sent to Microsoft's speech service after you agreed to Chinese online voices.
-- Something downloaded that the README doesn't list, or from somewhere else.
-- Files written or deleted outside your project folder and the library folder (`~/.lemo-opuscar`), or a way for someone to run commands on your computer through the plugin.
+- 您的文件、您的主题或您的影片离开您的计算机，除了您同意中文在线语音后发送到 Microsoft 语音服务的旁白文本。
+- 下载了自述文件中未列出的内容，或从其他地方下载的内容。
+- 在项目文件夹和库文件夹 (`~/.lemo-opuscar`) 之外写入或删除的文件，或者是某人通过插件在您的计算机上运行命令的一种方式。
 
-Open a normal issue for films that look wrong and for bugs.
+为影片打开一个看起来错误和错误的正常问题。
 
-## Supported versions
+<a id="supported-versions"></a>
+## 支持的版本
 
-Only the latest release gets fixes. A fix ships as a new version of the plugin.
+只有最新版本才能得到修复。修复程序作为插件的新版本提供。
 
+<a id="中文"></a>
 ## 中文
 
-发现安全问题，请不要开公开 issue，到主仓库的 **Security** 页点 **Report a vulnerability** 私下提交（[直达链接](https://github.com/lemomo-ai/lemo-opuscar/security/advisories/new)），写上插件版本、你让它做了什么、怎么复现。片子不好看、功能 bug 照常开 issue。
+发现安全问题，请不要开公开问题，到主仓库的**安全**页面点**报告漏洞**私下提交（[直达链接](https://github.com/lemomo-ai/lemo-opuscar/security/advisories/new)），写上版本、你做了什么、怎么复现。片子不好看、功能bug照常开问题。

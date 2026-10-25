@@ -1,142 +1,150 @@
-# Mid-century Cartoon — our demo
+<a id="mid-century-cartoon--our-demo"></a>
+# 中世纪卡通 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Meet Pip* (40.0 s) · `midcentury-toon.mp4` · source in [`demo/`](demo/)
+示范：*遇见 Pip* (40.0 s) · `midcentury-toon.mp4` · 来源在 [`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A product set-up guide for a fictional robot vacuum, Pip (the first use case in STYLE.md §11). It fits a product page, a QR code on the box, or a help centre. The old guide framed every film in this style as "a 30–40 second scene film: the user gives you the thing and its steps; you decide the shots, the timing, the sound and the score"; that framing now lives in STYLE.md.
+虚构机器人真空吸尘器 Pip（STYLE.md §11 中的第一个用例）的产品设置指南。它适合产品页面、包装盒上的二维码或帮助中心。旧指南将这种风格的每个影片描述为“一个 30-40 秒的场景影片：用​​户给你这个东西及其步骤；你决定镜头、时间、声音和配乐”；该框架现在位于 STYLE.md 中。
 
-Structure: hook reveal ("Meet Pip.", the box opens on a mustard ground) → one scene per step (wide + round detail call-out): ① set the dock against a wall (50 cm clear each side), ② pair the phone (2.4 GHz), ③ hold the start button (one second) → payoff (the vacuum's route drawn over the floor plan) → tip → poster lockup (the three steps as medallions) → iris-out end card.
+结构：挂钩展示（“遇见 Pip”，盒子在芥末地面上打开）→ 每步一个场景（宽 + 圆形细节标注）：① 将底座靠墙放置（每边 50 厘米间距），② 配对手机 (2.4 GHz)，③ 按住开始按钮（一秒钟）→ 放线（在平面图上绘制吸尘器的路线）→ 提示 → 海报锁定（三个步骤作为奖章）→ 虹膜向外片尾卡。
 
-The presenter, **June**, a new homeowner: an egg head with a long pointed nose that is part of the face's outline, a bob with a mustard headband, a coral turtleneck and navy cigarette trousers (the treatment explains why she is not a 1950s "housewife"). Her body is a held drawing; hands are four-finger gloves in four shapes: open, flat, point and grip. Scenes: one colour plane, a floor band, a horizon with gaps, and props such as a wall edge, a socket, a phone.
+主持人**六月**，一位新房主：蛋头，长尖鼻子，是脸部轮廓的一部分，短发配芥末发带，珊瑚色高领毛衣和海军蓝烟管裤（创作方案解释了为什么她不是1950年代的“家庭主妇”）。她的身体是一幅画；手是四指手套，有四种形状：开放式、扁平式、尖头式和握把式。场景：一个彩色平面、一个地板带、一个有间隙的地平线，以及墙边、插座、电话等道具。
 
-The demo's reference for how the moves served information:
+示范有关移动如何提供信息的参考：
 
-**How the native moves serve information (not story):**
-- **Off-register colour** makes a flat info card feel hand-made, and warm enough to sit on a product page. Keep it on everything, text included.
-- **Limited animation** points the eye. When the body is still, the hand is the only thing moving, and that hand *is* the step. Give every step one hand action with anticipation → action → follow-through, landing on a beat.
-- **The round call-out** (a manual's magnifier) is the close-up. The wide stays for context and the hands get big inside the circle. The step's data (50 cm, 2.4 GHz, one second) lands inside or on that circle on the action beat, never as a slide.
-- **The numbered medallion** is both a hierarchy marker and a door. It stamps onto the outgoing scene's subject, and the camera goes through it into the next step.
-- **The payoff turns function into ornament.** In the demo, the vacuum's real route (wall-follow, then boustrophedon lanes that flow around furniture, with a small curl at every turn, stars and dots between lanes) draws itself room by room, one room per beat. Stepping back, it reads as an atomic-age textile.
+**风格特有表现手法如何提供信息（不是故事）：**
+- **非套准颜色** 使平面信息卡感觉像是手工制作的，并且足够温暖，可以放在产品页面上。将其保留在所有内容上，包括文字。
+- **限定动画**点睛。当身体静止时，手是唯一移动的东西，而那只手*就是*脚步。每一步单手动作都有预期 → 动作 → 跟进，踩着节拍落地。
+- **圆形标注**（说明书的放大镜）是特写。宽的停留是为了背景，手在圆圈内变大。步骤的数据（50 厘米，2.4 GHz，一秒）落在动作节拍上的圆圈内或圆圈上，而不是作为幻灯片。
+- **编号徽章**既是等级标记又是门。它会标记传出场景的主题，然后摄影机会对其进行下一步。
+- **回报将功能变成了装饰。** 在示范中，真空吸尘器的真实路线（沿着墙壁，然后是围绕家具流动的四足通道，每个转弯处都有一个小卷曲，通道之间有星星和圆点）逐个房间地绘制自己，每个节拍一个房间。退一步看，它看起来像是原子时代的纺织品。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-The camera is always "the stand": pushes, trucks, tilts, pull-backs, never handheld. The demo used one transition grammar, **the circle**:
+摄影机始终是“支架”：推动、卡车、倾斜、拉回，从不手持。 示范使用一种转换语法，**圆**：
 
-| Move | Where in the demo | Why |
+|移动|示范在哪里|为什么|
 |---|---|---|
-| Slow push 1.00 → 1.07 | Hook | Collects the eye onto the product on its stage |
-| **Iris through the medallion** (circle grows from the stamp to full frame, 0.9 beat) | Every step change | The step number *is* the door |
-| Truck right + gentle push | Step 1 wide | Follows the push toward the wall |
-| Round detail call-out (frame in frame, with a dashed leader line to its subject) | Every step | Constant line weight at close-up scale; context stays visible |
-| Push into the phone, then pan along the signal rings | Step 2 | From person → interface → device |
-| Tilt down with the finger | Step 3 | The press is the most important action; the finger leads the frame |
-| **Button → iris → top view** | Step 3 → payoff | The start button opens into the plan; circle to circle |
-| **Pull-back + counter-rotation, 5.4× → 1.0×, −6° → 0°** (signature) | Payoff | Scale reveal: one lane → a whole flat printed like a textile |
-| Colour-block wipe (side for the tip, bottom-up for the lockup) | Tip, lockup | Changes the "page" of the manual |
-| Dead still ≥ 3 s | Lockup | Tells the viewer: this frame is the one to screenshot |
-| **Iris-out onto the product**, end card inside a circle | End | The classic cartoon ending, and the last circle |
+|慢推 1.00 → 1.07|钩|将目光集中到舞台上的产品上|
+|**虹膜穿过奖章**（圆圈从邮票到全画幅，0.9节拍）|每一步都在改变|步数*是*门|
+|卡车向右+轻推|步骤 1 宽|跟随推向墙壁的动作|
+|圆形细节标注（框架中的框架，带有指向其主题的虚线引导线）|每一步|特写比例下线宽恒定；上下文保持可见|
+|推入手机，然后沿着信号环平移|步骤2|从人→接口→设备|
+|用手指向下倾斜|步骤3|新闻是最重要的行动；手指引导框架|
+|**按钮→光圈→顶视图**|步骤 3 → 回报|开始按钮打开计划；圈到圈|
+|**回拉+反向旋转，5.4×→1.0×，−6°→0°**（签名）|付清|规模展示：一条车道→像纺织品一样印刷的整个平面|
+|色块擦拭（侧面用于尖端，自下而上用于锁定）|提示、锁定|更改手册的“页面”|
+|静止时间≥3s|锁仓|告诉观看者：该帧是要截图的帧|
+|**虹膜输出到产品上**，片尾卡在圆圈内|结尾|经典的卡通结局，最后一个圆圈|
 
-Why this route, for this job: every step change went through its own number, so the hierarchy was also the edit; the button → top view iris joined the most important action to its result; the pull-back gave the one "wow" of the film to the product's real behaviour; the dead-still lockup is the screenshot. Each is one choice from STYLE.md §6, not the style's default opening or ending.
+为什么这条路线，对于这项工作：每个步骤的更改都经过自己的编号，因此层次结构也是编辑；按钮 → 顶视图虹膜将最重要的操作加入到其结果中；回调让影片产品的真实行为发出“哇”的一声；静止不动的锁定是屏幕截图。每个都是 STYLE.md §6 中的一个选择，而不是该风格的默认开头或结尾。
 
-Timeline (built from content): hook 4 bars, each step ≥ 3 bars (from its voice length), the last step 2 bars, then payoff 3, tip 2, lockup 3 and end 2 bars at 132 BPM. Three steps = 22 bars = 40.0 s. Key subjects ≥ 1/3 frame height and out of the bottom 140 px (the caption card).
+时间轴（根据内容构建）：开头 4 个小节，每个步骤 ≥ 3 个小节（根据其语音长度），最后一个步骤 2 个小节，然后是放线 3、提示 2、锁定 3 和结束 2 个小节，速度为 132 BPM。三步 = 22 条 = 40.0 秒。重点拍摄对象≥1/3 框架高度且距底部140 px（字幕卡）。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music:** an original West-Coast cool-jazz combo at **132 BPM**: vibraphone (chords, arpeggios, glissandi, motor tremolo), flute (melody), pizzicato upright bass (walking), brushes (a swirl plus 2 and 4, sticks on the ride for the payoff), a celesta colour. **Every step lands on its own vibraphone chord** (F6, B♭maj7, C9), and the lockup brings those chords back one per medallion, transposed. In the payoff the vibraphone plays "one note per lap", driven by lap times exported in `events.json`.
-- **Rhythm arc:** normal → double-time at the payoff (key up a whole step) → half-time for the tip (the breath) → normal for the lockup.
-- **Silences:** A (0–1.36 s): no music, only the box. B (the last beat before the press): *everything* off, ambience included, so the first sound after it is the start click. C (before the lockup): room tone only. The first sound after silence C is the first medallion stamp.
-- **J/L cuts:** music enters before the reveal; each step's line starts half a beat before its iris; the motor starts 0.2 s before the payoff; the last Wi-Fi pip rings into step 3; the payoff's glissando tail rings into the tip.
-- **Ambience:** warm room tone (low-passed brown noise, about −42 dB) and a very quiet mantel-clock tick on the half-note grid. In the payoff, Pip's motor hum (a band-passed saw with a slow LFO plus brush hiss) takes over.
-- **Foley in this film:** the box (creak, flap thumps a semitone apart, a swish into a slap), the plug click, floor scrapes for the dock, stamps for every medallion, slide whistles for the 50 cm arrows, rising pips for "connected", pen scratches as each room's route draws, the ink line peeling off paper, an iris "shhk".
-- **Mix:** narration compressed on top, music ducks 8 dB under it, foley unducked, −14 LUFS, true peak −1.2. `tools/cuecheck.py` found 0 hits off the half-beat grid.
-- **Narrator:** calm classroom authority. The demo uses Kokoro `am_michael` at 0.94. `bm_george` was tried: whisper heard "dock" as "dark" in his British vowel. Keep lines to one clause: "Step one. Set the dock against a wall."
+- **音乐：** **132 BPM**的原创西海岸酷爵士组合：电颤琴（和弦、琶音、滑音、电机颤音）、长笛（旋律）、拨奏立式贝斯（行走）、画笔（漩涡加上 2 和 4，坚持骑行以获得回报），钢片琴颜色。**每一步都落在自己的电颤琴和弦上**（F6、B♭maj7、C9），并且锁定将这些和弦带回每个奖章一个，并进行移调。在回报中，电颤琴演奏“每圈一个音符”，由 `events.json` 中导出的单圈时间驱动。
+- **节奏弧：**正常→放线处双倍时间（调高全音）→提示半时间（呼吸）→正常锁定。
+- **段落：** A (0–1.36 s)：没有音乐，只有盒子。 B（按下按钮前的最后一个节拍）：*一切*关闭，包括氛围，因此之后的第一个声音是开始咔嗒声。 C（锁定前）：仅房间音。沉默后的第一个声音 C 是第一个奖章邮票。
+- **J/L 剪辑：** 音乐在展示之前进入；每个步骤的线条在其虹膜之前开始半拍；放线前0.2秒电机启动；最后一个 Wi-Fi 信号响起进入步骤 3；支付的滑奏尾部响入尖端。
+- **环境：** 温暖的房间音调（低通棕色噪声，约−42 dB）和半音符网格上非常安静的壁炉架时钟滴答声。在结果中，皮普的马达嗡嗡声（带有缓慢低频振荡器的带通锯和刷子嘶嘶声）接管了。
+- **Foley 在这个影片:** 盒子里（吱吱作响，拍打声相隔半音，嗖嗖地拍打），插头咔嗒声，码头的地板刮擦声，每个奖章的印章，50厘米箭头的幻灯片口哨，“连接”的上升点，每个笔的划痕房间的路线画出来，墨线从纸上剥落，虹膜“嘘”。
+- **混合：** 旁白压缩在顶部，音乐在其下方闪避 8 dB，拟音未闪避，−14 LUFS，真实峰值 −1.2。 `tools/cuecheck.py` 发现 0 次击中半拍网格。
+- **旁白：** 平静的课堂权威。 示范使用 Kokoro `am_michael` 为 0.94。 `bm_george` 被尝试：耳语在他的英国元音中听到“dock”为“dark”。将台词保留在一个子句中：“第一步。将坞站靠墙放置。”
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-**Palette (demo; every value is a content.json field):**
+**Palette（示范；每个值都是 content.json 字段）：**
 
-| Role | Hex |
+|角色|十六进制|
 |---|---|
-| Paper | `#F4EAD5` (shade `#E6D8BC`, `#D4C29F`) |
-| Ink (warm black) | `#2B2420` |
-| Coral (accent, June's sweater) | `#E4613F` / dark `#B8452B` |
-| Mustard (hook ground, belts, dots) | `#E8B43A` / light `#F3D37F` |
-| Turquoise (the product) | `#3FA7A0` / dark `#257A74` |
-| Dusty blue / avocado / pink / plum (step grounds) | `#7F9CC0` · `#A7AE5B` · `#F0B4A8` · `#6E4A6B` |
-| Navy (trousers) · hair · skin | `#3B4766` · `#3A2621` · `#F2C7A0` |
-| Kraft (box) | `#C9955D` / `#A2713F` / `#DDB47F` |
+|纸|`#F4EAD5`（灯罩 `#E6D8BC`、`#D4C29F`）|
+|墨水（暖黑）|`#2B2420`|
+|珊瑚色（强调色，六月的毛衣）|`#E4613F` / 深色 `#B8452B`|
+|芥末（钩地、带子、圆点）|`#E8B43A` / 灯 `#F3D37F`|
+|绿松石（产品）|`#3FA7A0` / 深色 `#257A74`|
+|灰蓝色/牛油果色/粉色/梅子色（台阶地）|`#7F9CC0` · `#A7AE5B` · `#F0B4A8` · `#6E4A6B`|
+|海军蓝（裤子）·头发·皮肤|`#3B4766` · `#3A2621` · `#F2C7A0`|
+|牛皮纸（盒）|`#C9955D` / `#A2713F` / `#DDB47F`|
 
-- **One ground colour per scene**, lighter tint for walls (`tint(col, .45)`), darker shade for floors (`shade(col, .16)`). Never place the product on its own colour or June on coral/pink.
-- **Line:** 3–5 px ink ribbons with ±40 % width breathing and 12–25 % breaks. Characters: 4 px. Props: 3–4.5 px. Walls in plans: 6–7 px, broken. Hands: one 6 px outline around the union of palm and fingers, 2.4 px finger separations.
-- **Shading:** one flat darker plane clipped inside a shape (never a gradient). Drop shadows are a copy of the shape offset (12, 12) in a paper shade at 50 %.
-- **Ornaments:** 4-point atomic sparkles, 8–18-point starbursts, sunburst rays (30 wedges, 55 % alpha), boomerang and kidney shapes, polka dots.
-- **Type:** Oleo Script Bold for the kicker ("Meet Pip."); Alfa Slab One for titles, numerals and step headers (ink with a cream or colour plate offset 4–7 px); Jost 500/600 for body, details, labels and captions (letter-spaced caps for small labels).
-- **Grain:** light (mux grain 4) plus the paper overlay; the look is print, not film.
-- **Model sheet:** [`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg) (`?test=sheet`): June's turnaround, five expressions, key poses and hands, and the product in its off / on / plan-view / dock states.
+- **每个场景一种底色**，墙壁颜色较浅 (`tint(col, .45)`)，地板颜色较深 (`shade(col, .16)`)。切勿将产品以其本身的颜色或六月放在coral/pink.上
+- **线：** 3–5 px 色带，带 ±40 % 宽度呼吸和 12–25 % 断裂。字符：4 像素。道具：3–4.5 像素。平面图中的墙：6-7 px，破损。手：手掌和手指结合处周围有一个 6 像素的轮廓，手指间距为 2.4 像素。
+- **着色：** 一个平坦的较暗平面剪辑在形状内（绝不是渐变）。阴影是纸张阴影中 50% 的形状偏移 (12, 12) 的副本。
+- **装饰品：** 4 点原子闪光、8–18 点星爆、旭日射线（30 个楔形，55 % Alpha）、回旋镖和肾形、圆点。
+- **类型：** Oleo Script 粗体表示踢球者（“Meet Pip。”）； Alfa Slab One 用于标题、数字和步骤标题（带有奶油色墨水或色板偏移 4-7 像素）； Jost 500/600 用于正文、详细信息、标签和标题（小标签的字母间隔大写字母）。
+- **粮食：**光（muxgrain 4）加纸覆盖；外观是印刷品，而不是影片。
+- **模型表：** [`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg) (`?test=sheet`)：六月的角色转面图，五个表情，关键姿势和手，以及处于关闭/开启/平面图/停靠状态的产品。
 
-Demo numbers behind the STYLE.md rules: register offset `(6, 4)` px re-rolled at 12 fps ±1.6 px; walls in plans 6–7 px broken; hands one 6 px outline and 2.4 px finger separations; drop shadow offset (12, 12); sunburst 30 wedges at 55 % alpha; mux grain 4; walls `tint(col, .45)`, floors `shade(col, .16)`; pop-ins 0.24–0.3 s with overshoot 1.9; hand anticipation 20–60 px, recoil 6–10 px; kneel drops the hips 150 units (`kneel: true`, `kneelPose()`); caption card Jost 500 42 px, 60 px above the bottom, fade 0.16 s with a 10 px rise, colour cel offset 5 px, coral 8-point stars; step title Alfa Slab 64 px; detail tags Jost 36 px.
+示范后面的数字STYLE.md规则：寄存器偏移量`(6, 4)`px 以 12 fps ±1.6 px 重新滚动；计划中的墙壁 6-7 px 已损坏；手 1 6 px 轮廓和 2.4 px 手指间距；阴影偏移 (12, 12);旭日纹 30 个楔形，α 值为 55%；多路复用器颗粒 4；墙壁`tint(col, .45)`, 楼层`shade(col, .16)`;突然出现 0.24–0.3 秒，超调 1.9；手部预期 20–60 px，后坐力 6–10 px；跪姿使臀部下降150个单位（`kneel: true`, `kneelPose()`）；字幕卡 Jost 500 42 px，底部上方 60 px，淡入淡出 0.16 秒，上升 10 px，彩色 cel 偏移 5 px，珊瑚色 8 点星；步骤标题阿尔法板 64 px；详细标签约斯特 36 像素。
 
-**The payoff:** the vacuum's real route (wall-follow, then boustrophedon lanes that flow around furniture, with a small curl at every turn, stars and dots between lanes) draws itself room by room, one room per beat, while the camera pulls back 5.4× → 1.0× with a −6° → 0° counter-rotation. Stepping back, it reads as an atomic-age textile.
+**回报：**真空吸尘器的真实路线（墙壁跟随，然后在家具周围流动的双足通道，每个转弯处都有一个小卷曲，通道之间有星星和点）逐个房间地绘制自己，每个节拍一个房间，而摄影机以-6°→拉回5.4×→1.0× 0°反向旋转。退一步看，它看起来像是原子时代的纺织品。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-After the lockup, inside the iris circle: film title, style name, `Lemo-Opuscar`, `LemoLab × Claude Opus 5.5`, asset credits. The LemoLab sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+锁定后，虹膜圈内：影片标题、风格名称、`Lemo-Opuscar`、`LemoLab × Claude Opus 5.5`、资产积分。 LemoLab 签核仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
-1. `demo/content.json` holds every word, number, colour, the voice and the payoff plan. `python3 demo/tools/lines.py` turns it into `lines.json`.
-2. Kokoro (`core/tts/tts.py`) → `voices/` + `dur.json`; `asr_check.py` until every line is OK (step numbers are compared as digits).
-3. The timeline is built from content (see Shots): hook 4 bars, each step ≥ 3 bars (from its voice length), the last step 2 bars, then payoff 3, tip 2, lockup 3 and end 2 bars at 132 BPM. Three steps = 22 bars = 40.0 s.
-4. The score (`music/score.py`, forked to a sub-agent with the cue map) → `score.wav`, stems and `hits.json`.
-5. `core/render/events.mjs` exports the same event times the pictures use. `tools/cuecheck.py` checks every hit against the half-beat grid and the score (0 off in the demo). `mix.py` builds foley, voice, ducking and the three silences.
-6. `tools/cues.mjs` → `.srt`; render with `core/render/video.mjs` (960 frames ≈ 30 s with 2 workers, through `core/render/slot.mjs`); `mux.sh … 24 4`.
-7. `sh demo/build.sh` does all of it; `sh demo/build.sh stills` renders the content-swap test.
+1. `demo/content.json` 包含每个单词、数字、颜色、声音和支付计划。 `python3 demo/tools/lines.py` 将其变为 `lines.json`。
+2. 心 (`core/tts/tts.py`) → `voices/` + `dur.json`; `asr_check.py` 直到每一行都正常（步骤编号以数字形式进行比较）。
+3. 时间线是根据内容构建的（参见镜头）：钩子 4 个小节，每个步骤 ≥ 3 个小节（根据其语音长度），最后一个步骤 2 个小节，然后是支付 3、提示 2、锁定 3 和结束 2 个小节，速度为 132 BPM。三步 = 22 条 = 40.0 秒。
+4. 配乐（`music/score.py`，与音画节拍对照表分叉到子代理）→ `score.wav`、分轨音频和 `hits.json`。
+5. `core/render/events.mjs` 导出图片使用的相同事件次数。 `tools/cuecheck.py` 检查半拍网格和配乐的每次点击（示范中为 0 关闭）。 `mix.py` 构建拟音、语音、音量闪避和三个静音。
+6. `tools/cues.mjs` → `.srt`;使用 `core/render/video.mjs` 渲染（960 帧 ≈ 30 秒，2 个工作人员，通过 `core/render/slot.mjs`）； `mux.sh … 24 4`。
+7. `sh demo/build.sh` 可以完成这一切； `sh demo/build.sh stills` 渲染内容交换测试。
 
-Pitfalls tied to this demo's props (the general rules are in STYLE.md):
+与此示范的道具相关的陷阱（一般规则在 STYLE.md 中）：
 
-1. **The route must obey the product.** Our first payoff looped over the sofa. Fix: wall-follow first, then lanes that bend around furniture as **potential-flow streamlines** (`laneY()`): lanes never cross and never enter an obstacle ellipse (furniture + 30 px). Keep obstacles away from walls; a streamline squeezed against a wall piles lanes on top of each other.
-2. **Don't lay the whole pattern at once.** Draw it room by room, one room per beat, with the camera pulling back. Then return home on a dotted line that also avoids furniture.
-3. **Nose inside the outline.** A nose drawn as a separate wedge looks like a paper cone glued on. Build the head as one open spline from the bridge round the skull to under the nose, then close it at the nose tip (`chain + tip`). In 3/4 view, place the far eye left of the bridge so it shows.
-4. **Arms from the shoulders.** Shoulders sit at the torso corners (±40–46, −384). Draw sleeves as a thick ink ribbon with a coral ribbon on top. Thin ink arms read as sticks coming out of the neck.
-5. **Glove hands need gaps.** Drawing the fingers as fat blobs turns the hand into a cloud. Stroke every part first and fill every part second (one union outline), with slender fingers (rx 12–13, ry 5) and separation lines.
-6. **Floor reach.** A standing figure's hands stop about 190 units under the shoulder. Kneel and solve the arms with IK instead of stretching them.
-7. **Line weight in close-ups.** Zooming the world camera 3× triples the ink. Put close-ups in a call-out circle drawn at native scale.
-8. **Detail text needs its reading time.** "Against a wall, 50 cm clear each side" did not fit its 3 s window. The data moved into `detail` ("50 cm clear on each side") and the wall into the title and the line.
-9. **The payoff route + a caption arrow can collide with labels.** Put room labels *under* the plan and the caption in the top margin.
-10. **Iris content at negative local time.** When a transition draws the next scene before its start, clamp `t` to just past the start (otherwise poses and pop-ins are undefined).
+1. **路线必须服从产品。**我们的第一个放线盘绕在沙发上。修复：首先沿墙行驶，然后是围绕家具弯曲的车道，如**势流流线** (`laneY()`)：车道永远不会交叉，也永远不会进入障碍物椭圆（家具 + 30 像素）。让障碍物远离墙壁；一条流线挤在墙上，车道堆叠在一起。
+2. **不要一次铺设整个图案。**逐个房间地绘制它，每个节拍一个房间，摄影机向后拉。然后沿着虚线回家，也避开家具。
+3. **鼻子在轮廓内。** 绘制为单独楔形的鼻子看起来像粘在上面的纸锥。将头部构建为从头骨周围的桥到鼻子下方的一根开放样条线，然后在鼻尖处将其闭合（`chain + tip`）。在 3/4 视图中，将远眼放置在桥的左侧，以便显示。
+4. **手臂从肩膀开始。** 肩膀位于躯干角 (±40–46, −384)。将袖子画成一条厚厚的墨带，上面有一条珊瑚丝带。细细的墨臂读起来就像从脖子里伸出的棍子。
+5. **戴手套的手需要间隙。** 将手指画成脂肪团，将手变成云。首先用细长的手指（rx 12-13，ry 5）和分隔线抚摸每个部分，然后填充每个部分（一个联合轮廓）。
+6. **到达地面。** 站立人物的双手停在肩膀下方约 190 个单位处。跪下并使用 IK 解决手臂问题，而不是拉伸手臂。
+7. **特写镜头中的线宽。** 缩放世界摄影机 3× 使墨水增加三倍。将特写镜头放在按原始比例绘制的标注圆圈中。
+8. **详细文本需要阅读时间。**“靠墙，每侧50厘米净空”不适合其3秒窗口。数据移入 `detail`（“每侧 50 厘米净空”），并将墙移入标题和行。
+9. **支付路线 + 标题箭头可能会与标签发生冲突。** 将房间标签放在平面图*下方*，并将标题放在上边距中。
+10. **Iris 本地时间为负数的内容。** 当过渡在开始之前绘制下一个场景时，将 `t` 钳位到刚刚过去的开始位置（否则姿势和弹出窗口未定义）。
 
-## content.json fields
+<a id="contentjson-fields"></a>
+## content.json 字段
 
-Everything readable and every colour comes from `demo/content.json`. The page reads `?content=<file>` for tests.
+所有可读的内容和每种颜色都来自 `demo/content.json`。该页面显示为 `?content=<file>` 进行测试。
 
-| Field | Type | Range | If out of range |
+|场地|类型|范围|如果超出范围|
 |---|---|---|---|
-| `product` | string | 1–12 chars | Squeezed to fit on the box label (`maxW`) |
-| `kind` | string | free | Only for your own reference |
-| `title` / `subtitle` | string | ≤ 36 / ≤ 24 chars | Title wraps to 2 lines in the hook, shrinks to 50 px on the lockup |
-| `hook.kicker` / `hook.line` | string | ≤ 14 chars / one sentence | Kicker squeezed to 760 px; the line becomes the first caption |
-| `steps[]` | array | **2–5** | Each step adds ≥ 3 bars (5.45 s); the lockup row respaces (R 104 → 88 px beyond 3 steps). 4 steps ≈ 45 s: trim the tip or end card if you need ≤ 40 s |
-| `steps[].title` | string | ≤ 22 chars | Shrinks to 40 px (header), wraps to 2 lines (lockup) |
-| `steps[].detail` | string | ≤ 30 chars | Wraps to 2 lines; must be readable in its window (chars/12 + 1 s) |
-| `steps[].icon` | enum | the 18 icon names | Unknown → `spark` |
-| `steps[].action` | enum | `place` (push to a wall + clearance diagram; uses `measure`), `tap` (phone pairing, signal rings to the product), `press` (finger + hold ring); anything else → `show` (icon in hand, finger taps it in the call-out) | — |
-| `steps[].measure` | string | e.g. "50 cm" | Only for `place`; empty = arrows without labels |
-| `steps[].line` | string | one short sentence | Voice + caption; a long line lengthens its step |
-| `payoff.caption` | string | ≤ 40 chars | Shrinks to 26 px |
-| `payoff.plan` | object | `y0,y1`, `dock[x,y]`, `zones[]` (name, x0, x1, color, checks), `rug`, `items[]` (shape: sofa, kidney, boomerang, chair, plant, table, bed; x, y, s, rot, color, accent) in 1920×1080 plan px | Zones narrower than 400 px get the wall-follow loop only; items become flow obstacles automatically |
-| `tip.label/text/icon/line` | strings | text ≤ 40 chars | Header shrinks; the ribbon widens |
-| `outro.line` / `outro.cta` | string | cta ≤ 48 chars | CTA shrinks to 20 px |
-| `palette` | object | `paper, ink, product, productDark, accent, hook, steps[], tip` | Missing keys fall back to the demo palette |
-| `voice` | object | Kokoro `id`, `speed` | — |
-| `film` | object | `name, style, credits` | End card |
+|`product`|细绳|1–12 个字符|挤压以适合盒子标签 (`maxW`)|
+|`kind`|细绳|自由的|仅供大家自己参考|
+|`title` / `subtitle`|细绳|≤ 36 / ≤ 24 个字符|标题在挂钩中换行至 2 行，在锁定时缩小至 50 像素|
+|`hook.kicker` / `hook.line`|细绳|≤ 14 个字符/一句话|Kicker 压缩至 760 px；该行成为第一个标题|
+|`steps[]`|大批|**2–5**|每一步增加 ≥ 3 个小节（5.45 秒）；锁定行重新间隔（R 104 → 88 px 超过 3 步）。 4 个步骤 ≈ 45 s：如果需要 ≤ 40 s，则修剪尖端或片尾卡|
+|`steps[].title`|细绳|≤ 22 个字符|缩小至 40 px（标题），换行至 2 行（锁定）|
+|`steps[].detail`|细绳|≤ 30 个字符|换行至 2 行；必须在其窗口中可读（chars/12 + 1 s）|
+|`steps[].icon`|枚举|18个图标名称|未知 → `spark`|
+|`steps[].action`|枚举|`place`（推到墙上+间隙图；使用`measure`）、`tap`（电话配对、产品信号铃）、`press`（手指+按住环）；其他 → `show`（手中的图标，手指在标注中点击它）|—|
+|`steps[].measure`|细绳|例如“50厘米”|仅适用于`place`；空 = 没有标签的箭头|
+|`steps[].line`|细绳|短短一句话|语音+字幕；长线延长了脚步|
+|`payoff.caption`|细绳|≤ 40 个字符|缩小至 26 像素|
+|`payoff.plan`|目的|`y0,y1`、`dock[x,y]`、`zones[]`（名称、x0、x1、颜色、检查）、`rug`、`items[]`（形状：沙发、腰形、飞去来器、椅子、植物、桌子、床；x、y、s、腐烂、颜色、口音） 1920×1080 平面像素|小于 400 px 的区域仅获得沿墙循环；物品自动成为流动障碍|
+|`tip.label/text/icon/line`|字符串|文本 ≤ 40 个字符|标头缩小；丝带变宽|
+|`outro.line` / `outro.cta`|细绳|cta ≤ 48 个字符|CTA 缩小至 20 像素|
+|`palette`|目的|`paper, ink, product, productDark, accent, hook, steps[], tip`|丢失的按键回退到示范调色板|
+|`voice`|目的|心 `id`, `speed`|—|
+|`film`|目的|`name, style, credits`|片尾卡|
 
-**Steps to swap (technical check):** edit `content.json` → `sh demo/build.sh` (it rebuilds lines, voice + whisper check, events, mix, captions, video). The score is written for 22 bars; if your step count changes the length, rerun the music sub-agent with the new section table, or keep 3 steps.
+**交换步骤（技术检查）：** 编辑 `content.json` → `sh demo/build.sh`（重建台词、语音 + Whisper 语音检查、事件、混音、字幕、视频）。 配乐是为 22 个小节编写的；如果您的步数改变了长度，请使用新的部分表重新运行音乐子代理，或保留 3 步。
 
-**Minimal example** (only what changes):
+**最小示例**（仅更改内容）：
 ```json
 {
   "product": "Mo", "title": "Your New Robot Mower", "subtitle": "Set Up in 4 Steps",
@@ -148,33 +156,34 @@ Everything readable and every colour comes from `demo/content.json`. The page re
   "palette": { "product": "#E4613F", "accent": "#3FA7A0", "hook": "#7F9CC0" }
 }
 ```
-`demo/content_alt.json` is the full version of that example (a 4-step robot mower on a garden plan); its stills are in `demo/stills/alt_*.jpg`.
+`demo/content_alt.json` 是该示例的完整版本（花园平面图上的 4 步机器人割草机）；它的剧照在`demo/stills/alt_*.jpg`。
 
-Swapping this file and running `build.sh` checks that the engine re-flows; it is not how a user's film is made.
+交换此文件并运行 `build.sh` 检查引擎是否重新流动；用户的影片不是这样制作的。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-`demo/engine/toon.js` (the style), `demo/engine/chars.js` (the presenter, hands and product), `demo/engine/icons.js` (18 icons). All functions draw in the current canvas transform.
+`demo/engine/toon.js`（风格）、`demo/engine/chars.js`（演示者、手和产品）、`demo/engine/icons.js`（18 个图标）。所有函数都在当前画布变换中绘制。
 
-| Function | What it draws | Key params |
+|功能|它画什么|关键参数|
 |---|---|---|
-| `setClock(t)` | Sets the clock for the on-twos register jitter; call once per frame | `t` seconds |
-| `shape(ctx, pts, o)` | **Any shape in this style**: off-register fill + tooth + broken ink line | `fill`, `line` (px), `off` [dx,dy] (default: jittered `REG`), `grain` 0–1, `breaks` 0–1, `shade` [{pts,color,alpha}], `seed` |
-| `ink(ctx, pts, w, o)` | Pressure ink ribbon along a polyline | `closed`, `breaks`, `wob`, `taper`, `color`, `upto` 0–1 (draw-on) |
-| `plane(ctx, pts, fill)` | Lineless ground plane | `off`, `grain` |
-| `text(ctx, str, x, y, o)` | Two-plate lettering | `font`, `fill`, `plate` (off-register colour plate), `off`, `align`, `rot`, `maxW`, `track` |
-| `fit(ctx, str, fam, px, maxW, maxLines, minPx)` | Wraps, then shrinks to fit | returns `{font, px, lines}` |
-| `arrow(ctx, from, to, o)` | The moving manual arrow | `u` draw-on, `bob` beat phase, `bend`, `head`, `fill`, `dashedShaft` |
-| `star` / `sparkle` / `rays` / `atom` / `kidney` / `boomerang` | Mid-century ornaments | radius, points, rotation, fill |
-| `REG` | Global register: `{dx:6, dy:4, jit:1.6, on:true}` | set `REG.on = false` for crisp diagrams |
-| `drawOwner(ctx, pose, t)` | The presenter | `x,y,s,dir,view('front'/'q'/'side'/'back'),face('neutral'/'happy'/'wow'/'focus'/'wink'),armF/armB{a1,a2},handF/handB,kneel,blink,look,prop{kind:'phone'/'dock'/'cable'}` |
-| `drawHand(ctx, x, y, angle, kind, side, scale)` | Four-finger glove: `'open'`, `'flat'`, `'point'`, `'grip'` | — |
-| `drawPip(ctx, x, y, o)` | Round robot product | `view('side'/'top')`, `s`, `light`, `press`, `brush`, `ang`, `colors{product,productD,trim,light}` |
-| `icon(ctx, name, cx, cy, size, o)` | Icon library: dock, phone, start, cable, wifi, plug, water, beans, cup, filter, box, clock, check, leaf, key, bulb, spark, gear | `main`, `light`, `dark` |
+|`setClock(t)`|设置on-twos寄存器抖动的时钟；每帧调用一次|`t`秒|
+|`shape(ctx, pts, o)`|**此风格中的任何形状**：套准填充+牙齿+断墨线|`fill`、`line` (px)、`off` [dx,dy]（默认：抖动 `REG`）、`grain` 0–1、`breaks` 0–1、`shade` [{点，颜色，alpha}]，`seed`|
+|`ink(ctx, pts, w, o)`|沿折线加压色带|`closed`、`breaks`、`wob`、`taper`、`color`、`upto` 0–1（绘制）|
+|`plane(ctx, pts, fill)`|无线地平面|`off`, `grain`|
+|`text(ctx, str, x, y, o)`|两板刻字|`font`、`fill`、`plate`（套准色板）、`off`、`align`、`rot`、`maxW`、`track`|
+|`fit(ctx, str, fam, px, maxW, maxLines, minPx)`|包裹，然后收缩以适合|返回 `{font, px, lines}`|
+|`arrow(ctx, from, to, o)`|移动手动箭头|`u` 牵引、`bob` 拍相、`bend`、`head`、`fill`、`dashedShaft`|
+|`star` / `sparkle` / `rays` / `atom` / `kidney` / `boomerang`|中世纪装饰品|半径、点、旋转、填充|
+|`REG`|全局寄存器：`{dx:6, dy:4, jit:1.6, on:true}`|设置 `REG.on = false` 以获得清晰的图表|
+|`drawOwner(ctx, pose, t)`|主持人|`x,y,s,dir,view('front'/'q'/'side'/'back'),face('neutral'/'happy'/'wow'/'focus'/'wink'),armF/armB{a1,a2},handF/handB,kneel,blink,look,prop{kind:'phone'/'dock'/'cable'}`|
+|`drawHand(ctx, x, y, angle, kind, side, scale)`|四指手套：`'open'`、`'flat'`、`'point'`、`'grip'`|—|
+|`drawPip(ctx, x, y, o)`|圆形机器人产品|`view('side'/'top')`、`s`、`light`、`press`、`brush`、`ang`、`colors{product,productD,trim,light}`|
+|`icon(ctx, name, cx, cy, size, o)`|图标库：码头、电话、启动、电缆、wifi、插头、水、豆子、杯子、过滤器、盒子、时钟、检查、叶子、钥匙、灯泡、火花、齿轮|`main`、`light`、`dark`|
 
-Film-level helpers in `film.js` you can lift: `callout()` (round detail view with a leader line), `medallionAt()` (numbered stamp), `tag()` (detail card), `stepHeader()`, the potential-flow `laneY()` + `buildPath()` route generator, and the transition block in `renderFilm()` (medallion iris, button iris, colour-block wipe, iris-out).
+`film.js` 中的影片级助手，您可以举起：`callout()`（带引导线的圆形细节视图）、`medallionAt()`（编号图章）、`tag()`（细节卡）、`stepHeader()`、势流`laneY()` + `buildPath()` 路径生成器，以及 `renderFilm()` 中的过渡块（徽章光圈、按钮光圈、色块擦除、光圈输出）。
 
-**Minimal example: a warm-orange four-point spark with a cursor-tail, in this style** (the "only colour" slot: keep `fill` fixed while the scene recolours):
+**最小示例：带有光标尾部的暖橙色四点火花，采用这种风格**（“唯一颜色”插槽：在场景重新着色时保持`fill`固定）：
 ```js
 import { setClock, shape, ink, sparkle, starPts, spline, PAL } from './engine/toon.js';
 setClock(t);                                   // register jitter on twos

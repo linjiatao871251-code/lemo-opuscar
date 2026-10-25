@@ -1,110 +1,122 @@
-# Art Deco — Style Prompt
+<a id="art-deco--style-prompt"></a>
+# 装饰艺术：风格提示词
 
-> Black lacquer, engraved gold line and airbrushed geometry: a 1930s poster that moves. Every composition has a centre axis, transitions open or close along it, and light arrives as bulbs switching on one by one.
-> References (grammar only): **A. M. Cassandre** posters (giant geometry, steep perspective, airbrush inside hard edges); **Chrysler Building / Rockefeller Center ornament** (setbacks, sunbursts, chevrons); **Busby Berkeley** overhead numbers overheads (human kaleidoscopes); **The Great Gatsby (2013) title sequence** (gold line drawing itself on black); **Gershwin-era symphonic jazz** (clarinet, piano, muted trumpet). Never copy a poster layout, a real building, a character, a typeface design or a melody.
+> 黑漆、雕刻金线和喷绘几何图形：一张会动的 1930 年代海报。每个构图都有一个中心轴，沿着它打开或关闭的过渡，当灯泡一个接一个地打开时，光线就会到达。
+> 参考文献（仅语法）：**A。 M. Cassandre**海报（巨大的几何形状、陡峭的视角、硬边内的喷枪）；**克莱斯勒大厦/洛克菲勒中心装饰**（挫折、旭日、V字形）； **Busby Berkeley**开销数字开销（人体万花筒）；**《了不起的检查关卡比》(2013) 标题序列**（黑色上的金色线条）； **格什温时代交响爵士乐**（单簧管、钢琴、静音小号）。切勿复制海报布局、真实建筑、角色、字体设计或旋律。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A world built from **gold keylines on warm black**, filled with **airbrushed hard-edged volumes** (Cassandre, Lempicka), organised around **one vertical axis**. Ornament *is* the picture: sunbursts are backgrounds, stepped arches are frames, a dial is a progress bar, a bulb marquee is a reveal. Motion is **mechanical and symmetrical**: things unfold from the centre, doors split along the seam, lights switch on in counted order. Native register: glamour with a clock ticking (an event, a deadline, a launch).
+一个世界是由**暖黑色上的金色钥匙线**, 充满**喷漆硬边卷**（Cassandre、Lempicka），围绕**一个垂直轴**。装饰品*就是*图片：旭日是背景，阶梯拱门是框架，表盘是进度条，灯泡选框是展示。运动是**机械且对称**：事物从中心展开，门沿着接缝分开，灯按计数顺序打开。本机寄存器：时钟滴答作响的魅力（事件、截止日期、发布）。
 
-Not a gold-foil slideshow (things move and have volume), not Art Nouveau (no whiplash curves, no flowers), not a flat vector poster (volumes are airbrushed and rimmed), not a 60s spy title (no silhouettes on flat colour).
+不是金箔幻灯片（物体会移动并且有体积），不是新艺术风格（没有鞭打曲线，没有花朵），不是平面矢量海报（卷被喷枪和镶边），不是 60 年代的间谍标题（平面颜色上没有剪影）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Ground**: warm lacquer black, never neutral grey-black; a night sky may drift toward a deep emerald near the horizon.
-- **Gold is a banded metal gradient** (dark – light – hot – light – dark); animate its `sheen` offset for a light sweep.
-- **The signature stroke** (`gline`): a dark engraved underline ~1.6 px wider than the line, the gold gradient line, and a hairline highlight on top. Optional glow and a parallel twin (`double`). Nothing gets a black cartoon outline.
-- **Volumes**: hard edge + airbrush (`airbrush`): a directional gradient from shade to light inside the shape, one consistent light direction (upper left by default), a thin gold rim on the lit side.
-- **Motifs** (sunburst, stepped arch / ziggurat, fish-scale, chevrons, fan, four-point sparkle, speed lines, clock face, dial) are structural (a background, a frame, a transition), not stickers.
-- **Perspective is real**: true one-point (mode-7 floors) and two-point perspective through a pinhole camera, so dolly, tilt and pan change perspective instead of scaling flats.
-- **Characters are deco too**: about 7 heads tall, tapered streamline bodies, faceted lacquer planes (Lempicka), almond or arc eyes, a one-stroke nose, airbrush + gold rim. Give each lead one or two silhouette marks readable at a quarter of frame height.
+- **地面**：暖漆黑，绝不中性灰黑色；夜空可能会飘向地平线附近的深翠绿。
+- **金色是带状金属渐变**（暗-亮-热-亮-暗）；为其 `sheen` 偏移设置动画以进行轻扫。
+- **签名笔划** (`gline`)：比线宽约1.6 px的深色雕刻下划线、金色渐变线和顶部的细线突出显示。可选发光和平行双胞胎 (`double`)。没有什么能得到黑色卡通轮廓。
+- **卷**：硬边+喷枪（`airbrush`）：形状内部从阴影到光的方向渐变，一个一致的光方向（默认为左上），照亮一侧有细金边。
+- **图案**（旭日形、阶梯拱门/金字形神塔、鱼鳞形、V 字形、扇形、四点闪光、速度线、钟面、表盘）是结构性的（背景、框架、过渡），而不是贴纸。
+- **透视是真实的**：真正的单点（模式7层）和通过针孔摄影机的两点透视，因此移动、倾斜和平移改变透视而不是缩放平面。
+- **角色也很装饰**：大约7个头高，锥形流线型身体，多面漆平面（Lempicka），杏仁或弧形眼睛，一笔鼻子，喷枪+金边。为每条引线提供一个或两个在四分之一帧高度处可读的轮廓标记。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Three constants: **warm black ground, gold line and metal, ivory** for paper, gloves, light and type.
-- **One saturated accent reserved for the protagonist** (or the one object the story follows). It is the only large saturated area, so the eye finds it in any wide shot. A cooler jewel tone may carry secondary surfaces, never competing in area.
-- **The one-colour exception**: any single element can be drawn in its own colour through the same fill + keyline + glow (`color` option) while everything else stays gold.
-- Always expand hex to six digits in code (three-digit hex breaks colour mixing).
-- Examples of the triad (accent / jewel / metal): burgundy / emerald / gold; coral / sapphire / pale gold; jade / plum / rose gold. Our demo's actual values are in DEMO.md.
+- 三个常数：**温暖的黑底、金线和金属，象牙色**用于纸张、手套、灯光和字体。
+- **为主角保留的一种饱和口音**（或故事遵循的一个对象）。它是唯一大的饱和区域，因此眼睛可以在任何宽的镜头中找到它。较冷的宝石色调可能带有次要表面，从不竞争面积。
+- **单一颜色例外**：任何单个元素都可以通过相同的填充+关键线+发光（`color`选项）以自己的颜色绘制，而其他所有元素都保持金色。
+- 始终将代码中的十六进制扩展为六位数字（三位十六进制会破坏颜色混合）。
+- 三合会的示例（口音/宝石/金属）：勃艮第/祖母绿/金色；珊瑚/蓝宝石/淡金色；玉石/梅子/玫瑰金。我们的示范的实际值是在DEMO.md中。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Type (OFL)**: Limelight (titles), Poiret One (numbers, sign skeletons, plaques), Josefin Sans (subtitles, labels), Italiana (numerals).
-- **Titles are architecture**: a stepped gold title bar over an arch or sunburst, optional badge and wings; drawn on in gold, then a sheen sweep.
-- **Subtitle card** (`subtitleCard`): a lacquer bar (~88 % black) with stepped ends like the title bar, double gold keyline, Josefin Sans SemiBold ~40–42 px ivory, an optional small speaker icon per voice. It **unfolds from the centre** like every other title, so titles, subtitles and transitions are one system. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Numbers carry plot without narration: dials, clock faces, floor medallions, badges.
+- **类型（OFL）**：Limelight（标题）、Poiret One（数字、标志骨架、牌匾）、Josefin Sans（字幕、标签）、Italiana（数字）。
+- **标题是建筑**：拱形或旭日形上方的阶梯式金色标题栏，可选徽章和翅膀；涂上金色，然后扫上光泽。
+- **字幕卡**(`subtitleCard`）：漆条（~88% 黑色），带有阶梯状末端，如标题栏、双金色键线、Josefin Sans SemiBold ~40–42 px 象牙色、每个声音可选的小扬声器图标。它**从中心展开**与其他所有标题一样，标题、字幕和过渡是一个系统。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 数字承载着没有旁白的情节：表盘、钟面、地板奖章、徽章。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters step on twos (12 fps)**; camera, light, bulbs, gold draw-on and sheen run on ones (24 fps). A stepped camera reads as stutter.
-- **Everything unfolds from the centre**: a point → a hairline → bars open symmetrically → text rises → wings and sparkle.
-- **Draw-on follows the music**: a gold line grows at the speed of the phrase under it and lands on the hit.
-- **Bulbs have an ignition overshoot** (~1.6× flash settling in ~0.18 s) and a relay "chunk"; once a sign is lit, a fast chase may run across it.
-- **Mechanical easing**: doors, dials and hands move with firm ease-in-out and a small settle, like machinery; nothing floats.
-- **Performance beats get anticipation** and escalation in threes (once, twice, mash).
-- What never moves: the centre axis of a composition. Symmetry may rotate or open, but it never drifts off-centre.
+- **角色双足行走 (12 fps)**； 摄影机、灯光、灯泡、金色绘图和光泽在其中运行 (24 fps)。阶梯状的摄影机读起来像是口吃。
+- **一切都从中心展开**：一个点→一条细线→条对称打开→文字升起→翅膀并闪闪发光。
+- **Draw-on 跟随音乐**：一条金线以其下方乐句的速度生长并落在热门歌曲上。
+- **灯泡具有点火过冲**（〜1.6×闪光在〜0.18秒内稳定）和继电器“块”；一旦标志被点亮，一场快速的追逐可能会穿过它。
+- **机械缓动**：门、旋钮和指针的移动具有牢固的缓进和小幅稳定，就像机械一样；没有东西漂浮。
+- **性能击败预期** 并三倍升级（一次、两次、混搭）。
+- 永远不会移动的东西：构图的中心轴。对称性可以旋转或打开，但它永远不会偏离中心。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Symmetric split (two door leaves hinged at the edges; or a revolving-door wipe) | a threshold crossed | a new place; a new chapter; a reveal behind a façade |
-| Leaves sliding shut over the live shot | a door closing on a moment | leaving; a decision made; the end of an era |
-| Extreme low-angle Cassandre tilt | scale and aspiration | a goal far above; a tower, a rocket, a monument |
-| Architectural section (pull out to a cutaway of the whole building) | progress through a structure | climbing, descending, a process in stages; a company's floors |
-| Busby Berkeley overhead, mirrored and rotating | people become pattern | a team, a release, a celebration, a system of parts |
-| Push-in on a dial, medallion or clock | the number is the plot | a deadline; a count; a milestone |
-| Match-cut on shape (circle → circle, ray → ray) | two places, one rhyme | jumping between departments, cities, eras |
-| Low oblique along a sign or marquee | light travelling letter by letter | a name revealed; a launch; a score being counted |
-| Pull back from detail to skyline | where the moment sits in the world | aftermath; a city-wide effect; scale |
+|对称分体（两扇门扇边缘铰接；或旋转门擦拭）|跨过门槛|一个新地方；新篇章；外观背后的揭露|
+|叶片滑动关闭带电镜头|一扇门瞬间关闭|离开；作出的决定；一个时代的结束|
+|极低角度卡桑德雷倾斜|规模和愿望|一个远远高于的目标；一座塔、一枚火箭、一座纪念碑|
+|建筑剖面（拉出整个建筑的剖面图）|通过结构取得进展|攀登、下降，是一个阶段性的过程；公司楼层|
+|巴斯比伯克利头顶，镜像和旋转|人成为模式|一个团队、一次发布、一次庆祝、一个零件系统|
+|插入表盘、徽章或时钟|数字就是情节|截止日期；计数；一个里程碑|
+|形状匹配切割（圆→圆，射线→射线）|两地一韵|在部门、城市、时代之间跳跃|
+|沿着标志或天棚低倾斜|逐字轻旅|名字被揭晓；发射；正在计数配乐|
+|从细节拉回到天际线|此刻所在的世界|后果;全市范围的影响；规模|
 
-Framing: the centre axis is sacred; an asymmetric frame must resolve to it within the shot. At an emotional peak the protagonist fills ≥ ~1/3 of frame height (smaller, the face reads as a prop in the ornament). Transitions: splits, revolves, arch openings, shape matches; never a generic dissolve or slide.
+取景：中轴线神圣；非对称帧必须在镜头内解析。在情感高峰时，主角填充 ≥ ~1/3 的帧高度（较小，脸部读作装饰品中的道具）。过渡：分割、旋转、拱形开口、形状匹配；绝不是通用的溶解或幻灯片。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Symphonic jazz of the 1920s–30s, not a 60s big band.** Options: stride or concert piano, clarinet (trill; a glissando by time-varying resampling of a long note), strings (tremolo, rushes, pizzicato), muted trumpet commentary, trombone and sax section, walking pizz bass, brushes or sticks, tubular bells, harp glissandi, banjo, xylophone runs, celesta.
-- Rhythm families to choose from: foxtrot, Charleston, tango, a slow torch-song ballad, a fanfare in the manner of a newsreel.
-- **Techniques (options)**: one hit per unit of counted light; accelerate by dividing the beat; plant a theme in fragments so its full statement is a payoff; low-pass a band that is physically far away and open it as we approach; move a period narrator through acoustic spaces (horn, radio, PA, live mic) to make distance audible.
-- **Foley by material**: brass clicks, bronze clang + chain, iron treads, marble heels, silver trays, wooden doors + spring twang, paper flutter, knife-switch "chunk" + filament hum, relay ticks, elevator ding, champagne cork.
-- **Silence as a tool**: before the most important sound, drop to one small diegetic sound (a clock tick, wind) and cut back in with that sound alone.
-- **J/L-cuts** carry architecture: the next room's sound enters a bar before its door opens.
-- Mix: duck music ~−9 dB under voice (less under a period announcer who is part of the texture), beds −6 dB, −14 LUFS, light film grain.
+- **1920 年代至 30 年代的交响爵士乐，不是 60 年代的大乐队。** 选项：跨步钢琴或音乐会钢琴、单簧管（颤音；通过对长音符进行时变重采样的滑奏）、弦乐（颤音、急音、拨奏）、静音小号注释、长号和萨克斯部分、行走的比兹贝斯、刷子或棍子、管铃、竖琴滑音、班卓琴、木琴、钢片琴。
+- 可供选择的节奏类型：狐步舞、查尔斯顿舞、探戈、缓慢的火炬歌谣、新闻片形式的号角曲。
+- **技术（选项）**：每单位计数光击中一次；通过划分节拍来加速；将一个主题分成碎片，这样它的完整陈述就会得到回报；对物理上较远的频带进行低通，并在我们接近时将其打开；将一段时期的叙述者移动到声学空间（喇叭、收音机、PA、现场麦克风）中，使距离可以被听见。
+- **Foley（按材料）**：黄铜咔嗒声、青铜铿锵声+链条、铁踏板、大理石脚跟、银托盘、木门+弹簧声、纸张颤动、刀开关“块”+灯丝嗡嗡声、继电器滴答声、电梯叮当声、香槟软木塞。
+- **沉默作为工具**：在最重要的声音之前，下降到一个小的叙事声音（时钟滴答声，风声）并单独用该声音切入。
+- **J/L 切割** 承载架构：隔壁房间的声音在酒吧门打开之前就进入了酒吧。
+- 混合：声音下的鸭子音乐 ~−9 dB（在属于纹理一部分的时期播音员下较少），床 -6 dB，-14 LUFS，浅影片颗粒。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Counted light.** A bulb sign lights one letter per beat or per event, so the audience can count. *Fits content like:* the countdown to a product launch; the letters of a city name lighting as a train arrives; votes tallied into a winner.
-- **Threshold doors.** Every scene change is a door split along the seam. *Fits content like:* the departments of a company; the rooms of a museum; stages of a career.
-- **Machine kaleidoscope.** People or objects become a mirrored, rotating pattern that locks into a symbol. *Fits content like:* a team becoming a logo; gears of a supply chain; a choir becoming a clock.
-- **Dials carry the plot.** A floor indicator, a clock or a gauge moves instead of narration. *Fits content like:* a funding thermometer; the altitude of a climb; a stock ticker at the opening bell.
-- **The architectural cutaway.** Pull out until a building is a section and the protagonist a coloured dot with speed lines. *Fits content like:* data moving through a server stack; a letter through a post office; a skier down a resort.
-- **Sheen sweep / draw-on.** Light crosses a gold object on a hit; a gold line engraves itself at the speed of a glissando. *Fits content like:* unveiling a trophy; a map route; a signature on a treaty.
-- **The one colour.** One element keeps its own colour in a gold world. *Fits content like:* the one product among competitors; the patient among doctors; the new idea in an old firm.
+- **计数灯。** 灯泡标志每个节拍或每个事件点亮一个字母，以便观众可以计数。 *适合以下内容：*产品发布倒计时；当火车到达时，城市名称的字母会亮起；计票结果为获胜者。
+- **门槛门。** 每个场景的变化都是一扇沿着接缝分开的门。 *适合以下内容：*公司的部门；博物馆的房间；职业生涯的各个阶段。
+- **机器万花筒。** 人或物体成为锁定为符号的镜像旋转图案。 *适合以下内容：* 团队成为徽标；供应链的齿轮；唱诗班变成了时钟。
+- **表盘承载情节。** 楼层指示器、时钟或仪表移动而不是旁白。 *适合以下内容：*资金温度计；攀登的高度；开盘时的股票行情。
+- **建筑剖面图。** 拉出直到建筑物成为剖面，主角成为带有速度线的彩色点。 *适合以下内容：*通过服务器堆栈移动的数据；通过邮局的信件；滑雪者从度假村下来。
+- **光泽扫描/绘制。** 光击中时穿过金色物体；一条金线以滑奏的速度自行雕刻。 *适合以下内容：*揭幕奖杯；地图路线；在条约上签字。
+- **单一颜色。** 一种元素在金色世界中保持自己的颜色。 *适合的内容如下：*竞争对手中的一种产品；医生中的病人；老公司的新想法。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Bulb signs from glyph skeletons break on curves (G, S, R): Zhang–Suen staircase pixels fool a neighbour-count junction test → use the **crossing number** and weld chain ends within ~14 px.
-- A generic cartoon character looks pasted in → characters are deco (§2).
-- Fish-scale reads as brickwork → lower half-circles row by row, each overlapping the previous row, plus an inner arc.
-- Door leaves over a flat "interior" read as a blank frame → draw only the leaves, closing over the live shot.
-- A gold point on pure black trips `blackdetect` → lift the background wedges and glow slightly.
-- Period loudspeaker distortion is unintelligible under music → gentle drive; whisper-check every line on the final mix.
+- 字形骨架上的灯泡标志在曲线上断裂（G、S、R）：Zhang–Suen 楼梯像素欺骗了邻居计数连接点测试 → 使用 **交叉编号** 并将焊接链末端控制在约 14 像素内。
+- 通用卡通人物看起来粘贴在 → 人物是装饰的 (§2)。
+- 鱼鳞读作砖砌 → 一行一行的下半圆，每个圆与前一行重叠，加上一个内弧。
+- 平面“内部”上的门叶被解读为空白框架 → 仅绘制叶子，关闭现场镜头。
+- 纯黑旅行中的金点 `blackdetect` → 抬起背景楔形并略微发光。
+- 音乐下扬声器失真难以理解→轻柔驱动；悄悄检查最终混音上的每一行。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-Canvas2D, deterministic in `t`, in `demo/engine/`: `deco.js` (gold gradient, `gline`, `airbrush`, motifs, `drawShape` for any path in the deco manner, `color` for the one-colour exception), `type.js` (title bar, digits, badges, dial, clock, `subtitleCard`), `bulbs.js` (any text → bulb sign, `litSequence`), `cam.js` (pinhole camera, `cardTransform`). `demo/frames.js` renders model sheets and style frames from the real engine. Signatures and a minimal example that draws something not in the demo: DEMO.md "Engine reference".
+Canvas2D，`t`中的确定性，在`demo/engine/`中：`deco.js`（金色渐变，`gline`，`airbrush`，图案，`drawShape`为装饰方式中的任何路径，`color`为单色例外）、`type.js`（标题栏、数字、徽章、表盘、时钟、`subtitleCard`）、`bulbs.js`（任何文本 → 灯泡标志、`litSequence`）、`cam.js`（针孔摄影机、 `cardTransform`）。 `demo/frames.js` 从真实引擎渲染角色设定表和风格定帧。签名和一个最小的示例，绘制了示范中没有的内容：DEMO.md“引擎参考”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the structure, the characters (or none), the settings, the opening, the ending, the camera path, the pacing, the accent colour and what gets counted. All far from our demo:
+您可以决定结构、角色（或没有）、设置、开头、结尾、摄影机路径、节奏、强调色以及计算的内容。与我们的示范相去甚远：
 
-- Structures: **the exhibition** (five pavilions of a world's fair, one idea of the topic behind each door); **the ocean liner** (three decks from engine room to ballroom, a horn per stage); **the trophy night** (nominees as sunburst panels, the winner revealed in light).
-- Openings: **the machine room** (gold gears and pistons building to the first beat); **the engraved map** (a gold route crosses a continent before anyone appears); **the telegram** (ticker tape types the premise).
-- Endings: **the lights go out** (letters switch off in reverse until one bulb remains); **the dawn** (lacquer black warms to a pale sky); **the poster** (the last shot flattens into a printed poster with a date).
+- 结构：**展览**（世界博览会的五个展馆，每扇门背后的一个主题想法）； **远洋客轮**（从机舱到宴会厅三层甲板，每级一个喇叭）； **奖杯之夜**（被提名者为旭日板，获胜者在灯光下揭晓）。
+- 开口：**机房**（金色齿轮和活塞构建到第一节拍）； **刻印地图**（一条黄金路线在任何人出现之前穿越一个大陆）； **电报**（自动收报机磁带类型前提）。
+- 结局：**灯熄灭**（字母反向关闭，直到剩下一个灯泡）； **黎明**（漆黑温暖苍白的天空）； **海报**（最后一张镜头压平成带有日期的印刷海报）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

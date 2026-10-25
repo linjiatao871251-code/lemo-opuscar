@@ -1,119 +1,131 @@
-# Sci-Fi Sitcom Toon — Style Prompt
+<a id="sci-fi-sitcom-toon--style-prompt"></a>
+# 科幻情景喜剧卡通：风格提示词
 
-> Adult-animation sci-fi sitcom: thick boiling outlines, flat colour, a duo whose reactions don't match, a glowing portal, and one palette per world.
-> References (grammar only): adult-swim-era sci-fi sitcom cartoons (dialogue-driven comedy, reaction close-ups, boiling line, sci-fi hardware as household junk). Borrow the *grammar*, never the characters.
+> 成人动画科幻情景喜剧：厚重的沸腾轮廓、单调的色彩、反应不一致的二人组、发光的门户以及每个世界的调色板。
+> 参考资料（仅语法）：成人游泳时代的科幻情景喜剧卡通（对话驱动的喜剧、反应特写镜头、沸腾的台词、科幻硬件作为家庭垃圾）。借用*语法*，而不是字符。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Hand-drawn-looking 2D TV animation for adults: **uniform thick dark outlines that boil**, **flat fills with hard-edged shadow shapes (no gradients)**, **big white eyes with tiny pupils**, **elastic mouths**, grotesque-but-cute creatures, and sci-fi hardware treated like household junk. The comedy is **dialogue-driven**: improvised-feeling talk, interruptions, awkward pauses, reaction shots, escalation, and a last-second reversal. The genre's engine is **a tiny, mundane goal pursued with absurdly large sci-fi means**: whoever could solve anything uses it for something petty, and someone else pays the emotional price.
+适合成人的手绘二维电视动画：**沸腾的均匀粗暗轮廓**, **使用硬边阴影形状进行平面填充（无渐变）**, **白色的大眼睛，瞳孔很小**, **弹性嘴**、怪诞但可爱的生物，以及被当作家庭垃圾对待的科幻硬件。喜剧是**对话驱动**：即兴演讲、打断、尴尬的停顿、反应镜头、升级以及最后一秒的逆转。该流派的引擎是**用荒谬的大科幻手段追求一个微小的、平凡的目标**：谁能解决任何问题，就用它来做一些小事，而其他人则付出情感代价。
 
-Not a kids' cartoon (dry humour, long pauses), not anime (no sparkly eyes), not a vector explainer (lines boil).
+不是儿童动画片（冷幽默，长时间停顿），不是动漫（没有闪亮的眼睛），不是矢量解释器（台词沸腾）。
 
-**Copyright red lines (non-negotiable):**
-- Never reproduce any existing show's characters, silhouettes or colour combos (e.g. a spiky-blue-haired old man in a lab coat + a kid in a yellow shirt), names, catchphrases, burp gags, logos, or the look of any existing portal gun.
-- Invent your own cast, props and portal device. Never write the source show's name in the film or docs; one line "inspired by adult-swim-era sci-fi sitcom cartoons" is enough.
+**版权红线（不可转让）：**
+- 切勿复制任何现有节目的角色、轮廓或颜色组合（例如，穿着实验室外套的尖头蓝发老人 + 穿着黄色衬衫的孩子）、名称、流行语、打嗝笑话、徽标或任何现有传送枪的外观。
+- 发明你自己的演员阵容、道具和传送门设备。切勿在影片或文档中写入源节目的名称；一句“受到成人游泳时代科幻情景喜剧卡通的启发”就足够了。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Line**: near-black (a slightly purple black reads best), ~7 px for characters and props, 4–6 px for background detail, round joins. **Line width is constant in screen space**: close-ups are "redrawn" at the same weight, never scaled up (transform points to screen, then stroke with an identity transform).
-- **Line boil**: resample every outline in screen space (~7 px steps) and displace along the normal with low-frequency noise, amplitude ~1.7 px; cycle **3 boil drawings at 12 fps**. Everything boils, including held poses and backgrounds: a still frame is never dead.
-- **Fill**: flat colours only. Shadows are hard-edged darker shapes clipped inside the fill (one per form, away from the light). Glows are 1–2 flat translucent rings, not gradients. Skies are **flat colour bands**.
-- **Faces**: big white eyes (touching in 3/4 view), 4–5 px pupils, heavy lids for deadpan, eye bags. Parametric mouths (open, width, curl, skew) with interior, teeth, tongue. Brows carry the emotion.
-- **Cast design**: silhouettes must read in solid black. Give each lead one absurd costume idea. Avoid white lab coat + spiky hair.
-- **Creatures**: every world may get one creature that is disgusting *and* adorable; keep it non-verbal (sound effects) so the film stays a dialogue between the leads. Check that anything behind furniture still shows face and upper body.
-- **The portal** (or whatever device moves between worlds): the only thing that glows. A lumpy rim with a thick outline, rotating spiral arms, a pale core, orbiting sparks, drips, a flat translucent wash over the scene while it's open. Open with a gentle overshoot (~12 %, back-ease ~0.3 s); a springy overshoot covers the actors.
-- **Screen graphics**: a retro-terminal tag (VT323) typed in, coloured per world.
+- **线**：接近黑色（略带紫黑色的阅读效果最佳），人物和道具约 7 像素，背景细节 4-6 像素，圆形连接。 **线宽在屏幕空间中是恒定的**：特写镜头以相同的权重“重绘”，从不按比例放大（变换点到屏幕，然后使用恒等变换进行描边）。
+- **Line沸腾**：对屏幕空间中的每个轮廓进行重新采样（~7 px步长），并用低频噪声沿法线位移，幅度~1.7 px；循环 **3 以 12 fps** 的速度绘制图纸。一切都沸腾了，包括保持的姿势和背景：静止的画面永远不会死。
+- **充满**：仅限平面颜色。阴影是硬边深色形状，夹在填充物内（每个形状一个，远离光线）。发光是 1-2 个平坦的半透明环，而不是渐变。天空为 **平坦色带**。
+- **面孔**：白色的大眼睛（在 3/4 视图中触摸），4-5 像素的瞳孔，面无表情的厚重眼睑，眼袋。参数化的嘴巴（张开、宽度、卷曲、倾斜），包括内部、牙齿、舌头。眉毛承载着情感。
+- **铸造设计**：轮廓必须为纯黑色。给每个主角一个荒谬的服装想法。避免白色实验服+尖头头发。
+- **生物**：每个世界都可能出现一种令人恶心*又*可爱的生物；保持非语言（音效），以便影片保持主角之间的对话。检查家具后面的任何东西是否仍然显示出脸部和上半身。
+- **门户**（或在世界之间移动的任何设备）：唯一发光的东西。一个带有粗轮廓的块状边缘，旋转的螺旋臂，苍白的核心，绕轨道运行的火花，滴水，打开时场景上方有一个平坦的半透明水彩晕染。以温和的超调打开（~12%，后缓~0.3 s）；弹性的过冲覆盖了演员。
+- **屏幕图形**：输入的复古终端标签（VT323），按世界着色。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **One palette per world**, 3–5 colours, maximally different from the previous world in hue *and* value, so the audience reads "we jumped" from colour alone.
-- Line colour and eye white never change between worlds; everything else may.
-- Glow colour belongs to the travel device only: nothing else in any world may use it.
-- A deliberately bland palette (beige, brown) is itself a joke: use it for the world that is "suspiciously normal".
-- Examples of a sequence of worlds: sage lab → magenta and lime jelly → orange and teal; or grey office → ultraviolet and gold → mint and coral → beige. Our demo's values are in DEMO.md.
+- **每个世界一个调色板**，3-5种颜色，与之前的世界在色调*和*值上最大的不同，所以观众仅从颜色上就读到了“我们跳了”。
+- 线条颜色和眼睛白色在世界之间永远不会改变；其他一切都可以。
+- 发光颜色仅属于旅行设备：任何世界上的任何其他设备都不能使用它。
+- 故意使用平淡的调色板（米色、棕色）本身就是一个笑话：将它用于“可疑的正常”世界。
+- 世界序列的示例：鼠尾草实验室 → 洋红色和酸橙果冻 → 橙色和青色；或灰色办公室→紫外线和金色→薄荷和珊瑚色→米色。我们的示范的值在 DEMO.md 中。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Subtitles**: bottom centre, a rounded heavy sans (Baloo 2 ExtraBold ~50 px), white with a ~11 px black outline, so they look like the cartoon's own captions, with a small **speaker pill** in the character's colour (boiling outline) on the left. Lines over ~1300 px wrap to two lines. Overlapping lines stack; the older one dims to ~70 %.
-- **Timing**: hold ≥ max(1.8 s, speech + 0.6 s) for narration; for rapid dialogue, `max(audio + 0.35 s, 0.9 s + chars / 17)`. Clip at world changes and **before a silent beat**, so the silence plays on a clean screen.
-- **Title**: chunky display lettering popped in on 12 fps steps on a musical hit. Choose a period look that is not the source genre's logo: **avoid acid green, slime drips and wobbly bubble lettering** together, which reads as a specific show.
-- Keep faces out of the subtitle band (bottom ~170 px) and the world tag clear of faces.
+- **字幕**：底部中心，圆形重sans（Baloo 2 ExtraBold〜50像素），白色，黑色轮廓〜11像素，所以它们看起来像卡通自己的字幕，带有一个小**扬声器丸**在角色的颜色（沸腾轮廓）在左边。超过 ~1300 px 的行将换行为两行。重叠线堆叠；旧的变暗至约 70%。
+- **定时**: 旁白保持 ≥ max(1.8 s, 语音 + 0.6 s)；用于快速对话，`max(audio + 0.35 s, 0.9 s + chars / 17)`。在世界变化和 **之前剪辑**，因此沉默会在干净的屏幕上播放。
+- **标题**：在音乐热门歌曲中以 12 fps 的速度弹出厚实的显示字体。选择不是源流派标志的时期外观：**避免酸性绿色、粘液滴和摇晃的气泡字母**在一起，读起来就像一个特定的节目。
+- 让面孔远离字幕带（底部约 170 像素），并且世界标签远离面孔。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters on twos (12 fps)**: poses, mouths, blinks, walk cycles and boil step at 12 fps. **Camera moves, portal swirl, flying props and wipes on ones (24 fps)**.
-- **Acting over moving**: held poses with small changes (eye twitch, pupils sliding, a gulp, sweat drops). Idle life: breathing (±1 % squash), a nod driven by speech loudness.
-- **Anticipation → action** before every gesture.
-- **Squash & stretch** on landings (decaying cosine squash ~22 %), stretch while flying out of a portal; "sucked in" = scale toward the portal centre while stretching.
-- **Lip-sync from audio**: per line, RMS (open) and spectral centroid (wide vs round) at 24 Hz, sampled at the 12 fps drawing time. Exaggerate for screams (mouth ×1.5–1.9).
-- **Nervous jitter**: a 12 fps random offset of 3–6 px plus trembling pupils; amplitude grows with panic.
-- What never moves in a cold pause: everything but the boil.
+- **双人角色 (12 fps)**：姿势、嘴巴、眨眼、行走周期和煮步速度为 12 fps。 **相机移动、传送门漩涡、飞行道具和擦拭（24 fps）**。
+- **动作超过移动**：保持姿势有微小变化（眼睛抽搐、瞳孔滑动、吞咽、汗滴）。闲置生活：呼吸（±1%挤压）、由言语响度驱动的点头。
+- **每个手势之前的预期→行动**。
+- **在着陆时挤压和拉伸**（衰减余弦挤压〜22％），在飞出门户时拉伸； “吸入”= 拉伸时向传送门中心缩放。
+- 来自音频的 **Lip 同步**：每行、24 Hz 的 RMS（开路）和频谱质心（宽与圆），在 12 fps 绘图时间采样。夸大尖叫声（嘴 ×1.5–1.9）。
+- **紧张抖动**：3-6像素的12 fps随机偏移加上瞳孔颤抖；振幅随着恐慌而增加。
+- 在冰冷的停顿中永远不会移动的东西：除了沸腾之外的一切。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Medium two-shot | the relationship; who reacts how | dialogue; a standoff; a deal |
-| Hard cut to a close-up | an interruption, a face breaking | the cut-off line; the realisation; a lie |
-| Insert extreme close-up of an object | the absurd detail | a reveal; the problem itself; the wrong result |
-| Reaction close-up | the laugh lives on the face | after every absurd image |
-| Tight close-up + short shake on one word | panic | the key word; an alarm; a scream |
-| Rush zoom into the portal → swirl wipe | leaving a world | any jump between places, times or versions |
-| Same framing repeated across worlds | only the world changes | a montage; a comparison; a list |
-| Very slow push-in on a still two-shot | a cold silence | the pause after a reversal; a confession |
-| Wide with the device and both leads in frame | the whole situation at once | a callback; a trap; a fresh start |
-| Over-the-shoulder onto a screen | reading bad news | a message; a readout |
-| Whip pan between two faces | overlapping argument | a fight; a bet; a double take |
+|表现媒介二-镜头|关系；谁的反应如何|对话;僵局；一笔交易|
+|硬切特写|打断，打断脸|截止线；实现；一个谎言|
+|插入物体的极端特写|荒谬的细节|揭示；问题本身；错误的结果|
+|反应特写|笑容活在脸上|在每一个荒谬的图像之后|
+|近距离特写+单字短抖|恐慌|关键词；警报；一声尖叫|
+|快速放大传送门 → 旋转擦拭|离开一个世界|地点、时间或版本之间的任何跳转|
+|相同的框架在世界各地重复出现|只有世界改变了|蒙太奇；比较；一个清单|
+|在静止的两个镜头上推入速度非常慢|寒冷的沉默|逆转后的停顿；忏悔|
+|设备宽且框架内有两条引线|整个情况一下子|回调；一个陷阱；一个新的开始|
+|越肩到屏幕上|读坏消息|一条消息；读数|
+|将平底锅放在两张脸之间|重叠的论点|打架；一个赌注；双重考虑|
 
-Rule: every absurd image is followed by a **reaction close-up**. Transitions go through the travel device (swirl wipes) or hard cuts; no dissolves.
+规则：每幅荒谬的图像后面都会有一个**反应特写**。过渡通过行进装置（旋转擦拭器）或硬切割；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Synthesized score, no samples needed.** A **theremin**-like lead (sine + a little 2nd/3rd harmonic, legato portamento ~70 ms, vibrato fading in ~150 ms after each onset, spring reverb) over analog bass, a square-wave arpeggio and a retro drum machine. Minor modes and chromatic lines suit the main theme.
-- **Genre cues per world** (options): surf guitar; polka accordion; toy-piano lullaby; elevator bossa (Karplus–Strong nylon guitar); brushed swing with vibes; tuba + slide whistle; warm Rhodes + a vocal "aah"; tremolo strings for panic.
-- **Techniques (options)**: a cue's first beat is the cut; a tempo that snaps cuts to a grid; rule of three becoming machine-gun (same stinger, shorter each time).
-- **Silence is the punchline**: hard-cut the music, reverb tails included, on a reveal and for a cold pause. Leave only room tone (fluorescent hum, a clock tick, a fridge).
-- **Foley (synthesized)**: portal open (sub boom + down-swept noise + rising swirl), hum, close "fwump", swirl whoosh per wipe, pop/boing, wet glorp/squish, slurp, chomp, blink "blip", click-beep, kazoo sting, squeaky toy.
-- **Voices**: a two-hander with contrasting voices: low, flat and slow for the deadpan lead (light saturation + a ~180 Hz bump for gravel); higher and faster for the nervous one (presence boost). A tiny creature may say one or two words, pitched up. Compress, RMS-match, add short early reflections so voices sit in the room. Duck music ~−7 dB under dialogue. Master −14 LUFS.
+- **合成的配乐，不需要样本。**A**有**类主音（正弦+一点2nd/3rd谐波，连奏滑音〜70毫秒，颤音淡入〜150每次开始后的毫秒数，弹簧混响）通过模拟低音、方波琶音和复古鼓机。小调模式和半音阶线条适合主题。
+- **每个世界的流派提示**（选项）：冲浪吉他；波尔卡手风琴；玩具钢琴摇篮曲；电梯波萨（Karplus-Strong 尼龙吉他）；拉丝秋千，充满振动；大号+滑哨；温暖的罗德+声音“啊”；颤音弦用于恐慌。
+- **技术（选项）**：球杆的第一拍是剪切；将剪辑捕捉到网格的节奏；三挺机枪的规则（相同的毒刺，每次更短）。
+- **沉默是亮点**：对音乐进行硬剪，包括混响尾音，在显示和冷暂停中。只留下房间的声音（荧光嗡嗡声、时钟滴答声、冰箱声）。
+- **Foley（合成）**：门户打开（副臂+下扫噪音+上升漩涡），嗡嗡声，关闭“fwump”，漩涡每次擦拭时嘶嘶作响，pop/boing，湿glorp/squish，发出声音，咀嚼，眨眼“blip”，咔嗒声、卡祖笛叮咬声、吱吱作响的玩具。
+- **声音**：具有对比声音的两人手：面无表情的主音低沉、平缓且缓慢（浅饱和+砾石的〜180 Hz凹凸）；对于紧张的人来说更高更快（存在感提升）。一个微小的生物可能会说一两个单词，并且音调较高。压缩、RMS 匹配、添加短的早期反射，让声音留在房间里。对话下的鸭子音乐~−7 dB。主控−14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Parallel worlds.** Each jump = new palette, new cue, new creature. *Fits content like:* versions of a product; careers you could have had; the same city in five eras.
-- **Duo contrast.** Deadpan vs panic: the joke is in the difference between reactions. *Fits content like:* a veteran and a new hire; a parent and a teenager; an AI and its user.
-- **Rule of three → machine-gun.** Two slow wrong answers, then one-second worlds cut on the beat with the same rejection word. *Fits content like:* failed prototypes; bad date ideas; tax forms.
-- **The suspiciously normal world.** The pattern breaks; the calm is the joke. *Fits content like:* the one boring answer that works; a quiet office after chaos; the real customer.
-- **Dead-air reversal.** A long silence after the twist, then one line revealing a character's values. *Fits content like:* a price reveal; a fine print clause; a gift that wasn't wanted.
-- **Hardware as junk.** World-bending tech used for a petty chore. *Fits content like:* a quantum computer used for a grocery list; a rocket to deliver a sandwich; a time machine to fix a typo.
-- **Callback button.** The last line repeats the first so the story loops. *Fits content like:* a catchphrase of a brand; a morning routine; a running complaint.
+- **平行世界。** 每次跳跃=新调色板，新线索，新生物。 *适合以下内容：*产品版本；你本来可以从事的职业；五个时代的同一个城市。
+- **Duo对比。** 面无表情与恐慌：笑话在于反应之间的差异。 *适合以下内容：* 老员工和新员工；父母和青少年；人工智能及其用户。
+- **三规则 → 机枪。** 两个缓慢的错误答案，然后一秒的世界用相同的拒绝词切入节拍。 *适合以下内容：*失败的原型；糟糕的约会想法；税务表格。
+- **可疑的正常世界。** 模式打破；平静就是个笑话。 *适合以下内容：*一个有效的无聊答案；混乱后的安静办公室；真正的客户。
+- **死气逆转。** 转折后一段长时间的沉默，然后一行字揭示了角色的价值观。 *适合以下内容：* 价格显示；细则条款；一份不想要的礼物。
+- **硬件是垃圾。** 用于琐事的世界弯曲技术。 *适合以下内容：* 用于购物清单的量子计算机；火箭送三明治；修复打字错误的时间机器。
+- **回调按钮。** 最后一行重复第一行，因此故事循环。 *适合以下内容：*品牌的口号；早上的例行公事；持续不断的抱怨。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- TTS reads hyphen stutters as words: write syllables ("buh, buh-broken"); respell words it mangles; pick names that survive a low voice.
-- Whisper mis-hears very short clips unless padded with ~0.6 s of silence.
-- A real interruption: generate the interrupted line *longer* than needed and truncate the audio where the other voice cuts in.
-- A springy overshoot swallows the actors: gentle back-ease.
-- Food and liquids need cues (surface detail, drips, steam) or they read as other objects.
-- Square-wave synth cymbals alias into harsh 8–20 kHz fizz: band-passed noise plus a little FM.
-- A sustained bass below ~40 Hz is rumble on laptop speakers: end an octave higher.
-- A cut music cue without its reverb tail cut is not dead silence.
-- `ffmpeg fps=1` contact sheets are offset up to 0.5 s: don't misdiagnose a shot boundary.
+- TTS 将连字符口吃读取为单词：写出音节（“buh，buh-broken”）；重新拼写它损坏的单词；选择那些能在低声中保留下来的名字。
+- Whisper 会误听非常短的剪辑，除非填充了约 0.6 秒的静音。
+- 真正的中断：生成比需要的*长*的中断线路，并截断其他声音插入的音频。
+- 一种有弹性的过冲吞没了演员：温和的背部放松。
+- 食物和液体需要线索（表面细节、滴水、蒸汽），否则它们就会被解读为其他物体。
+- 方波合成器铙钹混叠成刺耳的 8-20 kHz 嘶嘶声：带通噪声加上一点 FM。
+- 笔记本电脑扬声器上发出低于约 40 Hz 的持续低音：末端高八度。
+- 没有混响尾部剪切的剪切音乐提示并不是死寂。
+- `ffmpeg fps=1` 接触片偏移最多 0.5 秒：不要误诊镜头边界。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `toon.js` (vector engine: matrix stack, screen-space boil, constant line width, flat shading), `chars.js` (parametric eyes, mouths, hands, noodle limbs), `worlds.js` (one function per world, creatures, the portal), `voice.py` (per-character processing + lip-sync envelopes), `asr.py` (padded whisper check), `music/score.py` (synthesized score from a cue list), `levels.py` (stem meters), `sheet.sh` / `strip.sh` (contact sheets, consecutive-frame strips). New shapes: build them with `toon.js` in world space; the stroke goes through the screen-space boil at constant weight.
+在 `demo/` 中：`toon.js`（矢量引擎：矩阵堆栈、屏幕空间沸腾、恒定线宽、平面着色）、`chars.js`（参数化眼睛、嘴巴、手、面条四肢）、`worlds.js`（每个世界、生物、门户一个函数）、`voice.py` （每个字符处理 + 唇形同步包络）、`asr.py`（填充Whisper 语音检查）、`music/score.py`（从提示列表合成配乐）、`levels.py`（干表）、`sheet.sh` / `strip.sh`（接触表、连续帧条带）。新形状：在世界空间中使用 `toon.js` 构建它们；冲程以恒定重量穿过屏幕空间沸腾。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the premise, the cast, the worlds, the jokes, the opening, the ending, the camera path, the pacing and the palettes. All far from our demo:
+您可以决定前提、演员阵容、世界、笑话、开头、结尾、摄影机路径、节奏和调色板。与我们的示范相去甚远：
 
-- Structures: **one world, many clocks** (the duo stays home and a device skips them through times of day, each time worse); **the job interview** (a panel interviews candidates from other worlds, each a different genre cue); **the tech-support call** (split screen between two worlds, one voice guiding the other through a disaster).
-- Openings: **mid-disaster** (the portal is already open and something is coming through); **the instruction manual** (a terminal readout explains the device before we see anyone); **the wrong world** (we start in the absurd world and only later see home).
-- Endings: **stuck elsewhere** (the device breaks and they settle in, happily); **the audience** (a creature from one world watches the whole film on a screen and rates it); **the cost** (a quiet final shot of what the errand cost someone, no joke).
+- 结构：**one 世界，许多时钟**（二人呆在家里，设备会跳过他们一天中的某些时间，每次都更糟）； **工作面试**（一个小组面试来自其他世界的候选人，每个人都有不同的流派线索）； **技术支持电话**（两个世界之间的分屏，一个声音引导另一个世界度过灾难）。
+- 空缺：**中灾难**（门户已经打开并且有东西通过）； **使用说明书**（在我们看到任何人之前，终端读数解释了该设备）； **错误的世界**（我们从荒诞的世界开始，后来才看到家）。
+- 结局：**卡在别处**（设备坏了，他们愉快地安顿下来）； **观众**（来自同一个世界的生物在屏幕上观看整个影片并对其进行评分）； **成本**（一个安静的最终结果镜头这个差事花费了某人，不是开玩笑）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

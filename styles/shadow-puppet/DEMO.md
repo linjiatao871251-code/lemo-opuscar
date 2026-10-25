@@ -1,70 +1,77 @@
-# Shadow Puppetry — our demo
+<a id="shadow-puppetry--our-demo"></a>
+# 皮影戏 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Hou Yi Shoots the Suns* (54 s) · `shadow-puppet.mp4` · source in [`demo/`](demo/)
+示范：*后羿射中太阳*（54秒）·`shadow-puppet.mp4`·来源在[`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Ten oil lamps burn as ten suns; each time the archer Hou Yi shoots one down, a lamp behind the screen goes out, until only the last lamp is left, and that lamp is the one lighting the play. One character, one goal (shoot down the suns that scorch the land), one turn (the tenth arrow is already nocked and he stops, leaving one sun).
+十盏油灯燃烧如十个太阳；弓箭手后羿每射下一箭，屏幕后面的一盏灯就会熄灭，直到只剩下最后一盏灯，这盏灯就是照亮戏剧的那盏灯。一个角色，一个目标（击落烧焦大地的太阳），一回合（第十支箭已经搭上，他停下来，留下一个太阳）。
 
-The core idea: *each sun is a lamp* and each arrow puts one out, so the frame literally steps darker. One lamp at the start (the show begins); at "ten suns" nine more light behind the cloth, the screen whitens, overexposes and the colours bleach; every sun shot down snuffs a lamp and the colour steps back to warm gold. The end goes behind the screen: the "sun" was a lamp and the "sky" a cloth a metre wide, so the story's ending (one sun is enough) and the medium's truth (a shadow play needs one lamp) close in the same shot. Echoes: 1 lamp → 10 → 1; clapper at the start ↔ clapper at the end; title plaque ↔ end-card plaque.
+核心思想：*每个太阳都是一盏灯*，每个箭头都会熄灭一个，所以框架实际上会变暗。开始时有一盏灯（演出开始）；在“十个太阳”的时候，布后面还有九个光线，屏幕变白，曝光过度，颜色变白；每一次太阳镜头的熄灭都会熄灭一盏灯，颜色又回到温暖的金色。结局在屏幕后面：“太阳”是一盏灯，“天空”是一米宽的布，所以故事的结局（一个太阳就足够了）和表现媒介的真相（皮影戏需要一盏灯）接近在同一个镜头中。回声：1灯→10→1；开始时的拍板 ↔ 结束时的拍板；标题牌↔结束卡牌。
 
-How the demo adapted its topic: the lamp was the sun, and what went off the screen was each golden crow as it died. (The same question works for any topic: a product launch → the product is the lamp that finally lights the screen; a memory → figures lift off the cloth and blur as they are forgotten.)
+示范如何适应它的主题：灯是太阳，屏幕上消失的是每只死去的金乌。 （同样的问题适用于任何主题：产品发布 → 产品是最终照亮屏幕的灯；记忆 → 人物从布上揭开并在被遗忘时变得模糊。）
 
-Arc (54 s): a lamp lights in the dark → a world appears on the cloth → trouble arrives (ten lamps: the light changes) → the hero's entrance and freeze pose → the shooting, set to percussion → a silent choice → the world restored → go behind the screen → end card on the cloth.
+弧线（54秒）：黑暗中一盏灯亮起→布上出现一个世界→麻烦到来（十盏灯：光线变化）→英雄登场并定格姿势→镜头，设置打击→无声的选择→世界恢复→进入屏幕后面→布上的片尾卡。
 
-Native moves spent: the light is the world (lamp count = sun count), off the screen (the crows tumble off and dissolve into light), carved and translucent (Hou Yi's open-cut face), hand-held (plumes and legs on pendulums), go behind the screen (after the climax, as the echo).
+风格特有表现手法花：光即世界（灯数=太阳数）、幕外（乌鸦滚落消散成光）、雕琢半透明（后羿镂空的脸）、手持（摆上的羽毛和腿）、去幕后（高潮后，作为回声）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Audience seat: full stage frame with children's heads. Black until a match flares behind the cloth. Very slow push. |
-| Into the story | Push through the frame until the cloth fills the screen. |
-| Disaster | 1.5× lateral pan across the burning land (give the disaster area). |
-| Hero entrance | 1.15× follow; on the freeze-pose gong, a 5-frame **crash zoom** (the percussion accent becomes a camera move). |
-| First action | Close on hands/bow/face, then a whip pan along the arrow to the target. |
-| Repetition | **Locked wide** so the audience sees every step of the change (nine lamp-steps of darkening). |
-| The choice | Medium-close with the target at the far edge: the hero at left, empty sky, the last sun at right. Music stops. |
-| Echo | Pull back to reveal the stage frame again, **truck right as a blurred foreground pillar wipes the frame**, and come out behind the screen. Slow push, then a fast dive into the flame that flashes to warm white before the end card. |
+|开幕|观众席：全舞台框架，带儿童头。黑色，直到火柴在布后面燃烧。推得很慢。|
+|进入故事|推动框架，直到布填满屏幕。|
+|灾难|1.5×横向平移穿过燃烧的土地（给出灾区）。|
+|英雄入口|1.15×跟随；在定格音锣上，有一个 5 帧 **崩溃变焦**（打击乐重音变为摄影机运动）。|
+|第一个动作|靠近 hands/bow/face，然后沿着箭头快速平移至目标。|
+|重复|**锁定宽**，以便观众看到每一步的变化（九个灯阶变暗）。|
+|选择|表现媒介-与远处边缘的目标近距离：英雄在左边，空旷的天空，最后的太阳在右边。音乐停止。|
+|回声|再次拉回舞台框架，**卡车向右移动，作为模糊的前景支柱擦拭框架**，并出现在屏幕后面。缓慢推动，然后快速潜入片尾卡前闪烁为暖白色的火焰。|
 
-Why this route, for this story: the audience seat made it a told legend; the locked wide let nine darkening steps be counted; the silent medium-close held the refusal; the backstage truck paid off "the sun is a lamp". Each is one choice from STYLE.md §6, not the style's default opening or ending.
+为什么这条路线，为了这个故事：观众席让它成为了一个传奇；锁着的宽阔的门可以数九级变暗的台阶；沉默的表现媒介-close持有拒绝；后台卡车得到了“太阳是一盏灯”的回报。每个都是 STYLE.md §6 中的一个选择，而不是该风格的默认开头或结尾。
 
-Timeline highlights (`story.js`): title plaque in at 2.4 s, set 3.6 s, out 6.6 s; 1306 frames at 24 fps.
+时间轴亮点 (`story.js`)：标题牌输入 2.4 秒，设置 3.6 秒，输出 6.6 秒； 24 fps 时为 1306 帧。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Original gong-and-drum score (`demo/music/score.py`). Patterns map to the drama in this order: opening roll → one hit per lamp, accelerating → heartbeat drum under the disaster → *jijifeng* roll accelerating into the entrance → big gong on the freeze → fast strokes with one gong per hit → **hard stop** (≤ 30 ms, reverb tails included) for the silent choice → one tiny small-gong tap for the decision → gentle fiddle theme → gong scrape to go backstage → a final big gong tail.
+原装锣鼓配乐 (`demo/music/score.py`)。模式按顺序映射到戏剧：开场卷→每灯一击，加速→灾难下的心跳鼓→*急急风*加速进入入口→定格大锣→快速击打每击一锣→**硬停止**（≤30毫秒，包括混响尾音）用于无声选择→一个小锣敲击以决定→轻柔的小提琴主题→锣刮到后台→最后一个大锣尾。
 
-Fiddle: **ku-yin** for the disaster, **huan-yin** for heroism and healing. The suona-like reed only at the climax.
+小提琴：**苦印**为了灾难，**欢饮**为了英雄主义和治愈。类似唢呐的簧片只在高潮时出现。
 
-Foley specific to this film: wooden clapper to open and close the show, match strike, lamp ignition, rod taps, leather flaps when a crow lifts off, leather footsteps, bow creak (rising pitch with draw), string twang, arrow whoosh, leather thwack on hit, lamp snuff ("pfft" + sizzle), wing flaps, crackle, heat drone (hard-cut at the silence), water, a quiet backstage room tone and one breath.
+拟音专用于此影片：用于打开和关闭表演的木制拍板、火柴敲响、灯点火、杆敲击、乌鸦起飞时的皮革襟翼、皮革脚步声、弓吱吱声（拉弦时音调上升）、弦音、箭头嗖嗖、击中时皮革重击、灯鼻烟（“pfft”+嘶嘶声）、翅膀襟翼、噼啪声、热浪声（在寂静中显得很刺耳）、水声、安静的后台房间音调和一口气。
 
-Voice: a storyteller, Kokoro `am_michael`, speed 0.86–0.88, 5–6 short lines, compressed, plus small-theatre reverb. Music ducked ~12 dB, foley ~4 dB. A line that passed whisper alone blurred under music ("shadow play still" became "shadow place"): rewrite the line rather than fight the mix.
+声音：讲故事的人，Kokoro `am_michael`，速度0.86-0.88，5-6短句，压缩，加上小剧场混响。音乐闪避 ~12 dB，拟音 ~4 dB。一条单独通过耳语的台词在音乐下变得模糊（“皮影戏静止”变成了“影子地方”）：重写台词而不是对抗混音。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Rendering constants**: lamp lobe σ ≈ 700 px + hotspot σ ≈ 120 px; flicker ≈ ±6 % value noise at 7 Hz plus a small 23 Hz sine; light colour `(1, .77, .46)`; exposure `1.75 / √(lamps lit)` (ten lamps ≈ 3× one lamp); cloth weave at ~2.6 rad/px; bloom from a 3-level pyramid, threshold 0.72, tint `(1,.82,.6)`; warm vignette toward `(.7,.47,.25)`; saturation ×1.1; hide texture tileable 512²; film grain 2 in ffmpeg.
-- **Dyes**: vermilion `#b8211a`, flame `#d9541c`, ochre `#dc9d1e`, gold `#c98a26`, malachite `#236e3a`, jade `#2f8a5c`, indigo `#22647e`, raw hide `#e2bd80`, ink `#1a100a` (outlines, hair, boots).
-- **Hou Yi** (11 pieces): head+helmet, chest, skirt, two upper arms, two forearms, two hands, two legs, plus quiver, bow, pheasant plumes. Head ~1.2× natural, helmet about a quarter of the figure. Armour = rows of thick crescent holes ("open fish-scale"), trousers = diamond lattice, belt = coin holes, four-lobed cloud collar with cloud-scroll cuts, sleeves in a different colour from the torso. Court boots: tall black shaft with cut cloud scrolls, upturned toe, thick white sole carved as one piece (grooves + a row of oval holes). Open-cut face.
-- **The bow** is drawn procedurally: limbs bend with draw, the string goes to the nocking hand, and **the nock sits on the aim line**: grip = shoulder + u·118, nock = grip − u·(40 + 72·pull). Arrow shaft dark `#4a2612`, 3 px.
-- **Suns**: a carved round piece: flame-tongue rim (alternating curl, teardrop holes between tongues, tongues ~40 px long × 0.78 of the arc spacing), bead ring, translucent orange-red disc, with a separate dark three-legged crow on top so it can drop out.
-- **Scenery**: mountains one piece each with wide strata cuts following the ridge and cloud holes near the peaks; the tree = a trunk piece plus a single lace canopy full of leaf-shaped holes; the ground is a narrow carved strip (meander band + coin holes), with cracks cut as tapered slits that widen and lengthen as the land burns through. Water is a separate indigo wave strip that can be lifted off. Fire is a carved piece of S-curling flame tongues (red → orange → yellow bands, spiral hooks at the tips) on a rod, swapped and shaken at 12 fps. A hut.
-- **Stage**: red-and-black lacquer frame, carved lintel with gold cloud curls, pillars; blurred children's heads along the bottom in the opening and end-card wides.
-- **Backstage**: lamps as dish + cords, one lit, the other nine just snuffed and trailing smoke.
-- **Motion numbers**: tremor ≈ 3 px / 0.018 rad, ×1.8 under tension; pendulums pre-simulated at 120 Hz; arrivals scale 2.6 → 1, blur 34 → 0 over 0.55 s; exits scale ×1.9, blur +30 px, fade over ~0.9 s; lamp flare overshoot to 1.5×, snuff over 0.35 s; freeze pose on the big gong held ~1 s.
-- **Subtitle placard**: dark brown gradient at 0.93 alpha, thin gold inner line, a small vermilion seal with 说 ("tell", Ma Shan Zheng) on the left, Cormorant Garamond 600, 46 px, cream `#f3e2bf`, centred 58 px above the bottom; slides up 18 px in 0.22 s; shown from line start until speech + 0.8 s (≥ 1.8 s), cut 0.3 s before the next.
-- **Title plaque**: "HOU YI / SHOOTS THE SUNS / a shadow puppet tale" cut out of dark hide, red border with a meander band, green cloud-scroll corner roundels, a red seal with carved characters, carried up on two rods and lifted off the cloth to exit.
+- **渲染常数**：灯瓣σ ≈ 700 px + 热点σ ≈ 120 px；闪烁 ≈ ±6 % 7 Hz 噪声值加上 23 Hz 正弦小值；光色`(1, .77, .46)`；曝光`1.75 / √(lamps lit)`（十盏灯≈3×一盏灯）；布料编织~2.6 rad/px；从 3 级金字塔绽放，阈值 0.72，色调 `(1,.82,.6)`；朝向 `(.7,.47,.25)` 的温暖小插图；饱和度×1.1；隐藏纹理可平铺 512²； ffmpeg 中的影片颗粒 2。
+- **染料**：朱红色`#b8211a`、火焰`#d9541c`、赭色`#dc9d1e`、金色`#c98a26`、孔雀石`#236e3a`、玉石`#2f8a5c`，靛蓝`#22647e`，生皮`#e2bd80`，墨水`#1a100a`（轮廓，头发，靴子）。
+- **后羿**（11件）：头部+头盔、胸部、裙子、两只上臂、两只前臂、两只手、两条腿，加上箭袋、弓、野鸡羽毛。头部~1.2×自然，头盔约为身材的四分之一。铠=一排排粗月牙孔（“鱼鳞开”），裤=菱形格子，腰带=钱孔，四瓣云领，云纹剪裁，袖子与躯干颜色不同。宫廷靴：黑色高筒，云纹镂空，鞋头翘起，厚底白底一体雕花（凹槽+一排椭圆孔）。开叉脸。
+- **弓**按程序拉弓：弓箭弯曲，弓弦到达箭尾手，**箭尾位于瞄准线上**：握力=肩+ u·118，箭尾=握力- u·（40 + 72·拉力）。深色箭头轴 `#4a2612`，3 像素。
+- **太阳队**：雕刻圆形件：火焰舌边缘（交替卷曲，舌头之间有泪滴孔，舌头约40像素长×0.78弧距），珠圈，半透明橙红色圆盘，顶部有一个单独的深色三足乌鸦，因此可以掉落。
+- **风景**：山脉一片，沿山脊有宽阔的地层切口，靠近山峰的云洞；树 = 一个树干加上一个充满叶形孔的花边树冠；地面是一条狭窄的雕刻条带（蜿蜒带+硬币孔），裂缝被切割成锥形狭缝，随着土地的燃烧而变宽和延长。水是一个独立的靛蓝色波浪条，可以升起。火是一根雕刻在杆上的 S 形卷曲火焰舌头（红色 → 橙色 → 黄色带，尖端有螺旋钩），以 12 fps 的速度交换和摇动。一间小屋。
+- **舞台**：红黑漆框，雕金云卷楣，柱子；沿着开口和端卡宽度的底部模糊了孩子们的头部。
+- **后台**：灯为碟子+电线，一盏亮着，另外九盏刚刚熄灭并拖着烟。
+- **运动数**：震颤 ≈ 3 px / 0.018 rad，张力下×1.8；以 120 Hz 预模拟摆；到达比例 2.6 → 1，模糊 34 → 0，持续 0.55 秒；退出比例 ×1.9，模糊 +30 px，淡入约 0.9 秒；灯耀斑超调至 1.5×，熄灭超过 0.35 秒；大锣上的冻结姿势保持约 1 秒。
+- **字幕标牌**：0.93 alpha的深棕色渐变，细金色内线，左侧带有“说”（“告诉”，马山正）的朱红色小印章，Cormorant Garamond 600，46像素，奶油色`#f3e2bf`，位于底部上方中心58像素处；在 0.22 秒内向上滑动 18 px；显示从行开始到语音 + 0.8 秒（≥ 1.8 秒），在下一个之前切掉 0.3 秒。
+- **牌匾**：黑牛皮剪出“后羿/射日/皮影故事”，红边曲带，绿色卷云转角，红色刻字印章，用两根杆子提起来，从布上提起退出。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-A cut-letter plaque on the cloth: "SHADOW PUPPETRY" / "Hou Yi Shoots the Suns" / "LemoLab × Claude Opus 5.5" (`stage.js` `buildStage().end`), after the dive into the backstage flame flashes to warm white; the poster frame carries the same credit line (`main.js`). The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+布上刻字牌：“皮影戏”/“后羿射日”/“LemoLab×克劳德作品5.5”（`stage.js` `buildStage().end`），潜入后台后火焰闪烁为暖白色；海报框具有相同的信用额度（`main.js`）。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-Rights (see [`demo/CREDITS`](demo/CREDITS)): the Hou Yi legend is public-domain folklore; puppets, scenery, carving patterns, staging and melodies are original and generated by code; traditional motifs (fish-scale armour, cloud scrolls, meander, coin and lattice patterns, flame tongues) are used generically and no historical puppet is copied. Fonts Cormorant Garamond and Ma Shan Zheng (OFL 1.1); voice Kokoro TTS (Apache-2.0); music samples CC0 (Karoryfer erhu, Versilian Studios libraries); sound effects synthesized.
+权利（参见[`demo/CREDITS`](demo/CREDITS)）：后羿传说是公共领域的民间传说；木偶、布景、雕刻图案、舞台和旋律均为原创并由代码生成；普遍使用传统图案（鱼鳞甲、云卷、曲流、钱格纹、火舌），不抄袭历史木偶。字体 Cormorant Garamond 和 Ma Shan Cheng (OFL 1.1)；语音 Kokoro TTS (Apache-2.0)；音乐样本 CC0（Karoryfer 二胡、Versilian Studios 库）；合成的声音效果。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/shadow-puppet/demo/
@@ -80,18 +87,18 @@ styles/shadow-puppet/demo/
   tools/       cues.py (SRT), mux.sh (CRF 22), probe.mjs (render timing)
 ```
 
-1. `node core/render/still.mjs styles/shadow-puppet/demo 0 --q test=model`: model sheet first (character risk comes first). Then `--q test=frame&f=ten|one` style frames and `--q test=hands`.
-2. `.venv/bin/python core/tts/tts.py lines.json voices` → `core/tts/asr_check.py` (use `asr` fields for homophones).
-3. Timeline in `story.js`. Review with `still.mjs --range 0.5:54:1.5` + `core/render/sheet.py` (two rounds, offset by half a step), then frame strips from the mp4 for key actions.
+1. `node core/render/still.mjs styles/shadow-puppet/demo 0 --q test=model`：角色设定表优先（人物风险优先）。然后是 `--q test=frame&f=ten|one` 风格定帧和 `--q test=hands`。
+2. `.venv/bin/python core/tts/tts.py lines.json voices` → `core/tts/asr_check.py`（使用 `asr` 字段作为同音字）。
+3. `story.js` 中的时间线。使用 `still.mjs --range 0.5:54:1.5` + `core/render/sheet.py` 进行回顾（两轮，偏移半步），然后从 mp4 中截取关键动作的帧片段。
 4. `node core/render/events.mjs` → `music/score.py` → `mix.py`.
-5. `node core/render/video.mjs … --fps 24 --workers 3` (1306 frames ≈ 80 s on an M-series Mac, 3 workers).
-6. `sh demo/tools/mux.sh out/video24.mp4 mix.wav shadow-puppet.mp4 24 2`. Or just `sh demo/build.sh`.
+5. `node core/render/video.mjs … --fps 24 --workers 3`（在 M 系列 Mac 上 1306 帧 ≈ 80 秒，3 个工作人员）。
+6. `sh demo/tools/mux.sh out/video24.mp4 mix.wav shadow-puppet.mp4 24 2`。或者只是 `sh demo/build.sh`。
 
-Pitfalls tied to this demo's props:
-- Hou Yi first read with stilt legs, an egg torso and arms lost in the torso → enlarged head, longer skirt, wider trousers, cloud collar, sleeves in a different colour from the chest.
-- Sun rays looked like a saw blade, then like flower petals → fat-based, hooked flame tongues at the sizes above.
-- The raw-hide arrow disappeared on the ten-lamp screen → dark shaft; the arrow pointed sideways until the nock sat on the aim line.
-- The backstage mirror helper built the rotation from `C[0]` for both axes and flipped pieces upside down → `C[0]` for x terms, `C[3]` for y terms.
-- The push-in on the backstage lamp at the top edge shoved the hands out of frame → push on frame centre, fixed point moved to the flame only for the final dive.
-- Heat drone and crackle leaked into the silent choice → hard-cut at the stop.
-- Headless Chrome screenshots occasionally timed out while 14 other renders shared the GPU → retry.
+与示范的道具相关的陷阱：
+- 后羿先是高跷腿、蛋形躯干和消失在躯干中的手臂→放大的头、更长的裙子、更宽的裤子、云领、与胸部颜色不同的袖子。
+- 阳光看起来像锯片，然后像花瓣→以上尺寸的脂肪基、钩状火焰舌头。
+- 十灯屏幕上的生皮箭头消失→暗轴；箭头指向侧面，直到箭尾落在瞄准线上。
+- 后台镜子助手从 `C[0]` 构建两个轴的旋转，并上下颠倒翻转 → `C[0]` 表示 x 项，`C[3]` 表示 y 项。
+- 顶部边缘后台灯的推入将手从画面中推出→推到画面中心，仅在最后的俯冲时将固定点移至火焰。
+- 热度嗡嗡声和噼啪声渗入无声的选择→停止时的硬切。
+- 当其他 14 个渲染共享 GPU 时，Headless Chrome 屏幕截图有时会超时 → 重试。

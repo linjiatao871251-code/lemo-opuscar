@@ -1,101 +1,109 @@
-# Ukiyo-e — our demo
+<a id="ukiyo-e--our-demo"></a>
+# 浮世绘 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Toward the Mountain · 山へ五景* (44 s) · `ukiyoe.mp4` · source in [`demo/`](demo/)
+示范：*走向山·山へ五景*（44秒）·`ukiyoe.mp4`·来源在[`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A traveller in a straw hat walks from the rice fields toward a distant mountain: across a bridge in the rain, past a teahouse where the mountain waits in a round window, to a sea that stands up between them. The wave washes the print back to a blank sheet; the next print is the mountain, and he takes off his hat. Five views, one constant subject; the story is told by *where the mountain sits in the frame* each time (tiny on the horizon → framed by a window → dwarfed by a wave → filling the sheet). One character, one goal, one turn.
+一个戴草帽的旅人从稻田走向远山：穿过雨中的小桥，经过圆窗里的山等待的茶馆，到了矗立在他们之间的大海。波水彩晕染打印回一张空白纸；下一个印刷品是山，他摘下了帽子。五观，一个不变的主题；故事每次都是通过“山在画面中的位置”来讲述（地平线上很小→被窗户框住→在波浪中显得矮小→填满纸张）。一个角色，一个目标，一个回合。
 
-Arc: jo-ha-kyū (序破急), slow, open, still (jo) → gathering pulse (ha) → rapid rush to a peak (kyū) → a hard cut to silence (ma, 間) → a quiet resolution and a scale reveal. The old guide asked every film to rest on at least three of the five native moves with the strongest at the peak; that was this demo's choice, not a rule.
+弧线：序破急、缓慢、开放、静止（jo）→聚集脉搏（ha）→迅速冲向高峰（kyū）→硬切至沉默（ma，间）→安静的决心和规模揭示。老导游要求每个影片至少要在巅峰最强的5个风格特有表现手法中的至少3个上休息；这是示范的选择，而不是规则。
 
-Native moves spent: a series of views (the whole film), the handscroll (every transition), printing block by block (the opening and the rebirth after the wave), paper is the white (the foam that erases the print), the frame is an object (the wave breaking out of the border). How the old guide suggested adapting a topic, for this kind of story: make it a journey or a series with one constant subject (a product launch → five views of the product in five places; a city → a day in five prints; a life → five ages, the same tree in every print).
+风格特有表现手法花：一系列的视图（整个影片），手卷（每一个过渡），一块一块的印刷（波浪后的开口和重生），纸是白色的（擦除印刷品的泡沫），框架是一个物体（冲出边界的波浪）。旧指南建议如何针对此类故事调整主题：使其成为一个具有固定主题的旅程或系列（产品发布→产品在五个地方的五个视图；一座城市→五张印刷品中的一天；一生→五个时代，每张印刷品中的同一棵树）。
 
-Views: 一 田毎の朝 (rice fields at dawn) · 二 雨の橋 (bridge in the rain) · 三 茶屋の窓 (teahouse window) · 四 海立つ (the sea stands up) · 五 山 (the mountain).
+景色：一田毎の朝（黎明的稻田）、二雨の桥（雨中的桥）、三茶屋の窓（茶馆的窗户）、四海立つ（大海矗立）、五山（山）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Locked on a blank sheet; the first print is printed block by block in front of us |
-| Early views | Locked frame, like reading a print on a wall. The subject is small |
-| Middle view | A very slow push (1.00 → 1.065) toward a framing device (round window) |
-| Transitions | Handscroll slide right → left through the mounting gap, getting faster: 1.0 s → 0.9 s → 0.6 s |
-| Climax | First big move: tilt up past the top border into the mount, push in; then crash-zoom into the foam |
-| After the climax | Hard cut to a blank sheet, hold (間), then reprint |
-| Ending | Pull back from the last print to reveal the whole scroll: every view side by side (scale reveal); end card on the scroll |
+|开幕|锁定在一张白纸上；第一个印刷品是在我们面前逐块印刷的|
+|早期观点|锁定框架，就像阅读墙上的印刷品一样。题目很小|
+|中视图|非常缓慢地将 (1.00 → 1.065) 推向框架装置（圆窗）|
+|过渡|手卷滑轨向右 → 向左穿过安装间隙，越来越快：1.0 s → 0.9 s → 0.6 s|
+|高潮|第一个大动作：向上倾斜越过顶部边框进入安装座，推入；然后快速放大到泡沫中|
+|高潮过后|硬剪成一张白纸，保留（间），然后重印|
+|结束|从最后一张照片拉回以显示整个卷轴：每个视图并排（比例显示）；卷轴上的片尾卡|
 
-The climax got the **only big camera move** of the film, played in four beats (~4.5 s total; 25.4–30.4 s in the final cut):
+高潮只有 **的大摄影机动作影片的**，以四节拍演奏（总共约 4.5 秒；最终剪辑为 25.4-30.4 秒）：
 
-1. **Rise** (~1.9 s): the sea swells into a wall; the camera tilts up past the top border and widens slightly so the figure shrinks.
-2. **Hang / 亮相** (~1.2 s): the crest stands outside the border in the mounting paper, claws open and nearly frozen (jitter ×0.25); the whole print is visible as an object. The drum roll peaks, then an 80 ms silent intake of breath.
-3. **Fall** (~1.2 s): the lip lengthens and rotates down toward the lens, claws grow ×2.5, camera pushes to 3× with a small roll.
-4. **Foam** (~0.7 s): fractal claws burst from the lip to fill the screen, fade to bare paper → hard cut to silence (ma, 30.4–32.2 s).
+1. **上升** (~1.9 s)：海水膨胀成墙； 摄影机向上倾斜超过顶部边框并稍微加宽，因此图形缩小。
+2. **Hang / 首次亮相**（~1.2 s）：波峰立于裱纸边框外，爪子张开，几乎冻结（抖动×0.25）；整个印刷品作为一个物体可见。鼓声达到顶峰，然后是 80 毫秒的无声呼吸。
+3. **落下**（~1.2 s）：嘴唇伸长并向下旋转至镜头，爪子增大×2.5，摄影机用小滚动推动至3×。
+4. **泡沫**（~0.7秒）：分形爪子从嘴唇中爆发出来，填满屏幕，淡出光秃秃的纸→硬切至沉默（ma，30.4-32.2秒）。
 
-Then four reprints (32.2 / 32.7 / 33.2 / 33.7 s), the last line at 34.4 s, the final print at 38.4 s, the pull-back 38.9–40.9 s, the end card from 40.3 s. The first cut's climax lasted 0.7 s and read as "some foam flashed"; the four-beat version is why STYLE.md asks for a held beat of about a second.
+然后四次重印（32.2 / 32.7 / 33.2 / 33.7 秒），最后一行在 34.4 秒，最终打印在 38.4 秒，回拉 38.9–40.9 秒，片尾卡从 40.3 秒开始。第一个剪辑的高潮持续了0.7秒，读作“一些泡沫闪现”；四节拍版本是 STYLE.md 要求保持节拍约一秒的原因。
 
-Subtitles stay clear of the figure: bottom band ~80 px from the edge; figures were moved up where needed.
+字幕保持在图形中清晰：底部带距边缘约 80 像素；数字在需要的地方向上移动。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Original score (`demo/music/score.py`) on shamisen, shakuhachi, taiko and hyōshigi, following jo-ha-kyū:
+原版配乐 (`demo/music/score.py`) 关于三味线、尺八、太鼓和hyōshigi，以下 jo-ha-kyū：
 
-- Hyōshigi claps accelerate over the opening printing (one clap per block), the kabuki curtain call.
-- Shakuhachi in free rhythm, *miyako-bushi* scale (D E♭ G A B♭), long tones with breath, a slide up into each note and *meri* drops at phrase ends.
-- Shamisen: slow pulse (72 BPM), then an ostinato (96 BPM) with a small tight drum; a fast rising run on the fastest scroll slide.
-- Taiko heartbeat that accelerates from 0.9 s intervals to a roll for the climax; one full hit on the crash; then **absolute silence** (reverb tails cut too). Four big taiko strokes reprint the last view. The opening shakuhachi motif returns and resolves; a long shamisen note with sawari rings out under the end card.
+- 歌舞伎谢幕时，Hōshigi 的掌声在开场印刷中加速（每块一次掌声）。
+- 自由节奏尺八，*miyako-bushi* 音阶 (D E♭ G A B♭)，带有呼吸的长音，滑入每个音符，*meri* 在乐句结尾处下降。
+- 三味线：慢脉冲（72 BPM），然后是带有小紧鼓的固定音（96 BPM）；在最快的滚动幻灯片上快速上升。
+- 太鼓心跳从0.9秒的间隔加速到高潮的翻滚；对撞车事故进行全面打击；然后**绝对静音**（混响尾音也切掉）。四大太鼓重印最后一景。开头的尺八主题回归并解决； 片尾卡下响起带有锯切的长三味线音符。
 
-Instrument recipes (reusable):
-- Shakuhachi from samples: `flute` / `recorder`, flatten amplitude and pitch vibrato (divide by a 60 ms envelope; f0-track and counter-warp), add 1–4 kHz breath noise locked to the envelope, a *muraiki* breath burst on attacks.
-- Taiko from samples: `gran_cassa` + `toms:low_mallet` + `frame_drum:large` + a synthesized skin (pitch drop ~120 → 58 Hz) and a stick thud.
+仪器配方（可重复使用）：
+- 来自样本的尺八：`flute` / `recorder`，展平振幅和音高颤音（除以 60 ms 包络；f0 轨道和反向扭曲），添加锁定到包络的 1-4 kHz 呼吸噪声，攻击时发出 *muraiki* 呼吸爆发。
+- 样本中的太鼓：`gran_cassa` + `toms:low_mallet` + `frame_drum:large` + 合成皮肤（音高下降 ~120 → 58 Hz）和棍子撞击声。
 
-Foley specific to this film: baren rub with a ~9 Hz circular modulation, hollow bridge steps, wind chime partials 2.36 / 5.15 / 7.98 kHz, field trickle, rain bed with drops, sea swell every ~4 s, lark chirps, geese, a kite's *pii-hyoro* on the last view.
+拟音具体到这个影片：baren 摩擦与 ~9 Hz 循环调制，空心桥台阶，风铃分音 2.36 / 5.15 / 7.98 kHz，田间滴流，雨床与水滴，海浪每 ~4 秒，百灵鸟鸣叫，鹅，最后一个视图中风筝的 *pii-hyoro*。
 
-Voice: calm male storyteller, first person, 5 short lines (Kokoro `am_adam`, speed 0.84–0.88). Music ducked ~−8 dB under voice (−10 dB on the last line), ambience ~−4 dB. Subtitle hold in this demo: ≥ max(1.8 s, voice + 0.75 s).
+声音：冷静的男性说书人，第一人称，5 句短台词（Kokoro `am_adam`，速度 0.84–0.88）。音乐在语音下降低了~−8 dB（最后一行为−10 dB），氛围音为~−4 dB。 示范中的字幕保持时间：≥ max(1.8 s，语音 + 0.75 s)。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-**Canvas & sheet.** 1920×1080 sheet = screen at zoom 1. Ink border at `x 44–1876, y 38–1042` (3.4 px) plus a thin outer line 9 px outside; paper margin beyond. Sheets sit on a long mounting scroll (`#c9b690`, 260 px gaps) with a wooden roller at the left end.
+**画布和图纸。** 1920×1080图纸=缩放1的屏幕。`x 44–1876, y 38–1042`（3.4像素）处的墨水边框加上外面9像素的细外线；超出纸张边距。纸张位于长安装卷轴上（`#c9b690`，260 px 间隙），左端有一个木辊。
 
-**Palette** (this film's pigment set):
+**调色板**（此影片的颜料套装）：
 
-| Name | Hex | Use |
+|姓名|十六进制|使用|
 |---|---|---|
-| Paper | `#eee2c6` | washi base (with ±3 % mottling, fibres `#fbf6e9` / `#c7b893`) |
-| Prussian blue | `#1d3a66` · dark `#13284a` · light `#4d6f98` | skies, water, mountain, wave |
-| Deep trough | `#0f2344` | inside of the wave |
-| Pale blue | `#8db0c6` · `#bcd0d6` | water reflections, lower sky |
-| Sumi (key block) | `#231f1c` | all key lines |
-| Beni red | `#b8412f` · pale `#e3a08a` · peach `#efc4a8` | sun, felt bench, seals, dawn bokashi, cartouche tab |
-| Ochre / straw | `#cf9f4a` · `#c9a45c` | hats, roads, obi |
-| Greens | `#8aa152` · dark `#50703c` · pine `#3e5a3a` | fields, trees |
-| Indigo cloth | `#2c4a70` · gaiters `#1d2c44` | clothing |
+|纸|`#eee2c6`|和纸基底（±3% 斑点，纤维 `#fbf6e9` / `#c7b893`）|
+|普鲁士蓝|`#1d3a66` · 深色 `#13284a` · 浅色 `#4d6f98`|天空、水、山、波|
+|深槽|`#0f2344`|波浪内部|
+|淡蓝色|`#8db0c6` · `#bcd0d6`|水中的倒影，较低的天空|
+|Sumi（钥匙块）|`#231f1c`|所有关键行|
+|贝尼红|`#b8412f` · 浅色 `#e3a08a` · 桃色 `#efc4a8`|太阳、毛毡长凳、密封件、黎明博卡西、漩涡花饰标签|
+|赭色/稻草色|`#cf9f4a` · `#c9a45c`|帽子、道路、腰带|
+|青菜|`#8aa152` · 深色 `#50703c` · 松木 `#3e5a3a`|田野、树木|
+|靛蓝布|`#2c4a70` · 护腿 ​​`#1d2c44`|衣服|
 
-**Blocks.** `g0` key lines · `g1` blues · `g2` greens / secondary · `g3` reds / figures, composited with fixed registration offsets `g1 (2.2,−1.3)`, `g2 (−1.8,1.9)`, `g3 (1.5,2.2)`. Printing reveal: ~0.34 s per block.
+**块。** `g0` 关键线 · `g1` 蓝色 · `g2` 绿色/次要 · `g3` 红色/数字，与固定配准偏移 `g1 (2.2,−1.3)` 合成， `g2 (−1.8,1.9)`、`g3 (1.5,2.2)`。打印显示：每块约 0.34 秒。
 
-**Texture recipe.** On each colour block, in this order: woodgrain `source-atop` α ≈ 0.1–0.17 (sky/water strongest), baren streaks `destination-out` α ≈ 0.38 (0.2 on dark wood), goma-zuri specks `destination-out` α ≈ 0.3. Key block: specks only (α 0.12). Over the finished sheet, light fibres (α ≈ 0.09). **Woodgrain** = iso-lines of a warped noise field (`u = y·0.035 + fbm·9 + knots`), thin dark lines where `|frac(u)−0.5| > 0.4` plus broad tonal bands. **Baren** = ~260 blurred circular arcs + zigzag streaks. Dynamic big fills (the wave) get woodgrain + a paper-coloured baren overlay inside their clip. **Bokashi**: per pixel, top edge wandering ±20–30 px per column.
+**纹理配方。**在每个色块上，按以下顺序：木纹 `source-atop` α ≈ 0.1–0.17（sky/water 最强），裸露条纹 `destination-out` α ≈ 0.38（深色木材上为 0.2），戈马苏里斑点 `destination-out` α ≈ 0.3。关键块：仅斑点（α 0.12）。在成品片材上有光纤 (α ≈ 0.09)。**木纹**= 扭曲噪声场 (`u = y·0.035 + fbm·9 + knots`) 的等值线，细暗线，其中 `|frac(u)−0.5| > 0.4` 加上宽音调带。**巴伦**= ~260 条模糊圆弧 + 之字形条纹。动态大填充（波浪）在其剪辑内具有木纹+纸色裸露覆盖层。**博卡西**：每像素，每列顶部边缘漂移 ±20–30 像素。
 
-**Props:**
-- *Mountain*: asymmetric concave slopes (`y = s^1.55` left, `s^1.8` right), a notched summit, snowcap as **drips down the gullies**: 12 fingers of random depth (some long), narrow and pointed, joined by a gently wavy snow line; right-side shade band; pale beni glow on the snow at dawn. An original silhouette, not Fuji's.
-- *The wave*: normalised outline (back slope → crest → forward lip → curl → hollow front). A vertical wall of water whose crest falls toward the lens, with the traveller on a rocky headland, deliberately not the boat-and-wave composition of *The Great Wave*. Body in **three blue bands with bokashi between them** (light blue by the crest → Prussian → deep trough), made from thick strokes of inward offsets of the back-slope curve; **grouped white flow lines** (3 lines per group, broken into long arcs). Foam rim along the crest; **fractal claws**: each big claw splits into 3 fingers, each finger splits again, all tips hooking inward; a pale-blue back layer offset behind the white front layer; spray in **clusters** (one big dot, a few medium, many small).
-- *Claw roots* grow **out of** the foam: taper the root to ~40 % width, then bury it in irregular white foam blobs (stroke all blobs first, then fill all → one union outline). Claws stuck straight onto the crest read as planks.
-- *Bridge*: a side-view arched (taiko) bridge, not the diagonal bridge-over-river composition.
-- *The traveller* (80–130 px): side view, low conical kasa hiding the upper face, tucked-up kimono with the back corner tucked into the obi, dark gaiters, straw sandals, staff, bundle knotted at the chest. Close views: shaved pate (pale blue-grey), folded topknot, one-stroke eye. Poses: walk / stand / hold hat / straw cape / sit & drink / back view / hat off.
-- *Cartouche*: cream `#f3e7c6`, pale beni tab with the series title.
+**道具：**
+- *山*：不对称的凹形斜坡（左`y = s^1.55`，右`s^1.8`），有凹口的山顶，**从沟壑中滴下的积雪**：12个随机深度的手指（有些长），窄而尖，由一条轻轻波浪状的雪线连接；右侧遮阳带；黎明时分，雪地上泛着苍白的贝尼光芒。原始剪影，不是富士的。
+- *波浪*：标准化轮廓（后坡→波峰→前唇→卷曲→前凹）。垂直的水墙，其波峰向镜头倾斜，旅行者位于岩石岬角，故意不是“巨浪”中的船和波浪构图。身体呈**三条蓝色带，中间有博卡西**（浅蓝色的波峰→普鲁士→深波谷），由后坡曲线向内偏移的粗笔画组成； **分组白色流线**（每组3条线，分成长弧）。沿着波峰的泡沫边缘； **分形爪**：每个大爪分裂成3个手指，每个手指再次分裂，所有尖端都向内钩；淡蓝色的背面层偏移在白色的正面层后面；喷洒**簇**（一个大点，几个表现媒介，许多小点）。
+- *爪根*从**泡沫中长出**：将根部逐渐变细至约40％宽度，然后将其埋入不规则的白色泡沫块中（首先抚平所有斑点，然后填充所有→一个联合轮廓）。爪子直接粘在波峰上，看起来像木板。
+- *桥梁*：侧视拱形（太鼓）桥，而不是对角桥过河的构图。
+- *旅行者*（80–130 px）：侧视图，低圆锥形袈裟遮住上脸，和服卷起，后角塞进腰带，深色绑腿，草鞋，手杖，胸前打结。近景：剃光的头颅（浅蓝灰色）、折叠的顶髻、一笔画的眼睛。姿势：行走/站立/拿着帽子/草斗篷/坐下喝水/后视/脱帽。
+- *漩涡花饰*：奶油色 `#f3e7c6`，浅色贝尼标签，带有系列标题。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- **Subtitle cartouche**: cream `rgba(243,231,198,.96)` slip, 2.6 px + 1 px ink border, a small red seal "旅" at the left, Shippori Mincho 500 42 px in sumi, centred 72 px above the bottom. It prints in over 0.22 s with the reveal mask and fades out over 0.25 s.
-- **View cartouche** (vertical, Yuji Syuku): 一 田毎の朝 · 二 雨の橋 · 三 茶屋の窓 · 四 海立つ · 五 山, seal below/beside. Cartouche drop-in: fade + 14 px.
-- **Title**: a vertical cartouche 山へ五景 + a horizontal English slip *Toward the Mountain* laid on the first print, stamped with a seal, lifted away before the first line.
+- **字幕漩涡花饰**：奶油色`rgba(243,231,198,.96)`滑条，2.6 px + 1 px墨水边框，左侧有一个红色小印章“旅”，Shippori Mincho 500 42 px墨色，居中位于底部上方72 px处。它使用显示蒙版在 0.22 秒内打印，并在 0.25 秒内淡出。
+- **查看漩涡花**（垂直，Yuji Syuku）：一田毎の朝·二雨の桥·三茶屋の窓·四海立つ·五山，印章below/beside.漩涡花插入：淡入淡出+14像素。
+- **标题**：垂直的漩涡花饰“山へ五景”+水平的英文纸条*走向山*放在第一张印刷品上，盖上印章，在第一行之前提起。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-The whole scroll across the middle on dark indigo `#161a22`; title above, `UKIYO-E · a Lemo-Opuscar demo · LemoLab × Claude Opus 5.5` below, one seal (drawn `source-over`, not multiply, on the dark background). The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+整个卷轴位于深靛蓝`#161a22`的中间；上面是标题，下面是 `UKIYO-E · a Lemo-Opuscar demo · LemoLab × Claude Opus 5.5`，一张印章（在深色背景上绘制 `source-over`，不相乘）。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/ukiyoe/demo/
@@ -109,20 +117,20 @@ styles/ukiyoe/demo/
   build.sh     one-command rebuild
 ```
 
-1. `node core/render/still.mjs styles/ukiyoe/demo <t…>` (`--q nosub=1`, `--q test=trav` for the character sheet, `--q poster=1`).
+1. `node core/render/still.mjs styles/ukiyoe/demo <t…>`（字符表的`--q nosub=1`、`--q test=trav`、`--q poster=1`）。
 2. `core/tts/tts.py lines.json voices` → `core/tts/asr_check.py`.
 3. `node core/render/events.mjs styles/ukiyoe/demo` → `music/score.py` → `mix.py`.
-4. `node core/render/video.mjs styles/ukiyoe/demo --fps 24 --workers 3` (1056 frames ≈ 45 s, Canvas2D).
+4. `node core/render/video.mjs styles/ukiyoe/demo --fps 24 --workers 3`（1056 帧 ≈ 45 秒，Canvas2D）。
 5. `core/render/mux.sh out/video24.mp4 mix.wav ukiyoe.mp4 24 0` → `check_asr.py ukiyoe.mp4`.
 
-Or simply `sh styles/ukiyoe/demo/build.sh`.
+或者简单地称为 `sh styles/ukiyoe/demo/build.sh`。
 
-Pitfalls tied to this demo's props:
-- A zig-zag snow line looks like a crown; smooth waves look like icing. Use narrow pointed drips of random length, and force control points to be x-monotonic (otherwise tiny self-intersecting loops appear).
-- The first wave looked like a waterfall curtain (flow lines fanning from the base). Flow lines must follow the back-slope contour; the body needs banded blues; claws must branch and hook inward: a single curled strip reads as a ribbon.
-- Offset curves self-intersect at the tight lip → only use the back slope for inner flow lines.
-- The wave breaking the border must escape **both** the sheet clip and the frame clip; its sides are clipped to the frame so only the top breaks out.
-- `mountain()` filled only when a flat colour was passed, so gradient bodies were transparent: watch option flags.
-- A seal drawn with `multiply` vanished on the dark end card and on the wave → `source-over` there.
-- The traveller walking past a foreground tree read as "in front of" it; keep low branches clear of the walking path.
-- The subtitle band covers anything in the bottom 150 px: ground lines and figures were raised.
+与示范的道具相关的陷阱：
+- 锯齿形的雪线像一顶王冠；光滑的波浪看起来像糖霜。使用随机长度的窄尖滴，并强制控制点为 x 单调（否则会出现微小的自相交循环）。
+- 第一个波浪看起来像瀑布帘（流线从底部扇形展开）。流线必须沿着后坡轮廓；身体需要带状布鲁斯；爪子必须分叉并向内钩：一条卷曲的条带看起来像一条丝带。
+- 偏移曲线在紧唇处自相交→仅对内部流线使用后斜率。
+- 突破边界的波浪必须逃过****片夹和框夹；它的侧面被夹在框架上，因此只有顶部会脱落。
+- `mountain()` 仅在传递平面颜色时填充，因此渐变体是透明的：观察选项标志。
+- 用`multiply`绘制的印章消失在黑暗的片尾卡和那里的波浪→`source-over`上。
+- 旅行者走过前景中的一棵树，读作“在它前面”；让低矮的树枝远离人行道。
+- 字幕带覆盖底部 150 像素内的所有内容：地线和图形被凸起。

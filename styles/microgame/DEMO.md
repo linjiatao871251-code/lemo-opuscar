@@ -1,97 +1,104 @@
-# Microgame Frenzy — our demo
+<a id="microgame-frenzy--our-demo"></a>
+# Microgame Frenzy — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Five-Second Astronaut* (59.8 s) · `microgame.mp4` · source in [`demo/`](demo/)
+示范：*五秒宇航员*（59.8 秒）·`microgame.mp4`·来源在 [`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A space cadet tries to pass astronaut school on a game show. A game show runs a string of **microgames**. Each one is **a shouted command word + 2.5–4 seconds + one action + one result** (success or a funny failure). Between games the film cuts back to a **home stage**: a host, a scoreboard of lives and a stage number. Every few games the whole film **SPEEDS UP**. At the end a **BOSS STAGE** runs longer, mixes all the earlier rules, and decides the story.
+一名太空学员试图通过游戏节目的宇航员学校考试。一个游戏节目运行一串 **微型游戏**。每一个都是**喊出的命令词+2.5-4秒+一个动作+一个结果**（成功或有趣的失败）。在游戏之间，影片会切回到 **主舞台**：主机、生命记分牌和舞台编号。每隔几场比赛整个影片 **SPEEDS UP**。最后，**BOSS STAGE** 运行时间更长，混合了所有早期规则，并决定了故事。
 
-What makes this style work: **each microgame uses a different visual medium.** Crayon, ink wash, ASCII terminal, risograph, pixel art, blueprint, Swiss typography and so on. The jolt of each style switch is both the joke and the beat. The home stage is the one fixed look that holds the film together.
+是什么让这种风格发挥作用：**each微游戏使用不同的视觉效果表现媒介.**蜡笔，墨水水彩晕染，ASCII终端，risograph，像素艺术，蓝图，瑞士排版等。每一种风格的转变既是笑话，也是节拍。主舞台是将影片组合在一起的一个固定外观。
 
-How the demo spent the native moves:
+示范如何使用风格特有表现手法：
 
-| Native power | Demo use |
+|原生电源|示范用途|
 |---|---|
-| **Style switch per game** | Any topic splits into 6–8 tiny tasks, each in the medium that suits it best. A sneeze is an ink blot. A buckle click is a terminal relay. A zipper is ticks on a dimension line. A jump is a pixel platformer. |
-| **Command word** | One verb is the whole scene: PUMP! / DON'T SNEEZE! / ZIP! It works as script, subtitle and downbeat at once. |
-| **Lives as UI** | The helmet-icon counter carries the emotion with no narration. Going 3 → 2 → 1 (blinking) builds the tension on its own. |
-| **SPEED UP** | Five things speed up together: BPM, game length, stage dwell, command-word hold and animation frame rate. The audience feels the acceleration. |
-| **Boss mixes the rules** | The final game is built from pieces of every earlier style, so the climax is literally made of the film's own past. |
+|**每场比赛风格切换**|任何主题都分为 6-8 个小任务，每个任务都在最适合它的表现媒介中。打喷嚏就是墨水印迹。带扣咔嗒声是终端继电器。拉链是尺寸线上的刻度。 《跳跃》是一款像素平台游戏。|
+|**命令字**|一个动词就是整个场景：泵！ / 不要打喷嚏！ / 压缩！它可以同时作为剧本、字幕和悲观音乐。|
+|**居住为 UI**|头盔图标计数器承载着没有旁白的情感。 3 → 2 → 1（闪烁）会自行产生张力。|
+|**SPEED UP**|五件事一起加速：BPM、游戏长度、阶段停留、命令字保持和动画帧速率。观众感受到了加速度。|
+|**老板混合规则**|最终的游戏是由每种早期风格的片段构建而成的，因此高潮实际上是由影片自己的过去组成的。|
 
-**Demo story shape:** a cold open that starts *inside* a game at frame 1. A failure in round 1 that is funny. A second failure that costs the last spare life. A silent beat on the last life. **The twist: the material of an earlier failure becomes the solution in the boss stage.** In the demo, the ink-wash sneeze that lost a life blooms into an ink parachute. The echo at the end: the character redoes an earlier failed action and gets it right (the salute).
+**演示故事形状：**冷开局，在游戏的第 1 帧“内部”开始。第一轮的失败很有趣。第二次失败，耗费了最后的余生。上一世的无声敲击。**扭转：早期失败的材料成为Boss阶段的解决方案。** 在示范中，失去生命的墨水-水彩晕染喷嚏绽放成墨水降落伞。最后的回声：角色重做之前失败的动作并做对（敬礼）。
 
-How we adapted the topic: we listed 7 verbs from the topic, gave each verb the medium it would most naturally be drawn in, made two of them fail and let the boss stage reuse the failed ones. The same recipe for another topic: a product launch becomes UNBOX! (crayon), PLUG IN! (blueprint), DON'T DROP IT! (ink), and so on; the boss stage is "SHIP IT!".
+我们如何调整主题：我们列出了主题中的 7 个动词，为每个动词赋予了最自然地被吸引的表现媒介，使其中两个失败，并让 Boss 阶段重用失败的动词。另一个主题也是同样的道理：产品发布变成拆箱！ （蜡笔），插入！ （蓝图），不要扔掉它！ （油墨）等； boss阶段是“SHIP IT!”。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Cold open | Frame 1 is already inside a game with the command word slamming. The rules explain themselves in 1 s. |
-| First stage | Pull back out of the TV: the scale reveal. The game was one screen on a show. |
-| Stage | Always the same frontal, symmetrical "home" frame. Only the scoreboard changes. |
-| SPEED UP (signature shot) | The stage splits into **three slot-machine reels** that spin through earlier game frames with motion smear and stop one per beat on SPEED \| UP \| !. |
-| Button | An Edgar-Wright-style **insert**: an extreme close-up of the red button as a glove smashes it on the beat. |
-| Last life | The same stage with the lights cut to a single top spot; the host goes still. |
-| BOSS STAGE | 8 tiles (7 last frames plus a BOSS card) flip in on eighth notes, then flip again to become pieces of the boss frame. |
-| Boss silence | Push into the porthole close-up; the audience sees the dust before the hero does. |
-| Climax | Snap back to wide in one beat as the ink canopy blooms. |
-| Ending | Back to the home stage; the hero stands on it for the first time and salutes; then the camera pushes into the TV for the end card. |
+|冷开|第 1 帧已经在游戏中，并带有命令词 slamming。规则只需 1 秒即可解释清楚。|
+|第一阶段|从电视中拉出：刻度显示。这场比赛是一场演出的一个屏幕。|
+|阶段|始终相同的正面、对称的“家”框架。只有记分牌发生变化。|
+|加速 (标志性镜头)|该阶段分为 **三个老虎机卷轴**，它们通过运动拖尾旋转早期的游戏帧，并在 SPEED 上每节拍停止一个 \|向上 \|！.|
+|按钮|埃德加·赖特风格的 **插入**：红色按钮的极端特写，手套将其击碎。|
+|上一世|同一舞台，灯光切换至单一最高点；主人静止了。|
+|BOSS阶段|8 个图块（最后 7 个框架加上一张 BOSS 卡）在八分音符上翻转，然后再次翻转成为 Boss 框架的碎片。|
+|老板沉默|推入舷窗特写；观众先于英雄看到尘土。|
+|高潮|当墨色华盖绽放时，一下子就恢复到宽阔的状态。|
+|结束|回到主场；英雄第一次站在上面行礼；然后将摄影机推入片尾卡的电视中。|
 
-Motion as used in the demo:
+示范中使用的运动：
 
-- **Speed ladder** (demo): 120 → 140 → 160 BPM. Round-1 games are 2 bars (4.0 s) and round 2 is 1.5 bars (2.57 s). Stage dwell goes 1 bar → 2 beats. The command word holds 0.75 s, then 0.64 s. Character stepping goes 8 fps → 12 fps → 24 fps (boss). Camera moves, transitions and the fuse spark always run on ones.
-- **Command word**: Titan One, white with a 22 px ink outline, a magenta drop and a gold burst behind it, skewed −6°. It **slams** in over 3 frames (1.9 → 0.92 → 1.0), holds, then **shrinks into a corner tag before the first action**, so the result is never covered. One-off banners ("BOSS STAGE!", "PULL!") fly out instead of becoming tags.
-- **Fuse timer**: a braided rope along the bottom with **one knot per beat**; the spark passes each knot exactly on the beat and ends at a little firecracker rocket. The fuse freezes during an instant replay and is hidden in the boss close-up.
-- **Unified transition = the TV frame**: stage → game is a camera push into the TV screen (0.25 s); game → stage is the whole frame shrinking back into the TV (0.33 s), with the ✓ / ✗ stamp slapped onto the screen. No fades and no blank frames.
-- **Failure is performed, not just shown**: the ink sneeze covers the visor and two white eyes blink out of the ink. The Swiss salute arm rotates past 90° and *grows past its module length* to swat the red ball, which bounces twice on the baseline and rolls off the grid.
-- **Instant replay** for a story-critical failure: freeze 3 frames, then play at 0.5× with a 1.4× push-in, black bars and "instant replay" in the style's own typography, then resume. It costs 2 beats; the music plays a record scratch and half-time.
+- **速度阶梯** (示范)：120 → 140 → 160 BPM。第 1 轮游戏为 2 个小节（4.0 秒），第 2 轮游戏为 1.5 个小节（2.57 秒）。舞台停留时间为 1 小节 → 2 节拍。命令字持续 0.75 秒，然后是 0.64 秒。角色步进为 8 fps → 12 fps → 24 fps（boss）。 摄影机运动，转换和保险丝火花总是在一个上运行。
+- **命令字**：泰坦一号，白色，带有22像素墨水轮廓，其后有洋红色水滴和金色爆裂，倾斜-6°。它 **大满贯**在超过 3 个帧 (1.9 → 0.92 → 1.0) 中保持，然后**在第一个动作** 之前收缩到角标记，因此结果永远不会被覆盖。一次性横幅（“BOSS STAGE！”、“PULL！”）飞出，而不是成为标签。
+- **熔断计时器**：底部有一根编织绳**每节拍一节**;火花完全按照节拍穿过每个结，并以一个小鞭炮火箭结束。保险丝在即时重播期间冻结并隐藏在 Boss 特写中。
+- **统一过渡=电视框架**：阶段→游戏是将摄影机推入电视屏幕（0.25秒）；游戏 → 阶段是整个帧缩回到电视中（0.33 秒），✓ / ✗ 标记拍在屏幕上。没有褪色，也没有空白帧。
+- **失败是执行出来的，不只是显示**：墨喷嚏覆盖了遮阳板，两只白眼从墨中眨了出来。瑞士礼炮臂旋转超过 90° 并*超过其模块长度*以拍击红球，红球在底线上弹跳两次并滚出网格。
+- **即时重播**，用于故事关键失败：冻结 3 帧，然后以 0.5× 播放，并使用 1.4× 推入、黑条和风格自己的排版中的“即时重播”，然后恢复。花费 2 节拍；音乐播放唱片从头到尾。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music first**: write the tempo grid (`timeline.js`) before any animation. Every hit is listed in a cue table (per section: time, BPM and key, the instrument layered over the drums and bass, and the beats the picture must land on, e.g. 10.5 s the whole band drops out for a beat and a half, 11.0 s ACHOO = kick + cymbal + ink splat) and the picture lands on it. `tools/cuecheck.py` checks 57 picture events against `music/score.json` (demo max offset 4.7 ms).
-- **Score**: original funk/pop fusion. Drum kit with 16th hats and ghost notes, **synthesized slap bass** (additive pluck + band-passed thumb noise + 1.8–6.5 kHz pop + octave jumps and slides), stacked brass stabs (trumpet_stac + alto sax + trombone_stac), and a vibraphone+piano "e-piano". Drums and bass run through the whole film. On top, one **colour instrument per style**: xylophone (crayon), guqin harmonics and bends (ink), square beeps (ASCII), vibes and sax (riso), pulse arpeggio (pixel), muted trumpet (blueprint), claves and dry piano (Swiss). Each speed-up gets a rising brass run, and the key rises a whole step each round.
-- **Real silences**: 1 beat before the first sneeze, the last-life stage (heartbeat only), and the boss close-up (heartbeat + the same guqin note as the first dust mote). The biggest hit comes right after the longest silence.
-- **Foley follows the medium**: rubber squeak + air for the crayon pump, a wet splat and drips for ink, teletype clicks and a relay for ASCII, a paper thump and crunch for riso, bit-crushed noise for pixel, ratchet teeth and a stamp thunk for blueprint, a hollow bonk and small rubber boings for Swiss. Home-stage sounds: spring-loaded crown click, glass crack plus bouncing clinks for a lost life, card flips, slot-reel whirr, sparse sampled claps.
-- **Voices**: host = Kokoro `am_fenrir` (it had the widest pitch range of the voices tested), speed 1.05–1.15. The host shouts every command 0.1 s *after* the stab so the brass doesn't mask the word. Hero = `af_bella` pitched +2.5 semitones, only "Oh no." plus the "ah… ah…" and sneeze, which are treated as SFX and exempt from whisper checks. Duck the music about 11 dB and the foley about 6 dB under voice.
-- **Single-word commands in Kokoro**: "Pump!" comes out as "Pompey" and "Zip!" as "Zipper", because a vowel tail is added. Generate "Pump, now!" and cut at the end of the first word from whisper timestamps (`tools/trim_cmd.py`).
+- **音乐先**：在任何动画之前写入速度网格（`timeline.js`）。每个打击都列在提示表中（每个部分：时间、BPM 和调、鼓和贝司上分层的乐器，以及图片必须落在的节拍上，例如，整个乐队在 10.5 秒内退出一个半拍，11.0 秒 ACHOO = 底鼓 + 铙钹 + ink splat）并且图片落在其上。 `tools/cuecheck.py` 根据 `music/score.json` 检查 57 个图片事件（示范最大偏移 4.7 ms）。
+- **配乐**：原始funk/pop融合。带有第 16 顶帽子和幽灵音符的鼓组、**合成拍击贝司**（附加拨弦 + 带通拇指噪音 + 1.8–6.5 kHz 流行音乐 + 八度跳跃和滑音）、堆叠式铜管乐器（小号_斯塔克 + 中音萨克斯 + 长号_斯塔克）以及颤音琴 + 钢琴“电子钢琴”。鼓和贝斯贯穿整个影片。顶部，每个风格 **一种彩色乐器**：木琴（蜡笔）、古琴和声和弯音（墨水）、方形嘟嘟声（ASCII）、共鸣器和萨克斯（里索）、脉冲琶音（像素）、静音小号（蓝图）、五号琴和干钢琴（瑞士）。每次加速都会有一个上升的铜管运行，并且钥匙每轮都会上升一个整级。
+- **真实寂静**：第一个喷嚏前1拍，最后一世阶段（仅心跳），以及Boss特写（心跳+与第一个尘埃相同的古琴音符）。最长的沉默之后，最沉重的打击随之而来。
+- **Foley遵循媒介**：蜡笔泵的橡胶吱吱声+空气，墨水的湿溅和滴落，ASCII的电传点击和继电器，里索的纸重击和嘎吱声，像素的位压碎噪音，蓝图的棘轮齿和邮票重击声，瑞士的空心邦克和小橡胶轰鸣声。主舞台声音：弹簧皇冠的咔哒声、玻璃破裂声以及生命逝去时的弹跳叮当声、卡片翻转声、老虎机卷轴的呼呼声、稀疏采样的拍手声。
+- **声音**：主机 = Kokoro `am_fenrir`（它具有测试声音中最宽的音高范围），速度 1.05–1.15。主持人在刺伤之后 0.1 秒喊出每个命令，这样铜管就不会掩盖这个词。 Hero = `af_bella` 音调 +2.5 个半音，只有“哦不”。加上“啊……啊……”和喷嚏，它们被视为 SFX，并且不受Whisper 语音检查。在语音下将音乐降低约 11 dB，将拟音降低约 6 dB。
+- **Kokoro 中的单字命令**：“泵！”结果是“Pompey”和“Zip！”为“Zipper”，因为添加了元音尾。生成“泵，现在！”并在耳语时间戳 (`tools/trim_cmd.py`) 的第一个单词的末尾处剪切。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-**Home stage (the only constant look)**: flat toon with a **7 px near-black outline `#1a1030`**, flat fills, and **one hard-edged shadow** made by filling the shape in the shade colour, clipping to it, and refilling it shifted up-left by 9 px. Palette: stage violet `#2a0f5c` / `#3d168f` rotating sunburst, magenta `#ff2e88`, gold `#ffc928` / `#e08a00`, cyan `#1fd1d1`, success green `#3bdc5a`, fail red `#ff3b3b`. Fixed props: a marquee with chasing bulbs (the title card), a central **16:9 gold TV** (screen 768×432, exactly 1/2.5 of the frame), a lives board of helmet icons, a stage-number badge, and a podium with a big red button.
+**主舞台（唯一不变的外观）**：带有**7像素近黑色轮廓的平面卡通`#1a1030`**，平面填充和**one硬边阴影**通过用阴影颜色填充形状、剪裁它并重新填充它向左上方移动 9 像素来制作。调色板：舞台紫 `#2a0f5c` / `#3d168f` 旋转旭日纹、洋红色 `#ff2e88`、金色 `#ffc928` / `#e08a00`、青色 `#1fd1d1`、成功绿色 `#3bdc5a`、失败红色`#ff3b3b`。固定道具：带有追逐灯泡的大帐篷（标题卡）、中央 **16:9 金色 TV**（屏幕 768×432，恰好是框架的 1/2.5）、头盔图标的生命板、舞台编号徽章和带有红色大按钮的讲台。
 
-**Characters** (all original):
-- *Host* = a gold **stopwatch head**. The dial is the face, the red second hand is his pointer and nose, and he **slaps his own crown button** to start every game. His hand ticks every beat, spins when he is excited, and stops dead on the last life.
-- *Hero* = a 2.3-head-tall cadet: bubble helmet, spring antenna with an orange ball (the **mood meter**, which boings on every action), and the number "05".
-- **Translation rule:** in every microgame style the hero is redrawn from scratch, but **three silhouette marks always survive**: round helmet, antenna ball, "05". See `demo/stills/modelsheet_v2_styles.jpg` for 8 renderings of one character.
-- **Model sheet:** [`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg) has both characters in the home style: turnarounds (front, 3/4, side, back), expressions, key poses and palette swatches (`?scene=frames.modelSheet`).
+**人物**（均为原创）：
+- *主机* = 金色**秒表头**。表盘就是脸，红色秒针就是他的指针和鼻子，他**敲击自己的皇冠按钮**开始每场比赛。他的手每节拍一次，兴奋时旋转，最后一世停止不动。
+- *英雄* = 一名 2.3 头高的学员：泡泡头盔、带有橙色球的弹簧天线（**情绪计**，每次动作都会发出轰鸣声）和数字“05”。
+- **翻译规则：**在每个微游戏风格中英雄都是从头开始重新绘制的，但**三个剪影标记始终保留下来**：圆形头盔，天线球，“05”。参见`demo/stills/modelsheet_v2_styles.jpg`，了解一个角色的8张效果图。
+- **模型表：** [`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg) 具有家居风格的两个角色：转身（正面、3/4、侧面、背面）、表情、关键姿势和调色板样本（`?scene=frames.modelSheet`）。
 
-**Microgame media (simplified re-drawings, each about 100–200 lines of code):**
-| Style | How it is made |
+**Microgame媒体（简化重画，每张约100-200行代码）：**
+|风格|它是如何制作的|
 |---|---|
-| Crayon | Canvas where RGB = crayon colour and **A = pressure**. A shader deposits wax only where procedural paper tooth > 1 − 1.22·pressure. Indigo wobble outlines, zig-zag hatching that goes past the lines, and a **knock-out**: front shapes erase the wax behind them. 8 fps, with line boil on 12. |
-| Ink wash | Two channels, **R = wet ink** (blurred, with edge pigment pooling) and **G = dry ink** (broken by paper grain). Brush strokes are pressure profiles with bristle tracks; blots are noisy discs; splatter is flung blots. The one colour is a vermilion dot: the antenna ball, plus the "05" seal. |
-| ASCII terminal | **Hand-authored ASCII art for the hero** (a luminance ramp turns small figures into mush). Structural glyphs `/ \ | _ -` carry the silhouette. The antenna ball is an inverse-video `@`. Amber phosphor shader with bloom, 3 px scanlines and barrel curvature. |
-| Risograph | Canvas **R/G/B = blue/yellow/pink plate density**. `lighter` = overprint (yellow+pink = orange, yellow+blue = green); `source-over` = knockout. 7 px rotated halftone, fixed misregistration per shot, and a plate **kick** on the key action. Paper-white halo around the hero. |
-| Pixel | 240×135 indexed framebuffer ×8. Sprites are built from primitives with an **auto 1 px ink outline**; Bayer dither for glows and flames. 12 fps. |
-| Blueprint | Procedural blue paper plus white lines in 4 weights, centre / hidden dashes, dimension lines, hand lettering, and one red stamp. |
-| Swiss | 12-column grid, one sans family (Inter), black and white plus signal red `#e30613`. The hero is a black circle, a black rectangle and a **red circle** (the antenna ball). The gag is that one element leaves the grid. |
+|蜡笔|画布，其中 RGB = 蜡笔颜色，**A = 压力**。着色器仅在程序纸齿 > 1 − 1.22·压力时沉积蜡。靛蓝色摆动轮廓、超越线条的锯齿形阴影线以及 **淘汰型**：前面的形状消除了后面的蜡。 8 fps，线路沸腾为 12。|
+|墨水水彩晕染|两个通道，**R = 湿墨水**（模糊，边缘颜料池）​​和**G = 干墨水**（被纸粒破坏）。画笔笔触为刷毛轨迹的压力曲线；印迹是有噪音的圆盘；飞溅是泼溅的污点。一种颜色是朱红色的点：天线球，加上“05”印章。|
+|ASCII 终端|**为英雄**手工创作的ASCII艺术（亮度渐变将小人物变成糊状）。结构字形 `/ \ | _ -` 带有轮廓。天线球是逆视频`@`。具有光晕、3 px 扫描线和桶形曲率的琥珀色荧光体着色器。|
+|立体图|帆布**R/G/B=blue/yellow/pink板密度**。 `lighter` = 套印（黄色+粉色=橙色，黄色+蓝色=绿色）； `source-over` = 淘汰赛。 7 px 旋转半色调，修复了镜头的套准不准问题，以及按键操作上的板 **踢**。英雄周围有纸白色的光环。|
+|像素|240×135 索引帧缓冲区 ×8。精灵是根据具有 **auto 1 px 墨水轮廓** 的基元构建的；拜耳抖动发光和火焰。 12 帧/秒。|
+|蓝图|程序蓝纸加 4 种粗细的白线、中心/隐藏的破折号、尺寸线、手写字体和一张红色印章。|
+|瑞士人|12 列网格，无家族 (Inter)，黑白加信号红 `#e30613`。英雄是一个黑色圆圈，一个黑色矩形和一个**红色圆圈**（天线球）。搞笑的是有一个元素离开了网格。|
 
-**Boss frame composition:** mix up to five media, but with **one focal chain only**: the parachute leads to the capsule, which leads to the target (review lesson). Remove anything off-story, such as decorative pixel gulls. Shrink info panels (the ASCII altimeter) into a corner. Layering: crayon renders in alpha mode (wax coverage = alpha, with a full-pressure white base where it must be opaque). Ink and riso render on white and are drawn with `multiply`. The CRT panel is rendered flat and clipped to its box.
+**Boss框架构成：**最多混合五个媒体，但仅与**one焦点链**：降落伞通向太空舱，太空舱通向目标（复习课）。删除任何故事外的内容，例如装饰性像素海鸥。将信息面板（ASCII 高度计）缩小到一个角落。分层：蜡笔以 alpha 模式渲染（蜡覆盖率 = alpha，全压白色基底必须不透明）。 Ink 和 riso 在白色上渲染，并使用 `multiply` 绘制。 CRT 面板被渲染为平坦并夹在其盒子上。
 
-**The ink parachute (climax):** it must *read as a parachute*, not smoke. It grows in three stages: a jet of ink from the capsule hatch (0.15 s), a **round** drop spreading (short, 0.3 s), then **9 gores fanning out**. Gore fill is a vertical gradient (dense at the crown, light at the hem) with alternating ±7 % tone, thin paper-white seams, and a scalloped hem (each gore bulges down). There is one loaded brush arc along the crown, dry-brush flying white along the hem, and dry thin cords to the hatch.
+**墨水降落伞（高潮）：** 它必须*读作降落伞*，而不是烟雾。它的生长分为三个阶段：从胶囊舱口喷出墨水（0.15 秒），**圆形的**液滴扩散（短，0.3 秒），然后**9 血迹呈扇形散开**。戈尔填充是一个垂直梯度（顶部浓密，下摆浅），具有交替±7％色调，薄纸白色接缝和扇形下摆（每个戈尔向下凸出）。沿着冠部有一根加载的刷子弧线，沿着下摆有干刷飞白，以及通往舱口的干燥细绳。
 
-## Titles & end card
+<a id="titles--end-card"></a>
+## 标题 & 片尾卡
 
-- **The command word is the subtitle**: it is not burned twice, and it is listed in the .srt only.
-- Other lines use a **gold rounded card** with a 7 px ink outline and a hard shadow, Lilita One 50 px, a small stopwatch icon (host) or helmet icon (hero), placed above the fuse in games. It pops in over 2 steps at 12 fps. Hold ≥ max(1.8 s, speech + 0.6 s), and never during a big banner.
-- The title card is the home-stage marquee lighting up letter by letter (FIVE-SECOND ASTRONAUT / A MICROGAME FRENZY).
+- **命令字为副标题**：不烧录两次，仅在.srt中列出。
+- 其他系列使用 **金色圆形卡** ，带有 7 px 墨水轮廓和硬阴影，Lilita One 50 px，一个小秒表图标（主机）或头盔图标（英雄），放置在游戏中保险丝上方。它以 12 fps 的速度弹出超过 2 个步骤。保持 ≥ max(1.8 s，语音 + 0.6 s)，并且切勿在大横幅期间保持。
+- 标题卡是逐字点亮的主场帐篷（五秒宇航员/微型游戏狂热）。
 
-The end card sits inside the TV: title, style name and "LemoLab × Claude Opus 5.5", with hero and host. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+片尾卡位于电视内部：标题、风格名称和“LemoLab × Claude Opus 5.5”，以及英雄和主持人。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/microgame/demo/
@@ -102,21 +109,22 @@ styles/microgame/demo/
   frames.js     model sheets & style frames      music/score.py   original score      mix.py   foley + voices + ducking
   tools/        trim_cmd.py cuecheck.py subs.py final_asr.py review.sh mux.sh dump_timeline.mjs
 ```
-1. Write `timeline.js` (tempo grid), then the cue table, then hand the grid and cue table to a music sub-agent. Draw in parallel with it.
-2. Build the home style and characters first, then **one `sceneX(g, lt)` per medium**. Review each with `?scene=g_x.sceneX` stills.
-3. `sh demo/build.sh` rebuilds everything: TTS → trim → whisper → score → events → cue check → mix → srt → render (~25 s for 1436 frames) → mux (−14 LUFS, grain 0), about 1.5 minutes in total.
-4. Review with `bash demo/tools/review.sh out/revN 6 $(seq 0.5 1 59.5)` at least twice, plus frame strips of every key action.
+1. 写入`timeline.js`（节奏网格），然后是提示表，然后将网格和提示表交给音乐子代理。与其平行绘制。
+2. 首先构建家居风格和角色，然后构建每个媒介 **one `sceneX(g, lt)` **。用 `?scene=g_x.sceneX` 剧照回顾每一个。
+3. `sh demo/build.sh` 重建一切：TTS → 修剪 → Whisper 语音识别 → 配乐 → 事件 → 提示检查 → 混合 → srt → 渲染（1436 帧约 25 秒）→ 复用器（−14 LUFS，颗粒 0），总共约 1.5 分钟。
+4. 用`bash demo/tools/review.sh out/revN 6 $(seq 0.5 1 59.5)`复习至少两次，加上每个关键动作的框架条。
 
-### Pitfalls we hit
+<a id="pitfalls-we-hit"></a>
+### 我们遇到的陷阱
 
-- A luminance-ramp ASCII hero is unreadable mush. Use a hand-authored template plus structural glyphs, and an inverse `@` for the antenna ball.
-- The ink canopy first read as black smoke or a storm cloud. Keep the blot phase short and round, fan out gores with a gradient and seams, add a scalloped hem, and leave the edges light.
-- The Swiss "salute fail" read as a raised hand. The arm has to *overshoot and hit* the red ball, and the failure needs an instant replay to be understood at 140 BPM.
-- A crayon layer in alpha mode shows the background through the wax gaps. Give it a full-pressure paper-white base (or render it opaque and clip) wherever it must be solid.
-- Toon drawing helpers that keep a global context (`K.g`) will draw on the wrong canvas when a scene renders into an offscreen buffer (TV screen, slot reels, tiles). Always call `setCtx` before and after.
-- `flat` is a reserved word in GLSL ES 3.
-- Uploading a 2D canvas without `UNPACK_FLIP_Y` means v = 0 is the canvas top; sample with `p/R`.
-- Command tags pile up (LAND IT! + PULL! in the same corner). Secondary commands should fly out, not tag.
-- A white impact flash at 100 % reads as a blank frame; cap it at 60 %.
-- whisper often mishears 0.2 s command words inside a dense mix, even at +16 dB SNR. Verify them per clip, and measure SNR in the 300–4 kHz band for the mix.
-- A zsh `$T` list doesn't word-split. Use the bash review helper `tools/review.sh`.
+- 亮度斜坡 ASCII 英雄是难以阅读的糊状。使用手工编写的模板加上结构字形，以及天线球的反向 `@`。
+- 墨色天篷最初读作黑烟或暴风雨云。保持印迹阶段短而圆，用渐变和接缝扇出戈尔，添加扇形下摆，并使边缘保持浅色。
+- 瑞士人的“敬礼失败”读作举手。手臂必须“过冲并击中”红球，并且需要以 140 BPM 的速度即时重播才能理解失败情况。
+- Alpha 模式下的蜡笔层通过蜡间隙显示背景。在必须坚固的地方给它一个全压的纸白色底座（或使其不透明并夹住）。
+- 当场景渲染到屏幕外缓冲区（电视屏幕、老虎机卷轴、图块）时，保持全局上下文 (`K.g`) 的卡通绘图助手将在错误的画布上绘制。前后务必致电 `setCtx`。
+- `flat` 是 GLSL ES 3 中的保留字。
+- 上传没有`UNPACK_FLIP_Y`的2D画布意味着v = 0是画布顶部；样品为 `p/R`。
+- 命令标签堆积起来（着陆！+拉！在同一个角落）。辅助命令应该飞出，而不是标记。
+- 100% 的白色冲击闪光读取为空白帧；上限为 60%。
+- 耳语经常会在密集混音中听错 0.2 秒的命令字，即使在 +16 dB SNR 下也是如此。对每个剪辑进行验证，并测量混音 300-4 kHz 频段的 SNR。
+- zsh `$T` 列表不会进行分词。使用 bash 审查助手 `tools/review.sh`。

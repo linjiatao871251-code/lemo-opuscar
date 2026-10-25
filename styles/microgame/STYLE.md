@@ -1,120 +1,132 @@
-# Microgame Frenzy — Style Prompt
+<a id="microgame-frenzy--style-prompt"></a>
+# 微游戏快闪：风格提示词
 
-> A rapid-fire party-game film: one command word, a few seconds, one action. Every microgame is drawn in a completely different art style, and the film keeps getting faster.
-> Genre reference (grammar only): the WarioWare series. Never use its name, characters, UI, microgames or music.
+> 一款快速派对游戏影片：一个命令，几秒钟，一个动作。每个微游戏都以完全不同的艺术风格绘制，并且影片的速度不断加快。
+> 类型参考（仅语法）：WarioWare 系列。切勿使用其名称、角色、用户界面、微游戏或音乐。
 
-The format suits short films; once the frenzy stops building, end it.
+格式适合短影片；一旦狂热停止，就结束它。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **A microgame = a shouted command word + 2.5–4 s + one action + one result** (success, or a funny failure).
-- **Each microgame uses a different visual medium** (crayon, ink wash, terminal, risograph, pixel, blueprint, Swiss type, clay, cut paper, woodcut…). The jolt of each switch is both the joke and the beat.
-- **One fixed home look** holds the film together: a show stage with a host, a lives counter and a stage number, which the film returns to between games.
-- **It keeps accelerating**: every few games tempo, game length, dwell, command hold and animation frame rate step up together.
-- **The hero survives every medium** by keeping two or three silhouette marks.
+- **A 微游戏 = 喊出的命令词 + 2.5–4 s + 一个动作 + 一个结果**（成功，或有趣的失败）。
+- **每个微游戏使用不同的视觉媒介**（蜡笔、墨水水彩晕染、终端、立体画、像素、蓝图、瑞士字体、粘土、剪纸、木刻……）。每个开关的震动既是笑话又是节拍。
+- **一个固定的主场**将影片组合在一起：一个带有主持人、生命计数器和舞台号的表演舞台，影片在游戏之间返回到舞台号。
+- **它不断加速**：每隔几场比赛节奏、游戏长度、停留时间、命令保持和动画帧率都会一起加快。
+- **英雄在各种媒介中生存**通过保留两到三个轮廓标记。
 
-Not Game Show Flat (one art style, rounds of bars, call-and-response), not a style sampler reel (every game has stakes; lives connect them), not a montage (each game has a rule grasped in under a second).
+不是游戏秀平面（一种艺术风格、几轮酒吧、呼叫和响应），不是风格采样卷轴（每个游戏都有赌注；生活将它们联系在一起），不是蒙太奇（每个游戏都有一个在一秒钟内掌握的规则）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Home stage**: flat toon, thick near-black outline (~7 px), flat fills, **one hard-edged shadow** (fill in the shade colour, clip to the shape, refill shifted up-left). Fixed furniture: a frame-within-the-frame where games play (a TV, an arcade cabinet, a phone, a window), the lives board, a stage badge, a trigger prop (button, lever, bell).
-- **Each medium is a simplified re-drawing, 100–200 lines of code**, built around one channel trick that makes it read at a glance:
-  - drawn media store **pressure or wetness in a channel** (crayon: alpha = pressure against paper tooth; ink: wet and dry ink channels);
-  - print media store **plate densities** (riso: a channel per plate, additive overprint, halftone, misregistration);
-  - screen media are **low-res buffers** scaled up (pixel: indexed buffer, auto outline, dither; terminal: hand-authored glyph art, phosphor shader);
-  - technical media are **line systems** (blueprint: line weights and dimensions; Swiss: a strict grid, one sans, one signal colour).
-- **Hero translation**: the hero is redrawn from scratch in each medium, but the same marks always survive (e.g. a hat shape, one coloured dot, a number on the chest). Make a model sheet of the hero in every medium before animating.
-- **Mixed-media frames**: alpha-coverage media over a base, paper media multiplied, screen media flat and clipped to a panel. WebGL2 material shaders turn the channel buffers into each look.
+- **主舞台**：扁平卡通，粗近黑色轮廓（~7像素），扁平填充，**one硬边阴影**（填充阴影颜色，剪辑到形状，填充左上移动）。固定家具：玩游戏的框内框（电视、街机柜、电话、窗户）、生命板、舞台徽章、触发道具（按钮、杠杆、铃）。
+- **Each 表现媒介是一种简化的重新绘制，100-200 行代码**，围绕一个通道技巧构建，使其一目了然：
+  - 绘制的介质存储**通道中的压力或湿度**（蜡笔：alpha =对纸牙的压力；墨水：湿和干墨水通道）；
+  - 印刷介质存储 **印版密度**（riso：每印版一个通道、附加叠印、半色调、套准不准）；
+  - 屏幕媒体为 **低分辨率缓冲区** 放大（像素：索引缓冲区、自动轮廓、抖动；终端：手工创作的字形艺术、荧光着色器）；
+  - 技术介质是 **线路系统**（蓝图：线宽和尺寸；瑞士：严格的网格，一个无网格，一种信号颜色）。
+- **英雄翻译**：每个表现媒介中的英雄都是从头开始重新绘制的，但相同的标记总是保留下来（例如帽子形状，一个彩色点，胸前的数字）。在制作动画之前，为每个表现媒介中的英雄制作一个角色设定表。
+- **混合媒体框架**：基础上的alpha覆盖媒体，纸质媒体倍增，屏幕媒体平坦并夹在面板上。 WebGL2 材质着色器将通道缓冲区转换为每种外观。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **The home stage owns a saturated party palette**: a deep ground behind a rotating sunburst, two or three loud accents, plus a fixed success colour and a fixed fail colour used by stamps and the lives board only.
-- **Each medium brings its own palette** from its tradition (wax colours, one-ink-plus-vermilion, amber phosphor, three riso plates, a limited pixel palette, white-on-blue, black-white-red). Never tint a medium with the home palette.
-- **One accent follows the hero across media** where the medium allows (a single vermilion dot in ink, an inverse glyph in a terminal, a signal-red circle in Swiss type): it is how the eye finds the hero after a switch.
-- Example home palettes: violet `#2a0f5c` with magenta `#ff2e88`, gold `#ffc928`, cyan `#1fd1d1`; teal ground with coral and lemon; black stage with hot orange and electric blue.
+- **主舞台拥有饱和的派对调色板**：旋转旭日后面的深底，两个或三个响亮的口音，加上仅用于邮票和生命板的固定成功颜色和固定失败颜色。
+- **Each 表现媒介从其传统中带来了自己的调色板**（蜡色、一墨加朱红、琥珀色荧光粉、三块里索板、有限的像素调色板、白蓝、黑白红）。切勿使用主调色板为表现媒介着色。
+- **一个口音跟随英雄穿过媒体**，其中表现媒介允许（墨水中的单个朱红点，终端中的反字形，瑞士字体中的信号红色圆圈）：这是眼睛在切换后找到英雄的方式。
+- 家居调色板示例：紫罗兰色 `#2a0f5c` 搭配洋红色 `#ff2e88`、金色 `#ffc928`、青色 `#1fd1d1`；带有珊瑚和柠檬的青色底色；黑色舞台搭配热橙色和电蓝色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **The command word is the subtitle**: a heavy display face (e.g. Titan One), white with a thick ink outline, a coloured drop and a burst behind it, skewed a few degrees. It slams in over ~3 frames (overshoot → settle), holds, then **shrinks into a corner tag before the first action**, so the result is never covered. One-off banners fly out instead of tagging, so tags never pile up.
-- **Other lines**: a rounded card in the home palette with the home outline and hard shadow, a friendly rounded face (e.g. Lilita One ~50 px), a small speaker icon; placed above the timer in games. Hold ≥ max(1.8 s, speech + 0.6 s), never under a big banner.
-- Inside a game, any text (replay captions, labels) uses **that medium's own typography**.
-- The command word appears in the .srt only, never burned twice.
+- **命令字是副标题**：厚重的显示面（例如泰坦一号），白色，带有厚厚的墨水轮廓，后面有彩色墨滴和爆裂，倾斜了几度。它猛击超过 3 帧（过冲→稳定），保持，然后 **在第一个动作** 之前收缩到角标记，因此结果永远不会被覆盖。一次性横幅会飞出而不是添加标签，因此标签永远不会堆积起来。
+- **其他行**：主页调色板中的圆形卡片，带有主页轮廓和硬阴影，友好的圆脸（例如Lilita One〜50像素），小扬声器图标；放置在游戏中计时器上方。保持 ≥ max(1.8 s，语音 + 0.6 s)，切勿在大横幅下。
+- 在游戏中，任何文本（重播字幕、标签）都使用 **，即表现媒介自己的排版**。
+- 命令字仅出现在 .srt 中，从未被刻录两次。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **The frame rate is part of the ladder**: characters step on twos or at 8 fps early, faster later, on ones at the climax. Camera moves, transitions and the timer spark always run on ones.
-- **Five things accelerate together** at each speed-up: tempo, game length, stage dwell, command hold, character frame rate.
-- **The timer is visible and on the beat**: e.g. a fuse with one knot per beat, the spark passing each knot exactly on it. It freezes in a replay.
-- **Unified transition through the frame-within-the-frame**: push into the screen to start a game (~0.25 s), shrink the game back into it to return (~0.33 s) with a ✓ / ✗ stamp. No fades, no blank frames.
-- **Failure is performed**: the action overshoots, splats, bonks or rolls off; the medium's own physics makes the joke.
-- **Instant replay** for a failure that must be understood: freeze, half speed, push-in, letterbox, a caption in the medium's type.
-- The home host has a tick on every beat; stopping it dead is the strongest emotional tool.
+- **帧速率是阶梯的一部分**：角色早期双足或以 8 fps 迈出，稍后更快，在高潮时迈出双足。 摄影机运动，转换和计时器火花始终在 1 上运行。
+- **每次加速时有五件事一起加速**：节奏、游戏长度、舞台停留、命令保持、角色帧速率。
+- **计时器可见并在节拍上**：例如每节拍一个结的导火索，火花精确地穿过其上的每个结。它在重播中冻结。
+- **通过帧内帧统一过渡**：推入屏幕开始游戏（~0.25秒），将游戏缩回屏幕返回（~0.33秒），带有✓/✗标记。没有褪色，没有空白帧。
+- **执行失败**：动作过冲、啪嗒啪嗒、嘎嘎声或滚落； 表现媒介自己的物理原理开了个玩笑。
+- **即时重播**，用于必须理解的故障：冻结、半速、推入、信箱、表现媒介类型的标题。
+- 主播每节拍都会有一个刻度；阻止它死去是最强大的情感工具。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Start inside a game, command already slamming | the rules explain themselves | throwing the viewer in |
-| Pull back out of the game screen | scale: this was one screen on a show | the first return to the stage |
-| Locked frontal home frame | the constant; only the scoreboard changes | stage beats; the host's reaction |
-| Slot reels (the stage splits into spinning strips of earlier frames, stopping one per beat) | acceleration, a summary | a speed-up; a change of round |
-| Extreme insert on the trigger prop | the start, felt | a game starting on the downbeat |
-| Lights cut to one top spot, frame unchanged | stakes; the last chance | the last life; a decision |
-| Tile flip (last frames of past games flip into pieces of a new frame) | the past becomes the material of the present | a boss or finale; a recap |
-| Push into a detail, hold | the viewer notices before the hero does | a clue; a silence |
-| Snap back to wide on one beat | release | a solution blooming; a save |
-| Split screen, two media side by side | comparison, rivalry | two players; before/after; two approaches |
+|在游戏中开始，命令已经发出|规则不言而喻|将观众抛入|
+|退出游戏画面|规模：这是一场演出的一个屏幕|首次回归舞台|
+|锁定正面主框架|常数；仅计分板发生变化|舞台节拍；主持人的反应|
+|老虎机卷轴（舞台分成早期帧的旋转条，每节拍停止一个）|加速，总结|加速；改变回合|
+|扳机支柱上的极端插入|开始，感觉到|一场以悲观开始的比赛|
+|灯光切至一处最高点，框架不变|赌注；最后的机会|最后的一生；一个决定|
+|平铺翻转（过去游戏的最后几帧翻转成新帧的碎片）|过去成为现在的材料|老板或结局；回顾|
+|深入细节，坚持|观众先于英雄注意到|一条线索；沉默|
+|一拍回到宽屏|发布|溶液开花；一次保存|
+|分屏，两个媒体并排|比较、竞争|两名玩家； before/after； two approaches|
 
-Framing: the game screen is a fixed fraction of the frame (around 40 % of the width); in a mixed-media frame keep **one focal chain** (A leads to B leads to C) and push info panels into a corner.
+框架：游戏屏幕是框架的固定部分（大约宽度的 40%）；在混合媒体框架中，保留**one焦点链**（A通向B通向C）并将信息面板推入角落。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music first**: a tempo grid and a cue table before any animation; every picture hit lands on a listed cue.
-- **A constant groove + one colour instrument per medium.** The groove (kit with ghost notes, slap or synth bass, brass stabs, keys) runs throughout; each medium adds its own timbre: toy piano for crayon, shakuhachi or guqin for ink, square beeps for terminals, vibes for print, pulse arpeggios for pixel, a typewriter for drafting, claves for Swiss, kalimba for clay, koto for woodcut.
-- **Foley follows the medium**: wax squeaks, wet splats, teletype relays, paper crunch, bit-crushed noise, ratchets and stamps, hollow bonks. Home stage: a spring trigger click, glass crack for a lost life, card flips, a reel whirr, sparse claps.
-- **Acceleration options** (use what fits): a rising brass run into each speed-up; the key rising a step per round; halving note values instead of changing tempo; dropping the groove to a heartbeat on the last life.
-- **Real silences**: at least one before the biggest hit (a heartbeat or one pitched note may remain). The loudest moment comes right after the longest silence.
-- **Voices**: a host who shouts every command a hair *after* the stab so brass doesn't mask it; a hero with very few words (reactions work best). Duck music ~11 dB and foley ~6 dB under voice. −14 LUFS.
+- **音乐优先**：任何动画之前的节奏网格和提示表；每一张点击的图片都落在列出的提示上。
+- **A 恒定律动 + 每个表现媒介.** 一种颜色乐器每个表现媒介都添加了自己的音色：用于蜡笔的玩具钢琴、用于墨水的尺八或古琴、用于终端的方形蜂鸣声、用于打印的振动、用于像素的脉冲琶音、用于绘图的打字机、用于瑞士的小鼓、用于粘土的卡林巴、用于木刻的古琴。
+- **Foley 遵循媒介**：蜡的吱吱声、湿的泼溅声、电传打字机继电器、纸张嘎吱声、比特压碎的噪音、棘轮和邮票、空心的邦克声。主舞台：弹簧扳机的咔嗒声、生命逝去的玻璃破裂声、卡片翻转、卷轴呼呼声、稀疏的拍手声。
+- **加速选项**（使用合适的）：每次加速时都有上升的黄铜；每轮钥匙上升一步；将音符值减半而不是改变速度；将节奏降到上一世的心跳。
+- **真正的沉默**：在最大的打击之前至少有一个（可能会保留心跳或一个音高音符）。最响亮的时刻是在最长的沉默之后到来的。
+- **声音**：主持人在刺伤*后*发出每一个命令，这样黄铜就不会掩盖它；一个言语很少的英雄（反应效果最好）。声音下的鸭子音乐 ~11 dB 和拟音 ~6 dB。 −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Style switch per game.** Each task is drawn in the medium that suits it. *Fits content like:* the steps of baking bread (flour in crayon, oven dial in blueprint, crust in woodcut); a day of a nurse; a heist's roles.
-- **Command word.** One verb is script, subtitle and downbeat. *Fits content like:* SCAN! at a checkout; BREATHE! in a yoga class; SIGN! at a contract signing.
-- **Lives as UI.** The counter carries emotion without narration; 3 → 2 → 1 (blinking) builds tension alone. *Fits content like:* a phone battery; retries on a driving test; chances left on a quiz.
-- **SPEED UP.** Everything steps up together. *Fits content like:* rush hour; the last week before a deadline; a kitchen during dinner service.
-- **Failure becomes the solution.** The material of an earlier failure returns in the final game as the answer. *Fits content like:* a spilled coffee that later stains the winning map; a bug that becomes a feature; a missed train that leads to the right meeting.
-- **Boss mixes the rules.** The final game is built from pieces of earlier media. *Fits content like:* a final exam; launch day; a festival's closing night.
-- **Instant replay.** The joke explained in slow motion. *Fits content like:* a goal-line decision; a typo that shipped; a cat's leap that missed.
+- **每个游戏的风格切换。** 每个任务都绘制在适合它的表现媒介中。 *适合的内容如下：*烤面包的步骤（蜡笔上的面粉，蓝图上的烤箱刻度盘，木刻上的面包皮）；护士的一天；抢劫的角色。
+- **命令词。** 一个动词是脚本、字幕和强拍。 *适合以下内容：* 扫描！结账时；呼吸！在瑜伽课上；符号！在签订合同时。
+- **作为UI而存在。** 柜台承载情感，无需旁白； 3 → 2 → 1（闪烁）单独产生张力。 *适合以下物品：*手机电池；重试驾驶考试；测验中剩余的机会。
+- **加快。** 一切都同步进行。 *适合以下内容：*高峰时间；截止日期前的最后一周；晚餐服务期间的厨房。
+- **失败成为解决方案。** 早期失败的材料在最终游戏中作为答案返回。 *适合以下内容：* 溢出的咖啡后来弄脏了获胜地图；一个 bug 变成了一个特性；错过的火车会导致正确的会议。
+- **Boss 混合了规则。** 最终的游戏是根据早期媒体的片段构建的。 *适合以下内容：*期末考试；发射日；节日的闭幕之夜
+- **即时重播。** 笑话以慢动作解释。 *适合以下内容：* 球门线决定；发货时出现拼写错误；猫的跳跃未命中。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **A luminance-ramp ASCII figure is mush** → hand-authored glyph art with structural glyphs, an inverse glyph for the accent.
-- **Ink shapes read as smoke** unless their silhouette is designed (a short round blot phase, then a clear structure with seams and light edges).
-- **A failure at high tempo goes unread** → make the action overshoot and hit something, or give it an instant replay.
-- **Alpha-coverage media show the background through gaps** → a full-pressure base where it must be solid.
-- **Drawing helpers with a global context** draw on the wrong canvas when scenes render into offscreen buffers (game screen, reels, tiles) → set and restore the context.
-- **Command tags pile up** → secondary commands fly out.
-- **A 100 % white flash** reads as a blank frame → cap at ~60 %.
-- **TTS single-word commands** gain a vowel tail ("Pump!" → "Pompey") → generate a two-word phrase and cut after the first word using ASR timestamps; verify each clip, since ASR mishears 0.2 s words in a dense mix.
+- **A 亮度斜坡 ASCII 数字是 mush** → 带有结构字形的手工创作的字形艺术，是重音的反字形。
+- **墨水形状读起来就像烟雾**，除非其轮廓经过设计（短的圆形印迹阶段，然后是带有接缝和浅色边缘的清晰结构）。
+- **A 高速失败未读** → 使动作过度并击中某物，或立即重播。
+- **Alpha 覆盖介质通过间隙显示背景** → 必须坚固的全压底座。
+- 当场景渲染到屏幕外缓冲区（游戏屏幕、卷轴、图块）时，具有全局上下文的 **绘图助手** 在错误的画布上绘制 → 设置和恢复上下文。
+- **命令标签堆积** → 辅助命令飞出。
+- **A 100 % 白色闪光** 读取为空白帧 → 上限为 ~60 %。
+- **TTS 单字命令** 获得元音尾部（“Pump！”→“Pompey”）→ 生成一个两字短语，并使用 ASR 时间戳在第一个单词后进行剪切；验证每个剪辑，因为 ASR 在密集混音中误听了 0.2 秒的单词。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/timeline.js` (tempo grid and segments, the single source of truth), `demo/toon.js` + `demo/stage.js` + `demo/hud.js` (home look, stage, timer, command word, stamps, lives, subtitle cards; call `setCtx` when drawing offscreen), `demo/chars.js` (host and hero rigs), `demo/glpass.js` (WebGL2 material shaders: riso, crayon, CRT, ink, blueprint paper), one `demo/g_<medium>.js` per medium (`sceneX(g, lt)` + the hero translation), `demo/film.js` (transitions through the TV, slot reels, tiles, events). Module map and build: [DEMO.md](DEMO.md#build-notes).
+`demo/timeline.js`（速度网格和分段，单一事实来源），`demo/toon.js` + `demo/stage.js` + `demo/hud.js`（家庭外观，舞台，计时器，命令词，图章，生命，字幕卡；在屏幕外绘制时调用 `setCtx`），`demo/chars.js`（主机）和英雄装备）、`demo/glpass.js`（WebGL2 材质着色器：riso、蜡笔、CRT、墨水、蓝图纸）、每个表现媒介一个 `demo/g_<medium>.js`（`sceneX(g, lt)` + 英雄翻译）、`demo/film.js`（通过电视、老虎机卷轴、图块进行过渡，事件）。模块映射和构建：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the tasks, which medium draws each, the home stage and its frame-within-the-frame, the host and hero, the number of rounds, where failures fall, the finale, the opening and the ending. The command → action → result unit, the medium switch and the acceleration stay.
+你可以决定表现媒介绘制的任务、主舞台及其画框内的画框、主持人和英雄、回合数、失败的地方、结局、开场和结局。命令→动作→结果单元，表现媒介开关和加速度停留。
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **two players, alternating** (each game is played by one of two rivals; the lives board is a tug-of-war); **one day, hour by hour** (each game is an hour, the speed-ups are the morning rush and the evening rush, the finale is midnight); **a relay** (the result of each game is the object handed into the next one, so the chain is the story).
-- Openings: **the home stage asleep** (lights off, the host wakes on the first beat); **a game-over screen** we rewind from; **the lives board alone**, a counter clicking down before we know what it counts.
-- Endings: **a high-score table** where the hero types their name letter by letter in each medium; **the credits as one more microgame** (CATCH THE NAMES!); **the home stage packs away** into the frame-within-the-frame and the screen switches off.
+- 结构：**两名选手，交替进行**（每场比赛由两个对手之一进行；生命板是一场拔河比赛）；**一天，一小时一小时**（每场比赛一个小时，加速是早冲和晚冲，决赛是午夜）；**一个继电器**（每场比赛的结果都是交给下一场比赛的对象，所以链条就是故事）。
+- 开场：**主舞台睡着了**（灯灭，主机第一拍就醒）； **a 游戏结束画面**我们倒带；**单独的生命板**，一个计数器在我们知道它的数字之前就按下了。
+- 结局：**高-配乐表**，英雄在每个表现媒介中逐个字母地输入他们的名字； **作为又一款微游戏的制作人员**（抓住名字！）； **主舞台将** 收进画框内，然后屏幕关闭。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

@@ -1,135 +1,148 @@
-# Caption News — Style Prompt
+<a id="caption-news--style-prompt"></a>
+# 字幕新闻：风格提示词
 
-> Social-video news that reads with the sound off. Real footage, photos and the source document are the ground; huge captions are the lead actor, slammed in a chunk at a time with one keyword on a yellow block. Hard cuts on a music grid, numbers that roll, a source tag that slides in whenever a figure appears, and the original document highlighted on screen before its number is believed. 16:9, built for a feed.
-> References (grammar only): the captions-first social news of the mid-2010s (NowThis, AJ+), horizontal explainers that set big type over footage (Bloomberg Quicktake). Never copy their logos, fonts, colour ratios, idents or shots, and never name them in the film.
+> 关闭声音阅读的社交视频新闻。真实镜头、照片和源文件为地面；巨大的字幕是主角，一次猛击一大块，黄色块上有一个关键词。音乐网格上的硬剪切、滚动的数字、每当数字出现时就会滑入的源标签，以及在其数字被相信之前在屏幕上突出显示的原始文档。 16:9，专为提要而设计。
+> 参考资料（仅语法）：2010 年代中期以字幕为先的社会新闻（NowThis、AJ+）、在镜头上设置大字体的水平解释器（Bloomberg Quicktake）。切勿复制其徽标、字体、颜色比例、标识或镜头，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-1. **Sound-off first.** Every beat must be understood from the picture and the captions alone; the voice adds pace, not information.
-2. **The caption is the shot.** One Chinese line, set huge, slammed in two or three chunks, one keyword in a yellow block; one English line under it. The footage is chosen to sit under the line.
-3. **Evidence on screen.** Each number arrives with its source: a source tag slides in; key figures are first seen highlighted in the original document; per-shot footage credits sit in the corner like a news "Video:" tag.
-4. **A hook on frame 4.** The film's largest number lands in the first 0.15 s and rolls to its value.
-5. **One turn.** The bad-news hook is answered by a fact that changes its meaning; the rest of the film explains that turn, one new fact per shot.
+1. **先发声。** 每个节拍必须仅从图片和字幕中理解；声音增加了节奏，而不是信息。
+2. **标题是镜头。** 一行中文，字距很大，分成两三块，一个关键词在黄色块中；其下有一行英文。镜头被选择放在线下。
+3. **E 屏幕上有证据。** 每个号码都带有其来源：来源标签滑入；关键数字首先在原始文件中突出显示；每个镜头的镜头制作人员名单就像新闻“视频：”标签一样放在角落里。
+4. **A 钩在框架上 4.** 影片的最大数字在前 0.15 秒内着陆并滚动至其值。
+5. **一个回合。** 坏消息钩子的答案是一个改变了其含义的事实； 影片的其余部分解释了这一点，这是每个镜头的一个新事实。
 
-Not **Data Storytelling** (charts are short inserts between footage, never the whole film, never a dashboard). Not a **TV news package** (no anchor, no lower-third ticker, no studio, no scrolling crawl). Not a keynote: no headers, no centred title-and-bullets, no page turns.
+不是 **数据讲故事**（图表是镜头之间的简短插入，不是整个影片，也不是仪表板）。不是 **TV 新闻包**（没有主播，没有下三分之一的股票，没有工作室，没有滚动爬行）。不是主题演讲：没有标题，没有居中的标题和项目符号，没有翻页。
 
-## 2. Frame and layout (1920×1080)
+<a id="2-frame-and-layout-19201080"></a>
+## 2. 框架及布局（1920×1080）
 
-| Zone | Position | Content |
+|区|位置|内容|
 |---|---|---|
-| Footage | full bleed | video, photo, document or data card; never a vertical frame pillar-boxed in the middle |
-| Caption card | left aligned at x 120; Chinese baseline y ≈ 948, English baseline y ≈ 1014 | one line per language, never wrapped |
-| Channel bug | top left, x 96 y 52, 46 px high | yellow block with a fictional channel name + topic in Chinese and English small caps |
-| Source tag | under the bug, y 108, 36 px | white "来源" + dark label (`USDA NASS · 2026.08.03`, `… · 第 13 页`); only on data and document shots, slides in 0.2 s |
-| Footage credit | top right, 19 px on a 50 % dark chip | `视频 作者 · CC BY 3.0`; every CC BY shot carries it |
-| Lower third | x 120, y 742, 96 px high | yellow bar + label + one English line; for a place, date or speaker, never for the main sentence |
+|镜头|全出血|视频、照片、文档或数据卡；中间从来没有一个垂直的框架|
+|字幕卡|左对齐 x 120；中文基线 y ≈ 948，英文基线 y ≈ 1014|每种语言一行，不换行|
+|频道错误|左上角，x 96 y 52，46 像素高|黄色块，带有虚构的频道名称+中英文小写字母主题|
+|来源标签|在 bug 下，y 108, 36 px|白色“来源”+深色标签（`USDA NASS · 2026.08.03`、`… · 第 13 页`）；仅在数据和文档镜头上，0.2 秒内滑动|
+|影片来源|右上角，50% 深色芯片上的 19 像素|`视频 作者 · CC BY 3.0`；每个 CC BY 镜头都带有它|
+|下三分之一|x 120，y 742，96 像素高|黄条+标签+英文一行；用于地点、日期或讲话者，切勿用于主句|
 
-Under the caption: a bottom gradient (0 → 84 % from y 560) plus a soft dark radial from the bottom-left corner; a top gradient (55 % → 0 over 200 px) under the bug and the credit. Data cards use a lighter gradient that starts at y 820. Graphics and charts sit right of centre and bleed to the frame edge; their title and source sit top left, never centred.
+在标题下方：底部渐变（从 y 560 开始为 0 → 84 %）加上从左下角开始的柔和的深色径向； bug 和致谢下方的顶部渐变（55 % → 0 超过 200 px）。数据卡使用从 y 820 开始的较浅渐变。图形和图表位于中心右侧，并渗入到框架边缘；他们的标题和来源位于左上角，从不居中。
 
-Vertical 9:16 is a different layout, not a crop: put the caption under a 1080×1560 footage band (horizontal sources then scale ≤ 1.5×), stack the chunks on two lines there (the one-line rule is for 16:9 subtitles), and move the bug and source tag into the top safe area.
+垂直 9:16 是一种不同的布局，而不是裁剪：将字幕放在 1080×1560 素材带下（水平源缩放 ≤ 1.5×），将块堆叠在两行上（单行规则适用于 16:9 字幕），然后将 bug 和源标签移动到顶部安全区域。
 
-## 3. Editing grammar
+<a id="3-editing-grammar"></a>
+## 3. 编辑语法
 
-- **Cuts on a 120 BPM half-beat grid** (every cut at a multiple of 0.5 s). Footage shots 1.5–3 s; data cards and documents 3–4.5 s; a shot that holds a comparison stays until every item has been fully on screen ≥ 2.5 s.
-- **Captions cross cuts.** A caption can run over two shots (picture changes, words don't); captions change at most every ~2.5 s even when shots change every 1.5 s. Reading time, not shot length, sets the caption clock.
-- **The order of a fact**: footage (feeling) → the number on a card → the document line that says it → the consequence. Never a number without its source tag in the same shot.
-- **Transitions are few and fixed**: hard cut (default); a 1–2-frame white flash on the turn and on the freeze; a card sliding in from the right with speed streaks (0.18 s); a split screen opening from its divider; grid panels rising staggered (0.1 s apart); a punch-in (0.3 s ease-out to ~1.25×) on the culprit; a **mask transition** where a photo grows out of a map shape. No dissolves, no page turns, no 3D flips.
-- **Pace**: a strong action within 0.5 s of every shot; no frame flat for more than 1 s (rolling counters, line drawing, highlighter sweeps, slow pushes keep it alive); one held breath (2–3 s) after the turn; two real silences.
+- **在 120 BPM 半拍网格上剪切**（每次剪切以 0.5 秒的倍数进行）。镜头镜头 1.5–3 秒；数据卡和文件 3–4.5 秒；保存比较的镜头会一直保留，直到每个项目完全显示在屏幕上 ≥ 2.5 秒。
+- **Captions 横切。** 标题可以跨越两个镜头（图片改变，文字不变）；即使镜头每 1.5 秒更改一次，字幕最多每约 2.5 秒更改一次。设置字幕时钟的读取时间，而不是镜头长度。
+- **事实的顺序**：镜头（感觉）→卡片上的数字→记载该数字的文档行→结果。切勿在同一镜头中使用没有其源标记的数字。
+- **过渡很少且固定**：硬剪切（默认）；转弯时和冻结时出现 1-2 帧白色闪光；一张卡片从右侧滑入并带有速度条纹（0.18 秒）；从其分隔线打开的分屏；网格板交错上升（间隔 0.1 秒）；对罪魁祸首进行打孔（0.3 秒缓出至~1.25×）； **mask 过渡**，其中照片从地图形状中生长出来。没有溶解、没有翻页、没有 3D 翻转。
+- **步伐**：每个镜头 0.5秒内有强烈动作；没有帧平放超过 1 秒（滚动计数器、画线、荧光笔扫描、缓慢推动使其保持活力）；转弯后屏住呼吸（2-3 秒）；两次真正的沉默。
 
-## 4. Caption card (the subtitle *is* the graphic)
+<a id="4-caption-card-the-subtitle-is-the-graphic"></a>
+## 4. 字幕卡（字幕*是*图形）
 
-- **Chinese line**: Noto Sans SC 900, 88 px (verdict lines 110 px), ivory `#F7F5EF`, 20 px dark soft shadow. Split into 2–3 chunks with `|` in the timeline; each chunk slams 0.12 s after the previous: scale 1.3 → 1 in 0.13 s (back ease, overshoot 1.6), opacity full in 0.04 s.
-- **Keyword**: `{…}` inside a chunk; a honey-yellow block `#FFC21A` wipes left → right in 0.12 s behind it, text turns ink `#0E0E0C`. One keyword per caption, at most.
-- **English line**: Inter Tight 500, 33 px, ivory, fades and rises 10 px in 0.18 s, 0.1 s after the first chunk. It is the spoken line (numbers as digits), not a translation of the Chinese.
-- **One line per language, always.** If either language would wrap, split the sentence into two captions. A caption is on screen ≥ 1.8 s and ideally ≥ the spoken line + 0.6 s; the Chinese is a paraphrase short enough to read in that time (≤ ~14 characters).
-- The `.srt` is generated from the same timeline (`timeline.json` → `tools/cues.py` → `core/render/srt.py`): one Chinese line, one English line per cue.
-- A text-only beat (caption with no voice) is native to the style: use it for the breath after the turn.
+- **中文线**：Noto Sans SC 900，88像素（判定线110像素），象牙色`#F7F5EF`，20像素深色软阴影。时间线中带有 `|` 的分割为 2-3 个块；每个块在前一个块之后猛击 0.12 秒：在 0.13 秒内缩放 1.3 → 1（向后缓动，过冲 1.6），在 0.04 秒内完全不透明度。
+- **关键字**：块内的`{…}`；蜜黄色块`#FFC21A`在其后面的0.12秒内从左→右擦拭，文字变成墨水`#0E0E0C`。每个标题最多一个关键字。
+- **英文线**：Inter Tight 500，33像素，象牙色，在0.18秒内淡出并上升10像素，第一个块后0.1秒。这是口语（数字为数字），而不是中文的翻译。
+- **每种语言一行，始终。** 如果任一语言需要换行，则将句子分成两个标题。屏幕上的字幕时间 ≥ 1.8 秒，理想情况下 ≥ 台词 + 0.6 秒；中文是一个足够短的释义，足以在当时阅读（≤~14 个字符）。
+- `.srt` 是从同一时间线生成的（`timeline.json` → `tools/cues.py` → `core/render/srt.py`）：每个提示一行中文，一行英文。
+- 纯文本节拍（没有声音的字幕）是该风格的原生内容：将其用于转弯后的呼吸。
 
-## 5. Graphics
+<a id="5-graphics"></a>
+## 5. 图形
 
-- **Ledger card** (the data-card ground): `#151512` sheet, faint ruled lines every 54 px (4.5 % white), a thin red double margin at x 78/86 — the "account book" that ties every chart together. It slides in from the right over 0.18 s; inside, a slow push (×1.025–1.03 over the shot).
-- **Colour meaning**: honey `#FFC21A` = the point / gains / the highlight; red `#FF4A3D` = losses, the spike, the bad number; ivory = everything else; grey `#8D8B83` = labels and units; `#5E5C55` = the bars that don't matter.
-- **Numbers**: Inter Tight 800 with fixed-width digit cells (`num()` in `demo/main.js`), so a rolling counter never jitters. Counters roll with ease-out and turn their colour when they arrive. Units in Chinese (箱, 万箱) set smaller after the number.
-- **Charts**: titled top left in Chinese (Noto Sans SC 900 64 px, ≤ 6 characters so it can be read in the shot) with one grey English line; lines draw segment by segment (eio); the key point gets a bigger dot, an expanding ring (0.7 s) and a block label; bars grow from the left one after another (first one slower and longer if it is the point).
-- **Map**: state shapes from Natural Earth, projected (Albers), sequential fill in five steps of one hue, states without data in dark grey with a "未单列" legend swatch; the subject state outlined in yellow with a leader and a label; the map pushes in on it.
-- **Documents**: the PDF page rendered at 220 dpi as white paper on a dark desk (±1–2° tilt, soft shadow, vignette), pushed in slowly; highlighter rectangles placed from `pdftotext -bbox` coordinates (1 pt = 3.0556 px), `multiply` blend, swept left → right in 0.3–0.5 s; the number read from it is re-set as a big yellow block beside the page. The printed text is picture; what must be read is re-set in type.
-- **Split screen**: two halves with a 4 px yellow divider that drops first; the "bad" half desaturated, darkened and tinted red, the "good" half in full grade; a label block (Chinese + English word) and a counter in each; a shared stamp centred on the divider.
-- **Grid**: three panels (632 px, 12 px gaps) rising staggered; each one lights up (yellow border, label turns yellow) on the word that names it; numbered 1–2–3.
-- **Freeze frame**: the shot stops on a frame, a 0.14 s white flash, punch 1.0 → 1.12, saturation drops to 45 %, yellow corner brackets close in on the subject, a timecode chip with a pause mark appears top right.
-- **Title sting**: a yellow ruled page (the ledger again, in yellow) wipes across the left 45 % over live footage; the title slams, the English title and a dateline chip follow; the page wipes off left and the title becomes the channel bug.
+- **账本卡**（数据卡地面）：`#151512`表，每54像素有一条微弱的格线（4.5％白色），x 78/86处有一条细小的红色双边距——将每个图表联系在一起的“账簿”。从右侧滑入0.18秒以上；在内部，缓慢推动（在镜头上×1.025–1.03）。
+- **颜色含义**：蜂蜜`#FFC21A`=要点/收获/亮点；红色 `#FF4A3D` = 损失、尖峰、坏数；象牙=其他一切；灰色 `#8D8B83` = 标签和单位； `#5E5C55` = 无关紧要的条。
+- **数字**：Inter Tight 800 具有固定宽度的数字单元（`demo/main.js` 中的 `num()`），因此滚动计数器永远不会抖动。计数器会随着缓出而滚动，并在到达时变色。中文单位（箱、万箱）在数字后设置较小。
+- **图表**：左上角为中文标题（Noto Sans SC 900 64 px，≤ 6 个字符，因此可以在镜头中阅读），带有一根灰色英文线；线段逐段绘制（eio）；关键点有一个更大的点、一个扩展环（0.7秒）和一个块标签；条形从左侧开始一个接一个地增长（如果是重点，第一个条形会更慢且更长）。
+- **地图**：来自自然地球的状态形状，投影（阿尔伯斯），顺序填充一种色调的五个步骤，没有数据的状态为深灰色，带有“未单列”图例样本；主题状态以黄色勾勒，带有领导者和标签；地图将其推入其中。
+- **文件**：在深色桌面上以 220 dpi 渲染为白纸的 PDF 页面（±1–2° 倾斜、柔和阴影、晕影），缓慢推入；从 `pdftotext -bbox` 坐标（1 pt = 3.0556 px）放置的荧光笔矩形，`multiply` 混合，在 0.3–0.5 秒内从左→右扫描；从它读取的数字被重新设置为页面旁边的一个大黄色块。打印的文字为图片；必须读取的内容在类型中重新设置。
+- **分屏**：两半，带有先落下的4像素黄色分隔线； “坏”的一半不饱和、变暗并染成红色，“好”的一半是全等级的；每个标签块（中文+英文单词）和一个计数器；以分隔线为中心的共享印章。
+- **网格**：三个面板（632 px，12 px间隙）交错上升；每个灯都会在为其命名的单词上亮起（黄色边框，标签变为黄色）；编号为 1-2-3。
+- **冻结帧**：镜头停在一个帧上，0.14秒白色闪光，打孔1.0→1.12，饱和度降至45％，黄色角括号靠近主体，带有暂停标记的时间码芯片出现在右上角。
+- **标题刺**：黄色直纹页面（又是黄色的分类帐）在现场镜头中擦过左侧45％；标题猛击，英文标题和日期线芯片紧随其后；页面从左侧消失，标题成为频道错误。
 
-## 6. Grade and image quality
+<a id="6-grade-and-image-quality"></a>
+## 6. 等级和图像质量
 
-- One grade for every piece of footage: `contrast(1.07) saturate(0.92) brightness(0.98)` + a 6 % warm soft-light layer; documents 4 %. Light grain in the master (`mux.sh … 30 1`).
-- **Scale limits**: modern footage ≤ 1.5× (prepare frames at their final size with ffmpeg: crop, lanczos, `unsharp=5:5:0.45`); photos ≤ 1:1 of their source; archive material ≤ 2.5× after deblocking. Pushes stay inside those limits — a 720p source already at 1.5× gets no push.
-- Remove station logos by cropping (never cover them with a caption), blur legible private details (phone numbers, names on hives, number plates) with `delogo`, skip shots with burned-in text.
-- Captions, numbers and charts are always vector, never scaled footage.
+- 每段素材一个等级：`contrast(1.07) saturate(0.92) brightness(0.98)` + 6% 暖柔光层；文件 4%。光纹中大师（`mux.sh … 30 1`）。
+- **比例限制**：现代素材≤1.5×（使用ffmpeg准备最终尺寸的帧：crop、lanczos、`unsharp=5:5:0.45`）；照片 ≤ 1:1 来源；解块后档案材料≤2.5×。推送保持在这些限制内 - 已经是 1.5 倍的 720p 源无法推送。
+- 通过裁剪删除电台徽标（切勿用标题覆盖它们），使用 `delogo` 模糊清晰的私人详细信息（电话号码、蜂箱上的姓名、车牌号），使用烧录文本跳过镜头。
+- 标题、数字和图表始终是矢量，而不是缩放的素材。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-| Layer | What | Level |
+|层|什么|等级|
 |---|---|---|
-| Voice | one brisk narrator (Kokoro, speed 1.1–1.17), numbers spelled out in the TTS text | compressed, ≈ 8 dB over the music |
-| Music | 120 BPM pulse in sampled instruments: kit (kick on the beat, hats on off-beats), eighth-note electric bass, a sixteenth-note marimba ostinato, vibraphone off-beat chords, glockenspiel accents, staccato brass stabs on the big numbers, timpani and suspended cymbal for turns | ducked ~45 % under the voice |
-| Structure | the hook hit on frame 4; a hard stop into silence before the turn (only natural sound and the question); the turn lands on a major-key brass hit; half-time and low strings for the threat; a snare build into the spike; a second short silence before the verdict; a major chord with bells on the verdict | |
-| Foley | every graphic action has a sound: chunk slam (click + thump), counter rattle (a tick every 45 ms), whoosh into each card, highlighter squeak, camera shutter on the freeze, stamp thump on a big number, pops for labels, ticks as map states fill, a riser into the map push | |
-| Natural sound | the subject's own location sound (here a swarm), J-cut 0.3 s before the freeze, bed under the ending | not ducked below audibility |
+|嗓音|一位轻快的旁白（Kokoro，速度 1.1–1.17），TTS 文本中拼写出的数字|压缩，约 8 dB 超过音乐|
+|音乐|采样乐器中的 120 BPM 脉冲：套件（节拍上的鼓点，非节拍上的帽子）、八分音符电贝斯、十六分音符马林巴固定音型、电颤琴非节拍和弦、钟琴重音、大数字上的断奏铜管刺击、定音鼓和轮流悬挂镲片|在声音下躲避约 45%|
+|结构|钩子击中第 4 帧；转弯前强行停车（只有自然的声音和问题）；转牌落在大调铜管乐上；半场和低线威胁；尖刺中内置有圈套；判决前第二次短暂的沉默；带有判决铃声的大和弦| |
+|拟音|每个图形动作都有声音：大块猛击（点击+重击）、计数器嘎嘎声（每 45 毫秒一次滴答声）、每张卡片的嗖嗖声、荧光笔吱吱声、摄影机快门冻结、在大数字上敲击重击、弹出标签、地图状态填充时滴答声、竖板推入地图| |
+|自然的声音|对象自己的位置声音（这里是一群），冻结前 0.3 秒的 J 切，结尾下的床|不低于可听度|
 
-Master −14 LUFS, true peak −1.2 dB (`core/render/mux.sh`).
+主控−14 LUFS，真实峰值−1.2 dB (`core/render/mux.sh`)。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-1. **Frame-4 hook** — kicker line, then a giant number in a yellow block rolling to its value in 0.45 s, then the unit and the subject word (`hook()`).
-2. **Chunk slam with one yellow keyword** (`capCard()`).
-3. **Proportion by darkness** — a yellow line sweeps across the footage to the percentage; what it passed goes grey and dark; the figure appears on the dark side (`shotHalf()`). Works for any "X % of …".
-4. **The document says it** — headline or sentence highlighted from PDF bbox coordinates, then the number popped as a yellow block beside the paper (`paper()`, `shotDoc6()`, `shotQuote()`).
-5. **Freeze and question** — the image stops on the viewer's question, music cut to silence (`shotFreeze()`).
-6. **Ledger split** — two counters racing side by side, the difference stamped after both settle (`shotSplit()`).
-7. **Lit grid** — three ways / three causes, each panel lighting on its word (`shotGrid()`).
-8. **Punch and circle** — 0.3 s punch-in on the culprit, a circle drawn round it, a leader to its name and its Latin name (`shotSem()`).
-9. **Map to ground** — the map pushes into a region, then a photo of that place grows out of the region's outline (`shotMap()`).
+1. **Frame-4 hook** — 踢线，然后是黄色块中的巨大数字，在 0.45 秒内滚动到其值，然后是单位和主题词 (`hook()`)。
+2. **大块满贯，带有一个黄色关键字** (`capCard()`)。
+3. **暗度比例** — 一条黄线扫过素材的百分比；它所经过的地方变得灰暗；该图形出现在黑暗面（`shotHalf()`）。适用于任何“……的 X %”。
+4. **文档说它** - 从PDF bbox坐标突出显示的标题或句子，然后数字在纸张旁边以黄色块的形式弹出（`paper()`，`shotDoc6()`，`shotQuote()`）。
+5. **冻结并提问** — 图像停在观看者的问题上，音乐停止（`shotFreeze()`）。
+6. **账本分割** — 两个计数器并排比赛，两者结算后标记差异（`shotSplit()`）。
+7. **点亮网格** — 三种方式/三种原因，每个面板照明在其字上（`shotGrid()`）。
+8. **打孔和圈** - 0.3秒打入罪魁祸首，在其周围绘制一个圆圈，其名称及其拉丁名称（`shotSem()`）的前导。
+9. **地图到地面** - 地图推入一个区域，然后该地方的照片从该区域的轮廓中生长出来(`shotMap()`)。
 
-## 9. Material
+<a id="9-material"></a>
+## 9. 材质
 
-1. **Ask the user first** whether they have their own footage, photos, documents or data (and the rights to them). Their material comes first; the sources below are the fallback.
-2. **Where to look** (judge every file on its own page, not the search result):
-   - **Wikimedia Commons** (video and photos): read the licence on each file page. Fine: CC0, public domain, CC BY (credit author, title, licence on screen and in `CREDITS`). Not used: CC BY-SA, "no known restrictions", unclear licences, YouTube re-uploads, colourised or "restored" versions.
-   - **U.S. federal agencies** (USDA, USGS, NASA, NOAA, NARA): works of federal employees are public domain; check that the page does not credit a contractor or a third party. NASA: https://images.nasa.gov. NARA: https://catalog.archives.gov.
-   - **Internet Archive**: only items whose own page states public domain or a CC0/CC BY licence; U.S. works published before 1931 are public domain.
-   - **Library of Congress**: read each item's rights statement; "no known restrictions" is not enough.
-   - **Official documents and data** (reports, statistics, court filings) from the agency's own site: the source of every fact; keep `FACTS.md` (claim, URL, quoted wording, derived sums with their arithmetic).
-   - **Map geometry**: Natural Earth (public domain).
-3. **Before downloading, tell the user** what you will fetch, from where and under which licence, and keep within a size budget. The finder copied into this style, `demo/tools/footage.py` (`search commons|archive|nasa`, `fetch`, `used`, `md`), logs licence, author, page and the seconds used of each file into `SOURCES.jsonl` and writes `SOURCES.md`; `demo/tools/commons-tools/peek.py` previews a Commons video from thumbnails before downloading it, `seg.py` downloads only a segment of a long one, `commons_thumb.py` takes a standard-width thumbnail when the original is rate-limited. Wikimedia rate-limits bursts (HTTP 429): one request at a time with pauses.
-4. **People on screen**: no close-up or slow motion of an identifiable private person; public figures and people in the news event are fine. Never use generated images as footage.
+1. **首先询问用户** 他们是否拥有自己的镜头、照片、文档或数据（以及对它们的权利）。他们的材料是第一位的；以下来源是后备来源。
+2. **哪里看**（判断每个文件在自己的页面，而不是搜索结果）：
+   - **Wikimedia Commons**（视频和照片）：阅读每个文件页面上的许可证。精细：CC0、公共领域、CC BY（署名作者、标题、屏幕上和 `CREDITS` 中的许可证）。未使用：CC BY-SA、“无已知限制”、许可证不明确、YouTube 重新上传、彩色或“恢复”版本。
+   - **U.S.联邦机构**（USDA、USGS、NASA、NOAA、NARA）：联邦雇员的作品属于公共领域；检查该页面是否注明承包商或第三方。美国宇航局：https://images.nasa.gov. 奈良：https://catalog.archives.gov.
+   - **Internet Archive**：仅限其自己的页面声明公共域或 CC0/CC BY 许可证的项目； 1931 年之前出版的美国作品属于公共领域。
+   - **国会风格库**：阅读每个项目的权利声明； “没有已知的限制”是不够的。
+   - **官方文件和数据**（报告、统计数据、法庭文件）来自该机构自己的网站：每个事实的来源；保留 `FACTS.md`（声明、URL、引用的措辞、得出的总和及其算术）。
+   - **地图几何**：自然地球（公共领域）。
+3. **在下载之前，告诉用户** 您将要获取什么、从哪里以及在哪个许可证下获取，并保持在大小预算内。查找器复制到这种风格，`demo/tools/footage.py`（`search commons|archive|nasa`，`fetch`，`used`，`md`），将每个文件的许可证，作者，页面和使用的秒数记录到`SOURCES.jsonl`中并写入`SOURCES.md`; `demo/tools/commons-tools/peek.py` 在下载之前通过缩略图预览 Commons 视频，`seg.py` 仅下载长视频的一部分，`commons_thumb.py` 在原始速率受限时采用标准宽度的缩略图。维基媒体速率限制突发 (HTTP 429)：一次一个请求并暂停。
+4. **屏幕上的人物**：没有可识别个人的特写或慢动作；公众人物和新闻事件中的人都很好。切勿使用生成的图像作为素材。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-Copy `demo/` into the project and replace the content:
-- `main.js` — the page (`window.render(t)` draws synchronously with placeholders first, so `TEXTS(t)` is valid for `readcheck.mjs`, then loads the frames it needs and draws again). Shot functions per format; `SHOTS` table for cuts.
-- `timeline.json` — captions (`zh` with `|` chunks and `{keyword}`, `en`), voice start times, silences and hits; read by the page, `tools/cues.py` (.srt + timing check) and `audio/mix.py`.
-- `tools/prep.sh` — every video shot as a 30 fps JPEG sequence at its display size (crop, lanczos, unsharp, delogo); report pages; photos; the map projection (`tools/map_prep.py`).
-- `audio/mix.py` — sampled score from the timeline, foley from `events.json`, voice, natural sound, ducking.
-- `tools/fonts.sh` (OFL subsets for every character in `main.js`), `tools/final_check.sh` (loudness, black frames, speech-to-text of the final mix).
+将`demo/`复制到项目中并替换内容：
+- `main.js` — 页面（`window.render(t)` 首先与占位符同步绘制，因此 `TEXTS(t)` 对 `readcheck.mjs` 有效，然后加载其需要的帧并再次绘制）。 镜头每种格式的功能； `SHOTS` 切割台。
+- `timeline.json` — 字幕（`zh` 与 `|` 块和 `{keyword}`、`en`）、语音开始时间、静音和点击；按页读取，`tools/cues.py`（.srt + 时序检查）和`audio/mix.py`。
+- `tools/prep.sh` — 每个视频镜头作为其显示尺寸的 30 fps JPEG 序列（裁剪、lanczos、unsharp、delogo）；报告页；照片；地图投影 (`tools/map_prep.py`)。
+- `audio/mix.py` — 从时间线采样配乐，从 `events.json` 采样拟音，语音，自然声音，音量闪避。
+- `tools/fonts.sh`（`main.js` 中每个字符的 OFL 子集）、`tools/final_check.sh`（最终混音的响度、黑框、语音到文本）。
 
-## 11. Pitfalls
+<a id="11-pitfalls"></a>
+## 11. 陷阱
 
-- **Text that can't be read in its shot.** Chart titles ≤ 6 Chinese characters; ornamental stamps (datelines) must recur readably elsewhere; a label that changes text (a counter) is reported to `TEXTS` with its final value. Run `readcheck.mjs`.
-- **Two-line Chinese captions in 16:9** read as a slide. Split the sentence instead.
-- **The voice running to the cut**: lines that end on the cut feel rushed; speed the TTS (≤ 1.17 — faster, Kokoro starts to mangle names: "varroa" became "Veroa") or shorten the line.
-- **Homophones in ASR**: "requeen the weak" was heard as "week"; "varroa mite" as "might". Rewrite the line ("give old ones a new queen", "varroa mites").
-- **Words stronger than the source**: the report says "stressor", not "killer"; quarterly losses summed are not "annual net loss". Write what the source says.
-- **Footage from elsewhere**: illustrative footage (here Dutch hives) never carries a place label it doesn't have; dates on photos (an almond orchard in 2014) are stated in the credit.
-- **Blank first frames on transitions**: start split/grid/sting animations 0.1–0.15 s before the cut so frame 1 already has picture.
-- **Station logos**: crop them out; never park a caption over a logo.
+- **其内无法读取的文字镜头.** 图表标题≤6个汉字；装饰性邮票（日期日期）必须在其他地方清晰可见；更改文本的标签（计数器）将及其最终值报告给 `TEXTS`。运行 `readcheck.mjs`。
+- **16:9** 中的双行中文字幕以幻灯片形式阅读。相反，拆分句子。
+- **运行到剪切处的声音**：剪切处结束的线条感觉很匆忙；加快 TTS 速度（≤ 1.17 — 更快，Kokoro 开始破坏名称：“varroa”变成“Veroa”）或缩短线路。
+- **H ASR** 中的同音素：“requeen theweak”听成“week”； “瓦螨”为“可能”。重写该行（“给旧的一个新的女王”，“瓦螨”）。
+- **用词比来源更强**：报告说的是“压力源”，而不是“杀手”；季度亏损总和不是“年度净亏损”。写下消息来源所说的内容。
+- **来自其他地方的镜头**：说明性镜头（这里是荷兰蜂巢）永远不会带有它没有的地点标签；照片上的日期（2014 年的杏仁园）已在信用证中注明。
+- **在过渡上空白第一帧**：在剪切前0.1–0.15秒启动split/grid/sting动画，因此第1帧已经有图片。
+- **站标**：将其​​裁剪掉；切勿将标题放在徽标上。
 
-## 12. Variation space
+<a id="12-variation-space"></a>
+## 12. 变异空间
 
-The agent decides per film: topic, the turn, which formats are spent where, footage, the channel's fictional name and colour (keep one accent colour), the title.
+代理根据影片决定：主题、回合、在何处使用哪种格式、镜头、频道的虚构名称和颜色（保留一种强调色）、标题。
 
-- **Three structures:** the inverted pyramid with a mid-film turn (bad number → "really?" → the document says otherwise → why); a list of three that turns on the third; a countdown of numbers that ends on the one that matters.
-- **Three openings:** the biggest number on frame 4; the document headline highlighted in the first second; a freeze on the event with a question.
-- **Three endings:** a two-part verdict caption on footage with music returning after a silence; back to the hook's number, now re-read; the last data card's key point becoming the closing caption.
+- **三种结构：** 中间有一个影片转的倒金字塔（坏数→“真的吗？”→文件说不然→为什么）；一个包含三个的列表，打开第三个；倒计时的数字，以重要数字结束。
+- **三个开口：**为第4框上的最大数量；第一秒突出显示的文档标题；事件因一个问题而冻结。
+- **三个结局：** 镜头上的两部分判决标题，音乐在沉默后返回；回到钩子的号码，现在重读；最后一张数据卡的关键点成为结束语。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

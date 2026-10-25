@@ -1,52 +1,60 @@
-# Facts and sources · 《纽约的一天 / One Day in New York》
+<a id="facts-and-sources--纽约的一天--one-day-in-new-york"></a>
+# 事实与来源·《纽约的一天/纽约的一天》
 
-The film has no narration. Every number, date and quotation on screen is listed with its source and the source's wording. Checked on 2026-10-20; before the last render, the on-screen text in `tools/render.py` was compared item by item.
+影片没有旁白。屏幕上的每个数字、日期和引文都列出了其来源和来源的措辞。 2026年10月20日检查；在最后一次渲染之前，逐项比较 `tools/render.py` 中的屏幕文本。
 
-## On screen
+<a id="on-screen"></a>
+## 在屏幕上
 
-| On screen (Chinese / English) | Claim | Source |
+|屏幕显示（中文/英文）|宣称|来源|
 |---|---|---|
-| 8,804,190 · 纽约市人口 · 2020 普查 / NEW YORK CITY · 2020 CENSUS | Census of 1 April 2020: New York City population 8,804,190 | F1 |
-| 布鲁克林大桥，每天 / BROOKLYN BRIDGE · EACH DAY, 2024; 103,051 机动车 (vehicles) / 28,845 行人 (pedestrians) / 5,504 自行车 (cyclists) | Average daily crossings in 2024 | F2 |
-| 1899 (left cell of the split screen) | The left cell is the Edison company's 1899 film of a train crossing the bridge | F3 |
-| ≈220,000 · 每天走进时报广场（2024）/ PEOPLE A DAY · TIMES SQUARE · 2024 | About 220,000 people a day in 2024 | F4 |
-| The whole line is visible on the book page; title card: 我也曾在人群里。/ …I WAS ONE OF A CROWD, · WALT WHITMAN, LEAVES OF GRASS, 1860 | Second half of Whitman's line, 1860 edition p.380 | F5 |
-| Thin 24-hour ring (bottom right) | **A graphic, not a measurement**: it only shows the film's time running from night to night, stopping when the film brakes and running backwards in flashbacks. The footage was not shot on a single day (see F6) | — |
+|8,804,190 · 纽约市人口 · 2020 普查 / 纽约市 · 2020 年人口普查|2020 年 4 月 1 日人口普查：纽约市人口 8,804,190|F1|
+|布鲁克林大桥，每天 / BROOKLYN BRIDGE · EACH DAY, 2024; 103,051 辆（车辆） / 28,845 行人（行人） / 5,504 辆自行车（骑自行车者）|2024 年平均每日过境量|F2|
+|1899（分屏左侧单元格）|左边的格子是爱迪生公司1899年影片的一列过桥的火车|F3|
+|约220,000·每天走进时报广场（2024）/ PEOPLE A DAY·时代广场·2024|2024 年每天约 22 万人|F4|
+|整行文字在书页上清晰可见；标题卡：我也曾在人群里。/ …我是人群中的一员，·沃尔特·惠特曼，《草叶》，1860|惠特曼诗句的后半部分，1860 年版，第 380 页|F5|
+|细24小时环（右下）|**A图形，不是测量**：它只显示影片从一夜跑到另一夜的时间，当影片刹车时停止并在闪回中向后跑。该片段不是镜头一天的片段（参见 F6）|—|
 
-## F1 Population of New York City
+<a id="f1-population-of-new-york-city"></a>
+## 纽约市 F1 人口
 
-- U.S. Census Bureau QuickFacts, New York city, New York — https://www.census.gov/quickfacts/fact/table/newyorkcitynewyork/
-  Wording: "Population, Census, April 1, 2020 8,804,190"
-- NYC Department of City Planning, NYC Population — https://www.nyc.gov/site/planning/planning-level/nyc-population/nyc-population.page
-  Wording: "The enumerated population of New York City's was 8,804,190 as of April 1, 2020, a record high population."
+- 美国人口普查局 QuickFacts，纽约州纽约市 — https://www.census.gov/quickfacts/fact/table/newyorkcitynewyork/
+  措辞：“人口普查，2020 年 4 月 1 日 8,804,190”
+- 纽约市城市规划部，纽约市人口 — https://www.nyc.gov/site/planning/planning-level/nyc-population/nyc-population.page
+  措辞：“截至 2020 年 4 月 1 日，纽约市的统计人口为 8,804,190 人，创历史新高。”
 
-## F2 Brooklyn Bridge daily average
+<a id="f2-brooklyn-bridge-daily-average"></a>
+## F2 布鲁克林大桥日平均
 
-- NYC DOT, Brooklyn Bridge — https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml
-  Wording: "As of 2024, an average of 103,051 vehicles, 28,845 pedestrians, and 5,504 cyclists travel over the Brooklyn Bridge each day."
+- 纽约市交通局，布鲁克林大桥 — https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml
+  措辞：“截至 2024 年，平均每天有 103,051 辆汽车、28,845 名行人和 5,504 名骑自行车者穿过布鲁克林大桥。”
 
-## F3 The 1899 film
+<a id="f3-the-1899-film"></a>
+## F3 1899 影片
 
-- Wikimedia Commons file page (from the Library of Congress Motion Picture, Broadcasting and Recorded Sound Division, digital ID ntscrm.00045645, https://hdl.loc.gov/loc.mbrsmi/ntscrm.00045645):
+- 维基共享资源文件页面（来自美国国会电影、广播和录音部门，数字 ID ntscrm.00045645，https://hdl.loc.gov/loc.mbrsmi/ntscrm.00045645）：
   https://commons.wikimedia.org/wiki/File:New_Brooklyn_to_New_York_via_Brooklyn_Bridge,_no._2_(1899).webm
-  Title "New Brooklyn to New York via Brooklyn Bridge, no. 2", camera credit James H. White; licence note "published (or registered with the U.S. Copyright Office) before January 1, 1931".
-- The Library of Congress entry for No. 1 of the same film, https://www.loc.gov/item/2017604953 , states that the two films are nearly identical and were both produced by Edison Manufacturing Co.; the Silent Era filmography records the copyright registration of No. 2 as 22 September 1899 (Thomas A. Edison). The picture says only "1899", no exact date.
+  标题“通过布鲁克林大桥从新布鲁克林到纽约，2号”，摄影机，作者：James H. White；许可说明“1931 年 1 月 1 日之前发布（或在美国版权局注册）”。
+- 美国国会风格库的第 1 号条目影片 https://www.loc.gov/item/2017604953 指出，两个影片几乎相同，均由爱迪生制造公司生产； 《寂静时代》电影记录中第 2 号的版权注册日期为 1899 年 9 月 22 日（托马斯·A·爱迪生）。图片上只写了“1899”，没有具体日期。
 
-## F4 Pedestrians in Times Square
+<a id="f4-pedestrians-in-times-square"></a>
+## 时代广场的 F4 行人
 
-- Times Square Alliance, Market Research & Data — https://www.timessquarenyc.org/business-community/market-research-data
-  Wording: "In 2024, roughly 220,000 pedestrians entered Times Square each day."
-  The picture uses "≈" and "约" (about) to mark it as approximate; it gives only 2024 and no figures for other years (the same page also has a range of "200,000–250,000" and a peak day of 330,000; the film uses neither).
+- 时代广场联盟，市场研究和数据 — https://www.timessquarenyc.org/business-community/market-research-data
+  措辞：“2024 年，每天约有 22 万行人进入时代广场。”
+  图片中使用“≈”和“约”（about）来标记近似值；它只给出了 2024 年，没有提供其他年份的数据（同一页面也有范围“200,000–250,000”，峰值日为 330,000；影片两者都没有使用）。
 
-## F5 The Whitman quotation
+<a id="f5-the-whitman-quotation"></a>
+## F5 惠特曼名言
 
-- Walt Whitman, Leaves of Grass (Boston: Thayer and Eldridge, 1860), p.380, "Crossing Brooklyn Ferry" section 6. Scan: University of California Libraries / Internet Archive — https://archive.org/details/whitleavesofgrass00whitrich/page/380
-  Wording (checked word by word against the scanned page): "Just as any of you is one of a living crowd, I was one of a crowd,"
-  The whole line is visible in the book-page shot; the title card takes only the second half, "I was one of a crowd," (preceded by an ellipsis, all caps, comma kept). The Chinese "我也曾在人群里。" is this film's own translation ("也", "also", picks up the first half, "Just as any of you…").
+- 沃尔特·惠特曼，《草叶集》（波士顿：塞耶和埃尔德里奇，1860 年），第 380 页，“穿越布鲁克林渡轮”第 6 节。扫描：加州大学风格库/互联网档案馆 — https://archive.org/details/whitleavesofgrass00whitrich/page/380
+  措辞（对照扫描页面逐字检查）：“正如你们中的任何一个人都是活着的人群中的一员一样，我也是人群中的一员。”
+  整条线在书页镜头中可见；标题卡只占用后半部分，“我是人群中的一员”（前面有省略号，全部大写，保留逗号）。中文“我也曾在人群里。”是这个影片自己的翻译（“也”，“也”，拾取前半部分，“就像你们中的任何人一样......”）。
 
-## F6 Notes on the footage itself (not on screen, for the record)
+<a id="f6-notes-on-the-footage-itself-not-on-screen-for-the-record"></a>
+## F6 关于镜头本身的注释（不在屏幕上，仅供记录）
 
-- Schwab time-lapse: the Commons description says it was shot from the evening of 2023-07-22 to the early morning of 07-24, from the 36th floor of the Motto by Hilton New York City Chelsea, on a GoPro Hero 11. The film uses it as the clock of "one day" and gives no specific date.
-- Herder's "New York in Motion" was published in 2018 (Commons records 2018-05-30) and is made of time-lapses from more than 20,000 photographs and 60/120 fps slow motion.
-- Authors, dates and licence basis of the aerial and street footage are in CREDITS / SOURCES.md.
-- NASA ISS047 photo: photographed by Tim Kopra (Commons credit NASA/Tim Kopra).
+- Schwab 延时摄影：Commons 的描述称，这是镜头，从 2023 年 7 月 22 日晚上到 7 月 24 日凌晨，在纽约切尔西 Motto 希尔顿酒店 36 楼，使用 GoPro Hero 11。影片将其用作“一天”的时钟，但没有给出具体日期。
+- 赫尔德的《运动中的纽约》于 2018 年出版（Commons 记录 2018-05-30），由 20,000 多张照片的延时摄影和 60/120 fps 慢动作组成。
+- 航拍和街道镜头的作者、日期和许可依据位于 CREDITS / SOURCES.md 中。
+- NASA ISS047 照片：由 Tim Kopra 拍摄（共享版权 NASA/Tim Kopra）。

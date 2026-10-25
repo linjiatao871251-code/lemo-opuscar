@@ -1,86 +1,93 @@
-# Impasto · Palette Knife — our demo
+<a id="impasto--palette-knife--our-demo"></a>
+# 厚涂·调色刀 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Colour of Rain* (39.7 s) · `impasto.mp4` · source in [`demo/`](demo/)
+示范：*雨的颜色* (39.7 s) · `impasto.mp4` · 来源在 [`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A grey square in the rain. A street cellist plays and nobody stops; halfway through he gives up. A little girl opens a red umbrella in front of him: the film's first colour. The cello starts again as a waltz, and umbrella after umbrella turns to colour on the beat. From overhead, the crowd's waltz paints a coloured mandala on the cobbles. The last chord lands, the rain stops, colour fills the whole square.
+雨中的灰色方块。街头大提琴手演奏，没有人停下来；中途他放弃了。一个小女孩在他面前打开一把红色雨伞：影片的第一种颜色。大提琴再次以华尔兹的形式响起，一把又一把的雨伞随着节拍变成了色彩。从头顶上看，人群的华尔兹在鹅卵石上描绘出彩色的曼陀罗。最后一个和弦落地，雨停了，色彩充满了整个广场。
 
-Arc: loneliness (grey) → giving up (silence) → one touch of colour (the red umbrella) → being heard (the waltz) → the crowd (overhead choreography) → echo (same camera, grey turned to colour; the phrase that broke off on E resolves to D).
+弧线：孤独（灰色）→放弃（沉默）→一抹色彩（红伞）→被听到（华尔兹）→人群（头顶编舞）→回声（同摄影机，灰色变成彩色；在E处中断的乐句解析为D）。
 
-Why it fits the medium: colour is the story, and the knife can re-lay any stroke in a new colour. It is a music film with no narration: the title is laid in with the knife over the grey sky and washed off by the rain (it drifts down and fades).
+为什么它适合表现媒介：颜色就是故事，刀可以用新颜色重新铺设任何笔画。这是一首没有旁白的音乐影片：标题是用刀子放在灰色的天空上并被雨水冲刷掉的（它飘落并消失）。
 
-Native moves spent: colour re-laid by the knife (the umbrella opening, the cellist's recovery, the final chord filling the square); the one coloured thing (the red umbrella is the only colour in the first half); motion paints the picture (overhead, each umbrella drips its colour along its path, and the pull-back reveals a mandala); raking light (the sun grazes the ground at the final chord, then settles); paint-over transitions with a knife scrape.
+风格特有表现手法花：用刀重新铺色（伞张开、大提琴手回收、最后和弦填充方格）；单一颜色的东西（红色雨伞是上半部分唯一的颜色）；运动描绘了这幅画（在头顶上，每把雨伞沿着其路径滴下它的颜色，拉回来显示出一个曼陀罗）；耙光（太阳在最后的和弦处擦过地面，然后落下）；用刀刮过油漆过渡。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| # | Time | Shot / camera | Why |
+|#|时间|镜头 / 摄影机|为什么|
 |---|---|---|---|
-| 1 | 0–2.65 | CU cello body + bow, slight push | 3 s hook: the only colour in the grey world is the note (an amber ribbon), soon washed out by the rain |
-| 2 | 2.65–7.15 | Extreme wide, slow truck + push, paint-over in | The world: grey square, people hurrying. Title knifed in, then carried away by the rain |
-| 3 | 7.15–12.4 | Medium, one continuous push through the silence | Nobody stops: passers-by cross close to camera and block him; push to his face as he gives up |
-| 4 | 12.18–16.66 | Low CU on a puddle → tilt-up, hard cut | A boot lands on the splash; up to her, him, the umbrella; anticipation, POP, impact zoom |
-| 5 | 16.66–19.39 | Face CU → pull-back, hard cut on the downbeat | He looks up, lifts the bow; at 18.03 the bow lands and colour pours out of the cello |
-| 6 | 19.39–23.48 | Closer framing of the same wide, paint-over | The ribbon carries colour to each umbrella, one per beat |
-| 7 | 23.48–31.66 | Overhead, rotating + crane-out | Signature shot: choreography and the coloured trails on the ground |
-| 8 | 31.66–35.75 | Extreme wide (same set-up as 2), push toward the arch | Rhyme with the opening: grey to colour, raking light, umbrellas closing, birdsong |
-| 9 | 35.75–39.66 | End card, paint-over | Title, a red dot (an umbrella seen from above), credits |
+|1|0–2.65|CU大提琴琴体+琴弓，轻推|3 S钩：灰色世界中唯一的颜色是纸条（琥珀色的丝带），很快就被雨水冲掉了|
+|2|2.65–7.15|超宽，慢速卡车+推车，油漆覆盖|世界：灰色的广场，人们行色匆匆。标题被砍掉，然后被雨带走|
+|3|7.15–12.4|表现媒介，一连推打破沉默|没有人停车：路人靠近摄影机并阻止他；当他放弃时推到他的脸上|
+|4|12.18–16.66|水坑上的低 CU → 向上倾斜，硬切削|一只靴子落在溅起的水花上；给她，他，伞；预期、POP、冲击变焦|
+|5|16.66–19.39|面 CU → 拉回，强切上强拍|他抬起头，举起弓； 18.03 琴弓落地，色彩从大提琴中倾泻而出|
+|6|19.39–23.48|相同宽度、油漆覆盖的更近的框架|丝带为每把雨伞带来色彩，每节拍一把|
+|7|23.48–31.66|顶置式、旋转式+起重机吊出式|标志性镜头：舞蹈和地面上的彩色轨迹|
+|8|31.66–35.75|极宽（与 2 相同的设置），朝足弓方向推|开头押韵：灰色到彩色、耙光、雨伞关闭、鸟鸣|
+|9|35.75–39.66|片尾卡，喷漆|标题、红点（从上方看到的雨伞）、制作人员名单|
 
-Six moves (push, truck, tilt-up, pull, rotate, crane-out overhead); sizes from CU to extreme wide and overhead. The same wide camera serves the opening (grey), the middle (umbrellas in colour) and the finale (all colour): for this story, the change was the story. Keep the camera inside the painted plate.
+六种动作（推、卡车、倾斜、拉、旋转、吊车过顶）；尺寸从 CU 到超宽和头顶。同样的宽摄影机服务于开头（灰色）、中间（彩色雨伞）和结局（所有颜色）：对于这个故事，变化就是故事。将摄影机保留在涂漆板内。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-`demo/timeline.js` holds the grids; picture and score both read it.
+`demo/timeline.js` 持有网格；图片和配乐都读取了。
 
-- **Part A**: solo cello, D minor, 3/4 at 80 BPM from 0.4 s. The phrase stops on an unresolved E3 at 10.15 s; the bow leaves the string 0.3 s later.
-- **Silence** 10.45–12.4: rain nearly gone, one drip at 11.15, two small steps at 11.5 / 11.95 enter before the picture (J-cut), a big splash at 12.4 is the first sound after it.
-- **Part B**: street-musette waltz, D major, 3/4 at 132 BPM.
-  - 15.3 POP (pickup bar): glockenspiel + rising harp glissando.
-  - 16.66 accompaniment enters: pizzicato bass + accordion "oom-pah-pah".
-  - 18.03 the cello melody enters.
-  - 19.39–23.03 nine umbrellas, one per beat; glockenspiel pitches climb G→B→D / A→C#→E / D→F#→A.
-  - 23.48–31.21 overhead, six bars of choreography; accordion repeats the melody an octave up, one harp arpeggio per bar.
-  - 31.21 grand pause, digital zero; the rain freezes in the air.
-  - 31.66 final chord (tutti + timpani + suspended cymbal).
-  - Coda F#→E→D resolves the phrase that broke off at the start.
-  - 35.75 last pizzicato, end card.
-- Other voices: violin pizz, shaker.
+- **A部分**：大提琴独奏，D 小调，3/4，80 BPM，从 0.4 秒开始。该乐句在 10.15 秒处停在未解析的 E3 处； 0.3 秒后弓离开弦。
+- **沉默** 10.45–12.4：雨快停了，11.15 滴水，11.5 / 11.95 的两个小台阶进入画面之前（J-cut），12.4 处的大水花是它之后的第一个声音。
+- **B部分**：街头风笛华尔兹，D 大调，3/4，132 BPM。
+  - 15.3 POP（拾音杆）：钟琴+上升竖琴滑奏。
+  - 16.66 伴奏进入：低音拨奏+手风琴“oom-pah-pah”。
+  - 18.03 大提琴旋律响起。
+  - 19.39–23.03 九把伞，每节一把；钟琴音高爬升 G→B→D / A→C#→E / D→F#→A。
+  - 23.48–31.21 头顶，六小节编舞；手风琴将旋律重复一个八度，每小节一个竖琴琶音。
+  - 31.21 暂停，数字零；雨在空气中结冰了。
+  - 31.66 最后和弦（合奏 + 定音鼓 + 悬钹）。
+  - Coda F#→E→D 解析开头中断的乐句。
+  - 35.75 最后拨奏，片尾卡。
+- 其他声音：小提琴嘶嘶声、摇摇声。
 
-Sound design, section by section:
+声音设计，逐节：
 
-| Section | Bed | Foley | Music |
+|部分|床|拟音|音乐|
 |---|---|---|---|
-| CU | rain (slightly distant) | bow rosin, raindrops on varnished wood | the solo's first note |
-| Grey square | full rain + gutter trickle | wet cobble footsteps (placed by the walk algorithm, panned), knife scrape on the title | solo |
-| Medium | rain under the arcade (low-passed) | passers-by footsteps close + umbrella fabric brushing | solo, breaks off |
-| Silence | almost nothing | one drip, small steps (J-cut), big splash | none |
-| Girl | rain | nylon rustle, rib click, umbrella "fwump", paint dabs landing | POP |
-| Reaction | muffled rain | bow-lift air | accompaniment, then cello |
-| Street | rain (lowered) | each umbrella's "fwump" + a soft hiss as the ribbon arrives | waltz + glockenspiel arpeggios |
-| Overhead | rain | the crowd's water steps on the waltz (beat 1 heavy) | tutti |
-| Grand pause | digital zero | — | — |
-| Ending | rain stopped | drips, umbrellas closing, birdsong | chord → coda |
+|CU|雨（距离稍远）|弓松香，漆木上的雨滴|独奏的第一个音符|
+|灰色方块|满雨+阴沟细流|潮湿的鹅卵石足迹（由步行算法放置，平移），标题上的刀刮痕|独奏|
+|表现媒介|拱廊下的雨（低通）|路人脚步靠近+伞布刷洗|独奏，中断|
+|沉默|几乎什么都没有|一滴水，小步骤（J 形切割），大水花|没有任何|
+|女孩|雨|尼龙沙沙声，肋骨咔嗒声，雨伞“fwump”，油漆涂抹着陆|流行音乐|
+|反应|闷雨|弓举空气|伴奏，然后大提琴|
+|街道|雨（降低）|每把雨伞的“fwump”声+丝带到达时发出的轻柔的嘶嘶声|华尔兹+钟琴琶音|
+|开销|雨|人群的水踩着华尔兹（打1重）|合奏|
+|大暂停|数字零|—|—|
+|结束|雨停了|滴水、雨伞关闭、鸟鸣|和弦 → 尾声|
 
-Palette-knife scrapes sit on every repaint.
+每次重新喷漆时都会留下调色刀的刮痕。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- After-rain sunset sky: cobalt `#34507e` → peach `#d99a78` → gold `#f7dca0`. Facades ochre `#dca064` and rose `#c98d7e`, shutter green `#3f7a6c`, awning red `#b8342a`.
-- Umbrellas at full chroma: cadmium red `#dc2f28`, yellow `#f4bc2a`, cobalt `#2f62c0`, viridian `#23906c`, magenta `#cc3a82`, orange `#ee7a2a`, turquoise `#26aab4`, violet `#6e4cc0`.
-- Grey world = luminance of the same strokes, slightly cool, 5 % colour residue; its specular is slightly higher (wet).
-- Light: `light [-.55,-.6,.7]`, `norm 3.2`, `amb .8`, `dif .28`, `spec .16–.3`, `ao 1.2`.
-- Stroke sizes: 40–60 px planes in sky and walls, 3–6 px only at edges and faces. Knife stroke: skew ±0.55, angle jitter ±13°, value jitter ±6 %. Figures and umbrellas use `run: 0–0.25` so they stay solid.
-- Figures: the cellist (IK bow arm, bow direction changes on each note), the girl (dips the umbrella before it snaps open), the crowd (rings swell on every downbeat; umbrellas pop on beats with a scale bounce and a burst of paint dabs, swing down to hang after closing). Faces: eyes, brows and mouth are separate procedural strokes so they can act.
-- Wet reflections: stacks of short horizontal dabs under each lamp and window.
+- 雨后夕阳天空：钴色`#34507e`→桃色`#d99a78`→金色`#f7dca0`。外墙赭色`#dca064`和玫瑰色`#c98d7e`，百叶窗绿色`#3f7a6c`，遮阳篷红色`#b8342a`。
+- 全色度伞：镉红 `#dc2f28`、黄色 `#f4bc2a`、钴 `#2f62c0`、翠绿色 `#23906c`、洋红色 `#cc3a82`、橙色 `#ee7a2a`、绿松石色`#26aab4`，紫色`#6e4cc0`。
+- 灰色世界=同笔画亮度，略冷，5%色彩残留；它的镜面反射稍高（湿）。
+- 灯：`light [-.55,-.6,.7]`、`norm 3.2`、`amb .8`、`dif .28`、`spec .16–.3`、`ao 1.2`。
+- 描边大小：天空和墙壁中的平面为 40–60 像素，仅边缘和面上为 3–6 像素。刀行程：偏斜±0.55，角度抖动±13°，数值抖动±6%。人物和雨伞使用 `run: 0–0.25`，因此它们保持坚固。
+- 人物：大提琴手（IK 弓臂，弓的方向在每个音符上发生变化）、女孩（在雨伞突然打开之前将其浸入水中）、人群（每一个强拍时铃声都会膨胀；雨伞随着音阶弹跳和一阵油漆涂抹而在节拍上弹出，关闭后向下摆动以悬挂）。脸部：眼睛、眉毛和嘴巴是单独的程序笔触，因此它们可以动作。
+- 湿反射：每盏灯和窗户下都有一堆短的水平轻拍。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Knife-painted title on deep ultramarine, a red dot (an umbrella from above), and crisp DOM text for the credits (small text must stay legible): "an impasto palette-knife study", then "Lemo-Opuscar · LemoLab × Claude Opus 5.5", then the sample and font credits. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card (the line lives in `demo/film.js`: remove it if you adapt that file).
+深群青色上的刀画标题、一个红点（上方的雨伞）和清晰的 DOM 致谢文本（小文本必须保持清晰）：“厚涂调色刀研究”，然后是“Lemo-Opuscar · LemoLab × Claude Opus 5.5”，然后是示例和字体致谢人员。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本（该行位于 `demo/film.js` 中：如果您修改该文件，请将其删除）。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/impasto/demo/
@@ -92,32 +99,33 @@ styles/impasto/demo/
   tools/dump_timeline.mjs  timeline → out/timeline.json    build.sh
 ```
 
-1. `timeline.js` first: BPM grids, cut times, melodies, pops. `tools/dump_timeline.mjs` writes `out/timeline.json` for the score.
-2. Sets in `scenes/*.js` → `paintRef()`.
-3. `film.js`: shots, cameras, transitions, post.
-4. `music/score.py`, then `mix.py`.
-5. `sh styles/impasto/demo/build.sh` renders everything (≈ 30 s of GPU render for 952 frames), muxed with grain 0.
+1. `timeline.js` 第一：BPM 网格、剪切时间、旋律、流行音乐。 `tools/dump_timeline.mjs` 为配乐写入 `out/timeline.json`。
+2. 设置为 `scenes/*.js` → `paintRef()`。
+3. `film.js`：镜头，相机，转场，后期。
+4. `music/score.py`，然后 `mix.py`。
+5. `sh styles/impasto/demo/build.sh` 渲染所有内容（约 30 秒的 GPU 渲染 952 帧），与grain 0 混合。
 
-Engine-level traps: `half` is a reserved word in GLSL ES 3.00; binding the composite quad while a stroke VAO is still bound silently rewires attribute 0 ("vertex buffer not big enough" on the next frame): unbind the VAO first.
+引擎级陷阱：`half`是GLSL ES 3.00中的保留字；当笔画 VAO 仍然绑定时，绑定复合四边形会默默地重新连接属性 0（下一帧上的“顶点缓冲区不够大”）：首先取消绑定 VAO。
 
-Pitfalls tied to this demo's props:
-- Umbrella radius 0.46 × body height looked like a parasol table; 0.34 reads as an umbrella.
-- Coats as plain rectangles read as bollards: A-line taper + lit edge + shoulder dab + hair dab.
-- A global index in the per-shot ribbon loop flung control points off-screen (a streak from the sky).
-- Painting the ground after the buildings covered their feet.
+与示范的道具相关的陷阱：
+- 伞半径0.46×伞体高度，形似阳伞桌； 0.34 读作雨伞。
+- 普通矩形的外套解读为护柱：A 形锥形 + 亮边 + 肩部轻拍 + 头发轻拍。
+- 每个镜头色带环中的全局索引将控制点抛到屏幕外（从天空中划出的一条条纹）。
+- 建筑物遮住脚后，对地面进行粉刷。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-`demo/engine/impasto.js` (renderer) and `demo/engine/plate.js` (reference → strokes).
+`demo/engine/impasto.js`（渲染器）和`demo/engine/plate.js`（参考→笔画）。
 
-| API | What it does |
+|应用程序编程接口|它的作用|
 |---|---|
-| `new Impasto(canvas, {W, H, ss})` | WebGL2 renderer, supersampled colour + height buffers |
-| `E.begin()` / `E.finish(post)` | start a frame / light + grade (`light, norm, amb, dif, spec, ao, expo, sat, vig…`) |
-| `E.batch(Float32Array)` → `E.draw(batch, o)` | static stroke set. `o = {M, cam:{x,y,zoom,rot}, t, grey, reveal, revDur, appear, appDur, alpha, run, hgt}` |
-| `E.drawNow(Float32Array, o)` | transient strokes (figures, weather, ribbons) |
-| `E.texture(canvas)` + `E.under(tex, w, h, o)` | thin underpainting (supports `revC:[x,y,speed]` reveal wave) |
-| `new Strokes().push({x,y,ang,len,wid,c,c2,type,taper,bend,skew,alpha,hgt,rev,app,seed})` | build strokes; `type`: `KNIFE`, `BRUSH`, `DAB`, `LINE` |
-| `new Ref(w, h, scale)` + `.fill(path, fill, props)` / `.line` / `.text` / `.tint` | reference illustration; props `{dir, maxR, detail, group, type, hgt, jit, len, wid, aj, fallback}` |
-| `paintRef(ref, {R:[radii], T, rev(x,y), app(x,y,level)})` | coarse→fine knife strokes confined to shape groups |
-| `strokePath(out, pts, {wid, c, type, step})` | strokes along a polyline |
+|`new Impasto(canvas, {W, H, ss})`|WebGL2 渲染器、超采样颜色 + 高度缓冲区|
+|`E.begin()` / `E.finish(post)`|启动架/灯+等级（`light, norm, amb, dif, spec, ao, expo, sat, vig…`）|
+|`E.batch(Float32Array)` → `E.draw(batch, o)`|静态行程设置。 `o = {M, cam:{x,y,zoom,rot}, t, grey, reveal, revDur, appear, appDur, alpha, run, hgt}`|
+|`E.drawNow(Float32Array, o)`|短暂的笔画（人物、天气、丝带）|
+|`E.texture(canvas)` + `E.under(tex, w, h, o)`|薄底漆（支持`revC:[x,y,speed]`显示波浪）|
+|`new Strokes().push({x,y,ang,len,wid,c,c2,type,taper,bend,skew,alpha,hgt,rev,app,seed})`|构建笔画； `type`：`KNIFE`、`BRUSH`、`DAB`、`LINE`|
+|`new Ref(w, h, scale)` + `.fill(path, fill, props)` / `.line` / `.text` / `.tint`|参考图解；道具 `{dir, maxR, detail, group, type, hgt, jit, len, wid, aj, fallback}`|
+|`paintRef(ref, {R:[radii], T, rev(x,y), app(x,y,level)})`|粗→细刀划仅限于形状组|
+|`strokePath(out, pts, {wid, c, type, step})`|沿折线的笔画|

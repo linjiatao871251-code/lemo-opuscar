@@ -1,115 +1,123 @@
-# Blueprint — our demo
+<a id="blueprint--our-demo"></a>
+# 蓝图——我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Patent Pending: The Cloud Catcher* (46.7 s) · `blueprint.mp4` · source in [`demo/`](demo/)
+示范：*正在申请专利：云捕手*（46.7 秒）·`blueprint.mp4`·来源在 [`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-An inventor's patent drawing of a cloud-catching machine: it is drawn, exploded, runs perfectly, but there are no clouds; the hand revises the drawing, the revision cloud becomes a real rain cloud, it rains on the drawn garden and a flower grows. The original notes on the style's story powers, as written for this demo:
+一位发明家的捕云机专利图：画出来了，爆炸了，运行完美，但没有云；手修改图，修改后的云变成真正的雨云，下雨在画好的花园里，一朵花长出来。关于该风格的故事力量的原始注释，如为此示范所写：
 
-The whole film happens **on one sheet of blueprint paper** lying on a dark drafting table. Everything is white line work on uneven Prussian blue: centre lines, outlines, hatching, dimension lines, leader lines with numbered balloons, a title block and a notes column. The camera moves over the sheet like an eye reading a drawing. It is a **2D line-drawing language**. You may use orthographic and oblique/isometric projection, but **never 3D rendering**.
+整体影片发生**在一张蓝图纸上**躺在黑暗的绘图桌上。一切都是不均匀的普鲁士蓝上的白线作品：中心线、轮廓、剖面线、尺寸线、带有编号气球的引导线、标题栏和注释栏。这摄影机运动就像一只眼睛在读图画一样。它是一个**2D画线语言**。您可以使用正字法和oblique/isometric投影，但是**从不 3D 渲染**.
 
-The charm is the tension between **rigorous engineering convention** and **whimsy**. The drawing is dry and exact. The notes carry the jokes ("10 · COUNTERWEIGHT (GRANDMOTHER'S IRON)"). And once per film, a drawing symbol breaks the rules and becomes real.
+魅力在于**严谨的工程惯例**和**奇想**之间的张力。绘图干燥而精确。音符带有笑话（“10·平衡物（祖母的铁）”）。一旦按照影片，绘图符号就打破了规则并变得真实。
 
-Learn grammar from, but never copy: the moving technical drawings in Prologue Films' *Iron Man* (2008) end credits, Leonardo's *Codex Atlanticus* pages, 19th-century US patent drawings (Fig. 1 / Fig. 2, part balloons, fine-line shading) and the automaton drawings in *Hugo* (2011). No Marvel elements, no real patents, no real inventor's machine or signature.
+学习语法，但切勿抄袭：Prologue 影片' *Iron Man* (2008) 片尾字幕中的移动技术图纸、Leonardo 的 *Codex Atlanticus* 页面、19 世纪美国专利图纸（图 1 / 图 2，部分气球、细线阴影）以及 *Hugo* (2011) 中的自动机图纸。没有漫威元素，没有真正的专利，没有真正的发明人的机器或签名。
 
-The machine (or object, or plan) **is the character**. Parts act: a boom lifts hopefully or droops, a weather vane perks up or sags, bellows breathe, a gauge needle twitches at zero. The inventor appears only as a **hand shadow with a pen tip**, or as a signature.
+机器（或对象，或计划）**是角色**。零件的作用：吊杆满怀希望地升起或下垂，风向标向上或下垂，风箱呼吸，仪表指针在零处抽动。发明人仅以带有笔尖**的手影**的形式出现，或者以签名的形式出现。
 
-| Native power | How the demo used it |
+|原生电源|示范如何使用它|
 |---|---|
-| **Drafting order** | The object draws itself the way an engineer would: centre lines → outlines → gears/detail → hatching → dimensions → balloons → label. Each layer lands on a beat. |
-| **Live annotations** | Dimension lines measure moving parts and the numbers change. Leader lines and balloons fly with exploded parts. A section line A–A sweeps across a housing and reveals the inside. |
-| **Fig. numbers as transitions** | "FIG. 1" gets struck through and rewritten "FIG. 2 · EXPLODED VIEW", then "FIG. 3 · IN OPERATION". |
-| **Projection is a camera** | Animate the oblique depth factor from 0 (flat elevation) to 0.5. The line drawing "turns" and gains thickness, with no 3D renderer. Exploded parts fly along the depth axis. |
-| **Drawing symbols made real** (put this at the emotional peak) | A revision cloud becomes a real rain cloud. Other candidates: a dimension arrow becomes a real arrow, a hatch pattern becomes rain, a centre line becomes a road, a weld symbol sparks. Rule: **this one symbol is the only thing in the film that leaves the drawing language.** It gets soft volume, gradient, glow, and a shadow that falls across the drawing's lines. |
-| **Cyanotype and water** | Rain on the sheet: each drop blooms deeper blue with a pale tide line, and white lines inside the stain go soft. A drop on the signature makes it bleed. |
-| **The title block** | Title card = sheet header. Status field = the story's verdict (a red rubber stamp is the film's only non-blue colour). End card = the title block's last row being lettered in (STYLE / DRAWN BY). |
+|**起草订单**|该对象以工程师的方式绘制自身：中心线→轮廓→gears/detail→剖面线→尺寸→气球→标签。每一层都有节拍。|
+|**实时注释**|尺寸线测量运动部件并且数字发生变化。引导线和气球带着爆炸的零件飞翔。剖面线 A-A 横扫外壳并显露出内部。|
+|图 **数字作为转换**|“图 1”被删除并重写为“图 2·分解图”，然后是“图 3·运行中”。|
+|**投影是相机**|将倾斜深度系数设置为从 0（平坦高程）到 0.5 的动画。线条图“转动”并增加厚度，无需 3D 渲染器。爆炸的零件沿着深度轴飞行。|
+|**绘画符号变得真实**（把这个放在情感高峰）|修正云变成真正的雨云。其他候选：尺寸箭头变成真正的箭头，填充图案变成雨，中心线变成道路，焊接符号火花。规则：**这个符号是影片中唯一离开绘图语言的符号。** 它具有柔和的体积、渐变、发光和落在绘图线条上的阴影。|
+|**氰版和水**|床单上的雨：每一滴水都绽放出更深的蓝色，并带有浅色潮线，污渍内的白色线条变得柔和。签名上的一滴水会使签名流血。|
+|**标题栏**|标题卡=表头。状态字段 = 故事的结论（红色橡皮图章是影片唯一的非蓝色）。 片尾卡 = 标题块的最后一行以 (STYLE / DRAWN BY) 字母表示。|
 
-**How we adapted the topic** (and the same recipe for others): turn the topic into **something designed** and let the drawing find a flaw that only the drawing can fix. A product launch becomes Fig. 1, exploded view, operation, then a revision that adds the missing feature. A love story: two machines on one sheet, and a revision cloud draws the bridge. A history lesson: a city plan revised again and again (REV. 1, 2, 3).
+**我们如何改编主题**（以及其他人的相同配方）：将主题变成**设计的东西**并让绘图找到只有绘图可以修复的缺陷。产品发布变成了图 1、分解图、操作，然后是添加缺失功能的修订版。一个爱情故事：两台机器在一张纸上，修订云绘制了桥梁。历史教训：一次又一次修改的城市规划（REV.1、2、3）。
 
-**Demo emotional arc (46.7 s):** curiosity (blank sheet, the object is drawn) → pride (exploded view) → excitement (it runs, on the beat) → the flaw (it works perfectly but the world lacks something; music stops) → the hand revises the drawing → **the symbol becomes real** (suspended chord, no voice) → payoff → echo (stamp, signature, title block).
+**演示情感弧线（46.7秒）：**好奇心（白纸，物体被画出来）→骄傲（爆炸图）→兴奋（它运行，节奏）→缺陷（它工作完美，但世界缺少一些东西；音乐停止）→手修改绘图→**符号变成real**（悬置和弦，无声音）→ 支付→ 回声（印章、签名、标题栏）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Whole sheet on the dark table. The roll snaps open, then the T-square. Establishing shot only. |
-| Title | Push to the header lettering. |
-| Drawing | Medium on Fig. 1, machine ~80% of frame height, empty sky on the right (subtitles live there). |
-| Exploded view | Pull back so the machine is centre-left and the parts list peeks in on the right. |
-| Operation (the memorable shot) | Cut to a 2× close-up of crank and gears, then **track along the drive chain** up the mast to the boom and follow the net's arc. The camera follows the path of force. |
-| The flaw | Medium-wide with lots of empty sky. The emptiness is the joke. |
-| Revision | Locked-off while the hand shadow draws. Hold one beat on the finished symbol. |
-| Symbol comes alive | Slow push-in, no voice. |
-| Payoff | Follow the object down to the target, push in on the result (the flower). |
-| Ending | Pull back to the whole sheet (scale reveal). The stamp lands in the wide. Push to the title block for the end card. |
+|开幕|整张纸放在黑暗的桌子上。卷筒突然打开，然后是丁字尺。仅建立镜头。|
+|标题|推至标题字母。|
+|绘画|图 1 上的表现媒介，机器约为帧高度的 80%，右侧是空的天空（那里有字幕）。|
+|分解图|向后拉，使机器位于中间偏左，零件清单在右侧可见。|
+|操作（难忘的镜头）|切换到曲柄和齿轮的 2 倍特写，然后 **沿着传动链** 沿着桅杆向上移动到吊杆并沿着网的弧线移动。 摄影机遵循力的路径。|
+|缺陷|表现媒介宽阔，天空空旷。空虚就是个笑话。|
+|修订|手影绘制时锁定。在完成的符号上保持一拍。|
+|符号变得生动起来|缓慢推进，没有声音。|
+|付清|沿着物体向下到达目标，推动结果（花）。|
+|结束|拉回整张纸（比例显示）。邮票落在了广阔的地方。推至片尾卡的标题栏。|
 
-Keep storytelling shots close. Only the opening and closing establishing shots are full-sheet.
+保持讲故事镜头的紧密性。仅建立镜头的开头和结尾是全页的。
 
-Demo motion numbers: exploded parts leave one every ~0.055 of the progress on eighth notes and come back one eighth note per group with a brass click; gears advance 7.5° (one tooth) per eighth note with a 0.35-beat ease-out; bellows breathe per beat; failure over ~1.5 s (gears slow, bellows deflate, boom sags, vane droops); joy = vane snaps upright, needle overshoots to 1. The original motion section:
+示范动作编号：分解的零件在八分音符上每约 0.055 个进度留下一个，并通过铜管咔嗒声返回每组一个八分之一音符；齿轮每八分音符前进 7.5°（一个齿），缓出 0.35 拍；风箱每拍呼吸一次；超过约 1.5 秒的故障（齿轮缓慢、波纹管放气、动臂下垂、叶片下垂）； Joy = 叶片突然直立，针超调至 1。 原始运动部分：
 
-- Line **draw-on** is truncated by arc length, with a small glowing nib at the head. Stagger items within a layer. Each layer starts on a beat.
-- **Exploded view**: parts leave in sequence, one every ~0.055 of the progress, on eighth notes, with eased motion. The camera pulls back to make room. Parts come back **one eighth note per group with a brass click**.
-- **Mechanisms step on the grid**: gears advance one tooth (7.5°) per eighth note with a 0.35-beat ease-out, like an escapement. Meshing phase is computed so teeth really interlock. Chain links move with the pinion. Bellows breathe per beat.
-- **Machine acting**: boom angle, vane droop, bellows volume and gauge needle are the face. Failure means the gears slow, the bellows deflate, the boom sags and the vane droops over ~1.5 s. Joy means the vane snaps upright and the needle overshoots (back-ease) to 1.
-- **Camera moves on ones (24 fps)**, continuous within a section, with hard cuts on downbeats between sections. Two tiny camera bumps: the paper slap and the stamp.
+- 线**绘制**被弧长截断，头部有一个发光的小笔尖。错开层内的项目。每层都以节拍开始。
+- **分解图**：零件按顺序离开，每〜0.055的进度一个，在八分音符上，动作轻松。 摄影机向后拉以腾出空间。部件返回 **每组八分音符，带有铜管点击器**。
+- **机械装置踩在网格上**：齿轮每八分之一音符前进一齿（7.5°），以 0.35 拍的缓出速度，就像擒纵机构一样。啮合阶段经过计算，因此牙齿确实互锁。链节随小齿轮移动。风箱每拍一次呼吸。
+- **机械动作**：动臂角度、叶片下垂度、波纹管容积、表针为面。故障意味着齿轮变慢、波纹管泄气、动臂下垂且叶片下垂超过约 1.5 秒。喜悦意味着叶片突然直立并且指针超调（后缓）至 1。
+- **摄像机在一个片段 (24 fps)** 上移动，在一个部分内连续移动，在部分之间对强拍进行硬剪切。两个微小的摄影机凸起：纸片和邮票。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music**: two-part **baroque invention** at 108 BPM in G major. Harpsichord theme (a one-bar sixteenth-note "gear" motive), bassoon staccato imitating two octaves below.
-  - Operation adds violins and cellos spiccato eighths ("gears biting").
-  - The flaw: instruments drop out with a written-out ritardando, then true digital silence.
-  - The revision is silent except for a three-note questioning figure.
-  - The miracle holds a Dsus4 string chord with two breathing swells, unresolved.
-  - The catch resolves to G on the downbeat.
-  - Rain uses harp and harpsichord arpeggios.
-  - A short full cadence lands on the stamp, and the theme returns in augmentation for the end card.
-  - Rendered with `core/audio/sampler.py`: VCSL harpsichord and harp, VSCO 2 CE bassoon, strings and spiccato.
-- **Foley follows materials**:
-  - Paper: roll unroll crackle and slap, T-square wood slide, technical pen scratch (2–6 kHz grain, length = stroke length), lettering (bursts of short strokes), compass squeak, hatching (13 strokes/s).
-  - Brass and wood: part clicks (3.1 / 5.2 kHz resonances), escapement ticks, chain rattle, bellows breath, wind-down ticks that slow by ×1.35.
-  - The magic moment: soft paper "puffs" on the two breaths, a noise swell, nothing else.
-  - Water: soft damped pats per drop plus a light rain bed.
-  - Rubber stamp thump, pen cap click at the very end.
-- **Voice**: dry-humoured British engineer reading his own design notes, Kokoro `bm_daniel`, `lang en-gb`, speed 0.9. Five or six short lines. Keep the climax voiceless.
-- **Mix**: music ducks to ~0.36 under voice and foley ducks by half. Whooshes low-passed at 2.5 kHz (they masked "bellows" in whisper). −14 LUFS. `mux.sh` grain 4 (the paper grain is in the image already).
+- **音乐**：两部分**巴洛克发明**，G大调108 BPM。大键琴主题（单小节十六分音符“齿轮”动机），巴松管断奏模仿下面两个八度音阶。
+  - 操作添加了小提琴和大提琴八度音符（“齿轮咬合”）。
+  - 缺陷：乐器退出时伴随着写出的慢节奏，然后是真正的数字静音。
+  - 修订版除了三个音符的提问数字外，一言不发。
+  - 这个奇迹保留了 Dsus4 弦乐和弦，带有两个呼吸音，但未解决。
+  - 在悲观的情况下，捕获结果为 G。
+  - Rain 使用竖琴和大键琴琶音。
+  - 一个短而完整的节奏落在邮票上，主题在片尾卡的增强中回归。
+  - 使用 `core/audio/sampler.py` 渲染：VCSL 大键琴和竖琴、VSCO 2 CE 巴松管、弦乐和留笛。
+- **Foley 遵循材料**：
+  - 纸张：卷展开的裂纹和拍击声、T 形木幻灯片、技术笔划痕（2-6 kHz 纹理，长度 = 笔画长度）、刻字（短笔画的爆发）、指南针吱吱声、阴影线 (13 strokes/s)。
+  - 黄铜和木材：零件咔嗒声（3.1 / 5.2 kHz 共振）、擒纵机构滴答声、链条嘎嘎声、风箱呼吸声、减慢 ×1.35 的上弦滴答声。
+  - 神奇的时刻：软纸在两次呼吸时“噼啪”地响，一声巨响，除此之外什么也没有。
+  - 水：每滴软湿拍加小雨床。
+  - 橡皮图章砰的一声，笔帽在最后发出咔哒声。
+- **嗓音**：冷幽默的英国工程师在读自己的设计笔记，Kokoro `bm_daniel`、`lang en-gb`，速度0.9。五六条短线。保持高潮无声。
+- **混音**：音乐在语音下闪避至 ~0.36，拟音闪避一半。在 2.5 kHz 处发出低通嘶嘶声（他们用耳语掩盖了“风箱”）。 −14 LUFS。 `mux.sh` 纹理 4（纸张纹理已在图像中）。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Sheet**: 3200 × 2200 units, folded in quarters. The blue is procedural in a WebGL fragment shader in *sheet coordinates*, so it stays crisp at any zoom. Low-frequency fbm between `#18336B` and `#2A58A6`, horizontal coating streaks, a slight left-to-right fade, fibre noise, sparse fibres, fold creases (bright edge, dark edge, worn whitening along the fold), irregular bleached edges and corners, small specks. Outside the sheet: dark drafting cloth `#0D1116` with a drop shadow.
-- **Lines**: pale blue-white `#E7F0F9`, slightly soft (mipmap bleed), with a faint ink breakup driven by paper grain.
-  - Weights in sheet units: outline 3.2, detail 2.0, thin 1.25, hair 0.9.
-  - **Screen width = sheet width × zoom^0.65.** Close-ups do not turn into sausages and wides do not vanish.
-  - Dashes: centre line `[34,7,6,7]`, hidden `[11,7]`, phantom (cutting plane) `[30,6,5,6,5,6]`, all scaled with zoom so the pattern stays on the paper.
-- **Occlusion**: every solid is filled with "paper" (black in the ink buffer) before its outline is stroked, painter's order. Extrusion in oblique uses a sweep: stroke the outline at N depth steps at 2× width, then fill the same N steps with paper. What survives is a clean silhouette of half width. Front face and visible vertex connectors are drawn on top.
-- **Composite**: the ink canvas is greyscale (white = exposed line). The fx canvas has R = shadow darkening, G = wetness, B = stamp ink, and is added with `lighter`. The overlay canvas holds subtitles. Shadows darken lines too, which is how a lifted object proves it has left the paper. To keep an object from being darkened by its own shadow, multiply its area by `rgb(0,255,255)` on the fx canvas.
-- **Hatching** (fine-line shading) for sections, soil and the counterweight, at 45°, spacing 8–14 units.
-- **The magic object** (climax only): union of circles (15 scallops plus 4 inner lobes).
-  - Flat state: an outward-scalloped revision cloud.
-  - Puffed state: one radial gradient across the whole union (top-left light) plus small highlights on the top lobes, a blurred white glow, engraved crescent shading on the lower right (mask = union minus the union shifted up-left), and a thicker outline on the shadow side.
-  - It leaves a pale "unexposed imprint" where it was drawn. Its shadow offset grows with lift (up to ~240 units down).
-- **Palette discipline**: blue and white only. One stamp red `#C23B2E`, used exactly once.
-- **Typography** (all OFL):
-  - Architects Daughter for hand lettering (header, labels, notes, subtitles).
-  - B612 / B612 Bold for title-block fields and "PATENT PENDING".
-  - Allura for the signature.
-  - Text is written on left to right with a glowing nib.
+- **床单**：3200 × 2200 单位，对折。蓝色是 WebGL 片段着色器中 *图纸坐标* 中的程序性颜色，因此它在任何缩放下都保持清晰。 `#18336B`和`#2A58A6`之间的低频FBM，水平涂层条纹，从左到右轻微褪色，纤维噪声，纤维稀疏，折叠折痕（亮边，暗边，沿折叠处磨损发白），不规则漂白边角，小斑点。外页：深色绘图布 `#0D1116`，带阴影。
+- **线路**：淡蓝白色`#E7F0F9`，稍软（mipmap 渗色），纸纹驱动下有微弱的油墨破裂。
+  - 以纸张单位表示的重量：轮廓 3.2、细节 2.0、薄 1.25、毛发 0.9。
+  - **屏幕宽度=纸张宽度×缩放^0.65。** 特写不会变成香肠，宽幅不会消失。
+  - 虚线：中心线 `[34,7,6,7]`、隐藏的 `[11,7]`、幻影（切割平面）`[30,6,5,6,5,6]`，全部通过缩放进行缩放，以便图案保留在纸张上。
+- **闭塞**：每个实体在其轮廓被描画之前都被“纸”填充（墨水缓冲区中的黑色），这是画家的命令。倾斜挤压使用扫掠：以 2 倍宽度在 N 个深度步骤上描画轮廓，然后用纸张填充相同的 N 个步骤。留下的是半宽的干净轮廓。正面和可见的顶点连接器绘制在顶部。
+- **合成的**：墨水画布为灰度（白色=外露线）。 fx 画布具有 R = 阴影变暗、G = 湿度、B = 印章墨水，并添加了 `lighter`。覆盖画布包含字幕。阴影也会使线条变暗，这就是举起的物体证明它已经离开纸张的方式。要防止对象因其自身的阴影而变暗，请将其面积乘以 fx 画布上的 `rgb(0,255,255)`。
+- **孵化**（细线阴影），用于剖面、土壤和配重，角度为 45°，间距 8-14 个单位。
+- **魔法物品**（仅限高潮）：圆的结合（15个扇贝加4个内叶）。
+  - 平坦状态：向外扇形的修订云。
+  - 膨胀状态：整个联合体上有一个径向渐变（左上光），加上顶瓣上的小亮点、模糊的白色光芒、右下角雕刻的新月阴影（蒙版 = 联合体减去向左上移动的联合体），以及阴影侧较粗的轮廓。
+  - 它在绘制的地方留下了苍白的“未曝光的印记”。它的阴影偏移随着升力的增加而增加（最多下降约 240 个单位）。
+- **调色板规则**：仅限蓝色和白色。一枚红色邮票 `#C23B2E`，仅使用一次。
+- **版式**（全部 OFL）：
+  - 建筑师的女儿用于手写（标题、标签、注释、副标题）。
+  - B612 / B612 粗体表示标题栏字段和“正在申请专利”。
+  - 诱惑签名。
+  - 文字从左到右书写，笔尖发光。
 
-## Titles & subtitles
+<a id="titles--subtitles"></a>
+## 标题和副标题
 
-- **Subtitles are drawing notes**: a light box (rgba(12,28,62,.58), 1.2 px outer and 0.8 px inner white rule, ~110–150 px tall), a "NOTE / n" cell in B612 Bold, the text in Architects Daughter 38 px written on in 0.35 s, and a small leader tick at the lower-left corner.
-  - **Position per shot, in empty sky**, never fixed to the bottom. The bottom of the frame is where the ground line, base and title block live.
-  - Wrap at ~880 px.
-- Every subtitle is also lettered into the sheet's **GENERAL NOTES** column (under the fixed notes "ALL DIMENSIONS IN MILLIMETRES." and "DO NOT SCALE DRAWING."), so the final wide shows the whole voiceover as drawing notes.
-- **Title**: the sheet header (Architects Daughter 132 units, letter-spaced, double underline), with PATENT PENDING and a subtitle line in B612.
+- **字幕是绘图笔记**：一个灯箱（rgba（12,28,62,.58），1.2 px外部和0.8 px内部白色规则，〜110–150 px高），B612粗体的“NOTE / n”单元格，建筑师女儿中的文本38 px写在0.35 秒，左下角有一个小前导标记。
+  - **按照镜头的位置，在空旷的天空中**，从未固定到底部。框架的底部是地线、底座和标题栏所在的位置。
+  - 以 ~880 像素换行。
+- 每个字幕也都写在工作表的 **一般说明** 列中（在固定注释“所有尺寸以毫米为单位。”和“不要缩放绘图。”下），因此最终的宽屏将整个画外音显示为绘图注释。
+- **标题**：表头（Architects Daughter 132 个单位，字母间隔，双下划线），正在申请专利，副标题行为 B612。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-**End card**: the title block. The last row is lettered in: STYLE: BLUEPRINT / DRAWN BY: LemoLab × Claude Opus 5.5. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+**尾卡**：标题栏。最后一行的字母为：风格：蓝图 / 绘制者：LemoLab × Claude Opus 5.5。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/blueprint/demo/
@@ -123,24 +131,25 @@ styles/blueprint/demo/
   tools/      subs.mjs (SUBS → subs.json), check_mix.py (whisper on the final mix)
 ```
 
-1. `node core/render/still.mjs styles/blueprint/demo --range 0:46:1.5` then `sheet.py` to review. Iterate per section.
-2. `.venv/bin/python core/tts/tts.py lines.json voices`, then `asr_check.py` (6/6 OK).
-3. `node core/render/events.mjs`, then `music/score.py`, then `mix.py`, then `tools/check_mix.py`.
-4. `node core/render/video.mjs styles/blueprint/demo --fps 24 --workers 3` (1120 frames, Canvas2D + WebGL, ~30 s).
-5. `sh core/render/mux.sh out/video24.mp4 mix.wav blueprint.mp4 24 4`. Or run everything with `sh styles/blueprint/demo/build.sh`.
+1. `node core/render/still.mjs styles/blueprint/demo --range 0:46:1.5` 然后 `sheet.py` 进行审核。每个部分迭代。
+2. `.venv/bin/python core/tts/tts.py lines.json voices`，然后 `asr_check.py`（6/6 确定）。
+3. `node core/render/events.mjs`，然后 `music/score.py`，然后 `mix.py`，然后 `tools/check_mix.py`。
+4. `node core/render/video.mjs styles/blueprint/demo --fps 24 --workers 3`（1120 帧，Canvas2D + WebGL，约 30 秒）。
+5. `sh core/render/mux.sh out/video24.mp4 mix.wav blueprint.mp4 24 4`。或者使用 `sh styles/blueprint/demo/build.sh` 运行所有内容。
 
-### Pitfalls we hit
+<a id="pitfalls-we-hit"></a>
+### 我们遇到的陷阱
 
-- **The machine near the sheet edge**: wide shots showed the desk. Put the main figure at least `960/zoom` from any sheet edge you will frame in a wide, or make the sheet bigger (we went 3200×2000 → 3200×2200 and moved the machine right).
-- **Explosions that go up hit the header.** Explode mostly upward and sideways, and flatten the boom during the explode so the net extends sideways.
-- **Subtitles on the ink canvas** vanish off-sheet and cannot occlude lines. Use a separate overlay texture composited last (premultiplied alpha).
-- **The magic object darkened by its own shadow.** Multiply its area on the fx canvas with `rgb(0,255,255)` to zero the shadow channel only.
-- **Per-lobe shading makes "grapes" or bubble wrap.** Use one gradient across the union, crescents from a union-minus-shifted-union mask, and arcs only on the upper inner lobes.
-- **Overlapping additive circle fills make bubbles.** Fill a union as one path with `fill('nonzero')`.
-- **Scallop arcs drawn the wrong way round look like a starburst.** Choose the arc direction that contains the lobe's outward angle.
-- **The half-puffed cloud looked like a donut.** Grow the inner lobes early (`r × min(1, pf × 2.2)`).
-- **The payoff must be big.** The first cut had the flower as a small clump in the lower third, which undersold the emotional return. Give the payoff object ~1/3 of frame height, centred, drawn stroke by stroke (stem → leaves → one petal per beat), with visible stains around it. Keep subtitles off it.
-- **A caught object shows through the net.** Don't paint the net over it wholesale: fill the bag below the front rim with the object's body, then draw mesh and front rim on top, and skip the back rim.
-- `sfx.thump()` is 0.35 s long: pad before adding to longer buffers.
-- Whisper reads "Figure one" as "Figure 1": use an `asr` field in `lines.json`.
-- **A stray file at the repo root**: always write with absolute paths inside your style dir.
+- **靠近板材边缘的机器**：宽镜头显示工作台。将主要人物放在您要框入宽幅的任何纸张边缘至少 `960/zoom` 处，或者使纸张更大（我们选择 3200×2000 → 3200×2200 并将机器向右移动）。
+- **向上爆炸击中头部。** 主要向上和向侧面爆炸，并在爆炸过程中压平吊杆，使网向侧面延伸。
+- **墨水画布上的字幕** 在纸外消失并且不能遮挡线条。使用最后合成的单独叠加纹理（预乘 Alpha）。
+- **魔法对象因自身阴影而变暗。** 将其在 fx 画布上的面积乘以 `rgb(0,255,255)`，仅将阴影通道归零。
+- **Per-lobe 着色使“葡萄”或气泡包装。** 在联合上使用一种渐变，从联合减移联合遮罩中使用新月形，并且仅在上部内叶上使用弧形。
+- **重叠的附加圆填充会产生气泡。** 使用 `fill('nonzero')` 将联合填充为一条路径。
+- **以错误方式绘制的扇贝弧看起来像星爆。** 选择包含波瓣向外角度的弧方向。
+- **半膨胀的云看起来像一个甜甜圈。** 早长出内叶（`r × min(1, pf × 2.2)`）。
+- **回报一定很大。** 第一次切割时，花朵在下三分之一处呈小丛状，这低于情感回报。给出框架高度的支付对象〜1/3，居中，逐笔绘制（茎→叶→每拍一个花瓣），周围有可见的污渍。保持字幕关闭。
+- **A 捕获的物体通过网显示。** 不要在上面大规模地涂网：用物体的身体填充前缘下方的袋子，然后在顶部绘制网格和前缘，并跳过后缘。
+- `sfx.thump()` 长 0.35 秒：在添加到更长的缓冲区之前进行填充。
+- Whisper 将“图一”读作“图 1”：在 `lines.json` 中使用 `asr` 字段。
+- **存储库根目录中的杂散文件**：始终使用风格目录中的绝对路径进行写入。

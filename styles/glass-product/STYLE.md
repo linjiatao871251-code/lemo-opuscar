@@ -1,108 +1,120 @@
-# Glass Product Render — Style Prompt
+<a id="glass-product-render--style-prompt"></a>
+# 玻璃质感产品：风格提示词
 
-> Launch-film product rendering in transparent and frosted glass: a dark-field studio, strip-light sweeps, dispersion, caustics, light travelling inside the object, slow exploded views that snap shut on a downbeat.
-> References (grammar only): premium launch films (a sweep drawing a contour in the dark, slow orbits, macro rack focus, cuts on the beat, ultra-thin wide type); transparent-hardware adverts (internals as ornament, exploded views, black and white plus one accent); dark-field glass photography. Copy none of their silhouettes, typefaces, sounds or colour templates, and never name them in the film.
+> 透明和毛玻璃中的 Launch-影片产品渲染：暗场工作室、带状光扫描、色散、焦散、物体内部传播的光线、在悲观气氛中突然关闭的缓慢分解视图。
+> 参考资料（仅语法）：高级启动影片（在黑暗中绘制轮廓的扫描、慢速轨道、宏架聚焦、节拍剪切、超薄宽型）；透明硬件广告（内部装饰、分解图、黑白加一强调）；暗视野玻璃摄影。不要复制他们的轮廓、字体、声音或颜色模板，也不要在影片中命名他们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A single hero object of **glass, metal and light** floating in an infinite black studio. Long strips *behind and beside* it turn clear glass into a thin white outline with rainbow edges; the internals show through as in a display case. Everything moves slowly and precisely; every cut, sweep and pulse lands on the beat.
+**玻璃、金属和光**的单个英雄物体漂浮在无限的黑色工作室中。 *后面和旁边的长条将透明玻璃变成带有彩虹边缘的细白色轮廓；内部结构就像在展示柜中一样清晰可见。一切都缓慢而精确地进行；每一次剪切、扫描和脉冲都落在节拍上。
 
-The object is always **fictional**. Never reproduce a real product silhouette (a famous phone or headphone outline), a real brand name, logo, typeface or UI.
+对象始终为 **虚构的**。切勿复制真实的产品轮廓（著名的手机或耳机轮廓）、真实的品牌名称、徽标、字体或用户界面。
 
-Not a white-cyclorama catalogue shot, not a wireframe HUD, not a keynote slide: material and light are the subject.
+不是白色天幕目录镜头，不是线框 HUD，不是主题幻灯片：材料和光线是主题。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Studio = a strip-light scene, not an HDRI.** Photo-studio HDRIs contain windows and clutter that print as messy streaks on glass. Build a tiny black scene of emissive planes and bake it to PMREM **every frame** (`pmrem.fromScene(env, 0, 1, 1000)`, dispose the previous RT): tall side strips behind (silhouette), a wide far strip (horizon rim), a soft top box (volume for frosted glass and metal), a weak front card (off when concave glass faces camera), a top-front key only when parts must be read one by one, an accent card driven by the pulses, and **the sweep**: a tall strip on an arc *behind the camera* (azimuth = camera + π). Being real geometry, its highlight, refraction and dispersion move physically; never paint a 2D highlight.
-- **Clear glass**: `MeshPhysicalMaterial`, transmission 1, roughness ≈ 0.015, IOR ≈ 1.5, thickness sets lensing (thicker = stronger), **dispersion on** (three r163+), near-neutral attenuation, `side: DoubleSide` so other glass sees its back faces.
-- **Frosted glass**: transmission ~0.85, roughness ~0.4, milky tint, thick. On black it reads as dark grey plastic unless **something bright is behind or inside it**: an opaque emissive shape inside (blurred into a soft internal glow) and/or a bright gradient behind.
-- **Metals** make transparency worth looking at: satin bands, chrome (roughness ≥ ~0.14), brushed surfaces via a roughness map, boards with gold traces. **Anything inside transmissive glass must be opaque** (only opaque objects reach the transmission buffer).
-- **Light guides**: dark polished opaque acrylic, clearcoat, emissive **comet pulses** along a UV axis via `onBeforeCompile` (Gaussian head, exponential tail, white-hot core, hue drifting with age). Idle emission ≈ 0.
-- **Background**: black with an optional dark-grey radial sweep that separates glass edges; the floor fades into it, **no horizon line**. **Floor**: black gloss, blurred mirror, radial fade, procedural caustics (lens ring with R/G/B radii offset, warped Voronoi filaments, rings spreading from events).
-- **Post**: 2× supersampling; physical DoF (shallow macro, deep exploded views); bloom only above ~1.1; **Neutral tone mapping** (AgX washes accents to white); grain 0. Model in mm, near plane 1.
+- **Studio = 条状灯光场景，而不是 HDRI。**照片工作室 HDRI 包含窗口和杂物，在玻璃上打印为杂乱的条纹。构建一个发射平面的微小黑色场景，并将其烘焙到 PMREM**每帧**（`pmrem.fromScene(env, 0, 1, 1000)`，创作方案之前的 RT）：后面的高侧条（剪影）、宽远条（地平线边缘）、软顶盒（磨砂玻璃和金属的体积）、弱前卡（凹面玻璃面时关闭） 摄影机），仅在必须逐个读取零件时才使用的顶前键，由脉冲驱动的口音卡，以及 **扫描**：摄影机* 后面的弧形上的高条（方位角 = 摄影机 + π）。作为真实的几何体，它的高光、折射和色散是物理移动的；切勿绘制 2D 高光。
+- **透明玻璃**：`MeshPhysicalMaterial`，透射率1，粗糙度≈0.015，IOR≈1.5，厚度设置透镜（更厚=更强），**色散在**（三个r163+）上，近中性衰减，`side: DoubleSide`，以便其他玻璃看到其背面。
+- **磨砂玻璃**：透光率~0.85，粗糙度~0.4，乳白色，厚重。在黑色上，它看起来像深灰色塑料，除非 **后面或内部有明亮的东西**：内部不透明的发射形状（模糊成柔和的内部发光） and/or 后面有明亮的渐变。
+- **金属**使透明度值得一看：缎带、铬（粗糙度 ≥ ~0.14）、通过粗糙度图拉丝表面、带有金色痕迹的板。**透射玻璃内的任何物体都必须是不透明的**（只有不透明物体才能到达传输缓冲区）。
+- **光导**：深色抛光不透明丙烯酸、清漆、发光**彗星脉冲**通过`onBeforeCompile`沿UV轴（高斯头，指数尾，白热核心，色调随时间漂移）。空闲发射 ≈ 0。
+- **背景**：黑色，带有可选的深灰色径向扫描，可分隔玻璃边缘；地板淡入其中，**没有地平线**。 **地面**：黑色光泽、镜子模糊、径向褪色、程序焦散（具有 R/G/B 半径偏移的镜头环、扭曲的 Voronoi 细丝、从事件扩散的环）。
+- **邮政**：2×超级采样；物理自由度（浅宏观、深分解视图）；仅在~1.1以上开花； **中性色调映射**（AgX 水彩晕染强调白色）；颗粒 0。模型以毫米为单位，靠近平面 1。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- The world is neutral: black, greys, the white of strip reflections, the metals' own tints.
-- **One accent colour family, reserved for light** (emission, caustic rings, the dispersion line on UI), optionally drifting between two neighbouring hues with age or energy. Examples: ice blue → soft violet; amber → rose; green → cyan. Pick it from what the product does, never from a brand.
-- Emitters that only illuminate (inside frosted glass) stay cool-white and dim.
-- Dispersion rainbows are allowed only at thick glass edges and in the caustic, never as a gradient on surfaces or type.
+- 世界是中性的：黑色、灰色、带状反射的白色、金属本身的色调。
+- **一个强调色系列，保留用于光**（发射、焦散环、UI上的色散线），可以选择随着年龄或能量在两种相邻色调之间漂移。例子：冰蓝色→柔和的紫色；琥珀色 → 玫瑰色；绿色→青色。从产品的功能中选择，而不是从品牌中选择。
+- 仅发光的发射器（磨砂玻璃内）保持冷白色和暗淡状态。
+- 色散彩虹仅允许出现在厚玻璃边缘和焦散中，绝不可作为表面或类型上的梯度。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Subtitles are a slab of frosted glass**: a centred rounded bar filled with the live frame blurred (`filter: blur() brightness()` on the WebGL canvas, `preserveDrawingBuffer: true`), a little cool white, a thin highlight stroke and an accent line on top. A licence-free grotesk (e.g. Inter Tight), light weight, ~36–44 px, near-white. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Titles**: the same grotesk at an ultra-thin weight (200), very large (100–140 px) with very wide tracking, centred in the upper third; a diagonal glint sweeps across the letters in sync with the sweep light on the object. Small tracked caps (18–20 px) for kickers and credits.
-- The product name and slogan are **title cards**, not subtitle lines.
+- **字幕是一块磨砂玻璃**：一个居中的圆形条，填充了模糊的实时帧（WebGL画布上的`filter: blur() brightness()`，`preserveDrawingBuffer: true`），一点冷白色，细高光描边和顶部的强调线。无需许可的 grotesk（例如 Inter Tight），重量轻，约 36–44 像素，接近白色。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **标题**：相同的 grotesk，重量超薄 (200)，非常大 (100–140 px)，跟踪非常宽，集中在上三分之一处；对角线闪烁与物体上的扫描光同步地扫过字母。用于踢球和制作人员名单的小型履带式大写字母 (18–20 px)。
+- 产品名称和口号是**标题卡**，而不是字幕行。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Everything moves on ones** (24 fps), eased: ease-in-out for camera orbits, ease-out for parts decelerating into a float, ease-in for a snap back.
-- **The camera always drifts**: slow orbits or push-ins; never a locked-off frame, never handheld, except a couple of frames of micro-shake on an impact.
-- **Exploded view**: parts spread along the axis (~2× product size), each with a small deterministic tilt and a spin proportional to its offset; long ease-out apart → short drifting hover → **very short ease-in snap** on a downbeat.
-- Objects lift out of cradles tilted toward camera and settle upright; lids hinge at the back and stand behind the object as a backlit halo.
-- Light pulses and sweeps are events on the beat grid, not free animation.
+- **一切都在** (24 fps) 上移动，缓入：摄影机轨道的缓入、减速到浮动的零件的缓出、快速返回的缓入。
+- **摄影机总是漂移**：慢轨道或推入；从来没有一个锁定的框架，从来没有手持，除了几帧微摇晃的影响。
+- **分解图**：零件沿轴展开（~2×产品尺寸），每个零件都有一个小的确定性倾斜和与其偏移成比例的旋转；长时间的缓出分开 → 短暂的漂移悬停 → **非常短的缓入快照** 处于悲观状态。
+- 物体从向摄影机倾斜的支架中提出并直立放置；盖子铰接在后面，并作为背光光环站在物体后面。
+- 光脉冲和扫描是节拍网格上的事件，而不是自由动画。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Sweep over a dark object, slow push | Contour before content | an unknown thing; a before-state |
-| Slow high 3/4 orbit | The whole object in one move | a mechanism opening; variants |
-| Macro, rack focus surface → part inside | Nothing to hide | an ingredient; a sensor |
-| Side macro orbit | Material contrast | layers; a seam |
-| Exploded view, axis ~40° to view, orbit | Technical beauty, suspension | architecture; a pause before a turn |
-| Straight-on front, slight push | Declaration | a single number; a name |
-| Top-down macro | A pattern at full size | channels; a circuit |
-| Top-down on the floor | The effect leaving the object | range; spreading energy |
-| Low orbit under the object | Monument, weight | durability; a flagship |
-| Slow pull-back into negative space | Room for type | a claim; a question |
+|扫过深色物体，缓慢推动|轮廓先于内容|未知的事物；之前的状态|
+|慢高3/4轨道|整个物体一举完成|机构开口；变体|
+|微距、齿条焦面→内部零件|没什么可隐藏的|一种成分；一个传感器|
+|侧微距轨道|材质对比|层；一条缝|
+|分解图，轴 ~40° 视图，轨道|技术之美、悬挂|建筑学;转弯前的停顿|
+|正面平直，轻轻一推|宣言|单个数字；一个名字|
+|自上而下的宏|全尺寸的图案|渠道；一个电路|
+|自上而下放在地板上|离开物体的效果|范围;传播能量|
+|物体下方的低轨道|纪念碑、重量|耐用性；旗舰|
+|缓慢拉回负空间|房间类型|索赔；一个问题|
 
-Framing: one hero, centred or on a strong diagonal, never cropped by the frame edge in a wide. Cut only on beats (bar lines where possible). Product films need **no spatial continuity** between shots: each shot is its own presentation stage, so hide or move anything that doesn't serve it. Transitions are cuts on the beat or a sweep passing through black; never dissolves or wipes.
+取景：一个英雄，居中或位于强对角线上，从未被宽幅画面边缘裁剪。仅在节拍上剪切（如果可能的话，小节线）。产品影片需要**镜头之间没有空间连续性**：每个镜头都是它自己的演示舞台，因此隐藏或移动任何不为其服务的东西。过渡是节拍上的剪切或穿过黑色的扫掠；永远不会溶解或擦拭。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Minimal electronic, never piano-and-strings.** Timbres, as options: bowed-glass or wet-finger tones, granular crystal clouds, glass bells and FM glass plucks, a filtered tick grid for precision, a warm pad, sub drone, soft short kicks and claps, 808 bass (sine with pitch envelope, soft saturation, slides), noise and saw risers, a high glass ding. Minor and modal colours suit the dark studio.
-- **Lock every pulse, sweep and snap to the score**: write the cue map first and share one hit list between the score and the renderer; light pulses may follow a syncopated bass pattern exactly.
-- **Silence as a tool**: a short stretch of total silence (reverb tails cut too) before a release, at most a reverse whoosh inside it.
-- **Foley follows the material**: glass shimmer for sweeps (band-passed noise + inharmonic partials, panned with the strip); glass-metal friction for moving covers; magnetic clicks (sub-2 ms transient + 3–5 kHz metal resonances + low thump); air puffs for moving parts; a snap = a cluster of clicks ms apart + an inharmonic glass chord (partials ×2.76, ×5.4); glass-on-glass ticks.
-- **Voice**: restrained, low, launch-like, very few very short lines. Never a product name alone (ASR and viewers mishear it): give it a verb.
-- **Mix**: duck music ~12 dB and foley ~6 dB under the voice; limit the biggest bass peaks ~3 dB so loudnorm stays linear; −14 LUFS; grain 0.
+- **最小的电子，绝不是钢琴和弦乐。** 音色，可选：弓形玻璃或湿手指音调、颗粒水晶云、玻璃铃和 FM 玻璃弹拨、精确的过滤滴答网格、温暖的垫子、低音嗡嗡声、柔和的短踢和拍手、808 低音（带音高包络的正弦、柔和饱和度、滑音）、噪音和锯齿声立管，高高的玻璃鼎。次要和莫代尔颜色适合黑暗的工作室。
+- **锁定每个脉冲，扫描并捕捉到乐谱**：首先写入音画节拍对照表，并在配乐和渲染器之间共享一个命中列表；光脉冲可以精确地遵循切分音低音模式。
+- **作为工具的沉默**：释放之前的一段短暂的完全沉默（混响尾音也被切断），最多是内部的反向呼啸声。
+- **Foley 遵循材料**：用​​于扫频的玻璃闪光（带通噪声 + 不和谐的分音，用条带平移）；用于移动盖的玻璃金属摩擦；磁性咔哒声（亚 2 毫秒瞬态 + 3–5 kHz 金属共振 + 低重击声）；运动部件的吹气装置；响声=一组间隔毫秒的咔嗒声+一个不和谐的玻璃和弦（分音×2.76，×5.4）；玻璃上的蜱虫。
+- **嗓音**：内敛，低沉，发射式，很少很短的台词。切勿单独使用产品名称（ASR 和观众听错了）：给它一个动词。
+- **混音**：鸭子音乐〜12 dB和拟音〜6 dB的声音；将最大低音峰值限制为 ~3 dB，使响度保持线性； −14 LUFS；颗粒 0。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs. Adapting any topic: find **the invisible thing the product does** and make it visible as light inside glass.
+菜单：使用您的故事需要的菜单。适应任何主题：找到**产品所做的不可见的事情**，并使其在玻璃内以光的形式可见。
 
-- **Transparency.** The inside is the hero; rack focus from the shell to the part within. *Fits content like:* a juicer's blades; a watch movement; a supplement capsule's layers.
-- **Lensing.** A thick glass dome magnifies and bends what is behind it; macro through it feels like looking into a jewel. *Fits content like:* a camera module; a magnifying tool; a water filter.
-- **Dispersion.** A sweep crossing a thick edge becomes a moving spectrum. *Fits content like:* a prism lamp; a display's colour range; a skincare bottle.
-- **Light that travels inside.** Energy (charge, data, heat, sound) runs as light through channels. *Fits content like:* a battery filling; a router's data threads; a kettle heating.
-- **Caustics.** An internal pulse becomes a ring spreading over the floor. *Fits content like:* a speaker's range; a perfume's trail; a wireless charger's field.
-- **Exploded view and snap.** Parts float apart and snap back on a downbeat. *Fits content like:* a modular backpack; a pen's refill system; a repairable phone.
-- **Frost to clear.** A frosted shell clears (roughness and tint animate to zero) and the inside appears. *Fits content like:* a privacy feature; a fridge's contents; an honest price breakdown.
+- **透明。** 里面是英雄；机架焦点从外壳到内部的零件。 *适合以下内容：*榨汁机刀片；手表机芯；补充胶囊的层数。
+- **镜头拍摄。** 厚玻璃圆顶放大并弯曲其后面的东西；宏观地透过它感觉就像在看一颗宝石。 *适合以下内容：* 摄影机模块；放大工具；水过滤器。
+- **分散。** 穿过厚边缘的扫描变成移动频谱。 *适合以下内容：*棱镜灯；显示器的颜色范围；一个护肤瓶。
+- **内部传播的光。** 能量（电荷、数据、热量、声音）以光的形式通过通道。 *适合以下内容：* 电池充电；路由器的数据线程；烧水壶加热。
+- **焦散。** 内部脉冲变成在地板上传播的环。 *适合以下内容：* 扬声器的音域；香水的踪迹；无线充电器领域。
+- **分解图和折断图。** 零件会分开并在压力减弱时折回。 *适合以下物品：* 模块化背包；笔的笔芯系统；可维修的手机。
+- **霜冻清除。** 磨砂外壳清除（粗糙度和色调动画为零），内部出现。 *适合以下内容：*隐私功能；冰箱里的东西；诚实的价格细目。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- A manually updated mirror uses last frame's camera → call `scene.updateMatrixWorld(); camera.updateMatrixWorld()` first; the transmission pre-pass re-renders it → no-op its `onBeforeRender`, update once per frame.
-- A coloured emitter inside frosted glass tints the whole object; idle glow under a lens dome becomes a pale blob; AgX turns accents white; frosted glass on black is black; mirror chrome becomes a white disc → the rules in §2–§3.
-- An exploded view seen perpendicular to its axis is edge-on lines → axis ~40° to camera.
-- Pure profiles read as simple shapes (mushrooms, pot lids) → 3/4 views, lids upright behind.
-- Bass peaks without headroom push loudnorm into dynamic mode → limit them in the mix.
-- Concave glass facing camera prints the front card as a grey rectangle → card off.
+- 手动更新的镜像使用最后一帧的摄影机 → 首先调用`scene.updateMatrixWorld(); camera.updateMatrixWorld()`；传输预通道重新渲染它 → 无操作其 `onBeforeRender`，每帧更新一次。
+- 磨砂玻璃内的彩色发射器为整个物体着色；镜头圆顶下的闲置辉光变成了苍白的斑点； AgX 将重音变为白色；黑底磨砂玻璃就是黑色；镜面镀铬变成白色圆盘 → §2–§3 中的规则。
+- 垂直于其轴看到的分解图是边缘线 → 轴与摄影机约 40°。
+- 纯轮廓读作简单的形状（蘑菇、锅盖）→ 3/4 视图，盖子直立在后面。
+- 没有动态余量的低音峰值将响度推入动态模式→限制它们在混音中。
+- 凹面玻璃摄影机将正面卡片打印为灰色矩形→卡片关闭。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `studio.js` (strip env baked per frame, sweep, background, floor mirror + caustics + rings), `product.js` (glass / frosted / metal / guide materials, comet-pulse shader, `explode()`), `main.js` (staging, cameras, frosted subtitle bar, title glint), `story.js` (beat-grid timeline shared with the score), `music/score.py`, `mix.py` (foley + voice + ducking). New object: replace the geometry in `product.js` (e.g. a glass cylinder with a coiled light guide), keep materials and `studio.js`.
+在`demo/`中：`studio.js`（每帧烘焙条带环境，扫描，背景，地板镜+焦散+环），`product.js`（玻璃/磨砂/金属/引导材料，彗星脉冲着色器，`explode()`），`main.js`（舞台，摄像机，磨砂字幕）栏，标题闪烁），`story.js`（与配乐共享的节拍网格时间线），`music/score.py`，`mix.py`（拟音 + 语音 + 音量闪避）。新对象：替换`product.js`中的几何体（例如带有线圈光导的玻璃圆柱体），保留材料和`studio.js`。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the object (always fictional), internals, accent, structure, opening, ending, camera path, pacing and music. All far from our demo:
+您决定对象（总是虚构的）、内部结构、口音、结构、开头、结尾、摄影机路径、节奏和音乐。与我们的示范相去甚远：
 
-- Structures: **a line-up** (three variants compared by what glows inside); **a day in light** (one object through morning, noon and night, the strip kit rotating around it); **material stack** (one layer removed per beat until the core stands alone).
-- Openings: **inside first** (one internal part; the shell forms around it); **caustic first** (light on the floor, followed up to the object); **silhouettes** (several dark outlines; one begins to glow).
-- Endings: **floor only** (the object leaves, its caustic keeps pulsing); **cool down** (emission fades to bare strip outlines); **held macro** (no pull-back; one detail, the name small).
+- 结构：**a系列**（三种变体通过内部发光进行比较）； **a 光照中的一天**（一个物体穿过早晨、中午和晚上，条带套件围绕它旋转）； **材料堆叠**（每个节拍移除一层，直到核心独立）。
+- 开口：**第一个内部**（一个内部部分；外壳在其周围形成）； **先焦散**（照亮地板，随后到达物体）； **剪影**（几个黑色轮廓；一个开始发光）。
+- 结局：**仅地板**（物体离开，其腐蚀性持续脉动）； **冷却**（发射淡出至裸带轮廓）； **持有宏**（无回调；一细节，名小）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

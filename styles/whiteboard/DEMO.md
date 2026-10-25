@@ -1,115 +1,124 @@
-# Whiteboard Explainer — our demo
+<a id="whiteboard-explainer--our-demo"></a>
+# 白板讲解器 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Einstein in Your Pocket* (111 s) · `whiteboard.mp4` · source in [`demo/`](demo/)
+示范：*爱因斯坦在你的口袋里*（111秒）·`whiteboard.mp4`·来源在[`demo/`](demo/)
 
 
-The demo's original one-line pitch: A science explainer drawn live on one glossy dry-erase board: single-line handwriting that is actually *written* stroke by stroke, floating markers with no hand, a magnet that can move, an eraser that can rewind time — and a camera that never leaves the board until the final pull-back shows the whole lesson hanging on the wall.
+示范的原始单行间距：在一块光滑的干擦板上实时绘制的科学解释：单行手写实际上是一笔一划地“书写”的，没有手的浮动标记，可以移动的磁铁，可以倒带时间的橡皮擦 - 以及一个永远不会离开黑板的摄影机，直到最后拉回显示整个课程挂在墙上。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Why GPS needs relativity, told from the map pin on your phone. This is an unofficial educational film: Albert Einstein appears only as the historical scientist, by name, and his estate and the holders of rights in his name and image did not make or endorse it; nor did the operators of GPS. The original style notes, as written for this demo:
+为什么 GPS 需要相对论，从手机上的地图图钉即可得知。这是一份非官方的教育影片：阿尔伯特·爱因斯坦仅以历史科学家的名义出现，他的财产以及他的姓名和肖像权的持有者并未制作或认可它； GPS 运营商也没有。原始风格注释，如为此示范所写：
 
-A lesson on **one physical whiteboard**. Everything the viewer learns is drawn in dry-erase marker in front of them, in real handwriting order. The board is a *map*: each idea lives in its own region, and the camera travels between regions, usually **led by the pen** (the pen draws a line, the camera rides it). At the end the camera pulls back and the viewer sees that the whole explanation was one picture.
+关于**one物理白板**的课程。观众学到的所有内容都是用干擦记号笔按照真实的手写顺序绘制在他们面前的。该板是一个*地图*：每个想法都存在于自己的区域中，摄影机在区域之间移动，通常由笔 **引导**（笔画一条线，摄影机骑在它上面）。最后，摄影机拉回来，观众看到整个解释就是一张图片。
 
-What makes it feel real rather than "animated text": ink that pools where the nib lands, dry streaks and speckle, strokes that overshoot and don't quite close, ghosts of old lessons that were never fully wiped, a glossy sheen that drifts slower than the board, and a sound for **every** stroke.
+是什么让它感觉真实而不是“动画文本”：笔尖着陆处聚集的墨水、干燥的条纹和斑点、过冲且不太接近的笔划、从未完全擦除的旧课程的幽灵、比板移动得更慢的光滑光泽，以及 **每一个** 笔划的声音。
 
-**This version has no hands.** Markers float (with a real cast shadow that grows when they lift), park outside the frame between phrases and fly back in. Physical props (magnets, eraser) move on their own. Don't draw a hand, an arm, or a cursor.
+**这个版本没有手。** 标记漂浮（当它们抬起时，真实的投射阴影会变大），停在短语之间的框架外并飞回。物理道具（磁铁，橡皮擦）自行移动。不要画手、手臂或光标。
 
-| Native power | How the demo used it |
+|原生电源|示范如何使用它|
 |---|---|
-| **Writing in stroke order** | The reveal *is* the explanation: an equation appears term by term exactly when the narrator says the term. |
-| **One board, one camera** | Distance on the board = distance in the argument. Returning to an earlier drawing is a free callback (the demo returns to its first equation to compute 38 μs × c ≈ 11 km). |
-| **The pen leads the camera** | Transitions are drawn: an orbit, a signal line, a trail. The camera follows the line to the next idea. |
-| **Magnets** | The only objects allowed to *move* on a whiteboard. Give the hero (the "you are here" pin) to a magnet; it can be lifted off, dropped, slid, sunk. |
-| **The eraser rewinds** | Wiping a trail backwards reads as undoing time. The demo used it once, right after the joke. |
-| **Two pens at once** | A duet: two quantities compared live (the demo: ground clock vs orbit clock ticking at two tempi). |
-| **Full-board reveal** | The demo's ending: pull back past the frame to the wall and the pen tray. Every earlier scene reappears at once. |
+|**按笔顺书写**|揭示*就是*解释：当叙述者说出该术语时，方程逐项出现。|
+|**一板一摄像头**|棋盘上的距离=争论中的距离。返回到早期绘图是一个免费回调（示范返回到其第一个方程来计算 38 μs × c ≈ 11 km）。|
+|**笔导相机**|绘制过渡：轨道、信号线、轨迹。 摄影机遵循下一个想法。|
+|**磁铁**|唯一允许在白板上“移动”的对象。将英雄（“你在这里”图钉）放在磁铁上；它可以被升起、掉落、滑动、沉没。|
+|**橡皮擦倒带**|向后擦拭痕迹就相当于撤消时间。 示范在笑话之后就使用过一次。|
+|**同时两支笔**|二重奏：两个数量的现场比较（示范：地面时钟与轨道时钟以两种速度滴答作响）。|
+|**全板揭晓**|示范的结局：拉回经过框架到墙壁和笔槽。之前的每一个场景都会立即重现。|
 
-**Demo story shape:** hook on one tiny object (the pin) → scale reveal → title on the first downbeat → mechanism in 3 steps → **silence + "But, there's a catch."** → the twist explained with a visual duet → a joke that shows the consequence (the pin drifts one day per beat into the sea) → the eraser rewinds → the fix, in sync → pull back to the whole board → end card written under the title.
+**演示故事形状：**钩在一个小物体（别针）上→刻度显示→第一个强拍上的标题→分3步机制→**沉默+“但是，有一个陷阱。”**→用视觉二重唱解释扭曲→一个显示结果的笑话（别针每节拍一天漂移一次海）→橡皮擦倒回→修复，同步→拉回整块板→标题下写有片尾卡。
 
-How we found the topic's handle (the same recipe works for others): find **one object the viewer owns** (the phone, a loaf, a lightbulb), one number that surprises, and one consequence you can *walk* across the board. Put the surprise in the middle, after a silence.
+我们如何找到主题的句柄（同样的方法也适用于其他人）：找到查看者拥有的 **one 对象**（电话、面包、灯泡），一个令人惊讶的数字，以及一个你可以“走”过棋盘的结果。在沉默之后，把惊喜放在中间。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-- A 2D camera over an 8000 × 4500 board: position, zoom (interpolated in 1/z so pushes feel like dollies), a little roll.
-- **Grammar**: (1) pull back to reveal scale; (2) ride the line the pen is drawing; (3) hold still whenever the viewer must read; (4) one whip into a new idea after a silence; (5) one final pull-back beyond the frame.
-- Real 180° **motion blur**: when the camera moves more than 14 px per frame, render up to 12 sub-frames and average them.
-- Keep the bottom 12 % of the frame for subtitles in every shot.
+- 8000 × 4500 板上的 2D 摄影机：位置、缩放（在 1/z 中进行插值，因此推动感觉像推车）、一点滚动。
+- **语法**：（1）拉回显示刻度； (2)沿着笔所画的线骑行； (3) 当观众必须阅读时保持静止； （4）沉默后一鞭子产生新想法； (5)最后一次向后拉到框架之外。
+- 真实180° **运动模糊**：当摄影机运动每帧超过14像素时，渲染最多12个子帧并对其进行平均。
+- 保留每个镜头中字幕的帧底部 12%。
 
-In the demo the camera never left the board until the final pull-back, which showed the whole lesson hanging on the wall with its aluminium frame and pen tray.
+在示范中，摄影机直到最后拉回才离开板，这表明整个课程通过铝制框架和笔槽挂在墙上。
 
-Demo motion numbers: pen hop lift 35 % of the window max; gaps > 0.75 s send the pen to park, returning 0.42 s before its next stroke; magnet drop 0.3 s, sink = tilt 0.5 rad and drop 40 px; eraser band 90–230 px at 90 % strength; title 3 s, a label 0.3–0.8 s, a full satellite ~1 s. The original motion section:
+示范运动编号：笔跳升程最大为窗口的 35 %；间隙 > 0.75 秒使笔停止，在下一次笔画之前返回 0.42 秒；磁铁下降 0.3 秒，下沉 = 倾斜 0.5 rad，下降 40 px；橡皮擦带 90–230 像素，强度为 90%；标题 3 秒，标签 0.3–0.8 秒，完整卫星 ~1 秒。原动议部分：
 
-- **Hand speed**: every stroke follows `u − sin(2πu)/2π × 0.8` — slow landing, fast middle, slow lift. Strokes are scheduled into a **time window** (the engine solves the speed), so writing always finishes on the word.
-- **Pen hops** between strokes: lift proportional to distance (shadow slides away and blurs), 35 % of the window max. Gaps > 0.75 s: the pen flies off to a parking spot outside the frame and returns 0.42 s before its next stroke.
-- **Magnet**: drop = 0.3 s with lift → 0 and a big shadow shrinking; slide = smoothstep per step with a small lift; sink = tilt 0.5 rad and drop 40 px.
-- **Eraser**: follows a path at constant speed, wipes a 90–230 px band at 90 % strength (a 10 % ghost always remains).
-- **Speed**: title 3 s, a label 0.3–0.8 s, a full satellite ~1 s. Faster than real hands — this is a sped-up lesson — but never so fast that the stroke order is lost.
+- **和速度**：每个行程都遵循`u − sin(2πu)/2π × 0.8`——慢落地，快中，慢升。笔画被安排到**时间窗口**（引擎解决速度），因此书写总是在单词上完成。
+- **笔画之间的跳跃**：升力与距离成正比（阴影滑开并模糊），最大窗口的35％。间隙 > 0.75 秒：笔飞到框架外的停车位，并在下一次笔画之前返回 0.42 秒。
+- **磁铁**：下降= 0.3 s，升力→ 0并且大阴影缩小； Slide = smoothstep 每一步有一个小升力；下沉 = 倾斜 0.5 rad 并下降 40 px。
+- **橡皮**：以恒定速度跟随路径，以 90% 的强度擦拭 90–230 像素带（始终保留 10% 的重影）。
+- **速度**：标题 3 秒，标签 0.3–0.8 秒，完整卫星 ~1 秒。比真手更快——这是一门加速课程——但速度绝不会快到导致笔画顺序丢失。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Every stroke sounds**: band-passed felt-on-gloss noise (2.2–7.5 kHz hiss + 0.5–1.5 kHz body) with the stroke's own speed curve as envelope, a 4 ms nib tick at the start, random stick-slip grains, and on ~28 % of long strokes the **dry-erase squeak** (a 1.5–2.6 kHz sine with 7–13 Hz vibrato). Blue marker slightly darker, orange slightly brighter. Pan = the stroke's screen x; closer camera = louder.
-- **Props**: magnet on a steel board = click + metal modes (830/1370/2210/3120 Hz) + 140 Hz board thump; eraser = 250–2600 Hz felt rub modulated by its zig-zag; tray = plastic bounces + aluminium ring; cap off/on.
-- **Room**: low room tone and a **wall clock that ticks the ground clock's seconds** — it is the only sound during the silence.
-- **Score**: clockwork minimalism at 120 BPM, D major / B minor: marimba 8th-note arpeggio, cello + bass pizzicato, woodblock tick on every beat, glockenspiel theme, shaker/claps only in loud sections. Signals get glockenspiel pings, a falling signal gets a harp run, a drifting object gets a staccato march (tuba + bassoon, chromatic descent). For any "two quantities that diverge" moment, run **the same figure at two tempi** (phasing), then snap them into unison at the fix. Rewind = the previous cue reversed and squeezed.
-- **Mix**: VO on top (compressed, light room), score 6.5 dB under VO RMS and ducked another 9 dB under speech, foley ~11 dB under VO; −14 LUFS.
+- **每个笔划声音**：带通毛毡光泽噪声（2.2–7.5 kHz嘶嘶声+ 0.5–1.5 kHz主体），以笔划自身的速度曲线作为包络，开始时有4毫秒的笔尖滴答声，随机粘滑颗粒，以及约28 %的长笔划**干擦吱吱声**（1.5–2.6 kHz 正弦波，7–13 Hz 颤音）。蓝色标记稍暗，橙色标记稍亮。平移 = 笔划的屏幕 x；更近摄影机 = 更响亮。
+- **道具**：钢板上的磁铁=点击+金属模式（830/1370/2210/3120 Hz）+ 140 Hz板重击；橡皮 = 250–2600 Hz 锯齿形毛毡摩擦；托盘=塑料弹跳+铝环；帽 off/on.
+- **房间**：低沉的房间音调和**挂钟，它会滴答地面时钟的秒数** - 这是寂静期间唯一的声音。
+- **配乐**：发条极简主义，120 BPM，D大调/B小调：马林巴八分音符琶音，大提琴+低音拨奏，每个节拍上的木版滴答声，钟琴主题，shaker/claps仅在响亮部分。信号发出钟琴的声音，下落的信号发出竖琴的声音，漂流的物体发出断奏进行曲（大号+巴松管，半音下降）。对于任何“两个数量不同”时刻，在两个温度 **（定相）下运行相同的数字**，然后在修复处将它们对齐。倒带 = 前一个提示反转并被挤压。
+- **混音**：VO 位于顶部（压缩、明亮房间），配乐在 VO RMS 下为 6.5 dB，在语音下又降低了 9 dB，拟音在 VO 下约为 11 dB； −14 LUFS。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Board**: warm white `#fbfbf9 → #eeede9` gradient, a faint scuff/micro-scratch tile, ~46 **ghost marks** (old words, circles, arrows) at 5–10 % in grey `#9aa0a8` / pale blue `#8aa0c8`. A soft diagonal **window sheen** (white, 10–16 %) that moves at 0.35× the camera — this one detail sells "glossy".
-- **Ink**: black `#23262c`, blue `#2a5cb3`, orange `#d97757`, alpha 0.94, composited with **multiply** so overlaps darken like real marker. Width 6–11 px for drawing, 13 % of cap height for lettering.
-  - Colour semantics: **black** = things and structure, **blue** = signals, light, measurement, **orange** = you / time / the thing that matters (one accent per scene). Monochrome variant: keep one element orange (the "only colour").
-- **Stroke character**: resampled every ~0.6 × width; low-frequency hand wobble along the normal (±2.6 px, wavelength ~220 px) plus a finer tremor; chisel-tip width modulation by direction (0.8–1.0); pressure ramp at the start (0.72 → 1) and a 12 % taper at the end; circles start at an angle and **overlap past closure**; rectangles are 4 strokes with small corner overshoot; a darker pooled dot just inside the start of every long stroke.
-- **Dry-marker texture**: a 512 px tile of speckles and short streaks subtracted from the ink layer (destination-out), locked to board space, faded out when the camera is wide.
-- **Lettering**: single-line font **EMS Tech** (OFL, a single-stroke version of Architects Daughter), every glyph with ±2° rotation, ±3.5 % baseline and scale jitter. Missing glyphs (μ ≈ → × − ✓ ² ↓ ° ± .) are hand-defined in the engine. Title 200 / 120 px cap height, labels 30–70 px.
-- **Props**: dry-erase markers (white barrel, colour band and posted cap in the ink colour, felt nib), a charcoal felt eraser with a small orange label, one glossy orange **map-pin magnet** (radial gradient, white dot, specular highlight, soft cast shadow). Aluminium frame and pen tray only appear in the final wide shot, on a warm grey wall `#d8d3ca`.
+- **木板**：暖白色 `#fbfbf9 → #eeede9` 渐变，微弱的 scuff/micro-scratch 瓷砖，~46 **鬼印**（旧字、圆圈、箭头），灰色 5–10% `#9aa0a8` / 淡蓝色 `#8aa0c8`。柔和的对角线 **窗户光泽**（白色，10–16%），其移动速度是摄影机的 0.35 倍——这一细节以“光泽”为卖点。
+- **墨色**：黑色`#23262c`，蓝色`#2a5cb3`，橙色`#d97757`，alpha 0.94，与**乘**合成，因此重叠部分像真实标记一样变暗。用于绘图的宽度为 6–11 像素，用于刻字的宽度为大写字母高度的 13%。
+  - 颜色语义：**黑色的**= 事物和结构，**蓝色的**= 信号、光、测量，**橙子** = 你/时间/重要的事物（每个场景一个重音）。单色变体：保持一个元素为橙色（“唯一颜色”）。
+- **笔画字符**：每~0.6×宽度重新采样；低频手部沿着正常方向摆动（±2.6 px，波长〜220 px）加上更精细的颤抖；按方向调节凿尖宽度 (0.8–1.0)；开始时的压力斜坡 (0.72 → 1) 和结束时的 12% 锥度；圆圈以一定角度开始，**与闭合部分** 重叠；矩形为4笔画，角超调小；在每个长笔画的开头处有一个较暗的汇集点。
+- **干标记纹理**：从墨水层（目标输出）中减去斑点和短条纹的512像素图块，锁定到板空间，当摄影机较宽时淡出。
+- **刻字**：单行字体 **EMS技术**（OFL，Architects Daughter 的单笔画版本），每个字形具有 ±2° 旋转、±3.5 % 基线和刻度抖动。缺失的字形 (μ ​​≈ → × − ✓ ² ↓ ° ± .) 是在引擎中手动定义的。标题 200 / 120 px 上限高度，标签 30–70 px。
+- **道具**：干擦记号笔（白色笔杆、色带和墨色笔帽、毛毡笔尖）、带有小橙色标签的木炭毛毡橡皮擦、一块亮橙色 **地图针磁铁**（径向渐变、白点、镜面高光、柔和投射阴影）。铝制框架和笔槽仅出现在最终的宽幅镜头中，位于暖灰色墙壁`#d8d3ca`上。
 
-## Titles & end card
+<a id="titles--end-card"></a>
+## 标题 & 片尾卡
 
-- Title and end card are **written on the board** in the same single-line hand; the end card is written under the title so the film ends where it began.
-- Burned subtitles: off-white rounded label (90 %), Architects Daughter 44 px, dark ink text, a short orange marker dash bottom-left. Split at clauses, ≤ 44 chars per line, short clauses merged, two lines above 1250 px.
+- 标题和片尾卡是**用同一单线手写在棋盘上**； 片尾卡写在标题下，因此影片从开始处结束。
+- 烧毁的字幕：灰白色圆形标签 (90 %)、建筑师的女儿 44 像素、深色墨水文本、左下角的短橙色标记破折号。在子句中拆分，每行 ≤ 44 个字符，短子句合并，两行超过 1250 像素。
 
-The demo's end card is written under the title in the same hand (`demo/film.js`, block `END CARD`, from 103.3 s): "Whiteboard Explainer", "Lemo-Opuscar" in orange, "LemoLab × Claude Opus 5.5", then voice, lettering and sample credits in small type; the pen caps at 107.3 s. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card (take those `credit()` lines out when reusing the code).
+示范的片尾卡用同一手写在标题下（`demo/film.js`，块 `END CARD`，从 103.3 秒开始）：“白板解释器”、橙色的“Lemo-Opuscar”、“LemoLab × Claude Opus 5.5”，然后是语音、刻字和样本小字体学分；笔帽为 107.3 秒。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本（重复使用该代码时，请取出这些 `credit()` 行）。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
-1. Write the script as short lines (`demo/lines.json`), synthesize with `core/tts/tts.py` (voice `bm_george`, `lang: en-gb`), check with `demo/tools/asr_check.py` (`WM=medium.en`) → `voices/words.json` word times.
-2. Lay out the board (regions for each idea), then write `demo/film.js`: VO start times, drawings hung on spoken words with `at(id, word)`, pens, camera keys.
-3. `node core/render/events.mjs demo` → `events.json` (every stroke, wipe, magnet, cue anchors).
-4. `music.py` (reads the same events) → `mix.py` (foley generated from events + VO + ducked score).
-5. `node core/render/video.mjs demo --fps 24` → `core/render/mux.sh … 24 2`. Whole film renders in ~30 s.
-6. `demo/build.sh` does steps 3–5 plus subtitles, poster and stills; `--vo` also redoes step 1.
+1. 将脚本编写为短行（`demo/lines.json`），用`core/tts/tts.py`（语音`bm_george`，`lang: en-gb`）进行合成，用`demo/tools/asr_check.py`（`WM=medium.en`）→`voices/words.json`字时间进行检查。
+2. 布置黑板（每个想法的区域），然后写下 `demo/film.js`：VO 开始时间，用 `at(id, word)`、笔、摄影机键挂在口头文字上的图画。
+3. `node core/render/events.mjs demo` → `events.json`（每次划动、擦拭、磁铁、提示锚）。
+4. `music.py`（读取相同事件）→ `mix.py`（从事件 + VO + 回避的配乐生成拟音）。
+5. `node core/render/video.mjs demo --fps 24` → `core/render/mux.sh … 24 2`。整个影片在约 30 秒内渲染。
+6. `demo/build.sh` 执行步骤 3-5 以及字幕、海报和剧照； `--vo` 也重做步骤 1。
 
-### Pitfalls we hit
+<a id="pitfalls-we-hit"></a>
+### 我们遇到的陷阱
 
-- **One pen, too many jobs**: a single pen scheduled back-to-back drifts later and later (satellites arrived 12 s late). Give every drawing a window (`by:`) and let overlapping jobs go to another pen.
-- **Minimum stroke duration × dashes**: a 60-dash line with a 0.09 s floor takes 6 s. Dashes need their own tiny floor.
-- **Pooled-ink dot bigger than the stroke start** → grey halos on every letter. Keep the dot inside the stroke.
-- **Punctuation vanishes**: a font period is a 1 px stroke. Render sub-width strokes as dots.
-- **Labels half-cut by a push-in** look sloppy: a label must be either fully in or fully out of every shot it appears in.
-- **Motion blur with few sub-frames** strobes text. Step ≤ 4 px between sub-frames.
-- **British voice + US phonemes**: Kokoro `bm_george` with `lang: en-us` said "clocks" like "Clarks". Use `en-gb` for British voices; check with `medium.en`.
-- Keep eraser paths off labels you want to keep (it wiped half of "orbit" once).
+- **一支笔，太多工作**：一支笔安排的背靠背漂移越来越晚（卫星晚了12秒到达）。为每个绘图提供一个窗口 (`by:`)，并让重叠的作业转到另一支笔。
+- **最小行程持续时间×破折号**：地板为0.09秒的60条虚线需要6秒。破折号需要自己的小地板。
+- **比笔划起始点大的池墨点** → 每个字母上都有灰色光晕。将点保留在笔划内。
+- **标点符号消失**：字体周期是1像素笔画。将亚宽度笔画渲染为点。
+- **推入式半切** 标签看起来很草率：标签必须完全进入或完全退出它出现的每个镜头。
+- **带有少量子帧的运动模糊** 频闪文本。子帧之间的步长 ≤ 4 px。
+- **英国语音 + 美国音素**：Kokoro `bm_george` 和 `lang: en-us` 表示“时钟”，如“Clarks”。使用 `en-gb` 表示英国语音；检查 `medium.en`。
+- 让橡皮擦路径远离您想要保留的标签（它擦除了一半的“轨道”一次）。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-| Function | What it does |
+|功能|它的作用|
 |---|---|
-| `loadFont(name, url)` | Load a single-line font converted by `demo/tools/svgfont2json.py` (`'tech'` = EMS Tech) |
-| `line / curve / poly / arc / circle / rect / roundRect / arrow / dashed / hatch` | Hand-drawn shapes → `Stroke` / `Stroke[]`. Options: `w`, `color`, `jitter`, `over` (overshoot), `bow`, `lap` (circle overlap), `clip` (rounded rect), `alpha` |
-| `text(str, x, y, {h, align, w, color, font})` | Handwritten text as strokes in writing order (`h` = cap height) |
-| `new Stroke(points, opts)` | Any path (flat `[x,y,…]`) in marker style |
-| `new Pen(id, color, {park})` | A floating marker; `park` = its off-frame spot in screen px |
-| `Timeline.draw(pen, shapes, t, {by, speed, minGap, maxGap})` | Schedule strokes; with `by` the hand speed is solved to finish on time |
-| `Timeline.erase(path, t, dur, {width, strength})` | Felt eraser along a path (leaves a ghost) |
-| `Timeline.cue(t, type, extra)` | Extra sound/music anchors exported to `events.json` |
-| `new Camera([[t, x, y, zoom, roll, ease], …])` | Keyed 2D camera; ease `io` `i` `o` `l` `s` |
-| `new Board(tl, {ghosts})` · `board.render(ctx, t, cam)` | Board, ink (multiply + dry texture + erasers), sheen, `objs` (world props) and `overlays` (screen) |
-| `penPose / drawMarker / drawEraser / drawPinMagnet` | The physical props |
+|`loadFont(name, url)`|加载由 `demo/tools/svgfont2json.py` 转换的单行字体（`'tech'` = EMS Tech）|
+|`line / curve / poly / arc / circle / rect / roundRect / arrow / dashed / hatch`|手绘形状 → `Stroke` / `Stroke[]`。选项：`w`、`color`、`jitter`、`over`（过冲）、`bow`、`lap`（圆形重叠）、`clip`（圆角矩形）、 `alpha`|
+|`text(str, x, y, {h, align, w, color, font})`|按书写顺序笔画的手写文本（`h` = 大写字母高度）|
+|`new Stroke(points, opts)`|标记风格的任何路径（平面 `[x,y,…]`）|
+|`new Pen(id, color, {park})`|浮动标记； `park` = 其在屏幕像素中的离框点|
+|`Timeline.draw(pen, shapes, t, {by, speed, minGap, maxGap})`|安排行程；使用`by`解决手速按时完成|
+|`Timeline.erase(path, t, dur, {width, strength})`|沿着路径的毛毡橡皮擦（留下鬼影）|
+|`Timeline.cue(t, type, extra)`|额外的 sound/music 锚出口到 `events.json`|
+|`new Camera([[t, x, y, zoom, roll, ease], …])`|键控二维摄影机；轻松 `io` `i` `o` `l` `s`|
+|`new Board(tl, {ghosts})` · `board.render(ctx, t, cam)`|板、墨水（乘法+干纹理+橡皮擦）、光泽、`objs`（世界道具）和`overlays`（屏幕）|
+|`penPose / drawMarker / drawEraser / drawPinMagnet`|物理道具|
 
-Minimal call — draw a warm-orange four-point sparkle with a short cursor tail, in marker:
+最小调用 - 在标记中绘制带有短光标尾部的暖橙色四点闪光：
 
 ```js
 import * as W from './engine/wb.js';
@@ -124,4 +133,4 @@ const board = new W.Board(tl), cam = new W.Camera([[0, 960, 540, 1]]);
 board.objs.push({ draw: (ctx, t, c) => W.drawMarker(ctx, O, W.penPose(O, t, cam), c, t) });
 window.render = t => board.render(ctx, t, cam);           // ctx = your 1920×1080 canvas 2D context
 ```
-Single-colour variant: draw everything with the black pen and give only the element that matters `{ color: '#D97757' }`.
+单色变体：用黑笔绘制所有内容，并仅给出重要的元素 `{ color: '#D97757' }`。

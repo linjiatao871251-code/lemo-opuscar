@@ -1,107 +1,119 @@
-# Crayon Picture Book — Style Prompt
+<a id="crayon-picture-book--style-prompt"></a>
+# 蜡笔儿童绘本：风格提示词
 
-> A picture-book page drawn live in wax crayon on toothy paper, with a watercolour wash that reveals what the crayon was hiding.
-> References (grammar only): Raymond Briggs' *The Snowman* (1982) (hand-textured frames that breathe, wordless tenderness, a lyrical passage carried by one tune, still backgrounds with living figures). Copy none of its characters, song or imagery, and never name it in the film.
+> 用蜡笔在牙齿纸上现场绘制的图画书页面，并用水彩画水彩晕染揭示蜡笔隐藏的内容。
+> 参考文献（仅语法）：雷蒙德·布里格斯的《雪人》（1982）（会呼吸的手工纹理框架、无言的温柔、一首曲调所承载的抒情段落、带有生动人物的静止背景）。请勿复制其中的任何角色、歌曲或图像，也切勿在影片中为其命名。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A children's picture book page **being drawn while you watch**: wax crayon on warm off-white paper, a limited box of crayons, child-logic perspective, colour that spills past the outline, and every line gently **boiling** because each frame is a fresh drawing. The tone is picture-book storytelling: tender, unhurried, music-led, a few lines of narration that are literally the words printed on the page. Any topic becomes **one page of a picture book that gets finished**: drawing and colouring are the plot.
+儿童图画书页面**当你观看时被吸引**：温暖的灰白纸上的蜡笔，有限的蜡笔盒，儿童逻辑的视角，溢出轮廓的色彩，每一条线条都温柔**沸腾**因为每一帧都是一幅新鲜的图画。其基调就像图画书一样：温柔、不紧不慢、以音乐为主导，几行旁白实际上就是印在书页上的文字。任何话题都会变成**完成的图画书的一页**：绘图和着色就是情节。
 
-It is not "cute vector art with a crayon filter": the look comes from **material physics** (wax sticks only to the peaks of the paper tooth, pressure decides how much of the tooth it reaches, watercolour is repelled by wax). Not a whiteboard explainer (no marker, no hand), not a watercolour painting (the wash is a guest, the crayon the host), not a chalkboard.
+它不是“带有蜡笔滤镜的可爱矢量艺术”：外观来自**材料物理**（蜡只粘在纸牙的峰上，压力决定它到达牙齿的多少，水彩被蜡排斥）。不是白板讲解器（没有记号笔，没有手），不是水彩画（水彩晕染是客人，蜡笔是主人），不是黑板。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper**: warm off-white (around `#f4efe3`). The tooth is **anchored to the page** (it pans with the camera; on zoom two octaves cross-fade so grains stay ~1 px on screen), never screen-fixed: three octaves of value noise plus a horizontal fibre term. A final pass embosses it (lit top-left), less where wax filled the tooth. Low mottling ±2 %, warm vignette.
-- **Wax adhesion (the core rule)**: every crayon layer is a canvas where RGB = colour and **A = pressure**; the shader deposits wax where `tooth > 1 − k·pressure` (soft edge). Light pressure = speckled peaks; heavy = almost solid, slightly darker.
-- **Strokes**: ribbons with a low-frequency hand wobble (1–2 px), width ±15 %, tapered ends, a denser core and 1–2 thin streaks. Characters and buildings get the heaviest outline; refined "adult" objects about half.
-- **Colouring**: back-and-forth zig-zag hatching with a visible gap, each pass at a slightly different pressure; **overshoot the outline by a few px**; a lighter cross-hatch pass on big areas.
-- **Watercolour wash**: a separate density canvas multiplied over the page. Pigment pools at edges (density minus blurred density), granulates in the deepest pits, blooms with noise, and is **resisted by wax** (density × (1 − ~0.9·wax coverage)). Brush strokes are wide bands with bristle streaks and a darker wet leading edge while moving.
-- **Occlusion**: a front part erases what is behind it inside its outline; characters "keep the paper white" behind them (a knock-out that restores paper and resets wax), the way a child draws the figure first and colours around it.
-- **Characters**: a skilled adult imitating a child: round head (≈2.5 heads tall), dot eyes with a white-wax catchlight, pink cheeks, tube limbs, mitten hands, bold hair shapes; objects with faces get big eyes and eyelids. **Child perspective**: gable front + slanted side wall; people bigger than doors.
+- **纸张**：暖灰白色（`#f4efe3`附近）。牙齿是 **anchored 到页面**（它与摄影机一起平移；在缩放时两个八度音阶交叉淡入淡出，因此颗粒在屏幕上保持约 1 像素），从不固定屏幕：三个八度音阶值噪声加上水平纤维项。最后一次将其压花（左上角亮起），减少蜡填充牙齿的位置。低斑点 ±2 %，温暖的小插图。
+- **蜡附着力（核心规则）**：每一层蜡笔都是一块画布，其中RGB =颜色，**A =压力**；着色器在 `tooth > 1 − k·pressure`（软边缘）处沉积蜡。光压=斑点峰；重=几乎是固体，稍暗。
+- **笔画**：带低频手摇动（1-2 px），宽度±15%，锥形末端，较密的芯和1-2条细条纹。人物和建筑物的轮廓最重；精致的“成人”物品大约占一半。
+- **染色**：来回锯齿形孵化，有明显的间隙，每次通过的压力略有不同； **超出轮廓几个像素**；在大面积上进行较轻的交叉影线通过。
+- **水彩水洗**：在页面上乘以单独的密度画布。边缘处的颜料池（密度减去模糊密度），在最深的凹坑中颗粒化，出现噪音，并且受到蜡的抵抗 ****（密度×（1 − ~0.9·蜡覆盖率））。画笔笔触是带有刷毛条纹的宽带，移动时有较暗的湿前缘。
+- **闭塞**：前面的部分擦除了其轮廓内后面的内容；角色“保持纸张白色”在他们身后（一种恢复纸张并重置蜡的敲除），就像孩子首先画出人物并在其周围着色的方式。
+- **人物**：模仿小孩的熟练成人：圆头（约2.5头高），圆点眼睛带有白蜡反光，粉红色的脸颊，管状四肢，手套，大胆的头发形状；有脸的物体有大眼睛和眼睑。 **儿童视角**：山墙正面+斜侧墙；人比门还大。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **A box of about a dozen crayons, never more.** Outlines in one dark colour (indigo, dark brown, plum), **never black**. One white crayon reserved for wax resist.
-- **At most one watercolour** per film, chosen for what it reveals (ultramarine for night, rose for dawn, sap green for rain). It never paints the characters.
-- Saturated crayon on lots of bare paper; value comes from pressure, not extra hues. One accent on a character may echo the story.
-- Example boxes: *seaside* — navy line, coral, sand, teal, turquoise, lemon, white; *orchard* — brown line, russet, apple red, mustard, olive, plum, cream, white.
+- **一盒大约一打蜡笔，再也没有更多。** 一种深色轮廓（靛蓝、深棕色、紫红色），**永远黑色**。一支白色蜡笔保留用于防蜡。
+- **每个影片至多一种水彩画**，根据其所揭示的内容进行选择（群青色代表夜晚，玫瑰色代表黎明，暗绿色代表雨）。它从不描绘人物。
+- 大量裸纸上的饱和蜡笔；价值来自于压力，而不是额外的色彩。对某个角色的一个重音可能会与故事相呼应。
+- 示例框：*海边* — 海军蓝、珊瑚色、沙色、青色、绿松石色、柠檬色、白色； *果园色* — 棕线、赤褐色、苹果红、芥末色、橄榄色、李子色、奶油色、白色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Subtitles are **the book's printed words**: a handwriting face (Patrick Hand, OFL), 50–56 px, in the outline colour, bottom-centre, each glyph tilted and offset, boiling on twos, written left→right in ~0.35 s, on a ragged knock-out patch of blank paper (never a dark box). Hold ≥ max(1.8 s, speech + 0.6 s); none during wordless music.
-- Titles are hand-lettered on the page (Gaegu Bold or similar), written letter by letter. You can't fade crayon: a title leaves by the camera moving off it, a page turn or being coloured over.
+- 字幕是 **书中的印刷文字**：手写脸（Patrick Hand，OFL），50-56 像素，轮廓颜色，底部中心，每个字形倾斜和偏移，两两沸腾，在约 0.35 秒内从左→右书写，在一张粗糙的敲除白纸上（不是黑盒子）。保持 ≥ max(1.8 s，语音 + 0.6 s)；在无词音乐中没有。
+- 标题是手写在页面上的（Gaegu 粗体或类似字体），逐个字母书写。蜡笔无法褪色：标题会因摄影机从其上移开、翻页或被涂色而留下。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Everything drawn steps at 12 fps** (lines, colouring, characters, boil seed); camera, the wash's leading edge and twinkles run at 24 fps.
-- **Boil**: each stroke re-jitters offset (<1 px), wobble and hatching rows every 2 frames. Characters full, background lines ~0.6, background colouring still (it also halves the bitrate). Calm the boil to about half when the film goes quiet.
-- **Drawing on**: lines reveal along their length in 0.4–0.9 s; colouring row by row; text letter by letter.
-- **Acting**: substitution, a new drawing per pose on the beat; two key drawings alternate for a repeated action. Big simple poses; a child's drawing doesn't in-between.
-- **Colouring is an action**: being coloured in *is* doing (a coat scribbled on = putting it on; pink scribble = blushing; a wash = night falling).
+- **一切以 12 fps 绘制步骤**（线条、着色、人物、煮种子）； 摄影机、水彩晕染的前沿和闪烁以 24 fps 运行。
+- **熬**：每个笔划每 2 帧重新抖动偏移 (<1 px)、摆动和阴影行。字符完整，背景线〜0.6，背景色仍然（它也使比特率减半）。当影片安静下来时，将沸腾降至一半左右。
+- **在**上绘图：线条在0.4–0.9秒内沿其长度显示；逐行着色；逐字逐句地文字。
+- **演戏**：替换，节拍上每个姿势一个新的绘图；两个关键图交替进行重复动作。简单的大姿势；儿童的绘画并不介于两者之间。
+- **着色是一个动作**：在*正在*做的事情中着色（涂上一件外套=穿上它；粉色涂写=脸红；水彩晕染=夜幕降临）。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-The camera moves over a large page. A vocabulary, not a route; every move needs a reason. Opening and ending come from the topic.
+摄影机运动位于一个大页面上。是词汇，不是路线；每一个举动都需要理由。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Locked full page | Paper before drawing; the whole picture | a beginning from nothing; a tableau; a reveal that needs the page |
-| Push toward a character | "This one" | a title giving way; a feeling arriving |
-| Locked medium close-up | Substitution poses act | comedy; a decision; a small failure |
-| Tilt along a gaze | We see what they see | discovery; longing; something huge |
-| Tight follow | The world draws itself ahead of the subject | a brave act; a path; building |
-| Held wide while the brush moves | The material is the motion | a wash reveal; weather; day or night falling |
-| Slow truck across the page | Reading left to right | a list; a sequence; a family |
-| Pull out past the page edge | The page is an object | a book on a table; a fridge drawing |
-| Page turn | New chapter, time jump | before/after; the next day |
+|锁定整页|绘图前用纸；整个画面|从无到有的开始；画面；需要页面的显示|
+|推向角色|“这个”|头衔让位；一种感觉即将到来|
+|锁定表现媒介特写|替换姿势动作|喜剧;决定；一个小失败|
+|沿着视线倾斜|我们看到他们所看到的|发现;渴望;巨大的东西|
+|紧紧跟随|世界将自己置于主题之前|勇敢的行为；一条路径；建筑|
+|刷子移动时保持宽幅|物质就是运动|水彩晕染揭示；天气;白天或黑夜降临|
+|缓慢的卡车穿过页面|从左到右阅读|一份清单；一个序列；一个家庭|
+|拉出超出页面边缘|页面是一个对象|桌上有一本书；冰箱绘图|
+|翻页|新篇章，时空跳跃|before/after；第二天|
 
-Key figures ≥ 1/4 of frame height in close shots; keep bare paper at the bottom for the printed words. Transitions: drawing on, colouring over, the wash, a pan or a page turn; never a dissolve.
+关键数值≥1/4，接近镜头的框架高度；将裸纸放在底部以打印文字。过渡：绘画、着色、水彩晕染、平移或翻页；永远不会溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Small wooden and metal-toothed instruments, no strings or grand piano**: ukulele or nylon guitar, clarinet or bassoon (bass, humour), music box (can wind down with a pitch droop), glockenspiel or celesta (a note per uncovered sparkle), toy piano (one note per counted thing), flute or recorder as the singing voice, shaker and woodblock. A simple lilt; one theme can be held back and heard in full once.
-- **Silence is a beat**: a full beat of nothing after a failure; a short breath before a wordless passage.
-- **Foley follows the material**: crayon = stick-slip band-passed noise whose grain follows stroke speed (colouring = rhythmic swishes); wet brush = soft low-passed noise with bristle grain, panned with the stroke; felt puffs, fabric swishes, a sharpener, a crayon set down, a page turn (lift / whoosh / flap). Ambience: faint crickets or birds, room tone, a distant clock.
-- **Mix**: music under narration, rising for wordless passages; metal voices get a gentle high lift. −14 LUFS.
-- **Voice**: a soft, warm storyteller, short lines with breaths. Compress before EQ, cut the highs, de-ess, a warm near-field reverb far under the dry voice; a few dB over the bed, never louder. Whisper-check every line, dry and on the final mix. Avoid famous-book phrases.
+- **小型木质和金属齿乐器，无弦乐或三角钢琴**：尤克里里或尼龙吉他、单簧管或巴松管（低音、幽默）、音乐盒（可以音调下降）、钟琴或钢片琴（每个未覆盖的闪光一个音符）、玩具钢琴（每个计数的东西一个音符）、长笛或竖笛作为歌唱声音、振动器和木刻。简单的轻快；一个主题可以被保留并完整地听到一次。
+- **沉默是一种节拍**：失败后一无所获的完整节拍；在一段无言的段落之前短暂的呼吸。
+- **Foley 遵循材质**：蜡笔 = 粘滑带通噪声，其颗粒遵循笔划速度（着色 = 有节奏的刷动）；湿刷 = 带有鬃毛纹理的柔和低通噪音，随笔画平移；毛毡泡芙、布料嗖嗖、磨刀器、蜡笔、翻页（抬起/嗖嗖/翻动）。氛围：微弱的蟋蟀或鸟儿的声音，房间的声音，远处的时钟。
+- **混音**：旁白下的音乐，无词段落上升；金属声音变得温和而高亢。 −14 LUFS。
+- **嗓音**：一个柔和、温暖的故事讲述者，简短的台词和呼吸。 EQ前压缩，削减高音，消除嘶嘶声，在干燥的声音下产生温暖的近场混响；床上方几分贝，从来没有更大声。对最终混音上的每条线路进行Whisper 语音检查，使其干燥。避免使用名著短语。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Wax resist.** White crayon is invisible until a wash passes; hide the payoff in plain sight from the first frame. *Fits content like:* a farewell message; a product's hidden feature; roots under a garden.
-- **Drawn live.** The world draws itself just ahead of the hero. *Fits content like:* a bridge plank by plank; a journey map; a company timeline.
-- **Colouring is an action.** *Fits content like:* a town lighting up window by window; a team putting on kit; fruit ripening.
-- **Boil.** A held frame is alive; calming it quiets the film. *Fits content like:* a pause for thought; grief; rest.
-- **Child logic.** Wrong perspective, faces on objects, numbers in the sky. *Fits content like:* a launch countdown; a talking house on insulation; a sun that clocks out.
-- **It is a book.** Pull back to the object; turn the page. *Fits content like:* a year in review; a "chapter two"; a thank-you card.
+- **抗蜡剂。** 白色蜡笔在水彩晕染通过之前是不可见的；将收益隐藏在第一帧中显而易见的地方。 *适合以下内容：*告别信息；产品的隐藏功能；根在花园下。
+- **现场绘制。** 世界在英雄前面绘制自己。 *适合以下内容：*一块桥板一块板；旅程地图；公司时间表。
+- **着色是一个动作。** *适合以下内容：* 一座小镇逐扇窗户点亮；穿着装备的团队；果实成熟。
+- **熬。** 持有的框架处于活动状态；使其平静下来，影片就会安静下来。 *适合以下内容：*暂停思考；悲伤；休息。
+- **儿童逻辑。** 错误的视角，物体上的面孔，天空中的数字。 *适合以下内容：* 启动倒计时；一座会说话的绝缘房子；一个不打卡的太阳。
+- **是一本书。** 拉回物体；翻页。 *适合以下内容：*一年回顾； “第二章”；一张感谢卡。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Gaps between wash bands leave white stripes → overlap bands and cover all intended paper.
-- Wavy band edges and wide light streaks read as hills → small high-frequency waviness, thin faint streaks (α ≤ 0.12).
-- Light-pressure colouring goes muddy under a wash → pressure ≥ 0.8 or cross-hatch wherever the wash crosses.
-- Text where the wash passes survives it (wax resists) → place it elsewhere or accept it.
-- Characters vanish under a wash → composite them *after* the wash.
-- Outlines over hair read as a headband → outline hair masses on their outer edge only.
-- Knock-out drawn into a plain layer shows as grey crayon → use a dummy canvas.
-- Page turn from rectangle strips shows a staircase → an affine transform per strip.
-- Double vignette/emboss at a page-to-object transition → page with vignette 0, ramp the outer scene's in.
-- Screen-fixed tooth bloats the file → anchor it, don't boil background fills, no ffmpeg grain.
-- Reverb IR from unit-variance noise is hugely loud → scale wet to ~18 dB under dry.
+- 水彩晕染条带之间的间隙留下白色条纹→重叠条带并覆盖所有预期的纸张。
+- 波状带边缘和宽光条纹读作山丘 → 小高频波纹，细弱条纹 (α ≤ 0.12)。
+- 轻压着色在水彩晕染 → 压力 ≥ 0.8 下变得浑浊，或者在水彩晕染交叉的地方出现交叉影线。
+- 水彩晕染经过的文本保留下来（蜡抗蚀剂）→ 将其放置在其他地方或接受它。
+- 字符在水彩晕染下消失→在水彩晕染 *之后*合成它们。
+- 头发上的轮廓被解读为发带→仅在其外边缘勾勒出发团的轮廓。
+- 绘制到普通图层中的挖空显示为灰色蜡笔→使用虚拟画布。
+- 从矩形条翻页显示了一个楼梯→每个条的仿射变换。
+- 在页面到对象的过渡处加倍 vignette/emboss → 带有晕影 0 的页面，将外部场景渐变到内部。
+- 屏幕固定牙齿使文件膨胀 → 锚定它，不要煮背景填充，没有 ffmpeg 颗粒。
+- 单位方差噪声的混响 IR 非常响亮 → 湿态下可达到约 18 dB 干态。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `gl.js` (WebGL2 compositor: paper, wax adhesion, knock-out, watercolour + resist, emboss/vignette/lamp), `crayon.js` (`line` ribbons with taper, streaks, boil; `fill` hatching with overshoot; `text`; shapes), `rig.js` (occlusion + knock-out parts, limb tubes), `sheet.js` (model sheets, `?test=model&page=…`), `end.js` (page on a desk, page turn). Draw your own character's model sheet with them before any shot. File map and commands: [DEMO.md](DEMO.md#build-notes).
+在 `demo/` 中：`gl.js`（WebGL2 合成器：纸张、蜡附着、敲除、水彩 + 抗蚀剂、emboss/vignette/lamp）、`crayon.js`（带锥度、条纹、沸腾的 `line` 色带；带过冲的 `fill` 孵化； `text`；形状）、`rig.js`（咬合+敲除部件、肢体管）、`sheet.js`（角色设定表、`?test=model&page=…`）、`end.js`（桌子上的页面、翻页）。在任何镜头之前用它们绘制您自己的角色的角色设定表。文件映射和命令：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the structure, the characters (or none), the page, the opening, the ending, the camera path, the pacing, the crayon box and whether there is a wash. All far from our demo:
+你决定结构、字符（或没有）、页面、开头、结尾、摄影机路径、节奏、蜡笔盒以及是否有水彩晕染。与我们的示范相去甚远：
 
-- Structures: **a colouring-book page** (all outlines there from frame one; each idea colours one area); **a flip through several pages** (one stage per page, joined by turns); **two children, one page** (two crayon colours argue, then combine).
-- Openings: **a finished page rubbed out** to begin again; **a crayon tip in extreme close-up** mid-stroke, pulling back; **a crumpled page being flattened**.
-- Endings: **the page taped to a fridge** among others; **a last scribble** filling the frame with one colour; **a stray splash of water** finding the white-wax message.
+- 结构：**a 着色书页**（所有轮廓均来自第一帧；每个想法为一个区域着色）； **a翻几页**（每页一页，轮流连接）； **两个孩子，一页**（两种蜡笔颜色争论，然后组合）。
+- 开场：**a 完成页面擦掉**重新开始；**a 蜡笔尖极端特写**中行程，向后拉；**皱巴巴的页面被压平**。
+- 结局：**贴在冰箱上的页面**等等； **a最后一个涂鸦**用一种颜色填充框架； **溅起的水** 发现白蜡消息。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

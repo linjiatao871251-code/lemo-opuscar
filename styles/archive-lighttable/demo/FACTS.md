@@ -1,32 +1,35 @@
-# Fact sheet: 《差两秒》 Two Seconds Short
+<a id="fact-sheet-差两秒-two-seconds-short"></a>
+# 情况说明书：《差两秒》短两秒
 
-Every date, number, call number and factual claim in the film is in the table below, in the form: claim → official source (URL) → source wording (in the original English). Checked on 2026-10-16.
+影片中的每个日期、编号、索书号和事实声明如下表所示，形式为：声明→官方来源（URL）→来源措辞（英文原文）。于 2026 年 10 月 16 日检查。
 
-On-screen labels and index lines are Chinese (some bilingual); they are quoted as they appear, with an English gloss.
+屏幕上的标签和索引行是中文的（有些是双语的）；它们按原样被引用，带有英文注释。
 
-**How it was checked**: the loc.gov item pages are blocked by a Cloudflare human-verification check and can't be opened with curl or WebFetch. So the catalogue records were taken instead from the Library of Congress's own SRU catalogue service (`http://lx2.loc.gov:210/lcdb`, MARCXML); the raw records are saved in `sources/sru_*.xml` and can be re-queried with `tools/sru.py`. Image files were taken directly from the Library's `tile.loc.gov` master storage; only the colour scan of the telegram was obtained via Wikimedia Commons, whose page gives LoC `mcc.061` as the source. The text of the telegram was read from the image itself (the original is a primary historical document).
+**如何检查**：loc.gov项目页面被Cloudflare人工验证检查阻止，无法使用curl或WebFetch打开。因此，目录记录取自国会风格库自己的 SRU 目录服务（`http://lx2.loc.gov:210/lcdb`、MARCXML）；原始记录保存在`sources/sru_*.xml`中，可以通过`tools/sru.py`重新查询。图像文件直接取自风格库的`tile.loc.gov`主存储器；只有电报的彩色扫描是通过维基共享资源获得的，其页面给出了 LoC `mcc.061` 作为来源。电报的文本是从图像本身读取的（原件是主要历史文献）。
 
-| # | Claim in the film (picture / narration / subtitle) | Source | Wording |
+| # |索赔在影片（图片/旁白/字幕）|来源|措辞|
 |---|---|---|---|
-| F1 | Narration "December seventeenth, nineteen oh three.", telegram line "Kitty Hawk N C Dec 17" | LoC catalogue, P&P copy of the telegram `cph.3b12982` (LC-USZ62-65459), `sources/sru_cph.3b12982.xml`; image of the original telegram | 245: "[Telegram from Orville Wright in Kitty Hawk, N.C., to his father announcing four successful flights, 1903 Dec. 17]" |
-| F2 | Narration "Orville wired home: success, four flights."; index line "01 电报 · 1903.12.17 · LC-USZ62-65459" (01 telegram) | Same as F1; telegram text (image) | Telegram text: "Success four flights thursday morning all against twenty one mile wind …"; addressee "Bishop M Wright / 7 Hawthorne St" |
-| F3 | Narration "The longest, fifty-seven seconds."; readout "电报 · 最长一次 57 秒" (telegram · longest 57 seconds) | Telegram text (image, `assets/raw/telegram_mcc061.jpg`, LoC `mcc.061`) | "… through air thirty one miles longest 57 seconds inform Press home … Christmas" |
-| F4 | Narration "Next day, the paper printed the same number."; label "1903.12.18 / 代顿先驱报" (Dayton Herald); index line "02 代顿先驱报 · LC-USZ62-70686" (02 Dayton Herald) | LoC catalogue `cph.3b18080` (LC-USZ62-70686), `sources/sru_cph.3b18080.xml`; clipping text (image) | 245: "[Newspaper notice of Wright Bros. 1st flight: Dayton Herald, Dec. 18, 1903]"; clipping text: "Our longest time in air was 57 seconds. ORVILLE WRIGHT." |
-| F5 | Narration "The first flight lasted twelve seconds. One hundred and twenty feet."; label "第一次飞行 / 12 秒 · 120 英尺 · 上午 10:35" (first flight / 12 seconds · 120 feet · 10:35 a.m.); index line "03" | LoC catalogue `ppprs.00626` (LC-DIG-ppprs-00626), `sources/sru_ppprs.00626.xml` | 245: "[First flight, 120 feet in 12 seconds, 10:35 a.m.; Kitty Hawk, North Carolina]"; 260: "[1903 Dec. 17]" |
-| F6 | Picture "玻璃底片" (glass negative) (the first negative) | Same as F5 | 300: "1 photograph : glass negative, dry plate ; plate 18 x 12.5 cm (5 x 7 format)." |
-| F7 | Label "快门：John T. Daniels" (shutter: John T. Daniels) | Same as F5 | 520: "(Orville Wright preset the camera and had John T. Daniels squeeze the rubber bulb, tripping the shutter.)" |
-| F8 | Label "威尔伯·莱特 / Wilbur Wright" (the person on the right of the photo) | Same as F5 | 520: "Wilbur Wright running alongside to balance the machine, has just released his hold on the forward upright of the right wing." |
-| F9 | Narration "The fourth flight: eight hundred and fifty-two feet, in fifty-nine seconds."; readout "852 英尺 / 59 秒" (852 feet / 59 seconds); comparison card quotation "852 feet covered in 59 seconds."; index line "04 · LC-DIG-ppprs-00629" | LoC catalogue `ppprs.00629` (LC-DIG-ppprs-00629), `sources/sru_ppprs.00629.xml` | 245: "[Distant view of the Wright airplane just after landing, taken from the starting point, with wing-rest in center of picture and launching rail at right. This flight, the fourth and final of December 17, 1903, was the longest: 852 feet covered in 59 seconds.]" |
-| F10 | Measuring line from "起点" (starting point) to "落地点" (landing point) | Same as F9 | "… taken from the starting point …" (the camera position is the starting point) |
-| F11 | Narration "The telegram was two seconds short."; verdict "差 2 秒" (2 seconds short) | Comparison of F3 and F9: the telegram says 57, the Library's record says 59 | The difference between the two numbers; the film does not speculate about why it is wrong |
-| F12 | Index line "05 试飞受损 · 1903.12.14 · LC-DIG-ppprs-00610" (05 damaged in a trial) (a prop on the light table) | LoC catalogue `ppprs.00610`, `sources/sru_ppprs.00610.xml` | 245: "[Wilbur in prone position in damaged machine on ground after unsuccessful trial of December 14, 1903; Kitty Hawk, North Carolina]" |
+|F1|旁白“十二月十七日，十九日三点。”，电报线路“Kitty Hawk N C Dec 17”|LoC 目录、电报 `cph.3b12982` (LC-USZ62-65459)、`sources/sru_cph.3b12982.xml` 的 P&P 副本；原始电报的图像|245：“[北卡罗来纳州基蒂霍克的奥维尔·赖特发给他父亲的电报，宣布四次成功飞行，1903 年 12 月 17 日]”|
+|F2|旁白“奥维尔连线回家：成功，四次飞行。”；索引行“01 电报·1903.12.17·LC-USZ62-65459”（01 电报）|与F1相同；电报文字（图片）|电报文本：“周四早上成功四次飞行，全都顶着二十一英里的风……”；收件人“Bishop M Wright / 7 Hawthorne St”|
+|F3|旁白“最长的，五十七秒。”；读出“电报·最长一次57秒”（电报·最长57秒）|电报文本（图像，`assets/raw/telegram_mcc061.jpg`，LoC `mcc.061`）|“……通过空中最长 31 英里 57 秒通知新闻回家……圣诞节”|
+|F4|旁白“第二天，报纸上印出了同样的数字。”；标签“1903.12.18 / 代顿先驱报”（代顿先驱报）；索引行“02 代顿先驱报·LC-USZ62-70686”（02 代顿先驱报）|LoC 目录 `cph.3b18080` (LC-USZ62-70686)、`sources/sru_cph.3b18080.xml`；剪切文本（图像）|245：“[莱特兄弟第一次飞行的报纸通知：代顿先驱报，1903 年 12 月 18 日]”；剪辑文字：“我们在空中最长的时间是 57 秒。ORVILLE WRIGHT。”|
+|F5|旁白“第一次飞行持续了十二秒。一百二十英尺。”；标签“First Flight / 12 秒·120 英尺·上午 10:35”（第一次飞行/12 秒·120 英尺·上午 10:35）；索引行“03”|LoC 目录 `ppprs.00626` (LC-DIG-ppprs-00626)、`sources/sru_ppprs.00626.xml`|245：“[首次飞行，12 秒内 120 英尺，上午 10:35；北卡罗来纳州基蒂霍克]”； 260：“[1903 年 12 月 17 日]”|
+|F6|图片《玻璃底片》（玻璃负片）（第一张负片）|与F5相同|300：“1 张照片：玻璃负片，干板；板 18 x 12.5 厘米（5 x 7 格式）。”|
+|F7|标签“曼哈顿：约翰·T·丹尼尔斯”（快门：约翰·T·丹尼尔斯）|与F5相同|520：“（奥维尔·赖特预设了摄影机，并让约翰·T·丹尼尔斯挤压橡胶球，触发快门。）”|
+|F8|标签“威尔伯·莱特 / Wilbur Wright”（照片右边的人）|与F5相同|520：“威尔伯·赖特（Wilbur Wright）在旁边奔跑以平衡机器，刚刚松开了对右翼前立柱的控制。”|
+|F9|旁白“第四次飞行：八百五十二英尺，五十九秒。”；读数“852 英尺/59 秒”（852 英尺/59 秒）；比较卡报价“59 秒内覆盖 852 英尺。”；索引行“04·LC-DIG-ppprs-00629”|LoC 目录 `ppprs.00629` (LC-DIG-ppprs-00629)、`sources/sru_ppprs.00629.xml`|245：“[莱特飞机着陆后的远景，从起点拍摄，翼托位于图片中央，发射轨道位于右侧。这次飞行是 1903 年 12 月 17 日的第四次也是最后一次飞行，是最长的：59 秒内飞越 852 英尺。]”|
+|F10|从“起点”（起点）到“落地点”（着陆点）的测量线|与F9相同|“…取自起点…”（摄影机位置是起点）|
+|F11|旁白“电报短了两秒。”；判决“差2秒”（短2秒）|F3和F9的比较：电报说57，风格库的记录说59|两个数字之间的差值； 影片没有推测为什么它是错误的|
+|F12|索引行“05试飞罪·1903.12.14·LC-DIG-ppprs-00610”（05试飞损坏）（灯台上的道具）|LoC 目录 `ppprs.00610`、`sources/sru_ppprs.00610.xml`|245：“[1903 年 12 月 14 日试验失败后，威尔伯在地面损坏的机器上俯卧；北卡罗来纳州基蒂霍克]”|
 
-## Illustrative, not measured
+<a id="illustrative-not-measured"></a>
+## 仅供参考，未测量
 
-- The scale for the fourth flight is laid out in the perspective of "flat ground + pinhole camera": the distance of a given row from the camera is D = K / (row − horizon row), where K comes from the recorded 852 feet and the row of the bottom edge of the landed machine (horizon at row 1385, bottom edge of the machine at about row 1410, K = 852 × 25). The picture labels it "透视刻度（示意）" (perspective scale (illustrative)). It only lays the recorded 852 feet onto the photograph; it is not a distance measured from the photograph.
-- The 0 → 59 second readout rolls in step with the scale; it is only animation and does not represent moments during the flight.
+- 第四次飞行的比例尺以“平地 + 针孔摄影机”的角度进行布置：给定行距摄影机的距离为 D = K /（行 − 地平线行），其中 K 来自记录的 852 英尺和着陆机器底部边缘的行（地平线在第 1385 行，机器底部边缘在第 1410 行左右，K = 852 × 25）。该图片将其标记为“透视图（示意）”（透视比例（说明性））。它只是将记录的 852 英尺放在照片上；它不是根据照片测量的距离。
+- 0 → 59 秒读数与刻度同步滚动；它只是动画，并不代表飞行过程中的时刻。
 
-## Notes on image processing
+<a id="notes-on-image-processing"></a>
+## 图像处理注意事项
 
-- The "negative image" of the glass negative on the light table is made by inverting the Library's positive scan in the shader and adding a film-base colour. The "positive image" in the loupe is the Library's scan itself.
-- Once the first negative enters photo space, the flying machine and Wilbur are cut out as separate layers (`tools/prep.py`: difference keying in the sky, only strong edges cut on the sand), and the holes behind them are filled with pyramid interpolation plus grain. The machine is moved about 125 pixels (scan pixels) across the picture: this is animation, not the historical flight path.
+- 灯台上玻璃负片的“负片图像”是通过在着色器中反转库的正扫描并添加影片基色来制作的。放大镜中的“正像”是风格库的扫描件本身。
+- 一旦第一张底片进入照片空间，飞行器和威尔伯就会被剪切为单独的图层（`tools/prep.py`：天空中的差异键控，只有强边缘在沙子上切割），并且它们后面的孔用金字塔插值加颗粒填充。机器在图片上移动约 125 像素（扫描像素）：这是动画，而不是历史飞行路径。

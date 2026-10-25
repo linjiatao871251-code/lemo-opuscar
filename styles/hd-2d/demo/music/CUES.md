@@ -1,76 +1,84 @@
-# Score edit sheet · The Lampbearer 守灯人
+<a id="score-edit-sheet--the-lampbearer-守灯人"></a>
+# 配乐编辑表 · The Lampbearer 守灯人
 
-> Generated automatically by `edit.py` (re-running overwrites it). Times in seconds. "Film" = the 74.5 s film timeline; "P" = time in the source track (decoded by ffmpeg at 48 kHz, same as a DAW import).
+> 由 `edit.py` 自动生成（重新运行会覆盖它）。时间以秒为单位。 “影片” = 74.5 秒影片时间线； “P” = 源轨道中的时间（由 ffmpeg 以 48 kHz 解码，与 DAW 导入相同）。
 
-## Source
+<a id="source"></a>
+## 来源
 
-| Title | Composer | Page / direct link | Licence |
+|标题|作曲家|页面/直接链接|执照|
 |---|---|---|---|
-| Precipice | Scott Buckley | https://www.scottbuckley.com.au/library/precipice/ · https://www.scottbuckley.com.au/library/wp-content/uploads/2021/01/sb_precipice.mp3 | CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) |
+|悬崖|斯科特·巴克利|https://www.scottbuckley.com.au/library/precipice/ · https://www.scottbuckley.com.au/library/wp-content/uploads/2021/01/sb_precipice.mp3|CC 4.0 (https://creativecommons.org/licenses/by/4.0/)|
 
-Composer's description: "A short, sweeping fantasy orchestral track evoking the anticipation of approaching the unknown, the confusion and terror as you cross the threshold, and the pride and relief as you learn and grow from your discoveries." (third place in the Orchestral Tools "Discovery" competition).
-Only this one track is used: the source itself runs "anticipation → terror at crossing the threshold → pride and relief", the same arc as the film's "setting out with the lamp → storm → the lighthouse lit", so key, orchestration and mix space are naturally consistent, and every edit point is inside the same piece. The original mp3 is in `src/`.
+作曲家的描述：“一首简短而广泛的奇幻管弦乐曲目，唤起人们对接近未知的期待，当你跨过门槛时的困惑和恐惧，以及当你从发现中学习和成长时的自豪和宽慰。” （管弦乐工具“发现”比赛第三名）。
+只用了这一首：音源本身就是“期待→跨过门槛的恐惧→骄傲和解脱”，与影片的“提灯出发→暴风雨→灯塔点亮”的弧线相同，所以调性、编曲和混音空间自然一致，每个编辑点都在同一个片段内。原版mp3位于`src/`。
 
-Structure of the source (librosa analysis): P0–12 D pedal pad (about -43 dB) → P12–36 first section in D/G/B♭ major, flowing and gradually opening out → P36–49 crescendo to the first high point (G) → P50–76 turns to D minor / A dominant pedal, the tense section → **P79.7 sudden shift from D to G♭, low brass / bass voices enter, the climax of the piece begins** → G♭–B♭m–E♭–Fm–D♭–B♭m → **P104.9 lands on the final E♭ chord**, P105–117 natural decay.
+音源结构（库分析）：P0–12 D 踏板垫（约 -43 dB）→ P12–36 D/G/B♭ 大调第一部分，流动并逐渐展开 → P36–49 渐强到第一个高点（G）→ P50–76 转向 D 小调/A 主音踏板，紧张部分 → **P79.7 突然从D到G♭，低音铜管/低音进入，乐曲的高潮开始**→G♭–B♭m–E♭–Fm–D♭–B♭m→**P104.9落在最后的E♭和弦**，P105–117自然衰减。
 
-## Edit table (film ← source)
+<a id="edit-table-film--source"></a>
+## 编辑表（影片←源）
 
-| Segment | Film | Source P | Notes |
+|部分|影片|来源P|笔记|
 |---|---|---|---|
-| S1 | 0.30–11.60 | 4.70–16.00 | 2 s cosine fade-in from 0.3 s; the D pedal pad plays under the chapter card; at film ≈7.6 s the source swells for the first time, landing on the harbour-town wide shot |
-| Pause | 11.60–12.40 | — | **The lamp goes out, a "drop into nothing"**: cosine fade-out over 11.48–11.60, then a synthetic room reverb tail (RT60 1.5 s, -7 dB) lets the music "breathe out"; 0.8 s with essentially no music |
-| S2 | 12.40–42.00 | 18.486–48.086 | Resumes on the bass entry of the G chord (automatically aligned to the onset, measured in the film at 12.386); continuous all the way: pier → night forest → the source's own crescendo at film 34–35.5 → storm |
-| Drop-out | 42.00 | hard cut at P48.09 | 50 ms cosine cut + synthetic reverb tail (RT60 1.6 s, -9 dB), "the wind blows the flame out"; after 0.5 s only a held tone at about -44 dBFS remains |
-| S3 | 42.05–44.90 | 6.20–9.05 | The opening D pedal pad returns at -4 dB as the only, very soft held tone; equal-power crossfade with S4 over 44.3–44.9 |
-| S4 | 44.30–66.95 | 70.546–93.195 | The source's own build before the climax (A dominant pedal → D); **the G♭ downbeat at P79.746 = film 53.500** |
-| S5 | 66.95–76.50 | 104.849–114.40 | Jumps to the arrival of the final E♭ chord (bass onset), natural decay; cosine fade to 0 over 75.2–76.5 |
+|S1|0.30–11.60|4.70–16.00|从 0.3 秒开始 2 秒余弦淡入； D 踏板垫在章节卡下播放；在影片约 7.6 秒时，源头首次膨胀，降落在海港城镇镜头范围内|
+|暂停|11.60–12.40|—|**灯熄灭，“陷入虚无”**：余弦淡出超过11.48–11.60，然后合成房间混响尾音（RT60 1.5 s，-7 dB）让音乐“呼吸”； 0.8 秒，基本没有音乐|
+|S2|12.40–42.00|18.486–48.086|在 G 和弦的低音入口处恢复（自动与起始点对齐，在影片的 12.386 处测量）；一路连续：码头 → 夜间森林 → 影片 34–35.5 源自身的渐强 → 暴风雨|
+|辍学|42.00|P48.09 硬切|50毫秒余弦剪切+合成混响尾音（RT60 1.6秒，-9 dB），“风吹灭火焰”； 0.5 秒后，仅保留约 -44 dBFS 的持续音调|
+|S3|42.05–44.90|6.20–9.05|开场的 D 踏板垫以 -4 dB 的速度返回，是唯一非常柔和的保持音调； S4 的等功率交叉淡入淡出超过 44.3–44.9|
+|S4|44.30–66.95|70.546–93.195|高潮前源自己的构建（A 主踏板 → D）； **G♭ 悲观于 P79.746 = 影片 53.500**|
+|S5|66.95–76.50|104.849–114.40|跳转到最后的E♭和弦到来（低音开始），自然衰减；余弦在 75.2–76.5 范围内淡入 0|
 
-### Jump points
+<a id="jump-points"></a>
+### 跳跃点
 
-| Film position | From P | To P | Crossfade | Alignment |
+|影片位置|来自P|顶部|交叉淡入淡出|结盟|
 |---|---|---|---|---|
-| 11.60 → 12.40 | 16.00 (B♭ chord decaying) | 18.486 (G-chord bass onset) | None (0.8 s pause + reverb tail in between) | The source itself has a phrase breath at P17.3; here it is stretched into a pause |
-| 42.00 | 48.086 | — | 50 ms fade-out + reverb tail | Cut just before the bass accent at P48.2, so that it is "swallowed" |
-| 44.30 | opening pad P6.20 | 70.546 | 0.6 s equal power | D pad → A/D dominant pedal, the same harmony |
-| 66.949 | 93.195 (onset inside the Fm bar) | 104.849 (bass onset of the E♭ arrival) | 60 ms equal power, crossfade ends at the onset | Pitch content in the 0.5 s before each side is C / F / D♭ on both; the E♭ onset is kept whole |
+|11.60 → 12.40|16.00（B♭ 和弦衰减）|18.486（G 和弦低音开始）|无（0.8 秒暂停 + 中间有混响尾音）|来源本身在 P17.3 处有一个短语“呼吸”；这里被拉长为停顿|
+|42.00|48.086|—|50 毫秒淡出 + 混响尾音|在 P48.2 的低音重音之前剪切，使其被“吞没”|
+|44.30|开口垫P6.20|70.546|0.6秒等功率|D 垫 → A/D 主踏板，同样和声|
+|66.949|93.195（在 Fm 条内开始）|104.849（E♭ 到来时低音开始）|60 毫秒等功率，交叉淡入淡出在开始时结束|每侧前 0.5 秒的音调内容均为 C / F / D♭； E♭ 开始保持完整|
 
-## The 53.5 hit point
+<a id="the-535-hit-point"></a>
+## 53.5生命值
 
-- The climax is not made by an edit: it is the source's own D → G♭ modulation downbeat (bass voices enter, source energy below 250 Hz rises +8.2 dB within 40 ms). The whole of S4 is placed at the fixed offset `P_hit − 53.5`, so the accuracy of the hit depends only on locating the onset.
-- `edit.py` searches the <250 Hz energy envelope of the source over P79.66–79.82 (43 ms frames, 2.5 ms hop, 20 ms smoothing) for the steepest 40 ms rise and takes its midpoint as the onset, giving P_hit = 79.7463; S4 placement offset = P_hit − 53.5 = 26.2463; after rounding to 48 kHz samples the theoretical error is < 0.02 ms.
-- Measured in the finished score.wav with the same detector (±150 ms search): onset at **53.4963 s, error -3.7 ms** (requirement < 60 ms).
-- So that it reads as "the full orchestra coming in" rather than just the top of a crescendo: a 10 dB "intake of breath" dip over 53.12–53.42, recovering to 0 dB within 5 ms over 53.495–53.500, and the downbeat comes in untouched. RMS of the 300 ms before -28.6 dB → 300 ms after -13.9 dB (+14.6 dB).
-- The build over 44.3–53.2 uses "level-following" automation: the source's 0.5 s short-term RMS is pulled towards a rising target line from -42 dB to -22 dB (-18/+10 dB clamp, 300 ms smoothing); the small peak at P71–72 is held down and the dip at P73–76 is lifted level, so in the film 44.5→52.75 is a steady crescendo (about -43 → -22 dBFS).
+- 高潮不是通过编辑实现的：它是源自身的 D → G♭ 调制强拍（低音声音进入，低于 250 Hz 的源能量在 40 毫秒内上升 +8.2 dB）。整个S4放置在固定偏移`P_hit − 53.5`处，因此命中的准确性仅取决于定位起始点。
+- `edit.py` 在 P79.66–79.82（43 ms 帧、2.5 ms 跳跃、20 ms 平滑）上搜索源的 <250 Hz 能量包络，寻找最陡的 40 ms 上升，并将其中点作为起始点，给出 P_hit = 79.7463； S4 放置偏移量 = P_hit − 53.5 = 26.2463；舍入到 48 kHz 样本后，理论误差 < 0.02 ms。
+- 使用相同检测器在成品 score.wav 中测量（±150 ms 搜索）：起始时间为 **53.4963 s，误差 -3.7 ms**（要求 < 60 ms）。
+- 因此，它读起来是“整个管弦乐队进来”，而不仅仅是渐强的顶部：在 53.12-53.42 范围内“吸气”下降 10 dB，在 53.495-53.500 范围内 5 毫秒内恢复到 0 dB，并且强拍未受影响。 -28.6 dB 之前 300 ms → -13.9 dB (+14.6 dB) 之后 300 ms 的 RMS。
+- 44.3–53.2 上的构建使用“电平跟踪”自动化：源的 0.5 秒短期 RMS 被拉向从 -42 dB 到 -22 dB 的上升目标线（-18/+10 dB 钳位，300 ms 平滑）； P71–72 处的小峰值被抑制，P73–76 处的下降被提升到水平，因此在影片 44.5→52.75 中是一个稳定的渐强（大约 -43 → -22 dBFS）。
 
-## Measured RMS (score.wav, dBFS)
+<a id="measured-rms-scorewav-dbfs"></a>
+## 测量有效值（score.wav，dBFS）
 
-| Film | Section | Section RMS | 0.4 s window max | 0.4 s window min |
+|影片|部分|截面有效值|最大 0.4 秒窗口|最小 0.4 秒窗口|
 |---|---|---|---|---|
-| 0.0–5.5 | Chapter card | -39.4 | -36.3 | -94.3 |
-| 5.5–11.6 | Harbour town at night (narration N1) | -31.1 | -25.1 | -44.5 |
-| 11.6–12.4 | Lamp-out pause | -43.4 | -40.8 | -54.6 |
-| 12.4–25.5 | Harbour town / pier | -31.1 | -25.2 | -51.1 |
-| 25.5–35.5 | Night forest | -26.5 | -20.4 | -40.3 |
-| 35.5–42.0 | Storm, stone steps | -19.9 | -18.1 | -23.8 |
-| 42.0–44.3 | Flame almost out (drop-out) | -37.8 | -31.1 | -45.9 |
-| 44.3–53.5 | Relit → climbing the tower | -29.6 | -22.5 | -43.5 |
-| 53.5–67.0 | Climax: beam sweeps the sea | -14.7 | -12.2 | -20.4 |
-| 67.0–74.5 | Title wrap-up | -17.3 | -12.4 | -28.4 |
-| 74.5–76.5 | Reverb tail | -33.7 | -30.4 | -57.9 |
+|0.0–5.5|章卡|-39.4|-36.3|-94.3|
+|5.5–11.6|夜晚的港口小镇（旁白N1）|-31.1|-25.1|-44.5|
+|11.6–12.4|熄灯暂停|-43.4|-40.8|-54.6|
+|12.4–25.5|海港小镇/码头|-31.1|-25.2|-51.1|
+|25.5–35.5|夜晚的森林|-26.5|-20.4|-40.3|
+|35.5–42.0|风暴，石阶|-19.9|-18.1|-23.8|
+|42.0–44.3|火焰几乎熄灭（熄灭）|-37.8|-31.1|-45.9|
+|44.3–53.5|瑞利特 → 爬塔|-29.6|-22.5|-43.5|
+|53.5–67.0|高潮：光束扫海|-14.7|-12.2|-20.4|
+|67.0–74.5|标题总结|-17.3|-12.4|-28.4|
+|74.5–76.5|混响尾音|-33.7|-30.4|-57.9|
 
-Overall RMS -20.3 dBFS, sample peak -1.12 dBFS (4× oversampled true peak ≤ -1.1 dBFS). No loudness normalisation.
+总体 RMS -20.3 dBFS，样本峰值 -1.12 dBFS（4 倍过采样真实峰值 ≤ -1.1 dBFS）。没有响度标准化。
 
-Loudness curve, 1 s windows (dBFS, labelled by window start):
+响度曲线，1 s 窗口（dBFS，以窗口开始标记）：
 `0s:-57 1s:-42 2s:-38 3s:-38 4s:-37 5s:-41 6s:-40 7s:-40 8s:-36 9s:-31 10s:-26 11s:-29 12s:-33 13s:-30 14s:-31 15s:-31 16s:-36 17s:-45 18s:-38 19s:-37 20s:-32 21s:-26 22s:-31 23s:-31 24s:-29 25s:-28 26s:-26 27s:-29 28s:-28 29s:-33 30s:-38 31s:-34 32s:-29 33s:-25 34s:-22 35s:-20 36s:-20 37s:-20 38s:-22 39s:-20 40s:-19 41s:-19 42s:-35 43s:-45 44s:-43 45s:-38 46s:-38 47s:-37 48s:-35 49s:-32 50s:-30 51s:-27 52s:-24 53s:-16 54s:-15 55s:-18 56s:-14 57s:-14 58s:-13 59s:-14 60s:-18 61s:-17 62s:-15 63s:-14 64s:-13 65s:-16 66s:-14 67s:-13 68s:-14 69s:-20 70s:-18 71s:-19 72s:-24 73s:-27 74s:-29 75s:-34`
 
-## Gain automation (CONFIG in edit.py)
+<a id="gain-automation-config-in-editpy"></a>
+## 获得自动化（edit.py 中的 CONFIG）
 
-- Static gain points `GAIN_POINTS`: 0s +3dB, 5.3s +3dB, 5.8s +0dB, 11.6s +0dB, 12.4s -3dB, 25s -4dB, 31s -6dB, 35.2s -6dB, 35.8s -3dB, 41.9s -1dB, 42s +0dB, 76.5s +0dB (linear interpolation in dB)
-- Ducking under the narration `NARR_DIP_DB`: 6.8–11 -3.5dB, 12.6–13.7 -2dB, 17.8–23.2 -3.5dB, 27–30.1 -2dB, 59.5–63 -1.5dB (350 ms cosine transitions)
-- 42.0–44.9 pedal pad -4 dB
-- 44.3–53.5: level-following crescendo; 53.12–53.50 intake of breath; 0 dB after 53.5
-- 75.2–76.5: cosine fade-out to 0
+- 静态增益点`GAIN_POINTS`：0s +3dB、5.3s +3dB、5.8s +0dB、11.6s +0dB、12.4s -3dB、25s -4dB、31s -6dB、35.2s -6dB、35.8s -3dB、41.9s -1dB、42s +0dB、 76.5s +0dB（以 dB 为单位的线性插值）
+- 音量闪避旁白下`NARR_DIP_DB`：6.8–11 -3.5dB、12.6–13.7 -2dB、17.8–23.2 -3.5dB、27–30.1 -2dB、59.5–63 -1.5dB（350 毫秒余弦过渡）
+- 42.0–44.9 踏板垫 -4 dB
+- 44.3–53.5：电平跟随渐强； 53.12–53.50 吸气； 53.5 后为 0 dB
+- 75.2–76.5：余弦淡出至 0
 
-## How to change it
+<a id="how-to-change-it"></a>
+## 如何改变它
 
-Edit CONFIG at the top of `edit.py`: `T_HIT` moves the climax time (S4 shifts as a whole; the length of the build follows `T_SILENCE[1]`); `T_CAESURA` changes the lamp-out pause; `GAIN_POINTS` / `NARR_DIP_DB` change the loudness curve. Then run `../../../../.venv/bin/python edit.py` in this folder; score.wav, measure.json and CUES.md are updated together.
+编辑`edit.py`顶部的CONFIG：`T_HIT`移动高潮时间（S4整体移动；构建长度跟随`T_SILENCE[1]`）； `T_CAESURA` 更改熄灯暂停； `GAIN_POINTS` / `NARR_DIP_DB` 更改响度曲线。然后在该文件夹下运行`../../../../.venv/bin/python edit.py`； score.wav、measure.json 和 CUES.md 一起更新。

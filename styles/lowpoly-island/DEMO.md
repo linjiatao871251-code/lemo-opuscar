@@ -1,66 +1,73 @@
-# Low-poly Isometric Island — our demo
+<a id="low-poly-isometric-island--our-demo"></a>
+# 低聚等距岛 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Island That Grew* (53 s) · `lowpoly-island.mp4` · source in [`demo/`](demo/)
+示范: *成长的岛屿* (53 s) ·`lowpoly-island.mp4`· 来源在[`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-An empty sea with only a buoy that knows one note; tiles, trees and houses rise from the sea one by one, each landing with a note, so the island and its song are written together — until at night the boat that went out cannot find its way home, and the last "note" is a lighthouse.
+空荡荡的大海，只有一个能听懂一个音符的浮标；瓦片、树木、房屋一一从海中升起，每一个落地都带有一个音符，于是岛屿和它的歌被写在了一起——直到夜晚，出海的船找不到回家的路，而最后一个“音符”是一座灯塔。
 
-We read the brief as: **a small world that grows, lives through a day, and meets one problem that the final piece solves** — one subject (an island), one goal (to become a home), one turn (night falls, the boat is lost). In the old guide this was offered as the way to adapt any topic; it is only this film's shape.
+我们读到的简介是：**一个成长的小世界，经历了一天的生活，并遇到了最终作品解决的一个问题**——一个主题（一座岛屿），一个目标（成为一个家），一个转折（夜幕降临，船迷失了）。在旧指南中，这是作为适应任何主题的方式提供的；这只是影片的形状。
 
-Emotional arc (53 s): emptiness → first note → accelerating joy of building → a lived-in day → dusk warmth → silent night with one thing missing → the final piece ignites (climax) → pull back to scale, with an echo of the opening.
+情感弧线（53秒）：空虚→第一个音符→加速建造的喜悦→生活的一天→黄昏的温暖→缺少一件事的寂静的夜晚→最后的作品点燃（高潮）→拉回规模，与开场相呼应。
 
-Native powers spent: procedural growth (the whole first act), the orthographic gaze (the final ×25 zoom), turntable (the growth shot), flat shading × light (the day time-lapse), emissive blocks (windows at dusk, the beam at night).
+原生力量消耗：程序生长（整个第一幕）、正交凝视（最后×25变焦）、转盘（生长镜头）、平面着色×光（白天延时）、发射块（黄昏时的窗户、夜间的光束）。
 
-**"Building is composing", as the demo paid it off:** every growth event is exported from the page with a MIDI note, and the score's melody voice is synthesized from those events. The lighthouse beam turns once every 12 beats and passes one ring cell per beat; the eight houses standing on those cells light up and chime as it passes, so the notes laid down in a shuffled build order are replayed in **spatial order** as the complete theme. The second ring around the centre cell has 12 cells at exactly 30° steps, which made this beat-synced sweep possible.
+**“建筑就是作曲”，因为示范得到了回报：**的每一个成长事件都通过MIDI音符从页面导出，而配乐的旋律声音是从这些事件合成的。灯塔光束每 12 次转动一次，每一次经过一个环形单元；站在这些单元格上的八座房子在经过时会亮起来并发出提示音，因此以打乱的构建顺序排列的音符会在 **空间顺序** 中重播作为完整的主题。中心单元周围的第二个环有 12 个单元，步长正好为 30°，这使得节拍同步扫描成为可能。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera | Why |
+|打|摄影机|为什么|
 |---|---|---|
-| Opening | Close ortho (frustum 7.5) on one lonely object, empty faceted sea, sky band at the top | Give the viewer nothing to look at; the first tile then becomes an event |
-| Growth | Turntable (azimuth +45° over ~5 s) with a slow zoom-out, **intercut** on beats with close-ups: a peak rising with a splash (elevation 23°, frustum 5.2), floors stacking (26°, 6), dock planks and the boat drop (27°, 6.6) | Wide shots show the shape growing; close-ups sell the bounce and the splash |
-| Day | Medium on the village, sun sweeping 100° in 2.5 s (time-lapse shadows) | Light is the time machine |
-| Departure | Side angle computed from the dock direction, camera trails the boat | The boat must move across the frame, not toward the lens |
-| Dusk | Fixed 3/4 wide, slow push, windows light one per eighth note | Let the lights be the only motion |
-| Night | Very wide, elevation 21°, island lower left, one tiny light far out in the dark | Negative space = danger |
-| Climax | High angle (50°) turning at 0.22× the beam speed, then easing down to 25° so the starry sky "rises" | You must see the beam sweep over every house; then the sky opens up |
-| Ending | Pure orthographic zoom ×25; an echo object far away in the lower right | Scale reveal and echo |
+|开幕|关闭正交（视锥体 7.5）在一个孤独的物体上，空的多面海，顶部的天空带|不给观众任何可看的东西；然后第一个图块成为一个事件|
+|生长|转盘（方位角 +45°，超过约 5 秒），缓慢缩小，**插切** 在带有特写镜头的节拍上：随着飞溅上升的山峰（仰角 23°，平截头体 5.2），地板堆叠（26°，6），码头木板和船下落（27°，6.6）|宽幅镜头显示形状不断增长；特写镜头展现出弹跳和飞溅的效果|
+|天|表现媒介在村庄上，太阳在 2.5 秒内扫过 100°（延时阴影）|光是时间机器|
+|离开|从码头方向计算的侧角，摄影机尾随船|船必须穿过框架，而不是朝向镜头|
+|黄昏|固定 3/4 宽、慢推、窗口亮一个八分之一音符|让灯光成为唯一的动作|
+|夜晚|非常宽，仰角 21°，岛屿左下方，黑暗中远处有一盏微小的灯|负空间=危险|
+|高潮|以 0.22× 光束速度高角度（50°）转动，然后缓动降低至 25°，因此星空“升起”|你一定会看到横梁扫过每一栋房子；然后天空打开了|
+|结束|纯正投影变焦×25；右下角远处有一个回声物体|比例显示和回显|
 
-Camera settings used: azimuth 45° by default, elevation **30°** (build), **33–35°** (day detail), **20–25°** (night — a lower angle widens the sky band so stars show), **50°** (top-down-ish when the beam sweeps). Frustum height 5–7 for close-ups, 12–16 for the whole island, up to 420 for the final scale reveal.
+使用的摄影机设置：默认方位角 45°、仰角 **30°**（构建）、**33–35°**（白天细节）、 **20–25°**（夜晚 - 较低的角度使天空带变宽，因此可以看到星星），**50°**（光束扫过时从上到下）。特写镜头的视锥体高度为 5-7，整个岛屿的视锥体高度为 12-16，最终比例显示的视锥体高度最高为 420。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Event-driven**: page `EV` entries carry `note`; `music/score.py` synthesizes every one at its exact time (rise → marimba, pop → kalimba, floor → woodblock, roof → kalimba+marimba = the melody, window → soft kalimba, ring → rising marimba, beamhit → kalimba lead + marimba octave + bell shimmer). Underneath: ambient pad, a gentle marimba ostinato and shaker/soft kick only in the day and climax sections. **96 BPM, D major pentatonic feel.** No piano, no strings.
-- **One note as a motif**: a buoy bell on D5 opens the film ("the only note the sea knows") and a distant bell plays the same note at the end.
-- **Silence**: the night section drops to a low pad drone, waves and crickets; the music bus is digital zero for the last half-beat before the climax downbeat.
-- Growth scheduled on the 16th grid: tiles on halves → quarters → eighths.
-- The boat's answering bell sits in a rest of the melody, filling the gap when the beam finds it.
-- **Foley** (`mix.py`): as in STYLE.md §7, plus gulls by day (downward-gliding FM chirps), windmill creak, crickets from dusk; the dock plank knock and lighthouse-ring stone thunk, glass tink for the lamp room, whump + hum on ignition. Floors: second knock 0.21 s after the first.
-- **Voice**: Kokoro `af_sky` (clear, gentle female), speed 0.86–0.92, 5 short lines. "Sea" was heard as "C" in a film about notes, so the narration says "ocean".
-- **Mix**: voice compressed, ~10 dB over the music; music ducked −8 dB under the voice; −14 LUFS; grain 0.
+- **事件驱动**：页面`EV`条目携带`note`； `music/score.py` 在准确的时间合成每一个（上升→马林巴，流行→卡林巴，地板→木版，屋顶→卡林巴+马林巴=旋律，窗口→柔和的卡林巴，铃声→上升马林巴，beamhit→卡林巴主音+马林巴八度+铃声）。下面：环境音垫、柔和的马林巴固定音和 shaker/soft 仅在日间和高潮部分使用。 **96 BPM，D大调五声音阶感觉。** 没有钢琴，没有弦乐。
+- **一个音符作为主题**：D5上的浮标钟打开影片（“大海知道的唯一音符”），远处的钟在最后演奏相同的音符。
+- **沉默**：夜间部分下降到低垫无人机、海浪和蟋蟀；音乐总线在高潮强拍之前的最后半拍是数字零。
+- 第 16 格的增长计划：一半→四分之一→八分之一。
+- 船的应答铃声出现在旋律的其余部分中，当光束发现它时填补了空白。
+- **弗利** (`mix.py`)：如 STYLE.md §7，加上白天的海鸥（向下滑翔的 FM 鸣叫声）、风车吱吱作响、黄昏时的蟋蟀；码头木板的敲击声、灯塔环石的撞击声、灯室玻璃的叮当声、点火时的轰鸣声和嗡嗡声。楼层：在第一次敲击 0.21 秒后进行第二次敲击。
+- **嗓音**：心`af_sky`（清晰、温柔的女声），速度0.86-0.92，5条短线。在关于音符的影片中，“Sea”被听成“C”，因此旁白说“ocean”。
+- **混音**：语音压缩，超过音乐约 10 dB；音乐在声音下方降低了−8 dB； −14 LUFS；颗粒 0。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Terrain heights**: sand 0.36–0.42, grass 0.74–0.9, hills 1.1–1.4, rock peak 1.95; top cap 0.16 thick, side column sunk 0.1 below it; 1.5 % gap between tiles; lightness jitter ±4 %; roughness .88.
-- **Props**: box houses 0.92 wide, 0.62 per floor, gable roof prism (overhang 0.08) with wall-coloured gable ends; windows = small quads with their own emissive material per house; cone pines (6 sides), icosahedron (detail 0) broadleaf trees, 3-sided-cone palm fronds; windmill (6-sided tapered tower, 4 blades); dock planks on posts; a boat from a pinched box hull + triangle sail; lighthouse = 4 tapered 8-sided rings alternating white/red + dark gallery + emissive glass + red cone cap. Three gulls circle; chimney smoke; the windmill spins up on the "island complete" chord.
-- **Palette (sRGB)**: sand top `#f3dfab` / side `#e2c68e`; grass `#93c96c`, `#7fbd62`; earth side `#c99c6e`; rock `#b4b8bd` / `#8f949c`; walls `#fbf3e6 #f5c2b0 #b5dccb #a9cbe8 #f7df8f #e9c9e6`; roofs `#d9644a #4f7fb8 #e0874f #6a5a8e #3f8f86`; pines `#3f8a5a #4f9c63`; leaves `#7fc36a #9ad06f`; warm windows `#ffc676`; lighthouse `#f6f2ea` / `#d9544a`.
-- **Day/night keyframes** (zenith / horizon / deep sea / shallow / sun): dawn `#9fb6cf / #f3d2c4 / #4f8ea3 / #8fc9c4`; day `#88c8e8 / #eaf5f2 / #38a5bc / #86e2d4` sun 2.7; dusk `#6f6fa8 / #ffa888 / #5a6a9e / #b08aa6` sun `#ff9a68` elevation 8°; night `#12163a / #4a4478 / #23264a / #363a66`, moon `#a9b0e8` 0.9. Night sea darker near the camera and brightening toward the sky band.
-- **Sea**: 220×220 plane, 200×200 segments, four summed sines (amplitude ≈ 0.2), roughness 0.55; coarse 5000-unit plane 0.55 below; lagoon map a 512² canvas of soft blobs where tiles have risen; surf ring 0.99–1.12 r, opacity ≈ 0.32.
-- **Arrival numbers**: rise 0.5 s cubic ease, overshoot `sin(13 s)·e^(−7 s)·0.18`, hex splash ring + 14 droplets 0.12 s before it settles. Drop: 2.4 units in 0.22 s (ease-in), bounce `|sin(15 s)|·e^(−9 s)·0.22`, squash `1 − 0.16·e^(−12 s)·cos(26 s)` on Y, volume preserved. Pop: `1 − e^(−9 s)·cos(17 s)`.
-- **Post**: GTAO radius 0.7, scale 1.5; tilt-shift max radius 3 px at the frame edges; bloom threshold 0.95, strength 0.22 day / 0.5 night; grade sat 1.04–1.1, soft contrast, small blue lift at night; render 3840×2160.
-- **Lighthouse beam**: camera-facing ribbon, halo 2.4× wider at 0.32 strength, tilted 7° down so it meets the sea far away; water lit by an angular band around the beam direction plus per-facet sparkles. Beam: one turn every 12 beats.
-- **Subtitles as built**: Quicksand 600, 44 px, `#fffdf8`, navy drop shadow (blur 14), centred 118 px above the bottom; the hex icon (top + two side faces) is dawn pink, day grass, dusk orange, night window-yellow. Shown from 0.05 s before the line.
-- **Title**: Josefin Sans 600, all caps, 78 px, 16 px tracking; letters rise 55 ms apart from under a thin water line; 300-weight lowercase sub-line ("a low-poly island film").
+- **地形高度**：沙地0.36-0.42，草地0.74-0.9，丘陵1.1-1.4，岩峰1.95；顶盖厚0.16，边柱下沉0.1；瓷砖之间的间隙为 1.5%；亮度抖动±4%；粗糙度0.88。
+- **道具**：箱式房屋0.92宽，每层0.62，山墙屋顶棱柱（悬垂0.08），山墙端部为墙壁颜色；窗户 = 每个房屋都有自己的发射材料的小四边形；锥松（6 面）、二十面体（细节 0）阔叶树、三面锥棕榈叶；风车（6面锥形塔，4片叶片）；将木板停靠在柱子上；一艘由挤压箱体+三角帆组成的船；灯塔 = 4 个交替的锥形 8 边环 white/red + 暗廊 + 发光玻璃 + 红色锥帽。三只海鸥盘旋；烟囱冒烟；风车在“岛屿完整”和弦上旋转起来。
+- **调色板（sRGB）**：沙面`#f3dfab`/侧面`#e2c68e`；草`#93c96c`，`#7fbd62`；接地侧 `#c99c6e`；岩石 `#b4b8bd` / `#8f949c`；墙壁 `#fbf3e6 #f5c2b0 #b5dccb #a9cbe8 #f7df8f #e9c9e6`；屋顶`#d9644a #4f7fb8 #e0874f #6a5a8e #3f8f86`；松树 `#3f8a5a #4f9c63`;叶子`#7fc36a #9ad06f`；暖窗`#ffc676`；灯塔 `#f6f2ea` / `#d9544a`。
+- **Day/night 关键帧**（天顶/地平线/深海/浅海/太阳）：黎明`#9fb6cf / #f3d2c4 / #4f8ea3 / #8fc9c4`；天 `#88c8e8 / #eaf5f2 / #38a5bc / #86e2d4` 太阳 2.7；黄昏 `#6f6fa8 / #ffa888 / #5a6a9e / #b08aa6` 太阳 `#ff9a68` 仰角 8°；夜晚 `#12163a / #4a4478 / #23264a / #363a66`，月亮 `#a9b0e8` 0.9。 摄影机附近的夜海变暗，并向天空带变亮。
+- **海**：220×220平面，200×200线段，四个正弦求和（振幅≈0.2），粗糙度0.55；粗5000单位平面0.55以下；泻湖地图是一张 512 平方米的画布，上面有柔软的斑点，瓷砖已经升起；冲浪环 0.99–1.12 r，不透明度 ≈ 0.32。
+- **到达数字**：上升0.5秒立方轻松，过冲`sin(13 s)·e^(−7 s)·0.18`，六角飞溅环+14个水滴0.12秒稳定。下降：0.22 秒内下降 2.4 个单位（缓入），弹跳 `|sin(15 s)|·e^(−9 s)·0.22`，在 Y 上挤压 `1 − 0.16·e^(−12 s)·cos(26 s)`，保留音量。流行音乐：`1 − e^(−9 s)·cos(17 s)`。
+- **邮政**：GTAO半径0.7，比例1.5；框架边缘倾斜移动最大半径 3 px；绽放阈值0.95，强度0.22白天/0.5夜晚；等级 1.04–1.1，对比度柔和，夜间蓝色小提升；渲染3840×2160。
+- **灯塔光束**：面向摄影机的带状，光晕宽2.4倍，强度0.32，向下倾斜7°，与大海相接很远；水由围绕光束方向的角带加上每个面的闪光照亮。横梁：每12次转动一圈。
+- **内置字幕**：流沙600，44像素，`#fffdf8`，海军蓝阴影（模糊14），在底部上方居中118像素；六角形图标（顶部+两个侧面）为黎明粉色、白天草色、黄昏橙色、夜窗黄色。从行前 0.05 秒开始显示。
+- **标题**：Josefin Sans 600，全部大写，78 px，16 px 跟踪；字母在细水线下方每隔 55 毫秒上升一次； 300 字重的小写子线（“低聚岛影片”）。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-The night scale-reveal frame, darkened; the same title block (static), hex icon, `LOW-POLY ISLAND · LEMO-OPUSCAR`, `LemoLab × Claude Opus 5.5`, credits, laid out so the tiny lit island stays visible in a gap between the text blocks. The "LemoLab × Claude Opus 5.5" sign-off (and the LEMO-OPUSCAR line) belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+夜间刻度显示框，变暗；相同的标题栏（静态）、十六进制图标、`LOW-POLY ISLAND · LEMO-OPUSCAR`、`LemoLab × Claude Opus 5.5`、制作人员名单，这样在文本块之间的间隙中，微小的发光岛就保持可见。 “LemoLab × Claude Opus 5.5”签名（以及 LEMO-OPUSCAR 系列）仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/lowpoly-island/demo/
@@ -74,14 +81,14 @@ styles/lowpoly-island/demo/
   build.sh   one-command rebuild
 ```
 
-1. `node core/render/still.mjs styles/lowpoly-island/demo --range 0.5:52.5:1` + `core/render/sheet.py` — overview sheets, iterate.
-2. `core/tts/tts.py lines.json voices` → `core/tts/asr_check.py` until all OK.
+1. `node core/render/still.mjs styles/lowpoly-island/demo --range 0.5:52.5:1` + `core/render/sheet.py` — 概述表，迭代。
+2. `core/tts/tts.py lines.json voices` → `core/tts/asr_check.py` 直至一切OK。
 3. `node core/render/events.mjs styles/lowpoly-island/demo` → `music/score.py` → `music/check.py` → `mix.py`.
-4. `node core/render/video.mjs styles/lowpoly-island/demo --fps 24 --workers 3` (1272 frames, 2× SSAA + GTAO).
-5. `sh core/render/mux.sh out/video24.mp4 mix.wav lowpoly-island.mp4 24 0`. Or just `sh demo/build.sh`.
+4. `node core/render/video.mjs styles/lowpoly-island/demo --fps 24 --workers 3`（1272 帧，2× SSAA + GTAO）。
+5. `sh core/render/mux.sh out/video24.mp4 mix.wav lowpoly-island.mp4 24 0`。或者只是 `sh demo/build.sh`。
 
-Pitfalls tied to this demo's props:
+与示范的道具相关的陷阱：
 
-- An invisible glow sprite became a black parallelogram floating on the sea in the GTAO pass.
-- The boat was 21 units out — off-screen when the beam found it. We derived the boat's position from the beam's angular speed so the beam finds it on a chosen beat (a rest in the melody, so the boat's answering bell fills the gap).
-- Shadows on the sea at low sun made a long dark stain; the sea receives no shadows.
+- 一个看不见的发光精灵变成了一个黑色的平行四边形，漂浮在GTAO关口的海面上。
+- 当光束发现该船时，该船位于屏幕外 21 个单位处。我们根据光束的角速度得出船的位置，以便光束在选定的节拍上找到它（旋律中的休止符，因此船的应答铃声填补了空白）。
+- 夕阳西下，海面上的影子留下了一道长长的黑斑。大海没有阴影。

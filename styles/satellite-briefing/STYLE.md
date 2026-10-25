@@ -1,114 +1,126 @@
-# Satellite Briefing — Style Prompt
+<a id="satellite-briefing--style-prompt"></a>
+# 卫星简报：风格提示词
 
-> Real satellite imagery of a real place, graded down to an analyst's grey, with thin white measurement lines drawn on the ground: a lock-on reticle, outlines, a range line, one reading. One continuous zoom built from stacked imagery plates carries the viewer from orbit to the ground and back, and time can run inside one locked frame.
-> References (grammar only): open-source investigation films that annotate satellite pictures (thin lines on imagery, one claim per screen, measuring as the plot); the Eameses' *Powers of Ten* (one continuous change of scale with a readout); NASA Earth Observatory's *World of Change* (one place, time running). Copy none of their layouts, typefaces, icons or music; never name them in the film.
+> 真实地点的真实卫星图像，分级为分析师的灰色，在地面上绘制细白色测量线：锁定十字线、轮廓、距离线、一个读数。由堆叠的图像板构建的连续变焦将观看者从轨道带到地面并返回，时间可以在一个锁定的框架内运行。
+> 参考文献（仅语法）：注释卫星图片的开源调查影片（图像上的细线，每个屏幕一个声明，按图测量）；伊姆斯的“十的幂”（带有读数的连续变化的刻度）；美国宇航局地球观测站的“变化世界”（一处，时间运行）。请勿复制他们的布局、字体、图标或音乐；切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The ground is a photograph**: real, licence-clean, georeferenced satellite or aerial imagery of the actual place. Nothing on the ground is drawn, stylised or generated.
-- **Two layers, two truths**: the imagery is what the satellite saw; the hairlines are what the analyst measured. Marks are thin, white, sparse, and sit on real coordinates.
-- **The grade moves with the story**: orbit in true colour, the analysis layer in grey, colour back only where the story turns.
-- **Scale is the camera**: one zoom from orbit to the ground built from nested plates, with an altitude readout and a scale bar from the same camera.
-- **One finding per screen**, in the single accent colour.
+- **地面是一张照片**：真实的、经过许可的、地理参考的卫星或实际地点的航空图像。地面上的任何东西都没有被绘制、风格化或生成。
+- **两层，两个真相**：图像是卫星看到的；发际线是分析师测量的。标记很细、白色、稀疏，并且位于真实坐标上。
+- **等级随故事而移动**：轨道为真彩色，分析层为灰色，仅在故事转向的地方着色。
+- **Scale 是相机**：由嵌套板构建的从轨道到地面的变焦，具有来自同一摄影机的高度读数和比例尺。
+- **每个屏幕都有一个发现**，采用单一强调色。
 
-Not Data Storytelling (a chart on paper), not Sci-fi Hologram HUD (no glowing wireframes or invented chrome), not Blueprint, not Isometric Infographic (real nadir or oblique views, no diorama), not a keynote (no slides, header bars or chapter numbers).
+不是数据讲故事（纸上的图表），不是科幻全息图 HUD（没有发光线框或发明的铬合金），不是蓝图，不是等距信息图（真实的最低点或倾斜视图，没有西洋镜），不是主题演讲（没有幻灯片、标题栏或章节编号）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Plates**: georeferenced rasters with a lon/lat box, sampled in a shader where the camera ray hits the ground, nested by resolution (world → region → detail) with feathered edges so finer plates dissolve in as the camera descends.
-- **Globe**: ray–sphere from a perspective camera, a thin atmosphere rim, limb shading at orbit only; compute |C|² − R² in double precision (float32 fails below a few tens of km).
-- **Time**: dated plates share one grid. A soft scan front (a satellite pass, never a hairline) swaps them: north → south forward, south → north for a rewind. Growth can run outward from the old edge, ordered by a distance map.
-- **The analyst's grade** (one uniform from colour to grey): luminance with local contrast and clarity, a shoulder so salt, snow and cloud stay below white, toned blue-black → cool silver up to ~65 % grey, a fifth of the chroma. White belongs to the marks.
-- **Marks**: a 2D overlay through the same world → screen function: hairlines 1.2–2.6 px with a dark halo, dashes for history and claims, brackets, ticks, leader lines. Lines draw on; outlines print behind the scan.
-- **Screen space only for instruments** (altitude, scale bar, imagery credit) and the transcript strip. Everything else is anchored to the ground.
-- **The claim layer** is a printed map drawn in the shader from a distance field of the old outline: paper grain a few pixels wide at any zoom, halftone ink, coast and waterlines, graticule, the serif name.
-- **Post**: light grain in ffmpeg, a vignette, directional blur only on whip pans.
+- **盘子**：带有 lon/lat 框的地理参考栅格，在摄影机光线照射到地面的着色器中采样，按分辨率（世界 → 区域 → 细节）嵌套，具有羽化边缘，以便随着摄影机下降，更精细的板会溶解。
+- **地球**：从摄影机角度看的射线球体，薄薄的大气层边缘，仅在轨道上进行肢体阴影；计算|C|² − 双精度的 R²（float32 在低于几十公里时失败）。
+- **时间**：带日期的板块共享一个网格。软扫描前沿（卫星通过，绝不是发际线）交换它们：北→南前进，南→北倒带。增长可以从旧边缘向外延伸，按照距离图排序。
+- **分析师的等级**（从彩色到灰色的统一）：具有局部对比度和清晰度的亮度，肩部使盐、雪和云保持在白色以下，色调为蓝黑色→冷银色高达约65％的灰色，是彩度的五分之一。白色属于标记。
+- **马克**：同一世界的 2D 覆盖 → 屏幕功能：细线 1.2–2.6 像素，带有暗光晕、历史和声明的破折号、括号、刻度线、引导线。线条不断延伸；轮廓打印在扫描件后面。
+- **屏幕空间仅用于仪器**（高度、比例尺、图像来源）和记录条。其他一切都固定在地面上。
+- **声明层**是在着色器中从旧轮廓的距离场绘制的打印地图：在任何缩放下几个像素宽的纸纹、半色调墨水、海岸线和水线、标线、衬线名称。
+- **邮政**：ffmpeg 中的轻质颗粒，仅在鞭平移上的晕影、方向模糊。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Neutral ground: grey, roughly 3–65 % in value. White means *measured*.
-- One accent (warm, e.g. amber) for the single reading on screen, never decoration.
-- A second hue may mark the **claim** the imagery tests (a map, a plan, a promise): flat, cartographic, never used for anything measured.
-- True colour is evidence: at orbit, and again only where the story turns (the field that greened, the water that returned).
-- No false-colour ramps over the imagery.
+- 中性地：灰色，价值大约 3-65%。白色意味着*测量*。
+- 一种口音（温暖的，例如琥珀色）用于屏幕上的单一读数，而不是装饰。
+- 第二种色调可以标记 **宣称** 图像测试（地图、计划、承诺）：平面、制图，从未用于任何测量。
+- 真实的色彩就是证据：在轨道上，而且只有在故事转折的地方（绿化的田野，回归的水）。
+- 图像上没有假色渐变。
 
-Example (our demo): ground #070B0E → #A1A7A9, marks #F2F5F6, reading #FFBE55, map blue rgb(46, 112, 206).
+示例（我们的示范）：地面 #070B0E → #A1A7A9，标记 #F2F5F6，读取 #FFBE55，地图蓝色 rgb(46, 112, 206)。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Roles**: a light condensed grotesk for the reading (96–130 px, e.g. Barlow Condensed); a monospace for instruments and dates (20–34 px, e.g. IBM Plex Mono); a sans for labels in the film's language (24–42 px); a serif only for the claim layer and the title. OFL, self-hosted, CJK subset to the characters used.
-- **Labels attach to the ground** with a leader line. The reading sits in the right third beside what it measures, label above, source note below ("Landsat, measured").
-- **Subtitles are a transcript strip** at the bottom left: a 2 px white rule, a dark plate fading right, left-aligned, each line on one line (measure with the real font, `nowrap`; split a long sentence into two cues). If the film is bilingual, the film's language on top.
-- Nothing below 20 px at 1080p, the imagery credit included.
-- Hold subtitles ≥ max(1.8 s, speech + 0.6 s); a rolling counter reports its landing value; labels stay ≥ characters ÷ 4.5 + 1.5 s (CJK).
+- **角色**：用​​于阅读的轻型压缩 grotesk（96–130 px，例如 Barlow Condensed）；仪器和日期的等宽字体（20-34 像素，例如 IBM Plex Mono）； 影片语言中的标签为 sans（24–42 像素）；仅用于声明层和标题的衬线。 OFL，自托管，所用字符的 CJK 子集。
+- **标签通过引导线连接到地面**。读数位于其测量值旁边的右三分之一处，上面有标签，下面有来源说明（“陆地卫星，测量的”）。
+- **字幕是左下角的文字记录条**：一条2像素的白色规则，一个向右褪色的暗板，左对齐，每一行在一行上（使用真实字体测量，`nowrap`；将长句子分成两个提示）。如果影片是双语的，则影片的语言位于顶部。
+- 1080p 下的任何内容均不低于 20 像素，包括图像信用。
+- 保持字幕≥ max(1.8 s, 语音 + 0.6 s);滚动计数器报告其着陆值；标签停留时间 ≥ 字符 ÷ 4.5 + 1.5 秒 (CJK)。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- The camera never stops: distance interpolates in log space, segments ease, holds keep a 2–5 % creep or a slow rotation. No frozen frame longer than a second.
-- Marks arrive by being made: a line grows, an outline prints behind the scan, a counter rolls and lands with a small pop, a reticle snaps with overshoot.
-- Time changes are scans, never dissolves; their spacing tells the speed, and the camera moves with them (accelerating as the steps shorten, braking on the last).
-- Never moves: the ground under its annotations, the instrument positions.
+- 摄影机永不停止：距离在对数空间中插值、分段缓和、保持 2-5% 的蠕变或缓慢旋转。冻结帧的长度不会超过一秒。
+- 标记是通过制作而到达的：一条线增长，扫描后打印出轮廓，计数器滚动并以轻微的爆裂声着陆，十字线因超调而折断。
+- 时间的变迁是扫描，永不消解；它们的间距告诉了速度，摄影机运动也跟着它们（当步数缩短时加速，最后刹车）。
+- 永不移动：注释下的地面、仪器位置。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Oblique orbit, limb in frame | scale, context, distance | an opening; a return; a title card |
-| Dive (log zoom, tilt to nadir) | going to look for yourself | a reveal; checking a claim |
-| Locked nadir frame, slow creep | evidence, comparison | time running in one place; a measurement |
-| Push-in on a point | singling out | one town, one dam, one field |
-| Track along a line | travelling a distance | measuring; a river, a road, a border |
-| Whip pan with blur | a new subject at the same altitude | the counter-example; "meanwhile" |
-| Climb back to orbit | consequence, perspective | an ending; a summary |
+|倾斜轨道，肢体在框架中|规模、背景、距离|一个开口；回报；标题卡|
+|潜水（对数缩放、倾斜至最低点）|去寻找你自己|揭示；检查索赔|
+|锁定最低点框架，缓慢蠕动|证据、比较|时间跑在一处；测量|
+|推入一点|挑出|一镇、一坝、一田|
+|沿线追踪|旅行一段距离|测量;一条河、一条路、一条边界|
+|用模糊的鞭子平底锅|同一海拔的新主题|反例； “同时”|
+|爬回轨道|结果、观点|一个结局；总结|
 
-At key moments the subject fills a third of the frame height; reading right, subtitles bottom left, instruments in the corners. Transitions: scan-line swaps, a map layer switched off, zooming through plates, whip pans, the reticle opening into a title card. No crossfades between unrelated places, no hard cuts inside a zoom.
+在关键时刻，拍摄对象占据了画面高度的三分之一；阅读右侧，字幕左下，乐器在角落。过渡：扫描线交换、关闭地图图层、缩放图版、快速平移、十字线打开到标题卡中。不相关的地方之间没有交叉淡入淡出，变焦内没有硬剪切。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Telemetry**: FM pings (a lock-on ping worth bringing back), dry ticks on the grid that divide to accelerate, noise scans (rising for a rewind, falling forward), servo whines, a ratchet for a range line.
-- **Weight**: timpani, bass drum, gran cassa, bowed cymbal, a tam-tam reversed when time runs backwards. Measurements land on a pitched hit.
-- **Synthesis**: a pulse bass with audible 2nd and 3rd harmonics, detuned-saw pads under a low-pass, risers for dives.
-- **Beds**: orbit hum, radio hiss, data chatter; the place's own ambience (wind, water, a far horn), sparingly, often as J- or L-cuts.
-- **One option for the shape**: keep the palette dry (electronics, skins, metal) and let one wet timbre (glass, water, bowed metal) mark the turn.
-- **Silence**: music and foley stop, a thin bed stays, impacts may decay into it; the first sound after it is the turn. A short suck-out (0.2–0.45 s, music and foley down ~25 dB) before the heaviest impacts makes them land.
-- **Mix**: voice ~10 dB over music; the two or three designed impacts are the loudest moments (out of the bus compressor, with mid-range body, e.g. a low-brass stab); 20–60 Hz about 15 dB under the full band (high-pass ~40 Hz, impact weight at 60–120 Hz); −14 LUFS, true peak ≤ −1.2 dB. Voice: a calm analyst, short declarative lines.
+- **遥测**：FM ping（值得带回来的锁定ping），网格上的干滴答声，用于加速，噪声扫描（上升用于倒带，下降向前），伺服呜呜声，范围线的棘轮。
+- **重量**：定音鼓、低音鼓、大卡萨、弓钹、时间倒流时反转的 tam-tam。测量结果落在音高上。
+- **合成**：具有可听见的第二和第三谐波的脉冲低音，低通下的失谐锯齿垫，用于下潜的立管。
+- **床位**：轨道嗡嗡声、无线电嘶嘶声、数据颤动；地方本身的氛围（风、水、远处的号角），很少，通常是 J 型或 L 型剪辑。
+- **形状的一个选项**：保持调色板干燥（电子、皮肤、金属）并让一种潮湿的音色（玻璃、水、弓形金属）标记转弯。
+- **沉默**：音乐和拟音停止，薄床停留，冲击可能会衰减到其中；轮到后的第一个声音。在最严重的撞击使它们着陆之前，有一个短暂的吸出（0.2–0.45 秒，音乐和拟音下降约 25 dB）。
+- **混音**：声音超过音乐约 10 dB；设计的两个或三个冲击是最响亮的时刻（在公共汽车压缩器之外，具有中音主体，例如低音铜管刺）； 20–60 Hz 全频段下约 15 dB（高通~40 Hz，冲击重量在 60–120 Hz）； −14 LUFS，真实峰值 ≤ −1.2 dB。声音：冷静的分析师，简短的陈述台词。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **The map against the photograph.** The camera falls into the printed map of the claim; a scanner bar tears it away and the ground is underneath; the name outlives the page. *Fits content like:* a lake still on maps but gone; a cleared concession forest; a planned city never built.
-- **Time rings in a locked frame.** Dated plates scan in one by one; each leaves its outline, the band lost between two rings flashes. *Fits content like:* a glacier's retreat; a city's sprawl; a fire scar season after season.
-- **The range line.** Mark the destination, grow a ticked line from A to B, chase the tip while the reading counts up, land on the number, pull back to show the whole distance. *Fits content like:* how far a shore moved; a village to its well; a camp to the border.
-- **The dive and the climb.** One zoom from orbit to the ground, or back. *Fits content like:* locating anything; a scale reveal; an ending that returns one place to the planet.
-- **Colour returns where the story turns.** Only the subject regains true colour inside the grey. *Fits content like:* an irrigated field; a refilled reservoir; a regrown forest.
-- **The reticle becomes the frame**: the lock-on brackets open out to frame a title card or the last reading.
+- **照片上的地图。** 摄影机属于权利要求的印刷地图；扫描杆将其撕开，地面就在下面；这个名字比页面更长久。 *适合以下内容：* 地图上仍然有一个湖，但已经消失了；被砍伐的特许森林；一座规划中的城市从未建成。
+- **时间环在锁定的框架中。** 日期板一一扫描；每个都留下了它的轮廓，两个环之间消失的带子闪烁。 *适合以下内容：*冰川退缩；城市的扩张；一季又一季的火伤疤。
+- **距离线。** 标记目的地，从A到B长一条刻度线，在读数计数时追逐尖端，落在数字上，向后拉以显示整个距离。 *适合以下内容：*海岸移动了多远；一个村庄到它的井；通往边境的一个营地。
+- **俯冲和爬升。** 从轨道到地面或返回的一倍变焦。 *适合以下内容：* 定位任何东西；规模揭示；一个让地球返回一个地方的结局。
+- **故事转折处颜色回归。** 只有主体在灰色中恢复真实的色彩。 *适合以下内容：* 灌溉田；重新注满的水库；重新生长的森林
+- **十字线变成框架**：锁定支架打开以框架标题卡或最后的读数。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Licences**: not usable: Google Earth/Maps, Bing, Esri World Imagery, Mapbox Satellite, Planet, Maxar, news photos, AI-generated imagery. EOX Sentinel-2 cloudless is CC BY 4.0 only for 2016 (2018 onward is NC). Raw Copernicus Sentinel data need "Contains modified Copernicus Sentinel data [year]"; check the user's rules. Public domain or free with credit: USGS Landsat (1972 on, worldwide), USGS NAIP (US, ~1 m), NASA Blue Marble, MODIS, VIIRS. Burn a readable credit into the picture and list every asset in `CREDITS`.
-- **Finding imagery for a new place**: search by bounding box and date in the Planetary Computer STAC (Landsat C2, Sentinel-2 L2A; no account) or USGS EarthExplorer; MODIS/VIIRS and Blue Marble from NASA GIBS; outlines from Natural Earth. Log every request. OSM (ODbL), CC BY-SA and "no known restrictions" are not CC0: name the terms and ask the user first. Ask for the user's own surveys or GIS layers when the place is theirs. Never fill a gap with generated imagery presented as evidence.
-- **Seams**: paths imaged on other days disagree. One date per path, each scene gain-matched on stable land, feathered overlaps, holes filled from the same year only.
-- **Old sensors**: Landsat MSS (to 1992) has no blue or SWIR and drops scan lines: nearest-neighbour resampling, near-zero rows as nodata filled from same-year scenes, scan-angle streaks cleaned on land only. Inspect every year at full contrast.
-- **Plumes and haze** cross water as bright diagonal bands: swap the scene for another date of the same year rather than painting it out.
-- **Edges**: resampling against nodata darkens scene rims (erode the mask); drop contour pieces along a plate border. Real straight edges (dikes, polders) can read as seams: frame them out or label them.
-- **Grey mush at close range**: raise local contrast for that altitude only and dim outside the measured corridor.
-- **Water and cloud**: MNDWI where shortwave infrared exists, only the basin you measure; clouds read as features in grey, so use the dry season.
-- **Facts**: keep a FACTS.md in the project folder (claim, source URL, quoted wording, or the measurement method with scene IDs and dates) and deliver it with the film. Measure on the date you show.
+- **许可证**：不可用：Google Earth/Maps、Bing、Esri World Imagery、Mapbox Satellite、Planet、Maxar、新闻照片、AI 生成的图像。 EOX Sentinel-2 无云仅适用于 2016 年的 CC BY 4.0（2018 年以后为 NC）。原始哥白尼哨兵数据需要“包含修改后的哥白尼哨兵数据[年份]”；检查用户的规则。公共领域或免费提供信用：USGS Landsat（1972 年起，全球）、USGS NAIP（美国，~1 m）、NASA Blue Marble、MODIS、VIIRS。将可读的信用记录写入图片中，并列出 `CREDITS` 中的每项资产。
+- **寻找新地点的图像**：在行星计算机STAC（Landsat C2、Sentinel-2 L2A；无帐户）或USGS EarthExplorer中通过边界框和日期进行搜索； MODIS/VIIRS 和来自 NASA GIBS 的 Blue Marble；自然地球的轮廓。记录每个请求。 OSM (ODbL)、CC BY-SA 和“无已知限制”不是 CC0：命名术语并首先询问用户。当该地点属于用户时，询问用户自己的调查或 GIS 图层。切勿用生成的图像作为证据来填补空白。
+- **接缝**：其他日子成像的路径不一致。每条路径一个日期，每个场景在稳定的土地上增益匹配，羽状重叠，仅从同一年填补漏洞。
+- **旧传感器**：Landsat MSS（至1992年）没有蓝色或SWIR并丢弃扫描线：最近邻重采样、从同年场景填充的无数据接近零行、仅在陆地上清理的扫描角条纹。每年都要进行充分对比检查。
+- **羽流和雾霾** 穿过水面形成明亮的对角带：将场景替换为同年的另一个日期，而不是把它画出来。
+- **边缘**：根据节点数据重新采样使场景边缘变暗（侵蚀掩模）；沿着板边框放置轮廓件。真正的直边（堤坝、圩田）可以理解为接缝：将它们框起来或给它们贴上标签。
+- **近距离灰色糊状**：仅提高该高度的局部对比度，并在测量走廊之外变暗。
+- **水和云**：短波红外存在的MNDWI，仅测量您测量的盆地；云显示为灰色特征，因此请使用旱季。
+- **事实**：将 FACTS.md 保存在项目文件夹中（声明、源 URL、引用的措辞或带有场景 ID 和日期的测量方法），并与影片一起交付。根据您显示的日期进行测量。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-- `demo/engine.js`: `makeCamera({lat, lon, d, tilt, heading, sx, sy})`, `project()` / `unproject()`, the WebGL2 plate shader (nested plates, time scans, growth map, analyst grade, printed-map layer, whip blur).
-- `demo/overlay.js`: hairlines, brackets, `readout`, the measured single-line `subtitle` strip, `text` with a registry for `window.TEXTS`.
-- `demo/tools/`: `fetch_landsat.py` (STAC, one date per path, same-year gap fill), `plates.py` (normalisation, streak cleaning, water masks, areas), `vectors.py` (shorelines, distances), `mapfield.py` (the printed map), `growth.py`.
-- **Extra packages and packs**: none beyond `setup.sh deps voice` and the sample packs the score uses (`sh tools/fetch.sh instruments <lib>` for vsco2ce, vcsl, freepats in the demo). Imagery uses only the standard library, numpy, SciPy, Pillow (no GDAL); allow 3–4 GB for cached scenes. Anything more (rasterio, pyproj) goes in a private venv in the project folder, not `$LIB/.venv`.
+- `demo/engine.js`：`makeCamera({lat, lon, d, tilt, heading, sx, sy})`、`project()` / `unproject()`，WebGL2 板着色器（嵌套板、时间扫描、生长贴图、分析师等级、打印贴图图层、鞭状模糊）。
+- `demo/overlay.js`：发纹、括号、`readout`、实测单线`subtitle`条、`text`，注册表为`window.TEXTS`。
+- `demo/tools/`：`fetch_landsat.py`（STAC，每条路径一个日期，同年间隙填充），`plates.py`（归一化，条纹清洁，水掩模，区域），`vectors.py`（海岸线，距离），`mapfield.py`（印刷地图）， `growth.py`。
+- **Extra 包和包**：没有超出`setup.sh deps voice` 和配乐使用的示例包（`sh tools/fetch.sh instruments <lib>` 用于示范中的vsco2ce、vcsl、freepats）。 Imagery仅使用标准库、numpy、SciPy、Pillow（无GDAL）；允许 3–4 GB 用于缓存场景。任何其他内容（rasterio、pyproj）都会进入项目文件夹中的私有 venv，而不是 `$LIB/.venv`。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-The agent decides the place or places, whether there is a claim layer, which dates, the structure, the camera path, the accent hue and where colour comes back.
+代理决定一个或多个地点、是否有声明层、日期、结构、摄影机路径、强调色调以及颜色返回的位置。
 
-- **Structures**: a locked time-lapse of one place ending in a push-in; a river followed from source to mouth with a reading at each stop; two places compared at one scale with whip pans.
-- **Openings**: a ground-level detail that climbs to reveal its scale; a black frame a scan line paints in; an oblique orbit with a searching reticle.
-- **Endings**: the climb back to orbit; a last measurement that lands and holds in silence; the claim layer redrawn to match the ground.
+- **结构**：一个地方的锁定延时，以推入结束；一条河流从源头流向河口，每一站都有读数；两个地方与鞭盘进行了同一规模的比较。
+- **开口**：地面细节，爬上去揭示其规模；扫描线绘制的黑框；带有搜索十字线的倾斜轨道。
+- **结局**：爬回轨道；最后一次测量悄无声息地落下并保持；重新绘制声明层以匹配地面。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

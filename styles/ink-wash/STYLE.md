@@ -1,118 +1,130 @@
-# Chinese Ink Wash — Style Prompt
+<a id="chinese-ink-wash--style-prompt"></a>
+# 中国水墨：风格提示词
 
-> Xieyi ink painting on rice paper, animated: blank paper is space, one brushstroke is a mountain, a wave, a gesture or a cut.
-> References (grammar only): Shanghai Animation Film Studio's *Feelings of Mountains and Water* (1988) (blank-paper space, ink bloom, guqin pacing, figures in a few strokes); the bamboo-forest fight of *Crouching Tiger, Hidden Dragon* (weightlessness, stillness before action). Copy none of their characters, compositions or music.
+> 写意宣纸水墨画，动画：白纸是空间，一笔是山、是波浪、是手势、是切口。
+> 参考资料（仅语法）：上海动画影片工作室《山水情怀》（1988）（白纸空间、水墨绽放、古琴节奏、寥寥数笔人物）； 《卧虎藏龙》的竹林打斗（失重、行动前的静止）。请勿复制他们的角色、作品或音乐。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-An ink painting (水墨) painted and unrolled before you: black ink on warm rice paper in five tones, plus **one** red, the vermilion seal. No Western outlines: forms are made by **loaded brushstrokes** whose dark edge *is* the contour (没骨, "boneless" painting), by **wet washes** that bleed into the paper, and by **dry, fast strokes** where the paper shows through the bristle tracks (飞白, "flying white").
+一幅水墨画在你面前展开：五种色调的温宣纸上的黑色墨水，加上朱红色的印章**一**。无西方轮廓：形式由**加载的笔触**制成，其暗边缘*是*轮廓（无骨，“无骨”绘画），由**湿洗**渗入纸中，由**干，快速笔画**所在的纸张显示通过刷毛轨迹（飞白，“飞白”）。
 
-Most of the frame is **empty paper** (留白): water, sky, mist, silence. Things are *painted into existence*, not cut to.
+大部分画框是**空纸**（留白）：水、天空、薄雾、寂静。事物是“被描绘成存在的”，而不是被剪切出来的。
 
-Not watercolour (no colour washes), not vector art with a brush texture (no flat fills or closed outlines), not a calligraphy title sequence.
+不是水彩画（没有颜色水彩晕染），不是带有画笔纹理的矢量艺术（没有平面填充或闭合轮廓），不是书法标题序列。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper** is procedural, in the compositor, never a texture file: warm rice paper (around `#F2ECDE`), cloud mottling, long fibres, pulp flecks, grain that fades when zoomed out (or it shimmers), a light vignette; anchored to the world.
-- **Ink** is stroke opacity multiplied onto paper (never an overlay), in five tones (墨分五色):
+- **纸张** 是程序性的，在合成器中，从来不是纹理文件：温暖的宣纸（`#F2ECDE` 附近）、云斑、长纤维、纸浆斑点、缩小时褪色（或闪烁）的颗粒、浅色晕影；锚定于世界。
+- **墨色** 是笔画不透明度乘以纸上（不是叠加），有五种色调（墨分五色）：
 
-| Tone | Opacity | Use |
+|语气|不透明度|使用|
 |---|---|---|
-| 焦 jiao (burnt) | ~.96 | calligraphy, the sharpest lines, moss dots |
-| 浓 nong (thick) | ~.82 | contours, dark edge of loaded strokes |
-| 重 zhong (heavy) | ~.60 | secondary lines, folds |
-| 淡 dan (light) | ~.34 | mountain bodies, robe and body washes |
-| 清 qing (clear) | ~.16 | far mountains, faces, mist |
+|焦焦（烧焦）|~.96|书法，最锐利的线条，苔藓点|
+|浓浓|〜.82|轮廓，加载笔划的暗边缘|
+|重中（重）|〜.60|次线、褶皱|
+|淡淡|〜.34|山体、袍体水彩晕染|
+|清（清）|~.16|远山、面孔、薄雾|
 
-- **Brushstroke model**: centreline × pressure profile × width noise, plus 4–60 **bristles** whose ink load drops along the stroke and breaks on long-scale noise. `dry` runs from a solid wet stroke to flying white (dry strokes are bristle tracks only).
-- **Loaded stroke**: bristles darker on one side, so the stroke carries its own contour: this makes bodies, rocks and waves read as ink, not vectors.
-- **Two layers**: the wet one bleeds in the compositor (noisy blur, **edge pigment accumulation**, granulation); the dry one only gets fibre jitter and paper tooth.
-- **Masses**: soft polygons, jittered edges, a gradient; never flat fills.
-- **Landscape**: mountains dissolve downward into mist bands, with 披麻皴 texture and 苔点 moss dots on near ranges only; rocks are outline → axe-cut texture → shadow wash → dots.
-- **Water is blank paper**, moved by faint dry streaks and open ink rings. Solid water: Song-dynasty **parallel wave lines** (dense near the edge) or a pale body with a few huge loaded strokes along its face.
-- **Figures are xieyi**: one pale body mass plus two loaded strokes, burnt-ink lines for limbs; features, if ever shown, in 3–5 strokes.
-- **Calligraphy**: an OFL brush font is only a **skeleton**: trace centrelines in stroke order, pressure from glyph thickness, hidden-tip entry (藏锋), tapered exits.
+- **笔画模型**：中心线×压力轮廓×宽度噪声，加上4-60个**刷毛**，其墨水负载沿着笔画下降并在长尺度噪声上破裂。 `dry` 从实心湿冲程运行到飞白（干冲程仅限刷毛轨迹）。
+- **加载笔划**：刷毛一侧较暗，因此笔划带有自己的轮廓：这使得物体、岩石和波浪读起来像墨水，而不是矢量。
+- **两层**：湿一层在合成器中渗色（噪声模糊，**边缘颜料堆积**，造粒）；干的只会出现光纤抖动和纸齿现象。
+- **群众**：软多边形，抖动边缘，渐变；永远不会平坦填充。
+- **景观**：山脉向下溶入雾带，仅在近距离处有披麻皴纹理和苔点苔点；岩石轮廓→斧切纹理→阴影水彩晕染→点。
+- **水是一张白纸**，被微弱的干条纹和开放的墨环所移动。固体水：宋代**平行波浪线**（边缘较密）或苍白的身体，脸上有一些巨大的负载笔画。
+- **人物为写意**：一苍体加两描，四肢焦墨线；特征（如果有的话）用 3-5 笔画。
+- **书法**：OFL笔刷字体只是**骨架**：按笔划顺序跟踪中心线，字形厚度的压力，隐藏尖端入口（藏锋），锥形出口。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Ink only, from cool grey at low density to warm black at full density. No other hue in the world.
-- **One vermilion** (around `#B02E22`), for the seal and at most one tiny accent in the story (an object the protagonist carries). The accent finds the protagonist in wide shots and can rhyme with the seal. Never a red wash, never red type.
-- Values carry depth: far = pale and soft, near = dark and textured. If a frame gets busy, remove ink rather than add tone.
+- 仅墨水，从低密度的冷灰色到全密度的暖黑色。世界上没有其他颜色。
+- **一朱红色**（大约`#B02E22`），用于故事中的印章和最多一个微小的口音（主角携带的物体）。口音在宽镜头中找到主角，并且可以与印章押韵。绝不是红色水彩晕染，绝不是红色类型。
+- 值带有深度：远=苍白且柔和，近=黑暗且有纹理。如果框架变得繁忙，请去除墨水而不是添加色调。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Subtitles are **inscriptions (题跋)**: a classical italic serif (Cormorant Garamond italic), ink-coloured, no box, ≤ 2 lines, placed in each shot's empty paper. A small vermilion square marks the start of each line. They appear wet and dry in a fraction of a second. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Titles are written on the painting itself, in vertical columns in its empty space, with a vermilion 白文 seal drawn by code (lines knocked out of a slightly irregular red square, with ink-paste speckles). They move with the world.
-- Screen-space overlays reset the camera transform.
+- 字幕为**inscriptions（题跋）**：古典斜体衬线（Cormorant Garamond italic），墨水色，无方框，≤2行，置于每张镜头的空纸上。一个朱红色的小方块标志着每行的开始。它们在不到一秒的时间内就显得潮湿和干燥。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 标题写在画本身上，在空白处的垂直柱子上，上面有一个用代码绘制的朱红色白文印章（从略不规则的红色方块上敲出的线条，上面有墨浆斑点）。他们与世界一起移动。
+- 屏幕空间覆盖重置摄影机变换。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Figures step at 12 fps** (on twos); their position, the camera, blooms, ripples and splatter move on ones at 24 fps.
-- **Stable strokes on twos**: seed every stroke by its index and compute bristle breaks along *normalized* arc length × a fixed reference length, so flying-white gaps don't crawl every drawing. Allow only a small "boil" on the width noise.
-- **Painted into existence**: strokes appear in drawing order.
-- **Stillness before action** (when a decisive stroke is the event): hold, with at most a slow push-in, then let the stroke cross the frame in a few frames. Consequences start only after the stroke has finished.
-- Nothing is tweened like a vector shape: things are painted, bloom or dissolve into mist.
+- **人物步长为 12 fps**（双人）；他们的位置，摄影机，绽放、波纹和飞溅以 24 fps 的速度移动。
+- **稳定的双笔划**：通过索引为每个笔划播种，并沿着*标准化*弧长×固定参考长度计算刷毛断裂，因此飞白间隙不会在每张图纸上爬行。只允许宽度噪声有小的“沸腾”。
+- **绘制存在**：笔画按绘制顺序出现。
+- **动作前的静止**（当发生决定性击球时）：保持，最多缓慢推入，然后让击球在几帧内穿过框架。仅在中风结束后才会产生后果。
+- 没有什么比矢量形状更能补间：事物被绘制、绽放或溶解成薄雾。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Locked frame on the paper | The page is the stage; things are painted in | a thing forming; a line being read; a still decision |
-| Right-to-left pan (handscroll) | Time and distance as one painting | a journey; a history; a process |
-| Vertical tilt (hanging scroll) | Height, stages stacked | seasons; a climb; generations |
-| Lateral tracking, lead room, slow far parallax | Motion through a world | travel; a chase; a commute |
-| High wide, a tiny figure in blank paper | Smallness, solitude | loneliness; nature's scale; one life among many |
-| Low angle, dark mass towering, slow push-in with shake | Weight, threat | an obstacle; a storm; pressure |
-| Hard cut to an extreme close-up | A break in the flow (the style's only hard cuts) | a decision; a shock; a memory |
-| Push into an ink bloom or mist | Passing between states | memory; dream; a season turning |
-| Pull back until a mark joins the whole | The part was inside something larger | a summing-up; irony of scale |
-| Return to an earlier framing | The rhyme shows what changed | aftermath; growth; before/after |
+|纸上锁定的框架|页面就是舞台；东西被画在|形成的事物；正在读取的一行；一个静止的决定|
+|从右到左平移（手卷）|时间和距离如同一幅画|一次旅行；一段历史；一个过程|
+|垂直倾斜（挂轴）|高度，阶段堆叠|季节；攀登；几代人|
+|横向跟踪、引导室、慢远视差|穿越世界的运动|旅行;一场追逐；通勤|
+|高宽，白纸上的一个小人物|渺小、孤独|孤独；自然的规模；众多生命中的一个|
+|低角度，暗团高耸，缓慢推入并摇晃|重量、威胁|一个障碍；一场风暴；压力|
+|硬切至极端特写|流程中的中断（该风格唯一的硬剪裁）|决定；震惊；一段记忆|
+|推入墨水花或薄雾|在州之间传递|记忆;梦;一个季节的转变|
+|向后拉直到标记连接到整体|该零件位于更大的东西内部|总结；规模的讽刺|
+|返回到较早的框架|押韵表明发生了什么变化|后果;生长; before/after|
 
-Framing: 60–80 % empty paper; dark foreground may pass along the frame bottom. Transitions are ink blooms, pans along the scroll or mist; never a generic dissolve or a wipe.
+框架：60–80% 空纸；黑暗的前景可能会沿着框架底部穿过。过渡是墨色的绽放、沿着卷轴的平移或薄雾；绝不是通用的溶解或擦拭。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Guqin-led, not piano and strings**: guqin (`core/audio/pluck.py` `guqin`: open and stopped strings, slides, vibrato, glassy harmonics, sweeps), a low breathy xiao, big drum and timpani for mass, frame drum for steps, a small gong for a seal. Chinese pentatonic modes.
-- **Cue to the picture, never loop**: unmetred plucks suit emptiness, a pulse suits movement, rolls suit mass; painted strokes can each land on a pluck.
-- **Silence is literal**: zero the whole bus (music, ambience, reverb tails) with short fades. At most one sound inside it (a drip, one ring). Place it where the story holds its breath.
-- **Foley follows the material**: ink drop (short "tink" + soft wet thud), brush air (band-passed noise with bristle grains, never a metal whoosh), steps on water (small splash), splatter (wet ticks), seal (wooden thump + paper crackle).
-- **Voice**: calm, few lines, like colophons that don't explain the picture. Duck music ~8 dB and ambience too; verify each line with whisper on the final mix.
+- **古琴主导，不是钢琴和弦乐**：古琴（`core/audio/pluck.py` `guqin`：开弦、停弦、滑音、颤音、玻璃泛音、扫音）、低息啸、大鼓和定音鼓作为质量、框架鼓作为步长、小锣作为印章。中国五声音阶调式。
+- **提示画面，永不循环**：无量拨动适合虚空，一脉适合运动，滚适合质量；每笔画都可以落在一根拨弦上。
+- **Silence 是字面上的**：将整个总线（音乐、氛围、混响尾音）归零，并带有短的淡入淡出。里面最多发出一声声音（滴滴声、响声）。把它放在故事屏住呼吸的地方。
+- **Foley 遵循材料**：墨滴（短促的“叮叮声”+轻柔的湿重击声）、刷子空气（带有鬃毛颗粒的带通噪声，而不是金属的嗖嗖声）、踩在水面上（小水花）、飞溅（湿滴答声）、印章（木头重击声+纸张裂纹）。
+- **嗓音**：平静，很少的台词，就像不解释图片的版权页。鸭子音乐~8 dB 和氛围也是如此；使用最终混音上的耳语验证每条线路。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **One stroke is everything.** *Fits content like:* a product born from one line; a city growing from a single street; a day beginning with one bird.
-- **Emptiness is matter.** Removing ink reveals paper white. *Fits content like:* a door opening in a wall; a crowd parting; an absence in a family portrait.
-- **Brush = gesture = action.** Stroke order becomes choreography. *Fits content like:* a dancer's phrase that spells a word; a signature; a chef's knife work.
-- **Flying white (飞白).** One fast dry stroke across the frame, strongest out of a silence. *Fits content like:* a sprint finish; a decision; a comet.
-- **Ink bloom transition.** The next scene grows inside a spreading drop with a dark tide-line (noisy radial mask; world-anchored for elements, in the compositor for scenes). *Fits content like:* memories; seasons; one era giving way to the next.
-- **The handscroll.** One long painting panned right to left, seen whole at last. *Fits content like:* a history; a supply chain from field to hand; a day in a street.
-- **Splitting a mass.** Halves clipped either side of the cut; one rises and fades, one slumps; splatter stays. *Fits content like:* breaking a record; a barrier falling; an idea splitting in two.
+- **一击即是。** *适合以下内容：* 一条线诞生的产品；一座由一条街道发展而来的城市；一天从一只鸟开始。
+- **E空即是色。** 去墨显纸白。 *适合以下内容：*墙上的门；人群分开；全家福中的缺席。
+- **Brush = 手势 = 动作。** 笔画顺序变成编排。 *适合以下内容：* 拼写单词的舞者短语；签名；厨师的刀工。
+- **飞白。** 快速干划划过画面，寂静中最强。 *适合以下内容：* 冲刺结束；决定；一颗彗星。
+- **Ink 绽放过渡。** 下一个场景在带有黑色潮汐线的扩散水滴内生长（嘈杂的径向遮罩；元素的世界锚定，在场景的合成器中）。 *适合以下内容：*回忆；季节；一个时代让位于下一个时代。
+- **手卷。** 一幅长画从右向左平移，终于看到完整的。 *适合以下内容：*历史；从田间到手中的供应链；在街上的一天。
+- **分割质量。** 将切口两侧剪成两半；一盛一衰，一衰落；飞溅残留。 *适合以下内容：*打破记录；障碍物掉落；一个想法一分为二。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Dry brush looks like dashed lines → breaks from long-scale noise and an ink load that drops along the stroke.
-- Parallel semi-transparent strokes make bodies look like organ pipes → one base mass + two loaded strokes.
-- Big side-brush strokes look like a hairbrush → a gradient mass + a few low-dryness strokes. Gradients in vertical bands leave seams → a cached per-pixel layer.
-- A stroke body split between wet and dry layers loses density → full body in the dry layer plus a wet halo.
-- Clipping calligraphy with the font outline notches the junctions → font as skeleton only.
-- Uniform hatching inside a wave turns it into a wire mesh → loaded strokes along the face.
+- 干画笔看起来像虚线→从长期噪音和沿着笔划下降的墨水负载中中断。
+- 平行的半透明笔触使主体看起来像风琴管→一个基础质量+两个加载笔触。
+- 大边刷笔触看起来像发刷→渐变质量+一些低干燥笔触。垂直带中的渐变留下接缝→缓存的每像素层。
+- 分为湿层和干层的中风主体会失去密度→干层中的完整主体加上湿晕。
+- 用字体轮廓剪切书法，将连接处→字体仅作为骨架。
+- 波浪内部的均匀阴影线将其变成金属丝网→沿表面加载的笔划。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `ink.js` (brush engine: strokes, bristles, loaded strokes, masses, blots), `comp.js` (WebGL rice-paper compositor: bleed, edge pigment, paper, bloom), `land.js` (mountains, cun, cliffs, pine, reeds, ripples), `wave.js` (gestural wave), `glyph.js` (skeleton-traced calligraphy), `seal.js` (vermilion seal), `hero.js` (xieyi figure rig), `subs.js` (inscription subtitles), `music/score.py` (guqin writing with `core/audio/pluck.py`); `?test=sheet|pose|frame` pages draw model sheets from the real engine.
+在`demo/`中：`ink.js`（画笔引擎：笔画，刷毛，加载笔画，质量，印迹），`comp.js`（WebGL宣纸合成器：出血，边缘颜料，纸张，绽放），`land.js`（山，寸，悬崖，松木、芦苇、涟漪）、`wave.js`（手势）、`glyph.js`（描骨书法）、`seal.js`（朱印）、`hero.js`（写意图骨骼绑定结构）、`subs.js`（铭文）字幕），`music/score.py`（古琴书写`core/audio/pluck.py`）； `?test=sheet|pose|frame`页面从真实引擎中绘制角色设定表。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the structure, the characters (or none), the landscape, the opening, the ending, the camera path, the pacing and where the red goes. All far from our demo:
+您可以决定结构、角色（或没有）、风景、开头、结尾、摄影机路径、节奏以及红色的去向。与我们的示范相去甚远：
 
-- Structures: **one character, stroke by stroke** (no figure; each stroke of one large character opens into a vignette of the topic); **a hanging scroll** (a tilt from sky to ground through four stages, tone deepening); **two brushes in dialogue** (alternating strokes answer each other until they meet in one bloom).
-- Openings: **in motion** (a figure already painted and moving; the world washes in around it); **ink first** (a fully inked frame; ink is lifted where light or a road appears); **the bristles** (a wet stroke fills the frame; only when it lifts do we see what it drew).
-- Endings: **one small mark** (close on a footprint or a leaf while the ink around it dries; no pull-back); **evaporation** (the painting un-paints in reverse stroke order); **mid-gesture** (the brush stops before the last stroke lands).
+- 结构：**一个字符，逐笔划**（无图形；一个大字符的每一笔都打开为主题的一个小插图）； **a挂轴**（从天到地的倾斜经过四个阶段，色调加深）； **对话中的两把画笔**（交替的笔画互相回应，直到它们在一朵花中相遇）。
+- 开口： **运动中** （已绘制并移动的人物；周围的世界水彩晕染 ）； **ink 首先**（完全着墨的框架；在光线或道路出现的地方墨水被抬起）； **刷毛**（湿笔画充满框架；只有当它抬起时我们才能看到它画的是什么）。
+- 结局：**一个小标记**（靠近脚印或树叶，周围的墨水干燥；不拉回）；**蒸发**（这幅画以相反的笔划顺序取消绘制）；**中间手势**（画笔在最后一笔落地之前停止）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

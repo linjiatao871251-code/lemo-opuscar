@@ -1,72 +1,79 @@
-# Live Countdown Split-screen — our demo
+<a id="live-countdown-split-screen--our-demo"></a>
+# 实时倒计时分屏 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Counting Itself Down* (自己倒数, 59.5 s) · `countdown.mp4` · source in [`demo/`](demo/)
+示范：*自己倒数*（自己倒数，59.5秒）·`countdown.mp4`·来源在[`demo/`](demo/)
 
-The last minute of the Artemis II launch (1 April 2026, Launch Complex 39B), in real time from T−32.5 to T+27.0 with no cut in time. Everything on screen is NASA's own launch-day material: the live broadcast and its audio, the Firing Room, a camera on the rocket, a camera on Orion, a drone, two ground cameras, a crew photo and the mission fact sheet. This is an unofficial film; NASA did not make or endorse it.
+Artemis II 发射的最后一分钟（2026 年 4 月 1 日，发射综合体 39B），从 T−32.5 到 T+27.0 实时发射，没有任何时间中断。屏幕上的所有内容都是 NASA 自己的发射日材料：现场直播及其音频、发射室、火箭上的摄影机、猎户座上的摄影机、一架无人机、两个地面摄像机、一张机组人员照片和任务情况说明书。这是非官方的影片；美国宇航局没有制造或认可它。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-The story is three hand-overs of control, all heard in the native audio. At T−33 the ground launch sequencer gives the count to the rocket ("GLS, go for ALS" — "Great call-out. The rocket is on its own"); the rocket counts itself down; at T+21 "Houston, now controlling the flight of Integrity". A control strip in the clock header (地面 GLS → 火箭 ALS → 休斯敦 HOUSTON) carries the turns.
+这个故事是三个控制权的交接，全部在原生音频中听到。在 T−33 处，地面发射定序器向火箭提供计数（“GLS，进行 ALS”——“伟大的呼叫。火箭是靠自己的”）；火箭自行倒计时； T+21“休斯顿，现在控制诚信号的飞行”。时钟头中的控制条（地面 GLS → 火箭 ALS → 休斯敦 HOUSTON）负责转动。
 
-Shape: cells rise toward zero, merge, then open again for the consequences. Hook (0–0.5 s): the first spoken call flips the control strip on a single wide shot of the pad while the title package lands. Setup (2.5–13 s): the Firing Room opens beside the pad as a "same window" cell (the people who just handed over can only watch), the crew photo with name tags, then a thrust bar (SLS 15 % over Saturn V) on "the most powerful rocket NASA has ever launched". Development (13–22 s): the planned-vs-heard checklist and the fact sheet; the narrator's only line before zero; a punch-in on the pad on "sound suppression water is flowing"; the rocket's own camera replaces the paper. The count (22.4–32.5 s): a 3×3 grid with the clock in the centre; each spoken number opens one camera out of a "standby" slot; RS-25 start flags the engine camera and ticks "heard −6.0". Zero (32.5 s): nine cells merge into one real-time picture of the pad, the clock inverts. After zero: two hard-cut full screens (drone, Banana Creek), a breath, then three cells: the drone climbing, the camera on the rocket, and a flight-events panel whose second countdown runs to booster separation (T+2:09, expected); the loop's "good roll, pitch" ticks it. "Houston, now controlling…" fills the last control segment and the layout resolves to one cell under the title.
+形状：细胞向零上升，合并，然后再次打开以产生后果。挂机（0–0.5 秒）：当标题包落地时，第一个语音呼叫会翻转打击垫的单个宽镜头上的控制条。设置（2.5-13秒）：发射​​室在发射台旁边打开，作为“同一窗口”单元（刚刚移交的人只能观看），带有姓名标签的机组人员照片，然后是“NASA有史以来发射的最强大的火箭”上的推力杆（SLS比土星五号强15％）。发展（13-22秒）：计划与听说的清单和情况说明书；叙述者在零之前的唯一一行；在打击垫上打卡“消音水在流”；火箭自己的摄影机取代了纸质。计数（22.4–32.5 秒）：3×3 网格，时钟位于中心；每个语音号码都会从“备用”插槽中打开一个摄影机； RS-25 启动标记发动机摄影机并勾选“听到 -6.0”。零（32.5 秒）：九个单元合并为一张焊盘实时图片，时钟反转。零后：两个硬切全屏（无人机，香蕉溪），一次呼吸，然后三个单元：无人机攀爬，火箭上的摄影机，以及飞行事件面板，其第二次倒计时运行助推器分离（预计为 T+2:09）；循环的“良好的滚动、俯仰”勾选了它。 “休斯顿，现在控制……”填充最后一个控制段，布局解析为标题下的一个单元格。
 
-Why it fits the style: the real minute already has a countdown, three spoken hand-overs and a zero; the edit only has to make the second visible. Native moves spent: many into one (signature), clock inversion, control strip, the grid filling on the count, sync badges (including one honest "same window" cell), the planned-vs-heard checklist, a second countdown, event flags, a punch-in on a call, a document by rows.
+为什么它适合这种风格：真正的一分钟已经有倒计时、三个口头交接和一个零；编辑只需使第二个可见即可。 风格特有表现手法花费：多合一（签名）、时钟反转、控制条、计数网格填充、同步徽章（包括一个诚实的“同一窗口”单元）、计划与听到的清单、第二倒计时、事件标志、通话打卡、按行排列的文档。
 
-## Layouts
+<a id="layouts"></a>
+## 布局
 
-Film time `t`, mission time `M = t − 32.5`.
+影片时间`t`，任务时间`M = t − 32.5`。
 
-| # | t | M | Native call / event | Layout | Note |
+|#|t|中号|原生调用/事件|布局|笔记|
 |---|---|---|---|---|---|
-| 1 | 0.0 | −32.5 | — | 1 cell: broadcast, pad wide | title package 0.45–6.8 |
-| 2 | 0.40 | −32.1 | "GLS, go for ALS." | control strip ground → rocket | strong action at 0.4 s |
-| 3 | 2.50 | −30.0 | "Great call-out. The rocket is on its own." | 2: broadcast + Firing Room | "same window" badge |
-| 4 | 5.26 | −27.2 | "Four brave explorers…" | 3: + crew photo | names pop 0.16 s apart |
-| 5 | 7.40 | −25.1 | "…the most powerful rocket…" | 4: + thrust bars under the broadcast | comparison held 4.4 s |
-| 6 | 13.10 | −19.4 | (gap) narrator: "About ten days: around the Moon, and back." | 3: broadcast + checklist + fact sheet | two rows, annotation band |
-| 7 | 16.47 | −16.0 | "Sound suppression water is flowing." | punch-in on the pad base + event flag | 2880-px extraction |
-| 8 | 19.60 | −12.9 | — | fact sheet → rocket camera (wipe) | |
-| 9 | 22.42 | −10.1 | "Ten," | 3×3 grid: clock centre, checklist, transcript (2 slots), 3 standby slots | |
-| 10 | 23.10 / 24.22 / 25.24 | −9 / −8 / −7 | "nine, eight, seven," | Orion, drone, Firing Room pop in | one tom each |
-| 11 | 26.46 | −6.0 | "RS-25 engines lit…" | event flag on the engine camera; checklist "heard −6.0" | |
-| 12 | 32.50 | 0 | "…booster ignition." | **many into one** (0.42 s) → OSB II real-time, flash, clock inverts | music silent 32.25–32.5 |
-| 13 | 36.36 | +3.9 | "The crew of Artemis II, now bound for the Moon." | hard cut: drone full screen | |
-| 14 | 39.50 | +7.0 | "Humanity's next great voyage begins." | hard cut: Banana Creek full screen | |
-| 15 | 41.7–42.0 | +9.2 | (breath) | roar tail only; wind enters (J-cut) | |
-| 16 | 42.00 | +9.5 | narrator: "Next on the clock: booster separation, at two minutes nine." | 3: drone + rocket camera + flight events | second countdown −1:59 |
-| 17 | 46.40 / 49.78 | +13.9 / +17.3 | "Good roll, pitch." / "Roger, roll, pitch." | flight events tick | |
-| 18 | 51.30 | +18.8 | — | drone → tracking telescope (wipe) | |
-| 19 | 53.78 | +21.3 | "Houston, now controlling the flight of Integrity…" | control strip rocket → Houston | |
-| 20 | 54.0–59.5 | +21.5 → +27 | the line ends under the card | 1: rocket camera full screen + end card | 5.5 s |
+|1|0.0|−32.5|—|1 个单元：广播，pad 宽|标题包 0.45–6.8|
+|2|0.40|−32.1|“GLS，去ALS吧。”|地面控制条 → 火箭|0.4秒强力动作|
+|3|2.50|−30.0|“伟大的呼吁。火箭是靠自己的。”|2：转播+镜头室|“同一窗口”徽章|
+|4|5.26|−27.2|“四个勇敢的探险家……”|3：+船员合影|名字弹出 0.16 秒|
+|5|7.40|−25.1|“……最强大的火箭……”|4：+推杆下播|比较持续 4.4 秒|
+|6|13.10|−19.4|（间隙）旁白：“大约十天：绕月球一周，然后返回。”|3：广播+清单+情况说明书|两行，注释带|
+|7|16.47|−16.0|“消音水在流动。”|打卡垫底座 + 事件标志|2880 像素提取|
+|8|19.60|−12.9|—|情况说明书 → 火箭摄影机（擦除）| |
+|9|22.42|−10.1|“十，”|3×3网格：时钟中心、检查表、成绩单（2个插槽）、3个备用插槽| |
+|10|23.10 / 24.22 / 25.24|−9 / −8 / −7|“九、八、七”|猎户座、无人机、镜头室突然出现|每人一只汤姆|
+|11|26.46|−6.0|“RS-25 发动机点亮……”|发动机上的事件标志摄影机；清单“听说−6.0”| |
+|12|32.50|0|“……助推器点火。”|**多合一** (0.42 s) → OSB II 实时、闪存、时钟反转|音乐无声 32.25–32.5|
+|13|36.36|+3.9|“阿尔忒弥斯二号的船员们现在正前往月球。”|硬剪：无人机全面屏| |
+|14|39.50|+7.0|“人类的下一次伟大航程即将开始。”|硬剪：香蕉溪全屏| |
+|15|41.7–42.0|+9.2|（气息）|只吼尾巴；风吹入（J形切）| |
+|16|42.00|+9.5|旁白：“时钟上的下一个：助推器分离，九点两分。”|3：无人机+火箭摄影机+飞行活动|第二次倒计时 -1:59|
+|17 号|46.40 / 49.78|+13.9 / +17.3|“滚动、俯仰都很好。” /“收到，滚动，俯仰。”|飞行事件勾选| |
+|18|51.30|+18.8|—|无人机→跟踪望远镜（擦拭）| |
+|19|53.78|+21.3|“休斯顿，现在控制着诚信号的飞行……”|控制带火箭 → 休斯顿| |
+|20|54.0–59.5|+21.5 → +27|该行在卡片下方结束|1：火箭摄影机全屏+片尾卡|5.5秒|
 
-Sync per camera (source second `s`): broadcast `s = M + 46.8`; rocket camera `s = M + 34.8` (its burned-in timer); Orion `s = M + 26.25` (first RS-25 light at T−6.36); drone `s = M + 10.4`; Banana Creek `s = M + 19.0`; OSB II `s = 3.0 + 2.5·M` (slow-motion ×2.5); Firing Room not synced. All in `demo/tools/prep.sh`.
+按摄影机同步（源第二个 `s`）：广播 `s = M + 46.8`；火箭摄影机 `s = M + 34.8`（其内置定时器）； Orion `s = M + 26.25`（第一个 RS-25 灯位于 T−6.36）；无人机`s = M + 10.4`；香蕉溪`s = M + 19.0`； OSB II `s = 3.0 + 2.5·M`（慢动作×2.5）；镜头室未同步。全部在 `demo/tools/prep.sh` 中。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- 60 BPM, beat = tick = whole second of M (t 0.5, 1.5, …). D minor drone → D major at zero.
-- 0.40 hand-over: timpani D, gran cassa, trombone stabs D/A, tubular bell D5. From 2.5: a bass drum per beat; synth drone (D1/A1, low-pass 140 → 1,300 Hz toward zero). 7.7: horn arpeggio D–F–A as the bars grow. From M −19: off-beat hats. Counts: a tom + timpani A on each spoken number; RS-25: gran cassa, tuba D1 and trombone A2 held. Last 4 s: snare sixteenths; T−3: timpani roll crescendo; **silence 32.25–32.5** (music only).
-- Zero: gran cassa, bass drum, crash, timpani, tuba / trombones / horns in D major, tubular bell; half-time bass drum after; horns move to B3/G2 and A3/C♯4 under the two full screens. **Breath 41.7–42.0**: only the roar tail, then synthetic wind (J-cut into the rocket camera layout).
-- 42.0 →: contrabass pizzicato ostinato D–D–A–C on the beat, light hats, glockenspiel A5 on each ticked flight event. 53.78: tubular bells A4/D5, horn D4, timpani. End card: D major brass, glockenspiel D6–A5–F♯5.
-- Mix: the NASA broadcast audio is on top throughout; music ~8–10 dB under it before zero and ~6–7 dB under it after zero (lifted 3.5 dB from ignition on), ducked under speech; the narrator only in gaps of the broadcast. Ticks alternate 1,850 / 1,480 Hz (±15 % pan), louder in the last ten seconds, a soft 1,250 Hz after zero. Pre-master: normalised to −14 LUFS, then a linked look-ahead limiter (5 ms, 150 ms release, ceiling −3.3 dBFS) so the ignition keeps its punch (about 3 dB of reduction). −14.0 LUFS, true peak −1.9 dBFS.
-- Voice: Kokoro `bf_emma`, two lines, chosen to sound unlike the broadcast's voices.
+- 60 BPM，节拍 = 滴答声 = M 的整秒（t 0.5、1.5、...）。 D小调嗡嗡声→D大调为零。
+- 0.40 交接：定音鼓 D、大卡萨、长号刺 D/A、管状铃 D5。从 2.5 开始：每节拍一个低音鼓；合成无人机（D1/A1，低通 140 → 1,300 Hz 趋于零）。 7.7：随着小节的增长，圆号琶音 D–F–A。来自 M −19：另类的帽子。计数：每个说出的数字上有一个通鼓 + 定音鼓 A； RS-25：大卡萨、大号 D1 和长号 A2 演奏。最后 4 秒：军鼓十六度； T−3：定音鼓卷渐强； **静音 32.25–32.5**（仅音乐）。
+- 零：gran cassa、低音鼓、crash、定音鼓、大号/长号/D大调圆号、管状钟；半场结束后低音鼓；喇叭在两个全屏下移动到B3/G2和A3/C♯4。 **Breath 41.7–42.0**：只有轰鸣尾部，然后是合成风（J-切入火箭摄影机布局）。
+- 42.0 →：低音提琴拨奏 D–D–A–C 节拍，轻帽，钟琴 A5 在每个勾选的飞行事件中。 53.78：管钟 A4/D5、号角 D4、定音鼓。 片尾卡：D 大调铜管乐器，钟琴 D6–A5–F♯5。
+- 混音：NASA 广播音频始终处于顶部；音乐在零之前比它低约 8-10 dB，在零之后比它低约 6-7 dB（从点火开始提升 3.5 dB），在语音下隐藏；旁白只在广播的间隙出现。滴答声交替出现 1,850 / 1,480 Hz（±15% 平移），最后 10 秒声音更大，零后柔和的 1,250 Hz。预主控：标准化为−14 LUFS，然后链接前瞻限制器（5 ms、150 ms 释放、上限−3.3 dBFS），以便点火保持其冲击力（约减少 3 dB）。 −14.0 LUFS，真实峰值-1.9 dBFS。
+- 声音：Kokoro `bf_emma`，两行，选择与广播声音不同的声音。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Ground `#06080A`, panels `#0B0E11`, accent `#FF5B1F`, speaking / heard `#FF3B30`, text `#F2F5F7` / `#7C878D`.
-- Cells: HUD clock 656×184 and transcript 1,208×184 at the bottom; pre-zero big cell 1,240×840 with a 624-wide right column; the 3×3 grid 618×338 per slot (transcript spans two).
-- Checklist rows: T−33 go for ALS (heard −32.1), T−30 core stage → ALS, T−12 H2 burn-off igniters, T−10 engine start command, T−6.36 RS-25 startup (heard −6.0), T−0 booster ignition (heard +0.2).
-- Fact sheet rows "10 DAY TEST FLIGHT" and "2 EARTH ORBITS", measured on the page so the window's edges fall in white space; annotation band 28 % of the cell.
-- Thrust bars: SLS orange at 820 px, Saturn V grey at 820 / 1.15, a dashed orange "+15%" marker.
+- 地面 `#06080A`，面板 `#0B0E11`，重音 `#FF5B1F`，说话/听到 `#FF3B30`，文本 `#F2F5F7` / `#7C878D`。
+- 单元格：HUD 时钟 656×184 和底部的转录本 1,208×184；预置零大单元 1,240×840，右列宽 624；每个槽 3×3 网格 618×338（转录本跨越两个）。
+- 检查表行：T−33 用于 ALS（听到 −32.1）、T−30 核心级 → ALS、T−12 H2 燃尽点火器、T−10 发动机启动命令、T−6.36 RS-25 启动（听到 −6.0）、T−0 助推器点火（听到 +0.2）。
+- 情况说明书行“10 天试飞”和“2 个地球轨道”，在页面上进行测量，以便窗口的边缘落在空白处；注释条带占细胞的 28%。
+- 推力条：SLS 橙色，820 像素，土星 V 灰色，820 / 1.15，橙色虚线“+15%”标记。
 
-## Title card
+<a id="title-card"></a>
+## 标题卡
 
-Opening package (lower left of the first cell, 0.45–6.8 s): 自己倒数 / COUNTING ITSELF DOWN, then 阿尔忒弥斯二号 · 2026 年 4 月 1 日 · 39B 发射台 and the English line.
+开包（第一格左下，0.45–6.8秒）：自己倒数/COUNTING ITSELF DOWN，然后阿尔忒弥斯二号·2026年4月1日·39B发射台和英文线。
 
-End card (54.0–59.5 s, left-aligned over the rocket camera, the clock and transcript still running): 自己倒数 (Noto Sans SC 700, 112 px) / COUNTING ITSELF DOWN; a thin orange rule; 实时倒计时分屏 LIVE COUNTDOWN SPLIT-SCREEN; LemoLab × Claude Opus 5.5; 素材：NASA · 公有领域 · 非官方作品 / FOOTAGE: NASA · PUBLIC DOMAIN · UNOFFICIAL. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+片尾卡（54.0–59.5 s，在火箭摄影机上左对齐，时钟和文字记录仍在运行）：自己倒数（Noto Sans SC 700，112 px）/ COUNTING ITSELF DOWN；橙色细尺； 实时倒计时分屏；实时倒计时分屏； LemoLab × 克劳德 Opus 5.5； 素材：NASA·公有领域·非官方作品 / 镜头：NASA·公共领域·非官方。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -83,6 +90,6 @@ demo/
   raw/ frames/ out/ fonts/ audio/vo/   downloaded or generated, not committed
 ```
 
-`sh demo/build.sh` (library set up with `setup.sh deps voice music`): fetches the NASA excerpts (~400 MB), fonts, voice model and the vsco2ce / vcsl samples if missing → narrator + speech check → frames (`prep.sh`) → subtitles + one-line check → `readcheck` → events → render (1,785 frames, 30 fps) → mix → mux (−14 LUFS, grain 1) → small cut → poster / style frame (t 28.5) → Whisper on the film.
+`sh demo/build.sh`（使用 `setup.sh deps voice music` 设置的库）：获取 NASA 摘录（~400 MB）、字体、语音模型和 vsco2ce / vcsl 样本（如果丢失）→ 旁白 + 语音检查 → 帧 (`prep.sh`) → 字幕 + 一行检查 → `readcheck` → 事件 →渲染（1,785 帧，30 fps）→ 混合 → 复用器（−14 LUFS，颗粒 1）→ 小剪切 → 海报 / 风格定帧 (t 28.5) → 影片上的耳语。
 
-Demo-specific choices and pitfalls: the broadcast excerpt is a stream copy, so its zero (46.8 s) depends on the keyframe it starts on; re-measure after a re-fetch. The rocket camera's burned-in timer gave a frame-exact zero, but the same file's audio runs about 1 s early, so it was synced on picture only. The Firing Room reel has no clock: it is labelled "same window" and kept away from the seconds where its content could contradict the clock. "GLS, go for ALS" is heard by Whisper as "go for your left"; it is identified from NASA's countdown list and the commentary that follows (FACTS.md §T). The first cut showed the count's whole Chinese line ("…RS-25 点火") four seconds early; the count is now two cues. The 3×3 grid first opened with three black slots; they are now "standby" frames that each count opens. The fact-sheet annotation covered the page's own type; it moved into a dark band below the paper, and the paper window is a fixed 600 source px wide (scaled to fit, paper white above and below) so every row's text is whole. A static pad wide shot ran ten seconds; a punch-in on "sound suppression water" (from a 2,880-px extraction, no upscaling) breaks it.
+示范特定的选择和陷阱：广播摘录是流副本，因此它的零（46.8 秒）取决于它开始的关键帧；重新获取后重新测量。火箭摄影机的内置计时器给出了精确为零的帧，但同一文件的音频提前了大约 1 秒，因此仅在图片上同步。 《镜头室》卷轴没有时钟：它被标记为“同一窗口”，并远离其内容可能与时钟相矛盾的秒数。 “GLS，去 ALS”被 Whisper 听成“向左走”；它是从 NASA 的倒计时列表和随后的评论中识别出来的（FACTS.md §T）。第一个镜头提前四秒展示了伯爵的整句中文台词（“…RS-25 熄火”）；现在计数是两个提示。 3×3的网格首先打开三个黑色槽；它们现在是每次计数打开的“备用”框架。情况说明书注释涵盖了页面本身的类型；它移动到纸张下方的暗带中，并且纸张窗口的宽度固定为 600 像素（缩放以适合，上方和下方为纸张白色），因此每一行的文本都是完整的。一块静电垫宽镜头跑了十秒；打入“声音抑制水”（从 2,880 像素提取，没有放大）会破坏它。

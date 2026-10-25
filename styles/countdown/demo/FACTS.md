@@ -1,79 +1,87 @@
-# Facts and sources · 《自己倒数》Counting Itself Down
+<a id="facts-and-sources--自己倒数counting-itself-down"></a>
+# 事实与来源·《自己倒数》倒计时
 
-Every piece of on-screen text and every claim in the narration, listed with its source and the source's wording. Times always follow NASA's official figures. Checked on 2026-10-20; before the last render the lines were checked one by one against this table (`audio/lines.json`, and in `index.html` the `CUES` / `CHECK` / `FLIGHT` / data cell / end card).
+屏幕上的每一段文字和旁白中的每一个主张，都列出了其来源和来源的措辞。时间总是遵循 NASA 的官方数据。 2026年10月20日检查；在最后一次渲染之前，对照此表（`audio/lines.json`，以及在 `index.html` 中的 `CUES` / `CHECK` / `FLIGHT` / 数据单元 / 片尾卡）逐一检查行。
 
-The source audio (launch commentary, loop calls) is not our claim; it is NASA's live broadcast soundtrack itself. The basis of the transcription is in §T.
+源音频（启动评论、循环通话）不是我们的声明；这是 NASA 的现场直播配乐本身。转录的基础是§T。
 
-On-screen text is bilingual; it is quoted as it appears (Chinese / English). Chinese-only labels get an English gloss.
+屏幕上的文字是双语的；它是按其出现的样子引用的（中文/英文）。仅有中文的标签获得了英文的光泽。
 
-## On screen / narration
+<a id="on-screen--narration"></a>
+## 屏幕上/旁白
 
-| On screen or narration | Claim | Source |
+|在屏幕或旁白上|宣称|来源|
 |---|---|---|
-| 阿尔忒弥斯二号 · 2026 年 4 月 1 日 · 39B 发射台 / ARTEMIS II · APRIL 1, 2026 · LC-39B, KENNEDY SPACE CENTER | Launch date, launch pad | F1 |
-| Crew name tags: 怀斯曼 (Wiseman) CDR, 格洛弗 (Glover) PILOT, 科赫 (Koch) MS, 汉森 (Hansen) MS · CSA | Crew and roles | F1 |
-| Checklist T−33 移交自动程序 GO FOR ALS | Planned milestone | F2 |
-| Checklist T−30 芯级计算机接管 CORE STAGE → ALS | Planned milestone | F2 |
-| Checklist T−12 氢气燃烧点火器 H2 BURN-OFF IGNITERS | Planned milestone | F2 |
-| Checklist T−10 发动机启动指令 ENGINE START CMD | Planned milestone | F2 |
-| Checklist T−6.36 RS-25 启动 (RS-25 start); event flag "RS-25 ×4 启动 ENGINE START · T−6.36" | Planned milestone; the core stage's 4 RS-25s | F2, F4 |
-| Checklist T−0 助推器点火 · 升空 (booster ignition · liftoff) | Planned milestone | F2 |
-| "听到 −32.1 / −6.0 / +0.2" (heard at −32.1 / −6.0 / +0.2) (red tags) | The times actually called out in the source audio (measured for the film, see §T) | Measurement |
-| Data cell: SLS BLOCK 1 · 880 万磅 8.8 M LBF; 土星五号 (Saturn V); +15% SLS 多 15% | Liftoff thrust and the comparison | F4 |
-| Document cell: 10 天试飞 10-DAY TEST FLIGHT; 先绕地球 2 圈 2 EARTH ORBITS FIRST | Mission figures | F5 |
-| Narration N1 "About ten days: around the Moon, and back." | Planned round trip around the Moon of about 10 days | F5 |
-| Narration N2 "Next on the clock: booster separation, at two minutes nine."; milestone cell "预计 T+2:09 EXPECTED" | Expected time of booster separation | F3 |
-| Milestone cells 升空 (liftoff) / 滚转、俯仰 (roll, pitch) / 休斯敦接管 (Houston takes over) (tick times) | The times called out in the source audio (measured for the film) | Measurement, F3 |
-| Control bar 地面 GLS → 火箭 ALS → 休斯敦 HOUSTON (ground GLS → rocket ALS → Houston) | GLS hands over to the automated launch sequencer; Houston takes over after liftoff | F2, F3, source audio |
-| End card: 素材 NASA · 公有领域 · 非官方作品 (footage NASA · public domain · unofficial work) | Footage licence | CREDITS |
+|阿尔忒弥斯二号 · 2026 年 4 月 1 日 · 39B 发射台 / ARTEMIS II · 2026 年 4 月 1 日 · LC-39B，肯尼迪航天中心|发射日期、发射台|F1|
+|船员姓名标签：怀斯曼（Wiseman）CDR、格洛弗（Glover）PILOT、科赫（Koch）MS、汉森（Hansen）MS·CSA|船员及角色|F1|
+|检查表 T−33 移交自动程序 GO FOR ALS|计划的里程碑|F2|
+|检查表 T−30 核心级计算机取代 CORE STAGE → ALS|计划的里程碑|F2|
+|检查清单 T−12 泡沫燃烧器 H2 燃烧点火器|计划的里程碑|F2|
+|检查清单 T−10 发动机启动指令 ENGINE START CMD|计划的里程碑|F2|
+|检查表 T−6.36 RS-25 启动 (RS-25 start);事件标志“RS-25×4启动ENGINE START·T−6.36”|计划的里程碑；核心级的 4 个 RS-25|F2、F4|
+|检查表 T−0 助推器点火·升空|计划的里程碑|F2|
+|“听到−32.1 / −6.0 / +0.2”（在−32.1 / −6.0 / +0.2处听到）（红色标签）|源音频中实际调用的时间（针对影片测量，请参阅§T）|测量|
+|数据单元：SLS BLOCK 1·880 万磅 8.8 M LBF； 土星五号 (Saturn V); +15% SLS 多 15%|升空推力及对比|F4|
+|文档单元：10天试飞 10-DAY TEST FLIGHT； 先绕地球 2 圈 2 EARTH ORBITS FIRST|任务人物|F5|
+|旁白 N1 “大约十天：绕月球一周，然后返回。”|计划绕月飞行约10天|F5|
+|旁白 N2“时钟上的下一个：助推器分离，两分钟九点。”；里程碑单元格“预计 T+2:09”|预计助推器分离时间|F3|
+|里程碑单元升空（升空）/滚转、俯仰（滚动、俯仰）/休斯敦接管（休斯顿接管）（滴答时间）|源音频中调用的时间（针对影片测量）|测量，F3|
+|控制杆地面 GLS → 火箭 ALS → 休斯敦 HOUSTON （地面 GLS → 火箭 ALS → 休斯顿）|GLS 移交给自动发射排序器；升空后休斯顿接管|F2、F3、源音频|
+|片尾卡: 素材 NASA · 公有领域 · 非官方作品（素材 NASA · 公共领域 · 非官方作品）|影片许可|学分|
 
-## F1 Launch date, time, pad, crew
-- NASA image caption "Artemis II Launch": https://www.nasa.gov/image-detail/artemis-ii-launch-5/
-  > "Wednesday, April 1, 2026"
-  > "The quartet launched at 6:35 p.m. EDT"
-  > "from Launch Complex 39B at NASA's Kennedy Space Center in Florida"
-  > "Reid Wiseman, commander; Victor Glover, pilot; Christina Koch, mission specialist;"
-  > "and CSA (Canadian Space Agency) astronaut Jeremy Hansen, mission specialist"
-- Corroboration: the UTC time burned into the tracking-telescope footage, 22:35:27 (film 51.5 s, i.e. T+19) = 18:35 US Eastern, consistent with F1.
+<a id="f1-launch-date-time-pad-crew"></a>
+## F1 发射日期、时间、场地、工作人员
+- NASA 图片说明“Artemis II Launch”：https://www.nasa.gov/image-detail/artemis-ii-launch-5/
+  >“2026 年 4 月 1 日星期三”
+  > “四重奏于美国东部时间下午 6:35 启动”
+  > “来自佛罗里达州 NASA 肯尼迪航天中心的 39B 发射场”
+  > “里德·怀斯曼（Reid Wiseman），指挥官；维克多·格洛弗（Victor Glover），飞行员；克里斯蒂娜·科赫（Christina Koch），任务专家；”
+  >“以及 CSA（加拿大航天局）宇航员 Jeremy Hansen，任务专家”
+- 佐证：追踪望远镜镜头中刻录了 UTC 时间，22:35:27（影片 51.5 秒，即 T+19）= 美国东部时间 18:35，与 F1 一致。
 
-## F2 Countdown milestones (planned times)
-- NASA "NASA Releases Artemis II Moon Mission Launch Countdown": https://www.nasa.gov/general/nasa-releases-artemis-ii-moon-mission-launch-countdown/
-  > "T-33S – GLS sends "go for automated launch sequencer" command"
-  > "T-30S – Core stage flight computer to automated launching sequencer"
-  > "T-12S – Hydrogen burn off igniters initiated"
-  > "T-10S – GLS sends the command for core stage engine start"
-  > "T-6.36S– RS-25 engines startup"
-  > "T-0: Booster ignition, umbilical separation, and liftoff"
+<a id="f2-countdown-milestones-planned-times"></a>
+## F2倒计时里程碑（计划时间）
+- NASA《NASA 发布阿耳忒弥斯二号月球任务发射倒计时》：https://www.nasa.gov/general/nasa-releases-artemis-ii-moon-mission-launch-countdown/
+  >“T-33S – GLS 发送“执行自动发射定序器”命令”
+  >“T-30S – 核心级飞行计算机到自动发射定序器”
+  > “T-12S – 氢燃尽点火器启动”
+  > “T-10S – GLS 发送核心级发动机启动命令”
+  > “T-6.36S – RS-25 发动机启动”
+  >“T-0：助推器点火、脐带分离和升空”
 
-## F3 Source audio after liftoff (NASA's official transcript)
-- NASA Scientific Visualization Studio "Artemis II launch live": https://svs.gsfc.nasa.gov/31385/ , subtitle file `Artemis 2 launch long.srt` (https://svs.gsfc.nasa.gov/vis/a030000/a031300/a031385/Artemis%202%20launch%20long.srt)
-  > "Sound suppression. / Water is flowing." "And here we go." "RS 25 Engines lit." "Booster. / Ignition and lift off."
-  > "The crew of Artemis two, now bound for the moon." "Humanity's next great voyage begins."
-  > "Good role. / Pitch." "Roger Role, Pitch" (i.e. roll / pitch)
-  > "Houston. / Now controlling the flight of integrity on the Artemis two mission around the Moon."
-  > "Standing by for main engine throttle down to 85% ahead of solid rocket booster separation expected at the two minute nine second mark."
-  > "Confirm separation."
-- Integrity is the name of this mission's Orion spacecraft; the source is the official transcript line above.
-- Commentary from the same broadcast at T−47 s (not used in the film; it supports the "control bar"): "The rocket will count itself down, but honor any holds that could come from the ground." "Now, shortly after liftoff, Houston will take control of the rocket." (broadcast excerpt in this film 0.0–9.7 s, Whisper transcription)
+<a id="f3-source-audio-after-liftoff-nasas-official-transcript"></a>
+## F3 升空后的源音频（NASA 官方成绩单）
+- NASA科学可视化工作室“Artemis II发射现场”：https://svs.gsfc.nasa.gov/31385/，字幕文件`Artemis 2 launch long.srt`（https://svs.gsfc.nasa.gov/vis/a030000/a031300/a031385/Artemis%202%20launch%20long.srt）
+  >“声音抑制。/水在流动。” “我们开始吧。” “RS 25 发动机点亮。” “助推器。/点火并升空。”
+  > “阿耳忒弥斯二号的船员们现在正在前往月球。” “人类的下一次伟大航程即将开始。”
+  > “好角色。/推介。” “Roger Role，Pitch”（即滚动/俯仰）
+  > “休斯顿。/现在控制阿耳忒弥斯二号绕月任务的完整飞行。”
+  > “在固体火箭助推器分离预计在 2 分 9 秒标记之前，等待主发动机油门降至 85%。”
+  > “确认分离。”
+- 完整性是本次任务的猎户座飞船的名称；来源是上面的官方成绩单。
+- 来自 T−47 s 的同一广播的评论（未在影片中使用；它支持“控制栏”）：“火箭将自行倒计时，但尊重任何可能来自地面的控制。” “现在，升空后不久，休斯顿将控制火箭。” （影片 0.0–9.7 s 中的广播摘录，耳语转录）
 
-## F4 Thrust and engines
-- NASA RS-25 engine fact sheet: https://www.nasa.gov/sites/default/files/atoms/files/sls_rs25_engine_fs_508.pdf
-  > "During liftoff, the Block 1 configuration of SLS will produce 8.8 million pounds of thrust — 15 percent more than the Saturn V rockets that launched astronauts on journeys to the Moon."
-  > "It will use four RS-25 engines for the core stage, along with two solid rocket boosters."
-- The film's data bars are drawn at 1.15 : 1; no separate figure for the Saturn V is written.
-- "the most powerful rocket NASA has ever launched" is the live commentary's own wording, not our claim.
+<a id="f4-thrust-and-engines"></a>
+## F4推力和发动机
+- NASA RS-25 发动机情况说明书：https://www.nasa.gov/sites/default/files/atoms/files/sls_rs25_engine_fs_508.pdf
+  > “在升空过程中，SLS 的 Block 1 配置将产生 880 万磅的推力，比将宇航员送上月球的土星 V 火箭多 15%。”
+  > “它将使用四个 RS-25 发动机作为核心级，以及两个固体火箭助推器。”
+- 影片的数据条以 1.15 : 1 绘制；土星五号没有单独的数据。
+- “美国宇航局有史以来发射的最强大的火箭”是现场评论自己的措辞，而不是我们的说法。
 
-## F5 Mission figures (the plan before launch)
-- NASA Artemis II one-page overview AIIFS-08.27.25 (archived on Wikimedia Commons, PD-USGov-NASA): https://commons.wikimedia.org/wiki/File:Artemis_II_One_pager_082725_508_(1974822455374).pdf
-  > "10 DAY TEST FLIGHT" "2 EARTH ORBITS"
-  > "Many of these will be completed as Orion flies two elliptical orbits around Earth before venturing around the Moon."
-  > "Orion will fire its thrusters and send the crew on a trip of about 10 days around the far side of the Moon and back to Earth."
-- Note: this was the plan at the time of launch. NASA's mission page (https://www.nasa.gov/mission/artemis-ii/) later gives the actual mission duration as "9 Days, 1 Hour, 32 Minutes". The film takes the real-time point of view of the moment of launch, so the narration says "about ten days" (the plan), not the actual duration.
+<a id="f5-mission-figures-the-plan-before-launch"></a>
+## F5任务图（发射前的计划）
+- NASA Artemis II 一页概述 AIIFS-08.27.25（存档于 Wikimedia Commons、PD-USGov-NASA）：https://commons.wikimedia.org/wiki/File:Artemis_II_One_pager_082725_508_(1974822455374).pdf
+  >“10天试飞”“2个地球轨道”
+  >“其中许多任务将在猎户座绕地球运行两个椭圆轨道，然后冒险绕月飞行时完成。”
+  >“猎户座将发射推进器，送宇航员绕月球背面进行大约 10 天的旅行，然后返回地球。”
+- 注意：这是发布时的计划。 NASA的任务页面（https://www.nasa.gov/mission/artemis-ii/）后来给出的实际任务持续时间为“9天1小时32分钟”。 影片采取发射瞬间的实时视角，因此旁白说“大约十天”（计划），而不是实际持续时间。
 
-## §T Transcription and timing measurements
-- T0 (film 32.5 s): the jump of the broadcast picture's countdown bug from T−0:00:32 to 31 + the word-level time of the commentary's "booster" (film 32.70); the two agree.
-- "GLS, go for ALS." (film 0.40): Whisper base.en / small hear it as "go for your left", and medium drops the line; it is judged to be "go for ALS" from the F2 T−33 milestone (GLS sends "go for automated launch sequencer") and the commentary that follows immediately, "Great call-out. The rocket is on its own." The time actually called out in the source audio is T−32.1 (the milestone table gives the planned T−33); the checklist marks the two separately.
-- "RS-25 engines lit": Whisper sometimes hears "lift"; NASA's official transcript (F3) has "lit".
-- "Good roll, pitch." / "Roger, roll, pitch." at film 46.40 / 49.78 (T+13.9 / +17.3); "Houston, now controlling…" at film 53.78 (T+21.3).
-- Timing of the vehicle camera (CAM 3): the burned-in timer jumps from "001-04:17:27.3" to "002-00:00:01.0"; the "002" segment reaches zero at source 34.8 s, taken as T0. The broadcast soundtrack that comes with the same file is about 1 s off the picture, so its sound is not used for timing.
-- The control room (CAM 2) has no clock to sync to; it is labelled "同一时段 SAME WINDOW · 未逐帧同步" (not frame-synced).
+<a id="t-transcription-and-timing-measurements"></a>
+## §T 转录和计时测量
+- T0（影片 32.5 s）：转播画面倒计时bug从T−0:00:32到31的跳转+解说“助推器”的字级时间（影片 32.70）；两人同意。
+- “GLS，去ALS吧。” (影片 0.40)：Whisper base.en / 小听到它是“向左走”，表现媒介挂断电话；它被认为是 F2 T−33 里程碑中的“go for ALS”（GLS 发送“go forautomatic launchequencer”），并且紧随其后的评论是“伟大的呼唤。火箭是靠自己的。”源音频中实际调出的时间是 T−32.1（里程碑表给出了计划的 T−33）；检查表将两者分开标记。
+- “RS-25 发动机点亮”：耳语有时会听到“升力”； NASA 的官方成绩单（F3）已“点亮”。
+- “滚动、俯仰都很好。” /“收到，滚动，俯仰。” 影片 46.40 / 49.78 (T+13.9 / +17.3)； “休斯顿，现在控制……”，影片 53.78 (T+21.3)。
+- 车辆摄影机（CAM 3）的计时：烧入的计时器从“001-04:17:27.3”跳转到“002-00:00:01.0”； “002”段在​​源 34.8 秒处达到零，作为 T0。同一文件附带的广播配乐与画面相差约1秒，因此其声音不用于计时。
+- 控制室 (CAM 2) 没有时钟可同步；它被标记为“相同增益 SAME WINDOW · 未逐帧同步”（未帧同步）。

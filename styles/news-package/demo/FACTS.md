@@ -1,75 +1,82 @@
-# Facts and sources ·《本周 AI 四件事 The Week in AI》 (Lemo AI News, week 42)
+<a id="facts-and-sources-本周-ai-四件事-the-week-in-ai-lemo-ai-news-week-42"></a>
+# 事实与来源·《本周 AI 四件事 The Week in AI》（Lemo AI News，第 42 周）
 
-Checked on 2026-10-21 (each source below was checked page by page; wherever a primary source could be found it was added; event details reported by a single source only are kept off screen and out of the voice-over).
-Before the last render, the table below was compared item by item against `vo/lines.json` (Chinese voice-over) and the `STRAP` / `ROWS` / `CUES` and per-shot on-screen text in `main.js`. A line-by-line check of the voice-over is at the end.
-Grades: **primary** = a page of the subject of the event itself, or exchange data; **reliable media** = a bylined news report; **snippet** = only a search snippet could be read (page 403 / timed out), used only as corroboration, never on its own to support a number on screen.
+于 2026 年 10 月 21 日检查（下面的每个来源都经过逐页检查；只要能找到主要来源，就会添加它；仅由单个来源报告的事件详细信息将保留在屏幕外和画外音之外）。
+在上次渲染之前，下表与 `vo/lines.json`（中文配音）和 `STRAP` / `ROWS` / `CUES` 以及 `main.js` 中的每个镜头屏幕文本进行了逐项比较。最后是对画外音的逐行检查。
+等级：**基本的**= 事件本身的主题页面，或交换数据；**可靠媒体**= 署名新闻报道；**片段** = 只能读取搜索片段（第 403 页/超时），仅用作佐证，绝不单独支持屏幕上的数字。
 
-On-screen text and voice-over are Chinese; they are quoted as they appear, with an English gloss.
+屏幕文字和画外音均为中文；它们按原样被引用，带有英文注释。
 
-## ① Google opens Gemini 4 Argon to all developers
+<a id="①-google-opens-gemini-4-argon-to-all-developers"></a>
+## ① Google 向所有开发者开放 Gemini 4 Argon
 
-| # | Claim in the film (on screen / voice-over) | Source | Source wording | Grade |
+|#|影片中的索赔（屏幕上/画外音）|来源|来源措辞|年级|
 |---|---|---|---|---|
-| G1 | Generally available (GA) on 13 October, model ID `gemini-4-argon`; "谷歌向全部开发者开放 Gemini 4 Argon" (Google opens Gemini 4 Argon to all developers) | Gemini API changelog https://ai.google.dev/gemini-api/docs/changelog | "October 13, 2026 — Gemini 4 Argon (gemini-4-argon) generally available (GA): Released Gemini 4 Argon (gemini-4-argon), our most capable model built for complex coding, agentic, math, and science tasks." | Primary |
-| G2 | Introductory price $2 input, $10 output per million tokens | blog.google, "Gemini 4 Argon" (2026-09-30, Koray Kavukcuoglu) https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/ | "Argon will launch at an introductory price of $2 per million input tokens and $10 per million output tokens, with cached input tokens priced at 95% off input token price." | Primary |
-| G3 | Afterwards $4 / $20; "价格翻倍 ×2" (price doubles ×2) | Same, footnote 1 | "After the introductory period expires, the price of $4 per 1M input tokens and $20 per 1M output tokens will apply." | Primary; ×2 computed from 2→4 and 10→20 |
-| G4 | Introductory price "至 30 NOV" (until 30 NOV), then "FROM 1 DEC" | Gemini API · latest model https://ai.google.dev/gemini-api/docs/latest-model | "Gemini 4 Argon is available at introductory pricing through November 30, 2026: Input tokens: $2.00 per 1M tokens ($4.00 starting December 1, 2026)" | Primary |
-| — | Not reported | — | The 9-30 blog post was at the time a release only to cyber defenders in the Fairwind programme ("rolling out to a set of trusted cyber defenders through our Fairwind Program"), so the film does not say it "launched" on 9-30; the benchmark scores are self-reported by Google and not used | — |
+|G1|10 月 13 日全面上市 (GA)，型号 ID `gemini-4-argon`； “Google向所有开发者开放Gemini 4 Argon”（谷歌向所有开发者开放Gemini 4 Argon）|Gemini API 变更日志 https://ai.google.dev/gemini-api/docs/changelog|“2026 年 10 月 13 日 — Gemini 4 Argon (gemini-4-argon) 全面上市 (GA)：发布了 Gemini 4 Argon (gemini-4-argon)，这是我们为复杂编码、代理、数学和科学任务构建的最强大的模型。”|基本的|
+|G2|入门价格每百万代币 2 美元输入，10 美元输出|blog.google，“Gemini 4 Argon”（2026-09-30，Koray Kavukcuoglu）https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/|“Argon 的首发价格为每百万输入代币 2 美元，每百万输出代币 10 美元，缓存输入代币价格为输入代币价格的 95%。”|基本的|
+|G3|之后$4 / $20； “价格翻倍×2”（价格翻倍×2）|同上，脚注 1|“推出期结束后，每 100 万个输入代币 4 美元的价格和每 100 万个输出代币 20 美元的价格将适用。”|基本的; ×2 由 2→4 和 10→20 计算得出|
+|G4|介绍性价格“至 30 NOV”（直到 11 月 30 日），然后“FROM 1 DEC”|Gemini API·最新型号https://ai.google.dev/gemini-api/docs/latest-model|“Gemini 4 Argon 在 2026 年 11 月 30 日之前以介绍性价格提供：输入代币：每 100 万个代币 2.00 美元（从 2026 年 12 月 1 日开始为 4.00 美元）”|基本的|
+|—|未报道|—|9-30 日的博客文章当时仅向 Fairwind 计划中的网络防御者发布（“通过我们的 Fairwind 计划向一组值得信赖的网络防御者推出”），因此影片并没有说它是在 9-30 日“发布”的；基准分数由 Google 自行报告，并未使用|—|
 
-## ② South Korea's Kospi falls into a bear market, chip stocks lead the drop
+<a id="②-south-koreas-kospi-falls-into-a-bear-market-chip-stocks-lead-the-drop"></a>
+## ② 韩国Kospi陷入熊市，芯片股领跌
 
-| # | Claim in the film | Source | Source wording | Grade |
+|#|影片中的索赔|来源|来源措辞|年级|
 |---|---|---|---|---|
-| K1 | −7.57% in one day on 15 October, close 5,554.22 | Korea Herald (Im Eun-byel, 2026-10-15) https://www.koreaherald.com/article/10904070 | "The benchmark Kospi tumbled 7.57 percent to close at 5,554.22, extending losses throughout the session after opening 5.59 percent lower." | Reliable media; agrees with the K5 data (5,554.22 ÷ 6,008.81 − 1 = −7.565 %) |
-| K2 | Seven straight losing sessions (chart days 1–7, the "连跌 7 日" (7 days down in a row) badge, the readout panel) | Korea Times (2026-10-16) https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts | "as KOSPI rebounded 2.05 percent, snapping a seven-session losing streak"; "over seven consecutive trading sessions starting Oct. 6" | Reliable media; K5 data: seven down closes on 10-06, 07, 08, 12, 13, 14, 15 (market closed 10-09) |
-| K3 | "进入熊市 BEAR MARKET" (into a bear market) | Bloomberg (2026-10-15) "Kospi Drops 8% as Samsung, SK Hynix Shares Plunge on AI and Rate Fears" https://www.bloomberg.com/news/articles/2026-10-15/chip-stocks-deepen-losses-as-concerns-mount-over-rates-ai-debt | Snippet: "dragged South Korea's equity benchmark down nearly 8% to push it into a bear market"; "fallen about 21% from its September high" | Snippet (article body 403); the measure is confirmed from the K5 data: down 21.56 % from the 23 September closing high of 7,080.92 |
-| K4 | Bear-market line = −20 % from the September high; readout panel "较 9 月高点 −21.56%" (−21.56% from the September high); peak label "PEAK 7,080.92" | Computed from K5 | 5,554.22 ÷ 7,080.92 − 1 = −21.56 %; the −20 % line = 5,664.74 | Primary data + our arithmetic. **Caution on the measure**: the Kospi's all-time closing high was 9,114.55 on 22 June; measured from that high it had already fallen more than 20 % in July. "Into a bear market" is Bloomberg's statement measured from the September high, and the film's axis says so: "距 9 月高点 FROM SEPTEMBER HIGH" |
-| K5 | Chart: the actual close of every trading day from 15 September to 15 October | Korea Exchange index data via the Naver Finance API https://api.stock.naver.com/chart/domestic/index/KOSPI?periodType=dayCandle (raw response saved as `data/kospi_raw_naver_api.json`, tidied into `data/kospi_daily.csv`) | The 19 closes used in the film: 6,627.26 (9-15) · 6,717.97 · 6,715.41 · 6,894.23 · 7,007.72 · 7,017.91 · **7,080.92 (9-23 high)** · 6,889.74 · 6,870.81 · 6,838.04 · 6,971.35 · 7,003.74 (10-02) · 6,941.39 · 6,803.90 · 6,625.93 · 6,384.24 · 6,035.35 · 6,008.81 · **5,554.22 (10-15)** | Primary data. The 10-13 close of 6,035.35 (−5.46 %) and the 10-16 close of 5,668.05 (+2.05 %) agree with the Korea Herald and the Korea Times |
-| K6 | Samsung Electronics −9.48 %, SK hynix −11.06 %; "都超过 9%" (both more than 9%) | Korea Herald (as K1) | "SK hynix sank 11.06 percent to 1.26 million won, while Samsung Electronics plunged 9.48 percent to 210,000 won." | Reliable media. Naver's individual-stock data does not match these two figures (−10.56 % / −12.76 %), so for the individual stocks only the reported figures are used, not Naver |
-| K7 | Strap "利率与 AI 担忧，芯片股重挫" (rate and AI fears, chip stocks plunge) | Bloomberg headline (as K3) | "… Shares Plunge on AI and Rate Fears" | Headline (checked) |
-| — | Not reported | — | Neither "−14.46 % for the week" (computable from the data: 10-08 close 6,625.93 → 10-16 close 5,668.05) nor "worst week since 2008" is reported: the primary statement of "worst week since 2008" applies only to the two individual stocks Samsung and SK hynix (Korea Herald https://www.koreaherald.com/article/10906189 ); only Benzinga says it of the index (403, not read). The film uses "较 9 月高点 −21.56%" (−21.56% from the September high), which the data can confirm | — |
+|K1|10月15日单日-7.57%，收盘价5,554.22|韩国先驱报 (Im Eun-byel, 2026-10-15) https://www.koreaherald.com/article/10904070|“基准综合股价指数下跌 7.57%，收于 5,554.22 点，开盘下跌 5.59% 后，整个交易日跌幅扩大。”|可靠的媒体；与 K5 数据一致 (5,554.22 ÷ 6,008.81 − 1 = −7.565 %)|
+|K2|七个连续亏损时段（图表第 1-7 天，“连跌 7 日”（连续 7 天下跌）徽章，读数面板）|韩国时报 (2026-10-16) https://www.koreatimes.co.kr/economy/20261016/samsung-sk-hynix-sell-off-excessive-as-memory-outlook-stays-strong-analysts|“KOSPI 反弹 2.05%，结束了七连跌”； “从 10 月 6 日开始连续七个交易日”|可靠的媒体； K5数据：10-06、07、08、12、13、14、15七跌收盘（10-09收盘）|
+|K3|“进入熊市 BEAR MARKET”（进入熊市）|彭博社 (2026-10-15)“三星、SK 海力士股价因人工智能和利率担忧而暴跌，Kospi 下跌 8%”https://www.bloomberg.com/news/articles/2026-10-15/chip-stocks-deepen-losses-as-concerns-mount-over-rates-ai-debt|片段：“拖累韩国股市基准下跌近8%，将其推入熊市”； “较 9 月份高点下跌约 21%”|片段（文章主体 403）； K5 数据证实了这一指标：较 9 月 23 日收盘高点 7,080.92 下跌 21.56%|
+|K4|熊市线 = 距 9 月高点 -20%；读数面板“较9月高点-21.56%”（较9月高点-21.56%）；峰值标签“PEAK 7,080.92”|由 K5 计算|5,554.22 ÷ 7,080.92 − 1 = −21.56%； −20% 线 = 5,664.74|原始数据+我们的算术。 **谨慎操作**：Kospi指数6月22日历史收盘高点为9,114.55；从这个高点来看，7 月份已经下跌了 20% 以上。 “进入熊市”是彭博社的说法，从 9 月高点开始衡量，影片的轴是这样说的：“距 9 月高点 FROM 9 月高点”|
+|K5|图表：9月15日至10月15日各交易日实际收盘|通过 Naver Finance API https://api.stock.naver.com/chart/domestic/index/KOSPI?periodType=dayCandle 的韩国交易所指数数据（原始响应保存为 `data/kospi_raw_naver_api.json`，整理为 `data/kospi_daily.csv`）|影片中使用的 19 个收盘： 6,627.26 (9-15) · 6,717.97 · 6,715.41 · 6,894.23 · 7,007.72 · 7,017.91 · **7,080.92 (9-23)高)**· 6,889.74 · 6,870.81 · 6,838.04 · 6,971.35 · 7,003.74 (10-02) · 6,941.39 · 6,803.90 · 6,625.93 · 6,384.24 · 6,035.35·6,008.81·**5,554.22 (10-15)**|主要数据。 10-13 月收盘价为 6,035.35 (−5.46 %)，10-16 月收盘价为 5,668.05 (+2.05 %) 与《韩国先驱报》和《韩国时报》一致|
+|K6|三星电子-9.48%，SK海力士-11.06%； “都超过9%”（均超过9%）|韩国先驱报（K1）|SK海力士股价下跌11.06%，至126万韩元，三星电子股价下跌9.48%，至21万韩元。|可靠的媒体。 Naver 的个股数据与这两个数字不匹配（−10.56 % / −12.76 %），因此对于个股，仅使用报告数据，而不是 Naver|
+|K7|表带“利率与人工智能担忧，芯片股重挫”（利率和人工智能担忧，芯片股暴跌）|彭博社标题（作为 K3）|“......人工智能和利率恐惧导致股价暴跌”|标题（勾选）|
+|—|未报道|—|既没有报道“本周-14.46%”（可根据数据计算：10-08 收盘价 6,625.93 → 10-16 收盘价 5,668.05），也没有报道“2008 年以来最糟糕的一周”：“2008 年以来最糟糕的一周”的主要表述仅适用于三星和 SK 海力士这两只个股（《韩国先驱报》） https://www.koreaherald.com/article/10906189）；只有 Benzinga 提到了索引（403，未读）。 影片使用“较9月高点-21.56%”（较9月高点-21.56%），数据可以证实这一点|—|
 
-## ③ The EU AI Office sends requests for information to OpenAI and Anthropic
+<a id="③-the-eu-ai-office-sends-requests-for-information-to-openai-and-anthropic"></a>
+## ③ 欧盟人工智能办公室向 OpenAI 和 Anthropic 发送信息请求
 
-| # | Claim in the film | Source | Source wording | Grade |
+|#|影片中的索赔|来源|来源措辞|年级|
 |---|---|---|---|---|
-| E1 | "欧盟 AI 办公室向 OpenAI、Anthropic 发出问询" (the EU AI Office sends requests for information to OpenAI and Anthropic); two "信息调取 REQUEST FOR INFORMATION" documents addressed to OpenAI and to Anthropic (the body is drawn only as grey text lines, no content) | Euronews (Luca Bertuzzi, 2026-10-14) https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents | "The AI Office sent its requests after judging the documents the two companies had voluntarily disclosed insufficient." | Reliable media, single source. The Commission's own speech does not name the two companies, so both the picture (source line, document sign-off) and the voice-over say "据 Euronews 报道 / Euronews reports"; only the one fact "requests were sent" is reported, and the report's details about what prompted the requests are kept off screen and out of the voice-over |
-| E3 | Document sign-off 14 OCT 2026; rundown WED 14 OCT | Euronews publication date; date of the Commission speech (E4) | — | — |
-| E4 | Quote card: "Our AI Office has started enforcing these rules …"; "欧盟 AI 办公室已经开始执行这些规则" (the EU AI Office has started enforcing these rules); stamp "已开始执法 ENFORCING" | European Commission Press Corner, "Speech by Executive Vice-President Virkkunen at the International AI Summit in Dublin" (2026-10-14) https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2150 | "Our AI Office has started enforcing these rules, and sent Requests for Information addressing issues such as security, external evaluation and monitoring how models are used." | **Primary**. The quote card takes only the first half of the sentence and marks the rest with an ellipsis; "tech chief" refers to her post (see E5) |
-| E5 | Name strap "Henna Virkkunen · 欧盟委员会执行副主席 / EXECUTIVE VICE-PRESIDENT, EUROPEAN COMMISSION · IN DUBLIN" | Same as E4 | The page calls her "Executive Vice-President for Tech Sovereignty, Security and Democracy" | Primary |
-| E6 | On the map, "欧盟 AI 办公室 · 隶属欧盟委员会" (EU AI Office · part of the European Commission), city dot at Brussels | AI Office page https://digital-strategy.ec.europa.eu/en/policies/ai-office ; Commission contact page https://commission.europa.eu/about/contact_en | "The European AI Office was established within the European Commission"; Commission postal address "1049 Brussels" | Primary |
-| E7 | The 27 EU member states, borders | Natural Earth 1:50m (world-atlas 2.0.2) | — | Public-domain map data |
-| — | **Claims not reported** | — | (1) "First use of the AI Act against frontier labs": primary sources show the first requests for information went to several frontier-model providers right after enforcement powers took effect in August (Commission speech of 10-09 https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2148 : "We have sent our first Requests for Information to providers of the most advanced models around the world, on three critical topics: security, external evaluation and post-market monitoring."), so "first" does not hold; Euronews's "first test" means the first test of the Act's scope. (2) "没有罚款，也没有立案 / No fines. Yet." (no fines, no case opened): neither the primary speech nor Euronews mentions fines or a case; not reported. (3) Ticking off three items, "安全 / 外部评测 / 上线后监测" (security / external evaluation / post-market monitoring): these are the topics of the general requests sent in August and cannot be written on the documents addressed to OpenAI and Anthropic. (4) "The AI Office is in Dublin": Dublin is only where the speech was given. (5) Details of the incidents that prompted the requests: Euronews is the only source, and they are allegations about real companies, so they are kept off screen and out of the voice-over; the document body is drawn only as grey text lines with no content | — |
+|E1|“欧盟AI办公室向OpenAI、Anthropic发行问询”（欧盟AI办公室向OpenAI和Anthropic发送信息请求）；两个发送给 OpenAI 和 Anthropic 的“信息调取 REQUEST FOR INFORMATION”文档（正文仅绘制为灰色文本行，无内容）|欧洲新闻（卢卡·贝尔图齐，2026-10-14）https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents|“人工智能办公室在判断两家公司自愿披露的文件不充分后发出了要求。”|可靠的媒体，单一来源。委员会自己的讲话中没有提及这两家公司的名字，因此图片（源行、文件签署）和画外音都说“据欧洲新闻报道/欧洲新闻报道”；仅报告“请求已发送”这一事实，并且报告中有关促使请求的原因的详细信息不会出现在屏幕和画外音中|
+|E3|文件签署日期：2026 年 10 月 14 日； 10 月 14 日星期三|欧洲新闻出版日期；委员会讲话日期（E4）|—|—|
+|E4|引用卡：“我们的人工智能办公室已经开始执行这些规则……”； “EU AI Office已经开始执行这些规则”（欧盟AI办公室已经开始执行这些规则）；盖印“已开始执法ENFORCING”|欧盟委员会新闻角，“执行副主席维克库宁在都柏林国际人工智能峰会上的讲话”(2026-10-14) https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2150|“我们的人工智能办公室已开始执行这些规则，并发送信息请求，解决安全、外部评估和监控模型使用方式等问题。”|**主要**。引言卡仅包含句子的前半部分，并用省略号标记其余部分； “技术主管”指的是她的职位（参见 E5）|
+|E5|姓名带“Henna Virkkunen · 欧盟委员会执行副主席 / 欧盟委员会执行副总裁 · 都柏林”|与E4相同|该页面称她为“技术主权、安全和民主执行副总裁”|基本的|
+|E6|地图上，“EU AI Office·隶属欧盟委员会”（EU AI Office·part of the EU Commission），城市点位于布鲁塞尔|人工智能办公页面https://digital-strategy.ec.europa.eu/en/policies/ai-office；委员会联系页面 https://commission.europa.eu/about/contact_en|“欧洲人工智能办公室在欧盟委员会内成立”；委员会邮政地址“1049 布鲁塞尔”|基本的|
+|E7|欧盟27个成员国、边界|自然地球 1:50m（世界地图集 2.0.2）|—|公共领域地图数据|
+|—|**未报告索赔**|—|（1）“首次针对前沿实验室使用《人工智能法》”：主要消息来源显示，在8月份执法权生效后，第一批信息请求就发送给了几家前沿模型提供商（10-09 https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2148的委员会讲话：“我们已向全球最先进模型的提供商发送了第一批信息请求，涉及三个关键主题：安全、外部评估和上市后监控。”），因此“第一”不成立；欧洲新闻台的“第一次测试”是指对该法案范围的第一次测试。 (2) “没有罚款，也没有立案/没有罚款。但是。” （没有罚款，没有立案）：主要演讲和欧洲新闻都没有提到罚款或案件；没有报道。 （3）勾选“安全/外部体育/上线后监测”三项：这些是8月份发出的一般请求的主题，不能写在给OpenAI和Anthropic的文件中。 （4）“The AI Office is in Dublin”：都柏林只是演讲的地点。 (5) 引发请求的事件细节：欧洲新闻台是唯一来源，而且这些指控都是针对真实公司的，因此不会出现在屏幕和画外音中；文档正文仅绘制为没有内容的灰色文本行|—|
 
-## ④ Meta releases the model weights of Muse Spark Open
+<a id="④-meta-releases-the-model-weights-of-muse-spark-open"></a>
+## ④ Meta发布Muse Spark Open模型权重
 
-| # | Claim in the film | Source | Source wording | Grade |
+|#|影片中的索赔|来源|来源措辞|年级|
 |---|---|---|---|---|
-| M1 | On 15 October Meta releases the weights of Muse Spark Open; stamp "开放权重 OPEN WEIGHTS"; rundown THU 15 OCT | Meta AI research blog, "Muse Spark Open" (2026-10-15) https://research.meta.ai/blog/muse-spark-open | "Today, we're releasing the weights for Muse Spark Open, the most capable US open-weight model to date."; "We're releasing the weights under the Muse Model License with limited commercial terms" | Primary. "Most capable" is Meta's own claim and not reported in the film; the licence restricts commercial use, so the film says "开放权重" (open weights), not "开源" (open source) |
-| M2 | 816B total parameters (8160 亿), 42B active per token (420 亿); 1M-token context | Same | "Muse Spark Open is a natively multimodal model with 816B total parameters (42B active) and a 1M-token context window." | Primary |
-| M3 | "约 5% / ABOUT 1/20" | Computed from M2 | 42 ÷ 816 = 5.1 % | Our arithmetic |
-| M4 | Runs on two Mac Studios (M5 Ultra); 512 GB each; "≈ 1 TB 统一内存" (≈ 1 TB unified memory) | Same | "Muse Spark Open is the first model in its class to run on your desktop using two Apple M5 Ultra Mac Studios…"; "Apple's unified memory architecture lets the M5 Ultra's integrated GPU use up to 512 GB per Mac Studio"; "The result is two Mac Studios behave like one supercomputer with a terabyte of unified memory." | Primary. Mac Studio is set in type only, no logo |
-| — | Not reported | — | The revenue threshold in the licence, third-party benchmark scores and the claim that the Hugging Face repository appeared earlier are found only in secondary sources | — |
+|M1|10 月 15 日，Meta 发布 Muse Spark Open 权重；盖印“开放权重 OPEN WEIGHTS”；概要 10 月 15 日星期四|Meta AI研究博客，“Muse Spark Open”（2026-10-15）https://research.meta.ai/blog/muse-spark-open|“今天，我们发布了 Muse Spark Open 的重量，这是迄今为止最强大的美国开放重量型号。”； “我们将根据 Muse 模型许可证以有限的商业条款发布权重”|基本的。 “最有能力”是 Meta 自己的说法，影片中没有报告；该许可证限制商业用途，因此影片说的是“开放权重”（开放权重），而不是“开源”（开源）|
+|M2|总参数816B（8160亿），每个代币活跃42B（420亿）； 1M 代币上下文|相同的|“Muse Spark Open 是一个原生多模式模型，具有 816B 总参数（42B 活动参数）和 1M 代币上下文窗口。”|基本的|
+|M3|“约 5% / 关于 1/20”|由 M2 计算得出|42 ÷ 816 = 5.1%|我们的算术|
+|M4|在两个 Mac Studio (M5 Ultra) 上运行；每个 512 GB； “≈ 1 TB 统一内存”（≈ 1 TB 统一内存）|相同的|“Muse Spark Open 是同类产品中第一个使用两个 Apple M5 Ultra Mac Studio 在桌面上运行的型号……”； “Apple 的统一内存架构让 M5 Ultra 的集成 GPU 每个 Mac Studio 使用高达 512 GB 的内存”； “结果是两台 Mac Studio 的表现就像一台拥有 1 TB 统一内存的超级计算机。”|基本的。 Mac Studio 仅设置字体，无徽标|
+|—|未报道|—|许可证中的收入门槛、第三方基准分数以及 Hugging Face 存储库出现较早的说法仅在二手来源中找到|—|
 
-## Voice-over, line by line (Chinese, Doubao TTS; `vo/lines.json`)
+<a id="voice-over-line-by-line-chinese-doubao-tts-volinesjson"></a>
+## 逐行配音（中文，豆宝 TTS；`vo/lines.json`）
 
-The voice-over lines are quoted in the original Chinese, with an English translation.
+画外音引用的是中文原文，附有英文翻译。
 
-| Line | Voice-over | Facts |
+|线|画外音|事实|
 |---|---|---|
-| v1 | 这里是 Lemo AI 新闻，本周 AI 四件事。 (This is Lemo AI News: four things in AI this week.) | — |
-| v2 | 谷歌向全部开发者开放了 Gemini 4 Argon，入门价每百万输入 token 2 美元，12 月起翻倍。 (Google has opened Gemini 4 Argon to all developers; the introductory price is 2 dollars per million input tokens, doubling from December.) | G1, G2, G3, G4 ($2 → $4, from 1 December) |
-| v3 | 在首尔，韩国综合股价指数单日跌超 7.5%，较 9 月高点跌去两成多，跌入熊市。 (In Seoul, the Kospi fell more than 7.5% in a day, more than a fifth below its September high, into a bear market.) | K1, K3, K4 |
-| v4 | 三星和 SK 海力士单日都跌了 9% 以上。 (Samsung and SK hynix both fell more than 9% in a day.) | K6 |
-| v5 | 欧盟 AI 办公室向 OpenAI 和 Anthropic 发出问询，据欧洲新闻台报道。 (The EU AI Office has sent requests for information to OpenAI and Anthropic, Euronews reports.) | E1 |
-| v6 | 维尔库宁在都柏林说：AI 办公室已开始执行这些规则。 (Virkkunen said in Dublin: the AI Office has started enforcing these rules.) | E4, E5 (the quotation is the Chinese sense of the speech's wording) |
-| v7 | Meta 开放了 Muse Spark Open 的权重。总参数 8160 亿，每个 token 只激活 420 亿，两台 Mac Studio 就能跑。 (Meta has released the weights of Muse Spark Open. 816 billion parameters in total, only 42 billion active per token, and it runs on two Mac Studios.) | M1, M2, M4 |
-| v8 | 本周就到这里。这里是 Lemo AI 新闻。 (That's all for this week. This is Lemo AI News.) | — |
+|v1|这里是 Lemo AI 新闻，本周 AI 四件事。（这是 Lemo AI 新闻：本周 AI 的四件事。）|—|
+|v2|谷歌向所有开发者开放了Gemini 4 Argon，入门价每百万输入代币2美元，12月起翻倍。（谷歌已向所有开发者开放Gemini 4 Argon；入门价为每百万输入代币2美元，较12月翻倍。）|G1、G2、G3、G4（2 美元 → 4 美元，12 月 1 日起）|
+|v3|在首尔，韩国综合股价指数单日跌超7.5%，较9月高点跌去两成多，跌入熊市。（首尔综合指数单日跌幅超过7.5%，较9月高点跌幅逾五分之一，进入熊市。）|K1、K3、K4|
+|v4|三星和SK海力士单日均跌了9%以上。（三星和SK海力士单日跌幅均超过9%。）|K6|
+|v5|欧盟人工智能办公室向OpenAI和Anthropic发出询问询价，据欧洲新闻台报道。（据欧洲新闻报道，欧盟人工智能办公室已向OpenAI和Anthropic发出信息请求。）|E1|
+|v6|维尔库宁在都柏林说：AI办公室已开始执行这些规则。（Virkkunen在都柏林说：AI办公室已开始执行这些规则。）|E4、E5（引文为演讲措辞的中文意思）|
+|v7|Meta 开放了 Muse Spark Open 的权重。总参数 8160 亿，每个 token 只激活 420 亿，参数 Mac Studio 就能跑。（Meta 开放了 Muse Spark Open 的权重，总共 8160 亿个参数，每个 token 活跃数只有 420 亿，运行在两个 Mac Studio 上。）|M1、M2、M4|
+|v8|本周就到这里。这里是 Lemo AI 新闻。（这就是本周的全部内容。这是 Lemo AI 新闻。）|—|
 
-## Non-news elements in the picture
+<a id="non-news-elements-in-the-picture"></a>
+## 图片中非新闻元素
 
-| Element | Note |
+|元素|笔记|
 |---|---|
-| Server-room and wafer backgrounds | Illustrative empty shots generated with Codex image_gen, used only as backgrounds; while on screen they carry "ILLUSTRATION / 示意 · AI 生成画面" (illustration · AI-generated image) in the top-left corner throughout; they do not represent any real place, company or event |
-| LEMO logo, LEMO AI NEWS | LemoLab's own channel brand |
-| Company and product names | Google, OpenAI, Anthropic, Samsung, SK hynix, Meta and Mac Studio are set in type only, no logos |
+|服务器机房和晶圆背景|使用 Codex image_gen 生成的说明性空镜头，仅用作背景；在屏幕上，它们的左上角始终带有“ILLUSTRATION / 截图·AI生成画面”（插图·AI生成的图像）​​；它们不代表任何真实的地点、公司或事件|
+|LEMO 标志，LEMO AI 新闻|LemoLab自有渠道品牌|
+|公司名称和产品名称|Google、OpenAI、Anthropic、Samsung、SK hynix、Meta 和 Mac Studio 仅设置字体，无徽标|

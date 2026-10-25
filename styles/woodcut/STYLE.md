@@ -1,120 +1,132 @@
-# Woodcut Print — Style Prompt
+<a id="woodcut-print--style-prompt"></a>
+# 木刻版画：风格提示词
 
-> A relief print that carves itself: every frame is a black wood block, and light only exists where a knife has cut it away. One colour at most, and only for the thing that burns.
-> References (grammar only): Frans Masereel *Passionate Journey* (1919) and Lynd Ward *Gods' Man* (1929), wordless woodcut novels told as a sequence of self-contained plates; Käthe Kollwitz's woodcuts, where emotion lives in the direction of the gouge; Gustave Doré's engraving, where line spacing and direction build light and volume. Never copy their plates, figures, borders or titles.
+> 自我雕刻的浮雕：每一帧都是一块黑色木块，只有被刀切掉的地方才会有光。最多一种颜色，而且只适用于燃烧的东西。
+> 参考文献（仅语法）：Frans Masereel *激情之旅* (1919) 和 Lynd Ward *Gods' Man* (1929)，无字木刻小说以一系列独立的图版讲述；凯绥·珂勒惠支的木刻，情感流向凿痕的方向；古斯塔夫·多雷 (Gustave Doré) 的雕刻作品，线条间距和方向营造出光线和体积。切勿复制他们的车牌、图形、边框或标题。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Each shot is **one printed plate**: black ink on laid paper, framed by a paper margin. It follows three rules of real relief printing:
+每张镜头都是 **one 印刷板**：直纹纸上的黑色墨水，由纸边镶边。真正的凸版印刷遵循三个规则：
 
-1. **Black is the wood, white is what the knife removed.** Light is *carved*: a bright area is many wide cuts, a dark area untouched wood.
-2. **Pictures appear by being carved.** Nothing fades in: cuts grow stroke by stroke along the form, coarse gouges first, fine lines after.
-3. **The block is a mirror.** Letters read backwards until the paper is pulled; that reversal is the style's own transition.
+1. **黑色是木头，白色是刀去除的东西。** 光是“雕刻”的：明亮的区域是许多宽切口，黑暗的区域是未触及的木头。
+2. **图像通过雕刻而出现。** 没有任何褪色：切口沿着形状逐笔生长，先是粗凿，后是细纹。
+3. **该块是一面镜子。** 字母向后读，直到纸张被拉动；这种逆转是风格本身的转变。
 
-Not copperplate engraving (no swelling burin lines on white, no crosshatch built up from white ground), not linocut poster art (no flat colour areas), not a black-and-white photo run through a threshold filter (the cuts must follow the form).
+不是铜版雕刻（白色上没有膨胀的雕刻线，没有白色地面上形成的交叉线），不是油毡海报艺术（没有平坦的颜色区域），不是通过阈值过滤器的黑白照片（切割必须遵循形式）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Print frame**: the printed image area sits inside a paper margin; the wider bottom margin holds captions. The image edge is the block edge: ragged ink, never a clean rectangle.
-- **Knife classes** (widths in 1080p pixels at 1× camera):
+- **打印框**：打印图像区域位于纸页边距内；较宽的下边距包含标题。图像边缘是块边缘：参差不齐的墨水，从来不是干净的矩形。
+- **刀类**（宽度为1080p像素，1×摄影机）：
 
-| Tool | Width | Use |
+|工具|宽度|使用|
 |---|---|---|
-| Knife `k` | 1.2–2 | contours, the white outline that separates a black figure from a black ground |
-| V-gouge `v` | 2–8 | hatching, hair, beard, fine light |
-| U-gouge `u` | 10–22 | rays, sky sweeps, the first rough-out |
-| Stab `stab` | r 3–8 | snow, sparks, flecks of loam, wood chips |
+|刀 `k`|1.2–2|轮廓，将黑色图形与黑色背景分开的白色轮廓|
+|V型凿 `v`|2-8|孵化，头发，胡须，细光|
+|U型凿 `u`|10–22|光线，天空扫过，第一次粗糙|
+|刺棒 `stab`|3-8|雪、火花、壤土斑点、木屑|
 
-- **Hatching (Doré grammar in wood)**: line **direction follows form** (a round object is wrapped in arcs, slopes follow the fall line, fire and light radiate, cloth follows its folds). **Width follows tone**: bright = wide cuts almost merging into white, mid-tone = thin cuts, dark = no cuts. Far = dense and fine, near = sparse and coarse. Every line is a separate cut (30–160 px, blunt entry, tapered exit, chipped edge), never a continuous machine line.
-- **Figures**: black silhouette + white knife halo + grazing-light hatching on the lit edge only (light z ≈ 0.2, so flat areas stay black). **Skin carved white, features left black** (the wordless-novel rule).
-- **Close-ups (hands, objects)**: sculpt a small height field (capsules, blobs, planks, creases), light it and run it through `woodcutFilter` (§10), so cuts follow the isophotes like an engraver's.
-- **Printing**: the mask (white = cut) goes through a WebGL2 compositor: knife burr on edges, ±6 % ink unevenness, wood-grain streaks, specks where ink didn't take, a mottled colour plate with a small fixed misregistration. Block mode: glossy inked wood with grain sheen, pale wood in the grooves.
+- **Hatching（木材中的多雷语法）**：线**方向遵循形式**（圆形物体被弧线包裹，斜坡遵循坠落线，火和光辐射，布遵循其褶皱）。 **宽度跟随色调**：亮=宽切口几乎融入白色，中色调=细切口，暗=无切口。远=密而细，近=稀疏而粗。每条线都是单独的切割（30-160 像素、钝入口、锥形出口、缺口边缘），而不是连续的机器线。
+- **人物**：黑色轮廓+白色刀光晕+仅在照亮边缘上的掠光阴影（光z ≈ 0.2，因此平坦区域保持黑色）。 **皮肤雕白，特征左黑**（无字小说规则）。
+- **特写（手、物体）**：雕刻一个小高度场（胶囊、斑点、木板、折痕），照亮它并穿过`woodcutFilter`（§10），因此切割像雕刻师一样遵循等光度。
+- **印刷**：遮罩（白色 = 切割）经过 WebGL2 合成器：边缘有刀毛刺、±6% 的油墨不均匀性、木纹条纹、未吸收油墨的斑点、带有小固定套准失调的斑驳色板。块模式：带有纹理光泽的光面墨木，凹槽中的浅木。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Two values carry everything: near-black ink and warm laid-paper white. The raw wood colour appears only in shots that show the block itself.
-- **At most one colour plate**, printed only where white has been carved, so it glows out of the cuts and never sits on the black. A colour plate over ink is nearly invisible, so plan it on carved white.
-- The colour is reserved for the one thing that matters (a flame, molten metal, a heart, a signal lamp). It can spread at a peak and shrink to a single highlight afterwards; it is never decoration.
-- Examples of a plate: a burnt copper-orange for heat; a cold Prussian blue for water or night; a deep oxblood for a wound or a seal. Choose it from the topic.
+- 两种价值观承载着一切：近乎黑色的墨水和温暖的白色纸张。原木颜色仅出现在显示块本身的镜头中。
+- **最多一种颜色板**，仅在雕刻白色的地方打印，因此它会从切口中发光，并且永远不会位于黑色上。油墨上的色板几乎是看不见的，因此请将其规划在雕刻的白色上。
+- 颜色是为重要的事物（火焰、熔融金属、心脏、信号灯）保留的。它可以在高峰时扩散，然后缩小为单一亮点；它从来都不是装饰。
+- 盘子的例子：用于加热的烧焦的铜橙；冷普鲁士蓝代表水或夜晚；深紫红色用于伤口或封印。从主题中选择它。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Captions are letterpress in the paper margin**, below the plate, like a plate caption in a woodcut novel. They never cover the image. A letterpress old-style face (IM Fell English, OFL) around 40–44 px, in ink, pushed through the same print shader. The ink comes up in 0.1 s with no slide and fades over 0.15 s. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Titles are carved, not typed**: cut into the block (IM Fell English SC), mirrored if the block is shown before the print is pulled.
-- Any closing text is a fresh print: letterpress in the margin or carved out of a black panel.
+- **标题是凸版印刷在纸边** 的图版下方，就像木刻小说中的图版标题一样。他们从不遮盖图像。凸版印刷的老式面孔（IM Fell English，OFL）大约 40-44 像素，用墨水绘制，通过相同的打印着色器。墨水在 0.1 秒内出现（无滑动），并在 0.15 秒内褪色。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **标题是雕刻的，而不是打字的**：切入块（IM Fell English SC），如果在打印被拉出之前显示块，则镜像。
+- 任何结束文本都是新印刷的：在页边空白处凸版印刷或从黑色面板上雕刻出来。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters on twos (12 fps)**; camera, particles, fire and light on ones (24 fps). Hatching lives in each body part's local space, so cuts move with the limb and don't boil; only fire and liquids re-cut every 2 frames, as deliberate boil.
-- **Anticipation / action / follow-through** on every key action: a few frames back → a 2-frame strike → settle + a short shake.
-- **Carve reveal**: each stroke has its own start time and speed (0.08–0.35 s). Reveal keys: `light` (bright areas first, coarse to fine), `radial` (from a point: rays, a pour), `down`, or any function.
-- **Hard cut = a new impression**: two frames of misregistration (a few pixels, then back).
-- **Paper transition** (the one transition grammar): brayer rolls ink (a wet highlight sweeps) → paper lays down → baren spirals, the image soaks through → the sheet peels on a cylinder toward camera, heavy then fast, its back showing the mirrored show-through.
-- What never moves: the paper margin.
+- **双人角色 (12 fps)**； 摄影机，粒子、火和光（24 fps）。孵化生活在身体各个部位的局部空间中，因此伤口会随着肢体移动而不会沸腾；只有火和液体每2帧重新切割一次，作为故意沸腾。
+- **预期/动作/跟进** 每个关键动作：后退几帧 → 2 帧打击 → 稳定 + 短暂震动。
+- **雕刻展示**：每个笔划都有自己的开始时间和速度（0.08–0.35 s）。显示关键点：`light`（首先是明亮区域，从粗到细）、`radial`（从点：射线、浇注）、`down` 或任何函数。
+- **硬切 = 新印象**：两帧套准不准（几个像素，然后返回）。
+- **纸张过渡**（单一过渡语法）：布雷尔滚动墨水（湿高光扫过）→纸张放下→光秃秃的螺旋，图像渗透→纸张在滚筒上向摄影机剥离，沉重然后快速，其背面呈现镜像透视。
+- 永远不会移动的东西：纸边距。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-The camera moves over the paper; the margin stays fixed. The knife tip, or the brightest cut, is the focus.
+纸上的摄影机运动；保证金保持固定。刀尖或最亮的切口是焦点。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Track with the knife tip | Making; the line is the story | a first mark; a route drawn on a map; a signature |
-| Continuous pull-back as cuts spread | A line becomes a world; scale | a city from one street; a family tree; a reach of sound or news |
-| Locked plate | A page of a wordless novel; reading time | a decision; a portrait; the aftermath |
-| Slow macro push on a sculpted close-up | Patience, touch, labour | hands at work; a tool; a letter being read |
-| Snap zoom and hold | Shock; the detail that breaks | a crack; a wrong number; a face turning |
-| Frame in a frame (door, window, arch) | Distance, exclusion, waiting | a crowd outside; a sickroom; a border |
-| Hard cuts on the beat, each a new impression | Accumulation, a series of prints | offerings; days passing; a list of names |
-| Crane up from a detail to the whole | Consequence | a flood reaching a village; a light reaching faces |
-| Rack between two plates via the peel | One state printed over another | before/after; a promise kept; generations |
+|用刀尖轨迹|制作;台词就是故事|第一个标记；地图上绘制的路线；签名|
+|随着削减力度的扩大，持续回调|一条线，成为一个世界；规模|一条街一座城；家谱；声音或新闻的范围|
+|锁板|无字小说的一页；阅读时间|决定；肖像；后果|
+|缓慢的微距推动雕刻特写|耐心、触摸、劳动|双手在工作；一个工具；正在读的一封信|
+|快速缩放并保持|震惊;破坏的细节|一条裂缝；号码错误；一张脸转过|
+|框中框（门、窗、拱门）|距离、排斥、等待|外面有一群人；病房；边界|
+|节拍上的硬剪辑，每一次都有新的印象|积累，一系列的印刷品|供品；日子一天天过去；名单|
+|从细节提升到整体|结果|洪水到达一个村庄；光线到达面孔|
+|通过果皮将架子放在两个盘子之间|一个州印在另一个州上|before/after；信守诺言；几代人|
 
-Opening and ending come from the topic. Framing: black masses on carved white or white on uncut black, never grey on grey; text only in the margin. Transitions: hard cut (new impression) or the peel; never a dissolve.
+开头和结尾都来自于主题。框架：雕刻的白色上的黑色块或未切割的黑色上的白色，绝不是灰色上的灰色；仅在页边距中显示文本。过渡：硬切（新印模）或剥离；永远不会溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instruments**: low strings (contrabass, cellos; spiccato, pizzicato), wood and skin (log drum, woodblock, frame drum), gran cassa, timpani, one tam-tam, synthesised struck metal (modal: 3–5 inharmonic partials + hammer transient); a bowed saw or hurdy-gurdy drone for a folk colour.
-- **Options**: withhold the timbre of the story's object until it appears; a metric modulation instead of a tempo jump; a modal shift inside a long decay; one drone under a locked plate.
-- **Foley follows the material**, all synthesisable: knife into wood (transient + band-passed fibre tearing tied to knife speed), chips, brayer tack, paper air, baren rasp, the wet peel; metals by size (large = low, small = high and pure); resonant objects as modal models plus echoes for distance.
-- **Silence is a tool**: near-silence with one faint ambience, or true digital silence before the loudest moment; the first sound after it is chosen.
-- **J/L cuts** carry sound across plates and peels.
-- **Mix**: music ducks ~8 dB under voice and a little under key foley; **foley ducks too** under voice. Pan hard transients off centre. −14 LUFS.
-- **Voice**: few lines, low and plain, like captions spoken; the plates tell the rest.
+- **乐器**：低音弦（低音大提琴、大提琴、留笛、拨奏）、木材和皮肤（原木鼓、木板、框架鼓）、gran cassa、定音鼓、1 tam-tam、合成打击金属（调式：3-5 个不和谐分音 + 锤子瞬态）；带有民俗色彩的弓锯或急促的嗡嗡声。
+- **选项**：保留故事对象的音色直到它出现；度量调制而不是节奏跳跃；长期衰减内的模态转变；一架无人机位于锁定板下。
+- **Foley遵循材料**，所有可合成：刀切木材（瞬态+带通纤维撕裂与刀速相关），碎片，布雷尔粘性，纸空气，裸锉刀，湿剥离；按尺寸划分的金属（大=低，小=高和纯）；共振物体作为模态模型加上距离的回声。
+- **Silence是一种工具**：近乎沉默，带有微弱的氛围，或者在最响亮的时刻之前真正的数字静音；选择后的第一个声音。
+- **J/L 切割** 将声音传送到板材和果皮上。
+- **混音**：音乐在人声和调拟音下减弱约 8 dB； **foley 鸭子也** 在声音下。平移硬瞬变偏离中心。 −14 LUFS。
+- **嗓音**：行数不多，低沉平淡，像朗读的字幕；盘子告诉了剩下的事情。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Light is carved.** A burst of radial cuts from a point. *Fits content like:* a power grid switched on; a scientific insight; a lighthouse restored.
-- **Carving = time.** Patient work on screen, cut by cut. *Fits content like:* a year of training; a building rising; a craft apprenticeship.
-- **Mirrored block → true print.** A backwards word reads true when the sheet is pulled. *Fits content like:* a vote result; a name cleared; a misunderstanding put right.
-- **Stab cuts as texture.** White dots can freeze mid-air or be inked back in until the black is clean. *Fits content like:* stars going out over a city; rain stopping; a disease receding on a map.
-- **The one colour plate spreads and withdraws.** *Fits content like:* a blood donation; a sunrise over a harvest; a single lit window in a blackout.
-- **Filter a sculpt or a frame** into form-following cuts. *Fits content like:* a portrait of a real person drawn from a photo; a machine part; an archive image re-cut.
-- **Wordless-novel sequencing.** Self-contained plates, few or no lines; a gap can be silent. *Fits content like:* a migration; a strike; a life in seven plates.
+- **光被雕刻。** 从一个点爆发的径向切割。 *适合以下内容：* 电网已接通；科学的洞察力；修复了一座灯塔。
+- **雕刻 = 时间。** 耐心在屏幕上工作，逐个切割。 *适合以下内容：*一年的培训；一座大楼拔地而起；工艺学徒期
+- **镜像块 → 真实打印。** 当纸张被拉动时，向后的字读取为真。 *适合以下内容：*投票结果；名字被清除；纠正了一个误会。
+- **Stab 切割为纹理。** 白点可以冻结在半空中或被涂上墨水，直到黑色干净为止。 *适合以下内容：*星星在城市上空走动；雨停了；一种在地图上逐渐消失的疾病。
+- **单色盘展开和退出。** *适合内容如下：*献血；*收获时的日出；停电时只有一扇亮着的窗户
+- **将雕塑或框架** 过滤为形状跟随的切割。 *适合以下内容：*从照片中绘制的真人肖像；机器零件；重新剪切的存档图像。
+- **无字新颖测序。** 独立板，很少或没有线路；有间隙可以沉默。 *适合以下内容：*迁移；罢工；七盘人生。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **White marks on white areas are invisible** → stab cuts need dark masses behind them.
-- **Hatching every surface looks like fur or rain** → grazing light; 3–6 cuts on the lit edge only.
-- **Black faces with white cuts don't read small** → skin white, features black, a black keep-line around white parts.
-- **Hand-drawn close-up props look like mittens and blobs** → height field + `woodcutFilter`.
-- **Short hatch segments with a tonal wobble turn into zig-zag chevrons** → long cuts (14–50 × spacing), one broad highlight band, a thin rim light, a stronger halo.
-- **Steam or smoke on top of the subject reads as flames** → draw it behind, so only wisps escape.
-- **Lazily cached strokes shared between shots** make frames depend on the render worker → every cache builds itself on first use.
-- **Fine hatching + ink noise + grain inflate the file** → a higher CRF with `-tune grain`; check a 1:1 crop. `woodcutFilter` NaN in flat areas → clamp before `sqrt`.
+- **白色区域上的白色标记是不可见的** → 刺伤需要在其后面有黑色物质。
+- **每个表面都看起来像毛皮或雨**→掠光；仅在照亮的边缘进行 3-6 次切割。
+- **黑脸有白色切口不读小**→皮肤白色，五官黑色，白色部分周围有黑色保留线。
+- **手绘的特写道具看起来像手套和斑点**→高度场+`woodcutFilter`。
+- **带有色调摆动的短影线段变成锯齿形V形**→长切口（14-50×间距），一条宽高光带，一条细边缘光，更强的光晕。
+- **对象顶部的蒸汽或烟雾读作火焰** → 将其拉到后面，因此只有缕缕逃逸。
+- **镜头之间共享的延迟缓存笔画** 使帧依赖于渲染工作人员 → 每个缓存都会在首次​​使用时自行构建。
+- **精细阴影+墨水噪声+颗粒膨胀文件**→与`-tune grain`相比更高的CRF；检查 1:1 裁剪。平坦区域中的 `woodcutFilter` NaN → 在 `sqrt` 之前夹紧。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine/index.js` (imports only `/core/lib.js`) carves and prints **any path or shape**, on two canvases: a **mask** (black = uncut, white = cut) and an optional **colour plate**. Main functions: `shape` (carved solid with halo and form-following hatching), `cutAlong` (a path as hand-cut strokes), `hatch` (streamline hatching of a region), `flecks` (stab cuts), `rays` (carved light), `drawStrokes`, `plate`, `woodcutFilter` (image or frame → cuts), `makePrinter(W,H).render` (print / block compositor). Reusable demo pieces: `demo/trans.js` (paper peel), `demo/hands.js` (height-field sculpts). Option table, a minimal example and the filter recipe: [DEMO.md](DEMO.md#engine-reference).
+`demo/engine/index.js`（仅导入 `/core/lib.js`）在两个画布上雕刻和打印 **任何路径或形状**：**面具**（黑色 = 未切割，白色 = 切割）和可选的**色板**。主要功能：`shape`（实体雕刻，带光晕和形状跟随阴影），`cutAlong`（手工切割笔划路径），`hatch`（区域流线阴影），`flecks`（刺切），`rays`（雕刻光）， `drawStrokes`、`plate`、`woodcutFilter`（图像或帧→剪切）、`makePrinter(W,H).render`（打印/块合成器）。可重复使用的示范部件：`demo/trans.js`（纸皮）、`demo/hands.js`（高度场雕刻）。选项表、最小示例和过滤器配方：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the story, characters (or none), plates, opening, ending, camera path, pacing and what the one colour is for. All far from our demo:
+您可以决定故事、人物（或没有）、画面、开头、结尾、摄影机路径、节奏以及一种颜色的用途。与我们的示范相去甚远：
 
-- Structures: **a book of hours** (seven locked plates, one per hour, no moves inside a plate); **the same block recut** (carved deeper each scene, the image changing as wood goes); **two blocks printed in turn** (two places alternate impressions until one sheet carries both).
-- Openings: **the finished print on a wall** (then back into the block to see it cut); **white paper** (an inked block pressed onto it: the first image arrives whole); **wood grain** that becomes water or a field as the first cuts follow it.
-- Endings: **the block cleaned** (ink washed off, pale carved wood remains); **a stack of prints** (rising over many sheets of one plate); **an uncarved corner** (holding on black wood the knife never reached).
+- 结构：**a 小时表**（七个锁定板块，每小时一个，板块内没有动作）； **同块重切**（每个场景雕刻更深，图像随着木头的变化而变化）； **依次印刷两个块**（两个位置交替印记，直到一张纸同时承载这两个印迹）。
+- 开口：**墙上的成品打印**（然后放回块中查看它被切割）； **白皮书**（压在上面的墨块：第一张图像完整到达）； **木纹** 第一次切割时会变成水或田野。
+- 结局：**该块已清洁**（墨水被洗掉，浅色雕刻木残留）； **一叠印刷品**（在一个印版的多张纸上上升）； **an未雕刻的角**（刀从未到达的黑木上）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build, engine reference): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建、引擎参考）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

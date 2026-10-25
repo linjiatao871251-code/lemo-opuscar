@@ -1,95 +1,102 @@
-# Red Paper-cut — our demo
+<a id="red-paper-cut--our-demo"></a>
+# 红色剪纸——我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Nian Comes to Town* (49 s) · `papercut-red.mp4` · source in [`demo/`](demo/)
+示范：*年进城*（49秒）·`papercut-red.mp4`·来源在[`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-New Year's Eve: the monster Nian comes into the village and every house puts out its lights. A little girl folds a sheet of red paper three times and makes one cut; the unfolded rosette goes on her window, a candle is lit, eight cut lanterns fly to eight dark windows and the whole village lights up again; the scraps she cut off become firecrackers, and Nian runs from the red light and the noise. At dawn the camera pulls back: the whole film was one window flower pasted on a real window.
+除夕之夜，年兽入村，家家户户熄灯。一个小女孩把一张红纸对折三遍，剪出一条；展开的玫瑰花挂在她的窗户上，一根蜡烛被点燃，八个剪好的灯笼飞到八个黑暗的窗户上，整个村庄再次被照亮；她切下的碎片变成了鞭炮，年逃离了红灯和噪音。黎明时分，摄影机拉了回来：整个影片就是一朵窗花，贴在真实的窗户上。
 
-The brief this film was written to (and the rule it followed for itself): choose a story where **the craft of cutting paper is the plot**, use several native moves, and make one of them the *cause* of the ending, not decoration. Here the fold – cut – unfold is the cause: one lantern cut in the wedge = eight lanterns in the rosette = eight houses lit.
+写这个影片的摘要（以及它本身遵循的规则）：选择一个故事，其中**剪纸工艺是情节**，使用几个风格特有表现手法，并将其中一个作为结局的“原因”，而不是装饰。这里，折叠-切割-展开就是原因：楔形中切割的一盏灯 = 玫瑰花结中的八个灯笼 = 八座房屋点亮。
 
-How the demo framed "adapting any topic": find the **one thing that gets cut** and make its *unfolded* form the answer (a product's silhouette folded into a wedge that unfolds into all its uses; two lovers cut from one folded sheet; one house cut in a folded strip that unfolds into a street). Treat these as examples of the fold move, not as a required structure.
+如何示范框定“适应任何主题”：找到**一件被削减的事情**并使其“展开”形成答案（产品的轮廓折叠成楔形，展开后可发挥其所有用途；从一张折叠的床单上剪下两个恋人；将一栋房子剪成折叠条，展开成街道）。将这些视为折叠移动的示例，而不是必需的结构。
 
-Arc (40–55 s as planned, 49 s delivered): cold open on the scissors (0–3 s) → title → peaceful world → threat (the world goes dark and silent) → a quiet decision → **fold–cut–unfold** on the downbeat → the pattern becomes light and fixes the world → dawn → scale reveal.
+弧线（计划40-55秒，交付49秒）：剪刀冷开（0-3秒）→标题→和平的世界→威胁（世界变得黑暗和寂静）→安静的决定→**折叠-剪切-展开**悲观→图案变亮并固定世界→黎明→规模揭示。
 
-Native moves spent: fold – cut – unfold (the climax), holes are light (the backlit rosette on the window, its pattern projected across the snow onto Nian's face), symmetry replicates (the rosette's lanterns fly off; small rosettes unfold as fireworks), scraps have a future (the offcuts come back as firecrackers), everything is one flat sheet (the sawtooth ridge of the far hills stands up and is Nian's back; the final pull-back to the window).
+风格特有表现手法花：折——剪——展开（高潮），洞是轻的（窗上背光的莲座，它的图案穿过雪地投射到年的脸上），对称复制（莲座的灯笼飞走；小莲座像烟花一样展开），碎片有未来（边角料像鞭炮一样回来），一切都是一张平板（远山的锯齿脊矗立着）向上，是 Nian 的背部；最后拉回到窗口）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-120 BPM, 2/4: one beat = 0.5 s, one bar = 1.0 s.
+120 BPM，2/4：一拍 = 0.5 秒，一小节 = 1.0 秒。
 
-| # | Time (s) | Picture | Camera | Sound |
+|#|时间（秒）|图片|摄影机|声音|
 |---|---|---|---|---|
-| S1 | 0.0–3.0 | Black 0.25 s → scissor blades bite red paper; two scraps fall; at 2.4 the cut sheet flies away, revealing rice paper | Extreme close-up tracking the tip | snips at 0.25 / 1.0 / 1.75; pipa slide-in at 2.5 |
-| S2 | 3.0–7.0 | Title *NIAN COMES TO TOWN* in cut letters, sawtooth banner border, a 年 seal; paper snow; at 6.5 the title sheet folds over along its middle | Flat front view; exit by page turn | theme A tutti, small gong at 3.0 |
-| S3 | 7.0–12.0 | Night village: indigo paper, punched snow; far hills / houses / bare branches in three layers; warm window flowers; stops on the girl cutting paper at her window | Slow pan in parallax, push to her lit window | theme A soft; L1 |
-| S4 | 12.0–17.0 | The far ridge shivers and **stands up**: its sawtooth is Nian's back; he turns his head, huge, each step a shake; windows go out one per beat, last at 16.5 | Low wide, Nian towering behind the far hills | frame-drum hit, heartbeat + erhu glide; a muffled drum per window; L2 |
-| S5 | 17.0–19.5 | From the dark room: Nian's eye slides into the lattice, fills the window, blinks; the girl ducks below the sill | Locked, inside the room (the film's memorable shot) | **music stops**: wind, snow, heavy breathing |
-| S6 | 19.5–24.0 | The girl from fear to resolve; three inserts on "red / light / noise": red paper, a candle, a string of firecrackers; she swaps to the determined face and nods | Medium close-up, props pop on the three words | zheng tremolo bed, one pipa note per word; L3 |
-| S7 | 24.0–30.0 | Fold (24.0 / 25.0 / 26.0, a woodblock each) → cut (26.5–29.5): sawtooth edge, crescents, a lantern; scraps pile on the table; 29.5 the scissors stop | Top-down tabletop; fixed for folds, following the scissors for the cut | pipa tremolo + zheng eighth-note ostinato climbing; a snip per cut; 29.5–30.0 silence |
-| S8 | 30.0–31.0 | Unfolds at 30.0 / 30.25 / 30.5; at 31.0 the rosette blooms and fills the frame | Pull out | three zheng glissandi → tutti + big gong at 31.0 |
-| S9 | 31.0–38.0 | Rosette on the window, candle lit: **backlit**, the pattern sweeps the snow and lands on Nian's face; eight lantern motifs fly out, eight windows light (32.0–33.75, one per eighth note, nearest house first); scraps become firecrackers, small rosettes burst as fireworks; Nian squints, covers his eyes, tucks his tail and flees | Push on the glowing window, pull back to the whole village; CU Nian dazzled | theme A tutti + synthetic firecrackers; eight rising zheng notes; L5 |
-| S10 | 38.0–42.5 | Dawn: the night sheet **peels off** from the top-right corner to reveal the day sheet; a gold-foil sun rises; the girl asleep at the window, scissors in hand | Medium close-up | dizi solo (slow) + zheng harmonics; L6 |
-| S11 | 42.5–46.0 | Scale reveal: the whole picture is a round window flower on the paper of a wooden lattice window, sunlit from behind; scissors and red scraps on the sill (rhyming with the opening) | Slow pull-back | last phrase, cadence + small gong at 44.0 |
-| S12 | 46.0–49.0 | End card (below) | Locked | small gong tail + two woodblocks |
+|S1|0.0–3.0|黑色0.25s→剪刀刀片咬住红纸；落下两片碎片； 2.4 裁切的纸张飞走，露出宣纸|追踪尖端的极端特写|剪裁为 0.25 / 1.0 / 1.75；琵琶滑入2.5|
+|S2|3.0–7.0|标题“NIAN COMES TO TOWN*”，采用切割字母、锯齿横幅边框、年印章；纸雪；在 6.5 处，标题页沿中间折叠|平面正面图；翻页退出|主题合奏，小锣 3.0|
+|S3|7.0–12.0|夜村：靛纸，打孔雪；远山/房屋/光秃秃的树枝三层；温暖的窗花；停在窗前剪纸的女孩身上|在视差中缓慢平移，推到她照亮的窗户|主题A软； L1|
+|S4|12.0–17.0|远脊颤抖**站起来**：它的锯齿是年的背；他转过头来，巨大的，每一步都摇晃着；窗户每节拍熄灭一次，最后一次为 16.5|低阔宽阔，年高耸在远山后面|框鼓击打、心跳+二胡滑音；每个窗口都有一个低沉的鼓声； L2|
+|S5|17.0–19.5|从黑暗的房间里：年的眼睛滑进格子，充满窗户，眨眼；女孩躲到窗台下面|锁上，在房间里面（影片令人难忘的镜头）|**音乐停止**：风、雪、呼吸粗重|
+|S6|19.5–24.0|女孩从恐惧到决心； “红/光/噪音”三个插页：红纸、一根蜡烛、一串鞭炮；她换成坚定的表情并点点头|表现媒介特写，道具上弹出三个字|古筝颤音床，一字一琵琶音； L3|
+|S7|24.0–30.0|折叠（24.0 / 25.0 / 26.0，各一个木版）→切割（26.5–29.5）：锯齿边，新月形，灯笼；桌子上堆满了残渣； 29.5 剪刀停止|自上而下的桌面；固定折叠，按照剪刀进行切割|琵琶震音+古筝八分定音攀爬；每剪一次； 29.5–30.0 沉默|
+|S8|30.0–31.0|以 30.0 / 30.25 / 30.5 展开； 31.0 玫瑰花结绽放并充满画面|拔出|三古筝滑奏→合奏 + 大锣 31.0|
+|S9|31.0–38.0|窗户上的玫瑰花，蜡烛点亮：**背光**，图案扫过雪，落在年的脸上；八个灯笼图案飞出，八个窗户亮起（32.0-33.75，八分之一音符，最近的房子在前）；边角料变成鞭炮，小玫瑰花像烟花一样爆裂；年眯着眼睛，捂住眼睛，夹着尾巴逃跑|推开发光的窗户，拉回整个村庄；褚年眼花缭乱|主题合奏+合成鞭炮；八个升正音符； L5|
+|S10|38.0–42.5|黎明：夜间片**从右上角剥离**，露出白天片；金箔般的太阳升起；女孩在窗边睡着了，手里拿着剪刀|表现媒介特写|笛子独奏（慢速）+古筝泛音； L6|
+|S11|42.5–46.0|尺度揭示：整个画面是木格窗纸上的一朵圆窗花，阳光从背后照射；窗台上的剪刀和红色碎片（与开头押韵）|缓慢拉回|最后乐句，节奏+小锣44.0|
+|S12|46.0–49.0|片尾卡（下）|锁定|小锣尾+两块木版|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Original score (`demo/music/score.py`), D gong pentatonic (D E F# A B), 2/4 at 120 BPM, a 4-bar original theme. Instruments: `pluck:pipa` (melody + tremolo), `dan_tranh` / `dan_tranh_trem` (as zheng / yangqin: broken chords, glissandi, tremolo), `erhu` (counter-melody, glides), `flute` as dizi, `woodblock` (beats, folds), `gong2:small` (phrase heads and tails), `gong2:big` (only once, at 31.0), `frame_drum`. No piano, no string section, no opera gongs-and-drums or suona (to keep clear of shadow-puppet and ink-wash).
+原创配乐 (`demo/music/score.py`)，D 锣五声音阶 (D E F# A B)，2/4 120 BPM，4 小节原创主题。乐器：`pluck:pipa`（旋律+颤音）、`dan_tranh` / `dan_tranh_trem`（古筝/扬琴：分解和弦、滑奏、颤音）、`erhu`（反旋律、滑音）、`flute` 笛子、 `woodblock`（节拍、折叠）、`gong2:small`（乐句头尾）、`gong2:big`（仅一次，位于 31.0）、`frame_drum`。没有钢琴、没有弦乐、没有戏曲锣鼓、唢呐（避开皮影和水墨-水彩晕染）。
 
-| Cue | Time | Tempo | Content | Hits |
+|提示|时间|速度|内容|点击次数|
 |---|---|---|---|---|
-| C0 cut | 0–3 | free | scissors only; pipa slide-in | snips 0.25 / 1.0 / 1.75; 2.5 |
-| C1 title | 3–7 | 120 | theme A: pipa, zheng, dizi octave up, woodblock on each beat | 3.0 small gong; 6.5 fold (zheng upward sweep) |
-| C2 night village | 7–12 | 120 | theme A soft, woodblock off-beats | ducks under voice |
-| C3 Nian | 12–17 | 60 feel | frame-drum heartbeat, erhu slow glide D4→A3, low zheng | 12.0 hit; one drum per window |
-| C4 silence | 17–19.5 | — | **no music** (wind, breath) | 18.3 blink (a very soft woodblock) |
-| C5 resolve | 19.5–24 | 120 | zheng tremolo, pipa ×3, erhu rising | 23.5 pipa cadence |
-| C6 fold & cut | 24–30 | 120 | woodblocks on folds; pipa tremolo + zheng ostinato, up a step each bar | a snip per cut; 29.5 all stop |
-| C7 unfold | 30–31 | 120 | three zheng glissandi | **31.0 tutti + big gong** |
-| C8 village alight | 31–38 | 120 | theme A tutti + frame drum + small gong + firecrackers; eight zheng notes | 32.0–33.75 windows; 35.0 Nian turns; 37.5 small gong |
-| C9 dawn | 38–42.5 | 90 | dizi solo, zheng harmonics, erhu long notes | |
-| C10 reveal | 42.5–46 | 90 | last phrase in unison, cadence on D | 44.0 chord + small gong |
-| C11 end | 46–49 | — | gong tail + two woodblocks | 46.5 / 47.0 |
+|C0切割|0–3|自由的|仅剪刀；琵琶滑入式|剪断 0.25 / 1.0 / 1.75； 2.5|
+|C1标题|3-7|120|主题A：琵琶、古筝、笛子八度，每拍木版|3.0小锣； 6.5折（筝向上扫）|
+|C2夜村|7–12|120|主题柔和、另类的木版画|鸭子在声音下|
+|C3年|12–17|60 感觉|框鼓心跳，二胡慢滑D4→A3，低筝|12.0命中；每窗一鼓|
+|C4 沉默|17–19.5|—|**无音乐**（风、呼吸）|18.3 眨眼（非常软的木刻）|
+|C5决心|19.5–24|120|古筝颤音、琵琶×3、二胡升奏|23.5琵琶节奏|
+|C6折切|24–30|120|折叠木刻；琵琶颤音 + 古筝固定音节，每小节向上一级|每剪一次； 29.5 全部停止|
+|C7展开|30–31|120|三筝滑奏|**31.0合奏+大锣**|
+|C8村下车|31–38|120|主题合奏+架鼓+小锣+鞭炮；八个古筝音符|32.0–33.75 窗口； 35.0转； 37.5小锣|
+|C9黎明|38–42.5|90|笛子独奏、古筝和声、二胡长音符| |
+|C10揭晓|42.5–46|90|最后一个乐句齐声，节奏为 D|44.0和弦+小锣|
+|C11端|46–49|—|锣尾+两块木版|46.5 / 47.0|
 
-Music ducks ~8–9 dB under the voice; downbeats avoid the first word of a line.
+音乐在声音下减弱约 8-9 dB；悲观避免使用一行中的第一个单词。
 
-Foley specific to this film: Nian's cardboard steps (55 Hz + low noise, each with a ~6 px frame shake), his breathing (low-passed noise), a dazzled whimper (an erhu sample pitched down and low-passed); candles out ("puff") and lit (match + whoomp); fireworks = rising whistle + boom + crackle + falling scraps; a long paper peel at dawn; two bird chirps.
+拟音具体到这个影片：Nian 的纸板步（55 Hz + 低噪音，每个都有约 6 px 的帧抖动），他的呼吸（低通噪音），令人眼花缭乱的呜咽（二胡样本音高低通）；蜡烛熄灭（“吹”）并点燃（火柴+呼呼）；烟花=上升的哨声+轰鸣+噼啪声+落下的碎片；黎明时分长长的纸皮；两声鸟鸣。
 
-Voice: a warm grandmother telling the story on New Year's Eve, Kokoro `af_sarah`, speed 0.9, five lines:
+声音：温暖的奶奶讲除夕夜的故事，心`af_sarah`，速度0.9，五行：
 
-| id | Start | Text |
+|ID|开始|文本|
 |---|---|---|
-| L1 | 7.6 | Every New Year's Eve, the monster Nian came down from the mountains. |
-| L2 | 13.6 | One by one, the village put out its lights. |
-| L3 | 19.8 | But Nian fears three things: the color red, bright light, and loud noise. |
-| L5 | 35.2 | Crackle, bang! And away ran Nian. |
-| L6 | 38.6 | That is why, every New Year, we still paste red paper on our windows. |
+|L1|7.6|每到除夕夜，年兽就会从山上下来。|
+|L2|13.6|村里的灯一盏一盏地熄灭了。|
+|L3|19.8|但年害怕三件事：红色、明亮的光线和巨大的噪音。|
+|L5|35.2|噼里啪啦，砰！年跑了。|
+|L6|38.6|这就是为什么每逢过年，我们仍然在窗户上贴红纸。|
 
-Whisper hears "Nian" as "Nyan"/"Nion", the correct pronunciation of nián, so it is registered as an `asr` alias in `lines.json`.
+Whisper 听到的“Nian”为“Nyan”/“Nion”，即 nián 的正确发音，因此它在 `lines.json` 中注册为 `asr` 别名。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Heroes and window flowers `#d2201f`; Nian one step deeper `#b00f26`; near limbs one step brighter `#c4162c`, far limbs darker (`#8a0c20`, girl `#b8191b`); fold back colour `#de3b30`.
-- Rice paper `#f2e8d0`, night paper indigo `#1c2446`, ink sky `#0f142a`, gold foil `#d9a93f` only at the end (sun, title flecks).
-- Night: far hills `#1f2a55`, near hills `#29356e`, houses `#35457f`, trees `#28346c`, snow `#7a88ba`, all indigo papers; only window flowers, lanterns, the girl and Nian are red (a red background too makes the silhouettes stop popping). Day: rice-paper sky, red houses, far hills `#e0877f`, mid hills `#cf4f4a`.
-- Paper shadow: offset 2.6/3.6 px, blur 5 px × zoom, `rgba(52,6,10,.38)`. Inset contour: a 1.5-unit slit 3.5 units inside the outline. Night ambient ~`rgb(214,214,236)`; bloom 10 px / 40 px at strength ≈ 0.55.
-- Backlit window flower: radial light `#fff6d6 → #ffc46e → #ec782e`, rice-paper fibres multiplied at 50 %, the rosette's transmission sprite in `#b51d18`. Projected pattern squashed onto the ground with `[1.25,0,-0.9,0.3]`.
-- The rosette: middle ring *yang* cut (lanterns, ruyi scrolls on the fold lines, sawtooth on the ring edges), inner and outer rings *yin* cut.
-- The girl: head, coat, 2 × (upper arm, forearm + hand), 2 × (thigh, shin + shoe), scissors (2 blades on a rivet); face pieces smile ∩, surprise, scared, determined almond eye, asleep ∪; cheek rosettes.
-- Nian: body, head (big, ×1.32), hinged jaw, mane, tail, 4 × (upper leg, lower leg + paw); sturdy legs with four curved claw tips and swirl knee joints (the first version's crescent-striped shins were dropped). When the light hits him, pattern + solid warm spot are added inside his layer, so the squint and big tears are holes that read on the lit face (the gag); unlit parts darken to silhouette.
-- Cutting: reveal circles r ≈ 62 units; blades open/close every 0.25 s (each snip = one eighth note); the camera holds the tip at ~32 %. Each fold ≈ 0.55 s on a woodblock; three unfolds 0.25 s apart.
+- 英雄窗花`#d2201f`；年更进一步 `#b00f26`；近处肢体较亮`#c4162c`，远处肢体较暗（`#8a0c20`，女孩`#b8191b`）；折返颜色 `#de3b30`。
+- 宣纸`#f2e8d0`、夜纸靛蓝`#1c2446`、墨天`#0f142a`、金箔`#d9a93f`仅在末端（太阳、标题斑点）。
+- 夜晚：远山`#1f2a55`，近山`#29356e`，房屋`#35457f`，树木`#28346c`，雪`#7a88ba`，全是靛蓝纸；只有窗花、灯笼、女孩和年是红色的（红色背景也使剪影不再突出）。白天：宣纸天空、红房子、远山`#e0877f`、中山`#cf4f4a`。
+- 纸张阴影：偏移 2.6/3.6 px，模糊 5 px × 缩放，`rgba(52,6,10,.38)`。插入轮廓：轮廓内 3.5 单位的 1.5 单位狭缝。夜间环境~`rgb(214,214,236)`；绽放 10 px / 40 px，强度 ≈ 0.55。
+- 背光窗花：径向光`#fff6d6 → #ffc46e → #ec782e`，宣纸纤维倍增50%，玫瑰花结的透射精灵为`#b51d18`。使用 `[1.25,0,-0.9,0.3]` 将投影图案压在地面上。
+- 莲座：中环*阳*切（折线上有灯笼、如意卷轴，环边有锯齿），内外环*阴*切。
+- 女孩：头、外套、2×（上臂、前臂+手）、2×（大腿、小腿+鞋子）、剪刀（铆钉上有2个刀片）；脸上片片微笑∩，惊讶，害怕，坚毅的杏仁眼，睡着了∪；脸颊玫瑰花结。
+- 年：身体、头部（大，×1.32）、铰接下巴、鬃毛、尾巴，4×（上腿、小腿+爪子）；坚固的腿，有四个弯曲的爪尖和漩涡膝关节（第一个版本的新月条纹小腿被丢弃）。当光线照射到他时，图案+固体暖点被添加到他的层内，因此斜视和大眼泪是在照亮的脸上读取的孔（堵嘴）；未照亮的部分变暗为轮廓。
+- 切割：显示圆r ≈ 62 单位；每 0.25 秒 open/close 刀片（每次剪断 = 八分之一音符）； 摄影机将尖端保持在 ~32%。木版上每折叠 ≈ 0.55 s；三个展开相隔 0.25 秒。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Couplet strips slide in beside the window, a red banner with cream cut letters "RED PAPER-CUT" drops in above, gold-foil flecks, and the credit line "LemoLab × Claude Opus 5.5" below in ink. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+对联条滑入窗户旁边，上面有一条红色横幅，上面有奶油色剪纸字母“RED PAPER-CUT”，金箔斑点，下面是墨水的信用行“LemoLab × Claude Opus 5.5”。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-Title and subtitles as built: cut letters in Fraunces 800 on rice paper with sawtooth border strips, a red seal with the character 年 cut as a hole, an italic subline. Subtitle banner `#a8111f`, gold flecks, Fraunces SemiBold 44 px in cream `#fff1d6`, centred 70 px from the bottom, hold ≥ voice + 0.7 s and ≥ 1.8 s.
+标题和副标题如下：在宣纸上用 Fraunces 800 切割字母，并带有锯齿边框条，红色印章上刻有“年”字样，斜体副线。字幕横幅 `#a8111f`，金色斑点，Fraunces SemiBold 44 像素，奶油色 `#fff1d6`，居中距底部 70 像素，按住 ≥ 语音 + 0.7 秒且 ≥ 1.8 秒。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/papercut-red/demo/
@@ -105,18 +112,18 @@ styles/papercut-red/demo/
   lines.json  voice script   music/score.py  original score   mix.py  foley + voice + music   subs.py  srt
 ```
 
-1. `node core/render/still.mjs styles/papercut-red/demo <t…> [--q nosub=1]`: review stills; `?test=sheet_girl` etc. for model sheets.
-2. `.venv/bin/python core/tts/tts.py lines.json voices` → `core/tts/asr_check.py` until all OK.
+1. `node core/render/still.mjs styles/papercut-red/demo <t…> [--q nosub=1]`：回顾剧照； `?test=sheet_girl` 等角色设定表。
+2. `.venv/bin/python core/tts/tts.py lines.json voices` → `core/tts/asr_check.py` 直至一切OK。
 3. `node core/render/events.mjs` → `music/score.py` → `mix.py` → `subs.py`.
-4. `node core/render/video.mjs styles/papercut-red/demo --fps 24 --workers 3` (1176 frames, ~30 s).
-5. `sh core/render/mux.sh out/video24.mp4 mix.wav papercut-red.mp4 24 0`, then `check_final.py` (per-line whisper on the final mix + blackdetect).
-Or simply `sh styles/papercut-red/demo/build.sh`.
+4. `node core/render/video.mjs styles/papercut-red/demo --fps 24 --workers 3`（1176 帧，~30 秒）。
+5. `sh core/render/mux.sh out/video24.mp4 mix.wav papercut-red.mp4 24 0`，然后是 `check_final.py`（最终混音 + blackdetect 上的每行耳语）。
+或者简单地称为 `sh styles/papercut-red/demo/build.sh`。
 
-Engine traps: `put()` uses `setTransform`, so it ignores an enclosing `translate`: pass absolute matrices. Test-mode pages must not throw to stop the module (the render harness exits on any page error): guard the `window.render` assignment instead. Engine numbers as used: paper grain mottling ±7 % at ~130 px; edge wobble ≈ 0.35 units; `sawRow`, `sawEdge`, `crescent` / `crescentRows`, `swirl` / `doubleSwirl`, `cloudCut`, `rosette`, `plum`, `coin` in `motifs.js`; half-res bloom blurs; smoothing turned the houses into bread loaves.
+引擎陷阱：`put()` 使用 `setTransform`，因此它忽略封闭的 `translate`：传递绝对矩阵。测试模式页面不得抛出异常来停止模块（渲染工具在任何页面错误时退出）：改为保护 `window.render` 分配。使用的发动机编号：~130 像素时纸粒斑点 ±7%；边缘摆动 ≈ 0.35 单位； `sawRow`、`sawEdge`、`crescent` / `crescentRows`、`swirl` / `doubleSwirl`、`cloudCut`、`rosette`、`plum`、 `coin` 中的 `motifs.js`；半分辨率绽放模糊；平滑将房屋变成了面包。
 
-Pitfalls tied to this demo's props:
-- Storing the wall height in a house piece's `p.h` stretched the house (`x0,y0,w,h` is the drawing box).
-- Darkening the snow layer through the light map made ghost legs visible through the snow.
-- The folding scissors first pointed backwards.
-- The projected pattern centred on Nian's eye hid the eye; it was centred on the snout with a solid warm spot so the squint and tears read.
-- The cold open's flying sheet overlaps the title card to avoid blank frames.
+与示范的道具相关的陷阱：
+- 将墙壁高度存储在房屋部件的 `p.h` 中会拉伸房屋（`x0,y0,w,h` 是绘图框）。
+- 通过光照贴图使雪层变暗，使鬼腿在雪中可见。
+- 折叠剪刀首先指向后方。
+- 以年的眼睛为中心的投影图案遮住了眼睛；它的鼻子中央有一个坚实的温暖点，所以眯着眼睛读起来会流泪。
+- 冷开的飞页与标题卡重叠以避免出现空白帧。

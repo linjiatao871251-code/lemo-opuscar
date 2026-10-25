@@ -1,0 +1,107 @@
+{
+  "0": {
+    "path": "AGENTS.md",
+    "old": "| 向官方风格库添加风格（仅限维护者） | [`MAINTAINING.md`](MAINTAINING.md) |\n",
+    "new": ""
+  },
+  "1": {
+    "path": "AGENTS.md",
+    "old": "例外：剪辑与纪实类风格需先获取真实素材，因此可先使用其 `STYLE.md` 指定的 `demo/tools/` 素材搜索与编目工具（如 `footage.py`），复制到项目文件夹后运行；仍须写完创作方案，才能阅读 `DEMO.md` 及其余示范代码。",
+    "new": "剪辑与纪实类风格需先获取真实素材。本版本不包含示范源码，也不包含其 `STYLE.md` 提到的 `demo/tools/`；请按 `STYLE.md` 的要求自行搜索素材，记录每项素材的页面、作者和许可。"
+  },
+  "2": {
+    "path": "DIRECTOR.md",
+    "old": "效果较好的中文配音使用微软在线服务 edge-tts，需要联网；离线 Kokoro 也能朗读中文，但音色较普通（TECHNIQUE.md §4）。",
+    "new": "离线 Kokoro 能朗读中文，但音色较普通；微软在线 edge-tts 效果更好，但会把旁白文本发送到微软语音服务。请在唯一一轮需求提问中说明，并仅在用户同意后使用（TECHNIQUE.md §4）。默认使用 Kokoro。"
+  },
+  "3": {
+    "path": "DIRECTOR.md",
+    "old": "交付前，把自己的镜头接触表与示范海报 `styles/<slug>/poster.jpg` 并排做最后检查。",
+    "new": ""
+  },
+  "4": {
+    "path": "TECHNIQUE.md",
+    "old": "|`… setup.sh deps voice`|Kokoro + model（英语，离线），edge-tts（中文，在线），faster-whisper（语音检查）|约 0.55 GB + 首次检查时有一个 Whisper 模型（英语约 145 MB，中文约 480 MB）|",
+    "new": "| `… setup.sh deps voice` |Kokoro + model（英文和普通中文，离线），edge-tts（更好的中文，在线，仅在用户同意的情况下），faster-whisper（语音检查）|约 0.55 GB + 首次检查时有一个 Whisper 模型（英语约 145 MB，中文约 480 MB）|"
+  },
+  "5": {
+    "path": "TECHNIQUE.md",
+    "old": "  - **中国人**：`core/tts/tts_zh.py lines.json out/` 使用 [edge-tts](https://github.com/rany2/edge-tts) 和 Microsoft 的神经语音（`zh-CN-XiaoxiaoNeural`、`zh-CN-YunxiNeural`…），具有与 `tts.py` 相同的输出、每行速率和沉默渐渐平息。 **需要网络连接。**",
+    "new": "- **中国人**：`core/tts/tts_zh.py lines.json out/`使用 [edge-tts](https://github.com/rany2/edge-tts)与微软的神经声音（`zh-CN-XiaoxiaoNeural`, `zh-CN-YunxiNeural`...），具有相同的输出`tts.py`，每行的速率和静音修剪。 **它需要网络连接，并将旁白文本发送给微软，因此在此版本中，仅当用户请求并同意时才使用它。** 如果没有网络连接，请使用 Kokoro 的中文语音。"
+  },
+  "6": {
+    "path": "TECHNIQUE.md",
+    "old": "每种风格的 `DEMO.md` 都说明了其示范的构建方式。只有在你的创作方案存在之后才打开它和代码，学习技术，永远不要重建我们的影片（`demo/tools/`中的剪辑与纪实风格的素材工具首先：AGENTS.md，“创作方案第一”）。在技​​能模式下，通过`sh <skill folder>/scripts/setup.sh demo <slug>`获取源。复制的示范代码通常会以 `../..` 的形式到达库：将其替换为 `$LIB` 或绝对 URL。",
+    "new": "每个款式的`DEMO.md`说明其演示是如何构建的。只有在你的治疗存在之后才打开它和代码，学习技术，而不是重建我们的电影。在技​​能模式下，获取源代码`sh <skill folder>/scripts/setup.sh demo <slug>`。复制的演示代码通常会通过以下方式到达库：`../..`: 替换为`$LIB`或绝对 URL。"
+  },
+  "7": {
+    "path": "MY-STYLES.md",
+    "old": "无论哪种方式，请在第一个问题之前完整阅读基础 `STYLE.md`。在此流程中，您可以在任何创作方案之前读取基础的 `DEMO.md`（并且在技能模式下，使用 `setup.sh demo <slug>` 获取其源代码）：风格定帧需要其技术。 示范影片的故事仍然与底座示范不同（DIRECTOR.md §11，*与底座相比，又不是示范*）。",
+    "new": "无论哪种方式，请阅读基础知识`STYLE.md`在第一个问题之前完整地回答。在此流程中，您可以阅读基地的`DEMO.md`在任何处理之前：风格框架需要它的技术。演示电影的故事仍然必须与基础演示不同（DIRECTOR.md §11，*不是演示再次*，与基础相比）。"
+  },
+  "8": {
+    "path": "TECHNIQUE.md",
+    "old": "每个款式的`DEMO.md`说明其演示是如何构建的。只有在你的治疗存在之后才打开它和代码，学习技术，而不是重建我们的电影。在技​​能模式下，获取源代码`sh <skill folder>/scripts/setup.sh demo <slug>`。复制的演示代码通常会通过以下方式到达库：`../..`: 替换为`$LIB`或绝对 URL。",
+    "new": "每个款式的`DEMO.md`说明其演示是如何构建的。只有在你的治疗存在之后才打开它和代码，学习技术，而不是重建我们的电影。此版本的插件不包括演示源：阅读`DEMO.md`了解如何构建演示并编写您自己的代码。"
+  },
+  "9": {
+    "path": "core/README.md",
+    "old": "|`sh tools/setup.sh`|查找、克隆或更新库；打印 `LIB=<path>`|",
+    "new": "| `sh tools/setup.sh` |由技能运行`scripts/setup.sh`, which copies the bundled library to its working folder;印刷`LIB=<path>` |"
+  },
+  "10": {
+    "path": "core/README.md",
+    "old": "|`… setup.sh demo <slug>`|添加一种风格的示范源和海报（用于阅读，而不是渲染）|\n",
+    "new": ""
+  },
+  "11": {
+    "path": "core/README.md",
+    "old": "|`.venv/bin/python core/tts/tts_zh.py lines.json out_dir [--voice zh-CN-XiaoxiaoNeural] [--rate +0%] [--pitch +0Hz]`|edge-tts（微软），在线；与 `tts.py` 相同的输出。每行：`voice`、`rate`、`pitch`、`say`（与 `text` 不同时所说的内容）。缓存在 `out_dir/.cache/` 中。声音：`.venv/bin/python -m edge_tts --list-voices`|",
+    "new": "| `.venv/bin/python core/tts/tts_zh.py lines.json out_dir [--voice zh-CN-XiaoxiaoNeural] [--rate +0%] [--pitch +0Hz]` |edge-tts（微软），在线：将文本发送给微软，仅在用户同意的情况下使用；相同的输出`tts.py`。每行：`voice`, `rate`, `pitch`, `say`（当它不同于`text`）。缓存于`out_dir/.cache/`。声音：`.venv/bin/python -m edge_tts --list-voices` |"
+  },
+  "12": {
+    "path": "core/README.md",
+    "old": "|`LEMO_OPUSCAR_HOME`|`setup.sh` 保存库的位置（默认 `~/lemo-opuscar`）|",
+    "new": "| `LEMO_OPUSCAR_HOME` |在哪里`setup.sh`保留库（默认`~/.lemo-opuscar`) |"
+  },
+  "13": {
+    "path": "core/fonts/OFL.md",
+    "old": "`f0`–`f7.woff2` 文件是**字体子集**",
+    "new": "本文件夹中的字体文件是**字体子集**"
+  },
+  "18": {
+    "path": "core/fonts/OFL.md",
+    "old": "从 `.woff2` 文件中直接读取",
+    "new": "从字体文件本身读取"
+  },
+  "20": {
+    "path": "styles/briefing-board/STYLE.md",
+    "old": "|判断帧：整项、极限、判断，保持≥2.5s|观众可以检查的测试|通过/未通过阈值；针对上限的预算|",
+    "new": "|判断帧：整项、极限、判断，保持≥2.5s|观众可以检查的测试|通过或未通过阈值；针对上限的预算|"
+  },
+  "21": {
+    "path": "styles/briefing-board/STYLE.md",
+    "old": "- **Extra 包和包**（超出 `setup.sh deps voice music`）：`onnxruntime` 和 BiRefNet 通用抠图模型（MIT，~970 MB：`$BIREFNET_ONNX` 中的 https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-general-epoch_244.onnx, 路径）用于剪切； `fonttools` 仅用于离线子集 CJK 字体。代理将它们本身安装到项目文件夹中的私有 venv 中（`demo/kit/tools/kit_env.sh` 执行 venv 和模型），而不是安装到 `$LIB/.venv` 中。没有模型：用`prep_object.py --poly`（手多边形）或`--mask`（掩模图像）进行切割。",
+    "new": "- **额外的包裹和包裹**（超出`setup.sh deps voice music`): `onnxruntime`以及 BiRefNet 通用抠图模型（MIT，~970 MB：https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-general-epoch_244.onnx)用于切口；`fonttools`仅用于离线子集 CJK 字体。代理将它们本身安装到项目文件夹中的私有 venv 中（`demo/kit/tools/kit_env.sh`venv 和模型），从不进入`$LIB/.venv`。不带模型：用切割`prep_object.py --poly`（手多边形）或`--mask`（蒙版图像）。"
+  },
+  "22": {
+    "path": "styles/briefing-board/STYLE.md",
+    "old": "- **额外的包裹和包裹**（超出`setup.sh deps voice music`): `onnxruntime`以及 BiRefNet 通用抠图模型（MIT，~970 MB：https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-general-epoch_244.onnx)用于切口；`fonttools`仅用于离线子集 CJK 字体。代理将它们本身安装到项目文件夹中的私有 venv 中（`demo/kit/tools/kit_env.sh`venv 和模型），从不进入`$LIB/.venv`。不带模型：用切割`prep_object.py --poly`（手多边形）或`--mask`（蒙版图像）。",
+    "new": "- **额外的包裹和包裹**（超出`setup.sh deps voice music`): `onnxruntime`以及 BiRefNet 通用抠图模型（MIT，~970 MB：https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-general-epoch_244.onnx)用于切口；`fonttools`仅用于离线子集 CJK 字体。代理将它们本身安装到项目文件夹中的私有 venv 中，而不是安装到库自己的中`.venv`。不带模型：用切割`prep_object.py --poly`（手多边形）或`--mask`（蒙版图像）。"
+  },
+  "23": {
+    "path": "core/audio/INSTRUMENTS.md",
+    "old": "用于为 Lemo-Opuscar 风格影片编写 **原始乐谱**。所有内容均通过 numpy/soxr 在 **48 kHz** 下离线合成，与 `sfx.py` 相同的约定（`SR`、`add()`、`limit()`）。",
+    "new": "为 Lemo-Opuscar 风格的电影创作**原创配乐**。所有内容均使用 numpy/soxr 在 **48 kHz** 下离线合成，具有与 sfx.py 相同的约定：采样率 SR、add() 和 limit()。"
+  },
+  "27": {
+    "path": "styles/data-physical/STYLE.md",
+    "old": "- **Extra 软件包和包**：除了 `setup.sh deps` 之外，仅工作室 HDRI，`sh tools/fetch.sh hdri`（Poly Haven，CC0，12 MB）；带旁白 `setup.sh deps voice`；对于采样的配乐 `sh tools/fetch.sh instruments vsco2ce` / `vcsl` / `freepats`。胡桃木贴面的型号为`core/assets/polyhaven/`。您添加的任何内容（电子表格阅读器、其他纹理）都会进入项目文件夹中的私有 venv / node_modules，而不是进入 `$LIB/.venv`。",
+    "new": "- **额外包和包**：超出`setup.sh deps`只有工作室HDRI，`sh tools/fetch.sh hdri`（Poly Haven，CC0，12 MB）和胡桃木贴面纹理，`sh tools/fetch.sh textures`（保利港，CC0，7 MB）；有旁白`setup.sh deps voice`;对于采样分数`sh tools/fetch.sh instruments vsco2ce` / `vcsl` / `freepats`。胡桃木贴面是在`core/assets/polyhaven/`。您添加的任何内容（电子表格阅读器、其他纹理）都会进入项目文件夹中的私有 venv/node_modules，而不是进入`$LIB/.venv`."
+  },
+  "28": {
+    "path": "styles/data-physical/STYLE.md",
+    "old": "- **额外包和包**：超出`setup.sh deps`只有工作室HDRI，`sh tools/fetch.sh hdri`（Poly Haven，CC0，12 MB）和胡桃木贴面纹理，`sh tools/fetch.sh textures`（保利港，CC0，7 MB）；有旁白`setup.sh deps voice`;对于采样分数`sh tools/fetch.sh instruments vsco2ce` / `vcsl` / `freepats`。胡桃木贴面是在`core/assets/polyhaven/`。您添加的任何内容（电子表格阅读器、其他纹理）都会进入项目文件夹中的私有 venv/node_modules，而不是进入`$LIB/.venv`.",
+    "new": "- **额外包和包**：超出`setup.sh deps`只有工作室HDRI，`sh tools/fetch.sh hdri`（Poly Haven，CC0，12 MB）和胡桃木贴面纹理，`sh tools/fetch.sh textures`（保利港，CC0，7 MB）；有旁白`setup.sh deps voice`;对于采样分数`sh tools/fetch.sh instruments vsco2ce` / `vcsl` / `freepats`。两者都解压成`core/assets/polyhaven/`。您添加的任何内容（电子表格阅读器、其他纹理）都会进入项目文件夹中的私有 venv/node_modules，而不是进入`$LIB/.venv`."
+  }
+}

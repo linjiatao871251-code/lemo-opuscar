@@ -1,107 +1,115 @@
-# 16-bit Pixel RPG — our demo
+<a id="16-bit-pixel-rpg--our-demo"></a>
+# 16 位像素 RPG — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Last Save Point* (54.5 s) · `pixel-rpg.mp4` · source in [`demo/`](demo/)
+示范：*最后一个保存点*（54.5 s）·`pixel-rpg.mp4`·源在[`demo/`](demo/)
 
-A 30–60 second film: a lone hero at a save crystal remembers his lost companion through three eras of colour depth, then opens the great door.
+30-60秒的影片：保存水晶中的孤独英雄通过三个色彩深度时代记住他失去的同伴，然后打开大门。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A world drawn at **320×180 native pixels**, scaled ×6 with nearest-neighbour to 1080p. Every color comes from a **limited, indexed palette**. Gradients are **ordered dither**, not blends. Characters are **sprites** around 22×34 px that animate in a handful of frames. Story is told the way a game tells it: through **dialog boxes with portraits**, **menus**, **status bars**, **battle messages** and **save files**.
+以 **320×180 原始像素**绘制的世界，以最近邻缩放至 6 倍至 1080p。每种颜色均来自**有限索引调色板**。渐变是 **有序抖动**，而不是混合。角色大小为 **精灵**，大约 22×34 像素，在少数帧中进行动画处理。故事以游戏的方式讲述：通过**带有肖像的对话框**、**菜单**、**状态栏**、**战斗消息**和**保存文件**。
 
-It is *not* HD-2D (no depth of field, no bloom, no real-time light), *not* CRT nostalgia (no scanlines, no grain), and *not* a parody. It takes the game's systems seriously as a language for feeling.
+它*不是* HD-2D（没有景深、没有光晕、没有实时光线），*不是* CRT 怀旧（没有扫描线、没有颗粒），并且*不是*模仿。它将游戏系统视为一种表达情感的语言。
 
-Never use existing game names, characters, UI frames, fonts, logos, melodies or sound effects. Learn the grammar, not the assets.
+切勿使用现有的游戏名称、角色、UI 框架、字体、徽标、旋律或音效。学习语法，而不是资产。
 
-Pick stories where **the game's own systems carry the emotion**. The demo used these native powers, the strongest (the palette collapse and flood) at the emotional peak.
+选择 **游戏自身系统承载情感** 的故事。 示范使用了这些原生力量，在情感高峰时最强（调色板崩溃和泛滥）。
 
-| Native power | Story use |
+|原生电源|故事运用|
 |---|---|
-| **Palette = feeling** | Because the image is indexed, you can swap the whole palette in one frame. Memory, grief, hope can literally be color depth. In the demo: older memories have fewer colors (16-bit → 8-bit → 4-color). The present after a loss is **faded**. The collapse of a memory is the palette **dropping one level per beat**. Hope is the full palette **flooding back through an ordered-dither wave**. |
-| **Protected colors** | Exempt a few palette indices from every palette effect. One red object (a scarf) that never fades becomes the thread through the whole film, and a perfect **match cut** between eras. |
-| **Game UI as narration** | Save files = a list of memories (choosing *NEW FILE* = refusing to overwrite them). A name greyed out in the party list = death, without a word. "No inn will ever heal it" = grief in the medium's own vocabulary. |
-| **Text boxes & blips** | A dialog box *is* the subtitle. A character with no voice actor, only text blips, reads as someone who now exists only in text. |
-| **Era shifts** | The same characters redrawn in older hardware: 4 shades at half resolution, a 13-color 8-bit set, full 16-bit. Time travel for free. |
-| **Genre transitions** | Mosaic in and out for gentle memories. The **encounter swirl** to crash into danger. White flash on the climax. |
+|**调色板=感觉**|由于图像已建立索引，因此您可以在一帧中交换整个调色板。记忆、悲伤、希望实际上可以是颜色深度。在示范中：较旧的存储器颜色较少（16 位 → 8 位 → 4 色）。损失后的现在是**褪色了**。记忆的崩溃是调色板**每节拍下降一个级别**。希望是完整的调色板 **通过有序抖动波** 涌回来。|
+|**受保护颜色**|从每个调色板效果中免除一些调色板索引。一条永不褪色的红色物体（一条围巾）成为贯穿整个影片的线索，也是时代之间完美的**匹配剪裁**。|
+|**游戏 UI 作为旁白**|保存文件=内存列表（选择*新文件*=拒绝覆盖它们）。政党名单中的名字呈灰色=死亡，无言。 “没有旅馆能治愈它”= 表现媒介自己的词汇中的悲伤。|
+|**文本框和提示**|对话框*是*副标题。一个没有配音演员、只有文字提示的角色，读起来就像现在只存在于文字中的人。|
+|**E纪元**|相同的字符在较旧的硬件中重新绘制：半分辨率的 4 种色调、13 色 8 位集、全 16 位。免费的时间旅行。|
+|**流派转换**|进出马赛克，留下温柔的回忆。 **遭遇漩涡** 坠入危险。白色闪光达到高潮。|
 
-Adapting any topic: find the **game system** hidden in it. A product launch is a new item obtained (fanfare, item box, stat comparison). A farewell is a save file that is never overwritten. A career is a level-up screen. A city is an overworld map with save points.
+适应任何主题：找到隐藏在其中的**游戏系统**。产品发布是获得新物品（宣传、物品盒、统计比较）。告别是一个永远不会被覆盖的保存文件。职业生涯是一个升级屏幕。城市是一张带有保存点的世界地图。
 
-**Arc for 45–60 s:** loneliness (quiet, faded, long scroll) → warmth (a memory) → loss (the system breaks) → resolve (the system restored in full color) → an end card that is also a game prompt (*CONTINUE ▶*).
+**Arc 45-60秒：**孤独（安静、褪色、长卷轴）→温暖（记忆）→失落（系统崩溃）→解决（系统恢复全彩）→片尾卡，也是游戏提示（*继续▶*）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Long side-scroll through a colonnade, hero small (1/6 of the frame height), four parallax layers, one colored object ahead |
-| Menus | Locked-off frame, UI on the left third, hero and prop visible on the right |
-| Warm memory | Wide, static or slow pan; characters small against sky or fire |
-| Battle | Classic side view: enemy left, party right facing left, UI window below, message window on top |
-| Loss | Hold the frame. No cut, no move while the palette collapses |
-| The monument | **Integer-pixel tilt** up a three-screen-tall door to a rose window, hold, tilt back down. The one memorable camera move |
-| Climax | Back view at the threshold, light spilling on the floor, color flooding outward from the hero |
+|开幕|穿过柱廊的长侧向卷轴，英雄小（框架高度的 1/6），四个视差层，前方一个彩色物体|
+|菜单|锁定框架，UI 在左侧三分之一，英雄和道具在右侧可见|
+|温暖的记忆|广角、静态或慢摇；天空或火焰中的小人物|
+|战斗|经典侧视图：敌人在左，队伍右面朝左，UI窗口在下，消息窗口在上|
+|损失|握住框架。调色板折叠时不能剪切、不能移动|
+|纪念碑|**整数像素倾斜** 将三屏高的门向上推至玫瑰窗，按住，然后向下倾斜。 The one memorable 摄影机运动|
+|高潮|门槛处的后视图，光线洒在地板上，色彩从英雄身上涌出|
 
-- Output 24 fps. Sprites step at **8 fps** (walk) to **12 fps** (flames, KO blink). Camera and parallax move **on ones** at integer pixels. Walk speed 30 px/s ≈ 1.25 px per frame.
-- Game-native acting: hop forward to act, cast pose with raised staff, knockback recoil, kneel, then the **KO blink** (12 fps on/off) and vanish. Breath = shoulders up 1 px for 0.6 s.
-- UI motion: windows slide in over 0.3 s (ease-out, integer px). The hand cursor bobs 1 px at 4 fps and **stops bobbing when the character hesitates**. Text types at 38–40 chars/s (30 for 8-bit), with ▼ blinking at 3 Hz when done.
-- Transitions: **thumbnail expand + mosaic** (block 10 → 1 over 0.75 s); **mosaic cross** (1 → 16 → 1 over 0.8 s, palette switched at the peak); **encounter swirl** (polar twist growing with `s^1.6`, mosaic, Bayer-dissolve to white, 0.8 s); **screen shake** of 3–2–1 px over 8 frames; **palette step fades** (4 levels), never alpha.
+- 输出 24 帧/秒。精灵以 **8 fps**（步行）步进到 **12 fps**（火焰，KO 眨眼）。 摄影机和视差以整数像素移动 **上的**。行走速度 30 px/s ≈ 每帧 1.25 像素。
+- 游戏原生表演：向前跳跃表演，举起法杖摆出姿势，击退后坐力，跪下，然后 **KO 眨眼**（12 fps on/off）并消失。呼吸 = 肩膀向上 1 px，持续 0.6 秒。
+- UI 运动：窗口滑入超过 0.3 秒（缓出，整数 px）。手形光标以 4 fps 的速度摆动 1 像素，并且当角色犹豫 **时，** 停止摆动。文本类型为 38–40 chars/s（8 位为 30），完成后 ▼ 以 3 Hz 的频率闪烁。
+- 转场：**缩略图展开+马赛克**（块10→1超过0.75秒）； **马赛克十字**（0.8秒内1→16→1，调色板在峰值处切换）； **遭遇漩涡**（极地扭曲与`s^1.6`一起生长，马赛克，拜耳溶解为白色，0.8秒）； **屏幕抖动** 3–2–1 像素，超过 8 帧； **调色板逐步淡入淡出**（4级），从不阿尔法。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music**: original chiptune (square 12.5/25/50%, 4-bit triangle, LFSR noise, wavetable). One motif runs through every section as **regional variations**. The music's fidelity follows the color depth:
-  - 4-color: mono, 4-bit volume steps, 11 kHz sample-and-hold;
-  - 8-bit: NES-like, mono;
-  - 16-bit: stereo with SNES-style echo (3 taps ~180/270/370 ms, feedback 0.35–0.45, low-pass ~3 kHz in the loop);
-  - present: the same music muffled (LP 2.2 kHz).
-  During the palette collapse, the music loses one layer per step: harmony, then echo and stereo, then bass, then only a single square tone, then **one beat of silence** exactly when the image reaches the present's grey. The boss prelude is the motif in minor; the full band enters on the bar where color floods back. The end card resolves the phrase the opening left on the dominant.
-- **Foley**, all synthesized and bit-crushed to the scene's era: cursor/select blips, text blips (the companion's are higher and 5-bit), stone footsteps with echo, fire crackle, ward shimmer (triangle arpeggio), charge (rising square + noise), blast (swept low-pass noise + 48 Hz thump, crushed to 6-bit), HP tick-down, KO blink, **bit-drop** per palette step (lower and coarser each time), save ticks, door grind (brown noise + AM creak), torch ignite, reverse swell.
-- **One organic sound**: the hero's breath before the door, band-passed noise and not crushed. It makes him human at the last moment.
-- **Silence**: after the blast (true zero, echo tails cut too) and the beat before the present.
-- **Voice**: Kokoro `bm_george` at speed 0.9, first person, 5 short lines. Duck the music ~−7.5 dB under the voice (60 ms attack, 350 ms release). Mix to −14 LUFS, **grain 0**.
+- **音乐**：原始chiptune（方波12.5/25/50%、4位三角波、LFSR噪声、波表）。一个主题贯穿每个部分，如 **区域变体**。音乐的保真度取决于颜色深度：
+  - 4 色：单色、4 位音量步长、11 kHz 采样保持；
+  - 8 位：类似 NES，单声道；
+  - 16 位：带有 SNES 风格回声的立体声（3 个抽头 ~180/270/370 ms，反馈 0.35–0.45，环路中低通 ~3 kHz）；
+  - 呈现：相同的音乐低沉（LP 2.2 kHz）。
+  在调色板崩溃期间，音乐每一步都会失去一层：和声，然后是回声和立体声，然后是低音，然后只有一个方音，然后**one节拍的沉默**恰好在图像达到当前的灰色时。 Boss前奏曲是小调的主题；整个乐队进入酒吧，颜色涌回来。 片尾卡解析了占主导地位留下的空缺短语。
+- **弗利**，全部合成并按场景时代进行位压缩：cursor/select 光点、文本光点（同伴的更高且 5 位）、带有回声的石头脚步声、火爆裂声、病房微光（三角琶音）、冲锋（上升方波 + 噪声）、爆炸（扫频低通噪声） + 48 Hz 重击，压缩至 6 位）、HP 滴答声下降、KO 闪烁、每个调色板步骤的 **比特丢弃**（每次都更低且更粗）、保存滴答声、门磨（棕色噪音 + AM 吱吱声）、火炬点燃、反向膨胀。
+- **一个有机声音**：门前英雄的呼吸，带通噪音而不被压碎。这让他在最后一刻变得人性化。
+- **沉默**：爆炸之后（真正的零，回声尾部也被切断）和当前之前的节拍。
+- **嗓音**：Kokoro `bm_george`，速度0.9，第一人称，5短线。将音乐置于声音下方 ~−7.5 dB（60 毫秒起音，350 毫秒释放）。混合至−14 LUFS，**颗粒0**。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Resolution & scaling**: native 320×180 indexed framebuffer (`Uint8Array` of palette indices). Present through a **lookup table** (index → RGB) and scale ×6 nearest-neighbour. Everything, including text, is drawn in the framebuffer. Camera moves are **integer pixels**; each parallax layer rounds its own offset.
-- **Master palette**: ENDESGA-32 (`#be4a2f #d77643 #ead4aa #e4a672 #b86f50 #733e39 #3e2731 #a22633 #e43b44 #f77622 #feae34 #fee761 #63c74d #3e8948 #265c42 #193c3e #124e89 #0099db #2ce8f5 #ffffff #c0cbdc #8b9bb4 #5a6988 #3a4466 #262b44 #181425 #ff0044 #68386c #b55088 #f6757a #e8b796 #c28569`), plus **protected duplicates** (scarf red `#e43b44/#a22633/#f6757a`, crystal cyan `#2ce8f5/#0099db/#ffffff/#124e89`) that no palette effect touches.
-- **Color-depth tables** (all computed from the master palette):
-  - *16-bit*: identity.
-  - *8-bit*: nearest of 15 colors `#000000 #fcfcfc #a4a4b8 #58587c #1c2c8c #3c7cfc #94e0fc #b8141c #fc7454 #fcb81c #8c4c1c #2c9c2c #fcd8a8 #0c4c18 #4c2410`. It needs a dark green and a dark brown, or night grass turns blue.
-  - *4-color*: fixed luminance thresholds (<60, <115, <175) → `#1f2a1c #4b5e3a #93a263 #d6dba6`. Draw 4-color scenes with the four representative indices (ink / slate / steel / white) so every pixel lands on the intended shade. Render them at **160×90** and double.
-  - *Faded*: `lum^0.8 × 7` → 7 blue-greys `#0e0d17 … #c3c9d6`. **Do not** map by rank: rank mapping crushes the scene to black.
-  - *Collapse steps*: 16-color and 8-color subsets that **keep warm hues** (orange, pink, plum), or the first step turns the frame red. Then 4 grey-blues, 2 tones, faded.
-- **Light is index stepping**: a `LIGHT[]` / `DARK[]` table moves each index one step along its ramp. Torch glow, moonlight and fire are Bayer-thresholded rings of `LIGHT[LIGHT[c]]` / `LIGHT[c]`. Firelight in an 8-bit scene uses a **warm remap** (greens → browns → rust), not generic brightening, which turns grass radioactive.
-- **Dither**: 4×4 Bayer for gradients and glows. Light shafts use a flat 50% checker with a 25% edge, which reads cleaner than a gradient.
-- **Parallax** (side-scroller): far wall with arched windows 0.35×, colonnade with banners and torches 0.7×, floor with pseudo-perspective joints 1×, black foreground pillars 1.6×.
-- **Sprites**: a **rig** (capsule limbs with 3-tone shading from an upper-left light, per-part inner line in the material's darkest tone, global 1-px ink outline) plus **hand-placed ASCII heads**. One rig gives every pose: walk ×4, attack, hurt, look up, push, sit, kneel, back-view push. For 8-bit scenes use the same rig with the **highlight tone removed**. Give the hero a **silhouette mark**: a long scarf whose tails flutter in a **3-frame stepped cycle**, plus a cowlick.
-- **Portraits** 32×32, 3/4 view, base face + eye/brow and mouth overlays (neutral, wistful, smile, sad, resolve). They carry all facial acting; the 34-px sprite face has one eye pixel.
-- **Props**: the save crystal is a flat-shaded octahedron rotated in 3D and quantized to 4 protected cyans (8 frames per 90°), with a dithered halo. The great door is a front-on paneled stone door with a sunburst tympanum, voussoirs, a rune ring that splits when it opens, and a rose window above for the tilt-up.
+- **分辨率和缩放**：本机320×180索引帧缓冲区（调色板索引`Uint8Array`）。通过 **查找表**（索引 → RGB）和比例 ×6 最近邻呈现。所有内容（包括文本）都绘制在帧缓冲区中。 摄影机运动为 **整数像素**；每个视差层都会舍入其自己的偏移量。
+- **主调色板**：ENDESGA-32（`#be4a2f #d77643 #ead4aa #e4a672 #b86f50 #733e39 #3e2731 #a22633 #e43b44 #f77622 #feae34 #fee761 #63c74d #3e8948 #265c42 #193c3e #124e89 #0099db #2ce8f5 #ffffff #c0cbdc #8b9bb4 #5a6988 #3a4466 #262b44 #181425 #ff0044 #68386c #b55088 #f6757a #e8b796 #c28569`），加上**受保护的重复项**（围巾红色`#e43b44/#a22633/#f6757a`，水晶青色`#2ce8f5/#0099db/#ffffff/#124e89`），没有调色板效果。
+- **颜色深度表**（全部根据主调色板计算）：
+  - *16 位*：身份。
+  - *8 位*：15 种颜色中最接近的 `#000000 #fcfcfc #a4a4b8 #58587c #1c2c8c #3c7cfc #94e0fc #b8141c #fc7454 #fcb81c #8c4c1c #2c9c2c #fcd8a8 #0c4c18 #4c2410`。它需要深绿色和深棕色，否则夜草会变成蓝色。
+  - *4 色*：固定亮度阈值（<60、<115、<175）→ `#1f2a1c #4b5e3a #93a263 #d6dba6`。使用四个代表性索引（墨水/石板/钢/白色）绘制 4 色场景，以便每个像素都落在预期的阴影上。将它们渲染为 **160×90** 并加倍。
+  - *褪色*：`lum^0.8 × 7` → 7 蓝灰色 `#0e0d17 … #c3c9d6`。 **不要** 按等级映射：等级映射将场景压成黑色。
+  - *折叠步骤*：**保持暖色调的 16 色和 8 色子集**（橙色、粉色、紫红色），或者第一步将框架变成红色。然后是 4 种灰蓝色，2 种色调，褪色。
+- **Light 是索引步进**：`LIGHT[]` / `DARK[]` 工作台沿其斜坡将每个索引移动一步。火炬辉光、月光和火焰是 `LIGHT[LIGHT[c]]` / `LIGHT[c]` 的拜耳阈值环。 8 位场景中的 Firelight 使用 **warm 重新映射**（绿色 → 棕色 → 铁锈色），而不是通用增亮，这会使草具有放射性。
+- **抖动**：4×4 Bayer 用于渐变和发光。光轴使用带有 25% 边缘的扁平 50% 方格，读起来比渐变更干净。
+- **视差**（横向卷轴）：带拱形窗户的远墙 0.35×，带横幅和火把的柱廊 0.7×，带伪透视接缝的地板 1×，黑色前景柱子 1.6×。
+- **精灵**：**钻机**（具有来自左上角光的 3 色调阴影的胶囊肢体，材料最暗色调的每个部分内线，全局 1 像素墨水轮廓）加上 **手动放置的 ASCII头**。一个骨骼绑定结构提供了每种姿势：行走×4、攻击、伤害、抬头、推、坐、跪、后视推。对于 8 位场景，使用相同的骨骼绑定结构和 **高光色调已删除**。给英雄一个**剪影标记**：一条长围巾，尾巴以**3帧阶梯式循环**飘动，加上一头褶子。
+- **肖像** 32×32，3/4视图，基础脸部+eye/brow和嘴巴覆盖（中性，渴望，微笑，悲伤，决心）。他们承担所有面部表演； 34 像素的精灵脸部有一只眼睛像素。
+- **道具**：保存晶体是一个以 3D 方式旋转的平面阴影八面体，并量化为 4 个受保护的青色（每 90° 8 帧），带有抖动光环。大门是一扇正面镶有镶板的石门，上面有旭日纹鼓室、楔形物、打开时会裂开的符文环，以及上方的玫瑰花窗，可以向上倾斜。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- **The dialog box is the subtitle**, drawn in the framebuffer at y 134–176:
-  - three-layer rounded border (ink / white / silver);
-  - blue→navy→night dithered fill;
-  - 32×32 portrait on the left;
-  - original variable-width pixel font (cap 7, x-height 5, descender 2) in white with a 1-px night shadow;
-  - types with the voice; ▼ when done.
-- **Skins follow the era**: 4-color light box with dark text at 160×90; 8-bit black box with white frame and an 8-bit portrait; 16-bit/present blue (it fades with the present and turns vivid when color returns).
-- Battle messages go in a thin top window. Every box stays ≥ 1.8 s and ≥ voice + 0.6 s. The next box cuts the previous one. The `.srt` is exported from the same `window.SUBS` array.
-- **Title**: two lines, 2× font, 8-neighbour ink outline, white→silver→steel gradient by row, Bayer-dissolved in and out. **End card**: gold title, blinking `▶ CONTINUE`, style name, `LemoLab × Claude Opus 5.5`, and the red scarf drifting across once. The LemoLab sign-off belongs to this library's demo only: a user's film carries no LemoLab credit and no copy of this card.
+- **该对话框的副标题是**，绘制在帧缓冲区中的y 134–176处：
+  - 三层圆角边框（墨/白/银）；
+  - 蓝色→海军蓝→夜间抖动填充；
+  - 左边32×32肖像；
+  - 原始可变宽度像素字体（大写 7，x 高度 5，下行 2），白色，带有 1 像素夜间阴影；
+  - 用声音打字； ▼完成后。
+- **皮肤遵循时代**：4色灯箱，深色文本，160×90； 8 位黑框，白框和 8 位肖像； 16-bit/present 蓝色（随现色褪色，恢复颜色时变得鲜艳）。
+- 战斗消息显示在一个薄薄的顶部窗口中。每个盒子停留 ≥ 1.8 s 且 ≥ 语音 + 0.6 s。下一个方框会切掉前一个方框。 `.srt` 是从同一 `window.SUBS` 阵列导出的。
+- **标题**：两行，2×字体，8邻墨轮廓，白→银→钢渐变逐行，拜耳溶入出。 **尾卡**：金色标题，闪烁`▶ CONTINUE`，风格名称，`LemoLab × Claude Opus 5.5`，红领巾飘过一次。 LemoLab 签核仅属于该风格库的示范：用​​户的影片不带有 LemoLab 署名，也没有该卡的副本。
 
-## Pitfalls we hit (demo record)
+<a id="pitfalls-we-hit-demo-record"></a>
+## 我们遇到的陷阱（示范记录）
 
-- **Rank-based palette mapping crushes everything to black**: with many dark colors in the master palette, a quantile map puts half the scene in the darkest step. Map by luminance with a gamma (`lum^0.8`).
-- **Collapse subsets without warm hues** turn a sunset solid red on the first step. Keep orange, pink and plum in the 16- and 8-color sets.
-- **8-bit palette without a dark green**: night grass became blue. **Generic brightening around a fire** made grass neon green. Use a warm remap.
-- **Post-quantizing a full-color scene to 4 shades is mud**. Draw 4-color scenes natively with 4 known indices at half resolution.
-- Hair drawn as a smooth dome reads as a helmet. Back hair with alternating single pixels reads as sawtooth noise; use 2–3 big spikes. A cream tunic reads as bare skin. A staff held in the front hand crosses the face in side view; hold it in the back hand behind the body. A back-mounted sword crossed the front of the torso; use a hip scabbard.
-- A dark plank door reads as a jail. Use recessed panels with bevels lit from the upper left, studs, ring handles and a tympanum. A bug drew the closed door's centre seam as light.
-- **Negative modulo**: `Math.floor(t*12) % 4` is negative when a phase offset makes `t` negative, and it indexed `undefined`. Use `((n % m) + m) % m`.
-- **Homophones**: whisper hears "inn" as "in". Accept it through the `asr` field; the subtitle disambiguates.
-- The dialog box covers the bottom 25%. Put the floor line at y 128 so standing characters stay above it.
-- For a match cut on a protected color, compute both screen positions. The demo's scarf is at (197, 104) in both eras.
+- **基于等级的调色板映射将所有内容压成黑色**：主调色板中有许多深色，分位数贴图将一半场景置于最暗的步骤中。按亮度与伽玛 (`lum^0.8`) 进行映射。
+- **折叠没有暖色调的子集** 在第一步将日落变成纯红色。 16 色和 8 色套装中保留橙色、粉色和紫红色。
+- **8位调色板没有深绿色**：夜草变成了蓝色。 **火周围的通用增亮剂**制成草霓虹绿。使用热重映射。
+- **将全彩场景后量化为 4 种色调是 mud**。使用 4 个已知索引以一半分辨率原生绘制 4 色场景。
+- 头发画成光滑的圆顶，看起来像头盔。具有交替单像素的后毛读取为锯齿噪声；使用 2-3 个大钉子。奶油色束腰外衣看起来就像裸露的皮肤。从侧面看，前手握住的一根棍子穿过脸部；将其放在身体后面的后手上。一把背挂的剑横过躯干前面；使用髋部刀鞘。
+- 一扇深色的木板门看起来就像是一座监狱。使用带有从左上方照明的斜面的嵌入式面板、螺柱、环形手柄和鼓室。一只虫子把紧闭的门的中心接缝拉成了光亮。
+- **负模**：当相位偏移使`t`为负时，`Math.floor(t*12) % 4`为负，并且它索引`undefined`。使用 `((n % m) + m) % m`。
+- **移动电话**：耳语听到“inn”为“in”。通过`asr`字段接受；副标题消除了歧义。
+- 该对话框覆盖了底部的 25%。将地板线放置在 y 128 处，以便站立的角色位于其上方。
+- 对于受保护颜色的匹配剪切，计算两个屏幕位置。 示范的围巾在两个时代都位于 (197, 104)。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/pixel-rpg/demo/
@@ -117,9 +125,9 @@ styles/pixel-rpg/demo/
   sheet.js     model sheet (?sheet=1)          tools/subs.mjs srt export      build.sh one-shot rebuild
 ```
 
-1. Write `timeline.json` first: sections, BPM, downbeats, hits, silences, the collapse steps. Music, picture and mix all read it.
-2. `?sheet=1` → model sheet; `?frame=corridor|door&lut=faded` → environment self-check frames before laying out shots.
-3. `core/tts/tts.py` → `asr_check.py` (all OK), then compose `music/score.py` against the timeline (a parallel sub-agent works well).
-4. `node core/render/still.mjs demo --range 0.3:54.3:1.5` → `sheet.py` overview; check the key moments frame by frame.
-5. `events.mjs` → `mix.py` → `tools/subs.mjs` → `video.mjs --workers 3` (1308 frames in about 20 s) → `mux.sh … 24 0`.
-6. `sh demo/build.sh` reproduces everything from scratch.
+1. 首先写`timeline.json`：部分、BPM、强拍、打击、沉默、崩溃步骤。音乐、图片、混音都读了。
+2. `?sheet=1` → 角色设定表; `?frame=corridor|door&lut=faded` → 布放前环境自检框镜头。
+3. `core/tts/tts.py` → `asr_check.py`（都可以），然后根据时间线组合 `music/score.py`（并行子代理效果很好）。
+4. `node core/render/still.mjs demo --range 0.3:54.3:1.5` → `sheet.py` 概述；逐帧检查关键时刻。
+5. `events.mjs`→`mix.py`→`tools/subs.mjs`→`video.mjs --workers 3`（约20秒内1308帧）→`mux.sh … 24 0`。
+6. `sh demo/build.sh` 从头开始​​重现一切。

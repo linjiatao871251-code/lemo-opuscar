@@ -1,94 +1,102 @@
-# Stained Glass — our demo
+<a id="stained-glass--our-demo"></a>
+# 彩色玻璃 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Dragon of the East Window* (56.5 s) · `stained-glass.mp4` · source in [`demo/`](demo/)
+示范：*东窗之龙*（56.5秒）·`stained-glass.mp4`·来源在[`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-An east window in a stone hall shows a knight sent to slay "the dragon that ate the sun". Wherever the sun falls, that pane's story moves. At dusk, in the last pane, the knight strikes and the glass cracks: he sees that the dragon was guarding the sun's last ember, kept warm until morning. The pieces slide back along the leads and are re-welded into a kneeling knight with his sword laid flat. At night only that pane still glows. The title's "East" is the answer: because the dragon keeps the ember all night, the sun can rise in the east again.
+石厅东边的窗户上画着一位骑士被派去杀死“吞噬太阳的龙”。无论太阳落在哪里，那块玻璃的故事就会移动。黄昏时分，在最后一块玻璃中，骑士敲响了玻璃，玻璃破裂了：他看到龙正在守护着太阳最后的余烬，一直温暖到早晨。这些碎片沿着引线滑回，并重新焊接成一个跪着的骑士，他的剑平放。到了晚上，只有那块玻璃还亮着。标题的“东方”就是答案：因为龙守着余烬一夜，太阳才能再次从东方升起。
 
-The window: four lancets side by side plus a rose above, in a thick splayed wall, the title carved on the string course below. Left to right = one day:
+窗户：四把柳叶刀并排，上面有一朵玫瑰，在一堵厚厚的八字墙上，标题刻在下面的绳索上。从左到右=一天：
 
-| Pane | Time | Light | Scene |
+|窗格|时间|光|场景|
 |---|---|---|---|
-| I | dawn | cool blue-white, low | the charge: knight on the battlements, sword raised; a roundel in the canopy shows "the sun-eating dragon" (the folk misunderstanding) |
-| II | noon | white-gold, brightest, short patch | the journey: hills, trees, a river, a dove passes |
-| III | afternoon | gold, patch lengthening | the fight, played out in the floor patch |
-| IV | dusk | deep red-orange | the ember: strike → crack → wings slide open → re-leaded kneeling knight |
-| Rose | all day | follows the sun | a sun wheel (gold centre, red and blue petals); its brightness is a clock, dark at night |
+|我|黎明|冷蓝白色，低|冲锋：城垛上的骑士，举起剑；天篷上的圆形图案显示“食日龙”（民间误解）|
+|二|中午|白金，最亮，短斑|旅程：山丘、树木、河流、鸽子经过|
+|三、|下午|金色，补片延长|战斗在地板补丁中进行|
+|四号|黄昏|深橙红色|余烬：打击→裂纹→翅膀滑开→重新引导跪下的骑士|
+|玫瑰|一整天|追随太阳|太阳轮（金色中心，红色和蓝色花瓣）；它的亮度是一个时钟，夜晚是黑暗的|
 
-Structure used: one scene per lancet, each lit in turn (dawn → noon → afternoon → dusk), the rose as the sun clock, opening in darkness with a knife-thin ray, one hard crack at the emotional peak, then silence, a slow reveal, re-leading on the beat, a single bell, night. Native moves spent: light is time (throughout), glass projects onto stone (the duel, 24–30 s), cracks and mending leads (31.8–44.6 s), a window that holds its own light (47–53 s). Rhymes: the dawn ray at 0.5 s and a thin blue dawn ray on the end card at 55.2 s play the same glass note; the new lead lines remain as a scar where the story changed.
+使用的结构：每支柳叶刀一个场景，每个场景依次点亮（黎明→中午→下午→黄昏），玫瑰作为太阳时钟，在黑暗中用刀般细细的光线打开，在情感高峰处发出一声硬裂，然后沉默，缓慢揭示，重新引导节拍，一声钟声，夜晚。 风格特有表现手法花费：光就是时间（自始至终），玻璃投射到石头上（决斗，24-30秒），裂缝和修补引线（31.8-44.6秒），一扇拥有自己光的窗户（47-53秒）。押韵：0.5 秒的黎明光线和 55.2 秒片尾卡上的细蓝色黎明光线演奏相同的玻璃音符；新的线索仍然是故事发生变化的伤疤。
 
-How the old guide suggested adapting topics (our demo's reading of the style, kept for reference): a sequence of stations the light visits in order; a product launch as stages of making with the product as the pane that glows at night; a biography in four panes with the one choice as the crack; history as eras across the day.
+旧指南如何建议调整主题（我们的示范的阅读风格，保留以供参考）：光线按顺序访问的站点序列；产品发布作为制造阶段，产品就像夜间发光的窗格；四格传记，只有一个选择作为裂缝；历史如同时代一样跨越一天。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-80 BPM: one beat 0.75 s, one bar 3.0 s; times set from measured voice lengths.
+80 BPM：一拍 0.75 秒，一小节 3.0 秒；根据测量的语音长度设置时间。
 
-| # | Time (s) | Shot | Camera | Sound |
+|#|时间（秒）|镜头|摄影机|声音|
 |---|---|---|---|---|
-| S1 | 0.0–4.8 | Black, faint dust. 0.5 a knife-thin dawn ray lights pane I top to bottom (`bandW` 18 → 310, skew .45 → .06, ~1 s); 2.6 the knight lifts his head | low close-up, pane ≈ 85 % of frame height | glass tink + air; recorder chant over organ pedal D; L1 at 1.0 |
-| S2 | 4.8–9.6 | Pull back to the whole window; only pane I lit, a blue floor patch, dust in shafts; 5.4 a light sweep gilds the carved title | wide: the audience learns the rule in one frame | water glass + hand chime |
-| S3 | 9.6–15.6 | Push into pane I; 11.1 sword raised (three stepped poses, on the beat); the canopy roundel lights | medium | harp Dm–G, recorder, chimes; L2 at 10.0 |
-| S4 | 15.6–17.2 | The light slides right; pane I dims, knight frozen mid-step | truck with the band to pane II | water-glass glide, wind |
-| S5 | 17.2–22.6 | Noon: knight steps piece by piece on the beat, background pieces shift back; 20.4 a dove | medium, very slow follow | harp, chimes, tubular bell on 17.2; L3 at 17.8 |
-| S6 | 22.6–24.0 | Light reaches pane III, gold; dragon rears, red wings open | tilt down the shafts to the floor | full organ enters, timpani hit |
-| S7 | 24.0–30.0 | **The floor duel**: stretched coloured patch with lead lines on flagstones; three clashes (charge / shield / wing sweep) on beats; the patch keeps lengthening | top-down on the flagstones; the subject is light | organ ostinato, timpani per clash; L4 at 24.4 |
-| S8 | 30.0–31.8 | Back up to the window, red light on pane IV: knight raises sword, dragon curled, wings over its chest | low medium, charge | timpani roll |
-| S9 | 31.8 | The blow (two stepped frames) → the pane cracks: 9 white lines in 0.28 s, flash 0.45 s, 2-frame shake | same framing, no cut | all music hard-cut, glass shatter + long reverb |
-| S10 | 31.8–33.8 | Stillness; dust falls in red light; 33.0 wing pieces slide along the leads to reveal an amber ember | slow push to the ember | silence: reverb tail, lead creak, glass friction |
-| S11 | 33.8–41.3 | The ember breathes; knight's face swaps from stern to astonished (one face piece) | close: face + ember in one frame | soft organ, sparse chimes; L5 33.8, L6 37.9 |
-| S12 | 41.3–44.6 | **Re-leading**: groups (sword → legs → torso → arms) slide to kneeling, sword flat before the ember; a weld spark per beat | locked medium | one rising Dorian note per weld |
-| S13 | 44.6–47.2 | Last weld = one bell; mending leads remain | still frame | tubular bell D, long reverb; L7 at 45.0 |
-| S14 | 47.2–52.9 | Night: red → violet → moonlight; all panes grey-blue except pane IV, glowing warm from inside | slow pull back to the S2 wide | recorder reprise, harp harmonics; L8 at 49.2 |
-| S15 | 52.9–56.5 | End card carved in the stone band; 55.2 a thin blue dawn ray touches pane I | push in on the string course | ends on a D–A open fifth; 55.2 the same glass tink as 0.5 |
+|S1|0.0–4.8|黑色，淡淡的灰尘。 0.5 刀薄黎明射线灯窗格 I 从上到下（`bandW` 18 → 310，偏斜 0.45 → 0.06，~1 s）； 2.6 骑士抬起头|低特写，窗格 ≈ 框架高度的 85%|玻璃锡+空气；风琴踏板 D 上的竖笛吟唱； L1 为 1.0|
+|S2|4.8–9.6|拉回整个窗口；我只点燃了一块玻璃，一块蓝色的地板，竖井里有灰尘； 5.4 轻轻一扫，为雕刻的标题镀金|宽广：观众在一个框架内了解规则|水杯+手铃|
+|S3|9.6–15.6|推入窗格 I； 11.1 剑举起（三个阶梯姿势，节拍）；天篷圆形灯|表现媒介|竖琴 Dm–G、竖笛、编钟； L2 10.0|
+|S4|15.6–17.2|光向右滑动；窗格我变暗，骑士冻结在中间|卡车与带至窗格 II|水玻璃滑行、风|
+|S5|17.2–22.6|中午：骑士随着节拍一步步迈步，背景部分向后移动； 20.4 一只鸽子|表现媒介，跟随速度非常慢|17.2 竖琴、编钟、管钟； L3 17.8|
+|S6|22.6–24.0|光线到达第三格，金色；龙后仰，红色翅膀张开|将竖井向下倾斜至地板|完整的管风琴进入，定音鼓敲击|
+|S7|24.0–30.0|**地板对决**：石板上有铅线的拉伸彩色补丁；节拍上的三场冲突（冲锋/盾牌/翅膀扫掠）；补丁不断延长|自上而下地在石板上；主题很轻|管风琴定音鼓，每次碰撞的定音鼓； L4 24.4|
+|S8|30.0–31.8|回到窗户，第四格上有红光：骑士举剑，龙卷曲，翅膀在胸前|低表现媒介，充电|定音鼓卷|
+|S9|31.8|打击（两帧阶梯）→玻璃破裂：0.28秒出现9条白线，闪光0.45秒，2帧抖动|相同构图，无剪辑|所有音乐硬切，玻璃破碎+长混响|
+|S10|31.8–33.8|寂静;尘埃在红光中落下； 33.0 翼片沿着引线滑动，露出琥珀色的余烬|缓慢推向余烬|静音：混响尾音、主音吱吱声、玻璃摩擦|
+|S11|33.8–41.3|余烬会呼吸；骑士的表情从严肃变为惊讶（一张脸）|关闭：一帧中的脸部+余烬|柔软的管风琴，稀疏的钟声； L5 33.8，L6 37.9|
+|S12|41.3–44.6|**重新领先**：团体（剑→腿→躯干→手臂）滑行至跪下，剑平于余烬前；每节拍产生一个焊接火花|锁定表现媒介|每焊缝发出一个上升的多里安音符|
+|S13|44.6–47.2|最后一次焊接 = 一个响铃；修补线索仍然存在|静帧|管状钟 D，长混响； L7 45.0|
+|S14|47.2–52.9|夜晚：红色→紫色→月光；除 IV 窗格外，所有窗格均为灰蓝色，从内部发出温暖的光|缓慢拉回S2宽|竖笛重奏、竖琴和声； L8 49.2|
+|S15|52.9–56.5|片尾卡雕刻在石带上； 55.2 一道细细的蓝色黎明光线触及玻璃 I|推入弦线课程|以 D-A 空五度结束； 55.2 与 0.5 相同的玻璃锡|
 
-Why this route, for this story: the knife-thin ray gave the spectacle in the first second; the pull-back taught the light rule; trucking with the light made time visible; the floor was the only place the duel could be bigger than its lancet; holding through the crack let the medium break instead of the edit; the return to the S2 wide showed the light had moved from outside the window to inside it. Each is one choice from STYLE.md §6, not the style's default opening or ending.
+为什么选择这条路线，为了这个故事：刀般细小的光线在第一秒就呈现出奇观；回调教会了轻规则；带灯光的卡车运输让时间变得清晰可见；地板是决斗唯一可能比柳叶刀更大的地方；握住裂缝让表现媒介破裂而不是编辑；返回到 S2 广角显示光线已从窗外移动到窗内。每个都是 STYLE.md §6 中的一个选择，而不是该风格的默认开头或结尾。
 
-Staging in pane IV: close-ups at 1.3–2.3× on a 300-unit lancet; knight lower-left, dragon upper-right. The reveal was re-staged at the final zoom: both figures shrunk, the ember moved to frame centre at ≥ ~1/8 of the frame width with its glow, the knight on the left third looking at it, the dragon whole inside the pane, then a pull-back to both.
+第四格中的分期：300 单位柳叶刀上 1.3–2.3 倍的特写；左下为骑士，右上为龙。在最后一次缩放时，显示被重新上演：两个人物都缩小了，余烬移动到帧中心，在帧宽度≥1/8处发出光芒，左边第三个骑士看着它，龙整个在窗格内，然后拉回两者。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Original score (`demo/music/score.py`), medieval / plainchant feel, **D Dorian** (the raised 6th, B♮, gives the colour), 80 BPM for the metred cues. Instruments: `recorder`, `organ_soft` / `organ` / `organ_pedal`, `harp`, `hand_chimes`, `tubular_bells`, `timpani`, `glass` (water glass, "the light"), `glockenspiel` (dust glints, rare). All CC0 (VSCO 2 CE / VCSL / FreePats). Bus reverb `room(size=.8, mix≈.3)`; the bell alone at `size≈.95`.
+原始配乐 (`demo/music/score.py`)，中世纪/朴素的感觉，**D多里安**（凸起的 6 音，B♮，给出颜色），计量提示的 80 BPM。仪器：`recorder`、`organ_soft` / `organ` / `organ_pedal`、`harp`、`hand_chimes`、`tubular_bells`、`timpani`、 `glass`（水玻璃，“光”），`glockenspiel`（灰尘闪烁，罕见）。所有 CC0 (VSCO 2 CE / VCSL / FreePats)。总线混响 `room(size=.8, mix≈.3)`；单独的钟声位于 `size≈.95`。
 
-| Cue | Time | Tempo | Orchestration | Sync |
+|提示|时间|速度|编排|同步|
 |---|---|---|---|---|
-| C1 Incipit | 0.5–9.6 | free | solo recorder chant over organ pedal D2 / soft D3–A3 drone | 0.5 ray (water glass D6); 5.4 title (glass + chime) |
-| C2 Dawn | 9.6–15.6 | 80 | harp arpeggios Dm–G (Dorian i–IV), recorder, chimes on downbeats | 11.1 sword raise |
-| T1 Light moves | 15.6–17.2 | — | rising water-glass glide | 17.2 arrival |
-| C3 Noon | 17.2–22.6 | 80 | harp, chimes, tubular bells, recorder up an octave, soft organ | a step per beat |
-| C4 Battle | 22.6–31.8 | 80 | full organ eighth-note ostinato (Dm–C–B♭–C), pedal, timpani | clashes 24.75 / 26.25 / 27.75; roll 30.0–31.8 |
-| — Crack | 31.8–33.8 | — | **everything hard-cut, reverb tails included**; only the shatter's own reverb | 31.8 |
-| C5 Ember | 33.8–44.6 | 60 (free) | warm soft-organ chords, sparse chimes, harp harmonics | from 41.3 one weld note per beat up the mode |
-| C6 Bell | 44.6–47.2 | — | a single tubular bell D, very long reverb | the sword laid down |
-| C7 Nocturne | 47.2–56.5 | free | recorder reprise (softer), soft organ D, harp harmonics | ends on a D–A open fifth |
+|C1 起始|0.5–9.6|自由的|独奏录音机通过风琴踏板 D2/柔和的 D3–A3 无人机吟唱|0.5射线（水玻璃D6）； 5.4 标题（玻璃+编钟）|
+|C2黎明|9.6–15.6|80|竖琴琶音 Dm–G (Dorian i–IV)、竖笛、强拍编钟|11.1 剑举|
+|T1 轻动|15.6–17.2|—|上升的水玻璃滑翔|17.2 到达|
+|C3 中午|17.2–22.6|80|竖琴、编钟、管钟、八度竖笛、软风琴|每节拍一步|
+|C4战斗|22.6–31.8|80|全风琴八分定音板 (Dm–C–B♭–C)、踏板、定音鼓|冲突 24.75 / 26.25 / 27.75；滚动 30.0–31.8|
+|- 裂缝|31.8–33.8|—|**一切硬切，包括混响尾音**；只有破碎者自己的混响|31.8|
+|C5 余烬|33.8–44.6|60（免费）|温暖的软风琴和弦、稀疏的钟声、竖琴和声|从 41.3 开始，每次打鼓模式有一个焊接注释|
+|C6 贝尔|44.6–47.2|—|单个管状钟 D，非常长的混响|剑放下|
+|C7 夜曲|47.2–56.5|自由的|竖笛重奏（较柔和）、软风琴 D、竖琴和声|以 D-A 空位五度结束|
 
-Foley specific to this film: the ember's quiet crackle, far pigeons in the vault, the dove's wings, sword and shield clashes. Music ducked ~9 dB under the voice; timpani and heavy glass hits avoid word onsets.
+拟音具体到这个影片：余烬安静的噼啪声，远处的鸽子在穹顶，鸽子的翅膀，剑和盾的碰撞。音乐在声音下减弱了约 9 dB；定音鼓和沉重的玻璃打击避免了词的开头。
 
-Voice: Kokoro `bf_alice`, speed .86–.88, "like a nun telling an old story", 8 short lines (`demo/lines.json`). Whisper heard "knight" as "night": the expected transcription goes in the line's `asr` field.
+声音：Kokoro `bf_alice`，速度 0.86–0.88，“像修女讲述一个古老的故事”，8 句短台词 (`demo/lines.json`)。 Whisper 将“knight”听成“night”：预期的转录将出现在该行的 `asr` 字段中。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Transmittance colours: cobalt `#1d3a9c` (dominant) · deep blue `#142a70` · ruby `#a8101c` · gold `#dc9a22` · emerald `#2f7f36` · olive `#6b7a22` · murrey `#632a63` · flesh `#d2a288` · white `#cfdac6` · mail `#a9b7b2` · sky `#7fa2cf` · umber `#7a4e24` · ember amber `#ff9a2a` (the story light).
-- Sun colour × intensity: dawn `(.70,.83,1.0)` × 2.2, low, long patches · noon `(1,.97,.9)` × 2.7, short patches · afternoon `(1,.84,.6)` × 2.35 · dusk `(1,.6,.34)` × 2.6 · night moon `(.55,.66,1.0)` × 0.5 through every pane, plus the ember.
-- Lit pane backlight 2.2–2.8, band edge `bandW` ≈ lancet width + 10, soft 24, slight diagonal skew.
-- Lead `#1d1f23`, 6 units (4.2 quarries, 3–4 small details). Aged piece edges: two soft strokes, rgb 206 / 168.
-- Grisaille trace `rgba(44,26,12,.88)`: brows 3.8, eyes 3.0, folds 2.3–2.6 units; matting `wash .35–.45`; scraped highlights use the piece's own colour `g.__col`.
-- Borders: ruby band with gold pearls + white fillet with a running vine; quarries carry a small vine curl each.
-- Room: ashlar courses 86 units; the title in Cinzel on the string course with a moving strip of light.
-- The knight (`knight.js`): elongated ~7.5-head proportions, big hands, mail as staggered arcs, a sun device on the shield, swappable face pieces (stern / astonished). The dragon (`dragon.js`): a wyvern built as a spine chain cut into banded dorsal and belly pieces, scales as arcs along the spine, transverse belly plates, open and folded wings, the ember at its chest.
+- 透光颜色：钴色`#1d3a9c`（主色）·深蓝色`#142a70`·红宝石色`#a8101c`·金色`#dc9a22`·祖母绿`#2f7f36`·橄榄色`#6b7a22`·水墨色`#632a63`·肉色`#d2a288`·白色`#cfdac6`·邮件`#a9b7b2`·天空`#7fa2cf`·琥珀色`#7a4e24`·琥珀色`#ff9a2a`（故事光）。
+- 太阳颜色×强度：黎明`(.70,.83,1.0)`×2.2，低、长斑块·中午`(1,.97,.9)`×2.7，短斑块·下午`(1,.84,.6)`×2.35·黄昏`(1,.6,.34)`×2.6·夜月`(.55,.66,1.0)`×0.5穿过每个窗格，加上余烬。
+- 点亮窗格背光 2.2–2.8，带边缘 `bandW` ≈ 柳叶刀宽度 + 10，柔和 24，轻微对角线倾斜。
+- 铅 `#1d1f23`，6 个单位（4.2 个采石场，3-4 个小细节）。老化片边缘：两次软描边，rgb 206 / 168。
+- Grisaille 痕迹 `rgba(44,26,12,.88)`：眉毛 3.8，眼睛 3.0，褶皱 2.3–2.6 单位；消光`wash .35–.45`；刮掉的高光部分使用该作品本身的颜色 `g.__col`。
+- 边框：镶有金色珍珠的红宝石镶边+带有运行藤条的白色圆角；每个采石场都有一小卷藤蔓。
+- 房间：方石课程 86 学分；标题中的 Cinzel 弦乐课程上有一条移动的光带。
+- 骑士（`knight.js`）：拉长~7.5头的比例，大手，交错的弧线锁甲，盾牌上的太阳装置，可更换的面罩（严厉/惊讶）。龙（`dragon.js`）：一种双足飞龙，由脊椎链切割成带状的背部和腹部部分，鳞片沿着脊椎呈弧形，横向腹板，打开和折叠的翅膀，胸部有余烬。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-The carved inscription on the stone string course changes from *THE DRAGON OF THE EAST WINDOW* to *STAINED GLASS* and *LEMOLAB × CLAUDE OPUS 5.5* (Cinzel 600, incised and gilded, revealed by the sweep light); the camera pushes in so the credit line is ≥ 30 px, and a thin blue dawn ray touches pane I. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+石弦路线上的雕刻铭文从*东窗之龙*变为*彩绘玻璃*和*LEMOLAB × CLAUDE OPUS 5.5*（Cinzel 600，雕刻和镀金，通过扫光显示）； 摄影机推入，因此信用线 ≥ 30 px，并且一条细细的蓝色黎明射线触及窗格 I。“LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Rights
+<a id="rights"></a>
+## 权利
 
-Original story, characters, window design and score. References (see STYLE.md header) were studied for grammar only; no Chartres window subject or religious imagery is reproduced. Samples are CC0; fonts are OFL (see `demo/CREDITS`).
+原创故事、人物、窗口设计和配乐。参考文献（参见 STYLE.md 标题）仅针对语法进行了研究；没有复制沙特尔窗口主题或宗教图像。样品为CC0；字体为 OFL（参见 `demo/CREDITS`）。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/stained-glass/demo/
@@ -100,14 +108,14 @@ styles/stained-glass/demo/
   lines.json  narration   music/score.py  original score   mix.py  foley + mix   subs_export.py  -> .srt   build.sh  one-shot rebuild
 ```
 
-1. `node core/render/still.mjs styles/stained-glass/demo 36 --q nosub=1`: review stills. `?test=sheet` for the model sheet.
+1. `node core/render/still.mjs styles/stained-glass/demo 36 --q nosub=1`：回顾剧照。 `?test=sheet` 为角色设定表。
 2. `core/tts/tts.py lines.json voices` → `asr_check.py`.
 3. `node core/render/events.mjs` → `music/score.py` → `mix.py` → `subs_export.py`.
-4. `node core/render/video.mjs styles/stained-glass/demo --fps 24 --workers 3` (1356 frames, about 3–4 min with 3 workers; Canvas2D vector glass plus the WebGL compositor).
-5. `CRF=22 sh demo/tools/mux.sh out/video24.mp4 mix.wav stained-glass.mp4 24 4` (grain 4). Or simply `sh styles/stained-glass/demo/build.sh`.
+4. `node core/render/video.mjs styles/stained-glass/demo --fps 24 --workers 3`（1356 帧，大约 3-4 分钟，需要 3 名工人；Canvas2D 矢量玻璃加上 WebGL 合成器）。
+5. `CRF=22 sh demo/tools/mux.sh out/video24.mp4 mix.wav stained-glass.mp4 24 4`（颗粒 4）。或者简称为 `sh styles/stained-glass/demo/build.sh`。
 
-Pitfalls tied to this demo's props:
-- A folded wing built from the open-wing rig looked like a pile of sticks → a dedicated folded silhouette (knuckle up, pleated blade sweeping back), far wing hidden.
-- The turning-point reveal was unreadable in v1: the knight filled the frame and the dragon was cut by the lancet edge → re-staged at the final zoom (see Shots).
-- The carved end card at night was unreadable in the wide shot → push in and park the sweep light on the text.
-- Duration grew from the planned 45 s to 56.5 s: L6 moved to 38.3 s so it wouldn't collide with L5's reading time, and the end card got its push-in so the credit stays legible.
+与示范的道具相关的陷阱：
+- 由开放翼骨骼绑定结构构建的折叠机翼看起来像一堆木棍 → 专用的折叠轮廓（指关节向上，褶皱刀片向后扫），远翼隐藏。
+- 在 v1 中，转折点的揭示是难以辨认的：骑士充满了画面，龙被柳叶刀边缘切割→在最终变焦时重新上演（参见镜头）。
+- 夜间雕刻的片尾卡在宽幅镜头中无法读取 → 推入并将扫描灯停在文字上。
+- 持续时间从计划的 45 秒增加到 56.5 秒：L6 移至 38.3 秒，这样就不会与 L5 的读取时间冲突，并且片尾卡得到了推送，因此信用保持清晰。

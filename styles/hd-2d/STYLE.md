@@ -1,109 +1,121 @@
-# HD-2D — Style Prompt
+<a id="hd-2d--style-prompt"></a>
+# HD-2D：风格提示词
 
-> Hand-made pixel sprites standing like paper cut-outs inside a lit, fogged, fully 3D diorama, shot from a high three-quarter angle through a tilt-shift lens: a toy world where every lamp throws a real shadow.
-> References (grammar only): *Octopath Traveler* (Square Enix × Acquire, 2018) and its sequel (2023), the games that defined the HD-2D look. Learn the grammar: sprite-in-diorama, high 3/4 camera, tilt-shift focus band, point lights with shadows, heavy bloom and vignette, framed dialogue box. Never use their characters, places, logos, UI ornaments or music, and never name them in the film.
-> Name: "HD-2D" is Square Enix's term (and trademark) for that look. The library borrows it only to describe the style; this style and its demo have no connection to Square Enix and are not endorsed by it. Don't use "HD-2D" as a title or brand in a film.
+> 通过移轴镜头从高四分之三角度观察，手工制作的像素精灵像剪纸一样矗立在明亮、雾气十足的全 3D 立体模型镜头中：这是一个玩具世界，每盏灯都会投射出真实的阴影。
+> 参考资料（仅语法）：*《八方旅人》*（Square Enix × Acquire，2018 年）及其续集（2023 年），这些游戏定义了 HD-2D 外观。学习语法：西洋镜中的精灵、高 3/4 摄影机、移轴聚焦带、带阴影的点光源、重光晕和晕影、带框对话框。切勿使用他们的人物、地点、徽标、UI 装饰或音乐，也切勿在影片中命名他们。
+> 名称：“HD-2D”是 Square Enix 对该外观的术语（和商标）。风格库借用它只是为了描述风格；此风格及其示范与 Square Enix 没有任何关系，也未得到 Square Enix 的认可。请勿在影片中使用“HD-2D”作为标题或品牌。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A **3D miniature set** of boxes and cylinders wrapped in **pixel-art textures**, populated by **flat 2D pixel sprites that receive light and cast shadows**, seen from a **high, far camera** through a **tilt-shift band** so the world reads as a tabletop model. **Light is the subject**: practicals throw sprite shadows across the floor; shafts, fog, dust or rain hang in the air; strong bloom, heavy vignette. On top, a small **RPG UI**: chapter card, framed dialogue box with typewriter text, serif subtitles.
+一套 **3D 微型套装**，由包裹在 **像素艺术纹理** 中的盒子和圆柱体组成，由 **平面 2D 像素精灵填充，接收光线并投射阴影**，从**高远相机**通过**倾斜移位带**因此世界读取为桌面模型。 **光是主题**：实践在地板上投射精灵阴影；空气中悬浮着竖井、雾、灰尘或雨水；强烈的绽放，沉重的小插图。顶部是一个小的 **RPG UI**：章节卡、带有打字机文本的框架对话框、衬线字幕。
 
-The key contrast: characters stay **flat, low-res and stepped** while camera, light, particles and focus move smoothly every frame.
+关键对比：人物留下来**平面、低分辨率和阶梯式**尽管摄影机、光线、粒子和焦点每一帧都平滑移动。
 
-Not a voxel game (no cubic characters), not a flat 2D pixel RPG (the set is real 3D with real light), not a tilt-shift photo of a real miniature (textures are pixels, not materials).
+不是体素游戏（没有立方体角色），不是平面 2D 像素角色扮演游戏（场景是带有真实光线的真实 3D），不是真实微缩模型的移轴照片（纹理是像素，而不是材质）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Constant texel density**: surfaces drawn per pixel on small canvases, `NearestFilter`, world-space UVs at one density (e.g. 24 px/m); sprites on a similar scale (a character ~30–60 px tall).
-- **Colour from ramps**: 3–6 swatches picked by brightness through a narrow 4×4 Bayer dither. Sprites get a 1 px *selout* outline (neighbour colour darkened toward the ink).
-- **Boxes and cylinders** for buildings, floors, rock; **billboards** (instanced) for foliage, distant props, ridges. Windows are emissive pixel panes; fire is a pixel atlas stepping at ~10 fps; water a shader with quantized ripples and light columns toward the camera.
-- **Light rig per set**: one dim shadow-casting key, a hemisphere fill, **practical point lights** with shadows (lamps, fires, windows, screens), and a **front fill** ~2 m before the hero (a billboard lit from behind stays black). An additive glow sprite on every source gives bloom something to grab.
-- **Post chain, at render time**: supersampled render → physical DOF with tilt-shift in the same signed circle of confusion (above the band = far, below = near; far never bleeds over a sharp foreground) → bloom → vignette/grade → filmic tone map. No film grain.
+- **恒定纹理像素密度**：在小画布上按像素绘制的表面，`NearestFilter`，一种密度的世界空间UV（例如24 px/m）；类似比例的精灵（角色约 30-60 像素高）。
+- **来自斜坡的颜色**：通过狭窄的4×4拜耳抖动根据亮度挑选3-6个样本。精灵获得 1 像素 *selout* 轮廓（相邻颜色朝墨水方向变暗）。
+- **用于建筑物、地板、岩石的盒子和气缸**； **广告牌**（实例）用于树叶、远处的道具、山脊。窗户是发光像素窗格； fire 是一个像素图集，步进速度约为 10 fps；将具有量化波纹和光柱的着色器浇灌到摄影机。
+- 每套**Light 骨骼绑定结构**：一个昏暗的阴影投射键，一个半球填充，**实用点灯**带阴影（灯，火，窗户，屏幕），和一个**前灯fill** 英雄前方约 2 m（从后面照亮的广告牌保持黑色）。每个光源上的附加发光精灵都为绽放提供了一些可以抓住的东西。
+- **后链，在渲染时**：超采样渲染→具有相同符号弥散圆中倾斜移位的物理自由度（带上方=远，下方=近；远永远不会在锐利的前景上流血）→绽放→vignette/grade→电影色调贴图。无影片颗粒。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Two temperatures**: one large ambient key (cold, or pale, or dusty) against small warm or saturated practicals. The practicals carry the story; the ambient carries the mood.
-- The darkest value is a warm ink, never pure black; the brightest is the light source itself, bloomed.
-- Each set owns one fog colour and one light key, so a cut to a new place reads instantly.
-- The hero wears the one saturated costume colour that no set uses, so the tiny sprite is findable in a wide.
-- UI is one metal (gold, silver, copper) plus one paper white over a dark translucent plate.
-- Examples: night canal town (blue fog, amber windows); autumn market at dusk (violet sky, pink paper lanterns); snowy mine at noon (grey-white daylight, green mineral glow).
+- **两种温度**：一个大的环境键（冷，或苍白，或灰尘）与小温暖或饱和的实用效果相对应。实践承载故事；环境承载着心情。
+- 最暗的值是暖墨水，绝不是纯黑色；最亮的是光源本身，绽放。
+- 每套都有一种雾色和一个灯光键，因此切换到新位置时可以立即读取。
+- 英雄穿着没有任何套装使用的单一饱和服装颜色，因此在宽阔的范围内可以找到这个小精灵。
+- UI 是一种金属（金、银、铜）加上一张白色纸，置于深色半透明板上。
+- 例子：夜晚的运河小镇（蓝色的雾气，琥珀色的窗户）；黄昏的秋季市场（紫色的天空，粉色的纸灯笼）；中午的雪矿（灰白色日光，绿色矿物辉光）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- An inscriptional capital serif (Cinzel, wide tracking) for chapter labels and titles; an old-style serif (Cormorant, Cormorant Garamond italic) for subtitles, dialogue, taglines. All OFL.
-- **Narration subtitles**: italic serif ~46–54 px, centred low on a soft dark gradient band, one line per voice clip, in ~0.35 s before the voice.
-- **On-screen speech gets a dialogue box**, not a subtitle: dark plate, thin metal border, corner ornaments, name plate on its top edge, text **typed over ~90 % of the voice**, blinking caret, soft chime on entry.
-- Chapter cards and a title card belong to the grammar. Hold ≥ max(1.8 s, speech + 0.6 s). Export the `.srt` from the data that drives the overlay.
+- 用于章节标签和标题的铭文大写衬线（Cinzel，宽字距）；用于字幕、对话、口号的老式衬线（Cormorant、Cormorant Garamond 斜体）。所有OFL。
+- **旁白字幕**：斜体衬线〜46–54像素，在柔和的深色渐变带上居中低位，每个语音剪辑一行，在语音之前〜0.35秒内。
+- **屏幕上的语音出现一个对话框**，而不是字幕：暗板、薄金属边框、角饰、顶部边缘的铭牌、文本 **键入超过 ~90 % 的语音**、闪烁的插入符号、输入时发出轻柔的提示音。
+- 章节卡和标题卡属于语法。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。从驱动覆盖的数据中导出 `.srt`。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Sprites step, everything else glides.** Walk cycles 4 frames at 6–10 fps, idles alternate two frames at ~1–2 Hz, blinks every few seconds, pose changes are instant cuts between drawings. Camera, lights, particles, beams and focus update every output frame (60 fps).
-- **Poses are data**: a parameter object per drawing; a new pose is a new table entry.
-- **Lights breathe**: every flame flickers (a few summed sines, about ±20 %). A light's level is one value that drives the sprite drawing, the point light (intensity ∝ level^~1.3), the glow opacity and its scale together.
-- **Weather is procedural**: slanted rain streaks; lightning as a scripted flash curve (strike, dip, re-strike, decay) lifting sky, fill and exposure together.
-- The world never shakes except for impact; the set never moves, only the camera and what lives in it.
+- **精灵步，其他一切都在滑动。** 步行以 6–10 fps 循环 4 帧，空闲以 ~1–2 Hz 交替两帧，每隔几秒闪烁一次，姿势变化是绘图之间的即时切换。 摄影机，灯光、粒子、光束和焦点更新每个输出帧 (60 fps)。
+- **姿势是数据**：每个绘图的参数对象；新的姿势是一个新的表条目。
+- **灯光呼吸**：每个火焰都闪烁（几个正弦之和，大约±20％）。灯光级别是驱动精灵绘制、点光源（强度∝级别^~1.3）、辉光不透明度及其比例的一个值。
+- **天气是程序**：倾斜的雨条纹；闪电作为脚本化的闪光曲线（撞击、下降、重新撞击、衰减）提升天空，同时填充和曝光。
+- 除了冲击之外，世界永远不会动摇；该装置永远不会移动，只有摄影机和里面的东西移动。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic. Always look **down** on the world (never at eye level); every path is a monotone spline of a few keys, no overshoot; focus is recomputed every frame from camera to the subject.
+是词汇，而不是路线。开头和结尾都来自于主题。始终向下看****（永远不要与眼睛水平）；每条路径都是几个关键点的单调样条，没有超调；从摄影机到拍摄对象的每一帧都会重新计算焦点。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Very high, very far, slow push; band on one tiny subject | Preciousness, a whole place as a map | where we are; scale; a landmark |
-| Medium-high 3/4, near-static drift | Two figures on one stage | a conversation; a handover; a choice |
-| Lateral tracking, camera leading slightly, foreground passing blurred | A path through a world | travel; a process with steps; a commute |
-| Dive low and close while a figure kneels or stops | The toy world suddenly personal | exhaustion; care; a secret |
-| Rising pull-back, focus handed from figure to object | The act spreads outward | consequence; a system switching on |
-| Orbit half-way round a building or prop | An object seen from all sides | a workshop; a machine; a monument |
-| Top-down, straight overhead, tilt band as a strip | A board game, a plan | routes; a schedule; a queue |
-| Rack focus between two depths in a locked frame | Attention changing hands | a memory; someone watching; before/after |
-| Return to an earlier framing, changed | The rhyme shows what changed | aftermath; growth; a season later |
+|很高，很远，慢推；乐队在一个小主题上|珍贵，整个地方就像一张地图|我们在哪里；规模;一个里程碑|
+|表现媒介-高3/4，近静态漂移|一个舞台上有两个人物|一次谈话；交接；一个选择|
+|横向跟踪，摄影机略微领先，前景经过模糊|一条穿越世界的路径|旅行;有步骤的过程；通勤|
+|当人物跪下或停止时，潜入低处并靠近|玩具世界突然个性化|精疲力竭；关心;一个秘密|
+|上升回拉，焦点从人物转移到物体|该行为向外蔓延|结果;系统开启|
+|绕建筑物或支柱运行一半|从各个侧面看一个物体|一个车间；一台机器；一座纪念碑|
+|自上而下、直顶、倾斜带状|一个棋盘游戏，一个计划|路线；时间表；一个队列|
+|锁定框架中两个深度之间的机架焦点|注意换手|一段记忆；有人在看； before/after|
+|返回到较早的框架，已更改|押韵表明发生了什么变化|后果;生长;一个赛季后|
 
-Framing: characters ~1/12–1/8 of frame height; the sharp band follows the subject's projected height (clamped ~.2–.8 of screen); with no character, use a fixed band height per shot. Transitions: short fades to black or cuts between sets; no wipes, no 3D spins.
+框架：框架高度的字符~1/12–1/8；锐带跟随拍摄对象的投影高度（夹住屏幕的 ~.2–.8）；如果没有字符，请根据镜头使用固定的带高度。过渡：短时间淡入黑色或组间切换；没有擦拭，没有 3D 旋转。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music**: chamber-fantasy or cinematic colours (harp, celesta, strings, horns, low choir, timpani) or small folk instruments (lute, recorder, hand drum). Either one piece whose own arc matches the story, **cut inside it** at downbeats, or an original score; a downbeat can land on the frame of a visual event.
-- **Silence as a tool**: a hard stop into a reverb tail, a pad alone, or one heartbeat when the light nearly dies; a short breath (< 1 s) when something fails.
-- **Foley follows the diorama's matter**: footsteps per surface (wood, dirt, stone, snow), fire crackle, cloth, a UI chime for dialogue boxes and menus, small bells for things switching on, thunder after each flash, a deep boom with shimmer for a big ignition; ambience beds per set, crossfaded.
-- **Voice**: storybook narrator, slow (speed ~.82–.90); on-screen characters low-passed (~7 kHz) so they sit "in the world". Put invented names in the TTS `asr` field.
-- **Mix**: lines compressed and RMS-matched; per-line auto-duck ~10 dB (down only); −14 LUFS via `core/render/mux.sh`, grain 0.
+- **音乐**：室内幻想或电影色彩（竖琴、钢片琴、弦乐、圆号、低音合唱团、定音鼓）或小型民间乐器（鲁特琴、竖笛、手鼓）。要么是一首本身的弧线与故事相匹配的作品，**以强拍切入其中**，要么是原创的配乐；悲观情绪可以落在视觉事件的框架上。
+- **沉默作为工具**：硬停止到混响尾音，单独的垫子，或者当灯光几乎熄灭时的一次心跳；当出现故障时短促呼吸（< 1 秒）。
+- **Foley 遵循西洋镜的内容**：每个表面的脚步声（木头、泥土、石头、雪）、火爆裂声、布料、对话框和菜单的 UI 铃声、用于开关的小铃声、每次闪光后的雷声、带有微光的深沉轰隆声用于大点火；每套氛围床，交叉淡入淡出。
+- **嗓音**：故事书旁白，慢速（速度~.82–.90）；屏幕上的角色是低通的（~7 kHz），所以他们坐在“世界上”。将发明名称放入 TTS `asr` 字段中。
+- **混音**：线路压缩和RMS匹配；每条线路自动闪避约 10 dB（仅向下）； −14 LUFS，通过 `core/render/mux.sh`，颗粒 0。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Shadows jump when a light is lit.** A practical turns on next to sprites and their shadows swing across the floor. *Fits content like:* a shop opening at dawn; a server rack powering up; a teacher switching on a projector.
-- **The carried light as a meter.** One small light a character carries is key light and gauge at once: its brightness rises and falls with whatever the story is measuring. *Fits content like:* a phone battery on a long trip; a patient's heart monitor; a candle vigil.
-- **Tilt-shift preciousness.** An extra-wide with the band on one tiny subject. *Fits content like:* a single delivery van in a city; a newborn's room in a whole hospital; one stall in a night market.
-- **Lights popping on one by one.** Windows, lamps or boats light up at a steady cadence across the map. *Fits content like:* users joining a network; a village getting electricity; a festival beginning.
-- **RPG grammar.** Chapter card, named character in a dialogue box, biomes, a landmark, a title card. *Fits content like:* onboarding a new employee; a history in eras; a recipe in stages.
-- **Weather passes over the diorama.** Rain, snow or lightning sweeps the tabletop with the flash curve. *Fits content like:* a market crash; a harvest threatened; a hard week at work.
+- **灯光亮起时，阴影会跳跃。** 精灵旁边的实用装置会打开，它们的阴影会在地板上摆动。 *适合以下内容：* 黎明时分开门营业的商店；服务器机架通电；老师打开投影仪。
+- **所携带的灯光作为仪表。** 角色携带的一盏小灯既是关键灯又是仪表：它的亮度随着故事所测量的内容而上升和下降。 *适合以下内容：* 长途旅行时的手机电池；病人的心脏监护仪；烛光守夜
+- **移轴珍贵。** 超宽，带在一个微小的主题上。 *适合以下内容：* 城市中的一辆送货车；整个医院的新生儿病房；夜市的一个摊位。
+- **灯光一一弹出。** 窗户、灯或船在地图上以稳定的节奏亮起。 *适合以下内容：*用户加入网络；一个村庄通电；一个节日的开始。
+- **RPG 语法。** 章节卡、对话框中的命名角色、生物群系、地标、标题卡。 *适合以下内容：* 新员工入职；一个时代的历史；分阶段的食谱。
+- **天气经过西洋镜。** 雨、雪或闪电随着闪光曲线扫过桌面。 *适合以下内容：*市场崩溃；收成受到威胁；工作辛苦的一周。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Checkerboard everywhere** → the dither band is too wide (≈ .22 on sprites, ≈ .45 on textures).
-- **A light burns out the sprite that holds it** → move the light ~0.45 m toward the camera; cap sprite lighting in the shader (`min(outgoingLight, diffuse * 1.35 + emissive)`).
-- **Lights behind a billboard don't light it** (front normal only) → always the front fill.
-- **Cylinder beams facing the camera give NaN** that bloom spreads into black blocks → billboard beam cards that fade toward the lens, glow sprite takes over.
-- **Dark scenes unreadable** → lift environment mid-tones ~×2–2.5 outside the one beat that must go dark.
-- **Distant glows hidden by fog** → `depthTest = false`, higher `renderOrder`.
-- **Tilt-shift with no character to track** → fixed band height per shot. **Tilt as a separate blur pass** breaks occlusion → fold it into the DOF's signed CoC.
-- **Node render scripts may not exit** after `done` (server keep-alive) → `process.exit(0)`; the file is complete once `done` prints.
+- **到处都是棋盘** → 抖动带太宽（精灵上 ≈ .22，纹理上 ≈ .45）。
+- **A 灯烧坏了持有它的精灵** → 将灯移向摄影机 ~0.45 m；着色器中的精灵光照 (`min(outgoingLight, diffuse * 1.35 + emissive)`)。
+- **广告牌后面的灯不会照亮它**（仅限正面正常）→ 始终为正面补光。
+- **面向摄影机的圆柱光束给予NaN**，光晕扩散成黑色块→广告牌光束卡向镜头褪色，发光精灵接管。
+- **黑暗场景不可读** → 在必须变暗的一拍之外提升环境中间色调~×2–2.5。
+- **被雾隐藏的远处光芒**→`depthTest = false`，更高的`renderOrder`。
+- **没有字符可跟踪的倾斜移位** → 根据镜头固定条带高度。 **倾斜作为单独的模糊通道**打破遮挡→将其折叠到DOF的签名CoC中。
+- **Node 渲染脚本在 `done`（服务器保持活动）→ `process.exit(0)` 之后可能无法退出 **； `done` 打印后，文件即完成。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `px.js` (pixel canvas, Bayer ramps, surfaces, lit billboards, glow), `kit.js` (world UVs, materials, houses, props, pixel fire), `fx.js` (sky, pixel sea, particles, rain, beam cards, `flick`), `chars.js` (pose-table pixel characters, `makeChar`), `post_ts.js` (`makePost`: DOF + tilt-shift + bloom + grade), `ui.js` (chapter card, dialogue box, subtitles, title), `main.js` (page contract, `?tilt=1`). Module table, parameters and a minimal new set (a lantern-lit alley): [DEMO.md § Engine reference](DEMO.md#engine-reference).
+在`demo/`中：`px.js`（像素画布，拜耳坡道，表面，发光广告牌，发光），`kit.js`（世界UV，材质，房屋，道具，像素火），`fx.js`（天空，像素海，粒子，雨，光束卡，`flick`）， `chars.js`（姿势表像素字符，`makeChar`），`post_ts.js`（`makePost`：DOF +移轴+绽放+等级），`ui.js`（章节卡，对话框，字幕，标题），`main.js`（页面合同， `?tilt=1`）。模块表、参数和最小的新设置（灯笼照亮的小巷）：[DEMO.md § 发动机参考](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the places, the characters, the light the story turns on, the chapters, the opening, the ending, the camera path, the key temperature and the music. All far from our demo:
+您可以决定地点、人物、故事打开的灯光、章节、开头、结尾、摄影机路径、调温和音乐。与我们的示范相去甚远：
 
-- Structures: **a day-cycle map** (one set, dawn to night, each hour lit by different practicals as the town's routine unfolds); **a party of three** (three short chapters, each character's biome and light, converging in one room); **a menu of places** (a top-down overworld; the camera dives into one location per topic point and pulls back to the map between).
-- Openings: **in the middle of the room** (a dialogue box already typing over a close 3/4 shot); **overhead map** (straight top-down, the band as a strip, then tilt down into the 3/4 view); **daylight** (a bright noon wide with no practicals at all, so the first lamp later is an event).
-- Endings: **a save point** (the hero rests at a small glowing object, the UI shows a save line, fade); **the band narrows** (the sharp strip thins onto one sprite until everything else is blur); **the party leaves frame** (a locked wide holds after the characters walk out; only ambience and flicker remain).
+- 结构：**日循环地图**（一套，从黎明到晚上，随着城镇日常生活的展开，每个小时都有不同的实用照明）； **三人聚会**（三个短章，每个角色的生物群落和光线，汇聚在一个房间）； **地点菜单**（自上而下的总体世界；摄影机深入每个主题点的一个位置，然后拉回其间的地图）。
+- 开口：**在房间中间**（已经在关闭的3/4 镜头上输入的对话框）； **俯视图**（直自上而下，带状为条状，然后向下倾斜进入3/4视图）； **日光**（明亮的正午，根本没有任何实用性，所以稍后的第一盏灯是一个事件）。
+- 结局：**a保存点**（英雄停在一个发光的小物体上，UI显示一条保存线，淡出）； **频带变窄**（尖锐的条带变薄到一个精灵上，直到其他一切都变得模糊）； **队伍离开框架**（角色走出后，锁定的宽屏保持不变；只剩下氛围和闪烁）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

@@ -1,120 +1,132 @@
-# Halftone Dossier — Style Prompt
+<a id="halftone-dossier--style-prompt"></a>
+# 复古半调案卷：风格提示词
 
-> A retro print case file: cream archive paper, overprinted halftone dots in a few flat inks, huge heavy headlines with misregistered shadows, rubber stamps that slam, and thick-outlined characters. The film is a file that is read out one exhibit at a time.
-> References (grammar only, never copy): Ben-Day-dot pop-art printing (Roy Lichtenstein era comics) for dot density as shading; riso/offset overprint zines for multiply layers and misregistration; police mugshot height charts and case-file folders for the framing device; Japanese variety-show telop captions for the keyword-highlight caption bar.
+> 复古打印案例文件：奶油色档案纸、用几种平墨叠印的半色调点、带有错误套准阴影的巨大沉重标题、猛击的橡皮图章和粗轮廓字符。 影片是一次读取一个展品的文件。
+> 参考文献（仅语法，切勿复制）：Ben-Day-dot 流行艺术印刷（Roy Lichtenstein 时代的漫画），以点密度作为阴影； riso/offset 叠印杂志，用于多层和套准不良；警察照片高度图和取景装置的案件文件夹；日本综艺节目关键字突出显示标题栏的字幕。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The whole film is paper.** A warm cream sheet with low-frequency mottling, fine grain, a vignette and a fold; dark scenes are printed on it too, never glowing.
-- **Shading is never a gradient**: it is halftone dots whose size follows a density field. Two or three dot layers at different screen angles overprint (multiply); that is the "printed" feel.
-- **Bureaucratic apparatus**: case numbers, file chips, numbered exhibits, height charts, name plates, stamps. Their seriousness is the frame; the subject can be grave or trivial.
-- **Loud but readable**: one idea per 2–4 s card, one big headline, one visual gag or exhibit, one caption line.
+- **整个影片是纸质的。** 温暖的奶油色片，低频有斑纹、细纹、晕影和褶皱；上面也印有黑暗的场景，但从不发光。
+- **阴影从来都不是渐变**：它是尺寸遵循密度场的半色调点。不同网点角度的两层或三层网点套印（多重）；这就是“印刷”的感觉。
+- **官僚机构**：案件编号、档案芯片、编号展品、高度表、铭牌、邮票。他们的严肃是框架；这个主题可以是严肃的，也可以是琐碎的。
+- **响亮但可读**：每2-4张卡片一个想法，一个大标题，一个视觉笑话或展览，一个标题行。
 
-Not Risograph (no grainy two-ink riso texture as the whole look, no zine collage), not Swiss motion (no grid-driven kinetic type on white), not Game Show Flat (no candy sets, no rhythm-game rounds). Dots, paper and stamps must be visible in every frame.
+不是 Risograph（整个外观没有颗粒状的双墨水 riso 纹理，没有杂志拼贴），不是 Swiss Motion（白色上没有网格驱动的动力类型），不是 Game Show Flat（没有糖果套装，没有节奏游戏回合）。每个框架中的点、纸张和图章必须清晰可见。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper layer** (canvas, multiply over everything, built once): an upscaled random tile for mottling, per-pixel noise with a slight warm bias, a radial vignette, a faint centre fold.
-- **Grain layer** (per frame): a few hundred paper-coloured specks and fewer ink specks, reseeded every 2 frames: dust on the print, not film grain.
-- **Halftone**: a rotated grid of circles drawn as one path; step 20–26 px; screen angle different per layer; radius = density × step × k with k 0.6–0.72 (around 0.7 dots merge into solid ink). Density fields: radial (halos, blooms, corner glows), edge (dots crowding the frame border), linear ramps ("lit from above"). The second layer is multiplied so inks overprint.
-- **Halftone-filled numerals and shapes**: a flat fill overprinted with a darker halftone clipped to the glyph; giant numerals may bleed off the frame.
-- **Line boil**: turbulence displacement (small, ~5 px) reseeded ~10×/s plus a fine ink-grain mask that eats a little of every fill. Characters and hand-drawn props only; **never** on text, halftone, HUD or captions.
-- **Characters**: chunky shapes with a heavy ink outline (~7 px), flat fills, a lighter belly or face area, glossy eyes (ink ellipse + two highlights) that can squint, blink or close into a happy arc. One head rig shared by all body poses.
-- **Stamps**: a double rounded rectangle and bold text through a coarse ink-grain + displacement filter so edges are rough and the ink mottled; ~93 % opacity, tilted ±10°.
-- **Props**: starbursts, speech bubbles, confetti, radial rays, sticky notes, folders, clocks: all flat fill + ink outline.
+- **纸层**（画布，乘以所有内容，构建一次）：用于斑点的升级随机图块，带有轻微暖偏差的每像素噪声，径向晕影，微弱的中心折叠。
+- **颗粒层**（每帧）：几百个纸色斑点和更少的墨水斑点，每2帧重新播种：打印件上有灰尘，而不是影片颗粒。
+- **H半色调**：绘制为一条路径的旋转圆网格；步骤 20–26 像素；每层加网角度不同；半径 = 密度 × 步长 × k，其中 k 0.6–0.72（大约 0.7 个点合并到固体墨水中）。密度场：径向（光晕、光晕、角发光）、边缘（拥挤在帧边界上的点）、线性斜坡（“从上方照亮”）。第二层相乘，以便墨水叠印。
+- **H半色调填充数字和形状**：平面填充叠印有剪裁到字形的深色半色调；巨大的数字可能会从框架上脱落。
+- **Line沸腾**：湍流位移（小，〜5像素）重新播种〜10×/s加上一个精细的墨粒遮罩，它会吃掉每个填充的一点点。仅限角色和手绘道具； **绝不** 在文本、半色调、HUD 或标题上。
+- **角色**：厚实的形状，带有浓重的墨水轮廓（~7像素），平坦的填充，较浅的腹部或面部区域，有光泽的眼睛（墨水椭圆+两个高光），可以斜视，眨眼或关闭成快乐的弧线。所有身体姿势共享一个头部骨骼绑定结构。
+- **邮票**：双圆角矩形和粗体文本，通过粗墨粒+位移过滤器，因此边缘粗糙，墨水斑驳； ~93% 不透明度，倾斜 ±10°。
+- **道具**：星爆、气泡、五彩纸屑、放射状射线、便签、文件夹、时钟：所有平面填充+墨水轮廓。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **A paper ground, one dark ink, and four or five flat spot inks.** The dark ink (navy, black-brown or deep green) carries every outline, body text and the caption bar, and is the fade-out colour.
-- One ink is the **overprint shadow** colour (misregistration offsets, caption shadows); one is the **highlight** for keywords and numerals; one warm red is reserved for stamps and alarms.
-- Flat inks only. No gradients, no transparency ramps; tone comes from dot size and overprint.
-- **Night or "secret" scenes** switch to a dark ink ground with a lighter dot layer of the same family, still multiplied by the paper.
-- Characters may own one or two local colours (fur, clothing) that appear nowhere else.
-- Example palettes: cream / navy / cobalt / hot pink / yellow / red; manila / sepia-black / teal / mustard / vermilion; off-white / forest green / tomato / sky / ochre.
+- **A 纸质底色，一种深色墨水和四到五种平面专色墨水。** 深色墨水（海军蓝、黑棕色或深绿色）承载每个轮廓、正文和标题栏，并且是淡出颜色。
+- 一种油墨是 **叠印阴影** 颜色（套准偏移、标题阴影）；一是**强调**，用于关键字和数字；一种暖红色是为邮票和警报保留的。
+- 仅限平面油墨。没有渐变，没有透明度斜坡；色调来自网点大小和套印。
+- **夜晚或“秘密”场景** 切换到深色墨水地面，具有同系列的较浅点层，仍然乘以纸张。
+- 角色可能拥有一种或两种在其他地方没有出现的当地颜色（毛皮、衣服）。
+- 调色板示例：奶油色/海军蓝/钴蓝色/亮粉色/黄色/红色；马尼拉色/棕黑色/青色/芥末色/朱红色；灰白色/森林绿/番茄色/天空色/赭石色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Headlines**: a black-weight serif (e.g. Noto Serif SC 900 for CJK; a black slab for Latin), 100–230 px, left-aligned near the margin, with a **misregistration shadow** (+8/+8 px in the overprint ink, multiplied).
-- **Display / numerals**: a fat rounded display face (e.g. Bagel Fat One) for names, big numbers, times.
-- **Interjections**: a playful hand face (e.g. ZCOOL KuaiLe), paper fill with a thick ink stroke and an offset shadow.
-- **Data / HUD**: a heavy monospace (e.g. JetBrains Mono 800) for case numbers, dates, rulers, file names.
-- **Captions and stamps**: a black-weight sans.
-- **Cards are the subtitles.** A headline per beat, plus a **caption bar**: a dark-ink rounded pill with an overprint-ink offset shadow, paper-coloured text, the **keyword in the highlight ink**. It pops in after the headline and holds ≥ max(1.8 s, speech + 0.6 s). With narration, the caption bar carries the spoken line.
-- **HUD**: case number and a chapter chip top-left, a status (REC dot, date) top-right; colours invert on dark scenes.
-- Latin runs 2–3× longer than CJK: smaller headlines, 1–2-word stamps (GUILTY, CLOSED), a tighter per-character stagger.
+- **头条新闻**：黑色粗细衬线（例如，CJK 为 Noto Serif SC 900；拉丁文为黑色板），100–230 像素，靠近边缘左对齐，带有 **重合失调阴影** (+8/+8)叠印油墨中的 px，乘以）。
+- **显示/数字**：一个胖圆的显示面（例如Bagel Fat One），用于显示名称、大数字、时间。
+- **感叹词**：俏皮的手脸（例如ZCOOL快乐），纸张填充有厚墨笔触和偏移阴影。
+- **数据/平视显示器**：用​​于案例编号、日期、标尺、文件名的重型等宽字体（例如 JetBrains Mono 800）。
+- **说明文字和邮票**：黑色重量 sans。
+- **卡片是字幕。** 每个节拍一个标题，加上 **标题栏**：深色墨水圆形药丸，带有套印墨水胶印阴影、纸色文本、突出显示的 **关键字墨水**。它在标题之后弹出并保持 ≥ max(1.8 s, 语音 + 0.6 s)。对于旁白，标题栏带有台词。
+- **HUD**：案例编号和章芯片位于左上角，状态（记录点、日期）位于右上角；黑暗场景中颜色反转。
+- 拉丁语的长度比 CJK 长 2-3 倍：较小的标题、1-2 个字的印章（有罪、已关闭）、每个字符的交错更紧密。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 30 fps transforms; **line boil at ~10 fps** on characters, so the drawing breathes while positions stay smooth.
-- **Everything enters with overshoot** (back ease, 0.3–0.45 s): rising from below the frame or scaling from 0. Nothing fades in.
-- **Per-character pop** for headlines: each glyph drops 30–100 px and squashes in, stagger 0.05–0.08 s (0.02 s for small text).
-- **Stamp slam**: ~0.09 s from ~2.6× to 1× (ease-in), then a small damped bounce; camera shake, flash and stamp sound on the same frame.
-- **Squash landings** preserve volume (`scale(1/sq, sq)` with a damped cosine).
-- **Idle life**: breathing, tail or hair sway, blinks at scripted times, twinkles, a blinking REC dot or clock colon.
-- **Dot wipe transitions**: a coarse grid of circles grows to full cover and shrinks back (~0.44 s) with a diagonal delay; the scene switches while covered. Each cut may take its own wipe colour. A hard cut is the contrast tool, on a big hit.
+- 30 fps 变换； **line 在角色上以约 10 fps** 沸腾，因此绘图会呼吸，同时位置保持平滑。
+- **一切都以过冲的方式进入**（后缓，0.3–0.45秒）：从框架下方上升或从0开始缩放。没有任何淡入。
+- **标题的每个字符 pop**：每个字形下降 30–100 像素并压缩，错开 0.05–0.08 秒（小文本为 0.02 秒）。
+- **邮票大满贯**：~0.09 秒从~2.6× 到 1×（缓入），然后是一个小的阻尼弹跳； 摄影机同一帧上的震动、闪光和印记声音。
+- **挤压着陆** 保留体积（带有阻尼余弦的 `scale(1/sq, sq)`）。
+- **闲置生活**：呼吸、尾巴或头发摇摆、按脚本时间眨眼、闪烁、闪烁的REC点或时钟冒号。
+- **点擦除过渡**：粗圆网格增长到完全覆盖并收缩（~0.44 s），并带有对角线延迟；场景在被覆盖时切换。每个切口都可以采用自己的擦拭颜色。硬剪切是对比工具，大受欢迎。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A 2D camera group over a flat, frontal page. A vocabulary, not a route. Opening and ending come from the topic.
+平面正面页面上的 2D 摄影机组。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Locked frontal with a small beat pulse (~0.6 %) | the page as a poster, grooving | a title; a list; an accusation |
-| Slow push-in (1 → 1.05–1.08) | scrutiny, rising tension | a profile; a summary before a verdict |
-| Shake with quadratic decay (5–26 px) | impact | a stamp; a crash; a landing |
-| Flash frames (white overlay ≤ 0.95 → 0, capped at 0.5 for big hits) | being photographed, a revelation | a mugshot; a verdict; evidence found |
-| Pan across a pinned board | connection between exhibits | a timeline; suspects; a chain of events |
-| Snap zoom into a halftone detail until dots are huge | "look closer" | a fingerprint; a signature; a number |
-| Page turn / folder slide | next file, next chapter | a second case; a flashback |
-| Pull back to reveal the whole desk | the file is one among many | scale; "this happens every day" |
+|锁定额叶，带有小拍脉冲 (~0.6 %)|页面作为海报，开槽|标题；一份清单；一项指控|
+|缓慢推入 (1 → 1.05–1.08)|审查，紧张局势加剧|个人资料；判决前的总结|
+|二次衰减摇动 (5–26 px)|影响|邮票；崩溃；着陆|
+|Flash 帧（白色叠加 ≤ 0.95 → 0，大热门的上限为 0.5）|被拍照，一个启示|一张照片；判决；找到证据|
+|在固定板上平移|展品之间的联系|时间表；嫌疑人；一连串事件|
+|快速放大半色调细节，直到点变大|“仔细看看”|指纹；签名；一个数字|
+|翻页/文件夹幻灯片|下一个文件，下一章|第二种情况；闪回|
+|向后拉，露出整个桌子|该文件是众多文件之一|规模; “这种事每天都会发生”|
 
-Compose like a printed page: headline top-left, subject right-centre, caption bar bottom-centre, HUD in the corners. Transitions: dot wipe or hard cut; no dissolves.
+像打印页面一样进行排版：标题位于左上角，主题位于右中心，标题栏位于底部中心，HUD 位于四角。过渡：点擦拭或硬切；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Synth pop-print toolkit**: synth kick, snare, clap, hat; a square-ish 8th-note bass; triangle pad; a **marimba-like pluck** (fundamental + ~4× partial) for melody; pizzicato and finger snaps for sneaking; music-box bell for tenderness.
-- **Foley follows the print and the gag**: stamp = pitch-dropping boom + click (a crackle for big ones), camera shutter, paper slides and folder flaps, typewriter or keyboard clicks, whooshes into wipes, pops on every glyph, boings and plops for characters, glass or ceramic for breakables, synthesized animal or creature voices (formant sweeps).
-- **Silence before the stamp**: empty the music just before a verdict so the stamp lands alone. Other options: a snare roll + rising sweep into a reveal; stripping to bass and snaps for a secret scene; a bell arpeggio as a tag; a single sustained pad under a sad exhibit.
-- **Voice** is optional; cards carry the film. If narrated: a dry, deadpan report voice, never breathless.
-- **Mix**: SFX ahead of the music on impacts, soft-clip master, −14 LUFS, true peak ≤ −1 dB.
+- **Synth pop-print工具包**：合成器底鼓、军鼓、拍手、帽子；方形八分贝斯；三角垫；类似于 **马林巴琴的拨弦**（基本音 + ~4× 部分音）用于旋律；拨奏和打响指以进行潜行；温柔的音乐盒铃。
+- **Foley 遵循印刷和噱头**：印章 = 音高下降的轰鸣 + 咔哒声（大的爆裂声），摄影机快门，纸张幻灯片和文件夹盖板，打字机或键盘的咔哒声，嗖嗖地擦拭，每个字形上都会弹出，字符的轰鸣声和扑通声，易碎的玻璃或陶瓷，合成动物或生物的声音（共振峰扫描）。
+- **邮票前的沉默**：在判决之前清空音乐，以便邮票单独落地。其他选择：军鼓翻滚+上升扫入揭示；脱去低音并捕捉秘密场景；铃琶音作为标签；一个悲伤的展览下的一个单一的支撑垫。
+- **嗓音** 可选；卡带有影片。如果叙述的话：干巴巴、面无表情的报告声音，从不气喘吁吁。
+- **混音**：影响音乐之前的 SFX，软剪辑主控，−14 LUFS，真实峰值 ≤ −1 dB。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The accusation frame.** A topic becomes "the case of X": list its counts. *Fits content like:* a cognitive bias on trial; a city's traffic problem; a plant that won't stop growing.
-- **Numbered exhibits.** Each beat gets a giant halftone numeral behind it. *Fits content like:* five causes of a blackout; three clauses of a contract; the stages of a recall.
-- **The stamp.** A verdict is a physical slam. *Fits content like:* APPROVED on a grant; EXPIRED on a policy; VERIFIED on a rumour check.
-- **The mugshot.** Frontal subject, height chart, name plate, flash. *Fits content like:* a new species; a product teardown; the "suspect" in a bug report.
-- **Evidence board.** Exhibits pinned and linked with string, then shaken. *Fits content like:* a supply chain; a family tree; a heist's timeline.
-- **Dot density = emotion.** Dots swell into a halo, crowd the edges for tension, bloom radially for joy. *Fits content like:* a record broken; a deadline closing in; a reunion.
-- **Redaction.** Black bars print over words and lift one by one. *Fits content like:* a leaked memo; a surprise party plan; spoilers.
+- **指控框架。** 一个主题变成“X的情况”：列出其计数。 *适合以下内容：* 试验中的认知偏差；城市的交通问题；一种不会停止生长的植物。
+- **编号展品。** 每个节拍后面都有一个巨大的半色调数字。 *适合以下内容：*停电的五个原因；合同的三个条款；召回的各个阶段。
+- **印章。** 判定为物理大满贯。 *适合以下内容：* 已批准拨款；保单已过期；经谣言检查核实。
+- **照片。** 正面主体、身高图、铭牌、闪光灯。 *适合以下内容：*新物种；产品拆解；错误报告中的“嫌疑人”。
+- **E证板。** 展品用绳子固定并连接，然后摇动。 *适合以下内容：*供应链；家谱；抢劫的时间表。
+- **点密度=情感。** 点膨胀成光环，拥挤边缘带来紧张，放射状绽放带来欢乐。 *适合以下内容：*打破了记录；截止日期临近；一次重聚。
+- **密文。** 黑条打印在文字上并一一抬起。 *适合以下内容：*泄露的备忘录；惊喜派对计划；剧透。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Fonts not loaded before layout** → per-character positions computed with a fallback font, glyphs overlap. Preload every family against the whole page source and the built text; runtime strings must use only characters that appear in the file. Use `font-display: block`.
-- **Boil on text or dots** turns them to mush → filter only characters and props.
-- **Clip-path ids are global** → every clipped numeral needs a unique id.
-- **Time-windowed scenes** → an element invisible before its cue needs explicit opacity 0 for `t < t0`.
-- **A dot wipe short of full coverage** at the cut shows the hard switch; make the max radius cover the grid cell's diagonal.
-- **A 100 % white flash** reads as a dropped frame → cap at ~0.5.
-- **Dots too small** (< ~14 px step at 1080p) alias into moiré after encoding.
-- **Too many inks** lose the print feel → at most five plus paper.
+- **布局之前未加载字体** → 使用后备字体计算每个字符的位置，字形重叠。针对整个页面源代码和构建文本预加载每个系列；运行时字符串必须仅使用文件中出现的字符。使用 `font-display: block`。
+- **在文本或点上煮沸**将它们变成糊状→仅过滤字符和道具。
+- **Clip-path id 是全局的** → 每个剪辑的数字都需要一个唯一的 id。
+- **时间窗口场景** → 在其提示之前不可见的元素需要 `t < t0` 的显式不透明度 0。
+- **A点擦短处全覆盖**在剪切处显示硬开关；使最大半径覆盖网格单元的对角线。
+- **A 100 % 白色闪光** 读取为丢帧 → 上限约为 0.5。
+- **点太小**（1080p 时 < ~14 像素步长）在编码后别名为莫尔条纹。
+- **墨水太多**失去打印感觉→最多五张加纸。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-Everything lives in `demo/index.html`: helpers (`el`, `txt`, `tf`, `seg`, easings, `measure`), per-character text (`chars` + `charsPop`), **halftone** (`halftone()` with `radial`/`edge` density fields), `caption()` bar, **stamp** (`stampEl` + `stampAnim`), a mascot rig with a `setFace` interface, `scene(t0, t1, build)`, HUD chips, dot wipe (`WIPES`), paper + grain (`buildPaper`, `drawFx`), `render(t)`. `demo/render.mjs` renders stills and video; `demo/music.py` synthesizes score and SFX. Line ranges and a minimal scene: [DEMO.md](DEMO.md#engine-reference).
+一切都在 `demo/index.html` 中：助手 (`el`、`txt`、`tf`、`seg`、缓动、`measure`)、每个字符文本 (`chars` + `charsPop`)、**半色调**（`halftone()` 具有 `radial`/`edge` 密度字段）、`caption()` 条、 **邮票**（`stampEl` + `stampAnim`），带有`setFace`接口的吉祥物骨骼绑定结构，`scene(t0, t1, build)`，HUD芯片，点擦拭(`WIPES`)、纸张+谷物(`buildPaper`、`drawFx`)、`render(t)`。 `demo/render.mjs` 渲染静态图片和视频； `demo/music.py` 综合了配乐和 SFX。线条范围和最小场景：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide what the file is about, its counts or exhibits, the characters (or none), the inks within the colour logic, the tone (farce or grave), the opening, the ending and the length (it grows with the number of exhibits; each needs time to be read).
+您可以决定文件的内容、数量或展品、字符（或无）、颜色逻辑中的墨水、基调（闹剧或严肃）、开头、结尾和长度（随着展品数量的增加而增长；每个都需要时间来阅读）。
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **a declassified report** whose pages are unredacted one by one until the real story shows; **a missing-person file** that works backwards from the last sighting; **an insurance claim** where each exhibit contradicts the claimant's statement.
-- Openings: **the evidence bag** (one object on a dark ink ground, the file assembles around it); **a fingerprint** in huge dots that resolves into a face as we pull back; **the phone call** (a caption bar alone on paper, the file drops in after).
-- Endings: **the file goes into a drawer** full of identical files; **a redacted final page** (the answer stays blacked out); **the stamp misses** (it lands on the table, the subject walks free out of frame).
+- 结构：**一份解密报告**，其页面一页一页未经编辑，直至真相揭晓； **一份失踪人员档案**，从最后一次目击事件开始倒推； **保险索赔**，其中每项证据均与索赔人的陈述相矛盾。
+- 开口：**证据袋**（深色墨水地上的一个物体，文件聚集在它周围）； **指纹** 是巨大的点，当我们向后拉时，它会分解成一张脸； **电话**（纸上有单独的标题栏，文件落在后）。
+- 结局：**文件进入抽屉**，里面装满了相同的文件； **a 编辑最后一页**（答案保持黑色）； **邮票未命中**（它落在桌子上，主体自由地走出画面）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

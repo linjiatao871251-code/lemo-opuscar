@@ -1,113 +1,125 @@
-# ASCII / CRT Terminal: Style Prompt
+<a id="ascii--crt-terminal-style-prompt"></a>
+# ASCII / CRT 终端：风格提示词
 
-> Everything on screen is a real character on a monospace grid, lit by the phosphor of an old monochrome CRT.
-> References (grammar only): 1970s–80s monochrome terminals and teletype logs (typed output, cursor, status lines); ASCII art and demoscene text-mode pictures (images from glyph density); analog-synth film scores of the early 1980s (cold pulse, patient drones). Copy no film's interface text, fonts or logos, and use no real agency names.
+> 屏幕上的所有内容都是等宽网格上的真实角色，由老式单色 CRT 的荧光粉照亮。
+> 参考资料（仅语法）：1970 年代–80 年代单色终端和电传打字机日志（打字输出、光标、状态行）； ASCII 艺术和 demoscene 文本模式图片（来自字形密度的图像）； 20 世纪 80 年代初期的模拟合成器影片乐谱（冷脉冲、病人无人机）。不得复制影片的界面文字、字体或徽标，不得使用真实的机构名称。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A single monochrome terminal screen: **P3 amber** (or P1 green) phosphor glowing on dark glass, curved at the edges, with scanlines. Every image, including title, landscape, face, room and subtitles, is made of **real glyphs placed on a character grid** and chosen by ink density. The film has one camera, the screen itself. It moves only by changing the **font size of the grid**: bigger characters push in, smaller characters pull out.
+单个单色终端屏幕：**P3 琥珀色**（或 P1 绿色）磷光体在深色玻璃上发光，边缘弯曲，带有扫描线。每张图片，包括标题、风景、面孔、房间和字幕，都是由**放置在字符网格上的真实字形**并根据油墨密度进行选择。这影片有一个摄影机，屏幕本身。它只能通过改变**网格的字体大小**：较大的字符推入，较小的字符拉出。
 
-The mood is cold, patient and machine-calm: typed text, a blinking cursor as suspense, and one warm surprise.
+气氛是冷漠、耐心和机器般的平静：打字的文本，闪烁的光标作为悬念，还有一个温暖的惊喜。
 
-**Never** fake it with an image plus an "ASCII filter". Characters must be drawn as characters on a grid. Not a hacker-movie green rain, not a pixel-art game (no sprites, no free pixels), not a sci-fi HUD (no vector lines, no free-floating panels).
+**绝不** 用图像加上“ASCII 过滤器”来伪造它。字符必须绘制为网格上的字符。不是黑客电影《绿雨》，不是像素艺术游戏（没有精灵，没有自由像素），不是科幻 HUD（没有矢量线，没有自由浮动面板）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Font**: one monospace bitmap-style font (VT323, OFL); cell 0.4 em × 0.8 em (1:2). A large prerendered glyph atlas with a stroke for beam spread, scaled with `drawImage`, keeps zooms continuous and sharp.
-- **Grids**: column count per shot (title ~20, terminal 80, picture 200+); a push-in can go until one cell holds a sub-grid of its own.
-- **Density ramp**: each glyph's measured ink coverage × dim / normal / bold → about 20 levels, near-duplicates dropped; a small ordered-plus-hash dither per cell; cells below a threshold stay blank. **Negative space makes ASCII art readable.**
-- **Picture pipeline**: paint grayscale into an offscreen "negative" aligned exactly to the grid (several samples per cell; channels for phosphor, second colour, a flag), average per cell, pick a glyph. Interiors get local contrast (`m + 0.9·(m − mean)`) to keep outlines.
-- **Recognisable subjects**: silhouettes, not noise (real coastline polygons, a face from a few planes); dark = sparse dim glyphs, bright = dense bold, shadow sides sparse `.` only; an angle with a clear silhouette.
-- **Depth on a grid**: far = darker and sparser, near = brighter and denser; a thin bright rim separates planes.
-- **CRT post** (WebGL, adapted from `core/post/crt.js`):
-  - **Phosphor colour**: luminance maps along the phosphor's ramp (dim deep orange → amber → overexposed near-white for P3).
-  - **Glow**: multi-level bloom plus a faint halo.
-  - **Glass**: fine scanlines (narrower on bright areas), slight barrel curvature, rounded mask, warm near-black unlit glass, faint reflection, ~1 % flicker, fine noise. **No RGB grille: monochrome tubes have none.**
-- **Afterglow**: text that disappears decays with τ ≈ 0.1 s, computed analytically so every frame is deterministic. Moving glyphs get one faint trail sample.
+- **字体**：一种等宽位图风格字体（VT323、OFL）；细胞 0.4 em × 0.8 em (1:2)。一个大型预渲染字形图集，带有用于光束扩散的笔画，按 `drawImage` 缩放，保持缩放连续和锐利。
+- **网格**：每个镜头的列数（标题 ~20，终端 80，图片 200+）；推入可以进行，直到一个单元格拥有自己的子网格。
+- **密度斜坡**：每个字形的测量墨水覆盖率×暗淡/正常/粗体→大约20个级别，接近重复项下降；每个单元格有一个小的有序加哈希抖动；低于阈值的单元格保持空白。 **负空格使 ASCII 艺术可读。**
+- **图片管道**：将灰度绘制到与网格精确对齐的屏幕外“负片”中（每个单元格有多个样本；荧光粉通道，第二种颜色，标志），每个单元格的平均值，选择一个字形。内饰采用局部对比度 (`m + 0.9·(m − mean)`) 以保持轮廓。
+- **可识别主题**：剪影，而不是噪音（真实的海岸线多边形，来自几个平面的面孔）；暗 = 稀疏暗淡字形，亮 = 密集粗体，仅阴影面稀疏 `.`；具有清晰轮廓的角度。
+- **网格上的深度**：远 = 更暗且更稀疏，近 = 更亮且更密集；一个薄而明亮的边缘将平面分开。
+- **显像管柱**（WebGL，改编自`core/post/crt.js`）：
+  - **荧光粉颜色**：沿荧光粉渐变的亮度图（暗淡深橙色→琥珀色→ P3 曝光过度接近白色）。
+  - **辉光**：多层次绽放加上微弱的光晕。
+  - **玻璃**：精细扫描线（明亮区域较窄），轻微的桶形弯曲，圆形遮罩，温暖的近乎黑色的未点亮玻璃，微弱的反射，〜1％的闪烁，精细的噪音。 **无RGB格栅：单色管无。**
+- **余辉**：消失的文本以 τ ≈ 0.1 s 衰减，经过分析计算，因此每一帧都是确定性的。移动的字形会得到一个微弱的痕迹样本。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **One phosphor** carries everything: amber, green or white, in its own brightness ramp. No second hue for decoration.
-- **At most one soft second colour**, used for one thing only (the emotional object), switched on at a single moment, on a downbeat, and never taken back casually.
-- Examples: amber screen with an ice blue-white for something far away; green screen with a warm pink for a living thing; white P4 screen with a pale gold for a memory.
-- Brightness is the only other tool: dim / normal / bold and inverse video.
+- **一种荧光粉**在其自己的亮度斜坡中承载着一切：琥珀色、绿色或白色。没有第二色调用于装饰。
+- **最多一种柔和的第二色**，只用于一件事（情感对象），在一个瞬间打开，在一个悲观的情况下，并且不会随意收回。
+- 例如：带有冰蓝白色的琥珀色屏幕代表远处的事物；绿色屏幕，带有暖粉色的生物；白色的P4屏幕，淡金色的记忆。
+- 亮度是唯一的其他工具：暗淡/正常/粗体和反色视频。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Subtitles are terminal output.** A reserved **LOG strip** at the bottom: a dim separator, an inverse-video tag, then a prompt and the line in uppercase at ~45 px. It is **typed word by word in sync with the voice** (whisper word timestamps) and holds ≥ max(1.8 s, speech + 0.6 s). It lives outside the zooming grid, like a status line, with the same scanlines and glow. When nobody speaks it can show system state (a progress bar, a waiting message).
-- **On-screen text that the story shows** is picture, not subtitle; in the `.srt` it appears as `[SCREEN] …`.
-- **Titles** are typed with key clicks, as a filename, a command or a header.
+- **字幕是终端输出。**底部保留的**LOG条**：一个暗淡的分隔符，一个反视频标签，然后是一个提示和大约45像素处的大写行。它是 **逐字键入的，与语音**（耳语单词时间戳）同步，并保持 ≥ max(1.8 s，语音 + 0.6 s)。它位于缩放网格之外，就像状态线一样，具有相同的扫描线和发光效果。当没有人说话时，它可以显示系统状态（进度条、等待消息）。
+- **故事显示的屏幕文字** 是图片，不是字幕；在 `.srt` 中，它显示为 `[SCREEN] …`。
+- **标题** 通过按键键入，作为文件名、命令或标题。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters never move off-grid, except in a declared transformation moment.** Typing, scrolling and counters jump from cell to cell. A roller flips digits discretely, fast then slowing.
-- **Only three things move continuously**: grid scale (the camera), CRT physics, and particles in a transformation.
-- **Typing speed is performance**: machine output is even and fast (~10–40 ms/char); dramatic lines slow to note values of the score; human typing is hand-timed, uneven, with pauses and bursts.
-- **Particles** spawn from random points inside source glyphs, start small, fade in, ease to their cell, and flash briefly on landing, so they never stack into bright bars.
-- **Push to a character**: hold where the whole glyph reads, then push until its inner text reads; inner text full brightness, outside text a few percent, neighbours dimmed, so the shape reads before the text.
+- **角色永远不会离开网格，除非在声明的转换时刻。** 打字、滚动和计数器从一个单元格跳转到另一个单元格。滚轮离散地翻转数字，先快后慢。
+- **只有三件事连续移动**：网格尺度（摄影机）、CRT物理和变换中的粒子。
+- **打字速度就是性能**：机器输出均匀快速（~10–40 ms/char）；戏剧性的线条缓慢地注意到配乐的值；人类打字是手工计时的，参差不齐，有停顿和突发。
+- **颗粒** 从源字形内的随机点生成，从小处开始，淡入，缓和到其单元格，并在着陆时短暂闪烁，因此它们永远不会堆叠成明亮的条形。
+- **推送到字符**：按住整个字形读取的位置，然后推送直到读取其内部文本；内部文本全亮度，外部文本百分之几，相邻文本变暗，因此形状在文本之前读取。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-The only camera is the grid scale, plus CRT power states and one possible shot outside the screen.
+唯一的摄影机是网格刻度，加上 CRT 电源状态和屏幕外一个可能的镜头。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Static 80-column terminal | Waiting, procedure, machine time | a countdown; a queue; a log being read |
-| Push in (cells grow) | Attention, intimacy | one line of dialogue; a name; a decision typed |
-| Pull out (cells shrink) | Context, scale | a title becoming line 1 of a list; one entry among thousands |
-| Push into a single glyph | Hidden depth; what a symbol is made of | a letter made of messages; a pixel made of people |
-| Scroll (the buffer moves) | Accumulation, time passing | years of records; a changelog; a feed |
-| Clear screen / hard redraw | A cut; a new state | a reboot; a new chapter; a crash |
-| Text becomes image (grid shrinks as glyphs fall) | Words turning into world | a letter becoming a face; data becoming a map |
-| Power on / off, degauss | Birth, death, sleep, shock | a machine waking; an ending; a jolt |
-| Pull back off the glass into a drawn room | The screen is an object in a world | who is reading; where the machine is |
+|静态80列终端|等待、流程、机器时间|倒计时；队列；正在读取的日志|
+|推入（细胞生长）|关注、亲密|一行对话；一个名字；输入的决定|
+|拉出（细胞收缩）|背景、规模|标题成为列表的第一行；数千项中的一项|
+|推入单个字形|隐藏深度；符号是由什么构成的|由消息组成的一封信；由人组成的像素|
+|滚动（缓冲区移动）|积累，时间流逝|年记录；变更日志；饲料|
+|清屏/硬重画|一个切口；一个新的状态|重新启动；新篇章；一场车祸|
+|文本变成图像（网格随着字形下降而缩小）|文字变成世界|一封信变成了一张脸；数据变成地图|
+|开机/关机、消磁|出生、死亡、睡眠、休克|机器苏醒；一个结局；震动|
+|从玻璃上拉开，进入一个绘制的房间|屏幕是世界中的一个物体|谁在读书；机器在哪里|
 
-Opening and ending come from the topic. Framing: text stays in the safe area inside the curvature; keep the LOG strip clear. Transitions happen on the screen (clear, redraw, scroll, power), never a crossfade between two screens.
+开头和结尾都来自于主题。取景：文字停留在曲率内的安全区域；保持 LOG 条清晰。过渡发生在屏幕上（清晰、重画、滚动、电源），而两个屏幕之间绝不会出现交叉淡入淡出。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music**: an original analog-synth score, rendered in code (numpy / numba): PolyBLEP saw and square oscillators, a resonant 4-pole ladder filter with moving cutoff, filter envelopes, square-wave sequencers, slow tape wow (± a few cents), long reverb on pads, gated reverb on hits; options also a sub-bass drone, sample-and-hold noise, a detuned unison lead. **Never chiptune.**
-- **Technique options**: grow a single arpeggio as an image forms; hold the only major chord for one moment; drop everything, reverb tails included, to digital zero on a shock; open a chord on the colour change.
-- **Silence is the main instrument**: room tone alone under typing and blinking cursors; a short near-silence before a transformation.
-- **Foley** (all synthesised): relay click and degauss hum (mains hum plus harmonics with a thump); buckling-spring keys (plastic click, spring ping, key-cap thock; duller space bar, heavier Enter); teletype ticks for remote text; modem and phone-line tones (answer tone, FSK, band-limited noise); square-wave error beeps and BEL; clusters of tiny high ticks for particles; a dot-matrix printer or tape drive as options; room tone (fan, low hum, a **very quiet** flyback whine).
-- **Mix**: music ducked about −8 dB under the voice; master −14 LUFS with no grain in the mux (the noise lives in the picture).
-- **Voice**: when a machine speaks, process it (light ring modulation, a short comb, a telephone-ish band-pass, soft saturation) and check that whisper still reads every line. Few short lines.
+- **音乐**：原始模拟合成器配乐，以代码（numpy / numba）渲染：PolyBLEP 锯齿和方形振荡器、带移动截止的谐振 4 极梯形滤波器、滤波器包络、方波音序器、慢速磁带哇（±几美分）、打击垫上的长混响、门控命中时产生混响；还可以选择低音低音、采样和保持噪声、失谐齐奏主音。 **从不chiptune.**
+- **技术选项**：将单个琶音增长为图像形式；保持唯一的大和弦片刻；在电击时将所有内容（包括混响尾音）降至数字零；打开一个和弦就颜色变了。
+- **沉默是主要乐器**：打字和闪烁光标时单独的房间音；转变前短暂的近乎沉默。
+- **弗利**（全部合成）：继电器咔哒声和消磁嗡嗡声（电源嗡嗡声加上带有重击声的谐波）；屈曲弹簧按键（塑料咔嗒声、弹簧声、键帽塞；较钝的空格键、较重的 Enter）；远程文本的电传打字机刻度；调制解调器和电话线音（应答音、FSK、带限噪声）；方波错误蜂鸣声和 BEL；颗粒的微小高刻度簇；可选配点阵打印机或磁带机；房间音调（风扇，低嗡嗡声，**非常安静**反激呜呜声）。
+- **混音**：音乐在声音下降低了约-8 dB； master -14 LUFS，复用器中没有颗粒（噪声存在于图片中）。
+- **嗓音**：当机器说话时，对其进行处理（光环调制、短梳、电话式带通、软饱和）并检查耳语是否仍然读取每一行。几行短线。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The picture is made of words.** A sentence breaks apart and its letters, sorted by ink density, become an image containing only those letters. *Fits content like:* a manifesto becoming a crowd; a recipe becoming the dish; a poem becoming a landscape.
-- **Font size = camera.** Push until one character fills the screen and is itself made of smaller text. *Fits content like:* a company name made of employee names; a year made of its headlines; a heart glyph made of messages.
-- **Typing rhythm = editing rhythm.** Even machine typing against uneven human typing; a blinking cursor is a performance. *Fits content like:* a job application; an apology; a password remembered.
-- **CRT physics.** Power on as dot → line → frame, off to a dot; afterglow, bloom, curved glass. *Fits content like:* a hospital monitor; a night shift ending; an old archive reopened.
-- **A single colour change.** One soft second colour appears once. *Fits content like:* a first green leaf in a data log; a blood-orange sunset in a weather report; a child's drawing in a server room.
-- **The log file.** Timestamps, error codes, progress bars tell the story. *Fits content like:* a product launch day; a rescue; a migration.
+- **图片由文字组成。** 一个句子被分解，其字母按墨水浓度排序，成为仅包含这些字母的图像。 *适合以下内容：*宣言成为人群；菜谱变成菜肴；一首诗变成一幅风景。
+- **字体大小 = 摄影机.** 按下直至一个字符填满屏幕并且本身由较小的文本组成。 *适合以下内容：* 由员工姓名组成的公司名称；一年的头条新闻；由消息组成的心形符号。
+- **打字节奏=编辑节奏。** 甚至机器打字对抗不均匀的人类打字；闪烁的光标是一种表演。 *适合以下内容：* 工作申请；道歉；记住了密码。
+- **CRT物理。** 开机为点→线→框，灭为点；余辉，绽放，弧形玻璃。 *适合以下内容：* 医院监视器；夜班结束；旧档案馆重新开放。
+- **A 单色变化。** 一种柔和的第二种颜色出现一次。 *适合以下内容：*数据日志中的第一片绿叶；天气预报中的血橙色日落；一个孩子在服务器机房里画的画。
+- **日志文件。** 时间戳、错误代码、进度条讲述故事。 *适合以下内容：* 产品发布日；救援；一次迁移。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Inverse video**: `destination-out` only changes alpha, which the upload ignores → opaque black canvas, cut letters with a *black* atlas.
-- **Negative not aligned to the grid** drifts across hundreds of columns → map with cell width / samples exactly.
-- **Wrong cell centre**: cells are 2·cw tall, so the centre is `(j + .5)·2cw`, not `(j + 1)·cw`.
-- **Every dark pixel becomes a character** (`-+-+` walls) → threshold, gamma ≈ 1.25, local contrast.
-- **Noise-textured subjects read as textured blobs** → silhouettes, a dark sparse background, a dot-only shadow side.
-- **Particles from letter centres stack into bars** → random points inside the glyph, small, faded in.
-- **Stroked atlas glyphs close their counters** (`M`, `B`) → sample a thin fill-only glyph bitmap for masks.
-- **Lazily built data never reaches the exporter** → build particle schedules and their sound events before `window.EV` is exported.
-- **A power-on parameter at 0 still draws the centre dot** → exposure 0 before power-on, multiply the dot term by exposure.
+- **反视频**：`destination-out`仅更改alpha，上传忽略→不透明的黑色画布，用*黑色*图集剪切字母。
+- **负片未与网格对齐**在数百列中漂移→与单元格宽度/样本精确映射。
+- **错误的单元中心**：单元的高度为2·cw，因此中心是`(j + .5)·2cw`，而不是`(j + 1)·cw`。
+- **每个暗像素都变成一个字符**（`-+-+`墙壁）→阈值，gamma ≈ 1.25，局部对比度。
+- **噪声纹理的主体读作纹理斑点** → 剪影、深色稀疏背景、仅点的阴影面。
+- **来自字母中心的粒子堆叠成条** → 字形内的随机点，小，淡入。
+- **抚摸的图集字形关闭其计数器**（`M`，`B`）→对蒙版的仅填充字形位图进行采样。
+- **延迟构建的数据永远不会到达导出器**→在导出`window.EV`之前构建粒子计划及其声音事件。
+- **A 开机参数为0时仍绘制中心点**→开机前曝光0，将点项乘以曝光量。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `term.js` (glyph atlas, grid drawing, density ramps, image → cells), `art.js` (procedural grayscale scenes for the negative), `crt.js` (monochrome phosphor CRT post, WebGL2), `main.js` (timeline, events `EV`, subtitles `SUBS`), `voice_fx.py` (machine-voice processing), `mix.py` (synthesised foley + ducking), `music/score.py` (analog-synth score), `tools/subs.mjs` (export `window.SUBS`). File map and commands: [DEMO.md](DEMO.md#build-notes).
+在 `demo/` 中：`term.js`（字形图集、网格绘制、密度渐变、图像 → 单元格）、`art.js`（负片的程序灰度场景）、`crt.js`（单色磷光体 CRT 柱、WebGL2）、`main.js`（时间轴、事件） `EV`、字幕 `SUBS`)、`voice_fx.py`（机器语音处理）、`mix.py`（合成拟音 + 音量闪避）、`music/score.py`（模拟合成） 配乐）、`tools/subs.mjs`（出口`window.SUBS`）。文件映射和命令：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide who types, what the screen is for, the grids, the opening, the ending, the camera (grid) path, the pacing and whether the second colour appears at all. All far from our demo:
+您可以决定谁打字、屏幕的用途、网格、开头、结尾、摄影机（网格）路径、节奏以及是否出现第二种颜色。与我们的示范相去甚远：
 
-- Structures: **a chat log** (two users typing to each other across one night, timestamps as scene headers); **a system manual** (chapter headers, diagrams in ASCII, one page going wrong); **a boot-to-shutdown day** (one machine's day as a sequence of scheduled jobs, each drawing a picture of what it does).
-- Openings: **mid-scroll** (a buffer already racing past; it stops on one line); **a printout** (a dot-matrix sheet feeding up, then the screen takes over); **an error first** (a crash dump, then we rewind to what caused it).
-- Endings: **the buffer fills** (the story's text scrolls up and away until only the prompt remains); **the screen saver** (after the last line, a slow drifting pattern takes over the idle screen); **the cursor stops blinking** (no power-off, just a final state held).
+- 结构：**a 聊天日志**（两个用户在一晚上互相打字，时间戳作为场景标题）； **a系统手册**（章节标题、ASCII图表、一页出错）； **a 启动到关闭日**（一台机器的一天作为一系列计划作业，每个作业绘制一幅其工作的图片）。
+- 开口：**中滚动**（缓冲区已经快速过去；它停在一行上）； **a 打印输出**（点阵纸向上送入，然后屏幕接管）；首先是 **错误**（故障转储，然后我们回退到导致它的原因）。
+- 结局：**缓冲区填满**（故事的文本向上滚动，直到只剩下提示）； **屏幕保护程序**（在最后一行之后，缓慢漂移的图案接管空闲屏幕）； **光标停止闪烁**（没有断电，只是保持最终状态）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

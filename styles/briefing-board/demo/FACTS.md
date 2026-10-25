@@ -1,93 +1,103 @@
-# Facts and sources · 《船说了算》 (The Ship Sets the Span)
+<a id="facts-and-sources--船说了算-the-ship-sets-the-span"></a>
+# 事实与来源·《船说了算》（船定了跨度）
 
-Every number on screen and every claim in the narration, listed with its source and the source's wording. Checked on 2026-10-15 (bridges completed and open to traffic as of that date). Only bridge types and numbers appear on screen, never a specific bridge name, company or brand; the bridge names below only explain where the numbers come from.
+屏幕上的每个数字和旁白中的每个主张，都列出了其来源和来源的措辞。于 2026 年 10 月 15 日检查（桥梁已于该日竣工并通车）。屏幕上仅显示桥梁类型和编号，而不显示特定的桥梁名称、公司或品牌；下面的桥名仅说明数字的来源。
 
-"A river 1,000 metres wide" is a hypothetical problem, not a real river.
+“一条1000米宽的河流”是一个假设的问题，而不是一条真正的河流。
 
-On-screen text is Chinese; it is quoted as it appears, with an English gloss.
+屏幕上的文字是中文；它是按原样引用的，带有英文注释。
 
-## On screen / narration
+<a id="on-screen--narration"></a>
+## 屏幕上/旁白
 
-| On screen | Narration | Claim | Source (see below) |
+|在屏幕上|旁白|宣称|来源（见下文）|
 |---|---|---|---|
-| 1,000 米 (1,000 m) | "a thousand meters wide" | Hypothetical width of the river | — |
-| 梁桥 · 330 米 (beam bridge · 330 m) | "Beam: three hundred and thirty." | Record main span for a beam bridge (box girder, including steel-concrete hybrid girders): 330 m | F1 |
-| 拱桥 · 600 米 (arch bridge · 600 m) | "Arch: six hundred." | Longest arch span: 600 m | F2 |
-| 斜拉桥 · 1,208 米 (cable-stayed bridge · 1,208 m) | "Cable-stayed: twelve hundred and eight." | Longest cable-stayed main span: 1,208 m | F3 |
-| 悬索桥 · 2,023 米 (suspension bridge · 2,023 m) | "Suspension: over two thousand." | Longest suspension main span: 2,023 m | F4 |
-| 航道里不能有桥墩 / 船决定跨度 (no piers in the navigation channel / the ship sets the span) | "The ship sets the span." | The main span of a river crossing is often set by navigation requirements; piers in the channel carry a risk of ship collision | F5, F6 |
+|1,000 米 (1,000 米)|“一千米宽”|假设的河流宽度|—|
+|梁桥·330米（梁桥·330m）|“光束：三百三十。”|创纪录的梁桥主跨（箱梁，包括钢-混凝土混合梁​​）：330 m|F1|
+|拱桥·600米（拱桥·600m）|“拱门：六百。”|最长拱跨：600 m|F2|
+|斜拉桥 · 1,208 米 (斜拉桥 · 1,208 m)|“斜拉索：一千二百零八。”|最长斜拉索主跨：1,208 m|F3|
+|悬索桥 · 2,023 米 (悬索桥 · 2,023 m)|“停课：两千多。”|最长悬挂主跨：2,023 m|F4|
+|航道里不能有桥墩 / 船决定跨度（航道里没有桥墩/船设置跨度）|“船决定了跨度。”|河流渡口的主要跨度通常是根据航行要求确定的；航道内的桥墩有发生船舶碰撞的危险|F5、F6|
 
-## F1 Beam bridge 330 m
+<a id="f1-beam-bridge-330-m"></a>
+## F1 梁桥 330 m
 
-- Bridge: Chongqing Yangtze River Bridge parallel bridge (Shibanpo parallel bridge), completed 2006. Prestressed-concrete continuous rigid frame, with a steel box girder of about 108 m set into the middle of the main span (steel-concrete hybrid girder).
-- Contractor DLT Engineering project page https://www.dlteng.com/en/projects/Shibanpo.htm
-  > "a main span of 330m"
-  > "it also boasts the longest box girder span in the world"
-  > "The central 108m of the main span was designed as a steel box girder to save weight"
-- Draft group standard for comment (design code drafting group, 2025-06) https://www.ttbz.org.cn/upload/file/20250711/6388782936651095878446847.pdf
-  > "目前梁桥的最大跨径已达 330 m。" (The maximum span of beam bridges has now reached 330 m.)
-- Trade press Bridge Design & Engineering (2006-07-28) https://www.bridgeweb.com/Completion-announced-of-record-breaking-span/985
-  > "the world's longest box girder span"
-- Note on the measure: this is the record for solid-web box girders (including hybrid girders). If steel cantilever truss bridges also count as beam bridges, the record is 549 m (Guinness: "has the longest cantilever truss span of any in the world"), still far short of 1,000 m, so the argument stands. The beam-bridge photo in the film shows a box-girder bridge.
+- 桥梁：重庆长江大桥平行桥（石板坡平行桥），2006年竣工。预应力混凝土连续刚构，主跨中部设置长约108m的钢箱梁（钢混混合梁）。
+- 承包商 DLT 工程项目页面 https://www.dlteng.com/en/projects/Shibanpo.htm
+  > “主跨330m”
+  > “它还拥有世界上最长的箱梁跨度”
+  > “主跨中央108m设计为钢箱梁以减轻重量”
+- 征求意见团体标准草案（设计规范起草组，2025-06）https://www.ttbz.org.cn/upload/file/20250711/6388782936651095878446847.pdf
+  > “目前梁桥的最大跨径已达330 m。”（目前梁桥的最大跨径已达330 m。）
+- 贸易出版社桥梁设计与工程 (2006-07-28) https://www.bridgeweb.com/Completion-announced-of-record-breaking-span/985
+  > 《世界上跨度最长的箱梁》
+- 测量注意事项：这是实心腹板箱梁（包括混合梁）的记录。如果钢悬臂桁架桥也算作梁桥，则记录为 549 m（吉尼斯：“拥有世界上最长的悬臂桁架跨度”），仍远低于 1,000 m，因此该论点成立。 影片中的梁桥照片显示了一座箱梁桥。
 
-## F2 Arch bridge 600 m
+<a id="f2-arch-bridge-600-m"></a>
+## F2 拱桥 600 m
 
-- Bridge: Tian'e Longtan Bridge, opened to traffic 2024-02-01.
-- Transport Department of Guangxi Zhuang Autonomous Region (2024-02-02) http://jtt.gxzf.gov.cn/xwdt/jtxw/t17945057.shtml
-  > "2月1日，世界最大跨径拱桥——南丹至天峨下老高速公路（以下简称南天高速）天峨龙滩特大桥建成通车。" (On 1 February the world's longest-span arch bridge, the Tian'e Longtan Bridge on the Nandan–Tian'e Xialao expressway (Nantian expressway), was completed and opened to traffic.)
-  > "主桥为计算跨径600米的上承式劲性骨架混凝土拱桥" (The main bridge is a deck-type concrete arch bridge with a stiff skeleton and a calculated span of 600 m.)
-- IABSE project page https://www.iabse.org/page-18512
-  > "a recently-built deck-type steel-reinforced concrete arch bridges in China with a world record-breaking effective span of 600 m."
-- Conflict: the Guinness page still lists 575 m (the old record from 2020) and has not been updated; the official figure at opening, 600 m, is used.
+- 桥梁：天峨龙潭大桥，2024年2月1日建成通车。
+- 广西壮族自治区交通运输厅 (2024-02-02) http://jtt.gxzf.gov.cn/xwdt/jtxw/t17945057.shtml
+  > “2月1日，世界最大跨径拱桥——南丹至天峨下老高速公路（以下简称南天高速）天峨龙滩特大桥建成通车。”（2月1日，世界最大跨径拱桥——南丹至天峨下老高速公路（南天高速）天峨龙滩大桥建成通车。）
+  > “主桥为计算跨径600米的上承式刚性骨架混凝土拱桥”（主桥为刚性骨架甲板式混凝土拱桥，计算跨度为600m。）
+- IABSE 项目页面 https://www.iabse.org/page-18512
+  > “中国最近建成的上承式钢筋混凝土拱桥，其有效跨度破世界纪录，达 600 m。”
+- 冲突：吉尼斯页面仍然列出了575 m（2020年的旧记录）并且没有更新；使用开幕时的官方数字 600 m。
 
-## F3 Cable-stayed bridge 1,208 m
+<a id="f3-cable-stayed-bridge-1208-m"></a>
+## F3 斜拉桥 1,208 m
 
-- Bridge: Changtai Yangtze River Bridge, officially opened to traffic 2025-09-09.
-- Changzhou municipal government site (Changzhou Daily, 2025-09-10) https://www.changzhou.gov.cn/ns_news/128175746480025
-  > "常泰长江大桥还是世界最大跨度斜拉桥，主跨1208米" (The Changtai Yangtze River Bridge is also the world's longest-span cable-stayed bridge, with a main span of 1,208 m.)
-- Changzhou Transport Bureau (2025-09-09) https://www.changzhou.gov.cn/ns_news/892175738737795
-  > "2025年9月9日，历经六年建设，常泰长江大桥正式通车。" (On 9 September 2025, after six years of construction, the Changtai Yangtze River Bridge officially opened to traffic.)
-- Xinhua (2025-09-10) https://www.news.cn/politics/20250910/1f8b916613e34a2bad02a5dd2ab24797/c.html
-  > "常泰长江大桥主航道桥是主跨1208米的斜拉桥，创下了最大跨度斜拉桥的世界纪录" (The main-channel bridge of the Changtai Yangtze River Bridge is a cable-stayed bridge with a main span of 1,208 m, setting the world record for the longest-span cable-stayed bridge.)
-- Conflict: Guinness still lists 1,104 m (the old record from 2012) and has not been updated; the official figure at opening, 1,208 m, is used.
+- 桥梁：长泰长江大桥，2025-09-09正式通车。
+- 常州市政府网站（常州日报2025-09-10）https://www.changzhou.gov.cn/ns_news/128175746480025
+  > “常泰长江大桥还是世界最大跨度斜拉桥，主跨1208米”（长泰长江大桥也是世界上跨度最长的斜拉桥，主跨1208m。）
+- 常州市交通运输局 (2025-09-09) https://www.changzhou.gov.cn/ns_news/892175738737795
+  > “2025年9月9日，长江历经六年建设，常泰大桥正式通车。”（2025年9月9日，历经六年建设，常泰长江大桥正式通车。）
+- 新华网(2025-09-10)https://www.news.cn/politics/20250910/1f8b916613e34a2bad02a5dd2ab24797/c.html
+  >“常泰长江大桥主航道桥是主跨1208米的斜拉桥，孤零了最大跨度斜拉桥的世界纪录”（长泰长江大桥主航道桥为斜拉桥，主跨1208m，创造了最长跨度斜拉桥的世界纪录。）
+- 冲突：吉尼斯仍然列出了1,104 m（2012年的旧记录）并且没有更新；使用开幕时的官方数字 1,208 m。
 
-## F4 Suspension bridge 2,023 m
+<a id="f4-suspension-bridge-2023-m"></a>
+## F4 吊桥 2,023 m
 
-- Bridge: 1915 Çanakkale Bridge, opened to traffic 2022-03-18.
-- Guinness World Records https://www.guinnessworldrecords.com/world-records/longest-bridge-cable-suspension-bridge
-  > "The longest cable suspension bridge is 2023 metres (6,637 ft) and was achieved by the 1915 Çanakkale Bridge, which was built in Çanakkale, Turkey, on 18 March 2022."
-- Turkish General Directorate of Highways (KGM) project page https://www.kgm.gov.tr/Sayfalar/KGM/SiteTr/Projeler/ProjelerDetay.aspx?q=148
-  > "2023 metrelik orta açıklığı ile … Dünyanın En Uzun Orta Açıklıklı Asma Köprüsü unvanına sahiptir." (With its 2,023-metre main span … it holds the title of the world's longest main-span suspension bridge.)
+- 桥梁：1915年恰纳卡莱大桥，2022年3月18日建成通车。
+- 吉尼斯世界纪录https://www.guinnessworldrecords.com/world-records/longest-bridge-cable-suspension-bridge
+  > “最长的缆索悬索桥长达 2023 米（6,637 英尺），是由 1915 年的恰纳卡莱大桥实现的，该大桥于 2022 年 3 月 18 日在土耳其恰纳卡莱建成。”
+- 土耳其公路总局 (KGM) 项目页面 https://www.kgm.gov.tr/Sayfalar/KGM/SiteTr/Projeler/ProjelerDetay.aspx?q=148
+  > “2023 年将迎来新的一年……Dünyanın En Uzun Orta Açıklıklı Asma Köprüsü unvanına sahiptir。” （主跨长达 2,023 米……拥有世界上最长主跨悬索桥的称号。）
 
-## F5 The main span is often set by navigation
+<a id="f5-the-main-span-is-often-set-by-navigation"></a>
+## F5 主跨度常通过导航设置
 
-- FHWA, "Steel Bridge Design Handbook: Selecting the Right Bridge Type" (FHWA-HIF-16-002 Vol. 5, 2015) https://rosap.ntl.bts.gov/view/dot/42909
-  > "One critical requirement that often controls the main span lengths for water crossings is navigational clearance."
-- Britannica, "suspension bridge" https://www.britannica.com/technology/suspension-bridge
-  > "the suspension bridge provided an economical solution to the problem of long spans over navigable streams or at other sites where it is difficult to found piers in the stream."
-  > "Modern suspension bridges are light and aesthetically pleasing and can span longer distances than any other bridge form."
+- FHWA，“钢桥设计手册：选择正确的桥梁类型”（FHWA-HIF-16-002 第 5 卷，2015 年）https://rosap.ntl.bts.gov/view/dot/42909
+  > “通常控制跨水道主跨长度的一项关键要求是航行许可。”
+- 大英百科全书《吊桥》https://www.britannica.com/technology/suspension-bridge
+  > “吊桥为通航河流上或其他难以在河流中找到桥墩的地点的大跨度问题提供了经济的解决方案。”
+  > “现代悬索桥重量轻、美观，并且比任何其他桥梁形式可以跨越更长的距离。”
 
-## F6 Piers in the channel and ship collision
+<a id="f6-piers-in-the-channel-and-ship-collision"></a>
+## F6 航道内桥墩与船舶相撞
 
-- FHWA Technical Advisory T 5140.19 https://www.fhwa.dot.gov/engineering/hydraulics/policymemo/t514019.cfm
-  > "…the location and arrangement of the bridge piers in relation to the navigable channel and the resulting vulnerability of the piers to ship collisions"
-  > "to locate and design piers on new bridges in such a way that the risks of collision are reduced to an acceptable level."
+- FHWA 技术咨询 T 5140.19 https://www.fhwa.dot.gov/engineering/hydraulics/policymemo/t514019.cfm
+  > “……桥墩相对于航道的位置和布置以及由此导致的桥墩对船舶碰撞的脆弱性”
+  > “在新桥梁上定位和设计桥墩，以将碰撞风险降低到可接受的水平。”
 
-## Secondary layer on the wall (appears only in the full-wall final shot)
+<a id="secondary-layer-on-the-wall-appears-only-in-the-full-wall-final-shot"></a>
+## 墙上的第二层（仅出现在全墙最终镜头中）
 
-| On screen | Claim | Basis |
+|在屏幕上|宣称|基础|
 |---|---|---|
-| Source card "梁桥 330 · 工程资料" (beam 330 · engineering documents) | 330 m comes from the contractor's project page and the draft design code | F1 |
-| Source card "拱桥 600 · 通车公告" (arch 600 · opening announcement) | 600 m comes from the official announcement at opening | F2 |
-| Source card "斜拉 1,208 · 通车公告" (cable-stayed 1,208 · opening announcement) | 1,208 m comes from the official announcement at opening | F3 |
-| Source card "悬索 2,023 · 纪录认证" (suspension 2,023 · record certification) | 2,023 m comes from the record certification (Guinness) | F4 |
-| Sticky note "1,208 − 1,000 = 208 / 刚好够" (just enough) | The cable-stayed record span exceeds the 1,000 m the problem requires by only 208 m, matching the "勉强" (barely) dimension line | F3 + problem statement |
-| Sticky note "2,023 ÷ 1,000 ≈ 2 / 两倍有余" (more than double) | 2,023 / 1,000 = 2.023, slightly more than double | F4 + problem statement |
-| Small sketch "通航净空" (navigational clearance) | Only a schematic box for the channel clearance and the section of a ship, no numbers | F5 |
-| Five pinned photo prints | The same set of photos used for the cut-outs in the film (unnamed, see `CREDITS`) | — |
+|源卡《梁桥330·工程资料》（梁330·工程资料）|330 m 来自承包商的项目页面和设计规范草案|F1|
+|源卡“拱桥600·通车公告”（拱桥600·通车公告）|600m来自开业时官方公告|F2|
+|源卡《斜拉1208·通车公告》（斜拉1208·通车公告）|1,208 m 来自开幕时的官方公告|F3|
+|源卡《悬索2,023·记录认证》（悬索2,023·纪录认证）|2,023 m 来自记录认证（吉尼斯）|F4|
+|便签“1,208 − 1,000 = 208 / 刚好够”（刚好够用）|斜拉索创纪录跨度仅比问题所需的 1,000 m 多出 208 m，符合“勉强”尺寸线|F3+问题陈述|
+|便签“2,023 ÷ 1,000 ≈ 2 / 两倍有余”（超过一倍）|2,023 / 1,000 = 2.023，略多于两倍|F4+问题陈述|
+|小素描《通航净空》（航海通关）|只有航道净空和船舶剖面的示意图，没有数字|F5|
+|五张固定的照片打印|用于影片中的剪纸的同一组照片（未命名，请参阅 `CREDITS`）|—|
 
-Simplification in the problem: the whole 1,000-metre-wide river is treated as navigation channel, so "no piers in the channel, one span across" means a main span of at least 1,000 m. In real projects the channel takes up only part of the river, and the main span is set by the width of the navigational clearance (F5).
+问题简单化：将整条1000米宽的河流视为航道，所以“航道无桥墩，一跨”是指主跨至少1000米。在实际工程中，河道仅占河流的一部分，主跨度由通航净空宽度（F5）确定。
 
-## Check before the final render
+<a id="check-before-the-final-render"></a>
+## 最终渲染前检查
 
-Before the final render, the on-screen text in `scenes/_gen_film.py`, the narration in `audio/lines.json` and this table were compared item by item; all three agree.
+在最终渲染之前，将`scenes/_gen_film.py`中的屏幕文本、`audio/lines.json`中的旁白与该表格进行了逐项比较；三人都同意。

@@ -1,114 +1,123 @@
-# Paper Pop-up Book — our demo
+<a id="paper-pop-up-book--our-demo"></a>
+# 纸质立体书 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Little Sprite's Adventure* (*Pip's Paper Adventure*, 小精灵冒险记) (133.0 s, 1920×1080, 60 fps) · `paper-popup.mp4` · source in [`demo/`](demo/) · engine: three.js r170 (WebGL2) rendered frame by frame in headless Chrome, Canvas2D for all paper art, Python for score editing and mixing
+示范：*小精灵的冒险*（*皮普的纸冒险*，小精灵冒险记）（133.0 s，1920×1080，60 fps）·`paper-popup.mp4`·来源在[`demo/`](demo/)·引擎： three.js r170 (WebGL2) 在无头 Chrome 中逐帧渲染，Canvas2D 用于所有纸质艺术，Python 用于配乐编辑和混合
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A storybook opens on a real wooden desk and becomes a stage; at the end the hero jumps off the page into the real room.
+一本故事书在一张真正的木桌上打开，变成了一个舞台；最后，英雄从书页跳入真实的房间。
 
-How the demo used the native moves:
+示范如何使用风格特有表现手法：
 
-| Native power | Story use in the demo |
+|原生电源|示范中的故事使用|
 |---|---|
-| **The book opens** | The opening is a physical ritual: a closed book, a creak, the cover swings up and the world pops up piece by piece with a sparkle. It is the "once upon a time". |
-| **Page turn = scene change** | Each chapter is one spread. Transitions are real page turns: a curved sheet whose front is the old ground and whose back is the new sky, while the old pop-ups fold down and the new ones spring up. No cuts inside the book. |
-| **Paper mechanisms** | Pull-tab tricks are story beats: a sun on a stick that rises from behind the hills and sinks at dusk, a door on a hinge, a river of three wave strips that slide, a sky of **four slats that flip from day to night** like a three-sided billboard, a moon and stars that drop in on strings. |
-| **Paper as character** | A crumpled-up grump (Crumple) is **smoothed out** and poofs into a folded paper plane (Fold), who becomes a friend and later a vehicle. |
-| **The edge of the page** | The last page is unfinished (pencil sketches, "The End" printed on the ground); the hero looks out past the edge, jumps, and lands on the real desk under the real lamp. |
-| **The real light was always there** | At dusk "another light came on" is the actual desk lamp brightening over the page. The payoff: "a reading lamp… and someone, reading along." |
+|**本书打开**|打开是一种物理仪式：一本合上的书，吱吱作响，封面打开，世界一点一点地闪现出来。这就是“从前”。|
+|**翻页=场景变更**|每一章都是一个展开。过渡是真正的翻页：一张弯曲的纸，正面是旧的地面，背面是新的天空，而旧的弹出窗口向下折叠，新的弹出窗口弹出。书内无删减。|
+|**纸机构**|拉环魔术是故事节拍：一根棍子上的太阳从山后升起，黄昏时下沉，一扇铰链上的门，一条由三个滑动的波浪条组成的河流，**的天空，四个从白天到黑夜翻转的板条**像一个三边广告牌，月亮和星星挂在绳子上。|
+|**纸质**|一个皱巴巴的脾气暴躁的人（Crumple）被**抚平了**，然后扑进了一架折叠纸飞机（Fold），它成为了朋友，后来又变成了交通工具。|
+|**页边**|最后一页未完成（铅笔草图，“结束”印在地上）；英雄向边缘看去，跳跃并落在真实灯下的真实桌子上。|
+|**真正的光一直在那里**|黄昏时，“另一盏灯亮了”是实际的台灯在页面上变亮。回报：“一盏阅读灯……和一个人一起读书。”|
 
-Story shape: real desk establishing (10 s) → book opens → Chapter 1 home world and the hero's wish (the light beyond the page) → Chapter 2 an obstacle character, beaten by stomping and then *helped* (smoothed out), who turns into a companion → Chapter 3 a journey with a gag (a whale spouts confetti) and a day → night flip → Final Chapter: the blank last page, fear, "Here goes!" → the companion catches the hero and they fly out over the desk → landing, reveal, "Hello, big world!" → end title on the desk with "The End?".
+故事形状：真实的桌子建立（10秒）→书打开→第一章家园和英雄的愿望（书页之外的光）→第二章一个障碍角色，被跺脚击败，然后“帮助”（平滑），变成一个同伴→第三章一段有堵嘴的旅程（鲸鱼喷出五彩纸屑）和白天→夜晚翻转→最后一章：空白的最后一页，恐惧，“这里走了！” → 同伴抓住了英雄，他们飞出了桌子 → 着陆，显示，“你好，大世界！” → 在桌子上以“结束？”结束标题。
 
-How we suggested adapting it at the time (kept for history; STYLE.md §11 now gives the range): make the topic's world the book's spreads (3–4 chapters, each with one paper mechanism), give the hero one wish that points *outside* the book, and end by crossing into the real room.
+我们当时建议如何对其进行修改（保留在历史中；STYLE.md §11 现在给出了范围）：将主题世界变成书中所展开的（3-4 章，每一章都有一个纸质机制），给英雄一个指向书本*之外*的愿望，最后穿越到真实的房间。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-A single virtual macro camera, fov 30 (56 for the reverse shot), keyed as `[t, pos xyz, target xyz, fov, aperture, focus]` in `main.js SH` and interpolated with a monotone cubic (`track`). Each inner list is one continuous shot; a new list = a hard cut.
+单个虚拟宏摄影机，视场 30（反向镜头为 56），在 `main.js SH` 中键入为 `[t, pos xyz, target xyz, fov, aperture, focus]`，并使用单调三次插值 (`track`)。每个内表都是一个连续的镜头；一份新的清单=一次艰难的削减。
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Establishing | High over the desk (1.1 m away), slow descending dolly towards the closed book; lamp dust motes in the light beam. |
-| Book opens | Settles low and frontal on the page while the cover stands up; the sparkle rises. |
-| In the book | Eye level with the paper actors: camera 5–10 cm above the page, 30–45 cm back, focus on the actor (aperture 2.2–2.5, shallow). Slow lateral moves that follow walks. |
-| Page turn | Pull up and back to a 3/4 view of the whole spread (aperture 1.8–2, deeper) so the turning page reads, then drop into the new world. |
-| Emotional close | Push in to 28 cm on the face (aperture 2.5). |
-| Edge of the page | **Reverse shot**: camera behind Pip (fov 56, focus 11 cm) looking out past the page edge at the real, blurred room and the huge lamp. The only time we see "outside". |
-| Flight out | Cut to a wide front view of the desk (1 m, fov 32); the plane is followed across the desk, then the camera settles low at Pip's height on the wood (aperture 4, focus ~0.52 m). |
-| End | Slow pull back and up to reveal the whole desk, the open book behind, for the end title. |
+|建立|在桌子上方（1.1 m 远），小车缓慢下降至合上的书；光束中的灯尘微粒。|
+|书打开|当封面竖起时，在页面上处于较低且正面的位置；火花升起。|
+|书中|眼睛与纸演员的高度：摄影机页面上方 5-10 厘米，后面 30-45 厘米，聚焦在演员上（光圈 2.2-2.5，浅）。步行后缓慢的横向移动。|
+|翻页|向上拉回整个跨页的 3/4 视图（光圈 1.8-2，更深），以便翻页阅读，然后落入新世界。|
+|情感接近|推入面部 28 厘米（孔径 2.5）。|
+|页面边缘|**反向拍摄**：摄影机在Pip（视场56，焦点11厘米）后面，透过页面边缘看到真实的、模糊的房间和巨大的灯。我们唯一一次看到“外面”。|
+|航班起飞|切换到办公桌的宽前视图（1 m，视场 32）；跟随飞机穿过桌子，然后摄影机落在木头上 Pip 的高度处（孔径 4，焦点 ~0.52 m）。|
+|结尾|慢慢地向后拉，向上拉，露出整个桌子，后面是打开的书，作为最后的标题。|
 
-Depth of field (`post.js`): CoC in pixels, max 14, 64-tap golden-angle spiral gather.
+景深 (`post.js`)：CoC（以像素为单位），最大 14、64 抽头黄金角螺旋聚集。
 
-## Motion numbers
+<a id="motion-numbers"></a>
+## 运动编号
 
-- Pop-ups: `back(seg(t, t0, t0+.55), 1.7)`; each piece's delay is `(.3 − z) × 1.2` s after its spread's `RISE` time; pieces near the back lie back (`dir −1`), others fall forward face-down (`dir +1`).
-- Sway: `sin(1.6t + phase) × sway` around the base (0.01–0.08 rad).
-- Characters: pose quantized to 1/40; eyes `open/happy/wide/closed/dizzy`, mouth `smile/open/o/grin/worried/determined`, blink every 3.7 s. Walk = legs swing by `sin(phase)`, bounce `|sin(phase)| × 1.2 mm`, arms counter-swing; phase advances 1.8 cm per half step. Turning: `S.face = cos(...)` animates the `scale.x` flip (FrontSide front drawing, BackSide back-of-head drawing).
-- Jumps: `arc(t, t0, t1, a, b, h)` + squash on take-off and landing (`land`, `crouch` in `pipState`) + paper-puff cloud.
-- Page turn (`book.setLeaf(u)`): 40-segment strip, `φ = θ·(1 − L·(s − ½))`, bend `L = .55·sin(πu)`, eased with `eio` over 2.3 s.
-- Mechanisms: four sky slats flip 0.28 s apart; the door swings with `back()`; river strips slide ±12 mm on each "swish" of the narration.
+- 弹出窗口：`back(seg(t, t0, t0+.55), 1.7)`；每个片段的延迟是其传播时间 `RISE` 后的 `(.3 − z) × 1.2` 秒；靠近背部的棋子向后躺着（`dir −1`），其他棋子面朝下向前倒下（`dir +1`）。
+- 摇摆：`sin(1.6t + phase) × sway` 围绕底座（0.01–0.08 rad）。
+- 角色：姿势量化为1/40；眼睛 `open/happy/wide/closed/dizzy`，嘴 `smile/open/o/grin/worried/determined`，每 3.7 秒眨眼一次。行走=双腿摆动`sin(phase)`，弹跳`|sin(phase)| × 1.2 mm`，手臂反摆；相位每半步前进 1.8 厘米。转动：`S.face = cos(...)` 对 `scale.x` 翻转进行动画处理（FrontSide 正面图、BackSide 后脑图）。
+- 跳跃：`arc(t, t0, t1, a, b, h)` + 起飞和着陆时挤压（`land`、`pipState` 中的 `crouch`）+ 纸泡云。
+- 翻页 (`book.setLeaf(u)`)：40 段条带，`φ = θ·(1 − L·(s − ½))`，弯曲 `L = .55·sin(πu)`，使用 `eio` 在 2.3 秒内缓解。
+- 机构：四个天板条翻转间隔0.28秒；门以 `back()` 摆动；叙述的每一次“嗖嗖”，河流带都会滑动 ±12 毫米。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Narration**: one warm storyteller, Kokoro `af_bella`, speed 0.9, en-us; 15 short lines (2–9 s), written like a picture book ("The cardboard hills. The paper sun on its wooden stick."). Lines pronounced differently from how they are displayed live in `tts/lines.json` (e.g. "Swish Swash Sea" without the hyphen; "..." instead of "…"); displayed text lives in `story.js VO`. Trim silence at 1 % of peak (+10 ms head, +100 ms tail). Every line checked with whisper (`asr.py`, `words.py` for word times to sync gags).
-- **Character blips**: bubbles type at 30 chars/s, a blip every second letter; Pip = square wave, bright pitches (C6-ish), Crumple = low 180–240 Hz, Fold = triangle wave.
-- **Music**: three Kevin MacLeod tracks (CC BY 4.0), edited in `music/edit.py`: *Dreamy Flashback* (0–16.2 s, fade out 1.6 s) for the real desk; *Jaunty Gumption* from 15.4 s for the whole paper world, with **one bar-aligned internal jump cut** (73.21 s → 102.79 s of the track, 0.42 s crossfade) chosen by `music/jump.py`/`jump2.py` (beat-synced chroma + MFCC self-similarity, cut length a multiple of 4 beats) so that the song's real ending lands at 104.22 s — the instant Pip jumps off the page; *Heartwarming* from its 39.38 s mark at 104.8 s (×1.15) for the real world and the end card.
-- **Sound effects**, all synthesized in `mix.py` from `events.json` (250 events exported by `render.mjs events`): book creak + thump, pop-up pops (sine sweep + paper crinkle), page swish, door squeak, boing, hops, footsteps (tiny taps + crinkle on each walk half-cycle), paper roll, "!" bang, stomps, NICE/GREAT arpeggios, sparkles (bells), poof, paper folding, whoosh, splash, whale spout, slat clacks, star tinks, lamp switch + warm chord, landing skid. Per-type gains in the `G` table.
-- **Ambience beds** per spread: room tone + clock ticks on the desk, birds + river in the valley, crickets at dusk, birds + leaf rustle in the forest, waves at sea, room tone on the last page and in the real world.
-- **Mix**: voice high-passed 90 Hz, compressed (−24 dB, 3:1), limited, set 8.5 dB above the music in speech regions; music ducked by 40 % under speech (300 ms smoothing); 7 % reverb on voice; SFX limited per channel to 0.5; ambience ×2. Normalise to 0.89 peak, then `mux.sh` applies `loudnorm I=−14 TP=−1.2 LRA=11`.
+- **旁白**：一位温暖的讲故事者，Kokoro `af_bella`，速度0.9，en-us； 15 行短行（2-9 秒），写得像一本图画书（“纸板山。木棍上的纸太阳。”）。各行的发音与 `tts/lines.json` 中的实际显示方式不同（例如，“Swish Swash Sea”没有连字符；“...”而不是“...”）；显示的文本位于 `story.js VO` 中。在峰值的 1% 处修剪静音（+10 毫秒头部，+100 毫秒尾部）。每行都用Whisper 语音检查（`asr.py`、`words.py` 的字时间来同步搞笑）。
+- **字符 blips**：30 chars/s 处的气泡类型，每隔一个字母一个 blip； Pip = 方波，明亮的音调（C6-ish），Crumple = 低 180–240 Hz，Fold = 三角波。
+- **音乐**：三首 Kevin MacLeod 曲目 (CC BY 4.0)，在 `music/edit.py` 中编辑：*梦幻闪回*（0–16.2 秒，淡出 1.6 秒）用于真实桌面； *Jaunty Gumption* 从 15.4 秒开始，适用于整个纸质世界，采用 **one bar 对齐内部跳切**（73.21 秒 → 102.79 秒轨道，0.42 秒交叉淡入淡出），由 `music/jump.py`/`jump2.py` 选择（节拍同步色度 + MFCC 自相似性，将长度缩短为 4 节拍的倍数），以便歌曲的真正结局落在 104.22 秒 - Pip 跳出页面的那一刻； *暖心*现实世界和片尾卡的 39.38 秒为 104.8 秒 (×1.15)。
+- **音效**，全部从`events.json`在`mix.py`中合成（`render.mjs events`导出的250个事件）：书本吱吱声+重击声，弹出弹出声（正弦扫频+纸张皱褶），翻页声，门吱吱声，嗡嗡声，跳跃、脚步声（微小的敲击声+每次行走半周期的皱纹）、纸卷、“！”砰、跺脚、NICE/GREAT 琶音、闪光（铃声）、噗、折纸、嗖嗖、飞溅、鲸鱼喷水、板条咔哒声、星星叮当声、灯开关+温暖和弦、着陆打滑。 `G` 表中每种类型的增益。
+- **氛围床**每页：房间音+桌子上的时钟滴答声，鸟儿+山谷里的河流，黄昏时的蟋蟀，鸟儿+森林里树叶的沙沙声，海上的波浪，最后一页和现实世界中的房间音。
+- **混音**：语音高通90 Hz，压缩（−24 dB，3:1），有限，在语音区域设置高于音乐8.5 dB；音乐在语音下降低了 40%（300 毫秒平滑）；声音混响 7%；每个通道的 SFX 限制为 0.5；氛围×2。标准化为 0.89 峰值，然后 `mux.sh` 应用 `loudnorm I=−14 TP=−1.2 LRA=11`。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-**Scale (metres):** book page 0.44 × 0.30 (`BW`, `BD`), page block height `PG` = 0.0175. Pip is `H = 0.036` tall, Crumple 0.042, the paper plane 0.052 long, the whale 0.10 wide, the boat 0.062. Hills 0.2–0.26 wide, trees 0.05–0.16 tall. Camera near plane 0.004 m.
+**比例（米）：**书页0.44×0.30（`BW`、`BD`），页块高度`PG` = 0.0175。 Pip 高为 `H = 0.036`，Crumple 0.042，纸飞机长 0.052，鲸鱼宽 0.10，船 0.062。山丘 0.2–0.26 宽，树木 0.05–0.16 高。 摄影机近平面 0.004 m。
 
-**The desk:** walnut table, desk lamp, teacup, alarm clock, pencil, potted plant (Poly Haven CC0); `lythwood_lounge_2k.hdr` as environment and background (blurriness .22, yaw 2.3), walnut veneer (`#c9a88a` tint, env .8), a procedural pencil. The book: hardcover 44 × 30 cm, spine on the far side, the cover swings to 90° and stands behind the page as a painted sky.
+**书桌：**胡桃木桌、台灯、茶杯、闹钟、铅笔、盆栽（Poly Haven CC0）； `lythwood_lounge_2k.hdr` 作为环境和背景（模糊度 0.22，偏航 2.3），胡桃木贴面（`#c9a88a` 色调，环境 0.8），程序铅笔。本书：精装本，44 × 30 厘米，书脊在远侧，封面旋转 90°，站在书页后面，就像一幅彩绘的天空。
 
-**Cut-paper finish** (`paper.js finishCut(art, border, o)`), 16+ angles on three rings (r, .66r, .33r): grey cardboard edge `#b9ad9c`, border + 2.5 px, offset 1.5 px down; off-white border `#fffdf7`, 12–16 px (static props 14 px at 5200 px/m, characters 16 px); 512 px grain texture at alpha .5–.85.
+**剪纸饰面** (`paper.js finishCut(art, border, o)`)，三个环上16+角度(r、.66r、.33r)：灰色纸板边缘`#b9ad9c`，边框+ 2.5 px，向下偏移1.5 px；灰白色边框 `#fffdf7`，12–16 像素（静态道具 14 像素，5200 px/m，字符 16 像素）； 512 像素颗粒纹理，alpha 0.5–0.85。
 
-**Drawing** (`art.js`): ink `#3a2a24`, outline 9 px (`LW`), detail 5 px (`LW2`); `crescent(x, path, shade, dx, dy, base)`; `blob`, `smoothClosed` with 3-harmonic noise. Faces: big black oval eyes with two white highlights, curved mouth, pink cheeks.
+**绘画** (`art.js`)：墨水 `#3a2a24`，轮廓 9 像素 (`LW`)，细节 5 像素 (`LW2`)； `crescent(x, path, shade, dx, dy, base)`; `blob`、`smoothClosed` 具有 3 次谐波噪声。脸：黑色的椭圆形大眼睛，有两个白色亮点，弯嘴，粉红色的脸颊。
 
-| Use | Colours |
+|使用|颜色|
 |---|---|
-| Home valley | grass `#86c763`→`#9fd57a`, hills `#b5e39a` `#a9dd8c` `#8fd06e` (shade `#6fb553`), path `#ecd49a`, sky `#7cc6ef`→`#c9ecf7` |
-| Forest | ground `#4f8f46`→`#62a653`, back pines `#8cc9a0`, front pines `#3f9a5c`, sky `#a8e0cf` with light shafts |
-| Sea | waves light→dark `#9ad8f5` `#79c3ee` `#58ade3` `#3f95d6` `#2f7fc4`, sky day `#4fb3ea`, night `#131d44`→`#4a5a94` |
-| Last page | cream paper `#f5eedc`, graphite pencil lines `rgba(70,72,82,.45)`, IM Fell English "The End" |
-| Hero Pip | skin `#ffe2bd` (shade `#f3c393`), leaf cap `#62c24c`/`#3e9a34`, tunic `#3fa1de`/`#2a78b3`, boots `#8a5530`, wings `#d4f3ff` |
-| Accents | mushroom-house red `#e8413a`, sun `#ffd766`, sign/banner gold `#ffcf3f`, ribbon red `#d8423a` |
-| Book | cloth `#1f5566`, gold foil `#e0b456` (metalness map), page edges `#efe6d2` with fine lines |
+|家谷|草`#86c763`→`#9fd57a`，丘陵`#b5e39a` `#a9dd8c` `#8fd06e`（阴影`#6fb553`），路径`#ecd49a`，天空`#7cc6ef`→`#c9ecf7`|
+|森林|地面`#4f8f46`→`#62a653`，后松`#8cc9a0`，前松`#3f9a5c`，天空`#a8e0cf`带光轴|
+|海|波光→暗`#9ad8f5` `#79c3ee` `#58ade3` `#3f95d6` `#2f7fc4`，天`#4fb3ea`，夜`#131d44`→`#4a5a94`|
+|最后一页|奶油纸`#f5eedc`，石墨铅笔线`rgba(70,72,82,.45)`，IM Fell英文“The End”|
+|英雄皮普|皮肤`#ffe2bd`（阴影`#f3c393`），叶帽`#62c24c`/`#3e9a34`，外衣`#3fa1de`/`#2a78b3`，靴子`#8a5530`，翅膀`#d4f3ff`|
+|口音|蘑菇屋红`#e8413a`，太阳`#ffd766`，sign/banner金色`#ffcf3f`，丝带红`#d8423a`|
+|书|布料`#1f5566`，金箔`#e0b456`（金属度图），页面边缘`#efe6d2`有细线|
 
-**Pop-up pieces** (`cutmesh.js cutMesh`): back colour `#efe8da` (or `#8a5a34` for the door) via `onBeforeCompile`; `alphaTest .5` + `alphaToCoverage`; `customDepthMaterial`. The boat = sail card behind + hull card in front; Fold = four triangles hinged on a keel.
+**弹出件** (`cutmesh.js cutMesh`)：背面颜色`#efe8da`（或门的`#8a5a34`）通过`onBeforeCompile`； `alphaTest .5` + `alphaToCoverage`； `customDepthMaterial`。船=后面的帆卡+前面的船体卡；折叠 = 四个三角形铰接在龙骨上。
 
-**Fonts:** Fredoka 500/600/700 (subtitles, bubbles, signs), Lilita One (cover, chapter banners, action words, end title), IM Fell English (cover tagline, "The End", "The End?"), ZCOOL KuaiLe (Chinese). All OFL, downloaded to `demo/fonts/` by `fetch_fonts.mjs` (Chinese subset = only the characters in the source files).
+**字体：** Fredoka 500/600/700（字幕，气泡，标志），Lilita One（封面，章节横幅，动作词，结束标题），IM Fell English（封面标语，“The End”，“The End？”），ZCOOL KuaiLe（中文）。所有OFL，由`fetch_fonts.mjs`下载到`demo/fonts/`（中文子集=仅源文件中的字符）。
 
-**Titles and subtitles as built:**
-- Narration subtitles (`hud.js drawSubs`): English Fredoka 500 40 px, cream `#fffaf0`, 8 px dark-brown outline, soft shadow, wrap at 1720 px; Chinese in ZCOOL KuaiLe 32 px below. Fade in 0.3 s before the line, hold until 0.25 s after the audio, fade 0.3 s.
-- Speech bubbles (`drawBubbles`): radius 44, 6 px ink outline, soft drop shadow, tail projected from 3D every frame, pops in with `back()`, English at 30 chars/s (Fredoka 600 46 px), then the Chinese (ZCOOL KuaiLe 32 px, `#7a5e4c`) and a bobbing red "next" triangle.
-- Chapter banners (`drawChapter`): a hanging cardboard sign on two strings, red ribbon "Chapter N", title in Lilita One 84 px gold `#ffcf3f` with a 12 px ink stroke, Chinese under it.
-- Action words (`drawAction`, `drawBang`): "NICE!" / "GREAT!" in italic Lilita One 120 px, gradient fill, white + ink double stroke, rays; a red "!" over the startled hero.
-- Title: the book cover (cloth texture + gold-foil "The Little Sprite's Adventure ~ a paper tale ~" with a roughness/metalness map, and a round Pip illustration).
-- A bilingual `.srt` is generated from `story.js` (`make_srt.mjs`): narration + bubbles, English line then Chinese line.
+**内置标题和字幕：**
+- 旁白字幕（`hud.js drawSubs`）：英文Fredoka 500 40 px，奶油色`#fffaf0`，8 px深棕色轮廓，柔和阴影，1720 px换行；中文在ZCOOL快乐32px以下。行前淡入 0.3 秒，保持到音频后 0.25 秒，淡出 0.3 秒。
+- 语音气泡 (`drawBubbles`)：半径 44、6 px 墨水轮廓、柔和的阴影、每帧从 3D 投影的尾部、以 `back()` 弹出，英文位于 30 chars/s (Fredoka 600 46 px)，然后是中文 (ZCOOL KuaiLe 32 px， `#7a5e4c`）和一个摆动的红色“下一个”三角形。
+- 章节横幅 (`drawChapter`)：两根绳子上悬挂的纸板标志，红丝带“第 N 章”，标题为 Lilita One 84 px 金色 `#ffcf3f`，带有 12 px 墨迹笔画，下​​方有中文。
+- 动作词（`drawAction`、`drawBang`）：“很好！” / “伟大的！”斜体 Lilita One 120 px，渐变填充，白色 + 墨水双描边，射线；一个红色的“！”越过受惊的英雄。
+- 标题：书的封面（布质+金箔《小精灵的冒险～纸上的故事～》，附有roughness/metalness地图，以及圆形Pip插图）。
+- 由`story.js`（`make_srt.mjs`）生成双语`.srt`：旁白+气泡，英文行然后中文行。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-`drawEnd`, from 123.4 s, over the live desk shot: title in Lilita One 96 px gold (y 170), Chinese title (y 262), italic "The End?" popping in (y 350), then from 127.6 s the sign-off and the asset credits (22 px, y 960/998/1036; the Chinese row uses `'"ZCOOL KuaiLe", Fredoka'`) fade in together; fade to black over the last 1.5 s.
+`drawEnd`，从 123.4 秒开始，在直播台上镜头：Lilita One 96 px 金色标题（y 170），中文标题（y 262），斜体“The End？”弹出 (y 350)，然后从 127.6 秒开始，签核和资产积分 (22 px, y 960/998/1036；中文行使用 `'"ZCOOL KuaiLe", Fredoka'`) 一起淡入；在最后 1.5 秒内褪色为黑色。
 
-The sign-off **"LemoLab × Claude Opus 5.5"** (× = U+00D7) belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card. In the demo it sits centred under "The End?" at y 430: Fredoka 600 36 px, cream `#fffaf0` fill with a 7 px `rgba(30,20,14,.75)` outline (it lies over the cream backdrop page, so the outline is what makes it read), fading in with the asset credits at 127.6 s, never covering the characters.
+签核 **"LemoLab × Claude Opus 5.5"** (× = U+00D7) 仅属于本库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。在示范中，它位于“The End?”下方的中心位置。在 y 430：Fredoka 600 36 px，奶油色 `#fffaf0` 填充 7 px `rgba(30,20,14,.75)` 轮廓（它位于奶油色背景页上，因此轮廓是让它读取的原因），在 127.6 秒处随着资产信用淡入，从不覆盖角色。
 
-## Pitfalls tied to this demo
+<a id="pitfalls-tied-to-this-demo"></a>
+## 与示范相关的陷阱
 
-- **A single-plane boat hid the character sitting in it**: split into sail (behind, z −3 mm) and hull (in front, z +2 mm) with Pip between them.
-- **Foreground blur**: forest ferns and a bush at 20.9 s filled the frame near the lens.
-- **Mixer bug**: passing a stereo (N×2) array to a 1-D limiter silently crushed all SFX to −96 dB. Limit each channel separately.
-- **Shadow settings that worked**: spot shadow map 4096², bias −6e-5, normalBias 4e-4. Leaf materials: emissive map = colour map, emissive .42.
-- **Headless WebGL speed**: default Chrome uses SwiftShader (~620 ms/frame); `--use-angle=gl --enable-gpu --ignore-gpu-blocklist` gives tens of ms per frame on Apple Silicon. Serve over HTTP (`serve.mjs`, started inside `render.mjs`).
-- **Poly Haven API**: Python `urllib` gets 403; download with `curl`.
-- **Font subsetting**: `fetch_fonts.mjs` only includes characters present in `story.js/hud.js/main.js/art.js` at download time. The ZCOOL KuaiLe subset has no Latin glyphs, so Latin words in the Chinese credit row fell back to a system serif; use `'"ZCOOL KuaiLe", Fredoka'`.
-- **Redraw cost**: Pip's canvases are redrawn only when the pose (quantized to 1/40) changes.
+- **一艘单翼船隐藏了坐在里面的角色**：分成帆（后面，z −3 毫米）和船体（前面，z +2 毫米），中间有 Pip。
+- **前景模糊**：森林蕨类植物和灌木丛在20.9秒时充满了镜头附近的画面。
+- **混音器错误**：将立体声 (N×2) 阵列传递到 1-D 限制器，默默地将所有 SFX 压碎至 −96 dB。分别限制每个通道。
+- **有效的阴影设置**：点阴影贴图4096²，偏差-6e-5，正常偏差4e-4。叶子材质：自发光贴图 = 颜色贴图，自发光 0.42。
+- **Headless WebGL 速度**：默认 Chrome 使用 SwiftShader (~620 ms/frame)； `--use-angle=gl --enable-gpu --ignore-gpu-blocklist` 在 Apple Silicon 上每帧提供数十毫秒的时间。通过 HTTP 提供服务（`serve.mjs`，在 `render.mjs` 内部启动）。
+- **Poly Haven API**：Python `urllib` 获得 403；使用 `curl` 下载。
+- **字体子集**：`fetch_fonts.mjs`仅包括下载时`story.js/hud.js/main.js/art.js`中存在的字符。智酷快乐子集没有拉丁字形，因此中文学分行中的拉丁字回落到系统衬线；使用 `'"ZCOOL KuaiLe", Fredoka'`。
+- **重画成本**：仅当姿势（量化为1/40）改变时，Pip的画布才会重画。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/paper-popup/demo/
@@ -130,7 +139,7 @@ styles/paper-popup/demo/
   mux.sh      segments + mix → ../paper-popup.mp4        make_srt.mjs  → ../paper-popup.srt
 ```
 
-All commands can be run from the repo root. Python = the repo `.venv` (numpy, scipy, soundfile, librosa, kokoro-onnx, faster-whisper are installed there).
+所有命令都可以从存储库根目录运行。 Python = 存储库 `.venv`（其中安装了 numpy、scipy、soundfile、librosa、kokoro-onnx、faster-whisper）。
 
 ```sh
 D=styles/paper-popup/demo; PY=.venv/bin/python
@@ -156,27 +165,28 @@ node $D/render.mjs video 8            # → out/seg_0..7.mp4 + out/list.txt
 zsh $D/mux.sh                         # → styles/paper-popup/paper-popup.mp4 (OUT=... to write elsewhere)
 node $D/make_srt.mjs                  # → styles/paper-popup/paper-popup.srt
 ```
-Helpers: `shot.mjs page.html out.png` (screenshot any page, e.g. `sheet.html` = character & prop model sheet), `probe.mjs '<js expr>'` (evaluate inside the loaded scene; `window.DBG` exposes pip/boat/fold/whale/book/cam), `gltest.mjs` (GPU flag benchmark), `tile.py` (contact sheet of stills), `music/survey.py` (tempo/loudness survey of candidate tracks). The generic `node core/render/still.mjs styles/paper-popup/demo 30` also works (the page uses only relative URLs).
+助手：`shot.mjs page.html out.png`（对任何页面进行屏幕截图，例如 `sheet.html` = 角色和道具角色设定表）、`probe.mjs '<js expr>'`（在加载的场景内进行评估；`window.DBG` 公开 pip/boat/fold/whale/book/cam）、`gltest.mjs` （GPU 标志基准）、`tile.py`（剧照联系表）、`music/survey.py`（tempo/loudness 候选曲目调查）。通用 `node core/render/still.mjs styles/paper-popup/demo 30` 也可以使用（该页面仅使用相对 URL）。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-**Coordinates.** World = metres, y up; desk top at y = −PG relative to the page. `book.stage` is the page frame: x ∈ [−0.22, 0.22] left→right, z ∈ [0, 0.30] from the spine (far) to the reader (near), y up from the page. `book.sky` is the standing backdrop frame (after the cover opens): x as above, y ∈ [0, 0.30] up the backdrop, small +z = in front of it. Characters go in `book.stage`; hanging clouds/moon/stars go in `book.sky`.
+**坐标.** 世界 = 米，y 向上；桌面相对于页面的 y = −PG 位置。 `book.stage` 是页框：x ∈ [−0.22, 0.22] 左→右，z ∈ [0, 0.30] 从书脊（远）到读者（近），y 从页面向上。 `book.sky` 为立式背景框（盖子打开后）：x 如上，y ∈ [0, 0.30] 位于背景上方，小 +z = 位于其前面。字符进入`book.stage`；挂clouds/moon/stars进去`book.sky`。
 
-| Module | Key API | Notes |
+|模块|关键API|笔记|
 |---|---|---|
-| `lib.js` | `seg(t,a,b)`, `ss`, `eio`, `eo`, `ei`, `back(t,s)`, `spring(t,k,z)`, `env(t,a,b,fi,fo)`, `mulberry(seed)`, `track([[t,[…]],…])` | all animation is `f(t)`; `track` = monotone cubic keyframes (camera, flight path) |
-| `paper.js` | `cv(w,h)`, `finishCut(art, border=14, {paper, edge, grain, grainA})`, `paperFill(x,w,h,col,seed,mott)`, `crescent(x,pathFn,shade,dx,dy,base)`, `blob(x,cx,cy,rx,ry,wob,seed)`, `sh(x,fill,lw,stroke)`, `smoothClosed/smoothOpen`, `GRAIN`, `INK` | Canvas2D toolkit for anything paper |
-| `art.js` | `cut(wm,hm,draw,{pad,border,ax,ay,raw})` → `{c,w,h,ax,ay}` at `PPM`=5200 px/m; props `hill(w,h,col,shade,seed,{bumps,dots})`, `lolliTree(h,col,shade,seed)`, `pine`, `bush`, `flower(h,petal,seed)`, `mushHouse(h)`, `door`, `windowGlow`, `sunOnStick(r,stick)`, `cloud(w,seed)`, `sign(w,text)`, `fence(w,h)`, `waveStrip(w,h,col,dark,seed,n)`, `boat(w,'sail'|'hull')`, `moon`, `star`, `island`, `mushroom`, `log`, `fern`, `sketchTree`, `sketchHouse`, `leafBit`, `bang`; characters `drawPip(x,pose)`, `drawPipBack`, `drawCrumple(x,{mood,blink,mouthOpen})`, `drawWhale(x,{happy})` | every prop returns an item for `cutMesh`; anchor (ax, ay) = bottom centre by default |
-| `cutmesh.js` | `cutMesh(item,{s,backCol,shadow,tex})` → Group (origin = anchor), `blobShadow(r,a)`, `thread(len)`, `particles(geo,mat,n,(i,t)=>({x,y,z,rx,ry,rz,s,col})|null)` → InstancedMesh with `.userData.update(t)` | cut-out shadows, paper-coloured back |
-| `book.js` | `coverCanvases(drawIcon)` → `{c,m}`; `makeBook(cover)` → `{root, stage, sky, groundMat, backMat, leafFront, leafBack, setOpen(θ), setLeaf(u), coverMat}`; `texOf(canvas,{linear})`; `BW BD PG` | `setOpen(π/2)` = fully open; set `groundMat.map`/`backMat.map` per spread; `setLeaf(0..1)` = page turn (0/1 hides the leaf) |
-| `sets.js` | `pages()` → canvases `sky0 ground0 sky1 ground1 sky2day sky2night ground2 sky3 ground3` (2048 × 1396, `gx(x)`/`gz(z)` map metres to pixels); `buildSets(book)` → `{L, ex}`; `updatePops(L,t)`; `RISE[spread]`, `FOLD[spread]`; internal `popper(list, spread, parent, item, x, y, z, {d, dir, sway, ph, pop, ry})` | add a spread = page art + a block of `popper` calls with a new spread index, and extend `RISE/FOLD/TURNS` |
-| `actors.js` | `makePip(H)` → `{root, body, shadow, pose(p), head()}`; `makeCrumple(D)`; `makeFold(L,S,KD)` → `{fold(f 0..1), drawFace(mood,blink)}`; `makeWhale(w)` → `{setHappy}`; `makeBoat(w)` | pose `p` = `{walk, stride, armL, armR, flap, eyes, mouth, look:[x,y], blink, lean}` |
-| `post.js` | `makePost(renderer, scene, cam, w, h)` → `{composer, dof:{focus, aper, maxCoc}, bloom, vig:{uniforms:{amt,fade,warm}}}` | call `post.composer.render()` instead of `renderer.render` |
-| `hud.js` | `drawSubs(ctx,t,dur)`, `drawBubbles(ctx,t,{who:[sx,sy]})`, `drawChapter`, `drawAction(ctx,t,[{t0,text,p,col}])`, `drawBang`, `drawEnd`, `blipTimes()` | all read `story.js`; draw on the 1920×1080 `#ov` canvas |
+|`lib.js`|`seg(t,a,b)`、`ss`、`eio`、`eo`、`ei`、`back(t,s)`、`spring(t,k,z)`、`env(t,a,b,fi,fo)`、`mulberry(seed)`、 `track([[t,[…]],…])`|所有动画均为 `f(t)`； `track` = 单调立方关键帧（摄影机，飞行路径）|
+|`paper.js`|`cv(w,h)`、`finishCut(art, border=14, {paper, edge, grain, grainA})`、`paperFill(x,w,h,col,seed,mott)`、`crescent(x,pathFn,shade,dx,dy,base)`、`blob(x,cx,cy,rx,ry,wob,seed)`、`sh(x,fill,lw,stroke)`、`smoothClosed/smoothOpen`、`GRAIN`、`INK`|适用于任何纸张的 Canvas2D 工具包|
+|`art.js`|`cut(wm,hm,draw,{pad,border,ax,ay,raw})`→`{c,w,h,ax,ay}`，`PPM`=5200 px/m；道具 `hill(w,h,col,shade,seed,{bumps,dots})`、`lolliTree(h,col,shade,seed)`、`pine`、`bush`、`flower(h,petal,seed)`、`mushHouse(h)`、`door`、`windowGlow`、 `sunOnStick(r,stick)`、`cloud(w,seed)`、`sign(w,text)`、`fence(w,h)`、`waveStrip(w,h,col,dark,seed,n)`、`boat(w,'sail'|'hull')`、`moon`、`star`、`island`、 `mushroom`、`log`、`fern`、`sketchTree`、`sketchHouse`、`leafBit`、`bang`；字符 `drawPip(x,pose)`、`drawPipBack`、`drawCrumple(x,{mood,blink,mouthOpen})`、`drawWhale(x,{happy})`|每个道具都会返回一个 `cutMesh` 的项目；默认情况下，anchor (ax, ay) = 底部中心|
+|`cutmesh.js`|`cutMesh(item,{s,backCol,shadow,tex})` → 组（原点 = 锚点）、`blobShadow(r,a)`、`thread(len)`、`particles(geo,mat,n,(i,t)=>({x,y,z,rx,ry,rz,s,col})|null)` → 带有 `.userData.update(t)` 的实例化网格体|剪裁阴影，纸色背面|
+|`book.js`|`coverCanvases(drawIcon)` → `{c,m}`; `makeBook(cover)` → `{root, stage, sky, groundMat, backMat, leafFront, leafBack, setOpen(θ), setLeaf(u), coverMat}`; `texOf(canvas,{linear})`； `BW BD PG`|`setOpen(π/2)` = 全开；每个价差设置 `groundMat.map`/`backMat.map`； `setLeaf(0..1)` = 翻页（0/1 隐藏叶子）|
+|`sets.js`|`pages()` → 画布 `sky0 ground0 sky1 ground1 sky2day sky2night ground2 sky3 ground3`（2048 × 1396、`gx(x)`/`gz(z)` 将米映射到像素）； `buildSets(book)` → `{L, ex}`; `updatePops(L,t)`； `RISE[spread]`，`FOLD[spread]`；内部 `popper(list, spread, parent, item, x, y, z, {d, dir, sway, ph, pop, ry})`|添加价差 = 页面艺术 + 具有新价差索引的 `popper` 调用块，并扩展 `RISE/FOLD/TURNS`|
+|`actors.js`|`makePip(H)` → `{root, body, shadow, pose(p), head()}`; `makeCrumple(D)`； `makeFold(L,S,KD)` → `{fold(f 0..1), drawFace(mood,blink)}`; `makeWhale(w)` → `{setHappy}`; `makeBoat(w)`|姿势 `p` = `{walk, stride, armL, armR, flap, eyes, mouth, look:[x,y], blink, lean}`|
+|`post.js`|`makePost(renderer, scene, cam, w, h)` → `{composer, dof:{focus, aper, maxCoc}, bloom, vig:{uniforms:{amt,fade,warm}}}`|调用 `post.composer.render()` 而不是 `renderer.render`|
+|`hud.js`|`drawSubs(ctx,t,dur)`、`drawBubbles(ctx,t,{who:[sx,sy]})`、`drawChapter`、`drawAction(ctx,t,[{t0,text,p,col}])`、`drawBang`、`drawEnd`、`blipTimes()`|全部读取`story.js`；在 1920×1080 `#ov` 画布上绘画|
 
-**Page contract** (what `render.mjs` needs): `window.READY = true` after assets load; `window.render(t)` draws second `t` deterministically; `window.DUR`; `window.EV = [{t, type, …}]` for `mix.py` (types listed in "Score structure"; add a new branch in `mix.py` for a new type).
+**页面合约**（`render.mjs`需要的）：资产加载后的`window.READY = true`； `window.render(t)`确定性地抽取第二个`t`； `window.DUR`; `window.EV = [{t, type, …}]` 为 `mix.py`（“配乐结构”中列出的类型；在 `mix.py` 中为新类型添加新分支）。
 
-**Minimal example** — a new spread with one pop-up hill, a hero walking on it and a page-turn camera, inside `main.js`-style code:
+**最小示例**——一个新的跨页，有一个弹出的小山，一个英雄在上面行走，还有一个翻页摄影机，在`main.js`风格的代码中：
 
 ```js
 import * as THREE from 'three';
@@ -226,4 +236,4 @@ window.DUR = 8; window.EV = [{ t: .5, type: 'creak' }, { t: 3.1, type: 'pop' }];
 window.READY = true;
 ```
 
-To reuse the engine for a different film (your own story, not this one), copy the engine files, write a new `story.js` (lines, bubbles, chapters, `OPEN`, `TURNS`, `DUR`), replace the spreads in `sets.js` (`pages()` + `buildSets`), redraw characters in `art.js`, then re-key `pipState`, the camera list `SH` and `lightsAt` in `main.js`. Keep book/paper/cutmesh/post/render/mix unchanged.
+要将引擎重复用于不同的影片（您自己的故事，而不是这个），请复制引擎文件，编写新的 `story.js`（线条、气泡、章节、`OPEN`、`TURNS`、`DUR`），替换 `sets.js` 中的跨页（`pages()` + `buildSets`），重画`art.js`中的字符，然后重新键入`pipState`，摄影机在`main.js`中列出`SH`和`lightsAt`。保持 book/paper/cutmesh/post/render/mix 不变。

@@ -1,69 +1,76 @@
-# Data Storytelling — our demo
+<a id="data-storytelling--our-demo"></a>
+# 数据讲故事——我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *A Hundred Summers* (50.0 s) · `dataviz.mp4` · source in [`demo/`](demo/)
+示范：*一百个夏天*（50.0 s）·`dataviz.mp4`·来源在[`demo/`](demo/)
 
 
-A hundred and one summers of real global temperature (NASA GISTEMP v4, June–August), told as one woman's life from 1926 to 2026.
+一百零一个夏天的真实全球温度（NASA GISTEMP v4，6 月至 8 月），讲述了 1926 年至 2026 年一位女性的生活。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Our data is a time series, so it is drawn as dots and a line that morph into stripes. That was one choice for one dataset.
+我们的数据是一个时间序列，因此它被绘制为点和一条变成条纹的线。这是一个数据集的一种选择。
 
-Shape: a cold open on one point. Tender, sparse early points. A steady middle. Acceleration: the notes get denser, and the pencil hurries. The frame breaks, and the pencil flinches and flips to its red end. A rush. **Everything stops half a beat early; this is the only cut in the film, into silence.** Then the last data point, alone, followed by the whole series in one view. The morph into stripes comes next, then the longer record, then an empty cell for the next value ("Next summer?"). The end card lives inside that empty cell.
+形状：一点冷开。嫩，早点稀疏。稳定的中间。加速：笔记变得更密，铅笔变得更快。框架破裂了，铅笔退缩并翻转到红色的一端。一阵匆忙。 **一切提前停止半拍；这是影片中唯一的剪辑，陷入沉默。** 然后是最后一个数据点，单独的，随后是整个系列的一个视图。接下来是条纹的变形，然后是较长的记录，然后是下一个值的空单元格（“下一个夏天？”）。 片尾卡位于该空单元格内。
 
-How it was fitted to the data: 101 points (a series of 60–150 points suits this shape); 3 human notes pinned to the first marks drawn ("1926 — she is born.") in blue, 2 record notes pinned to the last in red; one frame-breaking moment found in the data; the last point given its own silence.
+它如何与数据拟合：101 个点（一系列 60-150 个点适合这种形状）； 3 个人类音符固定在第一个蓝色标记上（“1926 — 她出生了。”），2 个唱片音符固定在最后一个红色标记上；数据中发现一个打破帧的时刻；最后一点给出了自己的沉默。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Cold open | Extreme close-up on the first dot (≈4×). Tilt up to follow the leader as the note is written. |
-| Title | Pull back to 1.55×. The drop line becomes the x axis; the headline typesets above. |
-| Early life | Push back in, then track the pencil, newest point at ~62 % of frame width. Slow pull-out as time speeds up (2.3 → 1.7×). |
-| Climb | Pedestal up with the rising curve while a Dutch angle creeps in (0 → −1.5°). |
-| Frame break | Punch-in over 2 frames (1.22 → 1.42×) plus decaying shake. A small jolt on the rescale. |
-| Rush | Fast pull-out to 1.0×, roll to −3°, constant 2 px tremor. |
-| **The cut** | Hard cut into a close-up of the empty slot: dashed column, `2026` label, level horizon. Rack focus from the defocused foreground pencil to its tip as it lands. |
-| Reveal | Hold on the last point while its note is written, then pull back to the full view (1.06×). The axis rescales to fit everything. |
-| Morph | Locked-off. |
-| Scale | Pull and pan (→ 0.72×) to add the earlier record. |
-| Echo | Push to the empty cell; it widens into the end card (frame within frame). |
+|冷开|第一个点的极端特写 (≈4×)。写笔记时向上倾斜以跟随引导者。|
+|标题|拉回到 1.55×。下降线成为x轴；上面的标题排版。|
+|早期生活|推回，然后跟踪铅笔，最新点位于框架宽度的 ~62% 处。随着时间加速缓慢拉出 (2.3 → 1.7×)。|
+|爬|随着荷兰角逐渐进入 (0 → -1.5°)，基座随着上升曲线而上升。|
+|断帧|插入 2 帧 (1.22 → 1.42×) 加上衰减抖动。重新缩放时有一个小震动。|
+|匆忙|快速拉出至 1.0×，滚动至 −3°，持续 2 px 震颤。|
+|**剪裁**|硬切入空槽的特写：虚线柱、`2026` 标签、水平地平线。当它落地时，将焦点从散焦的前景铅笔转移到其笔尖。|
+|揭示|写下注释时按住最后一点，然后拉回到完整视图 (1.06×)。轴重新缩放以适应一切。|
+|变形|锁定。|
+|规模|拉动并平移 (→ 0.72×) 以添加较早的记录。|
+|回声|推入空单元格；它加宽为片尾卡（框架内框架）。|
 
-Key moments with subjects ≥ 1/3 of frame height: the first dot plus note, the century chart, the stripes band.
+主体帧高≥1/3的关键时刻：第一个点加注释、世纪图、条纹带。
 
-Why this route, for this data: the first fact got the extreme close-up because one woman's birth was the human scale; the axes grew as the unit was first named; tracking kept the past behind and the future ahead; escalation, surprise and rush came from the data itself; the morph was locked-off because the transformation was the movement; the ending pushed into the empty next cell because the next value was unknown. Each is one choice from STYLE.md §6, not the style's default.
+为什么这条路线，对于这个数据：第一个事实得到了极端的特写，因为一个女人的出生是人类的尺度；随着该单位的首次命名，轴不断增长；追踪将过去抛在脑后，展望未来；升级、惊喜和仓促来自于数据本身；变形被锁定，因为变形就是运动；由于下一个值未知，因此结局被推入空的下一个单元格。每个都是 STYLE.md §6 中的一种选择，而不是该风格的默认值。
 
-Motion numbers: 90 BPM (chosen because a 1/32 note is exactly 2 frames at 24 fps); 7 points on quarter notes → 24 on eighths → 40 on sixteenths → 27 on thirty-seconds (a point every 2 frames). Rescale: four steps on 1/32 notes, each eased over 0.09 beat; the second rescale, in the clarity phase, is smooth. Flinch: freeze half a beat, then a 0.5 s end-over-end flip to the red lead. Morph: sweep over 0.85 beat; each mark falls to the band centre (first 45 %), then stretches to a full stripe (ease-out) and loses its ring; line segments fade as their left dot starts morphing; annotations return as tiny pencil marks above the band.
+运动数：90 BPM（选择该值是因为 1/32 音符在 24 fps 下正好是 2 帧）；四分音符 7 个点 → 八分之一 24 个 → 十六分之一 40 个 → 三十秒 27 个（每 2 帧一个点）。重新调整音阶：1/32 音符上有四个音阶，每个音阶缓和超过 0.09 拍；在清晰度阶段的第二次重新调整是顺利的。退缩：冻结半拍，然后 0.5 秒左右翻转至红色领先位置。 Morph：扫过0.85节拍；每个标记落至条带中心（前 45%），然后拉伸至完整条带（缓出）并失去其环；线段随着左边的点开始变形而消失；注释以带子上方的小铅笔标记形式返回。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- Ambience: room tone → evening crickets → the sea (J-cut before "1933", L-cut after) → cicadas that grow louder and denser with the heat (J-cut before the climb) → open wind after the silence → room tone.
-- Sonification (`music/score.py`): `midi = 62 + (v + 0.4) × 17`; below-centre values snap to D major pentatonic. Detune only on the last ~15 points (5 → 45 cents). The note right before the silence is the most dissonant (max detune plus a minor-second shadow); the last point after the silence is the cleanest, highest note.
-- Bed: pad Dmaj9 → G/D → D–Bm–G–A → Bb/D–Dm → semitone cluster; hats low-passed at 9.5 kHz. After the silence: a D open fifth (no third, no answer), a glissando of all 101 points replayed during the morph, Gmaj7#11 over D for the scale shot, and the **first point's note again** under the end card.
-- Score arc: sparse, tender early points → a steady middle → accelerating subdivision as the notes densify → rush → silence → the last point alone → the whole → the morph → the first note again.
-- Silences: 1.0 s true digital silence before the last point (all layers); 0.67 s near-silence before the empty cell. The first sounds after them: the last tap plus its note, then the first stroke of the empty cell.
-- Mix: music −11 dB and cicadas −6 dB under the voice; narration SNR in the 300–4000 Hz band 8.6–16 dB; −14 LUFS, grain 0.
-- Voice: Kokoro `af_alloy`, speed 0.92, 5 lines, never over the rush, the silence or the morph. Whisper writes numbers as digits: `asr` set to "For 50 years…" and "…turned 100…".
-- The baby's laugh was replaced by one music-box note.
+- 氛围：房间音→傍晚的蟋蟀→大海（《1933》前J-cut，L-cut后）→随着热度越来越大、越来越密的蝉声（攀登前J-cut）→寂静后的开放风→房间音。
+- 可听化（`music/score.py`）：`midi = 62 + (v + 0.4) × 17`；低于中心的值会对齐到 D 大调五声音阶。仅在最后约 15 个点（5 → 45 音分）失谐。静音之前的音符是最不和谐的（最大失谐加上小二度阴影）；沉默之后的最后一点是最干净、最高的音符。
+- 床：垫 Dmaj9 → G/D → D–Bm–G–A → Bb/D–Dm → 半音簇；帽子在 9.5 kHz 处低通。沉默之后：D开五度（没有第三个，没有答案），在变形过程中重播所有101点的滑奏，Gmaj7#11在D之上，音阶镜头，**第一点的音符在片尾卡下再次**。
+- 配乐弧线：稀疏、温柔的早期点→稳定的中间→随着音符的密集而加速细分→急促→沉默→最后一个点单独→整体→变形→再次第一个音符。
+- 静音：最后一点（所有层）之前 1.0 秒真正的数字静音；空单元前 0.67 秒近乎寂静。在它们之后发出第一个声音：最后一次敲击加上它的音符，然后是空单元格的第一次敲击。
+- 混音：人声下音乐-11 dB、蝉声-6 dB； 300–4000 Hz 频段内的旁白 SNR 8.6–16 dB； −14 LUFS，颗粒 0。
+- 声音：Kokoro `af_alloy`，速度0.92，5行，永远不会超过冲刺、沉默或变形。 Whisper 将数字写为数字：`asr` 设置为“For 50 years…”和“…turned 100…”。
+- 婴儿的笑声被音乐盒般的音符所取代。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Paper `#F6F3EC`; dot grid 24 px `#E4DDCF`. Ink `#2B2723`: axes 1.4–1.6 px, series line 2.4 px, gridlines `#DDD6C9` 1 px, zero line `#BDB4A5` 1.3 px. Tick numbers IBM Plex Mono 17–20 px `#6E665C`.
-- Dots r = 6 px with a 1.5 px ink ring; landing pop 0.25 s (×1.55).
-- Ramp, u = (v − centre) / half: `#2166AC` → `#4393C3` → `#92C5DE` → `#D1E5F0` → `#F2EEE8` (centre) → `#FDDBC7` → `#F4A582` → `#D6604D` → `#B2182B` → `#7A0F1E` (beyond +1). Centre = 1971–2000 mean 0.22 °C, half-span 0.85 °C.
-- Handwriting Caveat 30 px world size, blue pencil `#2F5D8A` / red pencil `#A8283A`, per-glyph ±1.7° rotation and ±2.5 % baseline, 16 % of pixels knocked out for grain. Doodles: a three-curl wave, a heart.
-- Pencil wood cone `#E3C79C`, entering at 35–58°.
-- Plot box 1500 × 520 in world space; the first note above its mark, late notes above-left of their dot; the bottom 150 px for the caption. Title Newsreader 66 px.
-- Caption: Newsreader 42 px, x = 180, baseline y ≈ 985, kicker `1926–1958`, 3-frame rise and fade, flips up when it leaves; the hold rule is asserted in `tools/subs.py`.
-- The engine showcase uses a `#D97757` accent spark.
+- 纸`#F6F3EC`；点网格 24 像素 `#E4DDCF`。墨水 `#2B2723`：轴 1.4–1.6 像素，系列线 2.4 像素，网格线 `#DDD6C9` 1 像素，零线 `#BDB4A5` 1.3 像素。刻度编号 IBM Plex Mono 17–20 px `#6E665C`。
+- 点 r = 6 px，带有 1.5 px 墨环；着陆弹出 0.25 秒（×1.55）。
+- 斜坡，u =（v − 中心）/一半：`#2166AC` → `#4393C3` → `#92C5DE` → `#D1E5F0` → `#F2EEE8`（中心）→ `#FDDBC7` → `#F4A582` → `#D6604D`→`#B2182B`→`#7A0F1E`（超过+1）。中心 = 1971–2000 平均值 0.22 °C，半跨度 0.85 °C。
+- 手写警告 30 px 世界大小，蓝色铅笔 `#2F5D8A` / 红色铅笔 `#A8283A`，每个字形 ±1.7° 旋转和 ±2.5 % 基线，16 % 的像素因颗粒而被剔除。涂鸦：三卷波浪，一颗心。
+- 铅笔木锥体 `#E3C79C`，进入角度为 35–58°。
+- 世界空间中的绘图框 1500 × 520；第一个音符位于其标记上方，最后的音符位于其点的左上方；底部 150 像素为标题。标题新闻阅读器 66 像素。
+- 说明文字：新闻阅读器 42 px，x = 180，基线 y ≈ 985，踢球 `1926–1958`，3 帧升淡，离开时向上翻转；保持规则在 `tools/subs.py` 中声明。
+- 发动机展示使用 `#D97757` 强调火花。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Inside the dashed "next cell": title, `DATA STORYTELLING`, a miniature of the stripes plus an empty dashed cell, `Lemo-Opuscar · LemoLab × Claude Opus 5.5`, data, font, voice and music credits (including "2026 value preliminary, retrieved 2026-09-26"), and a handwritten "Her story is fiction. Every number is real." The LemoLab sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+在虚线“下一个单元格”内：标题，`DATA STORYTELLING`，条纹的缩影加上一个空的虚线单元格，`Lemo-Opuscar · LemoLab × Claude Opus 5.5`，数据，字体，语音和音乐制作人员（包括“2026年价值初步，检索于2026年9月26日”），以及手写的“她的故事是虚构的。每个数字都是真实的。” LemoLab 签核仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/dataviz/demo/
@@ -74,38 +81,39 @@ styles/dataviz/demo/
   music/score.py   sonification + modular bed (reads events.json)      mix.py   ambience + foley + narration + ducking
   tools/       words.py subs.py cuecheck.py final_asr.py
 ```
-1. Download the dataset and write the extractor. Print every fact the narration will claim.
-2. Write `timeline.js` (grid plus year → beat map) before any drawing.
-3. Build `engine.js`, then `film.js`, and render gate frames from the real engine (`node core/render/still.mjs … --range`).
-4. `sh demo/build.sh` rebuilds everything from scratch in about 2 minutes: extract → TTS → whisper → words → events → score → cuecheck (107 cues, max 0.03 ms) → mix → subtitles → render (1200 frames, ~30 s with 2 workers) → mux (−14 LUFS, grain 0) → styleframe and poster.
-5. Review: a 1 s contact sheet from the final mp4 twice (offset by 0.25 s), 0.1 s strips of the break, the cut and the morph, per-line whisper on the final mix, and a sample-accurate silence check.
+1. 下载数据集并编写提取器。打印出叙述中声称的每一个事实。
+2. 在任何绘图之前写上`timeline.js`（网格加年份→节拍图）。
+3. 构建 `engine.js`，然后构建 `film.js`，并从真实引擎 (`node core/render/still.mjs … --range`) 渲染门帧。
+4. `sh demo/build.sh` 在大约 2 分钟内从头开始重建所有内容：提取 → TTS → Whisper 语音识别 → 单词 → 事件 → 配乐 → 提示检查（107 个提示，最长 0.03 毫秒）→ 混合 → 字幕 → 渲染（1200 帧，约 30 秒，2 个工作人员）→ 复用器（−14 LUFS，颗粒 0）→ 风格定帧和海报。
+5. 回顾：两次最终 mp4 的 1 秒接触表（偏移 0.25 秒）、0.1 秒的中断、剪切和变形片段、最终混音上的每行耳语以及样本精确的静音检查。
 
-Pitfalls tied to this demo: GISTEMP has J-D and D-N before the seasonal columns, so the column is selected by header name (`JJA`). A frame break rescaled after 0.17 s was invisible. Right-aligned notes: the pencil hop takes 16 % of the text phase. `pencilStroke`, `dashedCell` and `dataDot` set `globalAlpha` themselves. In tracking shots the world-space title was cut by the frame edge. At 32nd-note density the pencil body lay across fresh dots.
+与此示范相关的陷阱：GISTEMP 在季节性列之前有 J-D 和 D-N，因此按标题名称 (`JJA`) 选择该列。 0.17 秒后重新缩放的帧中断是不可见的。右对齐笔记：铅笔跳占文本阶段的 16%。 `pencilStroke`、`dashedCell` 和 `dataDot` 自行设置 `globalAlpha`。在跟踪镜头时，世界空间标题被框架边缘切断。在第 32 个音符的密度下，铅笔主体位于新的圆点上。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-`demo/engine.js` (ES module, Canvas 2D, 1920×1080; imports `/core/lib.js`). World units are chart pixels at zoom 1. Call `applyCam(g, cam)` before any world-space drawing.
+`demo/engine.js`（ES模块，Canvas 2D，1920×1080；进口`/core/lib.js`）。世界单位是缩放 1 时的图表像素。在绘制任何世界空间之前调用 `applyCam(g, cam)`。
 
-| Function | What it does | Key parameters |
+|功能|它的作用|关键参数|
 |---|---|---|
-| `drawPaper(g, cam, {dots})` | cream paper, fibre noise and dot grid, fixed in world space | `dots` 0–1 grid alpha |
-| `applyCam(g, cam)` / `w2s` / `s2w` / `viewRect` | 2D camera transform and conversions | `cam = {x, y, zoom, roll, sx, sy}` (sx/sy = shake in px) |
-| `valueColor(v, {center, half, alpha})` / `rampRGB(u)` | diverging stripes ramp | reference-mean `center`, symmetric `half` |
-| `pencilStroke(g, pts, o)` | **draw any polyline in pencil**: wobble, taper, graphite grain, write-on; returns the tip | `color, width, progress, seed, wobble, passes, grain` |
-| `inkShape(g, path, o)` | **any closed shape** as a pencil-annotated mark: flat fill + hatching + hand outline | `fill` (accent) or `value` (ramp), `hatch, progress` |
-| `plotShape(g, path, o)` | sample any path into a dot-and-line data series | `n, r, values, accent, progress` |
-| `stripesFill(g, path, values, o)` | fill any closed shape with warming stripes | ramp options, `accent` + `accentIndex` |
-| `dotTrail(g, pts, o)` | tapering dot trail (cursor tail / comet) | `color, r0, r1` |
-| `handText(g, text, x, y, o)` | handwriting with grain and left→right reveal; returns `{tip, w}` | `size, color, progress, align, zoom` |
-| `setType(g, text, x, y, o)` | printed type, letter-by-letter typesetting | `size, font, weight, progress, rise, track` |
-| `dataDot(g, x, y, r, fill, o)` | data point with landing pop and ripple | `fresh` (s since landing), `ripple, accent, alpha` |
-| `inkLine`, `stripe`, `morphMark(g, u, dot, box, fill)` | series line, one stripe, dot→stripe morph at 0..1 | |
-| `leader`, `ringPath`, `wavePath`, `heartPath`, `bracketPath`, `sparklePath`, `quadPath` | annotation geometry | |
-| `dashedCell(g, x0, y0, x1, y1, o)` | the dashed "next value" cell, drawn on | `progress, color, dash, gap` |
-| `drawPencil(g, o)` | the red–blue pencil (screen space) | `tip [sx,sy], s, lift 0–1.2, flip 0–1 (blue→red), blur, focus, ang` |
-| `caption(g, words, t, o)` | figure-caption subtitle with timed words | `t0, t1, kicker, x, y, size` |
+|`drawPaper(g, cam, {dots})`|奶油色纸、纤维噪声和点网格，固定在世界空间中|`dots` 0–1 网格阿尔法|
+|`applyCam(g, cam)` / `w2s` / `s2w` / `viewRect`|2D 摄影机变换和转换|`cam = {x, y, zoom, roll, sx, sy}`（sx/sy = 像素抖动）|
+|`valueColor(v, {center, half, alpha})` / `rampRGB(u)`|发散条纹坡道|参考平均值 `center`，对称 `half`|
+|`pencilStroke(g, pts, o)`|**用铅笔绘制任意多段线**：摆动、锥度、石墨颗粒、书写；返回小费|`color, width, progress, seed, wobble, passes, grain`|
+|`inkShape(g, path, o)`|**any 封闭形状** 作为铅笔注释标记：平面填充 + 剖面线 + 手工轮廓|`fill`（重音）或 `value`（斜坡）、`hatch, progress`|
+|`plotShape(g, path, o)`|将任意路径采样为点线数据系列|`n, r, values, accent, progress`|
+|`stripesFill(g, path, values, o)`|用温暖的条纹填充任何封闭的形状|斜坡选项，`accent` + `accentIndex`|
+|`dotTrail(g, pts, o)`|逐渐变细的点轨迹（光标尾部/彗星）|`color, r0, r1`|
+|`handText(g, text, x, y, o)`|字迹有纹路，左→右显露；返回 `{tip, w}`|`size, color, progress, align, zoom`|
+|`setType(g, text, x, y, o)`|印刷式，逐字排版|`size, font, weight, progress, rise, track`|
+|`dataDot(g, x, y, r, fill, o)`|带有着陆爆裂声和波纹的数据点|`fresh`（着陆后的时间），`ripple, accent, alpha`|
+|`inkLine`、`stripe`、`morphMark(g, u, dot, box, fill)`|系列线、一条条纹、点→条纹变形为 0..1| |
+|`leader`、`ringPath`、`wavePath`、`heartPath`、`bracketPath`、`sparklePath`、`quadPath`|注释几何| |
+|`dashedCell(g, x0, y0, x1, y1, o)`|虚线的“下一个值”单元格，绘制在|`progress, color, dash, gap`|
+|`drawPencil(g, o)`|红蓝铅笔（屏幕空间）|`tip [sx,sy], s, lift 0–1.2, flip 0–1 (blue→red), blur, focus, ang`|
+|`caption(g, words, t, o)`|带定时文字的图形标题字幕|`t0, t1, kicker, x, y, size`|
 
-Minimal example: a warm orange `#D97757` four-point spark with a cursor tail, drawn in this style (full version: `?engine=1` → `demo/stills/engine_demo.jpg`).
+最小示例：带有光标尾部的暖橙色 `#D97757` 四点火花，以这种风格绘制（完整版本：`?engine=1` → `demo/stills/engine_demo.jpg`）。
 
 ```js
 import * as E from './engine.js';

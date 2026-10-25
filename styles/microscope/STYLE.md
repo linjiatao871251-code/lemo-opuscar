@@ -1,106 +1,118 @@
-# Microscope Story — Style Prompt
+<a id="microscope-story--style-prompt"></a>
+# 显微叙事：风格提示词
 
-> Real, licence-clean microscopy of a real specimen, seen as it is, and one continuous change of scale that carries the viewer from the glass slide in the hand to a single cell. Focus breathes when the magnification changes, a focal plane sweeps when the camera lands, and every scale bar, field of view and reading comes from the image's own metadata.
-> References (grammar only): Charles and Ray Eames' *Powers of Ten* (one continuous change of scale with a readout riding along); premium microscope launch films (dark bench, glass catching light, restrained marks, clean instrument sound); digital-pathology viewers' instruments (scale bar, field of view, magnification). Copy none of their layouts, interfaces, typefaces or music; never name them in the film.
+> 真实标本的真实、许可干净的显微镜，按原样观察，并且连续的尺度变化将观察者从手中的载玻片带到单个细胞。当放大倍率变化时焦点会呼吸，当摄影机着陆时焦平面会扫描，每个比例尺、视野和读数都来自图像自己的元数据。
+> 参考文献（仅语法）：Charles 和 Ray Eames 的“十的幂”（伴随读数的连续变化的刻度）；推出优质显微镜影片（暗工作台、玻璃反光、克制痕迹、干净的仪器声音）；数字病理学观察仪（比例尺、视野、放大倍率）。请勿复制他们的布局、界面、字体或音乐；切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The specimen is a photograph**: a real micrograph or whole-slide scan of the actual sample, CC0, public domain or CC BY. Nothing on the specimen is drawn, retouched or generated. A whole-slide image (WSI) is the ideal source: one sample, one registered pyramid from millimetres to microns, with the pixel size in its metadata.
-- **Scale is the camera**: one log-space dive (and, when the story wants it, the climb back) through nested plates of the same sample. The scale bar shortens and jumps in a 1-2-5 sequence, the field-of-view readout rolls, the magnification steps.
-- **Focus has a grammar**: a rack-in from soft at the start, a short breath (blur + a hint of field change) each time the magnification changes, a focal-plane sweep across the frame when the camera lands.
-- **Readings are measured**: every number is computed from the file (pixel size × pixels) and the screen says how it was measured. Describe what was measured; never diagnose. Keep a `FACTS.md` in the project folder (claim, source URL, quoted wording, or the measurement method) and deliver it with the film.
-- **One reading per screen**, in the single accent colour.
+- **标本是照片**：实际样品的真实显微照片或整个幻灯片扫描，CC0，公共领域或CC BY。样本上没有任何内容被绘制、修饰或生成。全幻灯片图像 (WSI) 是理想的来源：一个样本、一个从毫米到微米的注册金字塔，其元数据中包含像素大小。
+- **Scale 是相机**：通过同一样本的嵌套板进行一次对数空间潜水（并且，当故事需要时，爬回）。比例尺以 1-2-5 的顺序缩短和跳跃，视野读数滚动，放大倍数增加。
+- **Focus有一个语法**：开始时从柔和开始，每次放大倍率变化时短促呼吸（模糊+视野变化的提示），当摄影机落地时焦平面扫过画面。
+- **测量读数**：每个数字都是根据文件计算的（像素大小×像素），屏幕上会显示测量结果。描述测量的内容；从不诊断。将 `FACTS.md` 保留在项目文件夹（声明、源 URL、引用的措辞或测量方法）中，并与影片一起交付。
+- **每个屏幕一个读数**，采用单一强调色。
 
-Not Satellite Briefing (no grey grade; the stain keeps its colour), not Sci-fi HUD (no glowing wireframes or crosshairs), not Data Storytelling (no chart paper), not a keynote (no slides or header bars).
+不是卫星简报（没有灰度等级；污渍保持其颜色），不是科幻平视显示器（没有发光的线框或十字准线），不是数据故事讲述（没有图表纸），不是主题演讲（没有幻灯片或标题栏）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Plates**: the WSI pyramid levels as plates in one world frame (level-0 pixels), the coarse levels whole and alpha-feathered at the scan edge, the fine levels as crops around where the camera lands. Each frame draws the finest plate that is downsampled no more than ~1.45×, and blends the next level in between 2.2× and 1.45×: no seams and no visible upsampling, because every level is the same sample, already registered.
-- **The naked-eye plate**: the scanner's own photo of the whole slide (many WSI files carry one), registered through the scan's area-of-interest metadata and checked against the tissue's centroid. Cut the glass out of the scanner tray, remove the line-sensor streaks, and fill any manufacturer's printed logo with the surrounding frosted glass. Below ~30 mm of field the photo would be upsampled: let the cover glass become clean glass (its dust leaves the focal plane).
-- **One grade for every plate**: glass normalised to a warm white, a little density and chroma in the stain, nothing else. No false colour, no film emulation.
-- **The bench**: graphite under a slow pool of light; a soft shadow under the slide.
-- **Focus**: screen-space Gaussian blur on a frame rendered with a margin (so edges never go dark); the focal sweep is a tilted sharp front crossing a softened frame. A light illumination vignette, nothing more.
-- **Marks** in screen space but anchored to the specimen through one world → screen function: hairlines 1.5–2.5 px with a dark or light halo, circles drawn on as arcs with cardinal ticks, dimension lines with end ticks, leader lines with one elbow. Counted pixels are shown as a mask revealed behind a scan front, then kept as a faint trace.
-- **Frosted panels** (dark translucent glass over a blurred copy of the frame) for readings, instruments, subtitles and the credit: white type reads on glass and stain alike, nothing switches colour mid-shot.
+- **盘子**：WSI 金字塔水平作为一个世界框架中的板（0 级像素），粗水平在扫描边缘处整体和 alpha 羽化，精细水平作为摄影机着陆点周围的作物。每个帧都会绘制最精细的板，下采样不超过~1.45×，并在 2.2× 和 1.45× 之间混合下一个级别：没有接缝，也没有可见的上采样，因为每个级别都是相同的样本，已经注册。
+- **裸眼板**：扫描仪自己的整个载玻片照片（许多 WSI 文件都带有一张），通过扫描的感兴趣区域元数据注册并对照组织质心进行检查。从扫描仪托盘上切下玻璃，去除线传感器条纹，并用周围的磨砂玻璃填充制造商印刷的徽标。在约 30 毫米的视场以下，照片将被上采样：让盖玻片变成干净的玻璃（其灰尘离开焦平面）。
+- **每块板一个等级**：玻璃归一化为暖白色，污渍中有一点密度和色度，没有其他。无假色，无影片仿真。
+- **长凳**：缓慢光池下的石墨；幻灯片下方的柔和阴影。
+- **重点**：使用边距渲染的帧上的屏幕空间高斯模糊（因此边缘永远不会变暗）；焦点扫描是一个倾斜的锐利前线穿过柔和的框架。一个灯光照明小插图，仅此而已。
+- **在屏幕空间中标记**，但通过同一个世界锚定到样本→屏幕功能：带有深色或浅色光晕的细线1.5–2.5 px，用基本刻度线绘制为弧形的圆圈，带有末端刻度线的尺寸线，带有一根肘部的引出线。计数的像素显示为扫描前沿后面显示的掩模，然后保留为微弱的痕迹。
+- **磨砂面板**（框架模糊副本上的深色半透明玻璃）用于读数、仪器、字幕和学分：白色字体在玻璃和污渍上读数相似，中间镜头没有任何颜色变化。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Glass: warm paper white. Bench: graphite. The stain is evidence and keeps its true colour (e.g. trichrome red and blue, H&E pink and purple).
-- One accent, cool and away from the stain's hues (mint against red and blue; amber against a green or purple stain), only for the measured reading and the counted pixels.
-- Ink on glass is near-black; type on stain sits on a frosted panel in warm white.
+- 玻璃：暖纸白。工作台：石墨。污渍是证据并保持其真实颜色（例如三色红色和蓝色、H&E 粉色和紫色）​​。
+- 一种强调，凉爽且远离污渍的色调（薄荷色与红色和蓝色相对；琥珀色与绿色或紫色污渍相对），仅用于测量的读数和计数的像素。
+- 玻璃上的墨水接近黑色；污渍上的文字位于暖白色的磨砂面板上。
 
-Example (our demo): glass #F4F1EC, bench #0B0D0F → #2A3036, ink #181B1F, panel rgba(12,14,17,0.74), accent mint rgb(120,240,205) (on stain) / rgb(0,122,99) (on glass).
+示例（我们的示范）：玻璃 #F4F1EC，工作台 #0B0D0F → #2A3036，墨水 #181B1F，面板 rgba(12,14,17,0.74)，强调薄荷色 rgb(120,240,205)（污渍上）/ rgb(0,122,99)（玻璃上）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Roles**: a light condensed grotesk for readings and the scale bar (40–72 px, e.g. Barlow Condensed); a monospace for instruments and pixel counts (20 px, e.g. IBM Plex Mono); a sans in the film's language for labels (20–34 px, e.g. Noto Sans SC); a serif only for the title. OFL, self-hosted, CJK subset.
-- **Instruments** live in one frosted panel in a corner: scale bar with its value, field of view, magnification with a small nosepiece glyph that turns a quarter on every change. The source credit in a small panel in the opposite corner.
-- **Readings** sit in a frosted panel beside what they measure, joined by a leader: a small label above ("collagen share of tissue area"), the number large in the accent, the method or the raw counts below.
-- **Subtitles**: a frosted strip at the bottom; if the film is bilingual, one line per language with the film's language on top, never wrapped. Measure each line with the real font and split long lines into two cues.
-- Nothing below 20 px at 1080p. Hold labels ≥ characters ÷ 4.5 + 1.5 s (CJK); a reading that rolls is reported by its landing value.
+- **角色**：用​​于读数和比例尺的轻型压缩 grotesk（40–72 像素，例如 Barlow Condensed）；用于仪器和像素计数的等宽字体（20 px，例如 IBM Plex Mono）； 影片标签语言中的 sans（20–34 像素，例如 Noto Sans SC）；仅用于标题的衬线。 OFL，自托管，CJK 子集。
+- **仪器仪表** 位于角落里的一个磨砂面板中：比例尺及其数值、视野、放大倍率，以及一个小的物镜转换器字形，每次变化时都会旋转四分之一。来源信用在对角的一个小面板中。
+- **读物** 位于测量对象旁边的磨砂面板上，由一个引导线连接：上面有一个小标签（“组织区域的胶原蛋白份额”），强调的数字较大，下面是方法或原始计数。
+- **字幕**：底部有磨砂条；如果影片是双语的，则每种语言一行，影片的语言位于顶部，永不换行。用真实字体测量每条线，并将长线分成两条线索。
+- 1080p 时没有低于 20 像素的内容。保留标签≥字符÷4.5+1.5秒（CJK）；滚动的读数由其着陆值报告。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- The camera is a similarity transform (zoom, roll, position) interpolated as a log spiral between keys (M^u about the fixed point of the two frames), so every push is a true dive towards one point and the roll is part of it. Ease the moves, creep 2–5 % during holds; never a frozen frame longer than a second.
-- Magnification changes happen where the plates actually change, each with a breath of focus, a turret click and the new magnification said once, large.
-- Marks arrive by being made: a dimension line grows from its centre, a circle is drawn as an arc, a scan front counts pixels while the reading rolls, the reading lands with a small spring.
-- Never moves: the specimen under its marks, the instrument positions.
+- 摄影机是一种相似变换（缩放、滚动、位置），插值为键之间的对数螺旋（M^u 关于两个帧的固定点），因此每次推动都是真正向一个点倾斜，滚动是其中的一部分。缓和移动，在保持期间蠕动 2-5%；冻结帧的长度绝不会超过一秒。
+- 放大倍数的变化发生在盘子实际变化的地方，每个盘子都会有一次聚焦，一声炮塔咔嗒声，新的放大倍数说一次，大。
+- 标记是通过制作而到达的：一条尺寸线从其中心开始延伸，一个圆被绘制为一个圆弧，一个扫描前端在读数滚动时计算像素，读数通过一个小弹簧着陆。
+- 永远不会移动：样品在其标记下，仪器位置。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| The dive (log zoom with roll) | going to look for yourself | an opening; from the slide to the cell |
-| Locked frame, slow creep | evidence, a measurement | a reading; a comparison |
-| Truck at one magnification | a second sample of the same thing | the counter-example; "meanwhile, nearby" |
-| Pull back to frame two marks | comparison | the verdict |
-| Focal-plane sweep | arriving; depth | a landing; a reveal inside one frame |
-| The climb (reverse dive, scale bar jumping back) | consequence, scale | an ending; a return to the eye's scale |
+|潜水（日志变焦与滚动）|去寻找你自己|一个开口；从载玻片到细胞|
+|锁定框架，缓慢蠕动|证据、测量|阅读；比较|
+|卡车（一倍放大倍率）|同一事物的第二个样本|反例； “同时，附近”|
+|拉回框两个标记|比较|判决|
+|焦平面扫描|到达；深度|着陆；一帧内的揭示|
+|爬升（反向俯冲、比例尺向后跳）|后果、规模|一个结局；回归眼睛的尺度|
 
-At key moments the measured structure fills a third of the frame height or more; instruments in a corner, subtitles bottom centre, readings beside their marks. Transitions are scale changes, trucks and focus, never cuts or crossfades between samples.
+在关键时刻，被测结构占据框架高度的三分之一或更多；仪器放在角落里，字幕位于底部中心，读数位于标记旁边。过渡是尺度变化、卡车和焦点，而不是样本之间的剪切或交叉淡入淡出。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instrument foley**: the objective turret (a click, a detent, a small metal ring), a focus servo, pen on glass for each line drawn, a band-passed scan travelling left to right with counter ticks that speed up, a soft filtered sweep for the focal plane.
-- **Music**: hard-mallet vibraphone in 8ths and 16ths, marimba ticks, bowed vibraphone and water glasses for pads and the motif, glockenspiel for each reading that lands, a pulse bass with 2nd/3rd harmonics, timpani and bass drum under the landings. Harmony stays open and light; the score is the user's to shape.
-- **Beds**: a quiet lab room (fan, a little mains hum).
-- **Silence** before the verdict and before the climb; the first sound after it is the reading or the turn.
-- **Mix**: voice ~10 dB over music, music ducked under it; −14 LUFS. Voice: a calm, exact narrator; numbers spelled out for the TTS, digits on screen.
+- **仪器foley**：物镜转塔（一个点击器、一个制动器、一个小金属环）、一个聚焦伺服器、在玻璃上绘制每条线的笔、从左到右行进的带通扫描（带有加速的计数器刻度）、焦平面的软滤波扫描。
+- **音乐**：8 度和 16 度的硬槌电颤琴、马林巴滴答声、弓形电颤琴和用于打击垫和主题的水杯、用于落地的每个读数的钟琴、具有 2nd/3rd 谐波的脉冲贝斯、落地下的定音鼓和低音鼓。和谐保持开放和轻松； 配乐是用户自行塑造的。
+- **床位**：一个安静的实验室房间（风扇，一点电源嗡嗡声）。
+- **沉默** 判决前和攀登前；读音或转动后的第一个声音。
+- **混音**：声音超过音乐约 10 dB，音乐被淹没； −14 LUFS。声音：冷静、准确的叙述者； TTS 拼写的数字、屏幕上的数字。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **The dive.** From the slide in the hand to a cell in one camera, the turret clicking at each real change of level. *Fits content like:* a biopsy to its cells; a coated surface to its crystals; a hair or skin section to its layers.
-- **Counting the colour.** Draw a circle, let a scan front cross it, light up every counted pixel and roll the share up to its landing value; show the raw counts underneath. *Fits content like:* collagen in tissue; porosity in a ceramic; coverage of a coating; pigment in a sample.
-- **Two circles, one verdict.** Measure one place, truck to another at the same scale, then frame both and say what differs. *Fits content like:* treated against untreated; edge against centre; before against after.
-- **The focal sweep and the ring.** Land, sweep the focal plane across the frame, ring one structure and give its size. *Fits content like:* a nucleus; a grain; a fibre's diameter.
-- **The climb back.** Pull out to the eye's scale with the scale bar jumping backwards; a title card written on the glass.
+- **潜水。** 从手中的幻灯片到摄影机中的一个单元，炮塔在每次真正的水平变化时发出咔哒声。 *适合以下内容：*对其细胞进行活检；晶体的涂层表面；头发或皮肤部分及其各层。
+- **计算颜色。** 画一个圆圈，让扫描前端穿过它，点亮每个计数的像素并将份额滚动到其着陆值；显示下面的原始计数。 *适合以下内容：*组织中的胶原蛋白；陶瓷的孔隙率；涂层的覆盖率；样品中的颜料。
+- **两个圆圈，一个结论。** 测量一个地方，以相同的比例卡车到另一个地方，然后将两个地方框起来并说出不同之处。 *适合以下内容：*已处理与未处理；边缘相对于中心；之前对抗之后。
+- **焦点扫描和环。** 着陆，扫描焦平面穿过框架，环一结构并给出其尺寸。 *适合以下内容：* 核心；一粒谷物；纤维的直径。
+- **向后爬。** 拉出到眼睛的刻度，刻度条向后跳跃；写在玻璃上的标题卡。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Licences**: most microscopy on the web is CC BY-NC or all rights reserved. Usable: CC0 whole-slide scans (e.g. the OpenSlide test data: check each file's licence line), public-domain government micrographs (NIH, CDC PHIL, NASA, USGS), CC BY collections (Cell Image Library, Wellcome Collection), with every file listed in `CREDITS`. Not usable: CC BY-SA without agreement, NC images, journal figures, AI images.
-- **Finding material for a new topic**: search by organ, stain or material plus "whole slide" in the OpenSlide test data, NCI Imaging Data Commons (TCGA/CPTAC slides, licence per collection), the Cell Image Library, Wellcome Collection, Wikimedia Commons (filter by licence) and NIH/CDC galleries; prefer a file whose metadata carries its pixel size. CC BY-SA, ODbL or "no known restrictions" are not CC0: name the terms to the user and ask before using them. For a product, a lab or a brand, ask the user for their own scans (SVS/NDPI/MRXS, SEM TIFFs with a scale) first. Never stand in a generated image for a real specimen.
-- **Different samples never zoom into each other**: two micrographs of "the same thing" at two scales are two specimens. Use one pyramid; if you must join sources, cut on a focus breath and say so.
-- **Pixel size**: read it from the file (XMP `ScanRes`, TIFF resolution, OME `PhysicalSizeX`); a slide-photo's resolution tag can be trusted only after checking against the scan.
-- **Upsampling** shows as mush beyond ~1.6×: end the dive at the scan's real resolution.
-- **Tile seams**: some scanners overlap tiles; check the joint info, frame out visible seams.
-- **Labels and logos** on the slide: barcodes and IDs are part of the object; manufacturer logos are not — fill or crop them.
-- **Claims**: a stain's colour means what the stain protocol says, nothing more; measured shares are of the drawn region and the stated threshold, never a clinical score.
+- **许可证**：网络上的大多数显微镜都是 CC BY-NC 或保留所有权利。可用：CC0 全幻灯片扫描（例如 OpenSlide 测试数据：检查每个文件的许可行）、公共领域政府显微照片（NIH、CDC PHIL、NASA、USGS）、CC BY 集合（细胞图像库、Wellcome Collection），每个文件都列在 `CREDITS` 中。不可用：未经同意的 CC BY-SA、NC 图像、期刊图、AI 图像。
+- **查找新主题的材料**：按器官、染色剂或材料搜索以及 OpenSlide 测试数据中的“整个幻灯片”、NCI 成像数据共享（TCGA/CPTAC 幻灯片、每个集合的许可证）、细胞图像库、Wellcome Collection、Wikimedia Commons（按许可证过滤）和 NIH/CDC画廊；更喜欢其元数据包含其像素大小的文件。 CC BY-SA、ODbL 或“无已知限制”不是 CC0：向用户命名这些术语并在使用前询问。对于产品、实验室或品牌，首先要求用户提供自己的扫描结果（SVS/NDPI/MRXS，带刻度的 SEM TIFF）。切勿站在生成的图像中寻找真实标本。
+- **不同的样品永远不会相互放大**：两个比例的“同一事物”的两张显微照片是两个标本。使用一个金字塔；如果你必须加入消息来源，请中断焦点并说出来。
+- **像素大小**：从文件中读取（XMP `ScanRes`，TIFF分辨率，OME `PhysicalSizeX`）；只有在检查扫描后才能信任幻灯片照片的分辨率标签。
+- **上采样** 显示超过 ~1.6×：以扫描的实际分辨率结束潜水。
+- **瓷砖接缝**：某些扫描仪重叠瓷砖；检查接头信息，勾勒出可见的接缝。
+- **幻灯片上的标签和徽标**：条形码和 ID 是对象的一部分；制造商徽标不是填充或裁剪它们。
+- **索赔**：污渍的颜色即为污渍协议所述的颜色，仅此而已；测量的份额是绘制区域和规定的阈值，而不是临床配乐。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-- `demo/film.js`: log-spiral camera (`camAt`), plate selection by downsampling ratio and coverage, objective events from real level changes, focus, frosted `panel()`, marks, readings, `TEXTS` / `SUBCHECK` / `EV`.
-- `demo/tools/plates.py`: slide-photo registration and cleaning, graded plates, collagen mask and the scan's cumulative curve, the tissue axis. `nucleus.py`: membrane edge on 72 rays, least-squares circle.
-- **Extra packages and packs** (beyond `setup.sh deps voice`): `tifffile` + `imagecodecs` read TIFF-based slides (Ventana BIF, Aperio SVS, Hamamatsu NDPI, generic pyramidal TIFF; `demo/tools/plates.py` is written for BIF: its label page, XMP and AOI); MRXS, SCN, VMS and others need `openslide-python` with the OpenSlide library (`brew install openslide`), or an adapter of your own. Install them yourself into a private venv in the project folder, not into `$LIB/.venv`.
-- Minimal example, not in the demo: a coated steel sample: one SEM pyramid, a dive to one crack, a circle counting coverage, a ring around one grain.
+- `demo/film.js`：对数螺旋摄影机（`camAt`），通过下采样率和覆盖范围选择板，来自真实电平变化的客观事件，焦点，磨砂`panel()`，标记，读数，`TEXTS` / `SUBCHECK` / `EV`。
+- `demo/tools/plates.py`：幻灯片照片配准和清洁、分级板、胶原掩模和扫描的累积曲线、组织轴。 `nucleus.py`：72条射线上的膜边缘，最小二乘圆。
+- **Extra 软件包和包**（超出 `setup.sh deps voice`）：`tifffile` + `imagecodecs` 读取基于 TIFF 的幻灯片（Ventana BIF、Aperio SVS、Hamamatsu NDPI、通用金字塔 TIFF； `demo/tools/plates.py`是为BIF编写的：其标签页、XMP和AOI）； MRXS、SCN、VMS 和其他需要带有 OpenSlide 库 (`brew install openslide`) 的 `openslide-python` 或您自己的适配器。自行将它们安装到项目文件夹中的私有 venv 中，而不是安装到 `$LIB/.venv` 中。
+- 最小的例子，不在示范中：涂层钢样品：一个 SEM 金字塔，一个裂纹的潜入，一个计数覆盖范围的圆圈，一个颗粒周围的一个环。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-The agent decides the specimen, the stain or modality, what is counted, the camera path, the accent, the ending.
+特工决定样本、污点或形态、计数内容、摄影机路径、重音、结尾。
 
-- **Structures**: a single dive ending in one measurement; a comparison of two regions or two samples at one scale; a climb that starts on a cell and reveals the object.
-- **Openings**: the slide on the bench under moving light; a cell already in focus, the climb revealing what it belongs to; a blurred field racking into focus.
-- **Endings**: the title written on the glass; a last reading held in silence; the slide lifted out of frame.
+- **结构**：单次潜水以一次测量结束；在一个尺度上比较两个区域或两个样本；从牢房开始攀爬并显露出物体。
+- **开口**：摇头灯下长凳上的幻灯片；一个已经处于焦点的单元格，攀爬揭示了它所属的单元格；模糊的视野逐渐清晰起来。
+- **结局**：玻璃上写的标题；最后一次默读；幻灯片从框架中升起。
 
 ---
 
-How our demo was made (story, shots, score, title card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、标题卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

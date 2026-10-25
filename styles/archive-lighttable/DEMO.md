@@ -1,71 +1,78 @@
-# Archive Light Table — our demo
+<a id="archive-light-table--our-demo"></a>
+# 档案灯台 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Two Seconds Short* 《差两秒》 (40.0 s) · `archive-lighttable.mp4` · source in [`demo/`](demo/)
+示范: *短两秒* 《差两秒》 (40.0 s) · `archive-lighttable.mp4` · 来源在 [`demo/`](demo/)
 
-The Wright brothers' flights of 17 December 1903 on a light table, told through five Library of Congress items: two glass negatives, a telegram, a newspaper clipping, and a third negative as a prop. It is an unofficial film about a real event, made only from public-domain scans. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English below). Every fact and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+莱特兄弟 1903 年 12 月 17 日在灯台上的飞行，通过国会风格库的五件物品讲述：两张玻璃底片、一份电报、一份剪报和第三张底片作为道具。这是一个关于真实事件的非官方影片，仅根据公共领域扫描制作。中文屏幕，英文旁白，双语字幕（中行在上，英文在下）。每个事实及其来源都在 [`demo/FACTS.md`](demo/FACTS.md) 中。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Logline: the telegram said the longest flight lasted 57 seconds, and the next day's paper printed it; the glass negatives and the Library's record say 59.
+梗概：电报说最长的飞行持续了57秒，第二天的报纸刊登了它；玻璃底片和风格库的记录显示为 59。
 
-Arc: the claim (the table switches on; a loupe lands on Orville's telegram; inside the lens the lines light up and "57" lifts out as a reading) → the echo (the camera rises and glides to the Dayton Herald clipping, where the same sentence is underlined and its 57 ringed) → the evidence, which is also the emotional peak (the loupe lands on the first-flight negative, the negative turns positive inside the lens, the camera falls through the lens into the photograph, and the Flyer separates from the horizon and drifts forward; 12 s, 120 ft) → the measurement (the fourth-flight negative: a ruler laid on the ground plane from the camera to the tiny machine on the horizon; 852 ft, 59 s) → the verdict (57 and 59 side by side, held still 2.7 s, then 57 is struck: "差 2 秒") → the ending (pull back to the whole table; every object's tag flies into one archive index; end card).
+弧线：声明（桌子打开；放大镜落在奥维尔的电报上；镜头内的线条亮起，“57”作为读数升起）→回声（摄影机上升并滑行到《代顿先驱报》剪报，其中同一个句子有下划线，57被圈起来）→证据，这也是情绪的顶峰（放大镜落在第一次飞行的负数上，负数变成了）镜头内为正，摄影机穿过镜头落入照片中，飞行器脱离地平线并向前漂移；12秒，120英尺）→测量（第四次飞行负片：从摄影机到地平线上的微型机器放置在地平面上的尺子；852英尺，59秒）→结论（57和59侧）并排，保持静止 2.7 秒，然后敲击 57：“差 2 秒”）→ 结束（拉回整个表；每个对象的标签飞入一个存档索引；片尾卡）。
 
-Native moves spent: *the line lights up* on the telegram and the clipping; *negative to positive under the loupe* and *into the photograph* for the first flight (the signature, at the peak); *measuring on the photograph* for the fourth flight; *two records, held side by side* for the verdict; *the table becomes the index* for the ending.
+风格特有表现手法花费：*线路亮起*在电报和剪报上； *在放大镜下从负片到正片*和*进入照片*第一次飞行（签名，在峰值）； *在照片上测量*第四次飞行； *并排保存的两个记录*用于判决； *该表成为结尾的索引*。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-One continuous camera over one table; framing changes by zoom and by passing through the loupe. Times in seconds.
+一张表上连续一张摄影机；通过变焦和通过放大镜来改变取景。时间以秒为单位。
 
-| # | Time | Shot | Camera | Native move / note |
+|#|时间|镜头|摄影机|风格特有表现手法/注|
 |---|---|---|---|---|
-| 1 | 0.0–1.3 | the dark table flickers on (0.0, 0.17, 0.42, 0.55; steady at 0.67); the telegram fills two thirds of the frame, the clipping at the bottom edge | glide toward the telegram with a 4° roll that levels it | the starter clicks and hum are the first sounds |
-| 2 | 1.3–2.0 | the loupe drops onto the telegram (scale 1.35 → 1, shadow tightening) | settles | glass clack on the beat |
-| 3 | 2.0–3.3 | push into the lens: the rim passes the frame while the view inside widens to the whole message | zoom 0.31 → 1.5 | the date line lights at 2.67 |
-| 4 | 3.3–9.3 | inside the telegram: "Success four flights …" lights at 4.0, "… longest 57 seconds …" at 7.33, each with an underline; the rest of the paper dims; 57 is ringed at 8.0 and a reading card "电报 · 最长一次 57 秒" draws out to the right | slow track along the lines, then a push onto 57 | reading |
-| 5 | 9.3–11.3 | rise out of the lens; the loupe lifts at 10.33; the card stays on screen until 11.4 | zoom out and glide down-right | a ring stays on the telegram's 57 |
-| 6 | 11.3–13.3 | the Dayton Herald clipping: "longest time in air was 57 seconds." lights and underlines at 12.0, its 57 ringed at 12.33; a caption plate "1903.12.18 / 代顿先驱报" held still on the right | push in with a 4° roll | the echo |
-| 7 | 13.3–14.7 | glide to the first-flight negative; crop corners (the 16:9 frame the photograph will open to) | glide and settle | the loupe lands at 14.67 |
-| 8 | 14.7–16.0 | inside the lens the negative; a develop front from the centre turns it positive (15.0–15.8); readout "×2.5 负像 → 正像" | hold | |
-| 9 | 16.0–18.0 | **signature**: the rim grows past the frame while the view inside widens, under a riser and the strings; at 17.6 the sound is sucked out; at 18.0 we are inside the photograph | zoom 0.335 → 1.45; inside 0.84 → 0.56 px per scan px | no narration through the push; the full chord lands at 18.0 and the narrator starts at 18.35 |
-| 10 | 18.0–22.7 | the photograph in depth: the Flyer (its own layer) drifts 125 px forward and up against the horizon; the sand swells under a dolly; wind over the dunes; labels "第一次飞行 / 12 秒 · 120 英尺 · 上午 10:35", "威尔伯·莱特", "快门：John T. Daniels" | dolly (0.55) + lateral shift (260, −140) about the Flyer's depth | near-silence from 21.3: wind only |
-| 11 | 22.7–24.7 | rise out of the photograph; glide over the 14 December plate to the fourth-flight negative | zoom out, glide right | |
-| 12 | 24.7–26.3 | the loupe lands; push in; the positive already shows (the viewer stays switched on) | zoom 0.31 → 1.45 | |
-| 13 | 26.3–30.0 | the ruler: from the bottom edge (the camera, the start) to the machine on the horizon, ticks every 100 ft crowding into perspective, labels 100 / 200 / 400; the reading counts 852 ft (lands 28.67) and 59 s (lands 30.0); "落地点" ringed | push toward the machine (0.62 → 1.3) with a ground-plane dolly | ticks on every 100 ft |
-| 14 | 30.0–33.3 | two caption cards: the telegram's own line (a crop of the scan) "57 秒", the record's wording "852 feet covered in 59 seconds." "59 秒"; held still 2.67 s; silence from 32.8 | locked | comparison held before the verdict |
-| 15 | 33.3–35.9 | 57 struck in signal orange, "差 2 秒" | locked, then the rise begins under the cards at 35.0 | the strike lands on low D after the silence |
-| 16 | 35.9–40.0 | pull back to the whole light table in its frame on the dark desk; five tags fly into "档案索引" (the two 57s struck); end card at 36.33 | zoom to 0.094, roll to level | scale reveal |
+|1|0.0–1.3|暗表闪烁（0.0、0.17、0.42、0.55；稳定在 0.67）；电报占据了画面的三分之二，剪裁位于底部边缘|向电报滑行 4° 滚动使其水平|启动器的咔哒声和嗡嗡声是最初的声音|
+|2|1.3–2.0|放大镜落在电报上（比例 1.35 → 1，阴影收紧）|解决|玻璃嘎嘎作响|
+|3|2.0–3.3|推入镜头：边缘穿过画面，同时内部视野扩大到整个信息|变焦 0.31 → 1.5|日期变更线在 2.67 亮起|
+|4|3.3–9.3|电报内：“成功四次飞行……”在 4.0 亮起，“……最长 57 秒……”在 7.33 亮起，每条都有下划线；纸张的其余部分变暗； 57在8.0响起，右侧画出“电报·最后一次57秒”阅读卡|沿着线路缓慢行驶，然后推入 57|阅读|
+|5|9.3–11.3|从镜头中升起；放大镜在 10.33 抬起；该卡片会一直显示在屏幕上直到 11.4|缩小并向右下滑|电报 57 上有一个响铃|
+|6|11.3–13.3|《代顿先驱报》剪报：“在空中最长停留时间为 57 秒。”灯光和下划线为 12.0，其 57 环为 12.33；右侧静止不动的标题牌“1903.12.18 / 代顿先驱报”|4° 滚动推入|回声|
+|7|13.3–14.7|滑翔至首飞负值；裁剪角（照片打开时的 16:9 帧）|滑翔和沉降|放大镜落在 14.67|
+|8|14.7–16.0|镜头内的负片；从中心展开的前沿将其变为正值 (15.0–15.8)；读出“×2.5负像→正像”|抓住| |
+|9|16.0–18.0|**签名**：边缘超出框架，同时内部视野变宽，位于立管和琴弦下方； 17.6处声音被吸出； 18.0 我们在照片里|变焦0.335→1.45；每次扫描 0.84 → 0.56 像素内像素|没有通过推送进行旁白；完整和弦落在 18.0，旁白从 18.35 开始|
+|10|18.0–22.7|深度照片：Flyer（它自己的图层）向前漂移 125 像素，并上升到地平线；沙子在小车下膨胀；风吹过沙丘； labels "首次飞行 / 12 秒 · 120 英尺 · 上午 10:35", "威尔伯·莱特", "闪电：John T. Daniels"|移动 (0.55) + 关于飞行器深度的横向位移 (260, −140)|从 21.3 开始，几乎一片寂静：只有风|
+|11|22.7–24.7|从照片中升起；滑过 12 月 14 日板块至第四次飞行负数|缩小，向右滑动| |
+|12|24.7–26.3|放大镜着陆；推入；积极的一面已经显现（观众保持开机状态）|变焦 0.31 → 1.45| |
+|13|26.3–30.0|标尺：从底部边缘（摄影机，开始）到地平线上的机器，每 100 英尺刻度一次，挤入视角，标记 100 / 200 / 400；读数为 852 英尺（陆地 28.67）和 59 秒（陆地 30.0）； “落地点”响起|用接地平面小车推向机器 (0.62 → 1.3)|每 100 英尺刻度一次|
+|14|30.0–33.3|两张字幕卡：电报本身的行（扫描的一部分）“57秒”，记录的措辞“59秒内覆盖了852英尺”。 “59秒”；保持静止2.67 s；从32.8开始沉默|锁定|判决前的比较|
+|15|33.3–35.9|57 敲响橙色信号，“差2秒”|锁定，则底牌35.0开始上涨|沉默后罢工落在低 D|
+|16|35.9–40.0|将整个浅色桌子拉回到深色桌子上的框架中；五个标签飞入“档案索引”（两个 57 被击中）； 片尾卡于 36.33|缩放至 0.094，滚动至水平|规模揭示|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-90 BPM, 4/4; every key action on a beat or half-beat (`demo/tools/cuecheck.mjs`), except the two breaths (17.6, 32.8), which sit just before their downbeats by design. B minor turning to D major.
+90 BPM，4/4；每一个节拍或半拍 (`demo/tools/cuecheck.mjs`) 上的关键动作，除了两个呼吸 (17.6, 32.8)，它们被设计为位于强拍之前。 B小调转为D大调。
 
-| Section | Time | Palette | Notes |
+|部分|时间|调色板|笔记|
 |---|---|---|---|
-| Light | 0–2.7 | piano D5 with the light; hum and starter clicks | |
-| Telegram | 2.7–10.7 | felt piano broken chords in eighths, Bm–G–D–A; a paper sweep and a glass ring on each lit line; cellos D3 and violas A3 enter under the 57 | |
-| Clipping | 10.7–13.3 | the same broken chords, quieter (Bm, G) | an echo |
-| First flight | 13.3–23.6 | D at the glide; strings swell from the develop (attack 1.6 s), piano climbs D4 → A5 in eighths and a noise riser rises through the push; everything is cut at 17.6; at 18.0 the full D chord (piano D2–A4, strings, contrabass D2, glass D6, a soft cymbal), then a falling line A4–F♯4–D4–E4–F♯4 | wind and surf replace the hum inside the photograph |
-| Measure | 26.3–32.8 | piano eighths on an A-major pedal, getting slightly louder; cellos A3 and violas E4 underneath; ticks every 100 ft; glass A5 at 852, E6 at 59 | acceleration by density, not tempo |
-| Verdict | 32.8–33.3 | silence (hum only) | |
-|  | 33.3 | pen stroke, piano D2/D3/A3, glass D6, soft timpani D3 | |
-| End | 35.7–40.0 | the theme in D (F♯4–A4–D5–C♯5–A4), ticks as index rows land; the final D chord with strings and bowed vibraphone at 36.33 | |
+|光|0–2.7|钢琴D5带灯；嗡嗡声和启动声| |
+|电报|2.7–10.7|感觉钢琴八度分解和弦，Bm-G-D-A；每条点亮的线上都有一个纸扫和一个玻璃环；大提琴 D3 和中提琴 A3 进入 57 级以下| |
+|剪裁|10.7–13.3|相同的分解和弦，更安静（Bm，G）|回声|
+|第一次飞行|13.3–23.6|D 滑行时；琴弦从展开部分开始膨胀（起音 1.6 秒），钢琴以八分之一的速度爬升至 D4 → A5，并且噪音通过推动而上升；全部削减为17.6；在 18.0 处，完整的 D 和弦（钢琴 D2–A4、弦乐、低音提琴 D2、玻璃 D6、软钹），然后是下降线 A4–F♯4–D4–E4–F♯4|风和海浪取代了照片中的嗡嗡声|
+|措施|26.3–32.8|A大调踏板上的钢琴八分音符，声音稍微变大；下面是大提琴 A3 和中提琴 E4；每 100 英尺滴答一次；玻璃 A5 为 852，E6 为 59|通过密度加速，而不是速度加速|
+|判决|32.8–33.3|沉默（只有嗡嗡声）| |
+|  |33.3|笔划，钢琴D2/D3/A3，玻璃D6，软定音鼓D3| |
+|结尾|35.7–40.0|D 中的主题 (F♯4–A4–D5–C♯5–A4)，随着索引行的落地而勾选；最后的 D 和弦，带有弦乐和弓弦颤音琴，位于 36.33| |
 
-Mix (in `mix.py`): music about 11 dB under the voice before ducking, ducked a further ~5 dB while the narrator speaks; foley 9 dB under the voice, beds 24 dB under; a 38 Hz high-pass on everything but the voice; a master limiter keeps the peak-to-RMS ratio near 11.5 dB so `mux.sh` can reach −14 LUFS under −1.2 dBTP.
+混音（在 `mix.py` 中）：音乐比音量闪避之前的声音低约 11 dB，在叙述者说话时进一步降低约 5 dB； 拟音人声9分贝以下，床24分贝以下；除声音外，所有内容均采用 38 Hz 高通滤波器；主限幅器将峰值与RMS之比保持在11.5 dB附近，因此`mux.sh`可以在-1.2 dBTP下达到-14 LUFS。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Table #F7F9FB with a brushed-aluminium frame and a dark desk (#0E0F11); ink #15171A; signal orange #FF5A1F; caption plates rgba(14,15,17,0.74).
-- Props (all Library of Congress, true scale, 5000 world units = 7 in): telegram (LC-USZ62-65459 / mcc.061), Dayton Herald clipping (LC-USZ62-70686), first-flight negative (LC-DIG-ppprs-00626), fourth-flight negative (LC-DIG-ppprs-00629), 14 December negative (LC-DIG-ppprs-00610).
-- The loupe: 2.5×, lens radius 1000 world units (≈ 1.4 in).
-- Narrator: Kokoro `bm_george`, speeds 0.92–1.0.
+- 桌子#F7F9FB，带有拉丝铝框架和深色桌子（#0E0F11）；墨水#15171A；信号橙#FF5A1F；字幕板 rgba(14,15,17,0.74)。
+- 道具（所有国会风格库，真实比例，5000 个世界单位 = 7 英寸）：电报 (LC-USZ62-65459 / mcc.061)、代顿先驱报剪报 (LC-USZ62-70686)、第一次飞行阴性 (LC-DIG-ppprs-00626)、第四次飞行阴性 (LC-DIG-ppprs-00629)，12 月 14 日阴性（LC-DIG-ppprs-00610）。
+- 放大镜：2.5×，镜头半径 1000 个世界单位（≈ 1.4 英寸）。
+- 旁白：Kokoro `bm_george`，速度 0.92–1.0。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Over the pulled-back table, bottom left: 差两秒 (Noto Serif SC), *Two Seconds Short*, a signal-orange rule, `ARCHIVE LIGHT TABLE` 档案灯台, `LemoLab × Claude Opus 5.5`; the archive index on the right. 3.7 s. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+在拉回的桌子上，左下：差两秒（Noto Serif SC），*两秒短*，一条橙色规则，`ARCHIVE LIGHT TABLE` 档案灯台，`LemoLab × Claude Opus 5.5`；右侧的存档索引。 3.7 秒。 The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's 示范 only; a user's 影片 carries no LemoLab credit and no copy of this card.
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -82,6 +89,6 @@ demo/
   FACTS.md, CREDITS, stills/styleframe.jpg
 ```
 
-- `sh demo/build.sh` takes about 4 minutes on Apple silicon (the picture renders in about 40 s with 4 workers; the master pass is the slowest step). From a clean clone it first fetches what git does not hold: the fonts from Google Fonts (`tools/fonts.py`), the Kokoro model and the salamander, vsco2ce and vcsl sample libraries (`tools/fetch.sh`), and about 100 MB of Library of Congress scans, which `tools/prep.py` turns into textures (about 25 s). `FETCH=1` forces the fonts and scans again.
-- Checks it runs: `asr_check.py` with `small.en` (two lines carry an `asr` field: Whisper writes "17th, 1903" for the spoken date and hears "four flights" as "for flights"), the cue grid, subtitle single-line widths measured with the real fonts (widest 648 px against 1500 px), `readcheck.mjs`.
-- Demo-specific pitfalls: loc.gov item pages sit behind a Cloudflare challenge, so the catalogue records come from the Library's SRU server (`lx2.loc.gov:210/lcdb`) and the files from `tile.loc.gov`; in the first-flight plate the sky can be unmixed exactly against a smooth membrane, but the sand cannot, so below the horizon only strong marks are cut (lower wing, skids, struts; a vertical-line filter catches thin struts) and the rest stays on the ground; the fourth-flight scan is low in contrast and gets its own levels in the positive; the clipping is a low-resolution copy, so the camera never pushes past about 0.66 zoom on it.
+- `sh demo/build.sh` 在 Apple 芯片上大约需要 4 分钟（图片在 4 个工作人员的情况下渲染大约需要 40 秒；主通道是最慢的步骤）。它首先从一个干净的克隆中获取 git 不包含的内容：来自 Google Fonts (`tools/fonts.py`) 的字体、Kokoro 模型和蝾螈、vsco2ce 和 vcsl 采样音色库 (`tools/fetch.sh`) 以及大约 100 MB 的国会风格库扫描内容，`tools/prep.py` 将其转换为纹理（约 25 秒）。 `FETCH=1` 强制字体并再次扫描。
+- 检查它是否运行：`asr_check.py` 和 `small.en`（两行带有 `asr` 字段：Whisper 为口头日期写“17th, 1903”，听到“四次航班”为“航班”）、提示网格、使用真实字体测量的字幕单行宽度（最宽 648 像素对 1500 像素） px），`readcheck.mjs`。
+- 示范特定的陷阱：loc.gov 项目页面位于 Cloudflare 挑战后面，因此目录记录来自风格库的 SRU 服务器 (`lx2.loc.gov:210/lcdb`) 和来自 `tile.loc.gov` 的文件；在首飞板中，天空可以在光滑的薄膜上完全分离，但沙子不能，因此在地平线以下，只有强烈的痕迹被切割（下机翼、滑道、支柱；垂直线过滤器捕获细支柱），其余部分留在地面上；第四次飞行扫描的对比度较低，并且在正片上有自己的水平； the clipping is a low-resolution copy, so the 摄影机 never pushes past about 0.66 zoom on it.

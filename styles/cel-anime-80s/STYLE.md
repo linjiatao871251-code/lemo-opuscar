@@ -1,117 +1,129 @@
-# 80s Cel Anime — Style Prompt
+<a id="80s-cel-anime--style-prompt"></a>
+# 80 年代赛璐璐动画：风格提示词
 
-> Hand-painted cel animation from the golden age of Japanese OVAs, re-created in code: flat two-tone cels over airbrushed backgrounds, backlit neon, limited-animation timing, played back as a late-80s videotape on a CRT television.
-> References (grammar only): 1980s Japanese OVA and TV cel animation in general (painted-background vs flat-cel contrast, backlit light, held drawings, speed grammar, city-pop openings). Borrow the era's craft, never a specific work's characters, mecha, logos, place names or signature shots.
+> 来自日本 OVA 黄金时代的手绘赛璐珞动画，用代码重新创建：喷绘背景上的平面双色调赛璐珞、背光霓虹灯、有限的动画时间，在 CRT 电视上以 80 年代末录像带的形式播放。
+> 参考资料（仅语法）：20 世纪 80 年代日本 OVA 和 TV cel 动画的概况（彩绘背景与平面 cel 对比、背光、绘图、速度语法、城市流行开场）。借用时代的工艺，绝不是特定作品的人物、机甲、标志、地名或签名镜头。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Four layers, and the contrast between them is the look:
-- **Background painting**: soft airbrushed gradients, glowing windows, wet reflections; painted once at load (colour + emissive pair), then only slid.
-- **Cel** (characters, vehicles, props): flat fills, **hard-edged** shadow and highlight shapes, **coloured** outlines, never pure black; stepped at 12 or 8 fps.
-- **Light**: backlit cel (透過光): signs, lamps, title letters glowing *through* the frame; flares, halation.
-- **Playback**: videotape on a CRT: chroma bleed, scanlines, grille, phosphor glow, darkened corners, faint noise.
+四层，它们之间的对比就是外观：
+- **背景画**：柔和的喷绘渐变、发光的窗户、湿反射；在负载时绘制一次（颜色+发射对），然后仅滑动。
+- **赛尔**（人物、车辆、道具）：平面填充、**锋芒毕露**阴影和高光形状、**彩色**轮廓，绝不是纯黑色；以 12 或 8 fps 步进。
+- **光**：背光胶片（透视光）：*穿过*框架发光的标志、灯、标题字母；耀斑、光晕。
+- **回放**：CRT 上的录像带：色度溢出、扫描线、格栅、磷光、暗角、微弱噪音。
 
-If a frame looks like modern digital anime, one layer is missing. Not moe anime (round eyes, giant irises, hatched blush), not vector clip-art (uniform black lines, gradients in shapes), not a film-print pastiche (no gate weave or scratches: this is tape).
+如果一帧看起来像现代数字动画，则说明缺少一层。不是萌动漫（圆眼睛、巨大的虹膜、阴影腮红），不是矢量剪贴画（均匀的黑线、形状渐变），不是影片印刷仿制品（没有门编织或划痕：这是胶带）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-**Cel rendering.** Fill, then a **hard** shadow crescent, then a **hard** highlight crescent, then the coloured outline. No gradients inside a cel shape (exception: one "harmony" painted still at a peak). Automatic shading: clip to the shape and fill `shape − shape shifted toward the light` with the shadow colour (even-odd); the same shifted away for the highlight and for a saturated neon **rim light** (2–4 px). Add hand-placed cast shadows. Outlines ~2–3 px at 1080p, scaled down (0.45–0.8×) in extreme close-ups. **Colour models per lighting** (色指定): define each character in daylight, derive other sets by multiplying lit / shadow / line separately, plus a backlit silhouette set with a warm rim.
+**Cel渲染。**填充，然后是**难的**阴影新月形，然后是**难的**高光新月形，然后是彩色轮廓。 cel 形状内没有渐变（例外：一个“和谐”画仍然处于峰值）。自动着色：剪裁到形状并用阴影颜色（偶数-奇数）填充`shape − shape shifted toward the light`；对于高光和饱和霓虹灯 **边缘灯** (2–4 px) 来说，同样的情况发生了变化。添加手工放置的投射阴影。 1080p 时轮廓约为 2–3 像素，在极端特写中按比例缩小 (0.45–0.8×)。 **每个照明的颜色模型**（颜色指定）：在日光下定义每个角色，通过分别乘以照明/阴影/线条来导出其他组，再加上带有温暖边缘的背光轮廓集。
 
-**People the 80s way.** Construct the head (sphere + jaw): long egg-shaped face, soft-point chin, far eye foreshortened with a cheekbone turn in 3/4. **Almond** eyes near the vertical middle of the head, a thick upper lash line flicking outward, a tall oval layered iris, two highlights, long thin brows. Nose = a shadow plane + one stroke; one faint blush layer, never hatched. Hair in overlapping locks with sharp uneven tips over a wider dark under-layer, a continuous "angel ring" highlight with a zigzag lower edge. Lines: skin thin warm dark brown, hair dark purple; only hard props near-black. Emotion lives in brows, lid height, iris size, mouth corners and shoulders. Build and approve a **model sheet** first; draw every shot from the same head function.
+**80年代的方式。**构建头部（球体+下巴）：长蛋形脸，软点下巴，远眼缩短，颧骨转动3/4.**杏仁**眼睛靠近头部垂直中部，厚上半身睫毛线向外轻拂，高大的椭圆形分层虹膜，两条亮点，细长的眉毛。鼻子=阴影平面+一笔；一层淡淡的腮红，从未孵化。头发呈重叠的发绺，尖端不均匀，覆盖在更宽的深色底层上，连续的“天使环”突出，下边缘呈锯齿状。纹路：皮肤薄暖深褐色，毛发深紫色；只有接近黑色的硬质道具。情感存在于眉毛、眼睑高度、虹膜大小、嘴角和肩膀上。首先建立并批准一个**模型表**；从相同的头函数中绘制每个镜头。
 
-**Backgrounds.** Painted once at load: sky gradients, airbrushed clouds with lit undersides, buildings or landscape with painted light sources, and always a matching **emissive plate** that slides with the colour plate. Wet ground = a flipped, blurred, streaked copy of the plate darkened with ripple bands. Generic sign words only, never brands. Moving plates get a light horizontal smear (~16 px) against strobing.
+**背景。**在加载时绘制一次：天空渐变、带有照亮底面的喷绘云、带有绘制光源的建筑物或景观，以及始终与颜色板一起滑动的匹配**emissive 板**。潮湿的地面=翻转的、模糊的、有条纹的盘子副本，并带有波纹带。仅通用标志词，而非品牌。移动板会出现轻微的水平涂抹（约 16 像素）以防止频闪。
 
-**Light and lens.** Bloom strongly from the emissive canvas, weakly from the colour canvas above ~0.9; tint the widest bloom red-orange (halation). Flares: star-burst, anamorphic streak, hexagonal ghosts through frame centre. Stamp every cel's silhouette in black onto the emissive canvas so glow never bleeds through it.
+**灯光和镜头。** 从发光画布强烈绽放，从上面的彩色画布弱绽放〜0.9；将最宽的花朵染成红橙色（光晕）。耀斑：星爆、变形条纹、穿过画面中心的六边形重影。将每个细胞的黑色轮廓印在发光画布上，这样发光就不会透过它。
 
-**Videotape + CRT, restrained and deterministic:** chroma bleed (sharp luma, horizontally blurred and slightly shifted chroma), fine scanlines anchored to output pixels whose gap shrinks on brights, a faint RGB grille, phosphor glow, darkened corners without curved borders, faint signal noise. Subtitles are composited inside the pass after grading. Two optional accents: a **power-on** (dot → line → picture) and **tracking noise** (a few frames of tearing, rolling band, vertical hop). Check moiré on a 720p downscale. Frame: full 16:9 as a theatrical feature (4:3 pillarbox is valid for an OVA feel).
+**录像带+ CRT，克制和确定性：**色度溢出（锐利的亮度，水平模糊和轻微偏移的色度），固定到输出像素的精细扫描线，其间隙在明亮时缩小，微弱的RGB格栅，荧光粉发光，没有弯曲边框的暗角，微弱的信号噪声。字幕在评分后合成在通行证内。两个可选的重音：**开机**（点→线→图片）和**跟踪噪声**（几帧撕裂，滚动带，垂直跳跃）。在 720p 低档上检查莫尔条纹。帧：全 16:9 作为戏剧特征（4:3 邮筒式适用于 OVA 感觉）。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Painted plates carry gradients and atmosphere; cels are flat, few-colour, saturated. Each time of day gets its own colour model, never a filter over the frame.
-- The protagonist has **one accent colour** that pops in every lighting set. Line colours are dark versions of their fill.
-- Skin gets its own colour in every set; multiplying daylight skin by a tint turns faces pink under neon.
-- Examples: night city (indigo, violet, neon magenta, cyan, window gold); seaside noon (cobalt, white cumulus, sand, coral); classroom dusk (amber, chalk green, brown wood, purple shadows).
+- 彩绘板带有渐变和氛围；细胞是扁平的、几种颜色的、饱和的。一天中的每个时间都有自己的颜色模型，框架上永远不会有滤镜。
+- 主角的 **one 强调色** 在每个灯光设置中都很流行。线条颜色是其填充的深色版本。
+- 每组皮肤都有自己的颜色；将日光下的皮肤乘以色调，使霓虹灯下的脸变成粉红色。
+- 示例：夜城（靛蓝、紫罗兰色、霓虹洋红、青色、窗金）；海边中午（钴色、白积云、沙子、珊瑚）；教室黄昏（琥珀色、粉笔绿、棕色木色、紫色阴影）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Subtitles live on the tape, composited inside the CRT pass: a semi-condensed sans (e.g. Barlow Semi Condensed 600, ~50–56 px), cream-yellow with a thick dark outline and soft shadow, ~96 px above the bottom; a second speaker may take a second colour and a small boxed tag. Hold ≥ max(1.8 s, speech + 0.6 s); a line yields to the next.
-- Titles: heavy italic Latin in a **chrome gradient** (sky → white horizon line → violet → pink → gold), dark + neon outlines, optional katakana line (e.g. Dela Gothic One), glowing through the emissive layer, flickering on at 12 fps with a light sweep and a star glint.
+- 字幕位于磁带上，在 CRT 通道内合成：半压缩 sans（例如 Barlow Semi Condensed 600，约 50–56 像素），奶油黄色，带有粗暗轮廓和柔和的阴影，底部上方约 96 像素；第二个发言者可能会采用第二种颜色和一个小盒装标签。保持 ≥ max(1.8 s，语音 + 0.6 s)；一行屈服于下一行。
+- 标题： **铬色渐变的重斜体拉丁文**（天空 → 白色地平线 → 紫色 → 粉色 → 金色），深色 + 霓虹灯轮廓，可选片假名线（例如 Dela Gothic One），穿过发射层发光，以 12 fps 的速度闪烁，并带有轻扫和星形闪烁。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters on twos (12 fps)**; performance beats (blinks, eye openings, lip flaps, gestures) on threes (8 fps). Camera, light sweeps, flares and rain on ones (24 fps); a stepped camera judders.
-- **Cycles**: hair and cloth as ribbons driven by a travelling sine, 4-drawing cycle (6 when calm); bounce = a 12 fps jitter of a few px.
-- **Move light, not drawings**: coloured bands sweeping across a held cel (`source-atop`).
-- **Impact frames**: 2 frames of an inverted or monochrome silhouette over radial lines, then the result.
-- **Hold the peak**: a painted still with a slow pan, only cycles moving.
-- Fast blinks (one 8 fps closed drawing); eye openings in three drawings; lip flaps of 3–4 shapes at 8 fps ending on a held expression.
+- **双人角色 (12 fps)**；三人一组的表演节拍（眨眼、睁眼、嘴唇张开、手势）（8 fps）。 摄影机，光扫描、耀斑和雨点（24 fps）；阶梯式摄影机颤抖。
+- **周期**：头发和布料作为丝带由行进正弦驱动，4个绘图周期（平静时6个）；反弹 = 几个 px 的 12 fps 抖动。
+- **移动光线，而不是绘图**：彩色条带扫过所持的细胞（`source-atop`）。
+- **冲击帧**：径向线上倒置或单色轮廓的2帧，然后是结果。
+- **坚守巅峰**：一幅缓慢平移的彩绘静物，仅循环移动。
+- 快速闪烁（一张 8 fps 闭合绘图）；三幅图画中的眼睛张开；以 8 fps 的速度进行 3-4 个形状的唇瓣，以保持表情结束。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Multiplane crane over a tall plate | a world revealed layer by layer | arriving; descending into a place; rising above it |
-| Side tracking, 3–4 parallax layers | steady momentum | a journey; a chase; progress |
-| Rear view into a pseudo-3D canyon | speed, pressure ahead | a race; a tunnel; a countdown |
-| Held bust with light bands | speed or tension without animation | a drive; waiting; a decision |
-| Insert with bokeh and a sliding highlight | this object matters | a letter; a key; a ticket |
-| Extreme close-up on eyes | resolve, recognition | a choice; a promise |
-| Slow pan across a painted still | awe, a held breath | a peak; a memory; a landscape |
-| Radial speed lines + one-beat freeze | the instant before impact | a leap; a collision; a goal |
-| Truck-in through a window or screen | entering another world | a flashback; a broadcast; a dream |
-| Locked two-shot with lip flaps | conversation | banter; a confession; an argument |
-| An earlier composition repainted | what changed | after a storm; years later |
+|高板上的多平面起重机|一个层层揭开的世界|到达；下降到一个地方；上升到它之上|
+|侧跟踪，3-4 视差层|稳定的势头|一次旅行；一场追逐；进步|
+|伪 3D 峡谷后视图|速度、前方压力|一场比赛；隧道；倒计时|
+|用光带固定半身像|无动画的速度或张力|一个驱动器；等待;一个决定|
+|插入散景和滑动高光|这个对象很重要|一封信；一把钥匙；一张票|
+|眼睛的极端特写|决心、认可|一个选择；一个承诺|
+|缓慢平移于画好的静态画面上|敬畏，屏住呼吸|一个高峰；一段记忆；风景|
+|径向速度线+一拍冻结|撞击前的瞬间|一次飞跃；碰撞；一个目标|
+|卡车通过窗户或纱窗驶入|进入另一个世界|闪回；广播；一个梦|
+|带唇瓣的锁定两个镜头|对话|开玩笑；坦白；一个论点|
+|重新绘制了早期的作品|发生了什么变化|暴风雨过后；几年后|
 
-Cut on bars. Framing: cels readable against the painted plate; keep the lower ~120 px clear for subtitles. Transitions: cuts, white flashes, impact frames, tracking noise at a tape-related beat; no digital dissolves or wipes.
+切在酒吧上。取景：可在彩绘板上读取的胶片；保持下方约 120 像素的字幕清晰。过渡：剪切、白色闪光、冲击帧、磁带相关节拍的跟踪噪声；没有数字溶解或擦拭。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instruments** (city pop, synth funk, anime-opening pop): saxophone or synth-brass lead, FM electric piano with a bell transient, slap bass, chorus-y 16th guitar chanks, gated-reverb snare and big toms, drum machine, arpeggiated analog synth, string pad, FM bell sparkle. Extended jazz-pop harmony (maj7, 9ths).
-- **Techniques, as options**: band-pass the score to cassette/AM when a diegetic source plays, then open it; a brass hit on a title; a drum fill left open for an effect; one beat of true silence before a peak; a semitone lift for a last chorus.
-- **Foley** (synthesized): engines from an RPM curve, rain, tire hiss, wind, bells, radio squelch, impacts, sparks, cassette clicks, crowd murmur, door buzzers, footsteps on wet pavement; tape accents get their own thunk, whine, hiss.
-- **Voice**: an English-dub feel, short lines; a second voice through a phone/radio band-pass (~380–2800 Hz). Verify every line with whisper.
-- **Mix**: limit then compress TTS, voices ~10 dB over ducked music (duck ~9 dB), beds ducked ~3 dB, choruses louder than intros, two-pass loudnorm to −14 LUFS.
+- **仪器仪表**（城市流行、合成放克、动漫开场流行）：萨克斯管或合成铜管主音、带铃声瞬态的 FM 电钢琴、低音贝斯、合唱 16 吉他唱腔、门控混响军鼓和大通鼓、鼓机、琶音模拟合成器、弦垫、FM 铃声。扩展爵士流行音乐和声（maj7、9ths）。
+- **技术，可选**：播放剧情源时将配乐带通至cassette/AM，然后打开；标题上的黄铜打击；鼓填充保持开放以产生效果；高峰前的一次真正的寂静；最后一段副歌的半音提升。
+- **弗利**（合成）：来自 RPM 曲线的发动机、雨、轮胎嘶嘶声、风、铃声、无线电静噪、冲击、火花、磁带点击声、人群杂音、门蜂鸣声、潮湿路面上的脚步声；磁带口音有自己的重击声、呜呜声、嘶嘶声。
+- **嗓音**：英文配音的感觉，台词短；第二个声音通过 phone/radio 带通 (~380–2800 Hz)。用耳语验证每一行。
+- **混音**：限制然后压缩 TTS，声音比回避音乐约 10 dB（回避约 9 dB），床回避约 3 dB，合唱比前奏响亮，两次通过响度规范为 -14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Small flat hero in a huge painted world.** *Fits content like:* a first day in a big company; a child in a museum hall; a lone researcher at an observatory.
-- **Stillness as drama** (held close-up or harmony still). *Fits content like:* an exam result; a goodbye at a gate; an unveiling.
-- **Backlit light.** *Fits content like:* a lantern festival; a screen full of code; a lighthouse; stage lights.
-- **Speed grammar** (speed lines, looping plates, impact frames). *Fits content like:* a sprint final; a data packet crossing the world; a kitchen rush.
-- **Light-band sweep on a held cel.** *Fits content like:* a night train; a scanner reading a page; a heartbeat quickening.
-- **A song as an object** (tape, radio, jukebox changes the score). *Fits content like:* a band's origin; a family memory; a call-in show.
-- **Tape artefacts as punctuation.** *Fits content like:* found home video; a rewind to the past; an interrupted broadcast.
-- **Colour-model change** (one place, another hour). *Fits content like:* a day in a shop; a farm's seasons; before/after a renovation.
+- **巨大的绘画世界中的小平面英雄。** *适合以下内容：* 在大公司的第一天；博物馆大厅里的孩子；天文台的孤独研究员。
+- **戏剧般的静止**（保持特写或和谐静止）。 *适合以下内容：* 考试成绩；在门口告别；揭幕。
+- **背光灯。** *适合内容如下：*元宵节；满屏的代码；一座灯塔；舞台灯光。
+- **速度语法**（速度线、循环板、冲击架）。 *适合以下内容：* 冲刺决赛；穿越世界的数据包；厨房里的忙碌。
+- **手持式 cel 上的光带扫描。** *适合以下内容：* 夜间列车；扫描仪读取一页；心跳加速。
+- **A 歌曲作为对象**（磁带、收音机、点唱机更改为配乐）。 *适合以下内容：*乐队的起源；家庭记忆；来电节目。
+- **将文物作为标点符号。** *适合以下内容：* 找到家庭视频；回到过去；中断的广播。
+- **颜色模型更改**（一处，另一小时）。 *适合以下内容：* 在商店的一天；农场的季节； before/after 翻新。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- White cels bloom pink → bloom from the emissive canvas; weak, high-threshold bloom on colour.
-- Neon bleeds through characters → silhouettes stamped into the emissive canvas.
-- Black holes in highlights → clamp before S-curves.
-- Thick rim light swallows thin shapes → 2–4 px offsets.
-- Hair like tentacles, a face like a paper mask, moe eyes, uniform black lines → the drawing rules in §2.
-- Pink faces under coloured light → skin gets its own colour per set; weaker light sweeps on faces.
-- Front views are the hardest drawing → hide them behind a visor, a windscreen or backlight when you can.
-- Pseudo-3D points behind the camera flip into the sky → clamp z to the near plane.
-- Canvas silently falls back to a serif → `document.fonts.load` every weight before painting.
-- CRT detail inflates files → noise in the shader, only `noise=c0s=2:allf=t` in ffmpeg, CRF ≈ 23; loudnorm in two passes with `linear=true`; don't let a limiter flatten the dynamics.
+- 白色细胞绽放粉红色→从发光画布上绽放；颜色上的弱、高阈值绽放。
+- 霓虹灯渗透到人物→剪影印在发光画布上。
+- 高光中的黑洞 → 在 S 曲线之前钳位。
+- 厚边缘光吞没薄形状 → 2–4 px 偏移。
+- 触手般的头发、纸质面具般的脸、萌眼、均匀的黑线→§2中的绘图规则。
+- 彩光下的粉红脸→皮肤每组都有自己的颜色；较弱的光线扫过脸上。
+- 前视图是最难绘制的→尽可能将它们隐藏在遮阳板、挡风玻璃或背光后面。
+- 摄影机后面的伪 3D 点翻转到天空 → 将 z 钳位到近平面。
+- 在绘画之前，画布会默默地回落到衬线 → `document.fonts.load` 每个重量。
+- CRT细节膨胀文件→着色器中的噪声，ffmpeg中只有`noise=c0s=2:allf=t`，CRF ≈ 23；使用 `linear=true` 进行两次传递的 Loudnorm；不要让限制器使动态变得平坦。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `cel.js` (path, cel, ribbon, flutter), `pal.js` (colour models), `head80.js` (80s head, 3 views × expressions), `hands.js`, `bg.js` (painted plates, crane plates, wet reflections), `fx.js` (rain, speed lines, flares, trails), `post.js` (WebGL tape + CRT pass: bloom, grade, subtitles, power-on, tracking noise), `hud.js`, `music/score.py` (numpy FM/slap/brass synthesis), `tools/`. `?test=model|close|side` draws model sheets, `?raw=1` skips the CRT pass. A minimal new use: a harbour sunset plate with its emissive pair, one cel boat shaded with `cel.js`, through `post.js`.
+`demo/`中：`cel.js`（路径、cel、ribbon、flutter）、`pal.js`（彩色模型）、`head80.js`（80s头、3视图×表情）、`hands.js`、`bg.js`（涂漆板、起重机板、湿法）反射）、`fx.js`（雨、速度线、耀斑、轨迹）、`post.js`（WebGL 磁带 + CRT 通道：绽放、分级、字幕、开机、跟踪噪声）、`hud.js`、`music/score.py`（numpy FM/slap/brass 合成）、 `tools/`。 `?test=model|close|side` 绘制角色设定表，`?raw=1` 跳过 CRT 通道。一个最小的新用途：港口日落板及其发射对，一艘用 `cel.js` 遮蔽的赛璐珞船，通过 `post.js`。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the structure, the characters, the world, the opening, the ending, the camera path, the pacing and the colour models. All far from our demo:
+您决定结构、人物、世界、开头、结尾、摄影机路径、节奏和色彩模型。与我们的示范相去甚远：
 
-- Structures: **slice of life in four seasons** (one place, four colour models, a small change each time); **two-hander dialogue** (a locked two-shot comedy that breaks into one fantasy sequence); **the mock opening credits** (a character roster introduced one by one, each with a pose and a name card).
-- Openings: **in the middle of a conversation** (lip flaps already moving, no establishing shot); **a TV being switched on** to an in-world broadcast; **a close-up of a drawing hand** in a classroom, then cut to the world it draws.
-- Endings: **a freeze-frame** on a laugh with a "to be continued" card; **the tape runs out** into blue screen; **a slow pan up to a starry sky** from a quiet rooftop, no dialogue.
+- 结构：**四个季节的生活切片**（一个地方，四种颜色模型，每次都有一个小变化）； **双手对话**（一部锁定的两人镜头喜剧，闯入一个幻想序列）； **模拟开场学分**（一一介绍的角色名单，每个角色都有一个姿势和一张名片）。
+- 开口：**在谈话中**（唇瓣已经移动，没有建立镜头）； **a 电视正在打开**进行世界范围内的广播；**教室里一只画手**的特写，然后切入它画的世界。
+- 结局：**定格**带着“未完待续”的卡片大笑；**磁带用完**进入蓝屏；**缓慢平移至星空**从安静的屋顶，没有对话。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

@@ -1,83 +1,91 @@
-# Urban Sketch · Pen & Wash — our demo
+<a id="urban-sketch--pen--wash--our-demo"></a>
+# 城市素描·钢笔&水彩晕染 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Where the Wind Went* (32.4 s, 1920×1080, 24 fps, no voice-over) · `urban-sketch.mp4` · source in [`demo/`](demo/)
+示范：*风去之处*（32.4秒，1920×1080，24fps，无画外音）·`urban-sketch.mp4`·来源在[`demo/`](demo/)
 
 
-The original header: a sketchbook page from the park bench: fine sepia fineliner lines that wobble, overshoot and never quite close, with loose transparent watercolour dropped on top. The colour sits slightly off the lines, spills over them, and dissolves into cream cold-press paper at the page edge.
+最初的标题：公园长椅上的素描本页面：精美的棕褐色细线线条摇晃、过冲且永远不会完全接近，上面滴着松散的透明水彩画。颜色稍微偏离线条，溢出到线条上，并溶解在页面边缘的奶油色冷压纸中。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A park exists only as an ink sketch, and the only colour on the page is a straw hat. A gust steals the hat, and **the page gets painted wherever the wind carries it**.
+公园仅以水墨素描的形式存在，页面上唯一的颜色是一顶草帽。一阵风把帽子偷走了，**，风吹到哪里，页面就被画上**。
 
-The original "what the style is" notes with the demo's exact colours: paper `#f5eede`, ink `#2b2520`.
+原始的“风格是什么”标注了示范的确切颜色：纸张 `#f5eede`，墨水 `#2b2520`。
 
-Reportage drawing, made on location in a few minutes. Two layers that stay visibly separate:
-1. **Ink.** One thin, near-constant line (a 0.3–0.5 mm fineliner), dark sepia `#2b2520`. It wobbles slightly, overshoots corners by a few pixels, breaks mid-stroke, and suggests rather than describes: a few window marks instead of a grid, scalloped fragments instead of a whole tree outline.
-2. **Wash.** Transparent watercolour glazed on top. It is **misregistered** by 1–3 px from the line, sometimes spills past it, and leaves paper white for highlights and for figures (reserves). Dried edges are darker (pigment pools at the rim), and pigment granulates into the paper tooth.
+报告文学绘图，在几分钟内完成。两层明显分开：
+1. **墨水。** 一根细的、近乎恒定的线条（0.3–0.5 毫米细线），深棕褐色 `#2b2520`。它会轻微晃动，超出角落几个像素，中途中断，并且建议而不是描述：一些窗口标记而不是网格，扇形碎片而不是整个树轮廓。
+2. **洗。**透明水彩釉面。它是**注册错误**，距线 1-3 像素，有时会溢出，并为高光和图形（保留）留下纸张白色。干燥的边缘颜色更深（边缘处有颜料池），并且颜料颗粒进入纸牙中。
 
-The page itself is part of the image. The warm cream `#f5eede` cold-press paper has large-scale mottling and a fine tooth. Nothing is painted edge to edge: the painting frays into leaf-sized dabs and white holes, leaving a blank margin for handwriting.
+页面本身是图像的一部分。温霜`#f5eede`冷压纸，斑纹大，齿细。没有任何东西是从边到边画的：这幅画磨损成叶子大小的斑点和白洞，留下了可供手写的空白边缘。
 
-Stories the style was pitched for, and the native moves the demo used (line before colour for the sketch spread and skyline; colour as arrival driven by the gust; the one coloured thing = the straw hat; the page as frame for the ending):
+该风格所宣传的故事，以及示范使用的风格特有表现手法（草图展开和天际线的颜色之前的线条；颜色作为由阵风驱动的到达；单一颜色的东西 = 草帽；页面作为结局的框架）：
 
-Good for: travel diaries, city portraits, a day in a place, "the moment I noticed…", slice-of-life, gentle comedy with small figures, anything that benefits from feeling observed and handmade.
+适合：旅行日记、城市肖像、某个地方的一天、“我注意到……的那一刻”、生活片段、带有小人物的温和喜剧，任何受益于观察和手工制作的东西。
 
-**Native moves (only this medium does them):**
-- **Line before colour.** Show the pen drawing a subject stroke by stroke (in real stroke order), then drop the wash in. The drawing process is the spectacle.
-- **Colour as arrival.** Every pixel has a *colour arrival time*. Wash spreads outward from a source with a ragged wet front and a dark tide line, so you can paint with an event (wind, a runner, music, a sunrise). Figures stay frozen line drawings until colour touches them, then start moving.
-- **The one coloured thing.** Open on a colourless sketch with a single tinted object; it becomes the protagonist.
-- **The page as frame.** Pull back until the whole page is visible, edges dissolving, with handwritten title and notes in the margin. This works as an end card and a scale reveal in one.
+**风格特有动作（只有这个表现媒介可以做到）：**
+- **颜色之前的行。** 显示钢笔一笔一笔地绘制主题（按真实的笔画顺序），然​​后将水彩晕染放入。绘制过程就是奇观。
+- **颜色到达。** 每个像素都有一个*颜色到达时间*。 水彩晕染从具有参差不齐的湿锋和暗潮线的源头向外扩散，因此您可以根据事件（风、跑步者、音乐、日出）进行绘画。人物会保持冻结的线条图，直到颜色接触到它们，然后开始移动。
+- **单一颜色的东西。** 在无色草图上打开，带有单一有色物体；它成为主角。
+- **作为框架的页面。** 向后拉，直到整个页面可见，边缘消失，页边空白处有手写标题和注释。它可作为片尾卡和比例显示合二为一。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-A 2D camera over a 5120×2880 page (the final pull-back shows it 1:1 at 0.375×).
-- Designed moves use cubic easing. Follow shots use a critically damped spring on a lead-ahead target, so the camera lags like a hand-held follow (stiffness 28, or 70 for the fall).
-- The demo uses push, pull, lateral follow, crane-up, whip-tilt with a slight roll, a punch-in with a 0.35 s shake on impact, a long pull-back, and a tilt down into the margin.
-- Keep subjects at least one third of frame height at story beats; the hat gets a faint paper halo (reserve) so it reads over busy foliage.
+5120×2880 页面上的 2D 摄影机（最终拉回显示它在 0.375× 处为 1:1）。
+- 设计动作使用立方缓动。跟随镜头在超前目标上使用临界阻尼弹簧，因此摄影机会像手持跟随一样滞后（刚度为 28，或下落时为 70）。
+- 示范使用推、拉、侧向跟随、吊起、轻微滚动的鞭状倾斜、冲击时 0.35 秒摇晃的冲入、长距离拉回以及向下倾斜到边缘。
+- 在故事节拍中，使拍摄对象的高度至少保持在框架高度的三分之一；这顶帽子有一个微弱的纸光晕（保留），所以它可以在繁忙的树叶上阅读。
 
-## Motion as used in the demo
+<a id="motion-as-used-in-the-demo"></a>
+## 示范中使用的运动
 
-- Figures **boil** at 12 fps: line wobble and wash seeds change every 1/12 s. The static page does not boil (it is a real page); the camera moves every frame, smoothly.
-- Figures keep anticipation, action and follow-through: a crouch before standing, a lunge and stumble on a miss, a prone slide after a dive. Footsteps land on the beat (run cycle = 2 beats).
-- The wind is drawn: ink "~@" curls spawn behind the hat on every beat, draw on in 0.4 s, then erase from the tail; leaf dabs trail the hat.
-- Colour never snaps. It blooms from a point with a noisy circular clip (figures) or through the arrival field (the world).
+- 12 fps 时的数字 **熬**：线路摆动和水彩晕染种子每 1/12 秒就会发生变化。静态页面不沸腾（是真实页面）； 摄影机运动每一帧都很顺利。
+- 人物保持着预期、行动和后续行动：站立前蹲下，失手时弓步和绊倒，潜水后俯卧滑行。脚步落在节拍上（跑步周期 = 2 节拍）。
+- 绘制风：墨水“~@”卷发在每个节拍的帽子后面生成，在 0.4 秒内绘制，然后从尾部擦除；叶子的痕迹落在帽子上。
+- 颜色永远不会断裂。它从一个带有嘈杂的圆形夹子（人物）的点或穿过到达场（世界）绽放。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Three layers; no voice-over.
-- **Ambience:** paper room tone → park birds (after colour arrives) → a low city hum that comes in a bar before the skyline (J-cut). Everything drops out for the silent bar.
-- **Foley:** pen on cold-press paper (band-passed noise, 1.6–7.5 kHz, with a fibre amplitude texture and grain clicks, one burst per real stroke; thousands overlap into a hiss during the sketch spread; skyline strokes are brighter and read as a hi-hat); a wet brush "shhh" for every big bloom; wind J-cut from the right channel; the straw hat as paper flapping whose rate and level follow its speed and whose pan follows its screen x; steps on the beat; bike bell; dive, slide, catch slap and water plop.
-- **Music:** 150 BPM jazz waltz in F: Sneakybass walking in three, synthesized brushes plus pedal hi-hat, upright piano on beats 2–3, a clarinet lead, muted trumpet for the city, pizzicato ostinato, vibraphone and marimba stabs where trees burst, and a floating D♭maj7♯11 at the apex, followed by **one bar of true silence**. The first sound after it is a chromatic clarinet fall with timpani; the catch lands on a tutti downbeat.
-- Mix: music ducks under the catch; foley high-passed at 90 Hz; −14 LUFS, LRA 7.
+三层；没有画外音。
+- **氛围：** 纸房音调→公园鸟儿（颜色到达后）→天际线前的酒吧中传来低沉的城市嗡嗡声（J-cut）。一切都消失在寂静的酒吧里。
+- **拟音：** 钢笔在冷压纸上（带通噪声，1.6-7.5 kHz，具有纤维振幅纹理和颗粒咔哒声，每个真实笔划一次突发；在草图展开期间数千个重叠成嘶嘶声；天际线笔划更亮，读起来像踩镲）；每朵大花都用湿刷“嘘”；从右通道风 J 切；草帽就像纸一样拍动，其速率和水平跟随其速度，其平移跟随其屏幕x；跟着节拍迈出步伐；自行车铃；潜水、滑行、捕捉拍打和扑通扑通的水声。
+- **音乐：**150 BPM F大调爵士华尔兹：偷偷摸摸的三步走贝斯，合成刷加踏板踩镲，立式钢琴节拍2-3，单簧管主音，城市静音小号，拨奏定音，颤音琴和马林巴刺破树木，漂浮的木琴D♭maj7♯11 位于顶点，随后是**one 真正寂静的条形**。之后的第一个声音是带有定音鼓的半音单簧管落音；渔获落在一首悲观的合奏曲上。
+- 混音：音乐在捕捉下闪现； 拟音 90 Hz 高通； −14 LUFS，LRA 7。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-| Element | Value |
+|元素|价值|
 |---|---|
-| Paper | `#f5eede`; mottling fbm at 0.0011 and 0.0062 cycles/px, ±4.5 %; tooth tile multiplied on top of everything, figures included |
-| Ink | `#2b2520` at 96 % coverage; world line width 1.3–3.4 px (thinner far, thicker near); wobble 0.9–1.3 px; overshoot 3–8 px; 30–60 % of long strokes get one 3–9 px gap |
-| Wash | 2–3 rough-edged layers (edge noise 4–12 px), multiply blend; alpha 0.4–0.65; offset from line by 0.7–1× line width; dried edge stroke at 30–40 % |
-| Granulation | pigment × (0.82 + 0.36 · fbm(p · 0.21)) |
-| Wet front | reveal smoothstep over 0.16 s of arrival time; front band darkened +70 % (Gaussian at +0.07 s, σ 0.08 s); edge noise ±240 px coarse + ±40 px fine |
-| Foliage | pale base wash (sun `#d6d56f`), then light and shadow masses, then 5–20 px leaf dabs coloured by light direction: `#d6d56f` → `#aabf57` → `#7fa04a` → `#56793c` → `#3f5d36`; holes at the rim; scalloped ink fragments only on the outline |
-| Sky | a few big soft ellipses of `#9fbcd6` / `#86a6c8` at 10–20 % alpha, fading upward; clouds are reserves with a `#b7b3c9` belly |
-| Buildings | limestone `#d8c6a0`, ochre `#cfaa72`, glass `#98b1c8`, brick `#c49a7a`; shadow side = colour mixed 45 % with `#5a5f82`; distant blocks mixed 50 % with haze `#b9c0cc` |
-| Lawn and path | `#c3c96f` / `#dcd98b` light bands, `#7f9c52` shade dabs; path `#d8ccb1`; grass = 2–4 ink flicks per tuft, denser near the camera |
-| Figures | 3D skeleton, orthographic projection; torso silhouette from cross-sections; limbs as organic tapered tubes; hair and head as one mass; face left blank (one nose tick in profile); shadow side = colour mixed 40 % with violet `#464873` |
-| Page edge | noisy boundary (fbm 0.004, ±80 px); a white-dab band 70 px wide inside, a coloured-dab spray 70 px wide outside |
+|纸|`#f5eede`；斑纹 fbm 为 0.0011 和 0.0062 cycles/px，±4.5 %；牙齿瓦片乘以一切之上，包括数字|
+|墨水|`#2b2520` 覆盖率 96%；世界线宽度 1.3–3.4 px（远处较细，近处较粗）；摆动 0.9–1.3 像素；超出 3–8 像素； 30–60% 的长笔画有一个 3–9 像素的间隙|
+|水彩晕染|2-3 个粗糙边缘层（边缘噪点 4-12 像素），乘法混合；阿尔法 0.4–0.65；与线偏移 0.7–1× 线宽；干燥边缘行程为 30–40 %|
+|造粒|颜料 × (0.82 + 0.36 · fbm(p · 0.21))|
+|湿锋|显示超过 0.16 秒到达时间的 smoothstep；前带变暗 +70 %（高斯 +0.07 s，σ 0.08 s）；边缘噪点 ±240 px 粗略 + ±40 px 精细|
+|叶子|浅色底座水彩晕染（太阳 `#d6d56f`），然后是光影块，然后是按光线方向着色的 5–20 px 叶子点：`#d6d56f` → `#aabf57` → `#7fa04a` → `#56793c` → `#3f5d36`;边缘有孔；仅在轮廓上有扇形墨迹|
+|天空|`#9fbcd6` / `#86a6c8` 的几个大软椭圆，透明度为 10–20%，向上淡出；云是有`#b7b3c9`肚子的储备|
+|建筑物|石灰石`#d8c6a0`、赭石`#cfaa72`、玻璃`#98b1c8`、砖`#c49a7a`；阴影面 = 与 `#5a5f82` 混合 45% 的颜色；远处的块与雾混合 50% `#b9c0cc`|
+|草坪和小路|`#c3c96f` / `#dcd98b` 光带、`#7f9c52` 遮阳板；路径 `#d8ccb1`；草 = 每簇 2–4 个墨迹，摄影机附近较密|
+|人物|3D骨架、正投影；横截面的躯干轮廓；四肢为有机锥形管；头发和头部是一体的；脸部空白（侧面有一个鼻子勾号）；阴影面 = 与紫罗兰混合 40% 的颜色 `#464873`|
+|页面边缘|噪声边界（fbm 0.004，±80 px）；内部宽 70 像素的白色涂抹带，外部宽 70 像素的彩色涂抹带|
 
-## Titles and end card
+<a id="titles-and-end-card"></a>
+## 标题和片尾卡
 
-No subtitles are needed. All text is **handwriting on the page**, written on with a left-to-right reveal and pen sound:
-- corner note in Reenie Beanie (`Sun. 3:40 pm — windy`);
-- title and colophon in Caveat (500–600 weight), left-aligned in the blank page margin.
+不需要字幕。页面上的所有文字均为 **手写**，书写时带有从左到右的显示和钢笔声音：
+- Reenie Beanie (`Sun. 3:40 pm — windy`) 中的角注；
+- 标题和版权页以警告形式显示（500-600 字重），在空白页边距中左对齐。
 
-The text stays in the world and moves with the camera, never as an overlay.
+文本留在世界中并与摄影机一起移动，而不是作为覆盖层。
 
-End card (`demo/film.js`, `notes()`): the title "Where the wind went." written in Caveat 500 at 190 px in the lower-left margin (28.2–29.5 s), then the colophon in the same column: "Urban Sketch · Pen & Wash — a Lemo-Opuscar style" (30.1–30.8 s), "LemoLab × Claude Opus 5.5" in Caveat 600 (30.6–31.2 s), and the music, sample and font credits (31.0–31.8 s). The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card (take those `handwrite()` lines out when reusing the code).
+片尾卡（`demo/film.js`、`notes()`）：标题《风往何处去》。写在Caveat 500的左下边距190像素处（28.2–29.5秒），然后在同一列中的版权页：“城市素描·钢笔和水彩晕染 - Lemo-Opuscar风格”（30.1–30.8秒），Caveat 600中的“LemoLab × Claude Opus 5.5” （30.6–31.2 秒），以及音乐、样本和字体制作人员名单（31.0–31.8 秒）。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本（重复使用该代码时，请取出这些 `handwrite()` 行）。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/urban-sketch/demo/
@@ -88,41 +96,43 @@ styles/urban-sketch/demo/
   audio/      score.py (music) · foley.py (all procedural sound) · mix.py
   build.sh    one command, from nothing to urban-sketch.mp4
 ```
-Render: `node core/render/video.mjs styles/urban-sketch/demo --fps 24 --workers 4` renders 778 frames in about 40 s on an M-series Mac; world build takes about 4 s per worker.
+渲染：`node core/render/video.mjs styles/urban-sketch/demo --fps 24 --workers 4` 在 M 系列 Mac 上约 40 秒渲染 778 帧；每个工人的世界构建大约需要 4 秒。
 
-### Pitfalls we hit
+<a id="pitfalls-we-hit"></a>
+### 我们遇到的陷阱
 
-- **Straight edges in the colour field.** The source bounding box ignored its vertical stretch (`sy`), and the slow "creep" beyond the reach radius was cut by a square box. Clip by the actual (noisy) distance, not the bbox.
-- **Rectangle masks around set-back towers** left white notches in the sky. Mask with the real stepped silhouette (tiers, spire, pyramid, water tank).
-- **Characters losing colour** when they run into unpainted areas. Sample arrival once at the character's start point (or tie it to the event that coloured them), never at the current position.
-- **Static ink cannot be occluded by later washes.** Far crowds therefore use carrot-people (one wash blob, two leg lines, a head dot) instead of full rigs; building ink is erased inside nearer buildings and tree crowns before drawing.
-- **IK feet left pinned** while blending sit → stand splays the legs. Blend the foot targets toward under-hip positions.
-- **Front-facing heads went bald.** Always draw the hair mass, then knock the face out of its lower part.
-- Headless Chrome and big canvases: 5120² canvases for ink, time, colour and the page are fine, but pack ink and time into RGBA byte textures yourself (`getImageData`), and upload the arrival field as `R16F` (filterable).
+- **色域中的直边。** 源边界框忽略其垂直拉伸 (`sy`)，超出到达半径的缓慢“蠕动”被方形框剪切。按实际（噪声）距离剪辑，而不是按 bbox。
+- **后退塔周围的矩形遮罩**在天空中留下白色凹口。具有真实阶梯轮廓的面具（层、尖顶、金字塔、水箱）。
+- **人物失去颜色**当他们遇到未涂漆的区域时。样本到达角色的起点（或将其与给角色着色的事件联系起来），而不是当前位置。
+- **静态墨水不能被后来的水彩晕染.**遮挡，因此远处的人群使用胡萝卜人（一个水彩晕染斑点，两条腿线，一个头点）而不是完整的装备；在绘制之前，建筑物墨水会在较近的建筑物和树冠内被擦除。
+- **IK 左脚固定**，同时混合坐→站，双腿张开。将脚部目标混合到臀部下方的位置。
+- **朝前的头秃了。** 总是画出头发团，然后把脸从下半部分敲出来。
+- 无头 Chrome 和大画布：5120² 画布，用于墨水、时间、颜色和页面都可以，但可以自行将墨水和时间打包到 RGBA 字节纹理中 (`getImageData`)，并将到达字段上传为 `R16F`（可过滤）。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-All functions are in `demo/engine.js` and are deterministic (same seed, same marks).
+所有函数都在 `demo/engine.js` 中并且是确定性的（相同的种子，相同的标记）。
 
-| Function | What it does |
+|功能|它的作用|
 |---|---|
-| `penStroke(pts, {w, wob, over, gap, seed, smooth})` | prepares a fineliner stroke along any polyline (wobble, overshoot, taper, gaps) |
-| `drawPen(ctx, stroke, p=1, col=INK, alpha=1, from=0)` | draws it up to fraction `p` (draw-on); `from` erases from the tail |
-| `rasterPen(inkCtx, timeCtx, stroke, t0, dur, win)` | bakes a stroke into a static ink layer **plus** its per-pixel arrival time (stroke order playback in the shader) |
-| `wash(ctx, poly, [r,g,b], {a, j, layers, edge, dx, dy, seed})` | a watercolour wash on any polygon (rough edges, glazing, dark tide line, offset) |
-| `reserve(ctx, poly, a)` | lifts colour back to paper (reserves, foreground occlusion) |
-| `dab(ctx, x, y, r, angle, col, a, seed)` / `foliage(ctx, crown[], opts)` | leaf dabs / a whole tree crown |
-| `arrivalField(W, H, gw, gh, sources, {amp, creep})` | colour arrival time per cell; `sources = [{x, y, t, v, R, sy, mask, hard}]` |
-| `compositor(canvas, layers)` → `draw(cam, t)` | WebGL page: paper × wash (revealed by arrival, wet front) × ink (revealed by stroke time) |
-| `figure(look, pose, place, {seed, boil})` → prims | a sketched person (knock / wash / ink primitives); `prims.head`, `prims.hand` for attachments |
-| `hat(c, r, [rx, ry, rz])`, `bike(place, phase, col)` | props with true 3D orientation |
-| `drawPrims(ctx, prims, {color, ink, clip})` | draws primitives; `color` 0..1 = how far the wash has arrived; `ink` = draw-on progress (number or per-primitive function) |
-| `sketchShape(ctx, poly, col, {ink, wash, offset, color, p})` | **any shape in this style** in one call |
-| `handwrite(ctx, text, x, y, size, p, {font})` | handwriting written on left to right |
+|`penStroke(pts, {w, wob, over, gap, seed, smooth})`|沿着任何折线准备细线描边（摆动、过冲、锥度、间隙）|
+|`drawPen(ctx, stroke, p=1, col=INK, alpha=1, from=0)`|将其提取为分数 `p`（绘制）； `from` 从尾部擦除|
+|`rasterPen(inkCtx, timeCtx, stroke, t0, dur, win)`|将笔画烘焙到静态墨水层 **加** 其每像素到达时间（在着色器中笔画顺序回放）|
+|`wash(ctx, poly, [r,g,b], {a, j, layers, edge, dx, dy, seed})`|任何多边形上的水彩画水彩晕染（粗糙边缘、玻璃、暗潮线、偏移）|
+|`reserve(ctx, poly, a)`|将颜色提升回纸上（保留、前景遮挡）|
+|`dab(ctx, x, y, r, angle, col, a, seed)` / `foliage(ctx, crown[], opts)`|叶子轻拍/整个树冠|
+|`arrivalField(W, H, gw, gh, sources, {amp, creep})`|每个细胞的颜色到达时间； `sources = [{x, y, t, v, R, sy, mask, hard}]`|
+|`compositor(canvas, layers)` → `draw(cam, t)`|WebGL页面：纸张×水彩晕染（通过到达、湿锋显示）×墨水（通过行程时间显示）|
+|`figure(look, pose, place, {seed, boil})` → 棱柱|素描人（敲/水彩晕染/墨水基元）； `prims.head`、`prims.hand` 用于附件|
+|`hat(c, r, [rx, ry, rz])`、`bike(place, phase, col)`|具有真正 3D 方向的道具|
+|`drawPrims(ctx, prims, {color, ink, clip})`|绘制基元； `color` 0..1 = 水彩晕染已到达多远； `ink` = 绘制进度（数字或每个基元函数）|
+| `sketchShape(ctx, poly, col, {ink, wash, offset, color, p})` | **这种风格的任何形状**一通电话|
+|`handwrite(ctx, text, x, y, size, p, {font})`|手写体从左到右书写|
 
-**The "only colour" hook.** Leave everything at `color: 0` (pure ink) and pass `color: 1` only for the element that keeps its colour, as the straw hat does in the demo. Or give that element an arrival source at t = 0 and everything else later.
+**“唯一颜色”钩子。** 将所有内容保留在 `color: 0`（纯墨水）中，并仅通过 `color: 1` 保留其颜色的元素，就像草帽在示范中所做的那样。或者在 t = 0 时为该元素提供一个到达源，然后再为其他所有内容提供到达源。
 
-Minimal example: a warm orange `#D97757` four-point sparkle with a short cursor tail.
+最小示例：带有短光标尾部的暖橙色 `#D97757` 四点闪光。
 ```js
 import { sketchShape, sparkle, penStroke, drawPen, hex } from './engine.js';
 const star = sparkle(960, 540, 120, .24);                       // 4-point star polygon

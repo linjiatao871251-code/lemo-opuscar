@@ -1,115 +1,127 @@
-# 16-bit Pixel RPG — Style Prompt
+<a id="16-bit-pixel-rpg--style-prompt"></a>
+# 16-bit 像素 RPG：风格提示词
 
-> A short film that looks, sounds and *behaves* like a mid-90s console role-playing game: 320×180 pixels, a limited indexed palette, text boxes that type, menus, save files, chip music with echo.
-> References (grammar only): mid-90s console RPGs as a system of dialog boxes, menus, battles, overworlds and save points; the palette tricks of indexed hardware (palette swaps, fades by steps, cycling); the colour-depth history of consoles (4 shades → 8-bit → 16-bit). Never use existing game names, characters, UI frames, fonts, logos, melodies or sound effects. Learn the grammar, not the assets.
+> 一个简短的影片，看起来、听起来和“行为”都像 90 年代中期的控制台角色扮演游戏：320×180 像素、有限的索引调色板、可输入的文本框、菜单、保存文件、带回声的芯片音乐。
+> 参考资料（仅语法）：90 年代中期的控制台 RPG 作为对话框、菜单、战斗、主世界和保存点的系统；索引硬件的调色板技巧（调色板交换、逐步淡入淡出、循环）；控制台的颜色深度历史（4 种色调 → 8 位 → 16 位）。切勿使用现有的游戏名称、角色、UI 框架、字体、徽标、旋律或音效。学习语法，而不是资产。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **320×180 native pixels**, scaled ×6 nearest-neighbour to 1080p; everything, text included, lives in the framebuffer.
-- **A limited, indexed palette**; gradients are **ordered dither**, never blends.
-- **Sprites** around 20–34 px tall animating in a handful of frames; faces act in **portraits**.
-- **Story told the way a game tells it**: dialog boxes with portraits, menus, status bars, battle messages, save files, item fanfares.
-- It takes the game's systems seriously as a language for feeling.
+- **320×180原始像素**，缩放×6最近邻到1080p；所有内容（包括文本）都存在于帧缓冲区中。
+- **A 有限，索引调色板**；渐变是 **有序抖动**，从不混合。
+- **精灵**高约 20-34 像素，在少数帧中进行动画处理；面孔在**肖像** 中表演。
+- **以游戏的方式讲述故事**：带有肖像、菜单、状态栏、战斗消息、保存文件、物品宣传的对话框。
+- 它将游戏系统视为一种表达情感的语言。
 
-Not HD-2D (no depth of field, bloom or real-time light), not CRT nostalgia (no scanlines, no grain), not a parody.
+不是 HD-2D（没有景深、光晕或实时光），不是 CRT 怀旧（没有扫描线，没有颗粒），不是模仿。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Indexed framebuffer** (`Uint8Array` of palette indices) presented through a **lookup table** (index → RGB), so a whole palette can change in one frame. Camera moves are **integer pixels**; each parallax layer rounds its own offset.
-- **Master palette** of ~32 colours (a free palette such as ENDESGA-32), plus **protected duplicates** of a few indices that no palette effect touches.
-- **Colour-depth tables** computed from the master palette: identity (16-bit), nearest of ~15 NES-like colours (8-bit; it needs a dark green and a dark brown), 4 fixed luminance thresholds (4-colour, drawn natively at 160×90 and doubled), a faded set (`lum^0.8` → ~7 blue-greys), and intermediate subsets for step-by-step collapse. Map by luminance, never by rank.
-- **Light is index stepping**: `LIGHT[]` / `DARK[]` tables move each index one step along its ramp; glows are Bayer-thresholded rings. Firelight in a low-colour era uses a warm remap (greens → browns → rust), not generic brightening.
-- **Dither**: 4×4 Bayer for gradients and glows; light shafts as a flat 50 % checker with a 25 % edge.
-- **Sprites from a rig**: capsule limbs with 3-tone shading from an upper-left light, a per-part inner line in the material's darkest tone, a global 1-px ink outline, plus hand-placed ASCII heads. One rig gives every pose; lower eras drop the highlight tone. Give the hero a **silhouette mark** (a garment tail, a hat, a hairstyle).
-- **Portraits** 32×32, 3/4 view, base face + eye/brow and mouth overlays; they carry facial acting (the sprite face has one eye pixel).
-- **Props** can be flat-shaded 3D shapes quantised to a few protected indices (e.g. a rotating crystal at 8 frames per 90°).
+- **索引帧缓冲区**（调色板索引的`Uint8Array`）通过**查找表**（索引→RGB）呈现，因此整个调色板可以在一帧中改变。 摄影机运动为 **整数像素**；每个视差层都会舍入其自己的偏移量。
+- **主调色板** 约 32 种颜色（免费调色板，如 ENDESGA-32），加上 **受保护的重复项** 一些没有调色板效果触及的索引。
+- **颜色深度表**从主调色板计算：身份（16位），最接近的~15种类似NES的颜色（8位；它需要深绿色和深棕色），4个固定亮度阈值（4色，以160×90原生绘制并加倍），褪色集（`lum^0.8`→ ~7 蓝灰色），以及用于逐步崩溃的中间子集。按亮度映射，而不是按等级映射。
+- **Light 是索引步进**：`LIGHT[]` / `DARK[]` 工作台将每个索引沿着其斜坡移动一步；发光是拜耳阈值环。低色时代的火光使用暖色重新映射（绿色→棕色→铁锈色），而不是通用的增亮。
+- **抖动**：4×4 Bayer 用于渐变和发光；光轴为 50% 平面方格，边缘为 25%。
+- 来自装备的 **精灵**：具有来自左上方灯光的 3 色调阴影的胶囊肢体、材料最暗色调的每个部分内线、全局 1 像素墨水轮廓，以及手动放置的 ASCII 头。一张骨骼绑定结构即可呈现各种姿势；较低的时代会降低高光色调。给英雄一个**剪影标记**（衣尾、帽子、发型）。
+- **肖像** 32×32，3/4视图，基面+eye/brow和嘴覆盖；它们具有面部表演（精灵脸上有一只眼睛像素）。
+- **道具** 可以是量化为几个受保护索引的平面着色 3D 形状（例如每 90° 8 帧的旋转晶体）。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Palette = feeling.** Colour depth, fades and swaps are story tools; change the whole palette by table, never by alpha.
-- **Colour depth can stand for time**: older = fewer colours, lower resolution.
-- **Protected indices**: a few colours exempt from every effect become the thread through the film and allow match cuts between eras. Use one or two; more and they stop meaning anything.
-- **Warm hues survive reductions**: keep orange, pink and plum in reduced subsets, or the first step turns a scene solid red.
-- Example uses of protected colours: a red kite across a childhood; a gold coin in a grey economy; the green of one plant in a faded city.
+- **Palette = 感觉。** 颜色深度、淡入淡出和交换是故事工具；按表更改整个调色板，而不是按 Alpha。
+- **颜色深度可以代表时间**：较旧=颜色较少，分辨率较低。
+- **受保护索引**：几种不受每种效果影响的颜色成为穿过影片的线索，并允许时代之间的匹配剪切。使用一两个；越多，它们就失去了任何意义。
+- **暖色调在减少中幸存下来**：将橙色、粉色和紫红色保留在减少的子集中，或者第一步将场景变成纯红色。
+- 受保护颜色的使用示例：穿过童年的红色风筝；灰色经济中的金币；褪色城市中一株植物的绿色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **The dialog box is the subtitle**, drawn in the framebuffer at the bottom quarter: a layered rounded border (ink / white / silver), a dithered dark-blue fill, a 32×32 portrait on the left, an **original** variable-width pixel font (cap ~7 px) with a 1-px shadow. It types with the voice (~38–40 chars/s; slower in older eras), ▼ blinks when done.
-- **Skins follow the era** (light box for 4-colour, black box with white frame for 8-bit, blue for 16-bit).
-- Battle and system messages go in a thin top window. Every box stays ≥ max(1.8 s, speech + 0.6 s); the next box cuts the previous one. Export the `.srt` from the same subtitle array.
-- Titles in the pixel font at 2×, 8-neighbour ink outline, row-by-row gradient, Bayer-dissolved in and out.
+- **对话框是副标题**，在底部四分之一的帧缓冲区中绘制：分层圆形边框（墨水/白色/银色），抖动的深蓝色填充，左侧32×32肖像，**原来的**可变宽度像素字体（大写〜7） px) 和 1-px 阴影。它用语音输入（~38–40 chars/s；在旧时代速度较慢），完成后 ▼ 会闪烁。
+- **皮肤遵循时代**（灯箱为4色，黑框白框为8位，蓝色为16位）。
+- 战斗和系统消息显示在一个薄薄的顶部窗口中。每个盒子停留≥ max(1.8 s, 语音 + 0.6 s);下一个盒子会切掉前一个盒子。从同一字幕数组导出 `.srt`。
+- 标题采用 2× 像素字体、8 邻域墨水轮廓、逐行渐变、拜耳溶入和溶出。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- Output 24 fps. Sprites step at **8 fps** (walk) to **12 fps** (flames, blinks); camera and parallax move on ones at integer pixels.
-- **Game-native acting**: hop forward to act, cast pose, knockback recoil, kneel, KO blink (12 fps on/off) and vanish; breath = shoulders up 1 px.
-- **UI motion**: windows slide in over ~0.3 s (ease-out, integer px); a hand cursor bobs 1 px at 4 fps and **stops when the character hesitates**.
-- **Transitions**: thumbnail expand + mosaic, mosaic cross with a palette switch at the peak, the encounter swirl (polar twist + mosaic + Bayer dissolve to white), screen shake (3–2–1 px over 8 frames), palette step fades (4 levels). Never alpha fades.
+- 输出 24 帧/秒。精灵以 **8 fps**（步行）步到 **12 fps**（火焰、闪烁）； 摄影机和视差在整数像素上移动。
+- **游戏原生表演**：向前跳行动，施放姿势，击退后坐力，跪下，KO眨眼（12 fps on/off）并消失；呼吸=肩膀向上1 px。
+- **用户界面运动**：窗口滑入约 0.3 秒（缓出，整数 px）；手形光标以 4 fps 的速度摆动 1 像素，当角色犹豫时 **会停止**。
+- **过渡**：缩略图扩展+马赛克、马赛克十字在峰值处带有调色板开关、遭遇漩涡（极地扭曲+马赛克+拜耳溶解为白色）、屏幕抖动（8帧内3-2-1像素）、调色板淡入淡出（4级）。阿尔法永不褪色。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Game cameras are simple and legible. Opening and ending come from the topic.
+是词汇，而不是路线。游戏摄像机简单易读。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Side-scroll with parallax layers | journey; loneliness; progress | a commute; a quest; a timeline |
-| Locked frame with UI on one third | a choice; a system speaking | a menu decision; a stats reveal |
-| Battle side view (enemy / party / windows) | conflict as a system | an exam; a negotiation; an illness |
-| Top-down overworld pan | the whole world; where things are | a city; a map of a company; a trip |
-| Integer-pixel tilt up something tall | awe; scale | a tower; a door; a mountain |
-| Hold while the palette changes | loss or change without motion | grief; a memory fading; nightfall |
-| Back view at a threshold | resolve; the unknown ahead | a first day; a launch; a departure |
-| Zoom by mosaic into a thumbnail | entering a memory or a file | a flashback; a save slot; a photo |
+|带有视差层的横向滚动|旅行;孤独；进步|通勤；一个追求；时间线|
+|锁定框架，UI 位于三分之一处|一个选择；系统说话|菜单决定；一项统计数据显示|
+|战斗侧视图（敌人/队伍/窗户）|作为一个系统的冲突|考试；谈判；一种疾病|
+|自上而下的世界平底锅|整个世界；东西在哪里|一座城市；公司地图；一次旅行|
+|整数像素倾斜高的物体|敬畏；规模|一座塔；一扇门；一座山|
+|调色板更改时按住|无运动的损失或变化|悲伤；记忆衰退；黄昏|
+|门槛处的后视图|解决;前方的未知|第一天；发射；一次出发|
+|按马赛克缩放为缩略图|输入内存或文件|闪回；一个保存槽；一张照片|
 
-Framing: characters stay above the dialog box (floor line above its top edge); menus leave the action visible.
+框架：字符停留在对话框上方（底线位于其顶部边缘上方）；菜单使操作可见。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Chiptune voices**: pulse waves at 12.5/25/50 % duty, 4-bit triangle bass, LFSR noise drums, wavetable leads, SNES-style echo (a few taps ~180–370 ms, feedback ~0.4, low-pass in the loop). Original melodies only.
-- **Fidelity follows colour depth** (option): 4-colour = mono, 4-bit volume steps, low sample rate; 8-bit = NES-like mono; 16-bit = stereo with echo; a faded present = the same music muffled.
-- **Techniques (options)**: regional variations of one motif; the arrangement losing one layer per palette step; a key change or the full band returning on a colour flood; a phrase left on the dominant and resolved later; an item-get fanfare as a punctuation.
-- **Foley**, synthesised and bit-crushed to the scene's era: cursor and select blips, text blips (pitch per speaker), footsteps with echo, fire crackle, magic shimmer (triangle arpeggio), charge and blast, HP tick-down, KO blink, a bit-drop per palette step, save ticks, door grind, coin and item jingles, menu error buzz.
-- **One organic sound** (a breath, a heartbeat) can make a character human at one moment.
-- **Silence**: true zero including echo tails.
-- **Mix**: music ducks ~7–8 dB under voice (fast attack, slow release); −14 LUFS, grain 0.
-- **Voice** (optional): first person, few short lines; or text blips only, for a character who exists only in text.
+- **Chiptune 声音**：12.5/25/50 % 占空比的脉冲波、4 位三角低音、LFSR 噪声鼓、波表主线、SNES 式回声（几次抽头 ~180–370 ms、反馈 ~0.4、循环中的低通）。仅原创旋律。
+- **保真度遵循颜色深度**（选项）：4色=单色，4位音量步长，低采样率； 8 位 = 类似 NES 的单声道； 16 位 = 带回声的立体声；褪色的礼物=同样的音乐被压抑。
+- **技术（选项）**：一个主题的区域变化；每个调色板步骤丢失一层的排列；关键变化或整个乐队以色彩泛滥的方式回归；留在占主导地位并稍后解决的短语；项目得到大张旗鼓作为标点符号。
+- **弗利**，根据场景时代进行合成和位压缩：光标和选择光点、文本光点（每个扬声器的音调）、带有回声的脚步声、火爆裂声、魔法闪光（三角琶音）、充电和爆炸、HP滴答声、KO闪烁、每个调色板步骤的位下降、保存滴答声、门磨擦、硬币和物品叮当声、菜单错误嗡嗡声。
+- **一个有机声音**（呼吸、心跳）可以使角色在某一时刻变得人性化。
+- **沉默**：真零，包括回声尾部。
+- **混音**：音乐在声音下减弱约 7-8 dB（快速启动，缓慢释放）； −14 LUFS，颗粒 0。
+- **嗓音**（可选）：第一人称，几句短线；或仅文本提示，对于仅存在于文本中的角色。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Palette collapse / flood.** Colour depth drops one level per beat, or full colour floods back through a dither wave. *Fits content like:* a city blackout and recovery; a company in crisis; burnout and rest.
-- **Protected colour match cut.** One exempt colour links two eras in the same screen position. *Fits content like:* a family heirloom; a brand colour across decades; a team jersey.
-- **Save files as memory.** A list of files; choosing NEW FILE refuses to overwrite. *Fits content like:* versions of a product; chapters of a career; photo albums.
-- **Game UI as narration.** A greyed-out name, an item description, a stat screen. *Fits content like:* a team member leaving; a skill learned; a budget.
-- **Level up.** Stats rise with a fanfare. *Fits content like:* a student's year; a startup's funding round; learning a language.
-- **Encounter swirl.** A crash into danger. *Fits content like:* a deadline; a diagnosis; a storm.
-- **Era shift.** The same characters redrawn in older hardware. *Fits content like:* a town's history; grandparents' youth; the evolution of a device.
+- **调色板折叠/泛光。** 颜色深度每节拍下降一个级别，或通过抖动波全色泛光回来。 *适合以下内容：*城市停电和恢复；陷入危机的公司；倦怠和休息。
+- **受保护的色彩匹配剪切。** 一种豁免色彩在同一屏幕位置链接两个时代。 *适合以下内容：*传家宝；跨越数十年的品牌色彩；一件球队球衣。
+- **将文件保存到内存中。** 文件列表；选择新文件拒绝覆盖。 *适合以下内容：*产品版本；职业生涯的章节；相册。
+- **游戏 UI 作为旁白。** 灰色名称、项目描述、统计屏幕。 *适合以下内容：* 团队成员离开；学到的技能；预算。
+- **升级。** 统计数据大张旗鼓地上升。 *适合以下内容：*学生的年份；初创公司的一轮融资；学习语言。
+- **遭遇漩涡。** 坠机陷入危险。 *适合以下内容：*截止日期；诊断；一场风暴。
+- **时代转变。** 在旧硬件中重新绘制相同的字符。 *适合以下内容：*城镇的历史；祖父母的青春期；设备的演变。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Rank-based palette mapping crushes a scene to black → map by luminance with a gamma.
-- Reduced subsets without warm hues turn a sunset solid red → keep warm hues.
-- An 8-bit set without dark green or brown turns night grass blue; generic brightening near fire turns grass neon → warm remap.
-- Post-quantising a full-colour scene to 4 shades is mud → draw low eras natively with known indices at half resolution.
-- Pixel hair as a smooth dome reads as a helmet; single-pixel alternation reads as noise → 2–3 big spikes. Pale clothing reads as skin. Held props cross the face in side view → back hand.
-- A dark plank door reads as a jail → panels, bevels, studs.
-- Negative modulo indexes `undefined` → `((n % m) + m) % m`.
-- The dialog box covers the bottom quarter → keep the floor line above it.
-- Match cuts on protected colours need both screen positions computed.
+- 基于等级的调色板映射将场景压缩为黑色 → 通过伽玛亮度进行映射。
+- 减少没有暖色调的子集会使日落变成纯红色→保持暖色调。
+- 没有深绿色或棕色的 8 位集会变成夜草蓝色；火附近的通用增亮将草霓虹灯变成温暖的重新映射。
+- 将全彩场景后量化为 4 种色调是很糟糕的 → 使用已知索引以一半分辨率本地绘制低时代。
+- 光滑圆顶的像素头发看起来像头盔；单像素交替读取为噪声 → 2-3 个大尖峰。苍白的衣服看起来就像皮肤。所持道具在侧视图中穿过脸部 → 后手。
+- 一扇深色的木板门看起来就像是一座监狱→面板、斜角、螺柱。
+- 负模索引 `undefined` → `((n % m) + m) % m`。
+- 该对话框覆盖了底部四分之一→将地板线保持在其上方。
+- 受保护颜色的匹配剪切需要计算两个屏幕位置。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `px.js` (indexed framebuffer, palettes and LUTs for every colour depth, Bayer dither, mosaic), `font.js` (variable-width pixel font), `ui.js` (windows, dialog, menus, file list, status bars), `sprites.js` (rig + ASCII heads), `portraits.js` (32×32 portraits + expressions), `props.js`, `scenes.js` (parallax, index lighting, tilt), `main.js` (shots, transitions, palette timing, sound events, subtitles). `?sheet=1` renders a model sheet; `?frame=<scene>&lut=<table>` renders an environment through any colour-depth table. File list and build steps: [DEMO.md](DEMO.md) "Build notes".
+在 `demo/` 中：`px.js`（每个颜色深度的索引帧缓冲区、调色板和 LUT、拜耳抖动、马赛克）、`font.js`（可变宽度像素字体）、`ui.js`（窗口、对话框、菜单、文件列表、状态栏）、`sprites.js` （骨骼绑定结构 + ASCII 头）、`portraits.js`（32×32 肖像 + 表情）、`props.js`、`scenes.js`（视差、索引照明、倾斜）、`main.js`（镜头、过渡、调色板计时、声音事件、 subtitles). `?sheet=1` 渲染角色设定表； `?frame=<scene>&lut=<table>` 通过任何颜色深度表渲染环境。文件列表和构建步骤：[DEMO.md](DEMO.md)“构建说明”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide which game system the topic hides, the characters, the eras, the palette plan, the opening and the ending. All far from our demo:
+您可以决定主题隐藏的游戏系统、角色、时代、调色板计划、开头和结尾。与我们的示范相去甚远：
 
-- Structures: **an overworld tour** (a top-down map; each town a chapter entered by a door transition); **a shop and an inventory** (the story told entirely through items bought, used and sold); **a turn-based duel** (two sides take turns; each move is a scene of the topic).
-- Openings: **PRESS START**, a title screen with an attract-mode demo; **a battle already in progress** with HP low; **a boot screen** that fails to load and must be retried.
-- Endings: **GAME OVER** answered by a choice (retry / give up) left open; **credits scrolling over the overworld** as characters walk home; **the save screen** where the last slot is written and the menu closes.
+- 结构：**an 世界之旅**（自上而下的地图；每个城镇一个章节通过门过渡进入）； **一家商店和一个库存**（故事完全通过购买、使用和出售的物品来讲述）； **回合制对决**（双方轮流，每一步都是一个话题场景）。
+- 开口：**PRESS START**，带有吸引模式示范的标题屏幕； **战斗已在进行中**HP低；**启动屏幕**无法加载，必须重试。
+- 结局：**GAME OVER**通过选择（重试/放弃）回答；**制作人员在整个世界中滚动**当角色回家时；**保存屏幕** 写入最后一个插槽并关闭菜单。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

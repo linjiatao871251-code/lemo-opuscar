@@ -1,105 +1,117 @@
-# Tilt-Shift Miniature — Style Prompt
+<a id="tilt-shift-miniature--style-prompt"></a>
+# 移轴微缩：风格提示词
 
-> A real-looking place photographed from high above with a tilted lens and a time-lapse camera, so the whole world reads as a tabletop model.
-> References (grammar only): Sam O'Hare's *The Sandpit* (2010) and tilt-shift time-lapse photography in general: high vantage points, the blur band, time-lapse rhythm, cloud shadows sweeping over streets. Copy none of its places or music; show no real landmarks, brands or logos.
+> 使用倾斜镜头和延时摄影机从高处拍摄的真实地点，因此整个世界看起来就像一个桌面模型。
+> 参考资料（仅语法）：Sam O'Hare 的《The Sandpit》（2010）和一般的移轴延时摄影：高视角、模糊带、延时节奏、扫过街道的云影。请勿复制其中的任何地点或音乐；没有显示真正的地标、品牌或标志。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A place seen from high up through a **tilt-shift lens**: only a thin horizontal strip of the frame is sharp, everything above and below melts into blur. The eye reads that as a macro shot of something small, so the world becomes a model. Two more things make the trick work: **saturated, sunny colour** (model-railway paint) and **time-lapse** (vehicles and people move in fast, jittery steps like wind-up toys).
+通过**移轴镜头**从高处看到的地方：只有画面的一条细水平条是清晰的，上面和下面的一切都模糊了。眼睛将其视为小事物的宏观镜头，因此世界成为一个模型。还有两个因素可以让这个技巧发挥作用：**饱和、阳光明媚的色彩**（模型铁路油漆）和**延时**（车辆和人像发条玩具一样快速、紧张地移动）。
 
-Not a toy or clay render (the world is photoreal, only the lens and the clock make it small), not a game's top-down view (no UI, no clean flat shading), not drone footage (the band, the saturation and the stutter are mandatory).
+不是玩具或粘土渲染（世界是真实的，只有镜头和时钟使它变小），不是游戏的自上而下视图（没有 UI，没有干净的平面阴影），不是无人机镜头（频带、饱和度和口吃是强制性的）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Vantage**: always high. Oblique views at roughly 45–55° pitch from 100–200 m with a moderately long lens (~27–30° vertical FOV); straight top-down for the most "board game" look. Real tilt-shift is never shot from street level, except for a deliberate intimate moment: a true medium close-up at the actors' height, a blurred foreground object framing sharp actors who fill ~1/4–1/3 of the frame height (a long lens from high up keeps them as dots).
-- **Blur band** (`demo/post.js`): physical depth of field mixed with a screen-space band. CoC in pixels = `mix(aper·(1/focus − 1/z), sign(dy)·amp·(max(0,|dy|−w)/0.5)^1.2, mix)`, clamped (~30 px). Put the band on the subject; when the subject moves, project it to screen every frame and slide the band there. Narrow the band for intimacy. Gather at output resolution after a 2× supersampled render, with many spiral taps and per-pixel rotation; far samples must not bleed onto nearer sharp ones.
-- **Grade**: neutral tone mapping, strong saturation boost, soft added contrast, slightly warm highlights, a vignette. Lower saturation at night.
-- **Light**: a hard sun with sharp shadows (a big shadow map fitted to each shot), a low hemisphere fill with warm ground bounce so shadows stay blue but not murky, a sky-gradient environment map for glass and paint. **Cheat the sun azimuth per shot**: each time-lapse clip is its own shot, so front-light the facades you see; one fixed sun leaves half a film backlit and grey.
-- **Model-like detail** (what separates "filmed miniature" from "game CG"): facades with several window types, 1.6–3 m bays, dark reveals, world-space grime, sky-reflective glass and walls darkening toward the ground; roof clutter, awnings and signs; worn markings and stains; vehicles with dark glass, a soft contact shadow and brake lights; ambient occlusion over everything.
-- **People** are small colour capsules, like model-railway figures. Actors seen up close get organic bodies with a soft sheen material and are made 20–30 % larger than real so they read.
+- **华帝**：始终为高电平。使用中等长度的镜头（约 27–30° 垂直视场）在 100–200 m 范围内以大约 45–55° 的间距进行倾斜视图；直接自上而下的最“棋盘游戏”外观。真正的倾斜移位从来不是来自街道的镜头，除非是故意的亲密时刻：在演员高度的真正的表现媒介特写镜头，一个模糊的前景物体框住了锐利的演员，这些演员填充了画面高度的~1/4–1/3（长镜头从高处将它们保持为点）。
+- **模糊带** (`demo/post.js`)：与屏幕空间带混合的物理景深。 CoC（以像素为单位）= `mix(aper·(1/focus − 1/z), sign(dy)·amp·(max(0,|dy|−w)/0.5)^1.2, mix)`，固定（~30 像素）。将乐队放在主题上；当拍摄对象移动时，将其投影到屏幕上的每一帧并将带子滑动到那里。缩小范围以获得亲密感。在 2× 超采样渲染后以输出分辨率收集，具有许多螺旋抽头和每像素旋转；较远的样本不得渗漏到较近的尖锐样本上。
+- **年级**：中性色调映射，强饱和度提升，柔和添加对比度，略微温暖的亮点，晕影。夜间饱和度较低。
+- **光**：带有锐利阴影的硬太阳（每个镜头上都有一个大阴影贴图），带有温暖地面反射的低半球填充，因此阴影保持蓝色但不阴暗，玻璃和油漆的天空渐变环境贴图。 **每次拍摄时欺骗太阳方位角**：每个延时剪辑都是它自己的镜头，所以对你看到的正面进行前光照射；一颗固定的太阳留下半个影片背光和灰色。
+- **类似模型的细节**（“拍摄微缩模型”与“游戏CG”的区别）：具有多种窗户类型的立面、1.6-3 m 的开间、深色显示、世界空间污垢、天空反射玻璃和朝向地面变暗的墙壁；屋顶杂乱、遮阳篷和标志；磨损的标记和污渍；配备深色玻璃、柔和的接触阴影和刹车灯的车辆；一切事物的环境光遮挡。
+- **人们** 是彩色小胶囊，就像铁路模型人物。近距离观看的演员会获得带有柔和光泽材料的有机身体，并且比真实身体大 20-30%，因此他们会阅读。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Saturated, sunny, "freshly painted model": a pale warm ground of buildings with a few candy accents, very saturated greens, dark ground surfaces so white markings and vehicles pop.
-- Shadows stay blue and clean, never grey. Night and dawn are the only low-saturation states; dawn must read as early morning (a warm low fill from the sunrise side, few lit windows), not midnight.
-- The subject you want found should be the one saturated thing in the sharp band, or move against the flow.
-- Examples: a Mediterranean harbour (whitewash, cobalt shutters, terracotta, turquoise water); a snowy ski village (white, pine green, red gondolas, long blue shadows); a desert market (sand, saffron, indigo awnings, dusty olive).
+- 饱和、阳光明媚、“新粉刷的模型”：苍白温暖的地面上有一些糖果色的建筑物，非常饱和的绿色，深色的地面，所以白色的标记和车辆很流行。
+- 阴影保持蓝色和干净，而不是灰色。夜间和黎明是唯一的低饱和度状态；黎明必须读作清晨（日出一侧温暖的低光，很少有亮着的窗户），而不是午夜。
+- 你想要找到的主题应该是锐带中一个饱和的东西，或者逆流移动。
+- 示例：地中海港口（粉刷、钴百叶窗、赤土、绿松石水）；白雪皑皑的滑雪村（白色、松绿色、红色缆车、长长的蓝色影子）；沙漠市场（沙子、藏红花、靛蓝遮阳篷、尘土飞扬的橄榄）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Subtitles belong to the world's own signage: a panel in the graphic language of the place's signs (road sign, platform board, harbour notice…), an open sign-revival font (Overpass, OFL, is a Highway-Gothic revival), sitting inside the lower blur band. Hold ≥ max(1.8 s, speech + 0.6 s).
-- A **time-lapse clock** with a speed readout (e.g. `×24 TIME-LAPSE` / `×1 REAL TIME`, monospace) is the audience's speedometer for the native trick; use it whenever speed changes carry meaning.
-- Titles live in the world: letters on a roof, a sign or a field, placed where nothing blocks them, lit or revealed on the beat.
+- 字幕属于世界自己的标牌：一个用地方标志的图形语言表示的面板（道路标志、站台板、港口通知……）、一个开放的标志复兴字体（立交桥、OFL，是公路哥特式复兴），位于较低的模糊带内。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 带有速度读数的 **延时时钟**（例如 `×24 TIME-LAPSE` / `×1 REAL TIME`，等宽）是观众用于本机技巧的速度计；每当速度变化有意义时就使用它。
+- 标题存在于世界中：屋顶上的字母、标志或田野，放置在没有任何东西阻挡的地方，随着节奏被点亮或显露出来。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Time-lapse stutter is the soul of the style.** In fast-forward the whole world (vehicles, people, lights, sun) updates at a low rate and holds each position for several frames (8 Hz = 3 frames at 24 fps); choose the rate so every jump lands on the musical grid. **The camera stays smooth on every frame.** Step at a middle rate while the speed is moderate; below about ×2 the stutter disappears and motion becomes silky, which makes a drop to real time hit hard.
-- Systems run on simple simulations pre-computed per clip (car-following, signal cycles, crowds gathering and surging), with cycle offsets chosen so changes land on bar lines.
-- Hero actors get art-directed timing (scripted paths fitted through beat times), never a hope that the sim hits a beat.
-- Close-up acting: anticipation squash → stretch → land squash → settle; a failed attempt before success is the comedy engine.
+- **延时卡顿是该风格的灵魂。** 在快进中，整个世界（车辆、人、灯光、太阳）以低速率更新，并保持每个位置数帧（8 Hz = 24 fps 下的 3 帧）；选择速率，使每次跳跃都落在音乐网格上。 **摄影机每一帧都保持平滑。** 步速中等，速度适中；低于大约 ×2 时，卡顿现象消失，运动变得丝滑，这使得实时命中率下降。
+- 系统在每个片段预先计算的简单模拟上运行（跟车、信号周期、人群聚集和涌动），并选择周期偏移，以便改变落在条线上。
+- 英雄演员得到艺术指导的时间安排（通过节拍时间拟合脚本路径），而不希望模拟游戏能够达到节拍。
+- 特写动作：预期挤压→伸展→陆地挤压→沉稳；成功之前的失败尝试是喜剧引擎。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| High oblique wide, very slow slide | a whole system at a glance | setting a place; routine; many small actors |
-| Band follows one subject across a wide | "this one" | a single commuter; a delivery; a lost child |
-| Rack of the band from one subject to another | attention changing hands | cause and effect; a handover; a comparison |
-| Slow push on an intersection, station or yard | a system heating up | rush hour; a festival setting up; a queue |
-| Straight top-down, slowly rotating | the world as a board or machine | patterns; logistics; choreography |
-| Continuous dive from high to actor height with a speed ramp | the one small thing that matters | a twist; a joke; a meeting |
-| Band narrowing to a sliver | intimacy | a confession; a reunion; one decision |
-| Vertical rise with logarithmic height | scale, letting go | aftermath; a summary; a system becoming a pattern |
-| Lateral track along a line (rail, river, road) | a process in order | a supply chain; a parade; a race |
-| Locked frame across hours | time as the actor | a construction; a market day; tide |
+|高斜宽，极慢滑|整个系统一目了然|设置一个地方；常规;很多小演员|
+|乐队在广泛的范围内追随一个主题|“这个”|单身通勤者；交货；一个迷失的孩子|
+|乐队从一个主题到另一个主题的架子|注意力易手|因果;交接；比较|
+|在十字路口、车站或院子里缓慢推动|系统升温|高峰时间；举办节日；一个队列|
+|直线自上而下缓慢旋转|世界是一块木板或机器|图案；后勤;编舞|
+|以速度斜坡从高处连续俯冲到演员高度|一件重要的小事|一个转折；一个笑话；一次会议|
+|谱带收窄至条子|亲密感|坦白；团聚；一个决定|
+|垂直上升与对数高度|规模、放手|后果;总结；系统变成模式|
+|沿线的横向轨道（铁路、河流、公路）|一个有序的过程|供应链；游行；一场比赛|
+|跨小时锁定帧|作为演员的时间|建筑；集市日；潮|
 
-Framing: stay high; the sharp band carries the subject; vehicles and people stay tiny except in a close-up. Transitions: cuts on the beat, speed ramps, dives and rises; avoid dissolves that reveal the fake lens.
+框架：保持高位；尖锐的带子承载着主题；除了特写镜头外，车辆和人都很小。过渡：节拍切换、速度斜坡、下降和上升；避免溶解而暴露出假镜片。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Ensemble**: tuned percussion carries the style (marimba, glockenspiel, vibraphone, woodblocks, kalimba, celesta), pulse-based and minimalist (Reich grammar: phasing, voices added one at a time, pulsing chords), plus plucked strings or a small reed section. Not generic piano and strings.
-- **Techniques, as options**: world events gate the notes of a fixed phrase skeleton (vehicles crossing a line, lights changing, crowds moving each trigger an instrument), with a base fill rate so the phrase stays audible; tuned horns or bells voiced as chords; a tape-stop (varispeed down, voices dropping out) into silence when time slows; single notes for single events in a rest; phasing two identical lines apart; a music-box version of the theme for the smallest scale.
-- **Sound follows speed**: in time-lapse, music first with a faint granular "sped-up world" hiss, clacks and relay clicks. At real speed the world turns suddenly real: idling engines, distant traffic, birds, small voices, footsteps. On release, engines rev and wind rises.
-- **Silence** is the moment real time arrives: cut the music, keep one or two real sounds.
-- **Voice**: relaxed, few short lines, music ducked ~8 dB. Verify every line with whisper; write numbers as words and put digits in the `asr` field. Master to −14 LUFS.
+- **合奏**：调音打击乐器具有风格（马林巴琴、钟琴、电颤琴、木版、卡林巴琴、钢片琴）、脉冲式和极简主义（帝国语法：定相、一次添加一个声音、脉冲和弦），加上弹拨弦乐或小簧片部分。不是普通的钢琴和弦乐。
+- **技术，作为选项**：世界事件对固定短语骨架的音符进行门控（车辆越线、灯光变化、人群移动，每个触发乐器），具有基本填充率，使短语保持可听度；以和弦形式发出调音的号角或钟声；当时间变慢时，磁带停止（变速，声音消失）；休止符中单个事件的单个音符；将两条相同的线路分阶段分开；最小规模的音乐盒版本主题。
+- **声音跟随速度**：在延时摄影中，音乐首先伴随着微弱的颗粒状“加速世界”的嘶嘶声、咔嗒声和继电器喀哒声。以真实的速度，世界突然变得真实：空转的引擎、遥远的交通、鸟儿、细小的声音、脚步声。释放后，发动机转速升高，风力增大。
+- **沉默** 是实时到来的时刻：剪掉音乐，保留一两个真实的声音。
+- **嗓音**：轻松，几句短句，音乐减弱了~8 dB。用耳语验证每一行；将数字写入单词并将数字放入 `asr` 字段。掌握到−14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The speed drop (×40 → ×1).** Time crashes to real speed on one detail. *Fits content like:* one worker finishing a shift; a child dropping an ice cream; a proposal on a crowded pier.
-- **The band as pointer.** Slide or narrow the sharp strip to steer the eye. *Fits content like:* a courier through a market; a single wrong-way skier; one boat leaving port.
-- **God's-eye system.** The place as a sequencer or machine. *Fits content like:* a port unloading ships; an airport's turnaround; a farm harvest.
-- **Long-exposure light.** At dusk, lights leave trails that draw on the world. *Fits content like:* ferries crossing a bay; runners with headlamps; lanterns along a river.
-- **The scale reveal.** Rise until the place becomes a pattern. *Fits content like:* a festival from setup to crowd; a school at recess; a city grid at night.
-- **Cloud shadows sweeping.** Weather crossing the model. *Fits content like:* a season turning; a mood change; a news cycle.
+- **速度下降（×40→×1）。** 时间在一个细节上崩溃到真实速度。 *适合以下内容：* 一名工人完成轮班；一个孩子掉了一个冰淇淋；在拥挤的码头上求婚。
+- **条带作为指针。** 滑动或收窄尖条以引导眼睛。 *适合以下内容：* 快递员穿过市场；一个走错路的滑雪者；一艘船离开港口。
+- **上帝之眼系统。** 作为音序器或机器的地方。 *适合以下内容：* 港口卸货船；机场的角色转面图；一次农场的收获。
+- **长曝光灯。** 黄昏时分，灯光留下的痕迹描绘了世界。 *适合以下内容：*穿越海湾的渡轮；带有头灯的跑步者；河边的灯笼。
+- **刻度显示。** 上升，直到该地方成为图案。 *适合以下内容：*从设置到人群的节日；学校课间休息；夜间的城市网格。
+- **云影扫过。** 天气穿越模型。 *适合以下内容：*季节转变；情绪变化；一个新闻周期。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Tall buildings plus shallow pitch hide the ground → low to mid-rise buildings, pitch 45°+.
-- The subject hides in a canyon or behind a facade → route it on the camera side and let the band follow it.
-- Instance caps silently drop actors → cull by distance from the camera (≈ 4× camera height) and raise the cap.
-- Simulated vehicles stop short of lines (the jam gap) → subtract it where the story needs contact.
-- Focus lags a frame → update actors before the camera.
-- A top-down → oblique dive twists → rotate the top-down so its screen-up matches the target shot.
-- A close-up from high up is too far → go low and close, small near plane for foreground objects.
-- Clouds wash out a rise → unlit white, low opacity, nothing below the camera. Light pools read as bubbles → denser, larger, fainter pools.
-- Scene backlit and grey → cheat the sun per shot. Dawn reads as midnight → warm low fill, fewer lit windows.
+- 高层建筑加浅坡度隐藏地面→中低层建筑，坡度45°+。
+- 拍摄对象隐藏在峡谷中或立面后面 → 将其路由到摄影机一侧并让乐队跟随它。
+- 实例上限默默地掉落演员 → 按距摄影机的距离（≈ 4× 摄影机高度）进行剔除，然后升起上限。
+- 模拟车辆在距离线路较远的地方停下来（堵塞间隙）→ 在故事需要联系的地方减去它。
+- 焦点滞后一帧 → 在摄影机之前更新 actor。
+- 自上而下→倾斜俯冲扭转→自上而下旋转，使其屏幕向上与目标镜头匹配。
+- 从高处进行特写太远→低处靠近，为前景物体设置较小的近平面。
+- 云水彩晕染上升 → 未点亮的白色，低不透明度，没有低于摄影机的东西。光池解读为气泡 → 更密集、更大、更暗的光池。
+- 场景背光和灰色 → 欺骗太阳每镜头。黎明读作午夜→温暖的低填充，更少的明亮的窗户。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `post.js` (tilt-shift DOF: band + physical, grade; `band.follow`), `city.js` (procedural town, facade shader, sign), `geo.js` (merged geometry), `sky.js` (clock → sun, sky, fog, env map), `traffic.js` (lanes, lights, IDM sim, fleet, trails, walkers), `train.js`, `ducks.js` (lathe-turned characters + hop choreography), `main.js` (cameras, stepping, crowds, HUD), `music/score.py` (sampled marimba, skeleton + event gating). A minimal new use: build a harbour from `geo.js` boxes, run boats as a one-lane `traffic.js` fleet on water, and point `band.follow` at one of them.
+在`demo/`中：`post.js`（移轴DOF：波段+物理，等级；`band.follow`），`city.js`（程序城镇，立面着色器，标志），`geo.js`（合并几何），`sky.js`（时钟→太阳，天空，雾、环境图）、`traffic.js`（车道、灯光、IDM sim、车队、步道、步行者）、`train.js`、`ducks.js`（车削角色+跳跃编排）、`main.js`（摄像机、步进、人群、HUD）、`music/score.py` （采样马林巴琴、骨架+事件门控）。一个最小的新用途：用 `geo.js` 盒子建造一个港口，在水上作为单车道 `traffic.js` 舰队运行船只，并将 `band.follow` 指向其中一个。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the place, the system, the tiny actor, the structure, the opening, the ending, the camera path, the speed curve and the palette within the colour logic. All far from our demo:
+您可以在色彩逻辑中决定地点、系统、小演员、结构、开头、结尾、摄影机路径、速度曲线和调色板。与我们的示范相去甚远：
 
-- Structures: **one day, dawn to night** (a single locked vantage, the sun and the shadows sweep, one shop's light the last to go out); **the relay** (the band hands attention from actor to actor across a whole place, each one passing something to the next); **before/after** (a construction site time-lapsed from empty lot to opening day, with one real-time moment per stage).
-- Openings: **mid-bustle at full density** with the band already on one oddity; **a top-down pattern** that only slowly tilts into a place; **real time first**: one person at actor height, then the lens lifts and time speeds up.
-- Endings: **a drop to real time that stays there** (no pull-back); **lights going out one by one** at night from high above; **the lens un-tilts**: the band widens to full sharpness and the model becomes a real place.
+- 结构：**ONE白天，黎明到夜晚**（单一锁定有利位置，阳光和阴影扫过，一铺的灯光最后熄灭）； **接力**（乐队将注意力从一个演员转移到另一个演员，每个演员都将一些东西传递给下一个）； **之前/之后**（一个建筑工地，从空地到开放日的延时摄影，每个阶段一个实时时刻）。
+- 开场：**全密度中忙** 乐队已经在一个奇怪的地方； **一种自上而下的图案**，仅缓慢倾斜到一个地方； **实时第一**：一个人处于演员高度，然后镜头抬起，时间加快。
+- 结局：**实时下降并保持不变**（无回拉）；**灯一盏一盏地熄灭**晚上从高处看；**镜头未倾斜**：频带加宽至完全锐利，模型变成真实的地方。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

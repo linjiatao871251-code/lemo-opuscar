@@ -1,138 +1,150 @@
-# Silkscreen Travel Poster — Style Prompt
+<a id="silkscreen-travel-poster--style-prompt"></a>
+# 丝印旅行海报：风格提示词
 
-> Opaque, hard-edged flat inks pulled one colour at a time through a screen: 4–6 inks per poster, stepped colour bands instead of gradients, thin paper-white gaps where the registration slips. Information is revealed the way the print is made: one layer, one beat.
-> References (grammar only):
-> - **1930s–40s WPA national-park screen prints**: 4–6 flat inks, lit and shade faces, stepped-band skies, a dark information band, concentric sun rings.
-> - **Fifty-Nine Parks (contemporary)**: restraint, paper as a colour, a series on one template with a new palette per poster.
-> - **The physical process**: hinged screen, squeegee pushing an ink bead across mesh, split-fountain pulls, drag streaks, pinholes, off-register slivers.
+> 不透明、硬边平面油墨通过屏幕一次拉一种颜色：每张海报 4-6 种油墨，阶梯色带而不是渐变，薄薄的纸白色间隙使套准滑动。信息通过打印的方式显示：一层，一次。
+> 参考文献（仅语法）：
+> - **1930s–40s WPA 国家公园丝网印刷**：4–6 平墨、亮面和阴影面、阶梯带天空、暗信息带、同心太阳环。
+> - **五十九个公园（当代）**：克制，纸作为一种颜色，一个模板上的一系列，每张海报都有一个新的调色板。
+> - **物理过程**：铰接丝网、刮刀将墨珠推过网、分流式拉动、拖动条纹、针孔、套准不准的条子。
 >
-> Never copy a real poster's composition, park name, lettering or logo, and never name a real agency.
+> 切勿复制真实海报的构图、公园名称、字母或徽标，也切勿命名真实的机构。
 
-A **scene style**: it does a practical job (a guide, an event poster, a destination series) for any place, event or product with a few facts. See §11 for the jobs.
+**场景风格**：它可以为任何地点、活动或产品提供实用的工作（指南、活动海报、目的地系列），并提供一些事实。有关职位信息，请参阅第 11 节。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A poster being **printed on camera**. Every colour is an opaque ink laid by its own pull; later ink covers earlier ink completely. No halftone, no fluorescent ink, no line work: a shape's edge is where one flat ink stops. **Gradients are forbidden**: skies and haze are **stepped bands** (a flat colour, thinning stripes, the next colour).
+海报为 **，打印在相机**上。每种颜色都是由自身拉力形成的不透明墨水；后面的墨水完全覆盖前面的墨水。没有半色调，没有荧光墨水，没有线条：形状的边缘是一种平面墨水停止的地方。**禁止渐变**：天空和阴霾是**阶梯带**（平坦的颜色，细条纹，下一个颜色）。
 
-What makes it read as silkscreen and not as flat vector art:
-- **Registration**: every layer offset 1–3 px at 1080p; a knocked-out shape leaves a crescent of bare paper.
-- **Overprint edge**: a faint multiply ghost ~2 u off under each ink, leaving a darker sliver where ink laps over ink.
-- **Ink thickness**: a light rim top-left, a dark rim bottom-right, fills only; fresh ink has a wet sheen that fades within a second.
-- **Paper**: cream stock with fibres; mottle and pinholes in paper colour, visible only on ink.
+是什么让它看起来像丝网印刷而不是平面矢量艺术：
+- **登记**：1080p 时每层偏移 1–3 px；被敲掉的形状留下了新月形的裸纸。
+- **叠印边缘**：每种油墨下有约 2 u 的微弱多重重影，在油墨重叠的地方留下较暗的条子。
+- **墨水厚度**：左上浅色边框，右下深色边框，仅填充；新鲜的墨水具有湿润的光泽，在一秒钟内就会消失。
+- **纸张**：含纤维的奶油原料；纸张颜色的斑点和针孔，仅在墨水上可见。
 
-Not risograph (translucent fluorescent overprint with halftone grain), not ukiyo-e (key-block line work with bokashi), not woodcut (carved line), not low-poly (3D facets). This style is opaque, line-free, flat and banded.
+不是 risograph（带有半色调纹理的半透明荧光叠印），不是浮世绘（带有 bokashi 的关键块线条作品），不是木刻（雕刻线），不是低多边形（3D 刻面）。这种风格是不透明、无线条、扁平和带状的。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **One `Path2D` per ink layer**, filled in the current transform's units; knock-outs are holes in the path. Any shape can be printed.
-- **Pull reveal**: a ragged squeegee front as a clip (a ~30 u drag tail); blade, bead and a sliver of handle ride on it.
-- **Ink bead**: a round tube with lit half, dark underside, rolling glints and viscous strands; a split fountain puts several colours in one bead.
-- **Screen**: a hinged frame with mesh, emulsion and tape; its shadow is a ring (even-odd), never a full rectangle.
-- **Shapes**: ridges with a jagged lit facet, pines as one outline of drooping tiers, water as a flat body with glint bars. Hard edges everywhere.
-- **Poster template** (1000×1500 u): paper border, art area, a dark **info band** at the foot holding a name, a number, a rule and a row of stats; columns sized by content.
-- **Texture budget**: fine paper tile, mottle multiply ~55 %, pinholes ~75 %, light encode grain. More reads as risograph.
+- **每墨层一个 `Path2D`**，填写当前变换的单位；淘汰赛是路径上的洞。可以打印任何形状。
+- **拉动揭示**：一个粗糙的吸水扒前端作为夹子（〜30 u拖尾）；刀片、珠子和一条手柄骑在上面。
+- **墨珠**：圆管，半边亮，底面暗，滚动闪光和粘性线；分体式喷泉将多种颜色集中在一颗珠子中。
+- **屏幕**：带有网、乳液和胶带的铰链框架；它的阴影是一个环（奇偶），而不是一个完整的矩形。
+- **形状**：带有锯齿状发光面的山脊，松树作为下垂层的轮廓，水作为带有闪光条的扁平体。到处都是硬边。
+- **海报模板**（1000×1500 u）：纸张边框，艺术区，脚下有一个黑色的**信息带**，上面有一个名字，一个数字，一条规则和一行统计数据；列的大小按内容确定。
+- **纹理预算**：高级纸质瓷砖，斑点倍数~55%，针孔~75%，浅编码纹理。更多读作 risograph。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **One palette per poster, ≤ 6 inks**, assigned by role: light sky, deep sky / bands, far, mid, near (darkest; also the info band), and **one bright accent** (sun, route, highlights, key number). An optional lit-face ink.
-- **Values step from far (light) to near (dark)**; depth is value, never blur.
-- **The accent is rare**: the sun or light source, the one route or product, the most important number.
-- **Paper is a colour**: an unprinted area is the brightest thing on the sheet (water, snow, a beam of light).
-- **A series = one template, a new palette per item** (time of day, season, colourway, neighbourhood). Re-inking the same geometry in another palette is a statement.
-- **Text inks are chosen by contrast** against the ink underneath (WCAG), never by a fixed key; a night palette must not swallow a header.
-- Examples (sky1 → near, accent): dawn `#F6CD98 #EE9A73 #9A7FA8 #3E7079 #1E3B3F #FBE6B4`; harbour noon `#E8F0F2 #7FB3C8 #D9C7A3 #2F6E8E #173247 #E8553D`; winter `#EEF1F4 #B8C9D9 #8B9BB0 #4A5D78 #1F2A3C #F2B134`.
+- **每张海报一个调色板，≤ 6 种墨水**，按角色分配：浅天空、深天空/波段、远、中、近（最暗；也是信息波段），以及 **one 明亮强调**（太阳、路线、亮点、关键编号）。可选的亮面墨水。
+- **值从远（亮）到近（暗）**；深度就是价值，永远不会模糊。
+- **重音罕见**：太阳或光源，一条路线或产品，最重要的数字。
+- **纸张是一种颜色**：未打印的区域是纸张上最亮的东西（水、雪、光束）。
+- **A 系列 = 一个模板，每件产品一个新调色板**（一天中的时间、季节、配色、社区）。在另一个调色板中重新绘制相同的几何图形是一种声明。
+- **文本墨水是通过对比** 与下面的墨水 (WCAG) 来选择的，而不是通过固定键来选择；夜间调色板不得吞没标题。
+- 示例（sky1 → 近、重音）：dawn `#F6CD98 #EE9A73 #9A7FA8 #3E7079 #1E3B3F #FBE6B4`；中午港口`#E8F0F2 #7FB3C8 #D9C7A3 #2F6E8E #173247 #E8553D`；冬季 `#EEF1F4 #B8C9D9 #8B9BB0 #4A5D78 #1F2A3C #F2B134`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Condensed display** for names and values (e.g. Big Shoulders Display, League Gothic), auto-fit; a geometric sans for letter-spaced labels (e.g. Outfit 600).
-- Headers are **printed into the sky**, tracked out; the info band is printed last.
-- **The poster text is the subtitle.** No narration is needed; if there is a voice, subtitles are a printed strip (a band pull), never a floating caption.
-- **Reading rule**: each text stays ≥ chars/12 + 1 s (min 1.5 s) after its **last** item lands, and ≥ max(1.8 s, speech + 0.6 s) with a voice. Compute it from the content, round up to the beat.
-- On a wall shot, labels stay ≥ ~18 px and values ≥ ~30 px at 1080p; close-ups on a band keep the whole band in frame with ≥ 5 % side margins.
+- **名称和值的压缩显示**（例如Big Shoulders Display，League Gothic），自动调整；字母间隔标签的几何sans（例如Outfit 600）。
+- 标头是**打印到天空**，被追踪出来；信息带最后打印。
+- **海报文字为副标题。** 无需旁白；如果有声音，字幕是印刷条（带拉），而不是浮动字幕。
+- **阅读规则**：每个文本在**最后的**项目落地后停留≥chars/12 + 1 s（最小1.5 s），并且有语音时≥ max（1.8 s，语音+ 0.6 s）。根据内容计算它，根据节拍向上舍入。
+- 在镜头墙上，1080p 时标签保持 ≥ ~18 px，值 ≥ ~30 px；表带上的特写镜头使整个表带保持在框架内，并具有 ≥ 5 % 的侧边距。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Pulls are linear and steady** (a squeegee does not ease). Accent inks start half a beat after the main ink of their layer.
-- **Info items** print left to right on subdivisions of the beat. **There is no fade anywhere.**
-- **Screen lift**: the frame hinges up (vertical squash + growing shadow) in ~0.4 s.
-- **Palette re-ink**: a wide squeegee travels diagonally over the sheet in ~0.35 s; geometry identical on both sides of the blade, only the inks change. Show only the blade, bead and a sliver of handle.
-- **Loose layers**: in a multi-plane move, planes parallax by depth with paper gaps and thickness shadows, then **snap into register** on one hit.
+- **拉力是线性且稳定的**（橡皮扫帚不会放松）。强调墨水在其图层的主要墨水之后半拍开始。
+- **信息项** 在节拍的细分上从左到右打印。 **任何地方都没有褪色。**
+- **屏幕升降**：框架在~0.4秒内铰接起来（垂直挤压+不断增长的阴影）。
+- **调色板重新上墨**：宽刮刀在约0.35秒内沿对角线在纸张上行进；刀片两侧的几何形状相同，只是油墨发生变化。仅显示刀片、珠子和手柄条。
+- **松散层**：在多平面移动中，平面因纸张间隙和厚度阴影的深度而产生视差，然后**一键捕捉到寄存器**。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Truck with the squeegee, slight roll, frame edge in view | the act of printing; colour arriving | a hook; a split-fountain sky |
-| Locked top-down full sheet | layers stacking into a picture | watching a poster build; a comparison |
-| Fast pull-back as the screen lifts | the reveal of a finished layer | a scene complete; a title |
-| Push + tilt to the info band | reading | facts; a date; a price |
-| Truck through a foreground silhouette (tree, lamp post, sail) in screen space | passing into the next poster | poster-to-poster transitions |
-| Crane through loose planes (multi-plane parallax) | depth, a journey inside the print | a route; a climb; a street |
-| Slow lateral dolly along a row of prints | a set, a range | a series wall; colourways |
-| Push into the mesh until the weave shows | the craft, the grain of the medium | an intimate beat; a detail |
-| Log-zoom pull-back to the wall or window | the poster in the world | a final lockup (hold ≥ 3 s) |
+|带有吸水扒的卡车，轻微滚动，框架边缘可见|印刷行为；颜色到达|一个钩子；分裂的喷泉天空|
+|锁定自上而下的整张纸|图层堆叠成图片|观看海报制作；比较|
+|屏幕抬起时快速拉回|成品层的露出|场景完成；一个标题|
+|按下 + 倾斜至信息带|阅读|事实；一个日期；一个价格|
+|卡车穿过屏幕空间中的前景轮廓（树、灯柱、帆）|传递到下一张海报|海报到海报的过渡|
+|起重机穿过松散平面（多平面视差）|深度，印刷品内部的旅程|一条路线；攀登；一条街|
+|沿着一排印刷品缓慢横向移动|一个集合，一个范围|系列墙；配色|
+|推入网格直至显示出组织|表现媒介的工艺、纹路|亲密的节拍；一个细节|
+|对数缩放拉回到墙壁或窗户|世界上的海报|最终锁定（保持≥3秒）|
 
-Close-ups on a sheet keep its edge in frame; a squeegee across a close-up is tilted with the handle hidden, so it doesn't split the frame. Layers change by squeegee, posters through foreground silhouettes or a table move. No dissolves, no bare cuts.
+纸张上的特写镜头使其边缘保持在框架内；特写镜头上的吸水扒倾斜，手柄隐藏，因此不会分裂框架。通过刮刀、海报通过前景轮廓或桌子移动来改变图层。没有溶解，没有裸露。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Acoustic, hand-played instruments**: strummed guitar, slide guitar, harmonica, upright bass, cajon or brushes, banjo, fiddle, accordion, harmonium, ukulele. Choose the family from the place: folk, surf, bossa or brass band all fit.
-- **One pull, one hit**: each ink lands on a musical event (a strum, a hit, a chord change); accelerate by subdividing, not by changing tempo. A registration snap is a loud downbeat.
-- **Foley by material**: squeegee on mesh (band-passed noise with a ~220–280 Hz mesh grain; faster = brighter), wet ink squelch, screen clack and hinge creak, paper stamps, ticks for dashed routes, paper hiss, a wood-and-metal clamp, drying-rack clips.
-- **Ambience from inside the print**: a finished scene may "wake up" (surf, street, crowd), J-cut in and L-cut out. Room tone under the table.
-- **Silence as a tool**: the music drops out for a beat before the key facts; what remains is one ambience, and the first sound after is a decisive gesture (a clamp, a long slide up).
-- Music ducks a few dB under foley. −14 LUFS.
+- **原声、手演奏乐器**：扫弦吉他、滑音吉他、口琴、立式贝司、箱鼓或刷子、班卓琴、小提琴、手风琴、风琴、尤克里里。从场所中选择家庭：民谣、冲浪、巴萨或铜管乐队都适合。
+- **一拉，一击**：每个墨水落在一个音乐事件上（扫弦，击打，和弦变化）；通过细分来加速，而不是通过改变节奏来加速。注册快照是一个很大的悲观情绪。
+- **Foley（按材料）**：网格上的刮墨刀（带通噪声，约 220–280 Hz 网格颗粒；更快 = 更亮）、湿墨静噪、屏幕咔嗒声和铰链吱吱声、纸印章、虚线路线的蜱虫、纸张嘶嘶声、木头和金属夹子、干燥架夹子。
+- **印刷品内部的氛围**：完成的场景可能会“醒来”（冲浪、街道、人群），J切入和L切出。桌子下面的房间音。
+- **沉默作为工具**：音乐在关键事实之前停顿了一会儿；剩下的就是一种氛围，之后的第一个声音是一个决定性的手势（夹紧，长长的向上滑动）。
+- 音乐在拟音下降低了几分贝。 −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-Each serves information order. A menu: use the ones your film needs.
+每个服务信息订单。菜单：使用您的影片需要的菜单。
 
-- **One ink, one beat.** Facts print last, when they are read. *Fits content like:* museum hours; a ferry timetable; tasting notes.
-- **Split fountain.** Several inks in one pull fill the frame with colour. *Fits content like:* a festival's night sky; a sunset beach bar; a rainbow of colourways.
-- **Palette re-ink.** Same poster, another palette = time passing, a season, a variant. *Fits content like:* summer vs winter hours; three jacket colourways; day and night at a market.
-- **Registration slip → snap.** Loose layers clamp into register with one hit, before the key facts. *Fits content like:* the date of a race; a launch price; a ticket sale opening.
-- **Paper as a colour.** The unprinted sheet is the brightest element. *Fits content like:* a ski slope; a lighthouse beam; fresh snow on a roof.
-- **The route as a printed layer.** A dashed accent line stamped segment by segment. *Fits content like:* a bus line; a marathon course; a delivery path.
-- **The series wall.** Every print ends up hung together as the final lockup. *Fits content like:* a city's four districts; a band's tour dates; a product family.
+- **一墨一拍。** 事实在阅读时最后打印。 *适合以下内容：*博物馆开放时间；渡轮时刻表；品酒笔记。
+- **分割喷泉。** 一次拉出多种墨水，为框架填充颜色。 *适合以下内容：*节日的夜空；日落海滩酒吧；彩虹般的色彩。
+- **调色板重新墨水。** 同一张海报，另一个调色板=时间的流逝，一个季节，一个变体。 *适合以下内容：*夏季与冬季时间；三种夹克配色；白天和晚上都在市场里。
+- **套准单→卡扣。** 在关键事实之前，松散层一击即可夹入套准。 *适合以下内容：*比赛日期；发布价格；门票销售开幕。
+- **纸张作为颜色。** 未印刷的纸张是最亮的元素。 *适合以下内容：*滑雪场；灯塔光束；屋顶上的新雪。
+- **作为打印层的路线。** 逐段标记的虚线重音线。 *适合以下内容：* 公交线路；马拉松课程；一条传送路径。
+- **系列墙。** 每张印刷品最终都会挂在一起作为最终的锁定。 *适合的内容如下：*一个城市的四个区；乐队的巡演日期；一个产品系列。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Stroke edge effects draw internal lines on unioned paths → fills only (fill, then fill shifted inside a clip).
-- A full-rectangle screen shadow muddies the print → ring shadow.
-- Cool shadow facets next to water read as water → shadows in the near ink.
-- Jagged ink beads read as paper edges → a round bead.
-- Parallax alone reads as "the mountains are moving" → paper gaps and thickness while loose, snapped to zero with a sound.
-- Silhouette wipes hold a dark blank → centre on the switch so full cover lasts ~1 frame.
-- Very wide banners are slivers in 16:9 → about 4:1.
-- Random coloured dots on the table read as confetti → a real workbench (planks, grain, muted stains, tape).
-- Too many items at honest reading times overrun the length → print items side by side in the same pulls, or let secondary ones be read on the final wall.
+- 描边边缘效果在联合路径上绘制内部线条→仅填充（填充，然后在剪辑内移动填充）。
+- 全矩形屏幕阴影使打印→环形阴影变得混乱。
+- 水旁边的冷阴影面读作水→附近墨水中的阴影。
+- 锯齿状的墨珠读作纸边缘 → 圆珠。
+- 仅视差就读作“山脉在移动”→纸张间隙和厚度在松动时，随着声音突然归零。
+- 轮廓擦拭布在开关上保留一个深色空白 → 中心，因此完整覆盖可持续约 1 帧。
+- 非常宽的横幅是 16:9 → 大约 4:1 的条子。
+- 桌子上的随机彩色点看起来像五彩纸屑 → 一个真正的工作台（木板、谷物、柔和的污渍、胶带）。
+- 诚实阅读时太多的项目超出了长度→在同一个拉动中并排打印项目，或者让次要的项目在最后一面墙上阅读。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine/silk.js` prints **any shape** in this style from a `Path2D`: `makeTextures`, `paperSheet`, `ink(ctx, {path, knock, paint}, {color, reg, clip, sheen, trap})`, `wipeRegion`/`wipeFront` (ragged pull), `squeegee` (blade, beads, split fountain), `screenFrame`, `inkFinish`, `bandSteps` (the gradient substitute), shape helpers. `demo/engine/poster.js` (template, banner, `pickInk` contrast), `demo/engine/scenes.js` (planes you can reorder or extend), `demo/film.js` (timeline and shots). API table and a minimal example that prints a new shape: [DEMO.md](DEMO.md#engine-reference).
+`demo/engine/silk.js` 从 `Path2D` 打印 **any 形状**：`makeTextures`、`paperSheet`、`ink(ctx, {path, knock, paint}, {color, reg, clip, sheen, trap})`、 `wipeRegion`/`wipeFront`（参差不齐的拉力）、`squeegee`（刀片、珠子、分裂喷泉）、`screenFrame`、`inkFinish`、`bandSteps`（渐变替代品）、形状助手。 `demo/engine/poster.js`（模板、横幅、`pickInk` 对比）、`demo/engine/scenes.js`（可以重新排序或扩展的平面）、`demo/film.js`（时间轴和镜头）。 API 表和打印新形状的最小示例：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the subject, the scenes and their planes, the palettes within the colour logic, the number of posters, the camera path, the opening, the ending, the instrument family and the length. Use cases are **grammar for the order and duration of information**; build your own timeline from the user's facts.
+您可以决定主题、场景及其平面、色彩逻辑中的调色板、海报数量、摄影机路径、开头、结尾、乐器系列和长度。用例是 **信息顺序和持续时间的语法**；根据用户的事实构建您自己的时间表。
 
-| Use case | Information order (print order) | Hold per layer | Length |
+|使用案例|信息订单（打印订单）|每层保持|长度|
 |---|---|---|---|
-| **Trail / attraction guide** | place → per item: scene → name → difficulty → distance → time → footer | title ~3 s; name ≥ chars/12 + 1 s; stat row ≥ 2.2–3 s after its last item | 30–40 s, 3 items |
-| **Event / festival poster** | scene pulls → headline → date → venue → call to action | headline 2.5 s, date + venue 3 s, final 3 s | 15–20 s |
-| **Destination series** | one template, a palette per place: name → one fact → series wall | 2.5 s per poster + 4 s wall | 20–30 s |
-| **Product drop** | layers around a flat product silhouette → name → colourway ×3 (re-ink) → price / date | 1.8 s per colourway | 12–18 s |
-| **Seasonal / hours notice** | one poster re-inked per season → season + hours | 2 s per swap | 10–15 s |
+|**步道/景点指南**|地点→每个项目：场景→名称→难度→距离→时间→页脚|标题 ~3 秒；名称 ≥ chars/12 + 1 秒；统计行距最后一项 ≥ 2.2–3 秒|30–40 秒，3 项|
+|**活动/节日海报**|场景拉动 → 标题 → 日期 → 地点 → 号召性用语|标题 2.5 秒，日期+地点 3 秒，最后 3 秒|15–20 秒|
+|**目的地系列**|一个模板，每个地方一个调色板：名称→一个事实→系列墙|每张海报 2.5 秒 + 4 秒墙|20–30 秒|
+|**产品掉落**|平面产品轮廓周围的层 → 名称 → 配色 ×3（重新上墨）→ 价格/日期|每个颜色 1.8 秒|12–18 秒|
+|**季节/营业时间通知**|每个季节重新上墨一张海报 → 季节 + 小时数|每次交换 2 秒|10–15 秒|
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **one poster, many runs** (re-inked for each of four nights, the line-up changing in the band); **a street walk** (one multi-plane truck down a street, each shop sign printed as we pass); **a misprint story** (registration drifts until the last pull lands true on the date).
-- Openings: **the empty screen** (light through a blank mesh, a stencil being exposed); **the accent first** (a lone product in the bright ink on bare paper); **the finished wall at night**, then back to the table.
-- Endings: **the drying rack** (prints clipped in a row, swaying); **the poster in use** (pasted on a bus shelter, rain starting); **the last pull is paper** (the squeegee runs dry, leaving a white silhouette).
+- 结构：**one海报，多次运行**（每四个晚上重新上墨，乐队阵容发生变化）； **a 街道步行**（一辆多飞机卡车沿着街道行驶，我们经过时打印每个商店的招牌）； **a 印刷错误的故事**（注册会漂移，直到最后一次拉动在该日期生效）。
+- 开口：**空屏**（光线穿过空白网，露出模板）； **重音第一**（裸纸上亮墨孤品）； **晚上完成墙**，然后回到桌子。
+- 结局：**晾衣架**（印刷品剪成一排，摇曳生姿）； **使用中的海报**（粘贴在公交候车亭上，下雨了）； **最后拉的是纸**（吸水扒干了，留下白色剪影）。
 
-Swapping `demo/content.json` and rebuilding is a technical check that the engine re-flows, not a way to make a film.
+交换 `demo/content.json` 并重建是发动机回流的技术检查，而不是制造影片的方法。
 
 ---
 
-How our demo was made (story, shots, score, end card, build, content fields): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建、内容字段）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

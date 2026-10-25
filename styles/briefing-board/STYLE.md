@@ -1,102 +1,113 @@
-# Engineering Briefing Board — Style Prompt
+<a id="engineering-briefing-board--style-prompt"></a>
+# 工程简报板：风格提示词
 
-> One real whiteboard wall, filmed: window light on enamel, ghosts of erased marker, frame and tray. Cut-out photographs of real things land on it with weight; tags, magnets, a ruler and stamps are pinned to it; marker ink draws itself in three colours with fixed meanings. The camera rides the lines from fact to fact and only at the end pulls back to show the whole briefing.
-> References (grammar only): explainers filmed on a map wall; the long pull-back over a wall covered in work; drafting conventions (plan above elevation, dimension lines, hatching). Never copy them or name them in the film.
+> 一面真实的白板墙，已拍摄：搪瓷上的窗光、擦掉的记号笔、框架和托盘的鬼影。真实物体的剪纸照片有重量地落在上面；标签、磁铁、尺子和邮票都钉在上面；记号笔墨水以三种颜色绘制，具有固定的含义。 摄影机从一个事实到另一个事实，直到最后才拉回来显示整个简报。
+> 参考资料（仅语法）：在地图墙上拍摄的讲解员；长距离拉回被工作覆盖的墙壁；绘图惯例（平面图、尺寸线、剖面线）。切勿复制它们或在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-1. **A physical board in a room**: enamel, window falloff, a sliding reflection, ghosts of earlier work, frame and tray.
-2. **Real things on it**: cut-out photographs of the real objects, a few millimetres off the board, shadowed by one window, parallaxing. They are evidence: never a generated image presented as a real object.
-3. **Ink that means something**: graphite for names and rules, blue for water and measurement, red only for the decision; rejected ideas erased to ghosts.
-4. **One continuous wall**: no pages; the camera travels along lines, projections and leaders.
-5. **The whole wall, once**: every shot is a crop of the final briefing, seen whole only in the last pull-back, as a poster.
+1. **A 房间里的物理板**：搪瓷、窗户衰减、滑动反射、早期作品的幽灵、框架和托盘。
+2. **上面的真实物品**：真实物品的剪裁照片，距离木板几毫米，被一个窗口遮挡，出现视差。它们是证据：生成的图像从来都不是作为真实物体呈现的。
+3. **表示某事的墨水**：石墨表示名称和规则，蓝色表示水和测量，红色仅表示决定；被拒绝的想法被抹去了鬼魂。
+4. **一个连续墙**：无页； 摄影机沿着线条、投影和引导线行驶。
+5. **整面墙，一次**：每一个镜头都是最后简报的一部分，只有在最后一次回撤时才能看到整个墙，作为海报。
 
-Not **Whiteboard Explainer** (a hand drawing line art on a flat page): the board is a filmed object, subjects are photographs. Not **Data Storytelling**: comparisons are dimension lines in real units beside real objects. Not a keynote: no headers, centred bullets, page turns.
+不是**白板讲解器**（平面上的手绘线条艺术）：白板是拍摄对象，主题是照片。不是**数据讲故事**：比较是真实物体旁边以真实单位表示的尺寸线。不是主题演讲：没有标题、居中项目符号、翻页。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Board (z 0)**: procedural enamel, wiped ghost strokes, smudges, a window falloff, a sliding diagonal reflection; the frame shadows a warm grey wall.
-- **Ink (multiply)**: flat colour at about 90 %, lighter core, round caps, a wet-tip glint on the stroke being drawn. Lettering: a marker font revealed glyph by glyph with seeded tilt and baseline jitter. Erasing leaves a blurred ghost (about 7 %).
-- **Prints (z ≈ 6–14)**: photographs cut out at full resolution (a matting model, or a hand polygon / mask), clean edges, one shared grade (lower saturation, a touch warmer, lifted blacks). Thin structure (cables, wires, masts, railings) is measured in the photo and redrawn as clean lines in one colour. Shadow = blurred silhouette along one light vector, softer the higher the object. **No frame upsamples a photo**: ≥ 1 source px per screen px at its largest, measured; cap the zoom or find a bigger source.
-- **Secondary layer** (only where the camera never goes before the end): the photos as pinned prints, a source card, sums on sticky notes, a small sketch. Texture and proof for the final wall, lighter than the main line.
-- **Props (z ≈ 8–26)**: magnetic tags, magnets, a steel ruler, printed cards, a pitted stamp impression; the tray (z 70) nearest the lens.
-- **Camera**: parallax by height, sub-frame motion blur (180° shutter), light grain. Only subtitles are screen-space.
+- **Board (z 0)**：程序珐琅、擦除的重影笔划、污迹、窗口衰减、滑动对角反射；框架投射在温暖的灰色墙壁上。
+- **Ink（多重）**：约 90% 的平坦颜色，较浅的核心，圆形帽，正在绘制的笔划上有湿尖闪烁。刻字：一种标记字体，通过种子倾斜和基线抖动逐个显示字形。擦除后会留下模糊的重影（约 7%）。
+- **打印 (z ≈ 6–14)**：以全分辨率剪切的照片（抠图模型或手部多边形/蒙版）、干净的边缘、一个共享等级（较低的饱和度、稍微温暖一点、提升黑色）。照片中测量了薄结构（电缆、电线、桅杆、栏杆），并以一种颜色重新绘制为干净的线条。阴影 = 沿着一个光矢量的模糊轮廓，物体越高越柔和。 **无帧对照片进行上采样**：每屏幕最大像素≥1源像素，测量；限制变焦或寻找更大的来源。
+- **第二层**（仅在摄影机在结束之前从未出现的情况下）：固定打印的照片、源卡、便签上的总和、小草图。最终墙的纹理和样张，比主线浅。
+- **Props (z ≈ 8–26)**：磁性标签、磁铁、钢尺、印刷卡片、凹坑印章；最靠近镜头的托盘 (z 70)。
+- **摄影机**：高度视差、子帧运动模糊（180°快门）、光颗粒。只有字幕是屏幕空间。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Ground: the enamel and its light falloff; the wall around is neutral warm grey.
-- Ink: graphite = names, rules, facts; blue = water and measurement (dimensions, projection lines, measured numbers); red = the decision (a rejection, the key word of a verdict, the one mark to notice); grey for drafting only (extension lines, hatching).
-- Red is rare: two or three red marks per frame at most, never on a red object. Full colour belongs to the photographs; props stay neutral; a red magnet is a verdict.
+- 地面：釉质及其光衰减；周围的墙壁是中性暖灰色。
+- 墨水：石墨=名称、规则、事实；蓝色 = 水和测量（尺寸、投影线、测量数字）；红色 = 决定（拒绝、判决的关键词、需要注意的一个标记）；灰色仅用于绘图（延长线、剖面线）。
+- 红色很少见：每帧最多有两个或三个红色标记，而且绝不会出现在红色物体上。全彩属于照片；道具保持中立；红色磁铁是一个判决。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Marker lettering**: a single-weight marker face covering every script the film uses (ours: LXGW Marker Gothic, OFL, subset — re-run when words change). Content 100–160 board px; a verdict 230–400.
-- **Printed labels** (tags, cards, stamps): a sturdy sans; credit lines in a monospace. A tag holds one to three words.
-- **Subtitles**: a frosted acrylic strip at the bottom centre with a blue marker tick. If the film is bilingual, the film's language sits on top. **One line per language**: `nowrap`, measured in the page against a 1,500 px safe width; a long line becomes two cues. Key content stays above the strip (bottom 15 %).
-- **Reading time**: subtitles ≥ max(1.8 s, speech + 0.6 s); board text stays fully in frame for CJK ÷ 4.5 + other ÷ 15 + 1.5 s from when it appears. In the final wall, text meant to be read is ≥ 20 px on screen.
+- **标记字母**：覆盖影片使用的每个脚本的单权重标记面（我们的：LXGW Marker Gothic，OFL，子集 - 当单词更改时重新运行）。内容 100–160 板像素；判决 230–400。
+- **印刷标签**（标签、卡片、邮票）：坚固的sans；等宽字体中的信用额度。标签包含一到三个单词。
+- **字幕**：底部中心有一条磨砂亚克力条，带有蓝色标记勾号。如果影片是双语的，则影片的语言位于顶部。 **每种语言一行**：`nowrap`，在页面中以 1,500 像素安全宽度测量；一条长线变成两条线索。关键内容位于条带上方（底部 15%）。
+- **阅读时间**：字幕≥最大（1.8秒，语音+0.6秒）；板文本从出现时起，在 CJK ÷ 4.5 + other ÷ 15 + 1.5 秒内完全保持在框架内。在最终的墙上，要阅读的文本在屏幕上的长度≥ 20 px。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 24 fps on ones; nothing is stepped.
-- Camera: overlapping eased moves, velocity ∝ u^a (1−u)^b (a, b ≈ 1.5–4), so speed and acceleration never jump; b > a gives inertia. A hand-held breath (≤ 3 px) underneath; shake only on an impact.
-- Weight: prints are lowered from the camera side, land, bounce and settle as the shadow tightens; magnets clack on to pin them; tags swing; removed magnets pop toward the lens; struck things jolt and spring back. The camera may meet a landing close, briefly, on the object's most telling detail, then pulls out.
-- Blurred in motion, sharp where words are read. Every 1–2 beats something lands, draws or swings; only silences and judgement holds go still.
-- Ink draws at the speed of a hand; dimension lines land with an arrowhead tap.
-- Never: dissolves, scale-pops on text, bouncy UI easing, text fading in by itself.
+- 24 fps；没有任何一步。
+- 摄影机：重叠缓动动作，速度 ∝ u^a (1−u)^b (a, b ≈ 1.5–4)，因此速度和加速度不会跳跃； b > a 给出惯性。下面有一个手持呼吸（≤ 3 px）；仅在撞击时摇晃。
+- 重量：印刷品从摄影机一侧降低，随着阴影收紧而落地、弹起和稳定；磁铁发出咔嗒声将它们固定住；标签摆动；拆下的磁铁会弹向镜头；被击中的物体会震动并弹回。 摄影机可能会在物体最明显的细节上短暂着陆，然后退出。
+- 运动时模糊，读出文字时清晰。每 1-2 次就有物体落地、平移或摆动；只有沉默和判断依然存在。
+- 墨水以手的速度绘制；尺寸线用箭头水龙头着陆。
+- 从不：溶解、文本上出现缩放、有弹性的 UI 缓动、文本自行淡入。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Ride a line (with the pen or a dimension) | measuring; "how far does it go?" | lengths compared; a route; a timeline |
-| Tilt along projection lines | the same quantity in another view | plan → elevation; a total → its parts |
-| Slow push-in, slight Dutch tilt | tension, an approaching problem | a collision; a deadline; an overrun |
-| Pull back and sideways | stepping back to state a rule | a constraint; a turn in the argument |
-| Whip with the line, overshoot, settle | a result that exceeds | a record; an outlier |
-| Rise along a leader line | from evidence to verdict | a conclusion; a recommendation |
-| Staircase framing (each new item with the previous result) | comparison in sequence | rankings; tests; options |
-| Judgement frame: the whole item, the limit and the verdict, held ≥ 2.5 s | a test the viewer can check | pass / fail against a threshold; a budget against a cap |
-| Long pull-back to the whole wall | scale; everything at once | the end of an argument; a summary |
+|沿线骑行（用笔或尺寸）|测量; “还有多远？”|长度比较；一条路线；时间线|
+|沿投影线倾斜|另一个视图中的相同数量|平面图→立面图；总计 → 其部分|
+|缓慢推入，轻微荷兰倾斜|紧张，迫在眉睫的问题|碰撞；截止日期；超支|
+|向后拉并侧向拉|退后一步陈述规则|一个约束；争论的转折|
+|用线鞭打、过冲、安定|结果超过|记录；异常值|
+|沿着领导线上升|从证据到判决|结论；推荐|
+|楼梯框架（每个新项目与先前的结果）|顺序比较|排名；测试；选项|
+|判断帧：整项、极限、判断，保持≥2.5s|观众可以检查的测试|通过/未通过阈值；针对上限的预算|
+|长拉回整面墙|规模;全部一起|争论的结束；总结|
 
-Framing: off-centre, cropped, close. The first frame holds a readable subject; the first strong action hits within 0.5 s. Items tested against a limit each get a judgement frame (wider each time if they grow); the verdict lands after the camera settles. Before the reveal: ≤ about 60 % of the board's width, never both side edges, never the reveal's zone. Transitions are moves; no cuts, fades or zoom-to-fit.
+取景：偏心、裁剪、闭合。第一帧包含一个可读的主题；第一个强力动作会在 0.5 秒内发生。每个针对限制进行测试的项目都会获得一个判断框架（如果它们增长，则每次都会变宽）； 摄影机和解后，判决生效。暴露之前：≤ 板宽度的 60% 左右，两侧边缘，绝不是暴露区域。过渡是移动；没有剪切、褪色或缩放以适合。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- Room: an air-conditioning bed and traffic through the window, about 20 dB under the voice — audible, not a hiss; silences keep only this.
-- Foley: felt-tip squeaks scaled to stroke length, nib taps, magnet clacks (a pitch per magnet in a row), suction pops, print landings (board thump, paper slap), a ruler's ring, eraser felt, a stamp's thud.
-- The subject's own sound arrives early as a J-cut; the first sound after a silence is an impact or the subject's sound.
-- Music: a small rhythmic ensemble, walking to brisk — bass, a light kit, wooden percussion, low brass stabs for verdicts (or mallets); no piano-and-strings pad. Landings, stamps and arrows sit on the beat. Voice calm, briefing-room confident, about 8–10 dB over the music; −14 LUFS.
+- 房间：一张空调床，窗外有交通声，声音大约20分贝——可以听见，不是嘶嘶声；沉默只保留这一点。
+- 拟音：按笔划长度缩放的毡尖吱吱声、笔尖敲击声、磁铁咔嗒声（连续每个磁铁的节距）、吸力爆裂声、打印着陆（板重击声、纸拍击声）、尺子环、橡皮擦毛毡、邮票的撞击声。
+- 拍摄对象自己的声音以 J 剪辑的形式提前出现；沉默后的第一个声音是撞击声或对象的声音。
+- 音乐：有节奏的小型合奏，节奏轻快——贝司、轻型乐器、木制打击乐器、低音铜管乐器（或木槌）；没有钢琴和弦乐垫。着陆、邮票和箭头都在节奏中。声音平静，在简报室里充满自信，比音乐高出约 8-10 分贝； −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **The whole-wall reveal.** Design the wall as a poster first (hierarchy, reading path, filling the frame), then plan every shot as a crop of it; keep one zone (secondary layer, verdict, title card) for the reveal alone. *Fits:* a product roadmap; a household budget.
-- **The subject passes through the answer.** The real thing moves through the chosen solution, its sound first. *Fits:* a parcel along the chosen route; a train over the new viaduct.
-- **Ride the dimension line.** A quantity drawn as a real length to one scale; the camera rides the tip. *Fits:* battery ranges of four cars.
-- **Projection lines.** Dashed lines carry an edge from one view to another so two drawings share a scale. *Fits:* a trail map above its elevation profile.
-- **Magnets as countable things.** Units clack on in rhythm, pop off when a rule removes them. *Fits:* seats in a vote.
-- **Erase to a ghost.** A rejected idea wiped but faintly visible. *Fits:* last year's plan under this year's.
-- **The stamp.** A verdict lands with a thud and a jolt. *Fits:* passed / failed tests.
-- **The physical answer.** A real prop laid down as the solution. *Fits:* one cable instead of five.
-- **Leader to the verdict.** An arrow from the deciding number to the conclusion. *Fits:* the bottleneck in a process.
+- **全墙展示。** 首先将墙设计为海报（层次结构、阅读路径、填充框架），然后将每个镜头规划为它的裁剪；保留一个区域（第二层、判决、标题卡）单独用于展示。 *适合：*产品路线图；家庭预算。
+- **主题通过答案。** 真实的事物通过所选的解决方案移动，首先是它的声音。 *适合：*沿所选路线的包裹；火车经过新的高架桥。
+- **沿着尺寸线。** 绘制为一比例尺实际长度的数量； 摄影机位于尖端。 *适合：*四辆汽车的电池组。
+- **投影线。** 虚线将一条边从一个视图带到另一个视图，因此两个工程图共享比例。 *适合：*其海拔剖面上方的路线图。
+- **磁铁是可数的东西。** 单位有节奏地发出咔哒声，当规则将它们移除时就会弹出。 *适合：*投票中的席位。
+- **抹得一团糟。** 一个被拒绝的想法被抹掉了，但依稀可见。 *适合：*去年的计划符合今年的计划。
+- **邮票。** 伴随着一声巨响和震动，判决落地了。 *适合：*通过/失败的测试。
+- **物理答案。** 作为解决方案放置的真实道具。 *适合：*一根电缆而不是五根。
+- **裁决的领导者。** 从决定性数字到结论的箭头。 *适合：*流程中的瓶颈。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Text glimpsed in passing** fails the reading time. Fix: words where the camera rests; frame each new item with the last result.
-- **Only close-ups.** The viewer never sees the whole object against the limit. Fix: detail → judgement frame → hold → verdict → move on.
-- **Photos that don't belong together.** Fix: one grade, one light vector, one viewpoint family.
-- **Thin parts lost or stair-stepped** by the matte. Fix: key them against the clean background, redraw clean lines at the measured positions.
-- **Upsampled photos** go soft in close-ups. Fix: full-resolution cuts, large sources, a per-frame check.
-- **Lettering in photos** (signs, names, logos). Fix: paint out, cut, or choose another photo.
-- **The wall seen too early** spends the ending; **a sparse or tiny final wall** wastes it. Fix: measure every frame's visible share; size the hierarchy for the poster; a quiet secondary layer, no empty middle.
+- **路过看到的文字** 读取时间失败。修复：摄影机所在的单词；用最后的结果框定每个新项目。
+- **仅特写。** 观看者永远不会看到整个物体的极限。修复：细节→判断框架→保留→判决→继续。
+- **不属于一起的照片。** 修复：一个等级、一个光矢量、一个视点族。
+- **薄件丢失或阶梯状**由哑光。修复：在干净的背景上对它们进行关键帧，在测量的位置重新绘制干净的线条。
+- **上采样照片** 特写镜头变得柔和。修复：全分辨率剪切、大源、每帧检查。
+- **照片中的文字**（标志、名称、徽标）。修复：涂色、剪切或选择另一张照片。
+- **墙见得太早** 花结局； **稀疏或微小的最终墙**浪费了它。修复：测量每一帧的可见份额；调整海报的层次结构；安静的第二层，没有空的中间。
 
-## 10. Sources, facts, engine
+<a id="10-sources-facts-engine"></a>
+## 10. 来源、事实、引擎
 
-- **Photos**: Wikimedia Commons (read each file page's licence and author), national libraries and archives (e.g. the Library of Congress: check each item's rights statement), agency media pages, Flickr Commons. Fine: CC0, public domain, CC BY (credit it). CC BY-SA, "no known restrictions" (≠ CC0) or other terms: name them to the user and ask first. For the user's own product, site or people, ask for their photos. No licensable photo of a real thing → draw it in marker as a sketch; never a generated image presented as the real object.
-- **Facts**: keep a `FACTS.md` in the project folder (each claim on screen or in the voice, its source URL, the quoted wording, or the measurement method) and deliver it with the film. List every photo in `CREDITS` with source, author and licence.
-- **Extra packages and packs** (beyond `setup.sh deps voice music`): `onnxruntime` and the BiRefNet-general matting model (MIT, ~970 MB: https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-general-epoch_244.onnx, path in `$BIREFNET_ONNX`) for cut-outs; `fonttools` only to subset CJK fonts offline. The agent installs them itself into a private venv in the project folder (`demo/kit/tools/kit_env.sh` does venv and model), never into `$LIB/.venv`. Without the model: cut with `prep_object.py --poly` (hand polygon) or `--mask` (a mask image).
-- **Engine** (copy into the project): `demo/kit/board.js` (camera, prints, tags, magnets, ruler, cards, stamp, ink, erasing, `sceneTexts(t)`, `subCheck()`; fields in `demo/kit/README.md`), `demo/kit/batch.mjs` (stills), `demo/kit/tools/` (cut-outs, line redraws, lettering wipe, prints, fonts), checks in `demo/tools/` (`camcheck.mjs` visible share and judgement frames, `rescheck.mjs`, `subcheck.mjs`).
+- **照片**：Wikimedia Commons（阅读每个文件页面的许可证和作者）、国家风格库和档案馆（例如国会风格库：检查每个项目的权利声明）、机构媒体页面、Flickr Commons。罚款：CC0、公共领域、CC BY（归功于它）。 CC BY-SA、“无已知限制”（≠ CC0）或其他术语：向用户说出并首先询问。对于用户自己的产品、网站或人物，询问他们的照片。没有真实事物的可授权照片 → 用记号笔将其绘制为草图；生成的图像永远不会呈现为真实的物体。
+- **事实**：在项目文件夹中保留一个 `FACTS.md`（屏幕或语音中的每个声明、其源 URL、引用的措辞或测量方法），并与影片一起交付。列出 `CREDITS` 中的每张照片及其来源、作者和许可证。
+- **Extra 包和包**（超出 `setup.sh deps voice music`）：`onnxruntime` 和 BiRefNet 通用抠图模型（MIT，~970 MB：`$BIREFNET_ONNX` 中的 https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-general-epoch_244.onnx, 路径）用于剪切； `fonttools` 仅用于离线子集 CJK 字体。代理将它们本身安装到项目文件夹中的私有 venv 中（`demo/kit/tools/kit_env.sh` 执行 venv 和模型），而不是安装到 `$LIB/.venv` 中。没有模型：用`prep_object.py --poly`（手多边形）或`--mask`（掩模图像）进行切割。
+- **引擎**（复制到项目中）：`demo/kit/board.js`（摄影机、印刷品、标签、磁铁、尺子、卡片、印章、墨水、擦除、`sceneTexts(t)`、`subCheck()`；中的字段`demo/kit/README.md`)、`demo/kit/batch.mjs`（剧照）、`demo/kit/tools/`（剪切、线条重画、刻字擦除、打印、字体）、签入 `demo/tools/`（`camcheck.mjs` 可见共享和判断框架、`rescheck.mjs`、 `subcheck.mjs`）。
 
-A minimal world (`node demo/kit/batch.mjs park.json`; `fetch_fonts.py park.json` first for new characters):
+一个最小的世界（`node demo/kit/batch.mjs park.json`；新角色首先为`fetch_fonts.py park.json`）：
 
 ```json
 { "dur": 6, "t": 5.5, "board": { "w": 4000, "h": 2400 }, "hand": 0, "cam": { "x": 1500, "y": 1000, "z": 0.8, "moves": [] },
@@ -107,14 +118,15 @@ A minimal world (`node demo/kit/batch.mjs park.json`; `fetch_fonts.py park.json`
     { "type": "stamp", "text": "首选", "xy": [1500, 700], "size": 110, "rot": -8, "t": 4.2 } ] }
 ```
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-The agent decides per film: structure, which objects are photographed, plan vs elevation, the wall's reading path, opening, ending, camera path, pacing.
+代理根据影片决定：结构、拍摄哪些物体、平面图与立面图、墙的阅读路径、开头、结尾、摄影机路径、节奏。
 
-- **Three structures:** one measurement that keeps growing until it breaks a limit; a before/after where the erased first plan stays as a ghost under the second; a checklist stamped item by item as the camera moves down the wall.
-- **Three openings:** a stamp on a finished drawing, then back to see why; one number written large, then the line that measures it; a photo dropped onto an empty corner.
-- **Three endings:** the wall revealed with the answer circled; back to the opening mark, now corrected; the last tag flipped from a question to an answer, then the pull-back.
+- **三种结构：** 一种持续增长直至突破极限的测量； before/after，其中擦除的第一个计划在第二个计划下保留为幽灵；墙上贴着一张清单，逐项标记为摄影机运动。
+- **三个开口：**在成品图上盖章，然后回来看看为什么；一个写大的数字，然后是测量它的线；一张照片掉在一个空角落里。
+- **三个结局：** 墙壁显露，答案圈出；回到开头标记，现已更正；最后一个标签从问题翻转为答案，然后又撤回。
 
 ---
 
-How our demo was made (story, shots, score, title card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、标题卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

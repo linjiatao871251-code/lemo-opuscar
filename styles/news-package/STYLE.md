@@ -1,156 +1,169 @@
-# Broadcast News Package — Style Prompt
+<a id="broadcast-news-package--style-prompt"></a>
+# 电视新闻包装：风格提示词
 
-> A television newsroom's on-air package, built entirely in code: a sting that becomes the channel bug, a rundown of today's stories that opens and closes the bulletin, a lower-third strap that never leaves the bottom of the frame, and full-frame graphics (split-flap price boards, a line breaking a threshold, explainer maps, documents flying out of a city, quote cards, spec cards with proportion bars, stamps) that carry the facts. The style is the **package system plus its cutting rules**, not a drawing style. 16:9, a clean frame: no burned-in subtitles, no news crawl.
-> References (grammar only): evening network news headline menus, financial-channel market graphics, European news channels' explainer maps, tech-desk spec cards. Never copy a broadcaster's logo, set, fonts, colours, music or idents, and never name them in the film.
+> 电视新闻编辑室的广播包，完全用代码构建：成为频道错误的刺痛，打开和关闭公告的今日故事概要，永远不会离开框架底部的下三分之一带子，以及承载事实的全帧图形（分瓣价格板，突破门槛的线，解释地图，从城市飞出的文件，报价卡，带有比例栏的规格卡，邮票）。该风格是 **封装系统加上其切割规则**，而不是绘图风格。 16:9，干净的画面：没有嵌入字幕，没有新闻爬行。
+> 参考资料（仅语法）：晚间网络新闻标题菜单、金融频道市场图表、欧洲新闻频道的解说图、技术台规格卡。切勿复制广播公司的徽标、布景、字体、颜色、音乐或标识，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-1. **One package system, used consistently.** Every graphic is built from the same few parts: a brand plate (parallelogram), a tab in the accent colour, a paper strap, ink cards with an accent top edge, mono datelines, stamps. Viewers read the system before they read the words.
-2. **The bulletin's order.** Sting → rundown ("today we have four stories") → item → item → … → back to the rundown, ticked off → sign-off. Each item opens with its category on the strap's tab and its date on the first graphic.
-3. **One fact per screen.** A full-frame graphic states one thing: the price, the break, the two stocks, the place, the two letters, the quote, the verdict.
-4. **The strap holds the headline.** One lower-third strap is on screen from the first story to the recap and changes its words with a vertical flip; the picture above it is free for the graphic.
-5. **Clean panel.** No crawl, no burned-in subtitles; subtitles ship as a separate `.srt`. The frame is the graphic, the strap, the bug and a source line.
+1. **一个包装系统，一致使用。** 每个图形都由相同的几个部分组成：品牌板（平行四边形）、强调颜色的标签、纸带、带有强调顶部边缘的墨卡、单色日期线、邮票。观众在阅读文字之前先阅读系统。
+2. **公告的顺序。** Sting→纲要（“今天我们有四个故事”）→项目→项目→…→回到纲要，勾选→签收。每件商品打开后，表带标签上都会显示其类别，第一个图形上会显示其日期。
+3. **每个屏幕一个事实。** 全帧图形说明一件事：价格、突破、两只股票、地点、两个字母、报价、判决。
+4. **该带子占据了标题。** 从第一个故事到重述，屏幕上有一条下三分之一的带子，并通过垂直翻转改变其文字；上面的图片是免费的图形。
+5. **洁净面板。** 无爬行，无烧录字幕；字幕作为单独的 `.srt` 发货。框架是图形、带子、错误和源代码行。
 
-Not **Caption News** (that is captions-first social video: huge slammed captions are the lead, no rundown, no strap; here type is small and orderly and the graphics lead). Not **Data Storytelling** (one chart per beat, never a dashboard; the chart is an insert in a bulletin). Not a keynote: no centred title-and-bullets, no page turns. Not a studio show: no virtual set, no anchor, no fly-throughs — the package is flat graphics over ink.
+不是 **标题新闻**（即字幕优先的社交视频：巨大的猛烈字幕是主角，没有纲目，没有条带；这里的字体小而有序，图形领先）。不是 **数据讲故事**（每个节拍一张图表，绝不是仪表板；该图表是公告中的插入内容）。不是主题演讲：没有居中的标题和项目符号，没有翻页。不是演播室表演：没有虚拟布景，没有主播，没有飞越——包装是墨水上的平面图形。
 
-## 2. Frame and layout (1920×1080)
+<a id="2-frame-and-layout-19201080"></a>
+## 2. 框架及布局（1920×1080）
 
-| Zone | Position | Content |
+|区|位置|内容|
 |---|---|---|
-| Content | x 96–1824, y 56–840 | the full-frame graphic; when a strap is up, nothing important below y 840 |
-| Lower-third strap | tab x 96 y 856, 48 high; strap x 96 y 904, 1250×104, + 120 px ink end block | category tab (accent, ink text, Chinese + English), headline in Chinese 50 px + one English line 27 px |
-| Source line | right-aligned at x 1836, y 950 / 978 | `SOURCE: …` mono 13 px + Chinese 16 px, 75 % opacity; English ≤ 36 characters or it slides under the strap's end block |
-| Channel bug | top right, plate centre (1739, 86), 0.327 of the sting plate | the plate plus `AI NEWS` |
-| Corner tag | top left x 96 y 56, 330×64 | `ILLUSTRATION / 示意 · AI 生成画面` on generated plates, `SCHEMATIC / 示意图` on schematic charts; flips in and out 0.2 s |
+|内容|x 96–1824，y 56–840|全帧图形；当带子抬起时，低于 y 840 没有什么重要的|
+|下三分之一带子|标签 x 96 y 856，48 高；带 x 96 y 904、1250×104、+ 120 px 墨水端块|类别选项卡（重音、墨迹文本、中文+英文）、中文标题 50 px + 一行英文 27 px|
+|源线|在 x 1836、y 950 / 978 处右对齐|`SOURCE: …` 单色 13 px + 中文 16 px，75 % 不透明度；英文 ≤ 36 个字符或滑到表带末端块下方|
+|频道错误|右上角，板中心 (1739, 86)，刺板的 0.327|板加`AI NEWS`|
+|角标|左上 x 96 y 56, 330×64|生成的板上为 `ILLUSTRATION / 示意 · AI 生成画面`，原理图上为 `SCHEMATIC / 示意图`；翻入和翻出 0.2 秒|
 
-Content layers sit lower than a subtitled layout would put them (a 60–110 px downward shift) so the bottom strap does not leave an empty band above it. When you remove subtitles and the crawl, re-lay the page; never leave the space they used.
+内容层的位置低于字幕布局的放置位置（向下移动 60-110 像素），因此底部条带不会在其上方留下空带。当你删除字幕和爬行后，重新布局页面；永远不要离开他们使用过的空间。
 
-## 3. Package parts (specs)
+<a id="3-package-parts-specs"></a>
+## 3. 封装部件（规格）
 
-| Part | Spec | Rules |
+|部分|规格|规则|
 |---|---|---|
-| Sting | 0–1.5 s | two accent slashes (0.04, 0.10 s) → the plate slams in with an overshoot, an impact ring and shake (0.16–0.42) → letters drop in one by one → wordmark and dateline open from the centre → a glint → the plate flies to the top right and **becomes the bug** while a vertical band wipes into the first shot. A hit within 0.4 s |
-| Brand plate | parallelogram 520×180, accent gradient, ink and gold bars at the left, name in condensed 800 | the same object is the sting, the bug, the desk front and the end card |
-| Rundown | left: date block (big numerals, month, week); right: three rows, 1024×140, number block in accent | rows flip in vertically on the beat (back ease) with a glint; at the close the same object returns and each row is ticked |
-| Lower-third strap | see §2 | enters with the first story, flips (new words up from below, old up and out, 0.32 s; the tab flashes white when the category changes), leaves with a slide when the recap starts. A **profile** version (tab `人物 PROFILE`) names a speaker |
-| Split-flap board | tiles 220×130, top and bottom halves clipped separately | old value and new value on the same board, so the change reads in one look; ×2 / +x % called out to the right |
-| Threshold chart | line from the peak, the threshold as a dashed gold line | the line head advances one trading day per step; the last step crosses the threshold in accent with a shake and a ring; the readout panel slides in after; axes show only what the data supports |
-| Bars | grow from a zero line downward for losses, values roll | a reference line at the shared threshold plus a badge |
-| Explainer map | the same projection, one long take | members light in order of distance from the city; the city label, the institution label with leader, a stamp; the camera pushes, then pans to make room |
-| Documents | 380×490 paper, ink header | fly out of the city dot on an arc (0.5 s, scale 0.08 → 1, rotation settles); check boxes tick on the voice's key words |
-| Quote card | ink background with the package's light streaks, a large accent quotation mark lands first, lines push up one by one (0.18 s apart), then the Chinese gist, a gold rule, name, occasion and date | the official wording, in the language it was said; never paraphrase inside quotation marks; an underline sweeps the key word as the voice says it |
-| Spec card | eyebrow (source · date), the product name pushed up from a mask, a category stamp, proportion bars on one scale (the whole vs the part, values rolling), a percentage badge, a context chip; a second group on the right for the hardware or the place, filling cell by cell, joined by a bracket to its total | one scale for every bar, so the proportion is true; every number from the source page |
-| Stamps | accent fill or ink with a double accent frame, −6° to −10° | land from 1.9× in 0.16 s with an expanding ellipse; one per story at most |
-| Transitions | vertical band wipe (accent 84 px + ink 5 px + gold 14 px edge, 0.3 s) between stories and programme parts; hard cut + timpani inside a story; slanted wipe into the end card | nothing else: no dissolves, no 3D flips, no page turns, no fly-throughs. **The package layer travels with its picture**: under a wipe each side draws its own strap words, tab, source line and corner tag (old state on the old side, new state on the new side), so the band brushes the headline over; on a hard cut they change on the same frame. Strap words never flip or overlap. The incoming picture's entry animation starts under the band, so its first revealed frame already has content |
+|蜇|0–1.5 秒|两条重音斜杠（0.04，0.10 s）→ 板子猛地撞上，伴随着过冲、冲击环和震动（0.16–0.42）→ 字母一个接一个地落入→ 文字标记和日期线从中心打开→ 闪烁→ 板子飞到右上角，**成为错误**，同时垂直带擦拭到第一个镜头。 0.4秒内命中|
+|品牌铭牌|平行四边形 520×180，重音渐变，左侧墨水和金条，名称为压缩 800|同一物体是刺、虫子、桌子前面和片尾卡|
+|撞倒|左：日期块（大数字、月、周）；右：三行，1024×140，数字块带重音符号|行随着节拍垂直翻转（后缓）并闪烁；结束时返回相同的对象并且每一行都被勾选|
+|下三分之一带子|见§2|进入第一个故事，翻转（新词从下向上，旧词向上并向外，0.32 秒；当类别更改时选项卡呈白色闪烁），当重述开始时以幻灯片离开。 **轮廓** 版本（选项卡 `人物 PROFILE`）命名了发言人|
+|分瓣板|瓷砖 220×130，上半部和下半部分别剪裁|旧值和新值在同一个板上，所以变化一目了然； ×2 / +x % 向右呼出|
+|阈值图|从峰值开始的线，阈值是一条金色虚线|线头每一步前进一个交易日；最后一步跨过门槛，伴随着摇晃和铃声。读出面板随后滑入；轴仅显示数据支持的内容|
+|酒吧|从零线向下增长损失，价值滚动|共享阈值处的参考线加上徽章|
+|讲解员地图|相同的投影，一个长镜头|成员按照距城市远近的顺序亮灯；城市标签、带领导者的机构标签、印章； 摄影机推动，然后平移以腾出空间|
+|文件|380×490纸张，墨头|以弧线飞出城市点（0.5 秒，比例 0.08 → 1，旋转稳定）；勾选语音关键词的复选框|
+|报价卡|墨水背景，带有包装的浅色条纹，首先是一个大的重音引号，一行一行地向上推（间隔 0.18 秒），然后是中文要点、黄金法则、名称、场合和日期|官方措辞，即所说的语言；切勿在引号内转述；当声音说出关键词时，下划线会扫过关键词|
+|规格卡|眉毛（来源·日期）、从面具推上来的产品名称、类别标记、比例尺（整体与部分、数值滚动）、百分比徽章、上下文芯片；右侧的第二组用于硬件或地点，逐个单元填充，并用括号将其连接到总数中|每个条形都有一个刻度，因此比例是真实的；源页面中的每个数字|
+|邮票|带有双重音框的重音填充或墨水，−6° 至 −10°|0.16 秒内从 1.9 倍着陆，椭圆不断扩大；每个故事最多一个|
+|过渡|故事和节目部分之间的垂直带擦拭（强调 84 像素 + 墨水 5 像素 + 金色 14 像素边缘，0.3 秒）；故事中的硬切 + 定音鼓；斜擦入片尾卡|没有别的：没有溶解，没有 3D 翻转，没有翻页，没有飞行。 **包装层随其图片移动**：在擦拭下，每一面都绘制自己的表带文字、选项卡、源行和角标记（旧状态在旧侧，新状态在新侧），因此带将标题刷掉；在硬剪辑中，它们在同一帧上发生变化。带字永远不会翻转或重叠。传入图片的进入动画在带区下开始，因此其第一个显示的帧已经有内容|
 
-## 4. Colour
+<a id="4-colour"></a>
+## 4. 颜色
 
-| Role | Value | Use |
+|角色|价值|使用|
 |---|---|---|
-| ink | `#121417` | backgrounds, panels, strap end block |
-| ink2 / ink3 | `#1B1E23` / `#22262C` | cards, land on maps |
-| accent (lemon) | `#F2CF1D` (light `#F8DE4A`, dark `#D8B30C`) | plate, tabs, band wipe, bars, stamps, the line that breaks |
-| gold | `#D4B064` | thresholds, datelines, source lines, light fins, badges |
-| paper | `#F4F1E8` | strap, documents, the chart line |
-| breaking | `#FE6B3D` | only for BREAKING and LIVE. A weekly round-up has neither, so it never appears |
+|墨水|`#121417`|背景、面板、带端块|
+|墨水2 / 墨水3|`#1B1E23` / `#22262C`|卡片、地图上的土地|
+|口音（柠檬）|`#F2CF1D`（浅色`#F8DE4A`，深色`#D8B30C`）|板、标签、带擦拭、条、邮票、断线|
+|金子|`#D4B064`|阈值、日期变更线、源线、光鳍、徽章|
+|纸|`#F4F1E8`|表带、文件、图表线|
+|打破|`#FE6B3D`|仅适用于 BREAKING 和 LIVE。每周汇总都没有，所以它永远不会出现|
 
-Structure to keep when you change the brand: one accent + one gold-like secondary + paper + ink, and a reserved alarm colour. Ink text on the accent; on paper, English secondary lines in a dark olive (`#6E5A1E`) because gold is too weak there.
+更改品牌时要保留的结构：一种强调色+一种金色辅助色+纸张+墨水，以及保留的警报颜色。重音上有墨迹文字；在纸面上，英文次要线是深橄榄色（`#6E5A1E`），因为那里的黄金太弱了。
 
-## 5. Type
+<a id="5-type"></a>
+## 5. 类型
 
-- Chinese: Noto Sans SC 900 (headlines, strap) / 700 (labels).
-- Latin: Barlow Condensed 800 (numbers, names, the plate), 600 (secondary lines, quotes), 600 italic (the end-card English title).
-- Mono: IBM Plex Mono 500 for datelines, sources, axis labels, all caps with 1–4 px tracking.
-- All OFL, subset from Google Fonts by `demo/tools/fonts.sh` (the character list is read from `main.js`; delete `fonts/*.woff2` after a text change). No handwriting faces in this style.
-- Every label is bilingual on one line each (Chinese first, English smaller); never wrap.
+- 中文：Noto Sans SC 900（标题、表带）/700（标签）。
+- 拉丁文：Barlow Condensed 800（数字、姓名、铭牌）、600（次行、引号）、600 斜体（结束卡英文标题）。
+- Mono：IBM Plex Mono 500，用于日期线、来源、轴标签、所有大写字母以及 1-4 像素跟踪。
+- 所有 OFL，`demo/tools/fonts.sh` 的 Google Fonts 子集（字符列表从 `main.js` 读取；文本更改后删除 `fonts/*.woff2`）。这种风格没有手写面孔。
+- 每个标签均为双语各一行（中文在前，英文在后）；永远不要包裹。
 
-## 6. Picture layer and grade
+<a id="6-picture-layer-and-grade"></a>
+## 6.画面图层及等级
 
-- When there is no footage, the picture layer is data graphics drawn in code plus, at most, a few **illustrative plates** (generated or stock), each tagged `ILLUSTRATION` for as long as it is on screen. They set a mood (a server room behind a model launch, a wafer behind chip stocks); they never stand in for the event, the place or the people.
-- One grade for every plate: greyscale → auto black/white points (0.5 / 99.6 percentile) → γ 1.05 → 35 % S-curve → black 8, white 232 → duotone `#0E1013` → `#ECE7D8` (`tools/prep.py: grade()`), plus a left-dark ink gradient for type, a 50–55 % vignette and 7 % overlay grain cycling through six tiles. Graphics and the package are never grained.
-- Real footage, if you have it, takes the same grade path; modern footage ≤ 1.5× scale, archive ≤ 2.5× after deblocking; crop out station logos.
+- 在没有素材的情况下，画面层是用代码绘制的数据图形加上最多几个**图板**（生成的或库存的），每个图板只要在屏幕上就被标记为`ILLUSTRATION`。他们设定了一种氛围（模型发布后面的服务器机房，芯片库存后面的晶圆）；他们从不代表事件、地点或人物。
+- 每个印版一个等级：灰度 → 自动 black/white 点（0.5 / 99.6 百分位数）→ γ 1.05 → 35 % S 曲线 → 黑色 8，白色 232 → 双色调 `#0E1013` → `#ECE7D8` (`tools/prep.py: grade()`)，加上左深色墨水渐变对于类型，50-55% 的晕影和 7% 的覆盖颗粒在六块瓷砖上循环。图形和包永远不会有颗粒感。
+- 真实的镜头，如果你有的话，采用相同的等级路径；现代素材 ≤ 1.5× 比例，解块后存档 ≤ 2.5×；裁剪出电台标志。
 
-## 7. Editing grammar
+<a id="7-editing-grammar"></a>
+## 7. 编辑语法
 
-- **120 BPM grid**, beat 0 at the end of the sting (1.5 s). Every cut and wipe on a beat or half-beat.
-- **Shot lengths**: sting 1.5 s; rundown 4–5 s; story shots 3–7 s; a map long take (6–12 s) as the bulletin's breath; a comparison stays until every item has been fully on screen ≥ 2.5 s.
-- **A package action every 0.5–1 s** inside a shot (flip, count, stamp, tick, strap change, map light, line step). No frame flat for more than 1 s; a strong action within 0.5 s of every cut.
-- **Date every story**: a weekly bulletin's items happen on different days; the date sits in the rundown row, the eyebrow line, the readout or the document.
-- **The order inside an item**: what (the name or the number) → how big (the line, the bars, the price board) → who it hits or who said it (bars, documents, a quote) → the verdict stamp.
+- **120 BPM 网格**，在刺痛结束时（1.5 秒）节拍 0。每次切割和擦拭都按一个节拍或半个节拍进行。
+- **镜头长度**：刺痛1.5秒；概要 4-5 秒；故事镜头 3–7 秒；一张地图长镜头（6-12秒）作为公告的呼吸；比较将持续到每个项目完全显示在屏幕上 ≥ 2.5 秒为止。
+- **A 包每 0.5–1 s** 在镜头内执行一次操作（翻转、计数、标记、勾选、更换表带、地图灯、线步）。超过1s无框架平放；每次切割后 0.5 秒内都会产生强烈的动作。
+- **给每个故事注明日期**：每周公告的项目发生在不同的日子；日期位于列表行、眉线、读数或文档中。
+- **项目内的订单**：什么（名称或数字）→多大（线、条形图、价格板）→它击中了谁或是谁说的（条形图、文件、报价）→判决印章。
 
+<a id="8-sound-palette"></a>
 ## 8. Sound palette
 
-| Layer | What | Level |
+|层|什么|等级|
 |---|---|---|
-| Anchor voice | one narrator, one sentence per graphic, starting 0.1 s after the cut; HP 90 Hz, 3:1 compression. Default: the library's Kokoro (`core/tts/tts.py`, free, Apache 2.0) in English or Chinese. The user's own recording, or another TTS they have a key for (for example Doubao, as in the demo), replaces it — never required | music ducked ≈ −7 dB and its 1.2–5 kHz band thinned under speech |
-| News theme | 120 BPM, minor key: spiccato violins in root–fifth–octave eighths, pizzicato bass on the beat, horn pads, a low-passed 16th-note saw pulse, kick on 1 and 3, snare on 2 and 4 | full under the rundown and the first story |
-| Section moods | markets: violins down an octave, tremolo, four-on-the-floor kick (heartbeat); policy: pizzicato and horns only | |
-| Signature hits | sting tutti; glockenspiel notes as the rundown rows land; timpani on hard cuts and story changes; one beat of silence before the biggest break, then the heaviest hit of the film; a held drone after the verdict stamp; a major-key lift for the last story; tutti on the end card | |
-| Foley | whoosh on wipes, flap clicks on split-flaps, stamp thump + clack, trading-room ticks under market charts, map clicks per lit country, a sonar ping on a city, paper and typewriter ticks on documents, click + glockenspiel on ticks | |
-| Room | server-room hum under a tech plate, soft air under maps | very low |
+|主播声音|一名旁白，每张图片一个句子，从剪辑后 0.1 秒开始； HP 90 Hz，3:1 压缩。默认：风格库的Kokoro（`core/tts/tts.py`，免费，Apache 2.0）英文或中文。用户自己的录音或他们拥有密钥的另一个 TTS（例如，示范中的豆宝）会替换它 — 从来不需要|音乐闪避 ≈ −7 dB，其 1.2–5 kHz 频段在语音下变薄|
+|新闻主题|120 BPM，小调：根音至五度至八度八度的连奏小提琴，节拍上的拨奏低音，喇叭垫，低通十六分音符锯齿脉冲，1 和 3 上的底鼓，2 和 4 上的军鼓|完整的纲目和第一个故事|
+|部分情绪|市场：小提琴降八度、颤音、四脚踢（心跳）；政策：仅限拨奏和圆号| |
+|标志性热门歌曲|刺合奏；当破败的行列落地时，钟琴发出声音；硬剪辑和故事变化的定音鼓；在最大的突破之前的一拍沉默，然后是影片的最重击；判决盖章后持有的无人机；最后一个故事的主要关键提升； 片尾卡上的合奏| |
+|拟音|抹布上的呼啸声、分瓣上的襟翼点击声、邮票重击声+咔哒声、市场图表下的交易室滴答声、每个亮起国家的地图点击声、城市上的声纳脉冲声、文件上的纸张和打字机滴答声、滴答声上的点击+钟琴声| |
+|房间|服务器机房在科技板下嗡嗡作响，地图下空气柔和|非常低|
 
-Master −14 LUFS, true peak −1.2 dB (`core/render/mux.sh`). Samples: VSCO 2 CE and VCSL (CC0); foley synthesised (`core/audio/sfx.py`).
+主控−14 LUFS，真实峰值−1.2 dB (`core/render/mux.sh`)。样品：VSCO 2 CE 和 VCSL (CC0)； 拟音合成（`core/audio/sfx.py`）。
 
+<a id="9-native-moves"></a>
 ## 9. Native moves
 
-1. **Sting becomes the bug** — the brand plate slams in, then flies to the corner and stays there for the whole bulletin; opening and programme are one object.
-2. **Strap tab = category** — the strap's tab changes category (模型 MODELS, 市场 MARKETS, 监管 POLICY …) with a white flash when a new story starts; no separate item cards between stories.
-3. **Rundown, then ticked off** — the same list opens and closes the bulletin; at the end each row gets its tick.
-4. **Spec card** — a launch reduced to its proportions: the whole and the part on one scale, then what it runs on, joined by a bracket to the total.
-5. **Strap that never leaves** — one strap group from the first story to the recap; words flip, the strap itself never exits mid-programme.
-6. **Split-flap before/after** — old and new value on one board, each tile flipping from the old to the new.
-7. **Breaking the threshold** — a line advances one period per step towards a dashed threshold; the music stops for one beat before the last step and the crossing gets the heaviest hit.
-8. **Date in the eyebrow** — every graphic's eyebrow line carries source and date in mono caps, so a weekly round-up never blurs which day each item happened.
-9. **City sends the letters** — on a map long take, documents fly out of the sending city to their addressees; one world→screen function keeps labels and documents attached through push and pan.
-10. **Quote card + verdict stamp** — the official's own words in type, with name, occasion and date; an underline on the key word as the voice says it; one stamp.
+1. **Sting 成为 bug** — 品牌牌猛地撞上，然后飞到角落并在整个公告中停留在那里；开场和节目是一个对象。
+2. **Strap 选项卡=类别** — 当新故事开始时，带子的选项卡会更改类别（模型模型、市场市场、监管政策……），并伴有白色闪烁；故事之间没有单独的物品卡。
+3. **Rundown，然后勾选** — 相同的列表打开和关闭公告；最后每一行都会得到它的刻度。
+4. **规格卡** - 一次缩小比例的发布：整体和部分在一个比例上，然后是它运行的地方，通过支架连接到整体。
+5. **永不离开的表带**——从第一个故事到回顾的一个表带组；话虽如此，表带本身永远不会在节目中退出。
+6. **分瓣前/后** — 一块板上的新旧值，每个瓷砖从旧翻转到新。
+7. **突破阈值** — 一条线每一步前进一个周期，直至达到虚线阈值；音乐在最后一步之前停了一个节拍，十字路口受到的打击最重。
+8. **眉毛中的日期** - 每个图形的眉毛线都带有单大写的来源和日期，因此每周汇总永远不会模糊每个项目发生的日期。
+9. **城市发送信件**——在长镜头地图上，文件从发送城市飞向收件人；一个世界→屏幕功能可以通过推和平移来保持标签和文档的附着。
+10. **报价卡+判决章**——官方自己的文字，有姓名、场合、日期；当声音说出关键字时，在关键字上加下划线；一张邮票。
 
-Where each move lives in the demo's code: [DEMO.md](DEMO.md) (build notes).
+每个动作都位于示范的代码中：[DEMO.md](DEMO.md)（构建注释）。
 
-## 10. Material
+<a id="10-material"></a>
+## 10. 材质
 
-1. **Facts first.** Every on-screen number and every sentence of the voice comes from an official source (the company's own page, the exchange's data, the institution's press release or speech), recorded in `demo/FACTS.md` with claim, URL, quoted wording and any arithmetic. When a fact exists only in a news report, attribute it on screen and in the voice ("据…报道 / … reports") and keep to the plain claim; never put a single report's allegations about a real company or person on screen.
-2. **Data.** Draw charts from real series only; when you have just a few reported numbers, draw a *schematic* line, tag it `SCHEMATIC`, and label only what you know. Exchange closes: the exchange itself, the central bank's statistics portal, or a market-data file whose source you log.
-3. **Pictures: ask in this order.**
-   a. **The user's own images** — photos, b-roll stills, their logo and colours (the package is rebuilt around their brand). Use these first.
-   b. **Generated illustrative plates**, if the user wants them. Before generating, tell the user how many images and what each shows (one line per plate). With the Codex CLI installed and able to generate images, `demo/tools/gen_image.py` (driven by `demo/tools/gen_plates.sh`) makes them and saves JPEGs to `demo/assets/plates/`. With any other image tool (an API or a web app), give the user the prompts and the target file names; they generate the images and drop them into `demo/assets/plates/`. Prompts ask for no text, letters, logos, flags or people.
-   c. **No generated images**: public-domain, CC0 or CC BY photographs (licences below), or abstract backgrounds drawn in code (gradients, grids, light fins — the package already carries the frame).
-   Whatever the source: every word on screen is typeset in code, never baked into an image; a generated plate is only ever an illustration behind a graphic, tagged `ILLUSTRATION / 示意` for as long as it is visible, and never stands in for the event, a place in the news, or a person. No generated anchor.
-4. **Photo and footage licences** (judge each file on its own page, not the search result):
-   - **Wikimedia Commons**: CC0, public domain or CC BY (credit author, title, licence on the end card and in `CREDITS`). Not used: CC BY-SA, "no known restrictions", unclear licences, YouTube re-uploads, colourised or "restored" versions.
-   - **U.S. federal agencies** (NASA, NOAA, NARA, USGS…): public domain; check the page does not credit a contractor or third party.
-   - **Internet Archive**: only items whose page states public domain, CC0 or CC BY; U.S. works published before 1931 are public domain.
-   - **Library of Congress / national archives**: read each rights statement; "no known restrictions" is not enough.
-   - **Institutions' audiovisual services** (for example the European Commission's): read their reuse terms per item; many require attribution and forbid implying endorsement.
-   - **Maps**: Natural Earth (public domain), via `world-atlas` TopoJSON.
-5. **Before downloading, tell the user** what you will fetch, from where and under which licence. The finder copied into this style, `demo/tools/footage.py` (`search commons|archive|nasa`, `fetch`, `used`, `md`), logs licence, author, page and the seconds used into `SOURCES.jsonl` and writes `SOURCES.md`. Keep `raw/` under ~1.5 GB.
-6. **Logos**: never use a company's logo for a company in the news; set its name in type.
-7. **People**: public figures in the news can be named on a profile strap; no close-up or slow motion of private individuals.
-8. **Voice and music**: ask whether the user has a recorded anchor, a preferred voice or a theme of their own before synthesising one.
+1. **事实第一。** 每个屏幕上的数字和声音的每句话都来自官方来源（公司自己的页面、交易所的数据、机构的新闻稿或演讲），记录在`demo/FACTS.md`中，包括声明、URL、引用的措辞和任何算术。当事实仅存在于新闻报道中时，将其归因于屏幕和声音（“报道…报道/…报告”）并坚持简单的声明；切勿将任何针对真实公司或个人的指控放在屏幕上。
+2. **数据。** 仅从真实系列中绘制图表；当您只有几个报告的数字时，画一条“示意性”线，将其标记为 `SCHEMATIC`，并仅标记您所知道的内容。交易所关闭：交易所本身、央行的统计门户或您记录其来源的市场数据文件。
+3. **图片：按此顺序询问。**
+   一个。 **用户自己的图像** - 照片、b-roll剧照、他们的标志和颜色（包装是围绕他们的品牌重建的）。首先使用这些。
+   b. **生成的图版**，如果用户想要的话。在生成之前，告诉用户有多少图像以及每个图像显示的内容（每个板一行）。安装 Codex CLI 并能够生成图像后，`demo/tools/gen_image.py`（由 `demo/tools/gen_plates.sh` 驱动）制作图像并将 JPEG 保存到 `demo/assets/plates/`。使用任何其他图像工具（API 或 Web 应用程序），为用户提供提示和目标文件名；他们生成图像并将其放入 `demo/assets/plates/` 中。提示不要求任何文字、字母、徽标、旗帜或人物。
+   c. **没有生成的图像**：公共领域、CC0或CC BY照片（下面的许可证），或用代码绘制的抽象背景（渐变、网格、光鳍——包装中已经带有框架）。
+   无论来源如何：屏幕上的每个单词都是用代码排版的，从未烘焙成图像；生成的车牌只是图形背后的插图，只要可见，就标记为 `ILLUSTRATION / 示意`，并且永远不会代表事件、新闻中的某个地方或某个人。没有生成锚点。
+4. **照片和素材许可证**（在其自己的页面上判断每个文件，而不是搜索结果）：
+   - **Wikimedia Commons**：CC0、公共领域或 CC BY（片尾卡和 `CREDITS` 上的署名作者、标题、许可证）。未使用：CC BY-SA、“无已知限制”、许可证不明确、YouTube 重新上传、彩色或“恢复”版本。
+   - **U.S.联邦机构**（NASA、NOAA、NARA、USGS…）：公共领域；检查该页面是否注明承包商或第三方。
+   - **Internet Archive**：仅限页面注明公共领域、CC0 或 CC BY 的项目； 1931 年之前出版的美国作品属于公共领域。
+   - **国会风格库/国家档案馆**：阅读每项权利声明； “没有已知的限制”是不够的。
+   - **机构的视听服务**（例如欧盟委员会）：阅读每个项目的重复使用条款；许多要求归属并禁止暗示认可。
+   - **地图**：自然地球（公共领域），通过 `world-atlas` TopoJSON。
+5. **在下载之前，告诉用户** 您将获取什么、从哪里以及在哪个许可证下获取。取景器复制到这种风格，`demo/tools/footage.py`（`search commons|archive|nasa`，`fetch`，`used`，`md`），记录许可证，作者，页数和使用的秒数到`SOURCES.jsonl`并写入`SOURCES.md`。将 `raw/` 保持在约 1.5 GB 以下。
+6. **标志**：切勿在新闻中使用公司的徽标；在类型中设置其名称。
+7. **人们**：新闻中的公众人物可以在侧面表带上署名；禁止私人特写或慢动作。
+8. **语音和音乐**：在合成之前询问用户是否有录制的主播、喜欢的声音或自己的主题。
 
-## 11. Pitfalls
+<a id="11-pitfalls"></a>
+## 11. 陷阱
 
-- **Package left behind.** If the strap, source line or tags are drawn once on top of everything, a wipe changes the picture under yesterday's headline and the strap catches up 0.3–0.5 s later. Draw them per picture, inside the wipe's clip.
-- **Leftover layout.** Removing subtitles or a crawl without moving the content down leaves a dead band above the strap.
-- **Masked type peeking in.** A push-in title clipped by a mask shows its top edge before it moves if the travel distance doesn't clear the mask; start it fully below and don't draw at progress 0.
-- **Words stronger than the source.** "Request for information" is not "investigation" or "penalty"; write "no fine, no case opened" or "for the first time" only if a source says so — and check the institution's own pages, which can contradict a report ("first requests" may have gone out months earlier).
-- **Thresholds depend on the reference.** "Bear market" = −20 % from *which* high? Name the reference on the axis; from a different peak the claim can be false.
-- **Attribute what only a report says.** When the official source does not name the companies, the graphic carries "据… 报道 / reported by …" and so does the voice.
-- **A schematic posing as data.** Rolling counters on a close price flash values that never existed; set the close with a mask push instead. Don't label axes the data doesn't support.
-- **Source lines under the strap.** Right-aligned mono 13 px: ≤ 36 characters.
-- **Stamps over key words.** A stamp hit can mask the voice ("fines"); take the brass off the stamp and low-pass its clack.
-- **Gold on paper** has too little contrast: use ink or dark olive.
-- **Generated plates** carry stray corner marks: crop them in `prep.py`.
-- **Short preview text.** Rundown rows are previews of the stories; `readcheck` flags them as short in the opening — they return in the recap and as straps, so accept the flag or leave them out of `TEXTS`.
-- **Names in synthetic speech.** Spell brand names, model numbers and abbreviations the way they should sound in the TTS text (a respelling, a number written as a word, an abbreviation without dots) while the strap and subtitles keep the real spelling; when speech-to-text mishears an unusual name, put the expected transcript in the line's `asr` field instead of rewriting the line.
+- **留下的包。** 如果在所有内容之上绘制一次条带、源代码行或标签，则擦除会更改昨天标题下的图片，并且条带会在 0.3–0.5 秒后赶上。在擦除的剪辑内按图片绘制它们。
+- **剩余布局。** 删除字幕或爬行而不向下移动内容会在表带上方留下死区。
+- **蒙版类型窥视。** 如果行进距离没有清除蒙版，则被蒙版剪裁的推入式标题在移动之前会显示其顶部边缘；在下面完全启动它并且不要在进度 0 处绘制。
+- **字比出处强。**“索取资料”不是“调查”或“处罚”；仅当消息来源这么说时才写“不罚款，不立案”或“第一次”，并检查该机构自己的页面，这可能与报告相矛盾（“首次请求”可能已经在几个月前发出）。
+- **阈值取决于参考。**“熊市”=−20%，从*哪个*高点开始？命名轴上的参考；从不同的峰值来看，这种说法可能是错误的。
+- **属性仅是一份报告所说的内容。** 当官方消息来源未提及公司名称时，图形上会带有“据...报道/由...报道”，声音也是如此。
+- **A 示意图冒充数据。** 收盘价上的滚动计数器闪现从未存在的值；使用掩码推送来设置关闭。不要标记数据不支持的轴。
+- **表带下的源线。** 右对齐单色 13 像素：≤ 36 个字符。
+- **盖印关键词。** 盖印可以掩盖声音（“罚款”）；把黄铜从邮票上取下来，降低它的咔嗒声。
+- **纸上金色** 对比度太低：使用墨水或深橄榄色。
+- **生成的印版**带有杂散角标记：在`prep.py`中裁剪它们。
+- **简短的预览文本。** 概要行是故事的预览； `readcheck` 在开头将它们标记为短 - 它们在回顾中返回并作为带子，因此接受该标记或将它们排除在 `TEXTS` 之外。
+- **合成语音中的名称。** 按照 TTS 文本中的发音方式拼写品牌名称、型号和缩写（重新拼写、写成单词的数字、不带点的缩写），而表带和字幕则保留真实拼写；当语音转文本错误地听到不寻常的名称时，请将预期的转录内容放入该行的 `asr` 字段中，而不是重写该行。
 
-## 12. Variation space
+<a id="12-variation-space"></a>
+## 12. 变异空间
 
-Decide per film: the channel's name, plate and accent colour; how many items (one lead with a long package, three or four equal items, a five-item round-up); which full-frame graphics each item needs; where the long take goes; the anchor's voice.
+根据影片决定：频道名称、车牌和强调色；有多少件商品（一条长包装的线索，三到四件相等的商品，五件商品的汇总）；每个项目需要哪些全帧图形；长镜头去哪里；主播的声音。
 
-- **Three structures:** rundown → items → rundown ticked (round-up); one lead package with a correspondent two-box and a short "also today" grid; a countdown of items (election-night, sports results).
-- **Three openings:** sting → rundown; cold open on the biggest graphic, then the sting; sting straight into the first story with the rundown as a recap only.
-- **Three endings:** rundown ticked → end card; a "coming up next week" teaser card; the last stamp freezing into the end card.
+- **三种结构：** 清单→项目→清单打勾（向上取整）；一个铅包，带有相应的两盒和一个短的“今天也”网格；项目倒计时（选举之夜、体育比赛结果）。
+- **三个开口：** 刺→破败；冷开最大的图形，然后是刺痛；直接进入第一个故事，概要仅作为回顾。
+- **三个结局：** 清单打勾 → 片尾卡； “下周即将推出”预告卡；最后一张邮票冻结在片尾卡中。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

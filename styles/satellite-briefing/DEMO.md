@@ -1,74 +1,81 @@
-# Satellite Briefing — our demo
+<a id="satellite-briefing--our-demo"></a>
+# 卫星简报 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Map Still Says Sea* 《地图上还写着海》 (37.8 s) · `satellite-briefing.mp4` · source in [`demo/`](demo/)
+示范: *地图仍然说海* 《地图上还写着海》 (37.8 s) · `satellite-briefing.mp4` · 来源在 [`demo/`](demo/)
 
-A satellite follows the map to a sea and finds a desert; the only part that came back is the part someone dammed. The Aral Sea, 1977–2025, on public-domain Landsat imagery. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). This is an unofficial film made from public-domain imagery; the U.S. Geological Survey and NASA did not make or endorse it.
+卫星沿着地图来到一片大海，发现了一片沙漠；唯一回来的部分是被人毁掉的部分。咸海，1977-2025 年，公共领域陆地卫星图像。中文屏幕，英文旁白，双语字幕（中文上行，英文下行）。这是由公共领域图像制作的非官方影片；美国地质调查局和美国宇航局并未制定或认可它。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Logline: on the map it is still the Aral Sea; from orbit it is salt and sand; the one piece of it that returned, the North Aral, was kept by a 13 km dike.
+梗概：地图上依然是咸海；从轨道上看是盐和沙；回归的一部分，即北咸海，被一条 13 公里长的堤坝围住。
 
-Arc: a claim (a printed atlas page of the 1960 sea, its serif name 咸海) → the check (a dive into the map until it fills the frame, a scanner bar tears it away: salt crust, then silence) → the evidence (time rewound to 1977 and played forward in one locked frame, each year leaving its shoreline as a ring, the rings coming faster and faster) → the human scale (a range line from Muynak's old harbour to today's sea, 95 km) → the turn (silence, then water heard before it is seen, a whip pan north to the Kok-Aral dike, rings that grow outward, the water's true colour coming back) → the ending (the label 咸海 leaves the empty basin and pins itself to the North Aral; back to orbit).
+弧线：一份声明（1960年大海的印刷地图集页面，其衬线名称咸海）→检查（潜入地图直到填满整个框架，扫描条将其撕掉：盐壳，然后沉默）→证据（时间倒回1977年并在一个锁定的框架中向前播放，每年将其海岸线留下一个环，环来得越来越快）→人类尺度（从Muynak的旧港口到今天的距离线）海，95公里）→转弯（寂静无声，然后水声未见，向北的Kok-Aral堤坝猛冲，环向外生长，水的真实颜色回来）→结局（标签“咸海”离开空盆地，将自己钉在北咸海；回到轨道）。
 
-Native moves spent: *the map against the photograph* at the reveal; *time rings in a locked frame* as the signature shot; *the range line* for the human scale; *colour returns where the story turns* for the North Aral; *the dive and the climb* as bookends; *the reticle becomes the frame* for the end card.
+风格特有表现手法花费：*展示时照片上的地图*； *锁定帧中的时间铃声*如标志性镜头； *人体尺度的范围线*； *北咸海的故事转向*颜色回归； *潜水和攀登*作为书立； *对于片尾卡，十字线成为框架*。
 
-Measured values are labelled as measured on screen; every number and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+测量值标记为屏幕上测量的值；每个数字及其来源都在[`demo/FACTS.md`](demo/FACTS.md)中。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-One continuous take; framing changes by altitude. Times in seconds.
+连续拍摄一张；框架随高度变化。时间以秒为单位。
 
-| # | Time | Shot | Camera | Native move / note |
+|#|时间|镜头|摄影机|风格特有表现手法/注|
 |---|---|---|---|---|
-| 1 | 0.0–1.8 | Earth's limb across the top, Central Asia below; a reticle searching, locks at 0.6; map layer on at 1.2 | oblique orbit (tilt 57°), lateral drift from frame 0 | the lock ping is the film's key sound |
-| 2 | 1.8–5.4 | the sea's blue becomes a whole printed page as we fall into it: paper grain, a halftone in the ink, a fold, waterlines along the east coast, graticule, Amu Darya and Syr Darya, town dots, the serif name growing to the frame centre | dive, 3,800 → 160 km, tilt 55° → 0°, accelerate then brake; the coast stays in frame | the ground beneath drains to grey |
-| 3 | 5.36–6.6 | a scanner bar sweeps down the frame and tears the page away (0.34 s): wind-streaked salt crust underneath, 咸海 left floating over it | settle 160 → 46 km | a 0.45 s suck-out before the tear; silence 1 from ~5.9 |
-| 4 | 6.6–7.8 | five upward scans 2025 → 2014 → 2009 → 2000 → 1989 → 1977, a year counter steps back | climb 29 → 900 km, ease-out | first sound after silence: the rewind |
-| 5 | 7.8–13.2 | **signature**: the whole sea, everything outside the old shore dimmed; six soft downward scans each print a shoreline ring (1977, 1989, 2000, 2009, 2014, 2025) at 1.8 / 1.2 / 0.9 / 0.6 / 0.9 s spacing; the lost band flashes; a light runs along the newest shore; reading 80 % → 7 % (dimmed while it rolls, bright when it lands) | nadir orbit: 980 → 600 km and 0° → −15° rotation on an accelerating curve (motion per second 1.2 → 3.9), braking in 0.3 s on the stop | the camera speeds up with the rings and stops with them |
-| 6 | 13.2–15.3 | held breath: the 2025 ring breathes; from 14.1 a reticle searches and locks on Muynak's old port at 14.7 | pan that brings the port to the centre (588 → 520 km, rotation to −12°) | the lock ping answers the opening |
-| 7 | 15.3–17.4 | the reticle holds the port through the push, the rest dimmed; 16.2 the port label with the ship horn; 16.5 the 1977 shoreline (measured) is drawn past the port, "1977 年岸线", the water lost since 1977 a faint wash | pure push on the port, 520 → 92 km, port at the centre | lands readable: the port at the old water's edge |
-| 8 | 17.4–23.4 | 17.4–18.6 the port slides left to give the line room; 18.6–20.4 a 4 px range line grows from the port with 10 km ticks and numbers every 50 km, a reticle and a rolling "km" at its tip, the reading rolling in the right third; destination marked at 19.2; lands on "95" as the narrator says it; a lit corridor follows the line | the camera chases the tip from the port to the sea (lens shift −700 → +60 px), then pulls back 104 → 245 km to show the whole distance | local contrast raised for this range; silence 2, 21.9–22.8 |
-| 9 | 23.4–24.0 | the ground streaks | whip pan north (~280 km in 0.6 s) with directional blur | the water was heard 0.6 s earlier |
-| 10 | 24.0–28.8 | Kok-Aral dike traced (24.0–24.6, slam on "dam"); 2001 ring at 25.2; the 2009 water grows outward from the 2001 shore (25.3–26.4) and the 2009 ring stamps where it stops; only the North Aral's water regains true colour; a light runs along the new shore; reading +37 % | push 44 → 24 km with a 7° turn | water growing outward = the turn |
-| 11 | 28.8–34.2 | north plate becomes 2025 under the climb; the label 咸海 slides from the empty basin and pins to the North Aral (30.6–31.2); colour returns everywhere | climb to orbit, tilt back to 50° | L-cut: the water fades under the climb |
-| 12 | 34.2–37.8 | the lock brackets open into the end-card frame; one last satellite pass sweeps behind the title | Earth turns under a dimmed oblique orbit | end card |
+|1|0.0–1.8|上方是地球的边缘，下方是中亚；十字线搜索，锁定在0.6；地图图层在 1.2 时启用|倾斜轨道（倾斜 57°），从第 0 系横向漂移|锁 ping 声是影片的按键音|
+|2|1.8–5.4|当我们陷入其中时，大海的蓝色变成了整个印刷页：纸纹、墨水中的半色调、折叠、东海岸的水线、标线、阿姆河和锡尔河、城镇点、延伸到框架中心的衬线名称|俯冲，3,800→160公里，倾斜55°→0°，加速然后制动；海岸留在画面中|下面的地面变成灰色|
+|3|5.36–6.6|扫描条扫过框架并将页面撕开（0.34 秒）：下方有风纹盐壳，上面漂浮着咸海|解决 160 → 46 公里|撕裂前 0.45 秒吸出；沉默 1 从 ~5.9|
+|4|6.6–7.8|五次向上扫描 2025 → 2014 → 2009 → 2000 → 1989 → 1977，年份计数器向后退|爬升 29 → 900 公里，缓出|沉默后的第一声声音：倒带|
+|5|7.8–13.2|**签名**：整个大海，旧岸外的一切都变暗了；六次软向下扫描，每次扫描以 1.8 / 1.2 / 0.9 / 0.6 / 0.9 秒的间隔打印海岸线环（1977、1989、2000、2009、2014、2025）；丢失的乐队闪烁；一盏灯沿着最新的海岸运行；读数 80 % → 7 %（滚动时变暗，落地时变亮）|天底轨道：980 → 600 km，在加速曲线上旋转 0° → -15°（每秒运动 1.2 → 3.9），停止时 0.3 秒制动|摄影机随环加速并随环停止|
+|6|13.2–15.3|屏住呼吸：2025 年环在呼吸；从 14.1 开始，十字线在 14.7 搜索并锁定 Muynak 的旧港口|将港口带到中心的平移（588 → 520 km，旋转至-12°）|锁 ping 响应打开|
+|7|15.3–17.4|十字线通过推动将端口固定住，其余部分变暗； 16.2 带有船喇叭的港口标签； 16.5 1977年岸线（实测）是经过港口绘制的，“1977年岸线”，自1977年以来海水流失了微弱的水彩晕染|纯推港口，520→92公里，港口在中心|可读土地：旧水边的港口|
+|8|17.4–23.4|17.4–18.6 端口向左滑动以留出线路空间； 18.6–20.4 一条 4 px 范围线从端口开始，每 50 公里有 10 公里刻度和数字，其尖端有一个十字线和滚动的“公里”，读数在右侧三分之一处滚动；目的地标记为 19.2；正如叙述者所说，落在“95”；一条明亮的走廊沿着这条线|摄影机从港口追向大海（镜头平移−700 → +60 px），然后拉回104 → 245公里以显示整个距离|该范围的局部对比度提高；沉默 2, 21.9–22.8|
+|9|23.4–24.0|地面条纹|向北平移（0.6 秒内约 280 公里），方向模糊|提前 0.6 秒听到水声|
+|10|24.0–28.8|追踪 Kok-Aral 堤坝（24.0–24.6，猛击“坝”）； 2001年环比为25.2； 2009年的水从2001年的海岸（25.3-26.4）向外增长，2009年的环印在它停止的地方；只有北咸海的水恢复了真实的颜色；一道光沿着新的海岸运行；阅读+37%|推 44 → 24 公里，7° 转弯|水向外生长=转弯|
+|11|28.8–34.2|北盘在爬升下变为2025年；咸海标签从空盆地滑向北咸海 (30.6–31.2)；色彩随处回归|爬升到轨道，倾斜回50°|L-cut：水在攀爬下逐渐消失|
+|12|34.2–37.8|锁定支架通向端卡框架；最后一次卫星传球横扫冠军|地球在昏暗的倾斜轨道下转动|片尾卡|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-100 BPM, 4/4; every key action on a beat or half-beat (`demo/tools/cuecheck.py`: 0 ms on 26 cues). D minor, turning to D major at the dam.
+100 BPM，4/4；一个节拍或半节拍上的每个关键动作（`demo/tools/cuecheck.py`：26 个提示上的 0 毫秒）。 D小调，在水坝处转向D大调。
 
-| Section | Time | Palette | Notes |
+|部分|时间|调色板|笔记|
 |---|---|---|---|
-| Orbit | 0–1.8 | D drone (pulse bass with 2nd/3rd harmonics), Dm pad, FM telemetry plucks in 8ths, orbit hum, radio hiss, data chatter | lock ping D6 at 0.6, map ping A5 at 1.2 |
-| Dive | 1.8–4.95 | plucks to 16ths with the filter opening, hi-hat ticks, noise riser, gran cassa crescendo, rising tone, altitude-counter clicks | everything is sucked out 4.95–5.36 |
-| Tear | 5.4 | the map torn away: bass drum, gran cassa, timpani, a fortissimo low-brass stab (trombones, tuba, horns, D minor), crash, a crackling paper rip swept with the scan bar | one of the three heaviest moments |
-| Silence 1 | ~5.9–6.6 | thin wind; the tear decays into it | |
-| Rewind | 6.6–7.8 | the last 1.8 s of the film's own soundtrack played backwards and speeding up, a reversed tam-tam, counter ticks | the turn into the signature shot |
-| Rings | 7.8–13.2 | bass descends D–C–B♭–A–G with the chords Dm–C–B♭–A–Gm (two pad layers); tuba on each root, trombone on the fifth; a sub pulse on every beat, every half beat from 2000; ticks 8ths → 16ths; each ring: timpani on the root + bass drum + inharmonic metal ring + pen hiss; a reversed cymbal swells into a 0.24 s suck-out | acceleration by subdivision, not tempo |
-| Stop | 13.2–15.3 | the slam (bass drum, timpani, gran cassa, gong, metal clang), then low D, bowed cymbal, thin drone | the loudest moment of the film |
-| Muynak | 15.3–21.9 | distant ship horn (two detuned saws, long room) with a creak, timpani heartbeat every two beats, a low D/A drone whose filter opens with the range line, dry sand grains, ratchet ticks per 2 km (accent every 10 km), a hollow tock + ping when the reading lands | |
-| Silence 2 | 21.9–22.8 | wind only | first sound after it: one lap of water at 22.8, before the picture turns north |
-| North | 22.8–28.8 | whip crack and swish; a 0.22 s suck-out, then the dam slam (bass drum, timpani, knock, clash, low metal gate); D major: tuba, trombone, horns, a warm pad, bowed vibraphone, a cymbal swell that lands as the water arrives, glass-harp motif D5–A4–C♯5–F♯5–E5–D5 with echoes, vibraphone pulse; water bed | the only wet timbres in the film |
-| Climb | 28.8–34.2 | horns D3/A3/F♯4, tuba, bowed vibraphone, D-major pad; the motif on glass and FM ping together (dry and wet united); light pulse | pin ping at 31.2 |
-| End | 34.2–37.8 | low D hit, lock-ping echo, a soft sweep for the last pass, long tail | |
+|轨道|0–1.8|D 无人机（带有 2nd/3rd 谐波的脉冲低音）、Dm pad、FM 遥测八度拨弦、轨道嗡嗡声、无线电嘶嘶声、数据颤振|将 ping D6 锁定为 0.6，将 ping A5 映射为 1.2|
+|潜水|1.8–4.95|通过滤波器开口、踩镲滴答声、噪音提升器、gran cassa 渐强、上升音调、高度计数器咔嗒声拨奏至 16 度|一切都被吸走了 4.95–5.36|
+|撕|5.4|地图被撕掉：低音鼓、大卡萨、定音鼓、低音铜管强音（长号、大号、圆号、D小调）、撞击声、扫描条扫过的噼啪作响的纸片撕裂|最沉重的三个时刻之一|
+|沉默1|~5.9–6.6|薄风；泪水融入其中| |
+|倒带|6.6–7.8|影片自己的配乐的最后 1.8 秒向后播放并加速，反转的 tam-tam，计数器滴答声|转到标志性镜头|
+|戒指|7.8–13.2|低音下降 D–C–B♭–A–G，和弦 Dm–C–B♭–A–Gm（两个垫层）；每根为大号，第五根为长号；从 2000 年开始，每个节拍、每半个节拍都有一个子脉冲；第 8 格 → 16 格；每环：根音定音鼓+低音鼓+不和谐的金属环+钢笔嘶嘶声；反向镲片膨胀为 0.24 秒吸出|通过细分加速，而不是节奏|
+|停止|13.2–15.3|slam（低音鼓、定音鼓、大卡萨、锣、金属铿锵），然后是低 D、弓钹、细嗡嗡声|影片最响亮的时刻|
+|穆伊纳克|15.3–21.9|远处的船号角（两个失谐的锯子，长长的房间）发出吱吱声，定音鼓每两次心跳，低沉的 D/A 无人机，其过滤器随着范围线打开，干燥的沙粒，每 2 公里的棘轮滴答声（每 10 公里重音），阅读着陆时空心的 tock + ping| |
+|沉默2|21.9–22.8|仅风|之后的第一个声音：22.8 度的一圈水，在图片转向北方之前|
+|北|22.8–28.8|鞭子噼啪作响； 0.22 秒的吸出，然后是大坝撞击（低音鼓、定音鼓、敲击、碰撞、低金属门）； D大调：大号、长号、圆号、温暖的垫子、弓形电颤琴、随着水的到来而落地的铙钹声浪、玻璃竖琴主题D5–A4–C♯5–F♯5–E5–D5带回声、电颤琴脉冲；水床|影片中唯一的湿音色|
+|爬|28.8–34.2|圆号 D3/A3/F♯4、大号、弓形颤音琴、D 大调垫；玻璃上的图案和 FM 一起鸣响（干湿结合）；光脉冲|Pin ping 为 31.2|
+|结尾|34.2–37.8|低 D 击中、锁定平回波、最后一次柔和扫掠、长尾| |
 
-Mix (in `mix.py`): stem gains frozen (music 10 dB under the voice while it speaks and ducked about 5 dB, pulse −8 dB, foley −6 dB, beds −17 dB); bus compression on music, pulse, foley and beds only, so the hits keep their weight; a master stage (−14.4 LUFS, true-peak limiter at −4.6 dBTP on 4× oversampled peaks; AAC adds back about 3 dB). Sub-bass: a 38 Hz high-pass (46 Hz, 4th order on hits) and a −5 dB shelf below 62 Hz on everything but the voice; the impacts carry their weight at 60–120 Hz (`punch()`): 20–60 Hz sits 16 dB under the full band, as in the dataviz demo. The film measures −13.8 LUFS, true peak −1.6 dBTP, LRA 5.3 LU. `tools/impactcheck.py`: the hard stop is the loudest momentary moment of the film, the dam slam −0.5 dB and the map tear −2.6 dB under it (each among the loudest 4 s of the film), and they follow dips of −4, −3 and −14 dB. Silences sit about 20 dB under the program.
+混音（在 `mix.py` 中）：茎增益冻结（说话时音乐在声音下 10 dB，闪避约 5 dB，脉冲 -8 dB，拟音 -6 dB，床 -17 dB）；仅对音乐、脉冲、拟音和床进行总线压缩，因此热门歌曲保持其重量；主级（−14.4 LUFS，4×过采样峰值上的真实峰值限制器为−4.6 dBTP；AAC 增加约 3 dB）。低音：38 Hz 高通（46 Hz，命中四阶）和低于 62 Hz 的 −5 dB 架子（除人声外）；影响在 60–120 Hz (`punch()`) 处发挥作用：20–60 Hz 位于全频带下方 16 dB，如数据可视化示范中所示。 影片的测量结果为 −13.8 LUFS，真实峰值为 −1.6 dBTP，LRA 5.3 LU。 `tools/impactcheck.py`：硬停止是影片最响亮的瞬间，大坝猛击-0.5 dB，地图撕裂-2.6 dB（均在影片最响亮的4秒中），并且它们跟随-4、-3和-14 dB的下降。程序下的静音大约为 20 分贝。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Ground: Landsat true colour at orbit; the analysis grade from #070B0E to #A1A7A9 with a fifth of the chroma.
-- Marks #F2F5F6 with dark halos; the reading amber #FFBE55; the printed map: paper #ECE2CB, sea #8CB5DB, coast ink #1A3B6B, graticule in a faded red-brown, the serif name in #1F3F6B on the page and #D6EAFF over the sand.
-- The North Aral water returns to a lifted true colour inside a 0.75° circle; nothing else in the analysis layer is coloured.
-- Props: the printed map (Natural Earth historic-lake polygon as a distance field, rivers, two town dots), six measured shorelines (1977–2025), the North Aral rings (2001, 2009), the Kok-Aral dike traced on the 2025 image, the Muynak range line.
-- Narrator: Kokoro `bf_emma`, speeds 0.9–1.0.
+- 地面：在轨Landsat真彩色；分析等级从 #070B0E 到 #A1A7A9，色度为五分之一。
+- 标记#F2F5F6，带有暗光晕；阅读琥珀#FFBE55；打印的地图：纸张#ECE2CB，海洋#8CB5DB，海岸墨水#1A3B6B，褪色的红棕色刻度，页面上的衬线名称为#1F3F6B，沙子上的#D6EAFF。
+- 北咸水在 0.75° 圆内恢复到提升的真实颜色；分析层中的其他内容均未着色。
+- 道具：印刷地图（《自然地球》历史湖泊多边形作为距离场、河流、两个城镇点）、六条测量的海岸线（1977-2025）、北咸海环（2001、2009）、2025 年图像上描绘的 Kok-Aral 堤坝、Muynak 山脉线。
+- 旁白：Kokoro `bf_emma`，速度 0.9–1.0。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-The lock brackets open from the North Aral into a frame on the left: 地图上还写着海 (Noto Serif SC, the map's voice), *The Map Still Says Sea*, a rule, `SATELLITE BRIEFING · 卫星简报`, `LemoLab × Claude Opus 5.5`, over the dimmed Earth turning; a last satellite pass sweeps down behind it. 3.6 s. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+锁括号从北咸海打开，进入左侧的框架：地图上还写着海（Noto Serif SC，地图的声音），*地图仍然说海*，一般来说，`SATELLITE BRIEFING · 卫星简报`，`LemoLab × Claude Opus 5.5`，在昏暗的地球转动上方；最后一颗卫星从它后面掠过。 3.6 秒。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -85,8 +92,8 @@ demo/
   FACTS.md, CREDITS, stills/styleframe.jpg
 ```
 
-- `sh demo/build.sh` takes about 2 minutes on Apple silicon (the picture renders in ~20 s with 3 workers). In a fresh clone the plates, raw scenes and fonts are not in git: the first run fetches and rebuilds the imagery (~25 minutes, ~3.5 GB in `assets/raw/`) and downloads the fonts (`tools/fonts.py`: Barlow Condensed and IBM Plex Mono from github.com/google/fonts, Noto SC subsets); `FETCH=1` forces it again. The score needs `sh tools/fetch.sh instruments <lib>` for vsco2ce, vcsl and freepats, the voice `setup.sh deps voice`.
-- Checks it runs: `asr_check.py` with `small.en` (the base model hears "sea" as "C"), cue grid, subtitle single-line widths measured with the real fonts (widest line 578 px against 1100 px), `readcheck.mjs`, motion per second (no stretch over 1 s below 0.6 mean pixel change; the slowest second of the film is 1.06), the impact ranking.
-- Plates: region mosaics 3917 × 2652 at ~190 m for six years; detail plates at ~32–40 m for the landing, Muynak and Kok-Aral; Blue Marble world (4096 × 2048) and Central Asia. All sampled in one shader pass; memory about 1 GB of textures per render worker.
-- Demo-specific pitfalls: the 1977 Landsat 2 mosaic needs nearest-neighbour resampling, dropout-row repair, streak cleaning at 12° on land and one L1GS scene to close a hole in the north-west bay; the 1989 scene of path 161 on 16 August carries a dust plume across the sea and is excluded (`exclude` in `tools/plates_spec.json`); a dike-bounded polder 10–15 km west of Muynak has a straight edge that can read as a seam: it is dimmed while the port is centred and slides out of frame before the range line; the water masks need contour pieces along plate borders removed or a straight line appears in the North Aral; the map's place names other than 咸海 were dropped because a dive gives them less than the reading time they need.
-- Kokoro adds a breathy syllable after "Someone kept it."; `tools/voicefix.py` trims it before the speech check.
+- `sh demo/build.sh` 在 Apple 芯片上大约需要 2 分钟（图像在 3 名工作人员的情况下在约 20 秒内渲染）。在新的克隆版中，原始场景和字体不在 git 中：第一次运行获取并重建图像（`assets/raw/` 中约 25 分钟，约 3.5 GB）并下载字体（`tools/fonts.py`：来自 github.com/google/fonts、Noto SC 子集的 Barlow Condensed 和 IBM Plex Mono）； `FETCH=1`再次强制它。 配乐需要 `sh tools/fetch.sh instruments <lib>` 用于 vsco2ce、vcsl 和 freepats，即语音 `setup.sh deps voice`。
+- 检查其运行情况：`asr_check.py` 和 `small.en`（基本模型将“sea”听成“C”）、提示网格、使用真实字体测量的字幕单行宽度（最宽行 578 像素对 1100 像素）、`readcheck.mjs`、每秒运动（在 1 秒内拉伸不低于 0.6 平均像素变化；最慢）第二个影片为1.06），影响排名。
+- 板块：区域马赛克 3917 × 2652，~190 m，持续六年；约 32–40 m 处的登陆、Muynak 和 Kok-Aral 详细信息牌；蓝色大理石世界（4096×2048）和中亚。所有采样都在一个着色器通道中进行；每个渲染工作人员需要大约 1 GB 的纹理内存。
+- 示范特定陷阱：1977 年的 Landsat 2 马赛克需要最近邻重采样、丢失行修复、陆地上 12° 的条纹清理以及一个 L1GS 场景来填补西北湾的一个洞； 8 月 16 日 161 号路径的 1989 年场景携带尘羽飘过大海，被排除在外（`tools/plates_spec.json` 中的 `exclude`）； Muynak 以西 10-15 公里处的一片堤坝围成的圩田有一条直边，可以解读为一条接缝：当港口居中时，它会变暗，并在范围线之前滑出画面；水面罩需要沿着板块边界去除轮廓块，或者在北咸海出现一条直线；地图上除了咸海以外的地名都被删除了，因为潜水给他们的阅读时间少于他们需要的时间。
+- Kokoro 在“有人保留了它”之后添加了一个呼吸音节。 `tools/voicefix.py` 在语音检查之前修剪它。

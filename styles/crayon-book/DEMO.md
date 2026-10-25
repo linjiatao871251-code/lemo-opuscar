@@ -1,79 +1,86 @@
-# Crayon Picture Book — our demo
+<a id="crayon-picture-book--our-demo"></a>
+# 蜡笔图画书——我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Moon Can't Sleep* (52 s) · `crayon-book.mp4` · source in [`demo/`](demo/)
+示范：*月亮无法入睡*（52秒）·`crayon-book.mp4`·来源在[`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A bedtime story on one page: the moon can't sleep; she tries counting sheep and fails; a girl at a lit window sees her, climbs a ladder that draws itself rung by rung, and a sweep of watercolour reveals the stars that were drawn in white crayon all along. The moon is tucked in under a quilt; the camera pulls back to the book on a table and turns the page to "The End".
+一页上有一个睡前故事：月亮睡不着；她尝试数羊，但失败了；一个女孩在灯火通明的窗户旁看到了她，爬上了梯子，梯子一层一层地拉着，一抹水彩画露出了一直用白色蜡笔画的星星。月亮藏在被子里； 摄影机拉回桌上的书，并将页面翻到“结尾”。
 
-The demo was written for the rule "the act of drawing and colouring is the plot" and spent all six native moves, with the strongest (wax resist) at the emotional peak: the 250 white-wax stars were on the page from the first frame and were uncovered by the wash on the song.
+示范是为了“绘画和着色的行为就是情节”的规则而写的，并用了所有六个风格特有表现手法，在情感高峰时最强（蜡抗）：250个白蜡星星从第一帧开始就出现在页面上，并被歌曲中的水彩晕染发现。
 
-Arc (45–55 s): blank page → a character is drawn and wakes up (hook in 3 s) → a small comic problem (failed sheep count) → a second character (the girl) → a small brave act (the ladder) → the wash reveal on the song (peak, no narration) → everyone sleeps → pull back to the book, page turn.
+弧线（45-55秒）：空白页→一个角色被绘制并醒来（3秒内挂起）→一个小喜剧问题（数羊失败）→第二个角色（女孩）→一个勇敢的小举动（梯子）→歌曲中显示水彩晕染（高峰，无旁白）→每个人都睡觉→拉回到书上，翻页。
 
-How the old guide mapped the native moves onto this story:
+旧指南如何将风格特有表现手法映射到这个故事上：
 
-| Native move | How the demo used it |
+|风格特有表现手法|示范如何使用它|
 |---|---|
-| **Wax resist** | Hid the payoff (the stars) in plain sight from the first frame; a sweep of watercolour uncovered it at the climax. |
-| **Drawn live** | Opened on a blank page; the ladder grew rungs under the girl's hands. |
-| **Colouring is an action** | Pulling up a blanket = scribbling a quilt over the moon; night falling = the wash. |
-| **Boil** | Calmed to half amplitude when the story went to sleep. |
-| **Child logic** | A face on the moon; numbers written in the sky while counting sheep. |
-| **It is a book** | Ended by pulling back to the physical book on a table, the crayons beside it, and turning to "The End". A one-take film over one page is explained by that reveal. |
+|**抗蜡剂**|从第一帧开始就将回报（星星）隐藏在显而易见的地方；水彩画在高潮处将其揭开。|
+|**现场绘制**|在空白页上打开；梯子在女孩的手下逐渐变长。|
+|**着色是一个动作**|拉起毯子=在月亮上乱写一床被子；夜幕降临=水彩晕染。|
+|**熬**|当故事进入睡眠状态时，振幅平静到一半。|
+|**子逻辑**|月亮上的一张脸；一边数羊，一边在天空写下数字。|
+|**是一本书**|最后拉回到桌子上的实体书，蜡笔就在旁边，然后转向“结束”。该揭示解释了一页的一次性影片。|
 
-The old guide's adaptation examples (a product drawn in outline and a wash revealing the hidden feature; a history page coloured in event by event; a thank-you film with names in white crayon) are now the "Fits content like" lines in STYLE.md §8.
+旧指南的改编示例（画出轮廓的产品和揭示隐藏功能的水彩晕染；逐个事件着色的历史页面；用白色蜡笔写出名字的感谢影片）现在是 STYLE.md §8 中的“适合内容”行。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-One continuous camera over one page (world 3200×1800; full page = scale 0.6).
+一页上连续的摄影机（世界 3200×1800；整页 = 比例 0.6）。
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Locked full page, flat: the audience sees the paper before anything is drawn |
-| Title leaves | Push toward the moon instead of fading the title (you can't fade crayon) |
-| Comic beat | Locked medium close-up; substitution poses do the comedy (tossing = a scrunched face rotated 35°, on the beat) |
-| Discovery | Tilt along the moon's gaze (the camera *is* the moon looking down) |
-| Two-shot | The moon peeking in from the frame edge, the girl small in a lit window |
-| Brave act | Tight follow tilt; the ladder draws itself just ahead of her; climbing alternates two key drawings per rung |
-| Wash reveal | **Held wide.** The brush and the music do the motion. Small figure, huge sky |
-| Resolution | Slow push-in on the moon falling asleep, then tilt to the girl |
-| Ending | Pull out until the page becomes a book on a table; page turn; glide onto "The End" |
+|开幕|锁定整页，平面：观众在绘制任何内容之前就可以看到纸张|
+|标题叶|推向月亮而不是褪色标题（你不能褪色蜡笔）|
+|漫画节拍|锁定表现媒介特写；替换姿势上演喜剧（抛掷=皱巴巴的脸旋转35°，随着节拍）|
+|发现|沿着月亮的视线倾斜（摄影机 *是*月亮俯视）|
+|二-镜头 |月亮从画面边缘探入，女孩在明亮的窗户里|
+|勇敢的举动|紧随倾斜；梯子就在她前面；攀爬每个梯级交替使用两个关键图|
+| 水彩晕染揭示| **保持宽。**画笔和音乐做运动。小小的身影，广阔的天空|
+|解决|慢慢推入月亮入睡，然后向女孩倾斜|
+|结束|拉出直到页面变成桌子上的一本书；翻页；滑向“尽头”|
 
-Why this route, for this story: a bedtime story wants one uninterrupted page; the locked blank page put paper before drawing; the held wide at the reveal let the material be the motion; the pull-back explained the one-take. Each of these is one choice from STYLE.md §6, not the style's default.
+为什么这个路线，对于这个故事：睡前故事需要一页不间断的内容；锁定的空白页在绘图前放纸；在暴露处保持宽阔，让材料成为运动；回调解释了一次性的情况。其中每一个都是 STYLE.md §6 中的一个选择，而不是该风格的默认值。
 
-Sleep grammar used on the moon: eyelids come down as yellow scribbles, a nightcap is drawn on, a quilt is coloured up from below with the folded edge appearing first, a tiny hand tucks it in.
+月球上使用的睡眠语法：眼睑垂下，呈黄色涂鸦，戴上睡帽，被子从下面向上着色，折叠的边缘首先出现，一只小手将它塞进去。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Music first, in **3/4 at 72 BPM** (bar = 2.5 s). Music box (lead), toy piano (comic waltz, one note per sheep / per rung), flute as the singing voice, clarinet for bass and humour, glockenspiel for every star the wash uncovers (driven by `glint` events). No strings, no grand piano. The lullaby theme appears in full exactly once, at the wash; the opening music-box motif is its first phrase. It ends with the music box **winding down** (ritardando + slight pitch droop).
+首先是音乐，**3/4，72 BPM**（小节 = 2.5 秒）。音乐盒（主音）、玩具钢琴（滑稽华尔兹、每羊/每梯级一个音符）、长笛作为歌声、单簧管用于低音和幽默、钟琴用于水彩晕染发现的每一颗星星（由 `glint` 事件驱动）。没有弦乐，没有三角钢琴。摇篮曲主题在水彩晕染处完整出现一次；开头的音乐盒主题是它的第一乐句。它以音乐盒 **逐渐减弱** 结束（慢节奏 + 轻微的音高下降）。
 
-Silences: a full beat of silence after the failed sheep count; a 0.3 s breath before the song.
+沉默：数羊失败后一片寂静；歌曲前 0.3 秒的呼吸。
 
-Foley specific to this film: sheep landing = felt puff; tossing = blanket swish; page turn = lift / whoosh / flap. Night = very faint crickets; the desk = warm room tone and a distant clock.
+拟音具体到这个影片：羊落地=毛毡泡芙；抛掷=毯子嗖嗖；翻页=升起/嗖嗖/翻动。夜晚=非常微弱的蟋蟀声；桌子=温暖的房间色调和遥远的时钟。
 
-Mix: music −7 dB under narration, +4 dB for the wordless song; music-box and glockenspiel stems +3 dB with a gentle 3–7 kHz lift.
+混音：旁白下音乐−7 dB，无词歌曲+4 dB；音乐盒和钟琴分轨音频 +3 dB，轻微提升 3–7 kHz。
 
-Voice: Kokoro `af_heart`, speed 0.86–0.90 (v3 re-voice: `bf_emma` read too bright and hard), 6–8 short lines. Chain: high-pass 75 Hz → **compress first** (thr 0.2, 2.5:1, 8 ms / 140 ms) → low shelf +1.5 dB @220 Hz, −2 dB dip @3.2 kHz, **high shelf −4 dB @6 kHz** → split-band de-esser (4.8–10 kHz, 4:1) → per-line RMS match → warm near-field reverb (12 ms pre-delay, early reflections, 0.7 s low-passed tail, wet ~−17 dB). Music ducks ~7 dB and foley ~4 dB under it; voice ~7–10 dB over the bed. "Goodnight, Moon" was avoided as a famous-book phrase ("Night, night." instead).
+语音：Kokoro `af_heart`，速度 0.86–0.90（v3 重语音：`bf_emma` 读得太亮、太难），6–8 行短行。链：高通 75 Hz → **首先压缩**（thr 0.2, 2.5:1, 8 ms / 140 ms）→ 低架 +1.5 dB @220 Hz，−2 dB 下降 @3.2 kHz，**高架 -4 dB @6 kHz** → 分带嘶嘶声消除器（4.8–10 kHz，4:1） → 每线 RMS 匹配 → 温暖的近场混响（12 ms 预延迟，早期反射，0.7 s 低通尾音，湿 ~−17 dB）。音乐下降约 7 dB，拟音下降约 4 dB；床上的声音约为 7–10 dB。 “晚安，月亮”被避免作为名著短语（而是“晚安，晚安。”）。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Paper `#f4efe3`; tooth octaves 1.35 / 2.9 / 6.3 px plus fibre term (x/10, y/1.9), contrast `smoothstep(.16,.86)`; emboss strength ~0.55.
-- Wax threshold `tooth > 1 − 1.22·pressure` (soft edge ±0.07); darkening ×(1−0.1·p²).
-- Outline wobble ~1.7 px; outline width ~7 px on characters, 8 px on buildings, 4–5 px for refined objects. Hatching gap ~10.5 px, width ~11 px, pressure 0.72–1.14×, overshoot 0–7 px; cross-hatch at 40–50 %.
-- Boil: offset ±0.8 px, wobble ±0.9 px; background lines ×0.6; after the characters fall asleep ×0.5.
-- **12 crayons**: ink/indigo `#2d3263` (all outlines), yellow `#f5c63c`, orange `#ec8a3c`, red `#d4483c`, pink `#ee8ea4`, peach `#f4c7a4`, brown `#7a4b31`, ochre `#e7b867`, green `#62a24c`, sky `#79acd9`, violet `#6a5aa6`, white `#fbfaf4` (wax resist). One watercolour: ultramarine, transmission `(0.15, 0.19, 0.44)`. Wash resist `density × (1 − 0.93·smoothstep(.12,.55, waxCoverage))`.
-- The girl: ≈2.6 heads tall, scalloped fringe, a yellow star hair-clip that echoes the stars. The moon: big eyes, eyelids, eye-bags, nightcap, patchwork quilt. The sheep. The house (gable + slanted side wall + big roof), a round tree with red dots, the ladder, 250 white-wax stars, 3 wash bands.
+- 纸`#f4efe3`；齿八度 1.35 / 2.9 / 6.3 px 加纤维项（x/10、y/1.9），对比 `smoothstep(.16,.86)`；压花强度~0.55。
+- 蜡阈值`tooth > 1 − 1.22·pressure`（软边±0.07）；变暗×(1−0.1·p²)。
+- 轮廓摆动 ~1.7 px；字符上的轮廓宽度约为 7 像素，建筑物上的轮廓宽度为 8 像素，精致对象的轮廓宽度为 4–5 像素。孵化间隙 ~10.5 px，宽度 ~11 px，压力 0.72–1.14×，超调 0–7 px；交叉影线为 40–50%。
+- 沸腾：偏移±0.8 px，摆动±0.9 px；背景线×0.6；角色入睡后×0.5。
+- **12蜡笔**：ink/indigo `#2d3263`（所有轮廓），黄色`#f5c63c`，橙色`#ec8a3c`，红色`#d4483c`，粉色`#ee8ea4`，桃色`#f4c7a4`、棕色`#7a4b31`、赭色`#e7b867`、绿色`#62a24c`、天色`#79acd9`、紫色`#6a5aa6`、白色`#fbfaf4`（抗蜡）。一幅水彩画：群青，透射率 `(0.15, 0.19, 0.44)`。 水彩晕染抵抗 `density × (1 − 0.93·smoothstep(.12,.55, waxCoverage))`。
+- 女孩：约2.6头高，扇形刘海，黄色星星发夹，与星星遥相呼应。月亮：大眼睛、眼皮、眼袋、睡帽、拼布被子。羊。房子（山墙+倾斜的侧墙+大屋顶），一棵带红点的圆树，梯子，250颗白蜡星星，3条水彩晕染带。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Title: hand-lettered on the page in two lines in a corner (Gaegu Bold), written on letter by letter while the colours are scribbled in. Subtitles: Patrick Hand 54 px, indigo crayon.
+标题：在页面的一角以两行手写字体（Gaegu 粗体），一个字母一个字母地书写，同时潦草地写下颜色。字幕：Patrick Hand 54 px，靛蓝蜡笔。
 
-End card: the next page of the book — "The End" (Gaegu Bold), a small crescent doodle, the style name and credit in Patrick Hand. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+片尾卡：书的下一页——“The End”（Gaegu Bold），一个新月形的小涂鸦，风格名称和出自帕特里克·汉德（Patrick Hand）。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/crayon-book/demo/
@@ -86,21 +93,21 @@ styles/crayon-book/demo/
   sheet.js   model sheets (?test=model&page=girl|moon)        lines.json, mix.py, music/score.py, build.sh
 ```
 
-1. `node core/render/still.mjs styles/crayon-book/demo 0.5 --q 'test=model&page=girl'` — model sheet first; iterate the character before any shot.
-2. `core/tts/tts.py lines.json voices` → `asr_check.py` until all OK.
-3. Build the timeline in `film.js`; review with `still.mjs --range 0.5:51.5:1` + `sheet.py` (two rounds minimum).
-4. `node core/render/events.mjs` → `music/score.py` (cues on the 72 BPM grid, glockenspiel from `glint` events) → `mix.py`.
-5. `node core/render/video.mjs styles/crayon-book/demo --fps 24 --workers 3` (1248 frames ≈ 80 s on an M-series Mac).
-6. `CRF=26 sh demo/tools/mux.sh out/video24.mp4 mix.wav crayon-book.mp4 24 0` — no added grain (the paper is the grain); the local mux copy exposes CRF. `demo/build.sh` runs the whole chain from TTS to the finished film.
+1. `node core/render/still.mjs styles/crayon-book/demo 0.5 --q 'test=model&page=girl'` — 角色设定表第一；迭代任何镜头之前的字符。
+2. `core/tts/tts.py lines.json voices` → `asr_check.py` 直至一切OK。
+3. 在`film.js`中构建时间线；使用 `still.mjs --range 0.5:51.5:1` + `sheet.py` 进行审核（至少两轮）。
+4. `node core/render/events.mjs` → `music/score.py`（72 BPM 网格上的提示，来自 `glint` 事件的钟琴）→ `mix.py`。
+5. `node core/render/video.mjs styles/crayon-book/demo --fps 24 --workers 3`（在 M 系列 Mac 上，1248 帧 ≈ 80 秒）。
+6. `CRF=26 sh demo/tools/mux.sh out/video24.mp4 mix.wav crayon-book.mp4 24 0`——无添加纹路（纸张即为纹路）；本地多路复用器副本公开 CRF。 `demo/build.sh` 运行从 TTS 到成品影片的整个链条。
 
-File size: screen-fixed tooth made the film 190 MB; anchoring the tooth, not boiling background fills, no extra grain and CRF 26 → 74 MB with no visible loss.
+文件大小：屏幕固定齿制作影片 190 MB；锚定牙齿，不煮沸背景填充物，没有额外的颗粒，CRF 26 → 74 MB，没有明显的损失。
 
-Pitfalls tied to this demo's props:
+与示范的道具相关的陷阱：
 
-- **White gaps between wash bands** and a sky that stopped above the ground: the last band must reach down to the grass line; sky exists wherever there is paper.
-- **Walls coloured at light pressure turned muddy blue under the wash.**
-- **Titles and numbers written in the sky survived the wash** (the counted sheep numbers): the title went in a corner the wide shot won't show.
-- **Outlines drawn over the girl's hair read as a headband.**
-- **A blanket drawn as a flat violet half read as the moon's dark side.** It needed quilt features: patchwork squares, stitch lines, star appliqués, a light turned-down edge, a draped hem that spills past the disc, and a hand that pulls it up.
-- **Double vignette/emboss at the book transition**: the desk's vignette, emboss and lamp light ramp in from 0.
-- **The heroine disappeared into the night** because the wash sank into her colouring gaps; she is composited after the wash.
+- **水彩晕染带** 和停止在地面上方的天空之间存在白色间隙：最后一个带必须向下到达草线；有纸的地方就有天空。
+- **在水彩晕染.** 下，轻压下的墙壁变成浑蓝色
+- **写在天空中的标题和数字在清洗后幸存下来**（数过的羊数）：标题位于宽镜头不会显示的角落里。
+- **在女孩头发上绘制的轮廓被视为头带。**
+- **A 毯子绘制成平坦的紫罗兰色，一半读作月亮的阴暗面。** 它需要被子的功能：拼凑的方块、缝线、星星贴花、浅色下翻边缘、从圆盘上溢出的垂褶下摆以及将其拉起的手。
+- **书本过渡处的双 vignette/emboss**：桌子的小插图、浮雕和灯光从 0 开始渐变。
+- **女主角消失在夜色中**，因为水彩晕染陷入了她的着色间隙；她是在水彩晕染之后合成的。

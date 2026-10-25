@@ -1,139 +1,148 @@
-# Make a style your own
+<a id="make-a-style-your-own"></a>
+# 打造您自己的风格
 
-A user makes a style of their own, in one of two ways: **change a library style**, or **start from a blank page**. You plan it with them, one question at a time or in free conversation, prove the look with a style frame and make a short demo film. When they confirm it, you keep it in their own folder in the same shape as a library style. From then on they name it like any library style when they ask for a film. It lives outside the library and never changes it.
+用户可以通过以下两种方式之一创建自己的风格：**更改库风格**，或**从空白页开始**。您与他们一起计划，一次一个问题或在自由对话中，用风格定帧证明外观并制作一个简短的示范影片。当他们确认后，您将其保存在他们自己的文件夹中，其形状与库风格相同。从那时起，当他们要求影片时，他们会像任何风格库风格一样命名它。它位于风格库之外并且永远不会改变它。
 
-Use this guide when the user wants to change a style or make their own ("I want to change this style", "make my own version", "start from scratch", "我想改风格", "做成我自己的风格", "从空白开始"), or when they name a style that is in their own folder. Everything else in a film follows [`AGENTS.md`](AGENTS.md) as usual, with the exceptions this guide gives.
+当用户想要更改风格或创建自己的风格时（“我想更改此风格”、“制作我自己的版本”、“从头开始”、“我想改风格”、“首先我自己的风格”、“从空白开始”），或者当他们命名自己文件夹中的风格时，请使用本指南。 影片中的其他内容照常遵循 [`AGENTS.md`](AGENTS.md)，本指南给出的例外情况除外。
 
-Talk to the user in their language. Write the files in English, like the library, with the style's name in both languages.
+用用户的语言与他们交谈。本中文分支中的说明文档使用中文；风格名称同时保留中文名与英文标识，代码、命令及字段名称保持原样。
 
-## Where it lives
+<a id="where-it-lives"></a>
+## 存放位置
 
-Until the user confirms it (§6), a style is a draft in the demo film's project folder. Confirmed styles live in **`~/lemo-my-styles/`**, outside the library, so library updates and uninstalling never touch them. `~/lemo-my-styles/README.md` lists every style, one row each (English and Chinese name, slug, base, one line on what it is, and the folder when it isn't in `~/lemo-my-styles/`): it's how a later session finds a style by name. If the user wants a style kept in another folder, keep it there and still add its row, with the full path, to `~/lemo-my-styles/README.md`.
+在用户确认之前（§6），风格是示范影片项目文件夹中的草稿。已确认的风格位于库外部的 **`~/lemo-my-styles/`** 中，因此库更新和卸载永远不会触及它们。 `~/lemo-my-styles/README.md` 列出每个风格，每行（英文和中文名称，标识名，基础，一行说明其内容，以及不在 `~/lemo-my-styles/` 中时的文件夹）：这是稍后会话通过名称查找风格的方式。如果用户希望将风格保留在另一个文件夹中，请将其保留在那里，并仍然将其行及其完整路径添加到 `~/lemo-my-styles/README.md`。
 
-Each style has its own folder, `~/lemo-my-styles/<slug>/`, shaped like a library style (`MAINTAINING.md` **Add a style**, without the gallery and the release):
+每个风格都有自己的文件夹，`~/lemo-my-styles/<slug>/`，形状像库风格（`MAINTAINING.md` **添加风格**，没有图库和发布）：
 
-| File | What it holds |
+|文件|它包含什么|
 |---|---|
-| `style.json` | `slug`, `en`, `cn`, `based_on` (the base slug; from a blank page, the technique base), `borrows` (slugs moves were taken from, may be empty), `size` (only when the default isn't 1920×1080, e.g. `"1080x1440"`), `library_version` (`git -C "$LIB" rev-parse --short HEAD`, or the plugin version when `$LIB` isn't a git clone), `created`, `line`, `line_cn` |
-| `STYLE.md` | the style's invariants only, in the sections of a library `STYLE.md` (11 in most; a changed style keeps its base's): no story, beat table, durations or end card |
-| `CHANGES.md` | one row per decision: section, base, now, why. From a blank page, "base" is the technique base's value, or "—" for something new. This is what the user approves and what you check the demo film against |
-| `DEMO.md` | how the demo film was made, like a library `DEMO.md`: it opens with "One example among many. Don't reuse its story, arc, shots, props or timings.", then the story, shots, palette, score, build notes and which file draws what. It stands in for the film's `TREATMENT.md`, which isn't kept |
-| `demo/` | the demo film's source with a one-command `build.sh` and `CREDITS`: the code and the small assets it needs to rebuild (fonts, data), not renders, frames, `node_modules`, virtual environments or caches |
-| `styleframe.jpg` | the approved style frame |
-| `styleframe-vs-base.jpg` | changing a library style only: the same frame, base on the left, theirs on the right |
-| `test.mp4`, `test.jpg` | the demo film and its poster |
+|`style.json`|`slug`、`en`、`cn`、`based_on`（基础标识名；来自空白页，技术基础）、`borrows`（借用表现手法的风格标识名，可能为空）、`size`（仅限当默认值不是 1920×1080 时，例如 `"1080x1440"`)、`library_version` (`git -C "$LIB" rev-parse --short HEAD`，或 `$LIB` 不是 git 克隆时的插件版本)、`created`、`line`、 `line_cn`|
+|`STYLE.md`|仅该风格的固定约束，在库 `STYLE.md` 的部分中（最多 11 个；更改后的风格保留其基础）：没有故事、节拍表、持续时间或片尾卡|
+|`CHANGES.md`|每个决定一行：部分、基础、现在、原因。在空白页中，“base”是技术基础的值，“-”表示新的东西。这是用户批准的内容以及您检查示范影片的内容|
+|`DEMO.md`|示范影片是如何制作的，就像一个风格库 `DEMO.md`：它以“众多例子中的一个例子。不要重复使用它的故事、弧线、镜头、道具或计时。”，然后是故事、镜头、调色板、配乐、构建注释以及哪个文件绘制什么。它代表影片的 `TREATMENT.md`，未保留|
+|`demo/`|示范影片的源代码包含一个命令 `build.sh` 和 `CREDITS`：需要重建的代码和小资产（字体、数据），而不是渲染、帧、`node_modules`、虚拟环境或缓存|
+|`styleframe.jpg`|批准的风格定帧|
+|`styleframe-vs-base.jpg`|仅更改库风格：相同的框架，左侧为基础风格，右侧为用户的新风格|
+|`test.mp4`、`test.jpg`|示范影片及其海报|
 
-Never write into `styles/` or edit the library's guides for this. The name and slug must not match a library style or a row in `~/lemo-my-styles/README.md`.
+切勿为此写入 `styles/` 或编辑库的指南。名称和标识名不得与库风格或 `~/lemo-my-styles/README.md` 中的行匹配。
 
-## 1. Where to start
+<a id="1-where-to-start"></a>
+## 1. 从哪里开始
 
-- **Change a library style.** The user names one (see **Finding the style** in `AGENTS.md`). If they haven't, do as **Finding the style** does for a film: the full list of library styles in your message, the gallery link, two or three suggestions on top when you know what they'll use it for, then a plain-text question asking them to type the name (not `AskUserQuestion`). One base only. If they want to mix two, take the one whose §1 *Essence* is closest as the base and take only what they want from the other, as changes (list it in `borrows`).
-- **Start from a blank page.** The user describes the look in their own words, or brings a picture or a film they like. Choose one library style as the **technique base** (the closest materials and engine: what the code will build on) and at most two to borrow moves from. Make that the first question: your choice and why in one line each, with the next closest as the other options.
+- **更改库风格。**用户命名一个（请参阅**在`AGENTS.md`中查找风格**）。如果他们还没有，请像**Finding the style** 对影片所做的那样：消息中的库风格的完整列表、图库链接、当您知道他们将使用它的用途时在顶部的两到三个建议，然后是一个纯文本问题，要求他们输入名称（而不是 `AskUserQuestion`）。只有一个基地。如果他们想混合两者，则以 §1 *Essence* 最接近的一个作为基础，并仅从另一个中获取他们想要的内容作为更改（在 `borrows` 中列出）。
+- **从空白页开始。** 用户用自己的话描述外观，或者带来他们喜欢的图片或影片。选择一种库风格作为 **技术基础**（最接近的材料和引擎：代码将构建的基础），最多选择两种可借用的动作。将其作为第一个问题：您的选择和原因各占一行，下一个最接近的作为其他选项。
 
-Either way, read the base `STYLE.md` in full before the first question. In this flow you may read the base's `DEMO.md` (and, in skill mode, get its source with `setup.sh demo <slug>`) before any treatment: the style frame needs its techniques. The demo film's story must still differ from the base demo's (DIRECTOR.md §11, *Not the demo again*, compared with the base).
+无论哪种方式，请在第一个问题之前完整阅读基础 `STYLE.md`。在此流程中，您可以在任何创作方案之前读取基础的 `DEMO.md`（并且在技能模式下，使用 `setup.sh demo <slug>` 获取其源代码）：风格定帧需要其技术。 示范影片的故事仍然与底座示范不同（DIRECTOR.md §11，*与底座相比，又不是示范*）。
 
-## 2. Plan it together
+<a id="2-plan-it-together"></a>
+## 2. 一起计划
 
-Interview the user until every section of their `STYLE.md` is decided and they know what each choice costs.
+采访用户，直到他们的 `STYLE.md` 的每个部分都被决定并且他们知道每个选择的成本。
 
-**How to ask**
+**如何询问**
 
-- **One question per message.** Use the `AskUserQuestion` tool: 2–3 options, the one you recommend first and marked (Recommended), each with one line on what it does to the film, and **Free conversation** (in their language) as the last option. Without the tool, a short numbered list with your recommendation, and free conversation as its last line.
-- **Free conversation.** When they pick it, stop asking one by one. Post in the chat a checklist: what's decided, and each open item with your recommendation (when changing a library style, also its group from the table below). They answer in their own words, in any order, several at once, or ask you back. When they aren't sure about an item, give two or three concrete directions for it. Update the checklist each round; when everything is decided, or they say "you decide", go to the summary.
-- Every question has your recommendation and the reason, drawn from the base `STYLE.md` and what the user said, with concrete examples from this style, not generic words.
-- Don't ask what you can look up (the base `STYLE.md`, the library, their files).
-- **About ten questions at most**, the technique base included. When more sections are in play, ask related ones together (motion with sound, camera with native moves). If they say "you decide" ("你定", "都按推荐"), take your recommendations for the rest, list them in one message and go on.
+- **每条消息一个问题。** 使用 `AskUserQuestion` 工具：2-3 个选项，您首先推荐并标记为（推荐）的选项，每个选项都有一行关于它对影片和 **的作用，自由对话**（在其语言）作为最后一个选项。如果没有该工具，则会有一个带有您的推荐的简短编号列表，最后一行是自由对话。
+- **自由交谈。** 当他们选择的时候，不要一一询问。在聊天中发布清单：已决定的内容，以及每个未解决的项目以及您的建议（更改库风格时，还包括下表中的组）。他们用自己的话回答，以任何顺序，一次几个，或者问你回来。当他们对某件事不确定时，给出两到三个具体的指示。每轮更新清单；当一切都决定了，或者他们说“你决定”时，请转到摘要。
+- 每个问题都有您的建议和原因，取自基础 `STYLE.md` 和用户所说的内容，并带有这种风格的具体示例，而不是通用词语。
+- 不要问你可以查找什么（基础 `STYLE.md`、库、它们的文件）。
+- **最多十题左右**，包含技术基础。当播放更多部分时，请一起询问相关部分（动作与声音，摄影机与风格特有表现手法）。如果他们说“你决定”（“你定”、“都按推荐”），则接受你对其余部分的建议，将它们列在一条消息中，然后继续。
 
-**The order** (skip what they've already said):
+**订单**（跳过他们已经说过的）：
 
-1. **Use.** What films they'll make with it, for whom, where they'll post them, and so the frame size (a vertical feed needs 1080×1920 or 1080×1440). Their brand or IP: colours, logo, font, a character. They give you the files later.
-2. **What changes.**
-   - *Change a library style*: first show the three groups as a short message, using this style's own sections and examples. Then ask which parts they want to touch (several may be picked).
+1. **使用。** 他们将用它制作什么影片、为谁、在哪里发布它们，以及帧尺寸（垂直馈送需要 1080×1920 或 1080×1440）。他们的品牌或 IP：颜色、标志、字体、字符。他们稍后会给你文件。
+2. **有什么变化。**
+   - *更改库风格*：首先使用此风格自己的部分和示例将三个组显示为短信。然后询问他们想触摸哪些部分（可能会选择几个部分）。
 
-     Section numbers below are the usual ones; some styles (Edit & Documentary above all) number or split them differently, so go by the section's subject in the base `STYLE.md`.
+     下面的部分编号是常用的；某些风格（首先是剪辑与纪实）对它们进行编号或分割不同，因此请按照基础 `STYLE.md` 中的部分主题进行操作。
 
-     | Group | Sections of `STYLE.md` | What to tell the user |
+     |团体|`STYLE.md` 的部分|告诉用户什么|
      |---|---|---|
-     | **Safe to change** | §3 colour (the palette within its logic), §4 type, §5 motion (tempo, how much moves), §7 sound palette (instruments, density), §8 native moves (add or swap one) | the style stays itself; give 2–3 ideas for each |
-     | **Changes its character** | §2 materials and rendering, the colour logic itself in §3, §6 camera grammar | possible; say what the style loses with each change |
-     | **Can't change** | §1 essence (and its "what it is not"), §10 engine | that's a different style, not a version of this one. Say so and suggest a closer base |
+     |**可安全更改**|§3 颜色（其逻辑内的调色板），§4 类型，§5 运动（节奏，移动多少），§7 声音体系（乐器，密度），§8 风格特有表现手法（添加或交换一个）|风格保持不变；每个给出 2-3 个想法|
+     |**改变其性格**|§2 材料和渲染，§3、§6 镜头语言中的颜色逻辑本身|可能的;说出每次改变风格会失去什么|
+     |**无法更改**|§1 本质（及其“它不是什么”），§10 引擎|这是另一种风格，不是这个风格的版本。这么说并建议一个更接近的基地|
 
-     When a safe change narrows a phrase in §1 (three inks become two), adjust that phrase; the essence stays.
-   - *From a blank page*: the essence first, one sentence on what it is and one on what it is not. Then the materials.
-3. **Section by section**, only the sections in play, in `STYLE.md` order: materials and rendering, colour, type, motion, camera, sound, native moves. Give 2–3 concrete directions for each.
-4. **The name**: English, Chinese or both, and the slug.
+     当安全更改缩小了 §1 中的短语（三种墨水变为两种）时，调整该短语；本质仍然存在。
+   - *从空白页开始*：本质第一，一句话说明它是什么，一句说明它不是什么。然后是材料。
+3. **逐节**，仅播放中的部分，按`STYLE.md`顺序：材质和渲染、颜色、类型、运动、摄影机、声音、风格特有表现手法。为每项给出 2-3 个具体指示。
+4. **名称**：英文、中文或两者兼而有之，标识名。
 
-**Help them change it well.** Most users know the feeling they want, not the section. While you ask:
+**帮助他们改好。** 大多数用户知道他们想要的感觉，而不是部分。当你问：
 
-- Start from the use. The changes follow what the films are for: a weekly brand bulletin needs readable type and a fixed opening, a kids' channel needs bigger shapes and slower reading.
-- Turn vague wishes into options, never silent edits:
+- 从使用开始。这些变化遵循影片的用途：每周品牌公告需要可读的类型和固定的开口，儿童频道需要更大的形状和更慢的阅读速度。
+- 将模糊的愿望变成选项，而不是沉默的编辑：
 
-  | They say | Usually means |
+  |他们说|通常意味着|
   |---|---|
-  | more premium, 高级 | fewer colours, stronger contrast between light and dark, slower motion, more empty space, lighter type |
-  | younger, livelier, 活泼 | a brighter accent, cuts on the beat, bouncier easing, more percussion |
-  | calmer, 安静 | slower tempo, longer holds, fewer moving things, sparser instruments |
-  | like our brand, 像我们品牌 | the brand colour as the accent, not the ground; the brand font for titles; the logo at the open and the end |
+  |更高级，更高级|颜色更少，明暗对比更强，运动更慢，空间更多，字体更轻|
+  |更年轻、更活泼、更有活力|更明亮的口音，切合节拍，更有活力的缓动，更多的打击乐|
+  |更平静，更安静|节奏较慢，保持时间较长，移动的东西较少，乐器较少|
+  |喜欢我们的品牌，喜欢我们的品牌|以品牌颜色作为重点，而不是底色；标题的品牌字体；开头和结尾处的徽标|
 
-- **Brand.** Keep the base's light-and-dark structure so text stays readable, and bring the brand colour in as the accent first. A brand font must cover the film's language (Chinese glyphs for a Chinese film) and allow use in video. Logos and fonts come from the user.
-- **A reference.** Name two or three things in it that make it work, map each to a section, and say which ones would touch §1 essence.
-- **Keep the signature.** The native move is what makes the style recognisable: swap at most one.
-- **Changes that travel together.** Faster motion needs denser sound. A darker palette needs the type contrast checked. A new material brings its own pitfalls into §9.
-- **Up to five changes** per round when changing a library style; more are hard to judge. A change the film's language forces (a Chinese font when the base has none) doesn't count.
-- **Code draws everything**, as in the library: no image or video generation, which the user may not have. Anything that isn't code (pictures, fonts, stroke or map data, samples) is the user's own or openly licensed, as in TECHNIQUE.md §11, and named in `CREDITS`. A licence the user has to agree to is asked once, and their answer goes into `STYLE.md` so later films don't ask again. If something can't work, say so and offer the closest change code can draw.
-- **What doesn't need a style.** Story, structure, opening, ending, cast, sets, pacing and voice (§11 *Variation space*) are free in every film. If that's all they want, they don't need their own style: they say it when they ask for a film.
+- **品牌。** 保持底座的明暗结构，使文本保持可读性，并首先将品牌颜色作为强调色。品牌字体必须涵盖影片的语言（中文影片的中文字形）并允许在视频中使用。徽标和字体来自用户。
+- **A 参考文献。** 列出其中两三个使其发挥作用的事物，将每个事物映射到一个部分，并说明哪些事物会触及​​§1 本质。
+- **保留签名。** 风格特有表现手法使风格可识别：最多交换一个。
+- **一起旅行的变化。** 更快的运动需要更密集的声音。较暗的调色板需要检查类型对比度。 §9 中的一种新材料也有其自身的缺陷。
+- **更改库风格时，每轮最多可更改五次**；更多的就很难判断了。 影片的语言强制（当底座没有时为中文字体）的更改不算在内。
+- **Code 绘制所有内容**，如在库中一样：不生成用户可能没有的图像或视频。任何非代码的内容（图片、字体、笔画或地图数据、示例）都是用户自己的或公开许可的，如 TECHNIQUE.md §11 中所示，并在 `CREDITS` 中命名。用户必须同意的许可证会被询问一次，他们的答案会进入 `STYLE.md`，这样以后影片就不会再询问了。如果某些东西无法工作，请说出来并提供可以绘制的最接近的更改代码。
+- **不需要风格。** 每个影片中的故事、结构、开场、结局、演员、布景、节奏和声音（§11 *变化空间*）都是免费的。如果这就是他们想要的，他们就不需要自己的风格：当他们要求影片时，他们就会这么说。
 
-When the plan is complete, show the user a short summary in their language: each decision, before and after, and what it costs. **Wait for their OK**, then write it down.
+计划完成后，用用户的语言向用户展示简短的摘要：每个决定，之前和之后，以及成本。 **等他们OK**，然后记下来。
 
-## 3. Write it down
+<a id="3-write-it-down"></a>
+## 3.写下来
 
-Make the demo film's project folder now (`films/<slug>-test/` in a clone, `<slug>-test/` in the user's folder in skill mode) and work only there until §6. The draft style goes in its `style/` folder, with the files of the table above.
+现在创建示范影片的项目文件夹（克隆中的 `films/<slug>-test/`，技能模式下用户文件夹中的 `<slug>-test/`）并仅在该文件夹中工作，直到第 6 节。草稿风格位于其 `style/` 文件夹中，其中包含上表中的文件。
 
 - **`STYLE.md`**:
-  - *Change a library style*: a full copy of the base `STYLE.md` with the changes written into their sections, so it reads like any style prompt (no "see the base" gaps). Change the title to the new name and add one line under it: `Based on <base name> (<base slug>) from Lemo-Opuscar.`
-  - *From a blank page*: all 11 sections written from the plan, with §10 engine from the technique base for now (§5 points it at the style's own code). Under the title: `Made from a blank page; techniques from <base name> (<base slug>) in Lemo-Opuscar.`
-  - When the default size isn't 1920×1080, one more line under the title: `Default size: 1080×1440.`
-  - Links: the style's own `DEMO.md` and `demo/` (they exist after §5) stay relative; links to the base become `$LIB/styles/<base slug>/…`. Keep every pitfall in §9 that still applies, and add the ones the changes bring.
-- **`CHANGES.md`** and **`style.json`** as in the table above.
+  - *更改库风格*：基本 `STYLE.md` 的完整副本，并将更改写入其部分，因此它读起来就像任何风格提示一样（没有“查看基本”间隙）。将标题更改为新名称并在其下方添加一行：`Based on <base name> (<base slug>) from Lemo-Opuscar.`
+  - *从空白页开始*：所有 11 个部分都是根据计划编写的，目前使用来自技术基础的 §10 引擎（§5 指向该风格自己的代码）。标题下：`Made from a blank page; techniques from <base name> (<base slug>) in Lemo-Opuscar.`
+  - 当默认尺寸不是1920×1080时，标题下多一行：`Default size: 1080×1440.`
+  - 链接：风格自己的 `DEMO.md` 和 `demo/`（它们在§5之后存在）保持相对关系；到基地的链接变成`$LIB/styles/<base slug>/…`。保留第 9 节中仍然存在的所有缺陷，并添加更改带来的缺陷。
+- **`CHANGES.md`**和**`style.json`** 如上表所示。
 
-## 4. Prove the look
+<a id="4-prove-the-look"></a>
+## 4. 证明外观
 
-Render one style frame with the real drawing code, starting from the base style's techniques (copy code into the project, never edit the library). Check it against the new `STYLE.md` and fix what's off, once.
+使用真实的绘图代码渲染一个风格定帧，从基本风格的技术开始（将代码复制到项目中，不要编辑库）。将其与新的 `STYLE.md` 进行检查，并一次性修复问题。
 
-- *Change a library style*: render the same frame a second time with the base's settings (its colours, materials and type; a stand-in font when the base's has no glyphs for the film's language), and put the two side by side, base on the left, so only the changes differ: `style/styleframe-vs-base.jpg` (`core/render/sheet.py` tiles stills).
-- *From a blank page*: there's nothing to compare against. Show the frame on its own, next to the user's reference if they gave one.
+- *更改库风格*：使用底座的设置（其颜色、材质和类型；当底座没有影片语言的字形时的替代字体）第二次渲染同一帧，并将两个并排放置，底座在左侧，因此只有更改不同：`style/styleframe-vs-base.jpg`（`core/render/sheet.py` 平铺静止图像）。
+- *从空白页开始*：没有什么可以比较的。如果用户提供了参考，则将框架单独显示在用户的参考旁边。
 
-Save the frame as `style/styleframe.jpg`. **Show it to the user and wait.** If they want more, update `STYLE.md` and `CHANGES.md` and render again. If it still isn't right after two rounds of their notes, say so and suggest a closer base.
+将帧保存为 `style/styleframe.jpg`。 **向用户显示并等待。** 如果他们想要更多，请更新 `STYLE.md` 和 `CHANGES.md` 并再次渲染。如果经过两轮笔记后仍然不正确，请说出来并建议更接近的基础。
 
-## 5. The demo film (15–30 s)
+<a id="5-the-demo-film-1530-s"></a>
+## 5. 示范影片（15–30 秒）
 
-A short film whose job is to show the style working, not a full production:
+一段简短的影片的工作是展示工作风格，而不是完整的制作：
 
-- **Topic**: the user's own if they give one; otherwise a simple one with movement and a little light (a kite on a windy beach, the first tram of the morning). Not the base demo's story.
-- **Every row of `CHANGES.md` is clearly on screen** at least once, and the native move appears once.
-- Music and sound effects, no voice and no subtitles unless the user asks (a voice is a separate test).
-- Treatment: one structure is enough (no three candidates). No storyboard. DIRECTOR.md's counts are written for longer films: at this length one real silence and three kinds of camera move are enough.
-- **Checks**, as for any film: DIRECTOR.md §11, with its one fix round (no LemoLab sign-off in the film).
+- **话题**：用​​户自己的，如果他们给一个；否则就是一个简单的，有运动和一点光的（有风的海滩上的风筝，早上的第一趟电车）。不是基础示范的故事。
+- **`CHANGES.md` 的每一行在屏幕上至少清晰地出现一次**，并且风格特有表现手法出现一次。
+- 音乐和音效，除非用户要求，否则没有语音和字幕（语音是单独的测试）。
+- 创作方案：一种结构就足够了（没有三个候选）。没有故事板。 DIRECTOR.md 的计数写得更长影片：在这个长度上，一种真正的沉默和三种摄影机运动就足够了。
+- **支票**，与任何影片一样：DIRECTOR.md §11，及其一轮修复（影片中没有 LemoLab 签核）。
 
-Then save it into `style/`:
+然后保存到`style/`中：
 
-- the film and its poster as `test.mp4` and `test.jpg`;
-- the source as `demo/`, with `CREDITS` and a `build.sh` that runs from there: `LIB=<path>` at the top, library files as `$LIB/…` (never `../..`, also in code copied from the base), and everything it writes going to `${OUT:-<a folder outside demo/>}`. Run it once from the saved folder with `OUT` set to a temporary folder, and check that `demo/` holds the same files afterwards. Code copied from the library keeps its MIT notice in `demo/CREDITS`; that is a licence, not a credit in the film;
+- 影片及其海报 `test.mp4` 和 `test.jpg`；
+- 源代码为 `demo/`，带有 `CREDITS` 和从那里运行的 `build.sh`：`LIB=<path>` 在顶部，库文件为 `$LIB/…`（绝不是 `../..`，也在从基础复制的代码中），并且它写入的所有内容都将`${OUT:-<a folder outside demo/>}`。从保存的文件夹中运行一次，并将 `OUT` 设置为临时文件夹，然后检查 `demo/` 是否包含相同的文件。从库复制的代码将其 MIT 通知保留在 `demo/CREDITS` 中；这是许可证，而不是影片中的信用；
 - `DEMO.md`;
-- From a blank page, point §10 *Engine* in `STYLE.md` at the files in `demo/` that draw the style, then at the technique base.
+- 从空白页中，将 `STYLE.md` 中的 §10 *Engine* 指向 `demo/` 中绘制风格的文件，然后指向技术基础。
 
-## 6. Keep it
+<a id="6-keep-it"></a>
+## 6. 保留它
 
-Show the user the demo film: where it is, and each change with the second where it can be seen. Then ask with `AskUserQuestion`:
+向用户显示示范影片：它在哪里，并且每次变化都可以看到。然后用 `AskUserQuestion` 询问：
 
-1. **Keep it as my style** (Recommended): check that the name and slug are still free, copy `style/` to `~/lemo-my-styles/<slug>/` (or the folder they want), add its row to `~/lemo-my-styles/README.md` (create it if it's missing: a title and a table with one row per style), and tell them where it is and how to use it ("Make a film in my <name> style about…").
-2. **One more round**: change what they ask (§7), then ask again.
-3. **Not now**: leave it in the project folder. Tell them its path, and that saying "keep the style in <path> as my style" later saves it then.
+1. **将其保留为我的风格**（推荐）：检查名称和标识名是否仍然空闲，将`style/`复制到`~/lemo-my-styles/<slug>/`（或他们想要的文件夹），将其行添加到`~/lemo-my-styles/README.md`（如果缺少则创建它：标题和一张表格，每种风格一行），并告诉他们它在哪里以及如何使用它（“在我的 <name> 风格中制作一个关于......的影片 ”）。
+2. **又一轮**：更改他们的要求（§7），然后再次询问。
+3. **现在不行**：将其​​保留在项目文件夹中。告诉他们它的路径，然后说“将<path>中的风格保留为我的风格”然后将其保存。
 
-Only a kept style is theirs: listed when the skill starts, and found by name.
+他们只有一种保留的风格：在技能开始时列出，并通过名称找到。
 
-## 7. Revise or use it
+<a id="7-revise-or-use-it"></a>
+## 7. 修改或使用
 
-- **Not right yet**: change `STYLE.md` and `CHANGES.md`, then render the style frame and the demo film again and replace `demo/` and `DEMO.md`. Change only what the user asks.
-- **Using it**: find it through `~/lemo-my-styles/README.md`. Read its `STYLE.md` in place of a library `STYLE.md` and follow the normal workflow in `AGENTS.md`, treatment first, at the style's default size unless the user asks for another. For techniques, read the style's own `DEMO.md` and `demo/` first, then the base's (`$LIB/styles/<based_on>/DEMO.md`). The demo film is one example: never reuse its story, shots or timeline. The films are the user's: no LemoLab credit, no watermark.
-- **After a library update**: if the base `STYLE.md` changed since `library_version`, mention it once and offer to bring the useful fixes into their copy. Don't change their style without asking.
+- **还不行**：更改`STYLE.md`和`CHANGES.md`，然后再次渲染风格定帧和示范影片并替换`demo/`和`DEMO.md`。仅更改用户要求的内容。
+- **使用**：通过`~/lemo-my-styles/README.md`找到它。读取其 `STYLE.md` 来代替库 `STYLE.md`，并首先遵循 `AGENTS.md`、创作方案中的正常工作流程，采用风格的默认尺寸，除非用户要求另一个尺寸。对于技术，请首先阅读该风格自己的 `DEMO.md` 和 `demo/`，然后阅读基础的 (`$LIB/styles/<based_on>/DEMO.md`)。 示范影片就是一个例子：切勿重复使用其故事、镜头或时间线。 影片是用户的：没有 LemoLab 署名，没有水印。
+- **库更新后**：如果基础`STYLE.md`自`library_version`以来发生了变化，请提及一次并提出将有用的修复程序带入其副本中。不要在没有询问的情况下改变他们的风格。

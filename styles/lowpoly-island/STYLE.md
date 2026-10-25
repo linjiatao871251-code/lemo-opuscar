@@ -1,110 +1,122 @@
-# Low-poly Isometric Island — Style Prompt
+<a id="low-poly-isometric-island--style-prompt"></a>
+# 低多边形等距：风格提示词
 
-> A tiny faceted world seen through an orthographic isometric lens: everything is a geometric block, and everything that appears arrives with a bounce and a note.
-> References (grammar only): *Townscaper* (building is the performance; every piece lands with a springy bounce and a sound; pieces sprout small details by themselves); *Monument Valley* (isometric geometry, soft pastel palettes, gradient skies, calm pacing, lots of empty space). Never copy their grids, buildings, characters, UI or typography, and never name them on screen.
+> 通过正交等距镜头看到的微小多面世界：一切都是几何块，出现的一切都伴随着反弹和音符。
+> 参考文献（仅语法）：*Townscaper*（建筑就是表演；每件作品落地时都会有弹性的弹跳和声音；作品本身会萌生小细节）； *纪念碑谷*（等距几何、柔和的调色板、渐变的天空、平静的节奏、大量的空白空间）。切勿复制他们的网格、建筑物、角色、用户界面或版式，也切勿在屏幕上命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A miniature world built from **flat-shaded low-poly geometry** (hexagonal tile columns, box buildings with prism roofs, cone and icosahedron trees) floating in a faceted sea or void, watched by an **orthographic camera** at an isometric angle. No perspective and no horizon: distance dissolves into a **screen-space sky gradient**, so the world looks like a model suspended in colour. **Light, not texture, tells time**: every facet changes colour as the sun moves; in the dark only emissive blocks keep their colour.
+一个由 **平面阴影低多边形几何体**（六角形瓦柱、带有棱柱屋顶的盒子建筑、圆锥体和二十面体树）构建的微型世界，漂浮在多面的海洋或虚空中，由 **正交相机** 以等距角度观看。没有视角，也没有地平线：距离溶入**屏幕空间天空梯度**，所以世界看起来就像一个悬浮在色彩中的模型。 **是光，而不是纹理，告诉时间**：每个面随着太阳的移动而改变颜色；在黑暗中，只有发光块保持其颜色。
 
-Not a voxel game (no cubes-of-cubes, no pixel texture), not a tilt-shift photograph of a real place (no perspective, no photo detail), not a smooth-shaded 3D cartoon (no rounded normals, no subsurface).
+不是体素游戏（没有立方体，没有像素纹理），不是真实地点的倾斜移位照片（没有透视，没有照片细节），不是平滑着色的 3D 卡通（没有圆形法线，没有地下）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Geometry** (world unit = one hex tile's circumradius): pointy-top hexagonal columns (`CylinderGeometry(r, r, h, 6)`), axial → world `x = √3(q + r/2)`, `z = 1.5 r`. Terrain height encodes material (sand low, grass, hills, rock highest). A thin separate top cap sits over a darker side colour; **sink the side column's top below the cap** or it z-fights. Leave a small gap between tiles so AO draws the seams.
-- **Props** are primitive assemblies: boxes, prisms, low-segment cylinders and cones, icosahedra at detail 0, pinched boxes. Emissive parts (windows, lamps) get their own material per object so they can light individually.
-- **Materials**: `MeshStandardMaterial({ flatShading: true, roughness ≈ .9 })`, **no textures**. Jitter each tile's lightness a few percent so the ground isn't a spreadsheet.
-- **Water** (if any): a dense non-indexed plane displaced by summed sines in the shader, flat-shaded so each triangle glints on its own (not too low a roughness or facets flash white); a coarse plane below for zoom-outs; a **shallow map** redrawn per frame where land exists, mixing deep → shallow colour with a faint foam rim; a thin transparent ring at each tile's water line for surf.
-- **Sky without a horizon**: in post, linearise the orthographic depth and blend distant pixels into a vertical screen gradient; set haze start/end as fractions of frustum height × cot(elevation) so the horizon band stays in the top third at any zoom. Stars (hash grid, twinkle) only where haze is thick.
-- **Post**: MSAA + depth → **GTAO** (mandatory: it draws the seams between tiles and under roofs) → sky/haze composite → a very light tilt-shift at the frame edges → bloom (stronger at night) → pastel grade → Neutral tone mapping. Supersample 2×.
-- **Light beams** (searchlight, projector, torch): a camera-facing ribbon with a Gaussian profile, bright at the root and fading with distance, plus a wider faint halo copy; light the surface under it in its own shader.
+- **几何学**（世界单位=一个六角形瓷砖的外接圆半径）：尖顶六角柱（`CylinderGeometry(r, r, h, 6)`），轴向→世界`x = √3(q + r/2)`，`z = 1.5 r`。地形高度编码材质（沙子低，草，丘陵，岩石最高）。较暗的一侧有一个薄薄的独立顶盖； **将侧柱顶部沉入帽** 下方，否则会发生 Z 型战斗。在瓷砖之间留出一个小间隙，以便 AO 绘制接缝。
+- **道具** 是原始组件：盒子、棱柱、低分段圆柱体和圆锥体、细节 0 处的二十面体、收缩盒子。发光部件（窗户、灯）每个对象都有自己的材质，因此它们可以单独发光。
+- **材质**：`MeshStandardMaterial({ flatShading: true, roughness ≈ .9 })`、**无纹理**。将每个图块的亮度抖动几个百分点，这样地面就不再是电子表格了。
+- **水**（如果有）：一个密集的非索引平面，在着色器中被正弦之和所取代，平面阴影，因此每个三角形都会自行闪烁（粗糙度不要太低，或者小面闪烁白色）；下面的粗平面用于缩小； **浅地图**在陆地存在的地方每帧重新绘制，将深→浅颜色与微弱的泡沫边缘混合；每块瓷砖的水线处都有一个薄薄的透明环，用于冲浪。
+- **没有地平线的天空**：在后期，线性化正交深度并将远处的像素混合到垂直屏幕渐变中；将雾度 start/end 设置为平截头体高度 × cot(高程) 的分数，以便地平线带在任何缩放下都保持在顶部三分之一。星星（散列网格，闪烁）仅在雾霾较浓的地方出现。
+- **邮政**：MSAA + 深度→ **GTAO**（强制：它绘制瓷砖之间和屋顶下的接缝）→ sky/haze 合成→ 框架边缘非常轻微的倾斜→ 绽放（夜间更强）→ 柔和的等级→ 中性色调映射。超级样本 2×。
+- **光束**（探照灯、投影仪、手电筒）：面向摄影机的带子，具有高斯轮廓，根部明亮，随着距离的增加而褪色，加上更宽的微弱光晕副本；在其自己的着色器中照亮其下方的表面。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Pastel, low contrast, a handful of hues**: one ground family (sand/grass/earth or its equivalent), one neutral rock, and a small set of wall and roof colours repeated across buildings.
-- **Time of day is a keyframed set of colours** (zenith, horizon, deep, shallow, sun colour, intensity, elevation, azimuth), interpolated. Day is airy and cool; dusk warms the horizon; night desaturates everything toward blue-violet.
-- **At night, warm emissives are the only bright things** (windows, lamps, a beam). Keep the sun sideways to the camera in key shots (low sun behind the target turns faceted water into glare); water receives no shadows.
-- No outlines, no black; shadows and AO are the only darks.
+- **柔和，低对比度，少量色调**：一个地面系列（sand/grass/earth或同等产品），一个中性岩石，以及一小组在建筑物中重复的墙壁和屋顶颜色。
+- **一天中的时间是一组插入的关键帧颜色**（天顶、地平线、深、浅、太阳颜色、强度、仰角、方位角）。白天通风凉爽；黄昏温暖了地平线；夜晚将一切的饱和度降低到蓝紫色。
+- **在晚上，温暖的发射物是唯一明亮的东西**（窗户、灯、光束）。在关键镜头中使太阳侧向摄影机（目标后面的低太阳会使多面水变成眩光）；水没有阴影。
+- 没有轮廓，没有黑色；阴影和 AO 是唯一的黑暗。
 
-Examples of world palettes: sand, grass and coral roofs under a pale-blue day; snow tiles, pine greens and red cabins under a lilac sky; terracotta mesas, sage scrub and turquoise pools under an apricot dusk.
+世界调色板的例子：淡蓝色白天下的沙子、草地和珊瑚屋顶；淡紫色天空下的雪瓦、松绿和红色小屋；赤土台地、鼠尾草灌木丛和杏色黄昏下的绿松石池。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Geometric OFL sans faces: a rounded one for subtitles (e.g. Quicksand 600), a geometric caps face with wide tracking for titles (e.g. Josefin Sans).
-- **Subtitles**: no box; warm white with a soft dark-blue drop shadow, centred low; a small flat-shaded tile icon beside them whose top colour follows the time of day. Hold ≥ max(1.8 s, speech + 0.6 s), never overlapping the next line or a title.
-- **Titles behave like tiles**: letters rise one by one from under a water line, overshoot and settle.
-- A text card over the world leaves a gap where the world stays visible.
+- Geometric OFL sans faces：用于字幕的圆形字体（例如 Quicksand 600），用于标题的带有宽跟踪的几何大写字母面（例如 Josefin Sans）。
+- **字幕**：无框；暖白色，带有柔和的深蓝色阴影，居中较低；旁边有一个小的平面阴影图块图标，其顶部颜色跟随一天中的时间。保持 ≥ max(1.8 s，语音 + 0.6 s)，切勿与下一行或标题重叠。
+- **标题的行为类似于瓷砖**：字母从水位线下方一个接一个地升起，超出并沉降。
+- 世界各地的文字卡留下了一个间隙，使世界保持可见。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- On ones (24 fps), smooth. The charm is in the **arrival curves**, not stepping.
-- **Rise from below**: a short cubic ease up, then a damped-sine overshoot; a splash ring and spray the moment it breaks the surface. The event time is when it settles.
-- **Drop and stack** (floors, roofs, rings): a fast ease-in fall, a damped bounce, and volume-preserving squash-and-stretch on landing.
-- **Pop** (trees, lamps, details): scale `1 − e^(−k s)·cos(ω s)`, about 25 % overshoot.
-- **Life**: mills turn, smoke puffs, birds circle, boats bob with the same wave function as the water (evaluated on the CPU).
-- **Schedule growth on the music grid**: at most one piece per smallest slot, so every event keeps its own note; accelerate by density (halves → quarters → eighths), not by tempo.
-- Never moves: the projection (no perspective, no fov change).
+- 在 24 fps 上，流畅。魅力在于**到达曲线**，而不是踩踏。
+- **从下面上升**：短暂的三次缓和，然后是阻尼正弦超调；防溅环并在其突破表面时立即喷射。事件时间是指事件结算的时间。
+- **下降和堆叠**（地板、屋顶、环）：快速缓入下落、阻尼弹跳以及着陆时保持体积的挤压和拉伸。
+- **流行音乐**（树木、灯具、细节）：比例 `1 − e^(−k s)·cos(ω s)`，约 25% 超调。
+- **生活**：磨坊转动、烟雾缭绕、鸟儿盘旋、船只摆动，具有与水相同的波函数（在CPU上评估）。
+- **在音乐网格上安排增长**：每个最小的插槽最多一件作品，因此每个事件都有自己的注释；按密度加速（一半→四分之一→八分之一），而不是速度。
+- 从不移动：投影（无视角，无视场变化）。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-`THREE.OrthographicCamera`. **Frustum height is the zoom** (a few units for a close-up, the whole world at a dozen or more, hundreds for a scale reveal); place the camera ≥ 3 × frustum height away or the bottom of the frame looks under the sea. A vocabulary, not a route. Opening and ending come from the topic.
+`THREE.OrthographicCamera`。 **视锥体的高度是变焦**（几个单位用于特写，整个世界十几个或更多，数百个用于比例显示）；将摄影机 ≥ 3 × 截锥体高度放置在远处或框架底部看起来在海底。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Turntable (azimuth sweep) | the thing seen from every side | building; inspecting; a product assembled |
-| Pure orthographic zoom (frustum change) | scale without perspective | a detail in context; smallness; a world among worlds |
-| Elevation change | low (≈20–25°) widens the sky band; high (≈50°) reads as a map | night and stars; a sweep across the whole world; a plan |
-| Locked 3/4 wide | the world lives on its own | lights coming on; time-lapse; waiting |
-| Tight close-up on one arrival | the bounce and the splash | a key piece; a milestone; a gag |
-| Side angle trailing a mover | travel across the frame, never at the lens | a delivery; a departure; a route |
-| Lateral truck along a row of tiles | a list, a sequence | steps of a process; a timeline |
-| Time-lapse sun sweep, camera still | light is the time machine | a day; a season; history |
+|转台（方位扫描）|从各个方面看到的东西|建筑;检查；组装好的产品|
+|纯正交缩放（视锥体变化）|没有视角的规模|上下文中的细节；渺小；世界中的世界|
+|海拔变化|低 (≈20–25°) 使天空带变宽；高 (≈50°) 读取为地图|夜晚和星星；席卷整个世界；一个计划|
+|锁定 3/4 宽|世界靠自己生存|灯亮了；延时摄影；等待|
+|抵达时近距离特写|弹跳和飞溅|一个关键部分；一个里程碑；一个笑话|
+|尾随移动者的侧角|穿过画面，而不是在镜头上|交货；出发；一条路线|
+|沿着一排瓷砖的横向卡车|列表、序列|流程的步骤；时间线|
+|延时太阳扫描，摄影机静止|光是时间机器|一天；一个季节；历史|
 
-Intercut wide and close on beats: wide shows the shape growing, close sells the bounce. Transitions: hard cuts on the beat, a time-of-day change, a zoom through the sky; no dissolves, no perspective whip-pans.
+宽幅和近节拍之间的交叉：宽幅显示形状的增长，近幅则显示出反弹。过渡：节拍的硬切、一天中时间的变化、天空的变焦；没有溶解，没有透视效果。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music can be event-driven**: growth events carry a note, and the score synthesizes each one at its exact time, so the picture writes the tune. Pitched percussion suits the facets: marimba, kalimba, woodblock, bells, vibraphone, celesta, steel drum; underneath, a soft pad, a gentle ostinato, light shaker or soft kick. Pentatonic or modal material keeps any order of notes consonant. **No piano, no strings.**
-- **A single note can be a motif**: one sound owned by the world (a bell, a chime, a horn) that returns changed.
-- **Foley follows material**, all synthesizable: bubble sweep + splash with droplet ticks for rising tiles (bigger = lower); wooden knock plus a quieter bounce knock for floors; ceramic clack for roofs; hollow plank knock; heavy stone thunk; glass tink; a low whump with electric hum for anything switching on.
-- **Beds**: low-passed brown-noise water with swells, birds as downward-gliding FM chirps, creaking wood, crickets or wind at night.
-- **Silence**: drop to a low drone and a bed; a moment of digital zero on the music bus before a big downbeat. Options: thin the ostinato to one voice instead of stopping it; let the world's own events carry the rhythm for a passage.
-- **Voice**: clear and gentle, few short lines; avoid words that collide with the film's subject (a film about baking: "flour" heard as "flower").
-- **Mix**: voice compressed and well above the music, music ducked under it, −14 LUFS; **grain 0** (flat colour shimmers with grain).
+- **音乐可以由事件驱动**：成长事件带有音符，配乐在准确的时间合成每一个事件，因此图片写下了曲调。音高打击乐器适合的方面：马林巴、卡林巴、木版、铃、电颤琴、钢片琴、钢鼓；下面是软垫、轻柔的固定音、轻摇或轻踢。五声或调式材料使任何音符顺序保持一致。 **无钢琴，无弦乐。**
+- **A单个音符可以是一个主题**：世界拥有的一种声音（钟声，钟声，号角）返回变化。
+- **Foley 遵循材质**，全部可合成：气泡扫除 + 带有水滴滴答声的飞溅，用于上升瓷砖（更大 = 更低）；木质敲击声加上更安静的地板弹跳敲击声；屋顶陶瓷裂纹；空心木板敲击；重石重击；玻璃叮当声；任何东西打开时都会发出低沉的嗡嗡声和电嗡嗡声。
+- **床位**：低通棕色噪声水流，伴有涌浪、鸟儿向下滑翔的调频鸣叫声、吱吱作响的木头声、蟋蟀声或夜间风声。
+- **沉默**：下降到低无人机和床上；在巨大的悲观情绪之前，音乐总线上的数字零时刻。选项：将定音变细为一个声音而不是停止它；让世界本身的事件承载一段段落的节奏。
+- **嗓音**：清晰柔和，短线少；避免与影片的主题相冲突的词语（关于烘焙的影片：“面粉”听成“花”）。
+- **混音**：语音压缩并远高于音乐，音乐躲在其下方，−14 LUFS； **grain 0**（平面颜色闪烁着颗粒）。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Building is composing**: every piece that lands plays a note; a later sweep can replay them in spatial order as a finished melody. *Fits content like:* a skyline whose floors are notes; a team assembling a product; a garden whose flowers form a chord.
-- **Procedural growth**: tiles rise, floors stack, trees pop. *Fits content like:* a startup's first year; a coral reef recovering; a neighbourhood being planned.
-- **Scale by pure zoom**: one object fills the frame, then the world becomes a speck (or the reverse). *Fits content like:* one user among millions; a village on a continent; a data centre inside a network.
-- **Turntable**: a continuous rotation around the thing being made. *Fits content like:* a machine being assembled; a museum object; a house renovation.
-- **Light as clock**: shadows sweep and facets re-colour. *Fits content like:* a day of a shop; a year of a farm; a shift at a hospital.
-- **Emissive blocks in the dark**: lights coming on one by one, a beam sweeping like a clock hand. *Fits content like:* a network going live; a town at nightfall; volunteers joining a cause.
+- **建筑正在组成**：落地的每一块都奏出一个音符；稍后的扫频可以将它们作为完成的旋律按空间顺序重播。 *适合以下内容：* 地板是注释的天际线；组装产品的团队；一个花园，花朵形成和弦。
+- **程序生长**：瓷砖上升，地板堆叠，树木弹出。 *适合以下内容：* 初创公司的第一年；珊瑚礁正在恢复；正在规划的一个街区。
+- **通过纯缩放缩放**：一个对象填充框架，然后世界变成一个斑点（或相反）。 *适合以下内容：*数百万用户中的一个；大陆上的一个村庄；网络内的数据中心。
+- **转盘**：围绕正在制作的东西连续旋转。 *适合以下内容：*正在组装的机器；博物馆藏品；房屋装修。
+- **光如时钟**：阴影扫描和面重新着色。 *适合以下内容：* 商店的一天；农场的一年；在医院轮班。
+- **E黑暗中的发射块**：灯光一一亮起，光束像时钟指针一样扫过。 *适合以下内容：* 网络上线；黄昏时分的小镇；志愿者加入一项事业。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- `perspectiveDepthToViewZ` in shared post code is wrong for an orthographic camera → `orthographicDepthToViewZ`.
-- GTAO renders sprites and transparent objects as solid quads → hide them during the AO pass; set `visible = false` at zero opacity.
-- Side column and top cap sharing one plane → z-fighting → sink the column.
-- A double-sided additive cone reads as two white lines → a camera-facing Gaussian ribbon + halo.
-- Camera too close for its frustum → the frame bottom shows below the sea → distance ≥ 3 × frustum height.
-- Two pieces landing in one grid slot muddy the melody → one piece per slot.
-- `half` is a reserved word in GLSL.
+- 共享邮政编码中的 `perspectiveDepthToViewZ` 对于正字法摄影机 → `orthographicDepthToViewZ` 是错误的。
+- GTAO 将精灵和透明物体渲染为实心四边形 → 在 AO 通道期间隐藏它们；将 `visible = false` 设置为零不透明度。
+- 边柱与顶盖共用一个平面→Z-fighting→下沉立柱。
+- 双面附加锥体读作两条白线 → 面向摄影机的高斯带 + 光环。
+- 摄影机距离视锥台太近 → 框架底部显示在海底 → 距离 ≥ 3 × 视锥台高度。
+- 两首曲子落在一个网格槽中，使旋律变得混乱→每个格子一首。
+- `half` 是 GLSL 中的保留字。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/` (three.js): `world.js` (hex layout, primitive props, growth schedule → events with notes, arrival curves), `sea.js` (faceted wave shader, shallow map, beam-lit water), `post.js` (ortho post: GTAO → sky/haze + stars → tilt-shift → bloom → grade), `story.js` (beat grid, time-of-day keyframes, shots), `main.js` (renderer, lights, per-shot cameras, HUD, event export), `music/score.py` (event-driven score; `music/check.py` compares audio onsets and pitches with the events), `mix.py` (foley, beds, ducking). File map and build steps: DEMO.md.
+在`demo/`（three.js）中：`world.js`（十六进制布局，原始道具，生长时间表→带有注释的事件，到达曲线），`sea.js`（多面波着色器，浅地图，光束照射水），`post.js`（正交柱：GTAO→ sky/haze + 星星 → 移轴 → 光晕 → 等级）、`story.js`（节拍网格、时间关键帧、镜头）、`main.js`（渲染器、灯光、每个镜头摄像机、HUD、事件导出）、`music/score.py` （事件驱动的配乐；`music/check.py` 将音频开始和音调与事件进行比较），`mix.py`（拟音、床、音量闪避）。文件映射和构建步骤：DEMO.md。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the world (island, town, orchard, factory floor, planet), what grows or changes, the palette within the colour logic, the opening, the ending, the camera path and the pacing. All far from our demo:
+您决定世界（岛屿、城镇、果园、工厂车间、星球）、生长或变化的内容、颜色逻辑中的调色板、开头、结尾、摄影机路径和节奏。与我们的示范相去甚远：
 
-- Structures: **erosion** (a finished world loses pieces one by one, each removal a falling note, until only the essential piece remains); **two worlds** side by side trading pieces across a gap until they join; **a year in four seasons** on one fixed world, the palette keyframes carrying the story.
-- Openings: **mid-construction** (a busy half-built world, many pieces already dropping); **from above** (a top-down map that tilts down into isometric); **the full world first**, then a push into one tile where the story lives.
-- Endings: **a close-up on one final piece** landing, no pull-back; **the world packed away** (pieces fly up and stack into a box); **daylight** (dawn floods the world and the music resolves on the first sunlit facet).
+- 结构：**侵蚀**（一个完成的世界会逐个失去碎片，每次移除一个掉落的音符，直到只剩下重要的碎片）； **两个世界**并排交易棋子跨越间隙，直到它们加入； **一年四季**在一个固定的世界里，调色板关键帧承载着故事。
+- 空缺：**施工中**（一个繁忙的半建成世界，许多作品已经掉落）； **从上面**（自上而下的地图，向下倾斜成等距）； **整个世界第一**，然后推入故事所在的一块瓷砖。
+- 结局：**最后一块**着陆的特写，无回拉； **世界打包带走**（碎片飞起来并堆进盒子里）； **日光**（黎明淹没世界，音乐在第一个阳光照射的侧面解析）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

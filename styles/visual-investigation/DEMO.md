@@ -1,61 +1,68 @@
-# Visual Investigation — our demo
+<a id="visual-investigation--our-demo"></a>
+# 目视调查 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Hindenburg: Four Minutes, 32 Seconds* (兴登堡号：四分钟与三十二秒, 60.0 s) · `visual-investigation.mp4` · source in [`demo/`](demo/)
+示范：*兴登堡：四分钟，32秒*（兴登堡号：四分钟与三十二秒，60.0秒）·`visual-investigation.mp4`·来源[`demo/`](demo/)
 
-An unofficial film. Every picture, page, map and sound in it comes from real archives and public institutions (the U.S. National Archives' Universal Newsreels, the U.S. Navy and the Naval History and Heritage Command, the FBI file, the U.S. Department of Commerce accident report, the U.S. Geological Survey); none of them made or endorsed it. All facts and their sources are in [`demo/FACTS.md`](demo/FACTS.md); every inference is marked on screen.
+非官方影片。其中的每张图片、页面、地图和声音都来自真实的档案馆和公共机构（美国国家档案馆的环球新闻片、美国海军和海军历史与遗产司令部、联邦调查局档案、美国商务部事故报告、美国地质调查局）；他们中没有人制定或认可它。所有事实及其来源均在[`demo/FACTS.md`](demo/FACTS.md)中；每个推论都标记在屏幕上。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-On 6 May 1937 the airship *Hindenburg* burned at the Naval Air Station, Lakehurst. The film rebuilds the last hours on one clock from five kinds of evidence. It opens on the decisive frozen frame and rewinds; then the clock narrows through three scales (minutes, seconds, days), each carried by a readout inside the picture:
+1937 年 5 月 6 日，飞艇“兴登堡”在莱克赫斯特海军航空站燃烧。 影片根据五种证据在一个时钟上重建最后几个小时。它从决定性的定格画面开始，然后倒带；然后时钟缩小为三个刻度（分、秒、日），每个刻度都由图片内的读数显示：
 
-- **Cold open (0–2.4 s).** A newsreel frame of the burst slams in with a white flash and a red circle, `18:25:00 EST`; testimony, photo and report slam into a 2×2 grid; a red sync line sweeps; the fire shot **rewinds** under scan lines.
-- **Title package (2.4–6.3 s).** The newsreel's flight over New York, the title, a lower third (New Jersey · Lakehurst).
-- **The wait — minutes (6.3–12.3 s).** Four radiograms land at their times (16:42 delay, 16:52 we will wait, 17:22 land now, 18:08 earliest possible), each tied by a red leader to a pin on the wind chart below; the chart carries the thunderstorm and showers as one-word bands and a red playhead with its clock running from 15:40 to 18:14.
-- **Position (12.3–18.6 s).** A 1947 USGS map pushes in to the air station, then cuts to a plan around the mooring mast: ropes down at 18:21 on a 30° bearing, "≥ 700 ft"; the photographer's inferred view cone. A Navy photo of the ship on its mast (an earlier landing) and the approach footage, mast circled.
-- **Four minutes (18.6–23.8 s).** "4 分钟", 18:21 → 18:25. A ground witness saw the outer cover flutter near cell 5; a 16-cell side view draws itself and ripples there.
-- **Origin — seconds (23.8–31.8 s).** Five sources in one board: the FBI testimony line highlighted, the frozen frame with a ×2 loupe, the Navy photo (stern circled), the newsreel's own 1937 commentary ("a burst of flame near the big tail fins") as a waveform, the report's sentence; red links converge on cells 4–5; five ✓ badges.
-- **32 seconds (31.8–38.6 s).** A three-column sync grid (report / photos / newsreel) under one big stopwatch. The report column is there from T+0; the Navy photo cuts in at ≈T+2; the newsreel, aligned on the impact, only starts ≈7 s after the first flame, so its column lights up then; NH 57973 replaces the photo at ≈T+26; freeze on impact, "32 秒".
-- **The inquiry — days (38.6–45.6 s).** An FBI teletype (8 May) announces the Commerce inquiry; two columns: *established* (origin, 32 s, leaking hydrogen ignited) and *unresolved* (how it leaked, the spark — "most probable" brush discharge, sabotage — no evidence).
-- **People (45.6–52.4 s).** The 1937 newsreel says "almost half its 99 passengers and crew"; a fact-check card corrects it from the report (97 aboard, 35 died, plus one ground crew); 97 + 1 dots, 36 turn to red rings.
-- **Evidence map (52.4–55.6 s).** Plan, broken-axis mini timeline, side view and five thumbnails, every link converging on cells 4–5. The poster.
-- **End card (55.6–60.0 s).**
+- **冷开（0–2.4秒）。**爆裂的新闻片帧猛然出现，带有白色闪光和红色圆圈，`18:25:00 EST`；证词、照片和报告猛击成 2×2 网格；一条红色同步线扫过；火镜头**在扫描线下倒回**。
+- **标题包（2.4–6.3秒）。** 该新闻片飞越纽约，标题为下三分之一（新泽西·莱克赫斯特）。
+- **等待 - 分钟（6.3–12.3 秒）。** 四张射线图按其时间着陆（16:42 延迟，16:52 我们将等待，17:22 现在着陆，最早可能 18:08），每个射线图都用红色引线连接到下面风图上的图钉上；该图表以单字带形式显示雷暴和阵雨，并有一个红色播放头，其时钟从 15:40 运行到 18:14。
+- **位置（12.3–18.6秒）。** 一张1947年的USGS地图推入航空站，然后切入系泊桅杆周围的平面图：绳索在18:21在30°方位上放下，“≥ 700英尺”；摄影师推断的视锥。一张海军照片，显示该船在桅杆上（之前的一次着陆）和进近镜头，桅杆被圈起来。
+- **四分钟（18.6–23.8秒）。**“4分钟”，18:21 → 18:25。一名地面目击者看到 5 号牢房附近的外壳在颤动； 16 个单元的侧视图自行绘制并在那里产生涟漪。
+- **Origin — 秒（23.8–31.8 s）。** 一块板上有五个来源：突出显示的 FBI 证词线、带有 ×2 放大镜的冻结帧、海军照片（船尾圈出）、新闻片自己的 1937 年评论（“大尾翼附近的火焰爆发”）波形、报告的句子；红色链接汇聚在单元格 4-5 上；五个 ✓ 徽章。
+- **32 秒（31.8–38.6 秒）。** 一个大秒表下的三列同步网格（报告/照片/新闻片）。报告栏从 T+0 开始存在；海军照片在 ≈T+2 处切入；新闻片与撞击对齐，仅在第一个火焰出现后约 7 秒开始，因此其柱子随即亮起； NH 57973 替换了 ≈T+26 处的照片；撞击时冻结，“32 秒”。
+- **调查 — 天（38.6–45.6 秒）。** FBI 电传打字机（5 月 8 日）宣布商务部调查；两栏：*已确定*（起源，32 秒，泄漏的氢气被点燃）和*未解决*（如何泄漏，火花 - “最有可能”刷子放电，破坏 - 没有证据）。
+- **People (45.6–52.4 s).** 1937 年的新闻片称“99 名乘客和机组人员中几乎有一半”；事实核查卡纠正了报告中的错误（机上 97 人，35 人死亡，加上一名地勤人员）； 97+1点，36转红环。
+- **E 证据图（52.4–55.6 秒）。** 平面图、断轴迷你时间轴、侧视图和五个缩略图，每个链接都集中在单元格 4–5 上。海报。
+- **端卡（55.6–60.0 s）.**
 
-Why it fits the style: every section is a moment where independent sources meet; one event clock runs through the film and changes scale at the cuts; the only discovery the archive can't make by itself (the newsreel started ≈7 s late) shows because the sources are laid on one clock; what the inquiry could not settle is shown as plainly as what it did.
+为什么它适合这种风格：每个部分都是独立来源相遇的时刻；一个事件时钟贯穿影片，并在切割时改变刻度；档案馆无法自行发现的唯一发现（新闻片晚了 7 秒才开始），因为来源都在同一个时钟上；调查未能解决的问题和调查结果一样清楚地表明了这一点。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| # | Time (s) | Layout | Sources | Native move |
+|#|时间（秒）|布局|来源|风格特有表现手法|
 |---|---|---|---|---|
-| 1 | 0.0–2.4 | big freeze → 2×2 grid → rewind | newsreel 01:20, FBI p.39, Pasquarella, report | freeze & circle, sync line, rewind cold open |
-| 2 | 2.4–6.3 | footage left, title + lower third right | newsreel 00:38 (New York) | title package |
-| 3 | 6.3–12.3 | four radiogram cards over a wind chart with playhead | report (radiograms, weather) | telegrams on the clock, data chart with a playhead |
-| 4 | 12.3–14.8 | map push-in | USGS 1947 | map → plan (1) |
-| 5 | 14.8–18.6 | plan left; mast photo and approach footage right | NARA 518856, newsreel 01:03 | map → plan (2), inferred view cone |
-| 6 | 18.6–23.8 | statement + quote + wide side view | report (Ward) | big readout, cover flutter |
-| 7 | 23.8–31.8 | five-source board + side view | FBI p.39, newsreel 01:20, Pasquarella, newsreel sound, report | freeze/magnify, evidence → model links, ✓ badges |
-| 8 | 31.8–38.6 | three-column sync grid + stopwatch | report, Pasquarella, NH 57973, newsreel 01:18–01:43 | hard sync point, columns light up as sources begin |
-| 9 | 38.6–45.6 | teletype strip + known / unresolved | FBI p.13, report | two columns |
-| 10 | 45.6–52.4 | claim card + fact check + dots | newsreel sound, report | then vs. record, dots for people |
-| 11 | 52.4–55.6 | evidence map | all | evidence map |
+|1|0.0–2.4|大冻结 → 2×2 网格 → 倒带|新闻片 01:20，FBI p.39，Pasquarella，报告|冻结和循环、同步线、快退冷开|
+|2|2.4–6.3|镜头左侧，标题+右下第三个|新闻片 00:38（纽约）|标题包|
+|3|6.3–12.3|带有播放头的风图上方有四张射线图卡|报告（射线照片、天气）|时钟上的电报，带有播放头的数据图表|
+|4|12.3–14.8|地图推入|美国地质调查局 1947 年|地图 → 计划 (1)|
+|5|14.8–18.6|计划向左；桅杆照片和进近镜头右侧|NARA 518856，新闻片 01:03|地图 → 平面图 (2)，推断视锥|
+|6|18.6–23.8|陈述+引用+宽侧视图|报告（病房）|大读数，盖子抖动|
+|7|23.8–31.8|五源板+侧视图|FBI p.39，新闻片 01:20，Pasquarella，新闻片声音，报告|freeze/magnify，证据 → 模型链接，✓ 徽章|
+|8|31.8–38.6|三列同步网格+秒表|报告，Pasquarella，NH 57973，新闻片 01:18–01:43|硬同步点，源开始时列会亮起|
+|9|38.6–45.6|电传打字条 + 已知/未解决|FBI 第 13 页，报告|两列|
+|10|45.6–52.4|索赔卡+事实核查+点|新闻片声音、报告|然后与记录，人的点|
+|11|52.4–55.6|证据图|全部|证据图|
 | 12 | 55.6–60.0 | end card | — | — |
 
-Cuts sit on a 0.5 s grid except where they follow the voice. Layouts fill y 60–900; subtitles sit below at y ≈ 984 / 1022; the evidence map, which has no subtitle, is centred.
+剪辑位于 0.5 秒的网格上，除非它们跟随声音。布局填充 y 60–900；字幕位于 y ≈ 984 / 1022 下方；证据图居中，没有副标题。
 
-## Sound & score
+<a id="sound--score"></a>
+## 声音&配乐
 
-Score from VSCO 2 CE / VCSL samples (CC0), D minor. A timpani and gran-cassa hit on the opening freeze; a low D drone from the title; a pizzicato ostinato in eighths (Dm → Dm7 → B♭ → Gm → A) through the wait and the position; a pendulum tick every 0.5 s; in the four minutes the ostinato stops, the tick gets louder and a tremolo minor second (E5/F5) builds over a heartbeat-like bass pulse, cut to silence 0.2 s before the origin hit. During the newsreel commentary only the drone stays. Five rising glockenspiel notes for the ✓ badges. The 32-second run has one tick per event second (32 ticks in 4.3 s, the first 7 faster) and a rising string swell; one deep thump on impact, then near silence. The inquiry is four slow string-and-harp chords (Dm – B♭ – Gm – A) under teletype chatter. People: one cello note. The evidence map resolves on D minor add9 with a vibraphone arpeggio; the end card ends on harp. Foley is procedural: paper, shutter, Morse, keys, rewind, pencil, thump. Voice: Kokoro `am_michael`, eight lines; newsreel commentary twice (3.5 s and 4.3 s). −14 LUFS, true peak about −2.4 dB (4× oversampled peak limiter in `mix.py`).
+配乐来自 VSCO 2 CE / VCSL 样本 (CC0)，D 小调。定音鼓和大卡萨敲响了开场定格；标题中的低 D 无人机；通过等待和位置拨奏八分之一拨奏固定音 (Dm → Dm7 → B♭ → Gm → A)；每 0.5 秒摆动一次；在定音停止的四分钟内，滴答声变得更大，颤音小二度（E5/F5）在类似心跳的低音脉冲上建立，在原点敲击前 0.2 秒停止。在新闻片解说期间，只有无人机留下来。 ✓ 徽章的五个上升的钟琴音符。 32 秒的运行每个事件秒有一个滴答声（4.3 秒内有 32 个滴答声，前 7 个更快）和上升的弦膨胀；撞击时发出一声重重的重击，然后几乎一片寂静。询问是电传打字机上的四个缓慢的弦乐和竖琴和弦（Dm – B♭ – Gm – A）。人：一张大提琴音符。证据图以 D 小调 add9 解析，带有电颤琴琶音； 片尾卡以竖琴结束。 拟音是程序：纸张、快门、莫尔斯电码、按键、倒带、铅笔、重击。语音：Kokoro `am_michael`，八线；新闻片解说两次（3.5 秒和 4.3 秒）。 −14 LUFS，真实峰值约为-2.4 dB（`mix.py` 中的 4× 过采样峰值限制器）。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-Exactly the style palette: `#0B0C0E` ground, `#141619` panels, greyscale sources, one red `#FF4A2E`, paper cards `#E4E0D4` for the typeset radiograms. Drawn props: the plan (mast, 700 ft ring, 30° bearing, view cone, map inset, 500 ft scale bar), the 16-cell side view (cells numbered from the stern), the wind chart, the dot matrix, the mini timeline with a broken axis.
+正是风格调色板：`#0B0C0E` 地面、`#141619` 面板、灰度源、一张红色 `#FF4A2E`、用于排版射线照片的纸卡 `#E4E0D4`。绘制道具：平面图（桅杆、700 英尺环、30° 方位角、视锥体、地图插图、500 英尺比例尺）、16 单元侧视图（单元从船尾编号）、风图、点阵、带断轴的迷你时间线。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Left-aligned on the ground, held 4.4 s: "兴登堡号：四分钟与三十二秒", "THE HINDENBURG: FOUR MINUTES, 32 SECONDS", a thin rule, "视觉调查 · Visual Investigation", "LemoLab × Claude Opus 5.5", then the source lines (newsreel and sound; photos; documents; map; "unofficial film; photo times, camera positions and the film alignment are our inferences"). Four evidence thumbnails on the right. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+地面左对齐，保持 4.4 秒：“兴登堡号：四分钟与三十二秒”、“兴登堡：四分 32 秒”、一条细尺、“景观调查·视觉调查”、“LemoLab × Claude Opus 5.5”，然后是源代码行（新闻片和声音；照片；文件；地图；“非官方” 影片；拍照时间、摄影机位置和影片对齐是我们的推论”）。右侧有四个证据缩略图。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -70,6 +77,6 @@ demo/
   FACTS.md · SOURCES.md · SOURCES.jsonl · CREDITS · stills/styleframe.jpg
 ```
 
-`sh demo/build.sh` (library set up with `setup.sh deps voice music`, plus ffmpeg and poppler's `pdftoppm`): downloads the six sources into `raw/` (~92 MB), prepares frames, fetches fonts, makes and checks the voice, mixes, runs the reading check, renders 1,800 frames (5 workers), writes and checks the subtitles, masters to −14 LUFS without grain (grain is already on the sources), makes the poster (55.3 s) and the styleframe (30.9 s), and runs the speech check on the finished film.
+`sh demo/build.sh`（使用 `setup.sh deps voice music` 设置的库，加上 ffmpeg 和 poppler 的 `pdftoppm`）：将六个源下载到 `raw/`（~92 MB），准备帧，获取字体，制作和检查语音，混合，运行阅读检查，渲染 1,800 帧（5工人），编写并检查字幕，在没有颗粒的情况下母版为−14 LUFS（颗粒已经在源上），制作海报（55.3 秒）和风格定帧（30.9 秒），并对完成的影片进行语音检查。
 
-Pitfalls tied to this demo: only one licensable moving-image source exists, so the "multi-camera" sync is film + photos + documents + sound; Hearst, Pathé and agency material was left out. The first freeze (src 01:24) showed only smoke; the frame at 01:20 has the burst over the hull edge. A first cut had a timeline band under every shot (four tracks, pins, a chapter readout), a tag with type · source · detail on every panel, English twins under most labels and a hatched "NO FOOTAGE" panel for the newsreel's first 7 s. Viewers found the band odd (it also went empty after 45 s), the small text noisy and the empty panel looked like an error: the band was removed and every layout re-spread to the full height, subtitles moved to the bottom, labels cut to one short tag per source, and the late newsreel now just lights up when it starts. The plan's mast was not on the 1947 map, so the plan is kept separate and the map is only a locator. A whole-film Whisper pass drifted its timestamps after the newsreel sound and lost "people died"; the final speech check now cuts each line out of the film. The newsreel commentary is old and noisy; it is subtitled in both languages and never carries a fact on its own.
+与此示范相关的陷阱：仅存在一个可授权的运动图像源，因此“多摄影机”同步是影片 + 照片 + 文档 + 声音；赫斯特、百代和代理机构的材料被排除在外。第一次冻结（src 01:24）仅显示烟雾； 01:20 的帧在船体边缘爆发。第一次剪辑在每个镜头下都有一个时间线带（四个轨道、引脚、一个章节读出），每个面板上都有一个带有类型·来源·详细信息的标签，大多数标签下有英语双胞胎，以及新闻片前 7 秒的阴影“无镜头”面板。观众发现带子很奇怪（45 秒后它也变空了），小文本嘈杂，空面板看起来像一个错误：带子被移除，每个布局重新展开到完整高度，字幕移到底部，标签被切成每个源的一个短标签，而后期新闻片现在在开始时只亮起。该平面图的桅杆不在 1947 年的地图上，因此该平面图是单独保存的，地图只是一个定位器。完整的影片 Whisper 通行证在新闻片声音后漂移了时间戳，并丢失了“人员死亡”；现在，最终语音检查会从影片中删除每一行。新闻片的解说陈旧而嘈杂；它有两种语言的字幕，并且本身不包含任何事实。

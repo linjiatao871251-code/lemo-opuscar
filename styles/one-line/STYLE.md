@@ -1,112 +1,124 @@
-# One-line Drawing — Style Prompt
+<a id="one-line-drawing--style-prompt"></a>
+# 一笔画：风格提示词
 
-> A single ink line that never leaves the paper. Everything on screen is that one line being drawn; scenes don't cut, they morph.
-> References (grammar only): Osvaldo Cavandoli's *La Linea* (1971) — one line is both the world and the character, and transformations of the line are the jokes and the transitions; Gjon Mili's 1949 photographs of Picasso drawing with light — the confidence and speed of a single gesture; Norman McLaren's *Begone Dull Care* and *Boogie-Doodle* — lines drawn *to* the music. Do not copy La Linea's character, its gibberish voice, or any specific continuous-line illustration.
+> 一条永远不会离开纸张的墨线。屏幕上的所有内容都是一条正在绘制的线；场景不会剪切，它们会变形。
+> 参考文献（仅语法）：Osvaldo Cavandoli 的 *La L​​inea* (1971) — 一行既是世界又是人物，而这行的变换就是笑话和过渡； Gjon Mili 1949 年拍摄的毕加索用光作画的照片——单个手势的自信和速度； Norman McLaren 的“Begone Dull Care”和“Boogie-Doodle”——根据音乐绘制的线条。请勿复制 La Linea 的角色、其胡言乱语的声音或任何特定的连续线插图。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **One continuous line** on warm white paper. The pen never lifts: in code the whole film can literally be one point array, from the first touch of the nib to the last frame.
-- **Everything is a line**: characters, places, objects, even time. No fills, no shading, no second line weight, no background art.
-- **We watch the line being drawn**: the camera follows the nib with a little lag and anticipation.
-- Besides ink there is only the paper and a soft **shadow of the pen** (the real world above the paper). One accent colour at most, used once.
+- **暖白纸上的一条连续线**。笔永远不会抬起：在代码中，从笔尖的第一次触摸到最后一帧，整个影片实际上可以是一个点阵列。
+- **一切都是一条线**：人物、地点、物体，甚至时间。没有填充，没有阴影，没有第二线粗细，没有背景艺术。
+- **我们观察绘制的线条**：摄影机跟随笔尖，有一点滞后和预期。
+- 除了墨水之外，只有纸和笔的柔软**阴影**（纸上方的现实世界）。最多一种强调色，使用一次。
 
-Not a whiteboard explainer (no hand, no marker, no erasing, no text-heavy boards), not ink wash (no tones, no brush bloom as a look), not a line-art animation with cuts and many strokes.
+不是白板解释器（没有手，没有标记，没有擦除，没有文本重的板），不是墨水水彩晕染（没有色调，没有画笔绽放作为外观），不是带有剪切和许多笔画的线条艺术动画。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper**: warm white (around `#F4EFE4`), procedural mottling (soft-light, large tile), long fibres that fade out when zoomed out (or they shimmer), a sparse paper-tooth speckle over the ink at close zoom, light vignette. All textures anchored to the paper; they move with the camera.
-- **Ink** is a filled polygon around the path (not `ctx.stroke`), mixed with paper colour to an opaque tone per point.
-  - Width = base width of the current "voice" of the line × pen pressure × fine noise (±8 %); pressure from speed: `0.66 + 0.8·exp(−v/300)` (fast = thin, slow = fat).
-  - The line's character can change along the path (base width, alpha, tremble, dryness); blend over a short stretch at boundaries.
-  - Ink bleed: the same polygon slightly wider, blurred on an offscreen layer, composited at ~20 %.
-  - Pooling: extra round dots where speed drops low.
-  - Tremble (perpendicular noise) and dry-brush gaps (long-scale noise + thin bristle strands) for age, fear or fatigue.
-  - A stop leaves a teardrop-shaped blot: tip at the nib, belly sagging downward as it spreads, a dark tide line at the rim.
-  - **A screen-space minimum width**: widths scale with zoom like a line under a macro lens, but clamp the zoom used for width during pull-backs so a wide view keeps its weight.
-- **The pen is never drawn**: a soft blurred wedge of shadow from the nib and a tiny contact dot. Hands, if any, appear only as shadows, each hand composited as one flat layer.
-- **Path design**: chapters written as SVG path strings, sampled by arc length, joined by tangent-continuous connectors; time assigned per point weighted by curvature.
+- **纸张**：暖白色（`#F4EFE4`附近），程序斑点（柔光，大瓷砖），缩小时淡出的长纤维（或它们闪烁），近距离变焦时墨水上的稀疏纸齿斑点，浅晕影。所有纹理都固定在纸张上；他们与摄影机一起移动。
+- **墨色** 是路径周围的填充多边形（不是 `ctx.stroke`），与纸张颜色混合以形成每个点的不透明色调。
+  - 宽度=线条当前“声音”的底宽×笔压×细微噪音（±8%）；来自速度的压力：`0.66 + 0.8·exp(−v/300)`（快=瘦，慢=胖）。
+  - 线条的特征可以沿着路径改变（基础宽度、alpha、颤抖、干燥度）；在边界处进行短暂的混合。
+  - 墨水渗色：相同的多边形稍宽，在屏幕外图层上模糊，以约 20% 合成。
+  - 池化：速度下降的额外圆点。
+  - 因年龄、恐惧或疲劳而颤抖（垂直噪音）和干刷间隙（长范围噪音+细刷毛束）。
+  - 止部会留下泪珠状的印迹：笔尖在笔尖，笔腹在展开时向下下垂，边缘有一条深色的潮线。
+  - **A 屏幕空间最小宽度**：宽度随着变焦而缩放，就像微距镜头下的一条线一样，但在回拉期间夹紧用于宽度的变焦，以便宽视角保持其重量。
+- **这支笔从未被绘制过**：笔尖和一个微小的接触点产生的柔和模糊的楔形阴影。手（如果有）仅显示为阴影，每只手合成为一个平面层。
+- **路径设计**：以SVG路径字符串形式编写的章节，按弧长采样，通过切线连续连接器连接；按曲率加权的每个点分配的时间。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Ink on paper.** A warm black (around `#1D1A17`) on warm white; nothing else fills the frame.
-- **One accent at most, used once**, on a stretch of the line that means something; it returns to ink afterwards and stays visible in the final picture if the picture is revealed.
-- Examples of an accent's job: red for love or danger; blue for water or cold; gold for money or a prize. Never a second accent.
+- **纸本墨水。** 暖白色上的暖黑色（大约`#1D1A17`）；框架中没有其他东西。
+- **最多一个重音，使用一次**，在一段表示某事的行上；之后它会恢复为墨水，并且如果图片被显示，它在最终图片中仍然可见。
+- 口音作用的例子：红色代表爱或危险；蓝色代表水或冷；金钱或奖品的黄金。从来没有第二个口音。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Text is written, like the line**: a handwriting face (e.g. Caveat) for subtitles, ink at ~84 %, no box, centred near the bottom, **written on** left to right (~0.2 s + ~17 ms per character) behind a soft paper-coloured halo so passing lines never cross the letters; fade out ~0.45 s. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Titles in a monoline connected script (e.g. Sacramento: itself a one-line drawing), written on in empty paper away from the drawing, gone before the camera moves into them.
+- **文本被写入，如行**：用于字幕的手写面（例如警告），墨迹约为 84％，无框，居中于底部附近，**写在** 上从左到右（每个字符约 0.2 秒 + 每个字符约 17 毫秒）后面的软纸色光晕，因此传递的线条不会与字母交叉；淡出 ~0.45 秒。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 单行连接脚本中的标题（例如萨克拉门托：本身就是一幅单行图），写在远离绘图的空纸上，在摄影机运动之前写入。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Everything on ones** (24 fps): the appeal is the continuous act of drawing; stepping breaks it.
-- **Timing = chapter windows + curvature**: within a window, time per point is weighted by `1 + K·turn` (sharp turns get more time, smoothed so speed never jumps). Pin musical beats with marks: by arc-length fraction or by position ("the second time the pen passes here"). A stop is two marks at the same place.
-- Corners (speed minima at high turn) can be exported to the soundtrack as candidate note onsets.
-- Speeds: ~300–700 units/s for travelling lines, ~50–150 for small details. The most important stroke is usually the slowest.
-- **Retracing** over an existing line is legal and invisible (it only thickens slightly).
+- **一切都在一个**（24 fps）：吸引力是连续的绘画行为；踩踏会打破它。
+- **Timing = 章节窗口 + 曲率**：在窗口内，每个点的时间由 `1 + K·turn` 加权（急转弯获得更多时间，经过平滑处理，因此速度不会跳跃）。用标记固定音乐节拍：按弧长分数或按位置（“笔第二次经过此处”）。停靠点是同一地点的两个标记。
+- 角落（高转弯时的速度最小值）可以作为候选音符开始导出到音轨。
+- 速度：~300–700 units/s（用于行驶线路），~50–150 用于小细节。最重要的行程通常是最慢的。
+- **回溯** 在现有线上是合法且不可见的（它只是稍微变粗）。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. The camera is one continuous move: composition centre, zoom, a few degrees of roll, and a follow weight (0 = composed, 1 = locked to the nib); the follow point averages the nib over roughly −0.55…+0.4 s (lag and anticipation), with a soft clamp keeping the nib inside the central ~70 % of the frame. Opening and ending come from the topic.
+是词汇，而不是路线。 摄影机是一个连续移动：构图中心、缩放、几度滚动和跟随重量（0 = 构图，1 = 锁定到笔尖）；跟随点在大约 -0.55…+0.4 秒内对笔尖进行平均（滞后和预期），用软夹将笔尖保持在框架中央约 70% 的范围内。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Follow the nib (high follow weight) | travel; momentum; a thread of time | a journey; a process; a timeline |
-| Composed frame, low follow weight | a scene that must read as a whole | a vignette; a joke; a diagram |
-| Macro on the nib | intimacy; the act of making | a first touch; a signature; a detail |
-| Hold with a slow push-in | weight; a stop | a loss; a doubt; a decision |
-| Mirrored framing | rhyme across time | parent and child; before/after |
-| Continuous pull-back | everything was one picture | a reveal; a map; a word |
-| Lateral scroll with the line running ahead | a horizon; a graph; a race | a stock chart; a heartbeat; a road |
-| Roll with the line | vertigo; play | a loop-the-loop; a fall; a dance |
+|跟随笔尖（高跟随重量）|旅行;势头;时间的一根线|一次旅行；一个过程；时间线|
+|组合式车架，低跟随重量|必须作为一个整体来阅读的场景|一个小插图；一个笑话；一个图表|
+|笔尖上的宏|亲密关系；制造的行为|第一次接触；签名；一个细节|
+|缓慢推入保持住|重量;一个停留|损失；一个疑问；一个决定|
+|镜面取景|跨越时间的韵律|父母和孩子； before/after|
+|持续回调|一切都是一张照片|揭示；地图；一句话|
+|横向滚动，线路在前面运行|地平线；图表；一场比赛|股票图表；心跳；一条路|
+|随线滚动|眩晕；玩|循环；跌倒；一场舞蹈|
 
-No cuts. Transitions are morphs: the last stroke of one image is the first stroke of the next.
+没有削减。过渡是变形：一个图像的最后一个笔画是下一个图像的第一个笔画。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music: one solo instrument, one unbroken melodic line**, the sound equivalent of the drawing: a bowed or plucked string (cello, violin, viola, harp), a solo woodwind (clarinet, flute, bassoon), a hummed voice, a single guitar. A second colour only as a rare accent (a chime, a pizzicato stretch). No pads.
-- **Write the score to the drawing**: key notes on marks and corners; fast line = short notes; a stopped line = one long note fading into silence; the highest note on the most important touch.
-- **The pen on paper is the most important sound**, synthesised from the pen speed: band-passed noise (brighter when fast, duller when slow), random paper-fibre ticks with density ∝ speed, amplitude ∝ √speed, panned with the nib's screen position; broken up by dry gaps; lighter and jerkier for a young hand. Plus: a wooden tap on the first touch, a faint wet swell for a blot, a tiny rub for a handoff, a page lift.
-- **Silence is literal**: zero the music bus including reverb tails; drop room tone.
-- **Mix**: music ducks ~5 dB and the pen ~4 dB under voice; −14 LUFS; grain 0 (the paper is in the render).
-- **Voice**: warm, few short lines that leave space for the line; place key words on picture beats with whisper word timestamps.
+- **音乐：一件独奏乐器，一根完整的旋律线**，相当于绘画的声音：一根弓弦或弹拨弦（大提琴，小提琴，中提琴，竖琴），独奏木管乐器（单簧管，长笛，巴松管），哼哼声，一把吉他。第二种颜色仅作为罕见的口音（钟声、拨奏伸展）。没有垫。
+- **将配乐写入图纸**：标记和角点的关键注释；快线=简短的笔记；停止的一行=一个长音符逐渐消失；最重要的接触的最高音符。
+- **笔在纸上的声音是最重要的声音**，从笔速合成：带通噪声（快时更亮，慢时更暗），密度∝速度，幅度∝√速度的随机纸纤维滴答声，随笔尖屏幕位置平移；被干燥的缝隙打破；对于年轻的手来说更轻、更生涩。另外：第一次接触时会出现木头敲击声，印迹时会出现微弱的湿膨胀，交接时会轻微摩擦，翻页会抬起。
+- **Silence是字面意思**：将包括混响尾部的音乐总线清零；降低房间音调。
+- **混音**：声音下音乐鸭子~5 dB，笔~4 dB； −14 LUFS；颗粒 0（纸张在渲染中）。
+- **嗓音**：温暖，几行短线，为线路留出空间；将关键词放在图片节拍上，并带有耳语词时间戳。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The pen never lifts.** Anything that is one continuous thing. *Fits content like:* a river from source to sea; a relay race; a production line.
-- **The line is time.** The stroke's character changes with age, mood or strain. *Fits content like:* a building aging; a runner tiring; a machine wearing out.
-- **Transformation.** One image morphs into the next. *Fits content like:* a seed becoming a tree becoming a table; a sketch becoming a product; a word becoming its object.
-- **Stopping is an event.** The nib stops, ink pools, music cuts to silence (1.5–3 s). *Fits content like:* a power cut; a pause for a minute's silence; a hesitation before a signature.
-- **Reverse-designed scale reveal.** Every vignette is secretly part of one big picture seen at the end. *Fits content like:* a city's landmarks forming its skyline; a company's milestones forming its logo; a recipe's steps forming the dish.
-- **Handoff.** The pen passes to another hand (as a shadow) and a new line begins. *Fits content like:* a teacher and a student; a founder and a successor; one generation to the next.
-- **Line as graph.** The line becomes a chart while staying a drawing. *Fits content like:* a heartbeat; a temperature record; a football match's momentum.
+- **笔永远不会抬起。** 任何连续的事物。 *适合以下内容：*从源头到大海的河流；接力赛；一条生产线。
+- **线条是时间。** 笔画的特征会随着年龄、心情或紧张而变化。 *适合以下内容：*建筑物老化；跑步者很累；一台机器磨损了。
+- **转型。** 一张图像变形为下一张图像。 *适合以下内容：*一颗种子变成一棵树，变成一张桌子；草图成为产品；一个词成为它的对象。
+- **停止是一个事件。** 笔尖停止、墨水池、音乐停止至静音（1.5–3 秒）。 *适合以下内容：*停电；暂停一分钟的默哀；签名前的犹豫。
+- **反向设计的比例揭示。** 每个小插图都是最后看到的一张大图片的秘密部分。 *适合以下内容：*形成城市天际线的地标；公司的里程碑形成了其标志；菜谱形成菜肴的步骤。
+- **不可触摸。** 笔传递到另一只手（作为阴影）并开始新的一行。 *适合以下内容：* 老师和学生；创始人和继承人；一代人到下一代人。
+- **线为图表。** 线在保留绘图的同时变成图表。 *适合以下内容：*心跳；温度记录；足球比赛的势头。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Stray connectors ruin a reveal**: every extra line reads as a wrinkle, beard or mask. Fix the topology (where each chapter enters and leaves), not the drawing. Plan it like an Euler path: a closed motif is a circuit (you leave where you came in); retrace or reorder chapters.
-- Each region of a final picture is drawn exactly once; connectors must fall on natural lines of that picture.
-- **Test the reveal early and often**: render the whole path at once at final scale after every change.
-- Lines drawn too close braid together once width is applied; keep a gap.
-- A round blot reads as a mole → a sagging teardrop.
-- Thin lines at wide zoom → clamp the width zoom.
-- Translucent hand shadows double-darken where they overlap → one layer per hand.
-- Titles collide with the drawing as the camera moves → check every frame of the title's window.
-- Whisper mishears short lines → rephrase rather than fight it.
+- **杂散连接器破坏了表露**：每一条额外的线条都被解读为皱纹、胡须或面具。修复拓扑（每个章节进入和离开的地方），而不是绘图。像欧拉路径一样规划它：一个封闭的主题是一个电路（你离开你进来的地方）；回溯或重新排序章节。
+- 最终图片的每个区域都只绘制一次；连接器必须落在该图片的自然线上。
+- **尽早并经常测试显示效果**：每次更改后立即以最终比例渲染整个路径。
+- 一旦应用了宽度，画得太近的线就会编织在一起；保持间隙。
+- 圆形印迹读起来就像一颗痣 → 一颗下垂的泪珠。
+- 广角变焦时的细线 → 限制宽度变焦。
+- 半透明的手部阴影在重叠处加倍变暗 → 每只手一层。
+- 标题与绘图发生碰撞，如摄影机运动 → 检查标题窗口的每一帧。
+- Whisper 听错了短台词 → 改写而不是与之抗争。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `geom.js` (samples SVG paths by arc length in the browser, adds tangent-continuous connectors, assigns time by curvature, marks and holds), `ink.js` (the line renderer: pressure, bleed, pooling, tremble, dry brush, accent stretch, blot, minimum screen width), `paper.js` (paper, fibres, tooth, vignette), `cam.js` (composition keys + nib follow + soft clamp), `hands.js` (pen and hand shadows), `subs.js` (written-on subtitles and titles). The drawing itself lives in one file of SVG path strings and a chapter table (`face.js`); replace it with your own path. Debug views (`?all=1`, `?cams=`) render the whole path or many camera views in one session: see [DEMO.md](DEMO.md) "Build notes".
+在`demo/`中：`geom.js`（在浏览器中按弧长对SVG路径进行采样，添加切线连续连接器，按曲率分配时间，标记和保持），`ink.js`（线条渲染器：压力，出血，池化，颤抖，干刷，重音拉伸，印迹，最小屏幕宽度），`paper.js`（纸张，纤维、牙齿、晕影）、`cam.js`（构图键+笔尖跟随+软夹）、`hands.js`（笔和手阴影）、`subs.js`（书写字幕和标题）。绘图本身位于一个 SVG 路径字符串文件和一个章节表 (`face.js`) 中；将其替换为您自己的路径。调试视图（`?all=1`、`?cams=`）在一个会话中渲染整个路径或多个摄影机视图：请参阅 [DEMO.md](DEMO.md)“构建说明”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide what the line draws, whether it reveals one final picture, where it stops, the accent (or none), the opening and the ending. All far from our demo:
+你可以决定这条线画的是什么，它是否揭示了一幅最终画面，它在哪里停止，重音（或没有），开头和结尾。与我们的示范相去甚远：
 
-- Structures: **a line that is a graph** (a data series drawn as a horizon; each peak and trough becomes a scene); **two lines** that start in opposite corners and are drawn in alternation until they meet; **a loop** (the line draws a scene and then retraces its way back to the start, which now means something else).
-- Openings: **mid-line at speed**, the pen already running across the paper; **a finished drawing** whose line then unravels into the story; **a word written in script** whose last letter becomes the first scene.
-- Endings: **the line runs off the edge** of the paper and keeps going; **the ink runs out** and the last stroke fades into dry scratches; **the pen stops in mid-air** over the paper before the last stroke.
+- 结构：**一条线，即图形**（绘制为地平线的数据系列；每个波峰和波谷成为一个场景）； **两条线**从对角开始并交替绘制，直到相遇； **a 循环**（该线绘制一个场景，然后返回到起点，这现在意味着其他东西）。
+- 开口：**中线，速度**，笔已经划过纸面； **a完成了**的绘制，其线条随后被分解成故事； **一个用脚本**书写的单词，其最后一个字母成为第一个场景。
+- 结尾：**线从纸的边缘** 跑出并继续； **墨水用完**，最后一笔褪色为干划痕； **最后一笔划之前，笔停在半空中** 在纸上。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

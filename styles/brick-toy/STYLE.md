@@ -1,112 +1,124 @@
-# Brick Toy — Style Prompt
+<a id="brick-toy--style-prompt"></a>
+# 积木玩具：风格提示词
 
-> Stop-motion toy-brick films shot like macro photography on a real desk: a world built from interlocking plastic bricks with round studs, animated a pose at a time.
-> References (grammar only): brick-film stop-motion on a tabletop and the "brick movie" approach of stepping characters while the camera moves smoothly; macro toy photography (softboxes on glossy plastic, shallow focus, real objects as landscape). Copy none of their characters, sets or music, and never use a brand name.
+> 定格动画玩具积木影片镜头就像在真实的桌子上进行微距摄影：一个由带圆形螺柱的互锁塑料积木构建的世界，一次动画一个姿势。
+> 参考资料（仅语法）：桌面上的砖块影片定格动画以及在摄影机运动平滑时步进角色的“砖块电影”方法；微距玩具摄影（光滑塑料上的柔光箱，浅焦点，真实物体作为风景）。不要复制他们的角色、布景或音乐，也不要使用品牌名称。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A brick world on a **real surface** (a wooden desk, a kitchen table, a windowsill), shot with a **macro lens** and animated **in stop-motion**. The charm is the tension between the toy world and the real room.
+**真实表面**（木桌、厨房桌子、窗台）上的砖块世界，带有**微距镜头**的镜头和定格动画**的动画**。魅力在于玩具世界和真实房间之间的张力。
 
-One-glance traits: glossy ABS with clean rectangular highlights; studs on every top face; seams darkened by contact shadow; real objects out of focus behind; characters that move in held poses on twos.
+乍一看特征：有光泽的 ABS，带有干净的矩形亮点；每个顶面上都有螺柱；接缝因接触阴影而变暗；真实物体在后面失焦；角色以双人姿势移动。
 
-**Never** use the LEGO name, logo or minifigure silhouette (trademarks). Characters are *built from bricks* (e.g. 1×1 columns for legs, a 2×2 brick for a torso, round bricks for arms, a round 2×2 helmet). Studs carry no lettering.
+**绝不** 使用乐高名称、徽标或小人仔剪影（商标）。角色是*用砖块建造的*（例如，腿为 1×1 柱，躯干为 2×2 砖，手臂为圆形砖，圆形 2×2 头盔）。铆钉上没有刻字。
 
-Not a low-poly isometric island (no flat-shaded facets, no floating diorama), not a clay or felt stop-motion (no deformation: bricks are rigid), not a clean product render of a toy (this world is played with, handled, knocked over).
+不是一个低多边形的等轴测岛（没有平面阴影的面，没有浮动的立体模型），不是粘土或毛毡定格动画（没有变形：砖块是刚性的），不是一个干净的玩具产品渲染（这个世界是被玩弄、处理、撞倒的）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Plastic**: ABS with strong clearcoat (~0.85, clearcoat roughness ~0.07); a roughness map with faint fingerprints and scratches (base ~0.17, scratches up to ~0.65); a bevel so edges catch a highlight.
-- **Geometry**: rounded box bodies (bevel ~0.045 stud), studs with a thin lip. Unit = 1 stud pitch (8 mm); brick height 1.2, plate 0.4. Large baseplates are **matte** (lower clearcoat than bricks), or they reflect softboxes as a coloured wash.
-- **Set**: a real surface with a real texture and real props at true scale (1 m = 125 studs). Household objects become landscape. Light it with a **neutral daylight studio HDRI**, never a tungsten interior (white bricks turn orange).
-- **Light**: a toy-photography setup. A directional key from one upper side, warm-white, casting shadows (fit its shadow frustum to each shot so shadows stay crisp); two or three **RectAreaLight softboxes** (key front, cool rim behind, one over any big set) so glossy plastic shows clean rectangular highlights; environment kept low (~0.45) for contrast. Add a soft contact-shadow blob where the key's shadow falls behind a hero object.
-- **Ambient occlusion is mandatory**: GTAO (radius a few studs) darkens seams between stacked bricks, stud bases and contact points. Without it bricks look pasted on.
-- **Supersample 2×** (render 3840×2160, deliver 1080p): thin stud edges and bevel highlights shimmer without it.
-- **Lens**: physical depth of field (CoC ∝ |1/focus − 1/z|). Scale aperture with shot size: widest for close-ups, less for mediums, least for a wide (too much blurs the hero at mid distance). Focus is always on a character's head or the brick being placed.
-- **Effects are bricks**: fire, smoke, water, light, weather, celestial bodies are all built from plates, round bricks and translucent pieces, jittered or rebuilt per drawing. Nothing is a particle system or a soft gradient.
+- **塑料**：带有强清漆的 ABS（~0.85，清漆粗糙度~0.07）；带有微弱指纹和划痕的粗糙度图（基础 ~0.17，划痕高达 ~0.65）；斜角使边缘成为亮点。
+- **几何学**：圆形盒体（斜角〜0.045螺柱），带薄唇的螺柱。单位 = 1 螺柱节距 (8 mm)；砖高1.2，板高0.4。大底板为 **哑光的**（比砖块更低的清漆），或者将柔光箱反射为彩色水彩晕染。
+- **放**：具有真实纹理和真实比例的真实道具的真实表面（1 m = 125 个螺柱）。家居用品变成风景。使用 **中性日光工作室 HDRI** 进行照明，切勿使用钨丝内饰（白砖变成橙色）。
+- **光**：玩具摄影设置。来自上侧的方向键，暖白色，投射阴影（将其阴影平截头体适合每个镜头，以便阴影保持清晰）；两个或三个 **RectAreaLight 柔光箱**（键在前面，酷边框在后面，任何大套装上的一个）如此光滑的塑料可显示干净的矩形高光；环境保持较低（~0.45）以获得对比度。添加一个软接触阴影斑点，其中关键点的阴影落在英雄对象后面。
+- **环境遮挡是强制性的**：GTAO（半径为几个螺柱）使堆叠的砖块、螺柱底座和接触点之间的接缝变暗。没有它，砖块看起来像是粘贴上去的。
+- **Supersample 2×**（渲染3840×2160，提供1080p）：薄螺柱边缘和斜面高光在没有它的情况下会闪闪发光。
+- **镜片**：物理景深（CoC∝|1/focus − 1/z|）。使用镜头尺寸缩放光圈：对于特写镜头最宽，对于中景镜头较小，对于广角镜头最少（太多会使中距离的英雄变得模糊）。焦点始终集中在角色的头部或正在放置的砖块上。
+- **E效果是砖块**：火、烟、水、光、天气、天体都是由板材、圆砖和半透明块建造而成，根据图纸抖动或重建。没有什么是粒子系统或软梯度。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- A **toy palette**: a handful of saturated brick primaries plus white, black, greys, tan. Each built object has one dominant colour and at most one or two trim colours; characters and hero objects take the most saturated ones.
-- The **real world stays natural and muted**: wood, paper, ceramic, daylight. The saturated colour belongs to the toys, which makes them pop against the room.
-- **Whites must read white**: grade slightly cool so white bricks don't go cream from the room bounce; soft contrast, saturation lifted ~10 %.
-- Translucent pieces (orange, yellow, clear, blue) are reserved for effects: fire, light, water, glass.
-- Example palette (the classic brick primaries): red `#c91a09`, blue `#0055bf`, yellow `#f2cd37`, green `#237841`, white `#f2f2ee`, black `#1b2a34`. Others: pastels and tan; greys with one accent.
+- **玩具调色板**：少量饱和砖原色加上白色、黑色、灰色、棕褐色。每个建筑对象都有一种主色和最多一种或两种装饰色；角色和英雄对象采用最饱和的对象。
+- **现实世界保持自然和静音**：木材、纸张、陶瓷、日光。饱和的颜色属于玩具，这使得它们在房间里很流行。
+- **白人必须读白色**：等级稍冷，所以白砖不会从房间弹起；柔和的对比度，饱和度提升约 10%。
+- 半透明件（橙色、黄色、透明、蓝色）保留用于效果：火、光、水、玻璃。
+- 示例调色板（经典砖原色）：红色 `#c91a09`、蓝色 `#0055bf`、黄色 `#f2cd37`、绿色 `#237841`、白色 `#f2f2ee`、黑色 `#1b2a34`。其他：粉彩和棕褐色；带有一种口音的灰色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- A rounded, friendly OFL face (e.g. Fredoka, in `core/fonts`) for titles and subtitles.
-- Subtitles live on a **toy element**: a dark rounded pill low in the frame with a small brick icon beside the text, or a printed tile, or a sign built into the set. White on dark, ≤ 2 lines. A second speaker type (radio, device, narrator) gets its own icon colour or tag. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Titles pop in on 12 fps steps, like a piece being placed; a short sub-line in a brick colour.
+- 标题和副标题采用圆润、友好的 OFL 面孔（例如 `core/fonts` 中的 Fredoka）。
+- 字幕位于 **玩具元素** 上：框架中较低的黑色圆形药丸，文本旁边有一个小砖块图标，或者是印刷图块，或者是集合中内置的标志。黑底白字，≤ 2 条线。第二种扬声器类型（收音机、设备、旁白）有自己的图标颜色或标签。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 标题以 12 fps 的速度弹出，就像放置的一块一样；砖色的短子线。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters and bricks step at 12 fps** (on twos); **camera, focus, fire and flying vehicles move on ones** at 24 fps. Stepping the camera too reads as judder, not charm.
-- Bricks **fly in on arcs** and **snap** with a tiny overshoot (a fraction of a stud → 0 in ~4 frames). Every snap is a click on the soundtrack.
-- Characters act with **big readable poses** held for several drawings: a V of arms for pride, arms flung up for alarm, a bowed head for sadness, a hop for joy. Walk cycles swing legs about ±0.55 rad with a small bob. Arms and legs rotate at their joints; nothing bends.
-- Collapses and falls use **real rigid-body physics**: tip about the base edge, then independent bodies with gravity (a lower-than-true value reads better at this scale), bounces (restitution ~0.3), friction, settling flat. Pre-simulate so every render is identical.
-- Tiny imperfections are allowed. Bricks never stretch, squash or morph.
+- **角色和砖块以 12 fps 的速度前进**（双人）； **摄像机、对焦、消防和飞行器以 24 fps 的速度在** 上移动。踩摄影机也听起来像是颤抖，而不是魅力。
+- 砖块 **在弧线** 和 **折断** 上飞入，并带有微小的过冲（大约 4 帧中螺柱的一小部分 → 0）。每一个快照都是对配乐的点击。
+- 角色以 **的大可读姿势** 为几张图画而举：V 形手臂表示骄傲，手臂张开表示警报，低头表示悲伤，跳跃表示喜悦。步行循环用小摆锤摆动腿约 ±0.55 rad。手臂和腿通过关节旋转；没有什么可以弯曲。
+- 塌陷和跌倒使用 **真实刚体物理**：围绕基部边缘倾斜，然后具有重力的独立物体（在此比例下低于真实值的读数更好），弹跳（恢复〜0.3），摩擦，稳定平坦。预模拟，使每个渲染都是相同的。
+- 微小的缺陷是允许的。砖块永远不会拉伸、挤压或变形。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Extreme macro on one brick or stud, real room blurred behind | The toy scale is the world | a beginning; a detail that matters; a single part |
-| Low angle at minifig eye level | A tiny character made heroic | ambition; pride; standing up to something big |
-| High wide over the whole surface | The scale reveal: it was a toy all along | a summing-up; irony; a finished build |
-| Low, wide, lonely frame, character small in a corner | Smallness, failure | a setback; waiting; loss |
-| Frontal close-up, hands and brick in focus | Intimacy, decision | a choice; a repair; a gift |
-| Handheld shake on impact | Physical shock | a collapse; an arrival; a collision |
-| Tracking alongside a moving object, destination ahead | Momentum toward a goal | a journey; a race; a launch |
-| Top-down plan view | Order, layout, a map | a plan; sorting parts; a city from above |
-| Rack focus from a real object to a brick (or back) | Two scales in one frame | "big world, small maker"; a comparison |
-| Orbit around a finished build | Pride, inspection | a product; a monument; a result |
+|一块砖或螺柱上的极端宏，真实的房间后面模糊|玩具秤就是世界|一个开始；重要的细节；单个零件|
+|小人仔眼睛水平的低角度|一个小角色却变成了英雄|志向;自豪;勇敢地面对大事|
+|整个表面高宽|秤揭示：它本来就是一个玩具|总结；讽刺;完成的构建|
+|低矮、宽阔、孤独的框架，角落里的小人物|渺小、失败|挫折；等待;损失|
+|正面特写，手和砖块处于焦点|亲密、决定|一个选择；修理；一份礼物|
+|手持设备受到撞击时的震动|物理冲击|崩溃；到达；碰撞|
+|沿着移动物体跟踪，目的地位于前方|朝着目标前进的动力|一次旅行；一场比赛；发射|
+|自上而下的平面图|订单、布局、地图|一个计划；对零件进行分类；从上面看一座城市|
+|将焦点从真实物体转移到砖块（或背面）|一帧中有两个尺度|“大世界，小创客”；比较|
+|围绕完成的构建运行|骄傲、检验|一个产品；一座纪念碑；一个结果|
 
-Framing: keep foreground clutter out of the frame edges (piles of parts love to block the lens); check headroom in every shot; check every real prop against every camera, because an object placed on one shot's axis sneaks into the background of another. Cut on beats or bars; a snap can be a cut point. No generic dissolves; transitions can be a hand-placed brick covering the lens, a whip along the desk, or a pull out of one set into the next.
+取景：使前景杂乱远离画面边缘（成堆的零件喜欢挡住镜头）；检查每个的净空镜头;检查每个真实的道具摄影机，因为一个物体放在一个物体上镜头的轴潜入另一个轴的背景中。剪切节拍或小节；快照可以是切点。没有仿制药溶解；过渡可以是手工放置的覆盖镜头的砖块、沿着桌子的鞭子，或者从一组拉到下一组。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instruments**: small, acoustic, playful (glockenspiel, toy piano, pizzicato, ukulele, whistling, claps, melodica); a brass or orchestral swell for scale; a heartbeat drum for suspense. Licensed or original, edited to the picture (cut on bars, bar-aligned jumps, chroma similarity at joins) rather than looped under it.
-- **Foley** (synthesizable): plastic creak before a failure, tiny plastic footsteps, a crash of many clacks, a brick click (short transient + resonances near 2.9 kHz and 4.6 kHz), clack on wood, rattle of a parts pile being stirred, whoosh on throws, a bell "ding" for discovery, bricks sliding over paper, motors and engines built from filtered noise.
-- **Silence is a tool**: cut music dead at a failure or a surprise; leave only room tone and one small real-world sound (a ticking clock, a fridge hum, a distant bird). Music can also drop out before a big moment, leaving a pulse or a countdown.
-- **Voice**: a warm storyteller, few short lines with room to breathe; secondary voices through a device filter (band-pass ~380–2800 Hz + soft saturation), optionally with beeps. Verify every line with whisper.
-- Mix: voice compressed, music ducked ~40 % under voice, loudness −14 LUFS.
+- **乐器**：小型、原声、好玩（钟琴、玩具钢琴、拨奏、尤克里里、口哨、拍手、口风琴）；铜管乐或管弦乐的音阶；悬念的心跳鼓。授权或原创，对图片进行编辑（在条上剪切、条对齐跳跃、连接处的色度相似性）而不是在其下循环。
+- **弗利**（可合成）：故障前的塑料吱吱声，微小的塑料脚步声，许多咔哒声的碰撞声，砖块的咔哒声（短瞬态+2.9 kHz和4.6 kHz附近的共振），木头的咔哒声，搅拌零件堆的嘎嘎声，投掷时的呼啸声，发现的铃声“叮”，砖块滑过由过滤噪音制成的纸张、电机和发动机。
+- **沉默是一种工具**：在失败或意外时切断音乐；只留下房间的声音和现实世界的一个小声音（滴答作响的时钟、冰箱的嗡嗡声、远处的鸟儿）。音乐也可以在重要时刻之前停止，留下脉搏或倒计时。
+- **嗓音**：一个温暖的故事讲述者，简短的台词有呼吸的空间；通过设备滤波器（带通 ~380–2800 Hz + 软饱和）发出二次声音，可选择发出蜂鸣声。用耳语验证每一行。
+- 混合：语音压缩，音乐在语音下闪避约 40%，响度 −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Snap-together building.** The plot is an act of building; pieces fly in on arcs and click home. *Fits content like:* a company assembling its first product; a neighbourhood rising street by street; a recipe put together ingredient by ingredient.
-- **Break without harm.** Things fall apart and the parts become something new; failure yields spare parts. *Fits content like:* a pivot after a failed plan; recycling; a team reshuffled into a better shape.
-- **Toy on a real desk.** Real objects become landscape at toy scale. *Fits content like:* a laptop keyboard as a city grid; a houseplant as a jungle; a coffee spill as a flood.
-- **Hand-made stop-motion.** 12 fps poses, tiny imperfections, even fire and water made of bricks. *Fits content like:* a weather report; a kitchen explained with brick flames; a science demo of a volcano.
-- **Rebuild into something else.** The same pieces, rearranged on screen, become a different object. *Fits content like:* one career turning into another; a before/after renovation; a word re-spelled.
-- **The scale reveal.** Pull back until the whole world is a toy on a table. *Fits content like:* a big ambition that is still small; a year in review; a child's imagination.
+- **拼合式建筑。** 该情节是一种建筑行为；碎片以弧线飞入并单击主页。 *适合以下内容：* 一家公司正在组装其第一个产品；街区逐条街道拔地而起；将各种成分组合在一起的食谱。
+- **无伤害地打破。** 事物分崩离析，零件变成新的；故障产生备件。 *适合以下内容：*计划失败后的支点；回收；球队重新洗牌，形成更好的状态。
+- **真实桌子上的玩具。** 真实物体变成玩具比例的风景。 *适合以下内容：*笔记本电脑键盘作为城市网格；室内植物如丛林；咖啡溢出如洪水。
+- **手工定格动画。** 12 fps 的姿势，微小的瑕疵，甚至是砖块制成的火和水。 *适合以下内容：* 天气预报；用砖火解释的厨房；火山的科学示范。
+- **重建成其他东西。** 相同的碎片在屏幕上重新排列，成为不同的物体。 *适合以下内容：*一种职业转变为另一种职业； before/after 翻新；一个重新拼写的单词。
+- **规模揭晓。** 拉回来，直到整个世界都是桌子上的玩具。 *适合以下内容：* 一个宏大的抱负，但仍然很小；一年回顾；孩子的想象力。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Tungsten HDRI → orange whites. Use a neutral studio HDRI and a slightly cool grade.
-- Clearcoat on a large flat baseplate reflects softboxes as a coloured wash. Make it matte.
-- Flat, slightly jagged first renders: even light, no AO, single-sample rendering, stepped camera. Fix: softboxes + low environment, GTAO, 2× supersampling, cool grade, camera on ones.
-- Too much aperture blurs the hero at mid distance. Scale aperture with shot size.
-- A fast-rising or fast-moving object becomes a dot on a blank wall. Track it and keep its destination in frame.
-- Curved transparent parts made from a sphere segment vanish inside a cylindrical part. Use an open-cylinder panel.
-- Real props on a later shot's camera axis sneak into the background. Check props against every camera.
-- Random jitter used as a material or colour index can go negative → undefined material crash. Clamp.
+- 钨丝 HDRI → 橙白色。使用中性工作室 HDRI 和稍冷的等级。
+- 大型平坦底板上的透明涂层将柔光箱反射为彩色水彩晕染。使其哑光。
+- 平坦、略微锯齿状的首次渲染：光线均匀，无 AO，单样本渲染，阶梯式摄影机。修复：柔光箱+低环境、GTAO、2×超级采样、酷等级、摄影机。
+- 太大的光圈会使中距离的英雄变得模糊。刻度孔径为镜头尺寸。
+- 快速上升或快速移动的物体会变成空白墙上的一个点。跟踪它并将其目的地保留在框架中。
+- 由球体部分制成的弯曲透明部件消失在圆柱形部件内。使用开式圆筒面板。
+- 后来镜头的摄影机轴上的真实道具潜入背景。检查每个摄影机的道具。
+- 用作材质或颜色索引的随机抖动可能会出现负值 → 未定义的材质崩溃。夹钳。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `bricks.js` (rounded brick/plate/round-brick geometry, studs, plastic materials with clearcoat and fingerprint roughness), `actors.js` (a brick-built character rig with pose objects and `walkPose`), `set.js` (desk, HDRI, real props at true scale, softboxes), `rockets.js` (props, pre-simulated rigid-body physics, brick fire and smoke), `main.js` (acting, cameras, DOF, subtitles, sound events), `mix.py` (synthesized foley + voice + music), `music/edit.py` (bar-aligned score edit). Minimal start: a brick lighthouse from `bricks.js` on a stack of books, lit by the `set.js` softboxes, one still via `core/render/still.mjs`.
+In `demo/`: `bricks.js`（圆角brick/plate/round-brick几何形状、螺柱、具有透明涂层和指纹粗糙度的塑料材料），`actors.js`（积木搭建的角色骨骼绑定结构与姿势对象和`walkPose`), `set.js`（桌子、HDRI、真实比例的真实道具、柔光箱）、`rockets.js`（道具、预模拟刚体物理、砖火和烟雾），`main.js`（表演、摄像机、景深、字幕、声音事件）、`mix.py`（合成的拟音+语音+音乐），`music/edit.py`（条形对齐配乐编辑）。最小起点：一座砖砌灯塔`bricks.js`在一摞书上，被灯光照亮`set.js`柔光箱，一个仍然通过`core/render/still.mjs`.
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the structure, the characters (or none), the surface and its props, the opening, the ending, the camera path, the pacing, the palette within the colour logic and the music. All far from our demo:
+您决定结构、角色（或没有）、表面及其道具、开头、结尾、摄影机路径、节奏、色彩逻辑和音乐中的调色板。与我们的示范相去甚远：
 
-- Structures: **a catalogue** (one build per beat, each a different object answering the same question, lined up at the end); **two builders** on opposite sides of the table whose builds grow toward each other; **a disassembly** (a finished thing is taken apart piece by piece to explain what's inside).
-- Openings: **a hand pours a bin of bricks** onto the table and the pile settles into the first shape; **a real object first** (a mug, a phone), then rack focus to the tiny world at its base; **plan view** of an empty baseplate filling in like a map.
-- Endings: **one piece left over** held in close-up, the question it raises unanswered; **the lights go out** in the room and only a lit brick window glows; **a real hand** reaches in and picks the character up.
+- 结构：**a目录**（每个节拍一个构建，每个不同的对象回答相同的问题，在最后排列）； **两个建筑者** 位于桌子的两侧，其建筑朝向彼此生长； **a拆解**（成品被一块一块拆开，解释里面是什么）。
+- 开口：**a 用手将一箱砖块**倒在桌子上，砖堆形成第一种形状；首先**一个真实的物体**（一个杯子，一部手机），然后将焦点聚焦到其底部的微小世界； **空底板的平面图** 像地图一样填充。
+- 结局：**剩下一块**特写镜头，它提出的问题没有得到解答；**灯灭了**房间里只有一扇亮着的砖窗在发光；**一只真正的手**伸手拿起角色。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

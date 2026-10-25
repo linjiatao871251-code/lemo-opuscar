@@ -1,113 +1,125 @@
-# Swiss Motion Graphics — Style Prompt
+<a id="swiss-motion-graphics--style-prompt"></a>
+# 瑞士动态排版：风格提示词
 
-> International Typographic Style in motion: a modular grid, one typeface, one signal colour, and movement as exact as a printing press.
-> References (grammar only): 1950s–70s Zurich posters (Müller-Brockmann, Hofmann, Gerstner, Crouwel) for the grid, flush-left type, scale contrast and "designing programmes"; modern identity systems in motion (Experimental Jetset, Pentagram) for snaps on the beat. Never copy a specific historical poster's composition (no concentric-circle or fan layouts lifted from Müller-Brockmann), never use Helvetica or Akzidenz font files, never name a real institution on a poster.
+> 运动中的国际印刷风格：模块化网格、一种字体、一种信号颜色以及像印刷机一样精确的运动。
+> 参考资料（仅语法）：1950 年代至 70 年代苏黎世海报（Müller-Brockmann、Hofmann、Gerstner、Crouwel），用于网格、左齐平类型、比例对比和“设计方案”；动态的现代身份系统（Experimental Jetset、Pentagram）可随拍随拍。切勿复制特定历史海报的构图（不得采用 Müller-Brockmann 的同心圆或扇形布局），切勿使用 Helvetica 或 Akzidenz 字体文件，切勿在海报上命名真实的机构。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **Pure 2D graphic design animated on a grid**: flat paper, black type and bars, a very light grey and **one** saturated signal colour.
-- **Every element snaps to the grid, every move lands on a beat, nothing bounces.**
-- **Rigor with one exception**: the whole frame obeys a system, so the one element that doesn't becomes a character.
-- **Extreme scale contrast**: a giant numeral next to tiny technical notes.
+- **在网格上动画的纯 2D 图形设计**：平面纸，黑色字体和条形，非常浅的灰色和 **一** 饱和信号颜色。
+- **每个元素都会捕捉到网格，每个动作都会落在节拍上，没有任何反弹。**
+- **严格，但有一个例外**：整个框架服从一个系统，因此不成为一个角色的一个元素。
+- **极端比例对比**：一个巨大的数字旁边是微小的技术注释。
 
-Not a keynote (no gradients, no glow, no device renders), not kinetic typography for a lyric video (words don't fly, spin or bounce), not data visualisation (bars have mass as graphic form, not as charted quantities, unless the grid gives them that meaning), not a Bauhaus pastiche of primary shapes.
+不是基调（没有渐变，没有发光，没有设备渲染），不是抒情视频的动态排版（文字不会飞翔，旋转或弹跳），不是数据可视化（条形具有图形形式的质量，而不是图表数量，除非网格赋予它们这种含义），不是包豪斯的初级形状仿制品。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Frame grid**: 1920×1080, 12 columns, ~96 px side margins, 24 px gutters, 24 px baseline. The frame can act as a **spread**: a left page (the programme: numeral, rule text, notes) and a right page (the artifact).
-- **Artifact grid** derived from the content (Gerstner): what the columns and rows *mean* is a design decision. **Choose module sizes that give the elements mass**; too many thin columns make a layout look like a chart.
-- **Surfaces**: page, paper, ink, signal colour, grid lines in two or three light greys (on page, while building, on paper). No gradients, no shadows, no particles, no grain (mux grain 0).
-- **Bars and blocks** are flat rects; consecutive cells of one unit merge into one bar, overdrawn 1 px at seams (antialiasing shows hairlines, especially when rotated or scaled).
-- **A secondary voice** can be light-grey elements under the black ones: depth without a second colour.
-- **A 2D camera matrix** (centre, scale, rotation) for all moves.
+- **框架网格**：1920×1080，12列，〜96像素侧边距，24像素装订线，24像素基线。该框架可以充当 **传播**：左页（程序：数字、规则文本、注释）和右页（工件）。
+- **神器网格** 源自内容（格斯特纳）：列和行*意味着什么*是设计决策。 **选择能够赋予元件质量的模块尺寸**；过多的细列会使布局看起来像图表。
+- **表面**：页面、纸张、墨水、信号颜色、两种或三种浅灰色网格线（在页面上、构建时、在纸上）。无渐变、无阴影、无粒子、无颗粒（mux 颗粒 0）。
+- **条形和块**是平坦的矩形；一个单元的连续单元合并为一个条，在接缝处透支 1 像素（抗锯齿显示细线，尤其是在旋转或缩放时）。
+- **A 辅助声音** 可以是黑色元素下的浅灰色元素：没有第二种颜色的深度。
+- **A 2D 摄影机矩阵**（中心、缩放、旋转）用于所有移动。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Paper, ink, greys, and one signal colour.** Only one thing carries the signal colour; that makes it the protagonist. It is the only thing allowed to be inexact.
-- Overprint is allowed: black type on the signal colour.
-- The signal colour can be red, orange, ultramarine or green; choose it for the topic, then never add a second.
-- Examples: `#EAE9E5` page, `#FFFFFF` paper, `#111111` ink, signal `#E30613`; or `#F2F0EA` / `#141414` / signal `#FF5A00`; or `#E9ECEF` / `#0B0B0B` / signal `#1F3FFF`.
+- **纸张、墨水、灰色和一种信号颜色。** 只有一种东西带有信号颜色；这使它成为主角。这是唯一允许不精确的事情。
+- 允许套印：在信号颜色上使用黑色字体。
+- 信号颜色可以是红色、橙色、群青或绿色；选择它作为主题，然后永远不要添加第二个。
+- 示例：`#EAE9E5` 页面、`#FFFFFF` 纸张、`#111111` 墨水、信号 `#E30613`；或 `#F2F0EA` / `#141414` / 信号 `#FF5A00`；或 `#E9ECEF` / `#0B0B0B` / 信号 `#1F3FFF`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **One family for the whole film**, an OFL neo-grotesque (Archivo, Inter, Schibsted Grotesk, Instrument Sans…), several weights. Letter-spacing ~−2 % at ≥ 90 px. Headlines can be lowercase. Load every weight with `document.fonts.load` before drawing.
-- **Flush left, ragged right**; everything on a grid line; big white space is part of the layout. Giant numerals are **optically** flush left (subtract the glyph's left bearing).
-- **Subtitles are part of the layout**, not a bar at the bottom: each line sits at a column start in the current composition (a small grey lead-in + a large bold statement, or a caption like a museum label), each word clip-revealed on its whisper timestamp. Hold ≥ max(1.8 s, speech + 0.6 s); assert it in code.
-- **Caption rows**: small (~19 px) medium-weight notes with a 1 px rule above; technical notes in a corner (module sizes, counts, a bar counter).
+- **整个影片的一个系列**，一种 OFL 新怪诞（Archivo、Inter、Schibsted Grotesk、Instrument Sans...），有多种重量。 ≥ 90 px 时字母间距 ~−2 %。标题可以小写。绘制前用 `document.fonts.load` 加载每个重量。
+- **左齐平，右齐平**；一切都在网格线上；大的空白是布局的一部分。巨型数字为 **光学** 左齐平（减去字形的左方位）。
+- **字幕是布局的一部分**，而不是底部的栏：每一行都位于当前构图的一列开始处（一个小的灰色导入+一个大的粗体声明，或者像博物馆标签一样的标题），每个单词剪辑显示在其耳语时间戳上。保持 ≥ max(1.8 s，语音 + 0.6 s)；在代码中断言它。
+- **标题行**：小（~19像素）表现媒介-重量注释，上面有1像素规则；角落里的技术说明（模块尺寸、数量、吧台）。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Two curves only**: a precise ease `cubic-bezier(.7,0,.2,1)` for snaps; linear for lines being drawn, playheads and the exception. No overshoot, no spring, no bounce.
-- **Durations are note values** at the film's tempo. A snap starts one note value early and **lands on the beat**.
-- **Entrances are wipes or clip-reveals, never fades**: words rise out of a clip rect from below the baseline and leave upward; lines grow along their length; paper appears by a wipe; big numerals climb in eased steps ("one module at a time").
-- **Deletions are knife cuts**: a thin line crosses the element, then the element collapses to its midline.
-- **Ripples are ordered by distance** from their cause, a couple of units per subdivision.
-- **The exception moves differently**: linear, unsnapped, perhaps pausing mid-flight; a coordinate readout beside it can turn from "on grid" to "off grid".
-- Smooth 24 fps, no stepping: digital precision, not hand-made.
+- **仅两条曲线**：精确缓动 `cubic-bezier(.7,0,.2,1)` 用于按扣；线性用于绘制的线条、播放头和例外。无超调、无弹簧、无弹跳。
+- **持续时间是影片速度下的音符值**。响声提前开始一个音符值，**落在节拍** 上。
+- **入口是擦除或剪辑显示，永不褪色**：单词从基线下方从剪辑矩形中升起并向上离开；线条沿着它们的长度生长；擦拭时出现纸；大数字以轻松的步骤爬升（“一次一个模块”）。
+- **删除是刀切**：一条细线穿过元素，然后元素折叠到中线。
+- **波纹按距其起因的距离** 排序，每个细分几个单位。
+- **异常移动方式不同**：线性、未捕捉、可能在飞行中暂停；它旁边的坐标读数可以从“网格上”变为“网格外”。
+- 平滑 24 fps，无步进：数字精度，非手工制作。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. The camera moves only with the precise ease and only on beats. Opening and ending come from the topic.
+是词汇，而不是路线。 摄影机运动仅具有精确的轻松性并且仅在节拍上。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Locked spread | cause (left) → effect (right) | a rule applied; a before/after; a comparison |
-| Hard pan by one page or column | the next step in a system | a sequence; a catalogue; a timeline |
-| Rotate 90° and stop | the same thing read another way | a poster as a score; a chart as a map |
-| Pull out to a wall of artifacts | one programme, many outputs | a brand system; a product range; a series |
-| Push into one module | detail; the unit of the system | a pixel; a letter; a single data point |
-| Grid extends past the page | the system is bigger than the artifact | scale; ambition; a break from constraints |
-| Split frame into equal cells | parallel cases | options; variants; team members |
-| Vertical scroll through a column | reading; a list | a manifesto; a spec sheet; a timetable |
+|锁定点差|因（左）→果（右）|应用规则； before/after；比较|
+|硬平移一页或一列|系统的下一步|一个序列；目录；时间线|
+|旋转90°并停止|同样的事情可以用另一种方式解读|海报为配乐；图表作为地图|
+|拉出文物墙|一项计划，多项产出|品牌体系；产品系列；一系列|
+|推入一个模块|细节;系统的单位|一个像素；一封信；单个数据点|
+|网格延伸到页面之外|系统比工件更大|规模;志向;摆脱束缚|
+|将框架分割成相等的单元格|平行案例|选项;变种；团队成员|
+|垂直滚动一列|阅读;一个清单|宣言；规格表；时间表|
 
-Framing: everything on the grid; the signal element may sit off-grid only when it is being the exception. Transitions are wipes, knife cuts, camera moves and re-flows; never dissolves.
+框架：网格上的所有内容；仅当信号元件异常时，信号元件才可能脱离电网。过渡包括擦拭、刀切、摄影机运动和回流；永远不会溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music with a grid of its own**: a steady pulse whose subdivisions give snap durations. Options: motorik / krautrock kit and bass, minimal techno, marimba or vibraphone patterns, a mechanical piano ostinato, a drum machine with a glockenspiel; one instrument added per new rule is a clear build.
-- **Picture and music can share one data file** (a column → pitch, a row → onset), so a graphic can literally be the score.
-- **Techniques (options)**: drop the drums for the one moment of the exception; a near-silent bar before a reveal; thin the band during a reveal so every note is audible.
-- **Foley follows the materials of print**, dry and close, no reverb: letterpress clack, ruling pen "tss", guillotine snick, paper slap and slide, numeral thunk, block snap, felt thump for a landing, rubber stamp, typewriter carriage.
-- **The exception can be the only element that sings** (a sine glide following its position).
-- **Silence**: a hard stop of everything on a downbeat; the next snap reads as an event.
-- **Mix**: voice compressed and ≥ 6 dB above music, music ducked ~10 dB under voice, −14 LUFS.
-- **Voice**: cool, crisp, rule-like sentences; prefer voices with bright consonants.
+- **具有自己的网格的音乐**：稳定的脉冲，其细分给出了快速持续时间。选项：motorik/krautrock 套件和贝斯、最小的 techno、马林巴或电颤琴模式、机械钢琴固定音型、带钟琴的鼓机；每条新规则添加的一项工具是一个清晰的构建。
+- **图片和音乐可以共享一个数据文件**（一列→音高，一行→开始），因此一张图形实际上可以是配乐。
+- **技术（选项）**：异常一瞬间落鼓；揭晓前几乎安静的酒吧；在显示过程中将乐队变薄，这样每个音符都可以听到。
+- **Foley 遵循** 的印刷材料，干燥、紧密、无混响：凸版印刷的咔嗒声、直尺笔“tss”、断头台的响声、纸张拍击声和幻灯片、数字重击声、方块响声、着陆时的毛毡重击声、橡皮图章、打字机滑架。
+- **例外可能是唯一唱** 的元素（跟随其位置的正弦滑行）。
+- **沉默**：悲观的情况下一切都硬性停止；下一个快照读取为一个事件。
+- **混音**：语音压缩且高于音乐 ≥ 6 dB，音乐低于语音约 10 dB，−14 LUFS。
+- **嗓音**：凉爽、清脆、有规律的句子；喜欢辅音明亮的声音。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The grid means something.** Columns and rows become a quantity (notes, hours, floors, years). *Fits content like:* a building's floors and rooms; a week's timetable; a city's districts.
-- **Snap = beat.** Every arrival is a percussion hit. *Fits content like:* a product's feature list; the steps of a recipe; a countdown.
-- **Programme.** Rules applied one by one to one artifact, then the same programme generating many. *Fits content like:* a brand identity; a typeface family; a set of stamps.
-- **Extreme scale contrast.** A giant element as chapter card beside tiny notes. *Fits content like:* a record statistic; a year; a price.
-- **The exception.** One element breaks the grid, linear and unsnapped. *Fits content like:* an inventor; an outlier in the data; a rebel employee.
-- **Knife cut.** An element deleted by a line. *Fits content like:* budget cuts; editing a text; removing a feature.
-- **Re-flow.** Everything else rearranges around a change, nearest first. *Fits content like:* a team reorganised; traffic after a road closes; a layout adapting to a phone.
+- **网格意味着某种东西。** 列和行成为一个数量（注释、小时、楼层、年份）。 *适合以下内容：*建筑物的楼层和房间；一周的时间表；一个城市的各区。
+- **啪=节拍。** 每一次到来都是打击乐。 *适合以下内容：*产品的功能列表；食谱的步骤；倒计时。
+- **程序。** 规则一一对应地应用工件，然后生成许多相同的程序。 *适合以下内容：*品牌标识；字体系列；一套邮票。
+- **极端的比例对比。** 一个巨大的元素作为章节卡旁边的小笔记。 *适合以下内容：*记录统计数据；一年；一个价格。
+- **例外。** 一个元素打破网格，线性且未对齐。 *适合以下内容：*发明家；数据中的异常值；一名反叛员工。
+- **刀切。** 一行删除的元素。 *适合以下内容：*预算削减；编辑文本；删除一个功能。
+- **重新流动。** 其他所有内容都会围绕更改重新排列，最接近的第一个。 *适合以下内容：* 团队重组；道路封闭后的交通情况；适应手机的布局。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Too many thin columns look like a chart → fewer, wider modules.
-- A "better" composition that isn't obviously better → one strong diagonal with long/short rhythm, a larger signal element, bleeds, type over colour. Merely tilting is not enough.
-- Rotating and labelling at once reads as noise → rotate, hold, then add labels.
-- Merged bars show seams after rotation → overdraw 1 px.
-- Elements that share the camera matrix leak into other shots → draw them only when on screen.
-- Canvas `letterSpacing` affects `measureText` → measure after setting the font.
-- Onsets that fall between frames flicker → put visual onsets on whole frames.
-- Whisper splits or merges words and pads the first word → align by letters, clamp to 0.
+- 太多的细柱看起来像图表→更少、更宽的模块。
+- 一个“更好”的构图，但并不是明显更好→一个带有 long/short 节奏的强对角线，更大的信号元素，出血，字体颜色。仅仅倾斜是不够的。
+- 旋转和标签同时读取会产生噪音 → 旋转、按住，然后添加标签。
+- 合并的条形在旋转后显示接缝 → 透支 1 像素。
+- 共享摄影机矩阵的元素会泄漏到其他镜头中→仅在屏幕上绘制它们。
+- 画布`letterSpacing`影响`measureText`→设置字体后测量。
+- 落在帧之间的起始点闪烁→将视觉起始点放在整个帧上。
+- Whisper 拆分或合并单词并填充第一个单词 → 按字母对齐，钳位到 0。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `ease.js` (`cubic-bezier(.7,0,.2,1)`, `snap(t, t_arrive, dur)`, `steps()`, `track()`), `film.js` (layout system, clip-reveal text, knife cuts, bars from a score, rotation reveal, wall of artifacts, caption rows), `main.js` (fonts, whisper word times, `?nosub=1`, `?poster=1`), `score.json` (the shared data file for picture and music), `tools/words.py` and `tools/subs.py` (word timings, asserted subtitle intervals). File list and build steps: [DEMO.md](DEMO.md) "Build notes".
+在 `demo/` 中：`ease.js`（`cubic-bezier(.7,0,.2,1)`、`snap(t, t_arrive, dur)`、`steps()`、`track()`）、`film.js`（布局系统、剪辑显示文本、刀切、来自配乐，旋转显示，工件墙，标题行），`main.js`（字体，耳语单词时间，`?nosub=1`，`?poster=1`），`score.json`（图片和音乐的共享数据文件），`tools/words.py`和`tools/subs.py`（字时序、断言字幕间隔）。文件列表和构建步骤：[DEMO.md](DEMO.md)“构建说明”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the system, what the grid means, the exception (or none), the signal colour, the opening and the ending. All far from our demo:
+您决定系统、网格的含义、例外（或无）、信号颜色、开头和结尾。与我们的示范相去甚远：
 
-- Structures: **a timetable** (a 24-row grid of hours fills with the topic's day, one row per beat); **an alphabet** (A to Z, each letter a module of the topic, the grid completing as a specimen sheet); **a comparison** (two systems side by side on a split spread until one element crosses the gutter).
-- Openings: **a single dot** placed on the page, then the grid growing from it; **the finished artifact** that is then dismantled into its rules; **a giant numeral** filling the frame, which turns out to be a detail of a small layout.
-- Endings: **the empty grid** after every element has been cut away; **a single word** flush left in the corner; **the exception leaves the frame** and the system closes over the space it left.
+- 结构：**a 时间表**（24 行小时网格填充主题的日期，每节拍一行）； **an字母**（A到Z，每个字母一个主题模块，网格填写作为样张）； **a 比较**（两个系统并排分开展开，直到一个元素穿过装订线）。
+- 开口：**一个单点**放置在页面上，然后网格从中生长； **成品神器**，然后拆解成它的规则； **一个巨大的数字**填满了框架，这原来是一个小布局的细节。
+- 结局：**每个元素被切掉后的空网格**； **单字**在角落左齐平； **异常离开框架**，系统关闭其留下的空间。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

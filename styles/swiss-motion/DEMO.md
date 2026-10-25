@@ -1,115 +1,123 @@
-# Swiss Motion Graphics — our demo
+<a id="swiss-motion-graphics--our-demo"></a>
+# Swiss Motion Graphics — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Five Rules for a Poster* (44 s) · `swiss-motion.mp4` · source in [`demo/`](demo/)
+示范：*海报的五个规则*（44 秒）·`swiss-motion.mp4`·来源 [`demo/`](demo/)
 
 
-A 30–60 second film: five rules build one concert poster on a grid; a red circle breaks the grid, and the poster turns out to be the score of the music. The demo sets Archivo as its one family.
+30-60秒影片：五个规则在网格上构建一张音乐会海报；一个红圈打破了格子，海报原来是音乐的配乐。 示范将 Archivo 视为一个系列。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Pure 2D graphic design animated on a grid: flat white paper, black type and bars, a very light grey and **one** saturated red. It is the language of 1950s–70s Zurich concert posters (Müller-Brockmann, Hofmann, Gerstner, Crouwel) turned into motion the way modern identity systems move (Experimental Jetset, Pentagram): **every element snaps to the grid, every move lands on a beat, nothing bounces**.
+纯 2D 图形设计在网格上动画：平面白纸、黑色字体和条形、极浅灰色和 **一**饱和红色。它是 1950 年代至 70 年代苏黎世音乐会海报（Müller-Brockmann、Hofmann、Gerstner、Crouwel）的语言，就像现代身份系统移动的方式（Experimental Jetset、Pentagram）一样转化为运动：**每个元素都捕捉到网格，每个动作都落在节拍上，没有任何反弹**。
 
-The charm is **rigor with one exception**. The whole frame obeys a system, so the one element that doesn't obey it becomes a character.
+魅力在于**严谨，但有一个例外是**。整个框架服从一个系统，因此不服从它的一个元素就成为一个角色。
 
-Never copy a specific historical poster's composition (no concentric-circle or fan compositions lifted from Müller-Brockmann). Don't use Helvetica or Akzidenz font files. Pick an OFL neo-grotesque (Archivo, Inter, Schibsted Grotesk, Instrument Sans…). Never name a real institution on a poster.
+切勿复制特定历史海报的构图（不得复制穆勒-布罗克曼的同心圆或扇形构图）。不要使用 Helvetica 或 Akzidenz 字体文件。选择 OFL 新怪诞风格（Archivo、Inter、Schibsted Grotesk、Instrument Sans...）。切勿在海报上提及真实机构的名称。
 
-Pick stories where **the system itself tells the story**. The demo used all five native powers, the strongest (the grid means something) at the peak:
+选择 **系统本身讲述故事的故事**。 示范使用了所有五种原生功率，峰值时最强（网格意味着什么）：
 
-| Native power | Story use |
+|原生电源|故事运用|
 |---|---|
-| **The modular grid** | The grid is the stage and the rulebook. Show it being built (lines draw on the beat), show it briefly in section gaps, and at the peak **make the grid mean something**: in the demo, 7 columns = the 7 notes of A dorian and 16 rows = 16 eighth notes, so the poster *is* the score. |
-| **Snap = beat** | Every element's arrival is a percussion hit: type clack, knife, ruling pen. Picture and music share one coordinate system, not a sync pass after the fact. |
-| **Rules generate design (programme)** | The plot is a set of rules applied one by one to one artifact. End by showing the same programme generating many artifacts (the Gerstner reveal). |
-| **Extreme scale contrast** | A 700 px numeral next to 19 px technical notes. The giant element is the chapter card, the tiny one is texture. |
-| **One signal colour** | Only one thing is red, so red = the protagonist. When it breaks a rule it is the only thing on screen that is not exact. |
+|**模块化网格**|网格是舞台，也是规则手册。显示它正在构建（在节拍上绘制线条），在部分间隙中简要显示它，并在峰值 **使网格有意义**：在示范中，7 列 = A dorian 的 7 个音符，16 行 = 16 个八分音符，因此海报 * 是 * 配乐。|
+|**Snap = 节拍**|每个元素的到来都是敲击声：敲击声、刀子、尺子。图片和音乐共享一个坐标系，而不是事后同步。|
+|**规则生成设计（程序）**|情节是一对一应用于一个工件的一组规则。最后展示生成许多工件的同一程序（格斯特纳透露）。|
+|**极端比例对比**|700 像素的数字旁边是 19 像素的技术注释。巨大的元素是章节卡，微小的元素是纹理。|
+|**一种信号颜色**|只有一件事是红色的，所以红色=主角。当它违反规则时，它是屏幕上唯一不准确的东西。|
 
-**Adapting any topic:** turn it into **a system plus one exception**. A product launch: the product's spec sheet assembles on a grid, then one feature breaks out of it. A company's history: each decade is a rule added to one poster. A love story: two red elements on two different grids, and the film ends when one of them leaves its grid.
+**适应任何主题：**将其变成**a系统加上一个例外**。产品发布：产品的规格表组装在网格上，然后一个功能从中脱颖而出。公司的历史：每个十年都是一张海报上添加的一条规则。一个爱情故事：两个不同网格上的两个红色元素，当其中一个离开网格时，影片结束。
 
-**Emotional arc (30–60s):** order being built (curious, crisp) → order complete (correct and a bit dull, *say it*) → hesitation (the red element twitches and snaps back) → the break (the only non-snapped, linear move in the film; drums drop out) → everything else re-flows around it, better (full band back) → the reveal (the grid means something) → scale reveal (same system, many outputs) → back to the hero artifact on the end card.
+**E情感弧线（30-60秒）：** 订单正在建立（好奇，清晰）→订单完成（正确但有点沉闷，*说出来*）→犹豫（红色元素抽搐并弹回）→中断（影片中唯一非突然的线性移动；鼓退出）→其他一切围绕它重新流动，更好（全带返回）→揭示（网格意味着什么）→规模揭示（相同的系统，许多输出）→回到片尾卡上的英雄神器。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-The "camera" is a 2D matrix (centre, scale, rotation). It moves only with the precise ease and only on beats.
+“摄影机”是一个 2D 矩阵（中心、比例、旋转）。它只能以精确的轻松和节拍的方式移动。
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Locked full frame. One gesture: a red line strikes across and the grid columns grow out of it on sixteenths |
-| Building (rules) | Locked spread, so the viewer reads cause (rule, left) → effect (artifact, right) |
-| The break | Left page slides out, artifact moves to centre-left, grid lines extend across the whole frame (the grid is bigger than the page) |
-| Reveal | **Rotate the artifact 90° in 1.5 beats and stop.** Only then do labels (note names, bar numbers) wipe in, then the playhead sweeps two bars. Each bar turns red on the exact frame of its onset: put onsets on whole frames (multiples of 0.25 s at 24 fps) |
-| Scale reveal | Rotate back while pulling out to a wall of artifacts from the same system |
-| Ending | The red line strikes again and cuts the other artifacts away. Push back to the opening spread, end card on the left page, hero artifact on the right |
+|开幕|锁定全画幅。一个手势：一条红线划过，网格柱从其上长出十六分之一|
+|建筑（规则）|锁定传播，因此观看者可以读取原因（规则，左）→ 结果（工件，右）|
+|休息|左侧页面滑出，伪像移动到中间偏左，网格线延伸到整个框架（网格比页面大）|
+|揭示|**以 1.5 拍将工件旋转 90° 并停止。** 然后才擦除标签（音符名称、小节编号），然后播放头扫过两个小节。每个条在其开始的确切帧上变成红色：将开始放在整个帧上（24 fps 时 0.25 秒的倍数）|
+|规模揭示|向后旋转，同时将同一系统中的文物拉出墙|
+|结束|红线再度袭来，将其他神器斩断。推回开篇，左页片尾卡，右页英雄神器|
 
-- **Two curves only.** Precise ease `cubic-bezier(.7,0,.2,1)` for snaps, linear for lines being drawn, the playhead and the rule-breaker. No overshoot, no spring, no bounce.
-- **Durations are note values** at the film's BPM (120: 1/8 = 0.25 s, 1/16 = 0.125 s). A snap starts one note value early and **lands on the beat**.
-- **Entrances are wipes or clip-reveals, never fades.** Words rise out of a clip rect from below the baseline (1/16 note) and leave upward (1/8 note). Lines grow along their length. Paper appears by a vertical wipe. Big numerals climb in **4 eased steps** ("one module at a time").
-- **Deletions are knife cuts.** A 2 px line crosses the element in 1/16, then the element collapses vertically to its midline in 1/8.
-- **Ripples are ordered by distance** from the cause. After the red circle lands, units re-flow two at a time on sixteenths, nearest first.
-- **The exception moves differently.** It is linear, not snapped, and pauses for one eighth mid-flight (a glance back). It grows as it travels. A coordinate readout next to it turns from `col 5.00 row 0.00 · on grid` to red `off grid` with non-integer (even negative) values.
-- Everything renders at a smooth 24 fps. There's no stepping: this style is digital precision, not hand-made.
+- **仅两条曲线。** 精确轻松 `cubic-bezier(.7,0,.2,1)` 用于捕捉、线性绘制线条、播放头和规则破坏者。无超调、无弹簧、无弹跳。
+- **持续时间是影片的 BPM 处的音符值**（120：1/8 = 0.25 秒，1/16 = 0.125 秒）。响声提前开始一个音符值，**落在节拍** 上。
+- **E入口是擦除或剪辑显示，永不褪色。**单词从基线下方从剪辑矩形中升起（1/16 注）并向上离开（1/8 注）。线条沿着它们的长度生长。通过垂直擦拭出现纸张。**4 中的大数字攀登减轻了步骤**（“一次一个模块”）。
+- **删除是刀切。** 一条 2 px 线穿过 1/16 中的元素，然后该元素垂直折叠到 1/8. 中的中线
+- **波纹按距起因的距离** 排序。红色圆圈落地后，单位会在十六分之一处一次重新流动两个单位，最接近的第一个。
+- **异常移动不同。** 它是线性的，不是捕捉的，并且在飞行中暂停八分之一（回头看一眼）。它随着旅行而成长。旁边的坐标读数从 `col 5.00 row 0.00 · on grid` 变为红色 `off grid`，且值为非整数（甚至负数）。
+- 一切都以 24 fps 流畅渲染。没有任何步骤：这种风格是数字精确的，而不是手工制作的。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music**: Motorik / krautrock, 120 BPM, A dorian (not a generic piano-and-strings bed). Layer one instrument per rule:
-  1. hats only;
-  2. + full motorik kit (`drum_kit`: kick 1, 3, 3&; snare 2, 4; closed hat eighths);
-  3. + `electric_bass` eighth-note root pulse;
-  4. + numpy saw arpeggio sixteenths with an opening filter;
-  5. + `glockenspiel` doubled by a soft numpy square lead.
+- **音乐**：Motorik / krautrock，120 BPM，Dorian（不是通用的钢琴和弦乐床）。每条规则的第一层工具：
+  1. 仅限帽子；
+  2. + 完整的 motorik 套件（`drum_kit`：底鼓 1、3、3 和军鼓 2、4；封闭八分之一）；
+  3. + `electric_bass` 八分音符根脉冲；
+  4. + numpy saw 琶音十六分之一，带开放滤波器；
+  5. + `glockenspiel` 通过软 numpy 方形引线加倍。
 
-  **Drop the drums for the one bar of the break**, return on the landing. Before the reveal add one bar of near-silence (bass pedal + quarter-note tick). During the reveal keep only kick + bass + melody so every note is audible.
-- **The melody comes from the same JSON as the picture** (`score.json`: column → pitch, row → onset, length → duration). "The poster is the score" is true in code, not faked.
-- **Foley follows materials**, dry and close, no reverb:
-  - letterpress clack (metal transient + 3.3 / 5.1 kHz resonances + wooden tray);
-  - ruling pen "tss";
-  - guillotine (band-pass sweep + metal snick);
-  - paper slap / slide;
-  - numeral "thunk" per step;
-  - block snap;
-  - circle landing (58 Hz felt thump).
+  **放下鼓以进行休息的一小节**，在着陆时返回。在显示之前添加一个近乎静音的小节（低音踏板+四分音符滴答声）。在展示过程中，只保留底鼓+低音+旋律，这样每个音符都能听到。
+- **旋律来自与图片**相同的JSON（`score.json`：列→音高，行→开始，长度→持续时间）。 “海报是配乐”的代码是真实的，不是伪造的。
+- **Foley遵循材料**，干燥、接近、无混响：
+  - 凸版印刷噼啪声（金属瞬态 + 3.3 / 5.1 kHz 共振 + 木托盘）；
+  - 尺笔“tss”；
+  - 断头台（带通扫描+金属缺口）；
+  - 纸拍/幻灯片；
+  - 每步数字“thunk”；
+  - 块捕捉；
+  - 圆形着陆（58 Hz 感觉到重击）。
 
-  The rule-breaker is the only element that *sings*: a sine glide that follows its position.
-- **Voice**: cool, crisp female narrator, Kokoro `af_sarah` at speed 1.0. It had ~7× the 3–8 kHz consonant energy of `af_kore`. Keep lines rule-like: "Rule one. Build a grid." Check every line with whisper (write numbers as `"asr": "Rule 1, …"`).
-- **Mix**: voice compressed, music ducked ~−10 dB under voice (voice ≥ 6 dB above music), −14 LUFS.
+  规则破坏者是唯一“唱歌”的元素：跟随其位置的正弦滑行。
+- **嗓音**：酷、清脆的女旁白，Kokoro `af_sarah`，速度为1.0。它的 3-8 kHz 辅音能量约为 `af_kore` 的 7 倍。保持线条像规则一样：“规则一。建立一个网格。”用Whisper 语音检查每一行（将数字写为 `"asr": "Rule 1, …"`）。
+- **混音**：语音压缩，音乐在语音下闪避~−10 dB（语音高于音乐 ≥ 6 dB），−14 LUFS。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Frame grid**: 1920×1080, 12 columns, 96 px side margins, 24 px gutters (122 px columns), 24 px baseline. Treat the frame as a **spread**: left page (cols 1–6) = the "programme" (numeral, rule text, notes); right page (cols 8–12) = the artifact (poster 706×1008, ratio 0.70 ≈ Swiss world format).
-- **Artifact grid**: derive it from the content (Gerstner). In the demo the poster has 7 columns × 91 px and 16 rows × 40 px, with a 26 px baseline grid in the text zone. I first tried 12 semitone columns: bars were only 43 px wide and the poster looked like a data chart. **Choose module sizes that give the bars mass.**
-- **Palette**: page `#EAE9E5`, paper `#FFFFFF`, ink `#111111`, signal red `#E30613`, grid lines `#CFCEC9` on the page / `#C9C8C2` while building / `#E2E1DC` on paper, secondary bars `#CFCEC9`. No gradients, no shadows, no particles, no grain (mux grain 0).
-- **Type**: one family for the whole film (demo: **Archivo** variable, weights 400–800). Letter-spacing −2.2% at ≥ 90 px. Lowercase headlines (`neue musik`). Rule numerals at ~980 px (700 px figure height), bottom-aligned with the poster's bottom edge, **optically** flush left (subtract the glyph's left bearing). Notes 19 px Medium. Always `document.fonts.load` every weight before drawing.
-- **Composition**: flush left, ragged right. Everything on a grid line. Big white spaces are part of the layout. The final composition must be **visibly bolder** than the "correct" one:
-  - one main diagonal with a strong long-short rhythm;
-  - the red element at ~2× scale;
-  - elements **bleeding** off the paper edge;
-  - type overprinting the red circle (black on red).
-  Merely tilting the correct layout is not enough.
-- **Bars as notes**: bar width = column minus 8 px; consecutive cells of one note merge into one bar (overdraw 1 px at the seams or antialiasing shows hairlines, especially when rotated).
-- **The secondary voice** (bass) is light-grey bars under the black ones. They read as a shadow diagonal and give depth without a second colour.
+- **框架网格**：1920×1080，12列，96像素侧边距，24像素装订线（122像素列），24像素基线。将框架视为 **传播**：左页（第 1–6 列）=“程序”（数字、规则文本、注释）；右页（第 8-12 栏）= 工件（海报 706×1008，比率 0.70 ≈ 瑞士世界格式）。
+- **神器网格**：从内容中导出（Gerstner）。在示范中，海报有 7 列 × 91 像素和 16 行 × 40 像素，文本区域中有 26 像素基线网格。我首先尝试了 12 个半音列：条只有 43 像素宽，海报看起来像一个数据图表。 **选择能够赋予棒质量的模块尺寸。**
+- **调色板**：页面`#EAE9E5`，纸张`#FFFFFF`，墨水`#111111`，信号红色`#E30613`，构建时页面/ `#C9C8C2`上的网格线`#CFCEC9`/纸上 `#E2E1DC`，二级棒 `#CFCEC9`。无渐变、无阴影、无粒子、无颗粒（mux 颗粒 0）。
+- **字体排版**：整个影片的一个系列（示范：**Archivo**变量，权重 400–800）。字母间距 -2.2%（≥ 90 像素时）。小写标题 (`neue musik`)。规则数字位于 ~980 px（700 px 图高），底部与海报的底部边缘对齐，**光学上** 左齐平（减去字形的左方位）。注释 19 像素表现媒介。绘图前每个重量始终为 `document.fonts.load`。
+- **作品**：左齐平，右齐平。一切都在网格线上。大的空白是布局的一部分。最终的作品必须是**明显更大胆**比“正确”的：
+  - 一条主对角线，具有强烈的多空节奏；
+  - ~2× 尺度的红色元素；
+  - 元素**出血** 脱纸边缘；
+  - 键入叠印红色圆圈（红底黑字）。
+  仅仅倾斜正确的布局是不够的。
+- **条形作为注释**：条形宽度=列减去8像素；一个音符的连续单元格合并成一个小节（在接缝处过度绘制 1 像素或抗锯齿显示细线，尤其是在旋转时）。
+- **次要声音**（低音）是黑色条下方的浅灰色条。它们被解读为阴影对角线，并在没有第二种颜色的情况下给出深度。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- **Subtitles are part of the layout**, not a bar at the bottom. Each line sits at column 1 on the spread's left page: the first sentence as a 30 px Medium grey lead-in, the rest as a 76 px Bold statement. Each word clip-reveals on its whisper timestamp. Non-rule lines use Regular weight ("Perfect. And a little dull."). In other shots the line sits at column 1 of that shot, at the artifact's headline baseline or under the wall like a museum label.
-- **Title card**: `Five Rules / for a Poster`, 120 px Bold, two lines flush left, sitting on the opening red line. A 19 px caption row with a 1 px rule above it (`A programme in five steps · 1961 · ♩ = 120`).
-- **Caption row + notes**: top of the left page (title / `Rule 0n / 05` / keyword); bottom of column 5: 2–3 technical notes per rule (`Columns 7 · Rows 16 · Module 91 × 40`). Bottom of column 7: a bar counter `bar 04.3`.
-- **End card**: the opening spread again. `Swiss Motion / Graphics` 120 px, red line under it, `LemoLab × Claude Opus 5.5` 36 px, notes at the bottom, hero poster on the right. The LemoLab sign-off belongs to this library's demo only: a user's film carries no LemoLab credit and no copy of this card.
+- **字幕是布局**的一部分，而不是底部的栏。每行位于跨页左页的第 1 列：第一句为 30 像素表现媒介灰色导入，其余为 76 像素粗体语句。每个单词剪辑都会显示其耳语时间戳。非规则线使用常规粗细（“完美。但有点沉闷。”）。在其他镜头中，该线位于镜头的第 1 列，位于文物的标题基线处或像博物馆标签一样位于墙壁下方。
+- **标题卡**：`Five Rules / for a Poster`，120像素粗体，两条线向左齐平，位于开头红线上。 19 px 标题行，其上方有 1 px 规则 (`A programme in five steps · 1961 · ♩ = 120`)。
+- **标题行+注释**：页面左上方（标题/`Rule 0n / 05`/关键词）；第 5 栏底部：每条规则 2-3 个技术说明 (`Columns 7 · Rows 16 · Module 91 × 40`)。第7栏底部：酒吧柜台`bar 04.3`。
+- **尾牌**：开盘再次展开。 `Swiss Motion / Graphics` 120 px，红线在其下方，`LemoLab × Claude Opus 5.5` 36 px，注释在底部，英雄海报在右侧。 LemoLab 签核仅属于该风格库的示范：用​​户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Pitfalls we hit (demo record)
+<a id="pitfalls-we-hit-demo-record"></a>
+## 我们遇到的陷阱（示范记录）
 
-- **12 columns looked like a chart.** Grid modules must give the graphic elements mass. We used fewer, wider columns for the artifact and kept the standard 12 columns for the frame.
-- **The "better" composition wasn't obviously better.** Four small staircases → one scattered layout wasn't convincing. Fix: one main diagonal with long/short rhythm, 2× red element, bleeds, type over red.
-- **Rotation reveal needs a stop.** Rotating and labelling at the same time read as noise. Order it: rotate (1.5 beats) → hold → grid lines → labels → playhead → sweep.
-- **Merged bars showed seams** after rotation and scaling (antialiasing between adjacent rects). Overdraw 1 px where cells join.
-- **Labels overlapping the header**: hide the caption row before the rotated shot.
-- **Word timings**: whisper splits or merges words ("type face"), and `asr_check` reports the first word at −0.6 s (padding). Align by letters and clamp to 0 (`tools/words.py`).
-- **Subtitle rule** (≥ voice + 0.6 s and ≥ 1.8 s): two lines missed by 2 ms. `tools/subs.py` asserts it, so fix by nudging start times.
-- **The wall cut must follow the line**: shrink the wall board from the side the red line enters, in screen space.
-- The other posters on the wall share the camera matrix, so draw them **only** during the wall shot. Otherwise they leak into other shots at ±786 px.
-- Canvas `letterSpacing` also affects `measureText`, so compute widths after setting the font.
+- **12 列看起来像一个图表。** 网格模块必须赋予图形元素质量。我们为工件使用了更少、更宽的列，并为框架保留了标准的 12 列。
+- **“更好”的构图并不明显更好。** 四个小楼梯→一个分散的布局并不令人信服。修复：一条主对角线带有 long/short 节奏，2× 红色元素，出血，字体超过红色。
+- **旋转显示需要停止。** 旋转和标记同时读取为噪音。顺序：旋转（1.5 节拍）→ 按住→ 网格线→ 标签→ 播放头→ 扫动。
+- **合并的条在旋转和缩放后显示接缝**（相邻矩形之间的抗锯齿）。在单元格连接处过度绘制 1 像素。
+- **与标题重叠的标签**：隐藏旋转的镜头之前的标题行。
+- **字计时**：耳语分割或合并单词（“字体”），`asr_check`在-0.6秒（填充）时报告第一个单词。按字母对齐并夹至 0 (`tools/words.py`)。
+- **字幕规则**（≥语音+0.6秒且≥1.8秒）：两行错过2毫秒。 `tools/subs.py` 断言它，因此通过微调开始时间来修复。
+- **墙壁切割必须沿着线**：在屏幕空间中，从红线进入的一侧收缩墙板。
+- 墙上的其他海报共享摄影机矩阵，因此在墙镜头期间仅将它们绘制为 ****。否则它们会泄漏到 ±786 px 处的其他镜头中。
+- 画布 `letterSpacing` 也会影响 `measureText`，因此在设置字体后计算宽度。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/swiss-motion/demo/
@@ -122,8 +130,8 @@ styles/swiss-motion/demo/
   tools/subs.py   subtitle intervals (asserted) → srt     build.sh  one-shot rebuild
 ```
 
-1. Design the layout system first: frame grid, artifact grid, what columns and rows *mean*. Write `score.json`.
-2. `node core/render/still.mjs styles/swiss-motion/demo --range 0.5:43.5:1 --out …` then `sheet.py`. Review a 1 s overview plus dense 0.25 s strips around the break and each transition.
-3. `tts.py` → `asr_check.py` (0 mismatches) → `tools/words.py`.
-4. `music/score.py` (onsets from `score.json`; check sweep onsets ≤ 5 ms) → `events.mjs` → `mix.py` (prints voice/music/foley dB per line).
-5. `video.mjs --workers 3` (1056 frames in ~12 s) → `mux.sh … 24 0`. Or simply `sh styles/swiss-motion/demo/build.sh` (~55 s from zero).
+1. 首先设计布局系统：框架网格、工件网格、列和行的*含义*。写入 `score.json`。
+2. `node core/render/still.mjs styles/swiss-motion/demo --range 0.5:43.5:1 --out …` 然后 `sheet.py`。查看 1 秒概述以及围绕中断和每个转换的密集 0.25 秒条带。
+3. `tts.py` → `asr_check.py`（0 个不匹配）→ `tools/words.py`。
+4. `music/score.py`（从 `score.json` 开始；检查扫描开始 ≤ 5 ms）→ `events.mjs` → `mix.py`（每行打印 voice/music/foley dB）。
+5. `video.mjs --workers 3`（约 12 秒内 1056 帧）→ `mux.sh … 24 0`。或者简单地称为 `sh styles/swiss-motion/demo/build.sh`（从零开始约 55 秒）。

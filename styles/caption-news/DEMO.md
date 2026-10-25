@@ -1,67 +1,74 @@
-# Caption News — our demo
+<a id="caption-news--our-demo"></a>
+# 标题新闻 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Bee Ledger* (蜜蜂账本, 59.5 s) · `caption-news.mp4` · source in [`demo/`](demo/)
+示范: *The Bee Ledger* (蜜蜂账本, 59.5 s) · `caption-news.mp4` · 来源于 [`demo/`](demo/)
 
-In 2025 America's beekeepers lost 1.3 million honey bee colonies, nearly half of what they started the year with. So are the bees running out? No: on January 1, 2026 there were 6 % more colonies than a year before, because the same beekeepers added 1.45 million. The film keeps the books in two columns — what died, what was rebuilt — and then explains the turn one fact per shot: how they rebuild, what hurts the colonies, the worst quarter, where it hit, and that they are still rebuilding. Every number is from one public report, USDA NASS *Honey Bee Colonies* (August 3, 2026), shown on screen.
+2025 年，美国养蜂人失去了 130 万个蜂群，几乎是年初数量的一半。那么蜜蜂快用完了吗？不：2026 年 1 月 1 日，蜂群数量比一年前增加了 6%，因为同样的养蜂人增加了 145 万个。 影片将书籍分为两栏——哪些死亡，哪些重建——然后解释每个镜头的第一事实：他们如何重建，什么伤害了殖民地，最糟糕的季度，它击中了哪里，以及他们仍在重建。每个数字均来自屏幕上显示的一份公开报告，即 USDA NASS *Honey Bee Colony*（2026 年 8 月 3 日）。
 
-This is an unofficial film made from real public material (USDA footage, photos and data; CC BY footage from Wikimedia Commons). The channel "简闻" is fictional; USDA did not make or endorse it.
+这是由真实公共材料（美国农业部镜头、照片和数据；来自维基共享资源的 CC BY 镜头）制作的非官方影片。 “简闻”频道纯属虚构；美国农业部没有制定或认可它。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Shape: an inverted pyramid that turns at a quarter of the way in. Hook (0–5 s): the biggest number lands on frame 4 over rows of hives. Title sting (5–7.5 s). Setup (7.5–13 s): the loss as a proportion of the hives, then the viewer's question on a freeze frame, in silence. Turn (13–19 s): the report's own headline, highlighted — "Up 6 Percent" — and the count on a line chart, a text-only breath. Development (19–50 s): the ledger in two columns (lost vs added, counters racing), three ways to rebuild in a lit grid, the report's sentence on varroa mites and the mite itself under the electron microscope, the stressor ranking (a held judgement frame), the worst quarter (a spike on the loss line), the map (California) dissolving into an almond orchard through California's outline, and the rebuilding still going on. Ending (50–54.5 s): half a second of silence, then a two-part verdict on footage: "蜜蜂没有消失 / 是养蜂人在硬撑". End card (54.5–59.5 s).
+形状：一个倒金字塔，在四分之一处旋转。钩（0-5秒）：最大的数字落在蜂巢行上方的第4帧上。标题刺痛（5–7.5 秒）。设置（7.5-13 秒）：作为蜂巢比例的损失，然后观众在静帧上提出问题，保持沉默。回合（13-19秒）：报告自己的标题，突出显示——“上涨6%”——以及折线图上的计数，纯文本呼吸。开发（19-50秒）：两列分类账（丢失与添加，计数器赛车），在明亮的网格中重建的三种方式，电子显微镜下报告对瓦螨和螨本身的判决，压力源排名（保留的判断框架），最差的季度（损失线上的尖峰），地图（加利福尼亚州）通过加利福尼亚州的轮廓溶解成杏仁园，重建仍在继续。结尾（50-54.5秒）：半秒的沉默，然后对镜头进行两部分的判决：“蜜蜂没有消失/是养蜂人在硬撑”。 片尾卡（54.5–59.5 秒）。
 
-Formats spent, each once and each for a new fact: cold-open number hook; title sting that becomes the channel bug; caption cards with yellow keywords (one line per language); rolling counters; source tag; per-shot footage credits; proportion-by-darkness sweep; freeze frame with brackets and timecode; document close-up with highlighter (twice: a headline, then a sentence, with a pull-quote mark); line chart (twice: stock, then loss rate); split screen; three-panel grid; punch-in with circle callout; ranked bar chart; choropleth map with push-in; mask transition from map to photo; lower third (place and date); text-only beat; end card.
+格式花费，每一次都为一个新事实：冷开号码挂钩；标题刺痛成为了频道的漏洞；带有黄色关键字的字幕卡（每种语言一行）；滚动计数器；源标签；每镜头镜头学分；按黑暗比例扫描；带括号和时间码的冻结帧；使用荧光笔的文档特写（两次：一个标题，然后一个句子，带有拉引号）；折线图（两次：股票，然后是损失率）；分屏;三面板网格；带圆圈标注的打孔；排名条形图；带推入功能的分区统计图；遮罩从地图到照片的过渡；下三分之一（地点和日期）；纯文本节拍； 片尾卡。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-Times in seconds; every cut on the 120 BPM half-beat grid.
+时间以秒为单位； 120 BPM 半拍网格上的每次剪辑。
 
-| # | Time | Shot | Format / move | Note |
+|#|时间|镜头|格式化/移动|笔记|
 |---|---|---|---|---|
-| 1 | 0.0–1.5 | wide: rows of hives in a field (Altena TV) | push 1.0 → 1.035; **hook**: "一年没了" 0.06, "130 万箱" block 0.13 rolling to 130 by 0.6, "蜜蜂" 0.4 | strong action on frame 4 |
-| 2 | 1.5–3.0 | close: bees landing on a hive (USDA) | number card carried across the cut | |
-| 3 | 3.0–5.0 | slow-motion flight (Phonon.b) | push; the card slides out left at 4.62 | |
-| 4 | 5.0–7.5 | **title sting**: yellow ruled page over the hive entrance (Midsummer Bees) | page wipes in, rules draw, title slams 5.18, dateline 5.5; page wipes off left 7.18–7.5 revealing shot 5; title becomes the bug | |
-| 5 | 7.5–10.5 | close rows of hives | **proportion sweep**: yellow line to 49.5 % at 7.92, the passed side goes dark; "≈49%" | |
-| 6 | 10.5–13.0 | bee on an aster (Calabrese) | **freeze** at 11.0: white flash, punch 1.12, desaturate, brackets, timecode; music stops | silence 1 |
-| 7 | 13.0–16.0 | report page 1 | flash; highlighter on the headline 13.28; "+6%" block 14.25; source tag | the turn |
-| 8 | 16.0–19.0 | ledger card: colonies on the first day of each quarter | line draws 16.2–17.2; "+6%" bracket Jan → Jan 17.05; caption only, no voice | the breath |
-| 9 | 19.0–23.5 | **split screen**: dead column (rows, desaturated, red) / living column (bees on comb, USDA) | divider drops, panels open from the centre; counters 19.35–20.9; "多补 148,060 箱" 20.95 | judgement: both counters held ≥ 2.5 s |
-| 10 | 23.5–27.5 | **grid**: working the frames (USDA) / bee packages (vastateparksstaff) / the marked queen (USGS) | panels rise staggered; each lights on its word (23.78, 24.82, 25.96); a ring round the queen | |
-| 11 | 27.5–30.0 | report page 1, the varroa paragraph | highlighter on the heading and the sentence; pull-quote mark | evidence before the image |
-| 12 | 30.0–33.0 | electron micrograph: a varroa mite on a bee (USDA ARS) | **punch-in** 30.6 on "varroa mites"; circle 30.9; leader + "瓦螨 / Varroa destructor" | |
-| 13 | 33.0–37.5 | ledger card: stressors, Jan–Mar 2026 | bars grow, varroa first; held 3 s complete | judgement frame |
-| 14 | 37.5–41.5 | ledger card: share lost per quarter | line draws; spike ring + "16%" 39.75, "六个季度最高" | |
-| 15 | 41.5–45.5 | ledger card: state loss rates, Jan–Mar 2026 | states fill west → east; California outlined + label 42.3; push 43.6–44.9; **mask**: the almond photo grows out of California 44.9–45.5 | |
-| 16 | 45.5–46.5 | bee on an almond blossom, California, 2014 (USDA) | slow push; date in the credit | |
-| 17 | 46.5–50.0 | rooftop apiary, beekeeper at a hive (USDA) | lower third "USDA 屋顶蜂场 · 华盛顿 · 2013" | |
-| 18 | 50.0–54.5 | bees on dandelions (Calabrese) | silence 50.0–50.5; verdict captions 50.4 and 52.2 at 1.25× size | silence 2 |
-| 19 | 54.5–59.5 | end card over the blurred hive entrance | see below | |
+|1|0.0–1.5|宽：田野里成排的蜂巢（Altena TV）|推 1.0 → 1.035； **钩**：《一年没了》0.06、《130万箱》区块0.13滚滚到130 0.6、《蜜蜂》0.4|第 4 帧上的强力动作|
+|2|1.5–3.0|关闭：蜜蜂降落在蜂巢上（美国农业部）|号码卡穿过切口| |
+|3|3.0–5.0|慢动作飞行 (Phonon.b)|推;卡在 4.62 处向左滑出| |
+|4|5.0–7.5|**标题刺**：蜂巢入口处的黄色规则页面（仲夏蜜蜂）|页面擦除、规则抽签、标题猛击 5.18、日期变更线 5.5；页面擦除左侧 7.18–7.5，显示镜头 5；标题成为错误| |
+|5|7.5–10.5|关闭成排的荨麻疹|**比例扫描**：黄线到7.92处49.5%，通过的一面变暗； “约49%”| |
+|6|10.5–13.0|紫苑上的蜜蜂（卡拉布雷斯）|**冻结** 为 11.0：白色闪光、打孔 1.12、去饱和、括号、时间码；音乐停止|沉默1|
+|7|13.0–16.0|报告第1页|闪光;标题 13.28 上的荧光笔； “+6%”区块14.25；源标签|转牌|
+|8|16.0–19.0|账本卡：每季度第一天的殖民地|线条画 16.2–17.2； “+6%”括号 Jan → Jan 17.05；只有字幕，没有语音|呼吸|
+|9|19.0–23.5|**分屏**：死柱（行，去饱和，红色）/活柱（蜂巢上的蜜蜂，USDA）|分隔板掉落，面板从中心打开；柜台 19.35–20.9； "多补148,060箱" 20.95|判断：两个计数器保持≥2.5秒|
+|10|23.5–27.5|**网格**：工作框架（美国农业部）/蜜蜂包（vastateparksstaff）/标记女王（美国地质勘探局）|面板交错上升；每个字都亮起（23.78、24.82、25.96）；女王周围的戒指| |
+|11|27.5–30.0|报告第一页，varroa 段落|标题和句子上的荧光笔；拉引号|图像之前的证据|
+|12|30.0–33.0|电子显微照片：蜜蜂身上的瓦螨（美国农业部 ARS）|**在“瓦螨”上打入** 30.6；圈 30.9；领导者+“瓦螨/破坏瓦螨”| |
+|13|33.0–37.5|账本卡：压力源，2026 年 1 月至 3 月|条状生长，瓦螨先行；持续 3 秒完成|判断框架|
+|14|37.5–41.5|分类卡：每季度损失的份额|画线；尖峰环+“16%”39.75，“六个季度最高”| |
+|15|41.5–45.5|账本卡：2026 年 1 月至 3 月状态损失率|各州填充西→东；加州概述 + 标签 42.3；推43.6–44.9； **面具**：杏仁照片生长于加利福尼亚州 44.9–45.5| |
+|16|45.5–46.5|加州杏仁花上的蜜蜂，2014 年（美国农业部）|慢推；信用证日期| |
+|17 号|46.5–50.0|屋顶养蜂场，蜂巢里的养蜂人（美国农业部）|下三分之一“USDA 屋顶蜂场·华盛顿·2013”| |
+|18|50.0–54.5|蒲公英上的蜜蜂（卡拉布雷斯）|沉默 50.0–50.5；判决字幕 50.4 和 52.2，尺寸为 1.25 倍|沉默2|
+|19|54.5–59.5|片尾卡模糊的蜂巢入口|见下文| |
 
-`readcheck.mjs` passes on every key text (numbers, chart titles and labels, grid labels, the mite label, the lower third, the end card). Ornamental text (the sting's dateline) is left out of `TEXTS`; the same date is readable later in the source tag.
+`readcheck.mjs` 传递每个关键文本（数字、图表标题和标签、网格标签、螨标签、下三分之一、片尾卡）。 `TEXTS` 中省略了装饰性文字（刺伤日期线）；稍后可以在源标记中读取相同的日期。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- 120 BPM, 4/4. A minor (Am–F–G) for the hook; A minor groove after the sting; **hard stop** into silence at 10.5 (only the swarm's own buzz and the question), a suspended-cymbal swell from 12.15; the turn at 13.0 is a C-major brass chord with crash and glockenspiel; groove B in C major (C–G–Am–F) with vibraphone off-beats and claps under the turn, the chart breath (a glockenspiel figure, 16–19 s), the ledger and the grid (glockenspiel pings on the counters' arrival and each grid word); a thin bar of kick and spiccato cellos under the varroa document; the mite at 30.6 lands on timpani, bass drum and low trombones, then half-time D minor with cellos; a snare build (eighths → sixteenths) into the spike at 39.75 (crash + B♭ brass against A: the wrong chord on the worst number); toms and a cymbal swell under the map push, a crash on the mask; the groove returns, brighter, under the rebuilding; 0.5 s of silence; A major for the verdict at 50.5 (brass, horns, timpani, tubular bells); the end card holds horns and contrabass under a glockenspiel A–C♯–E–A and fades.
-- Instruments: MuldjordKit drums, electric bass, marimba (a sixteenth-note ostinato: the hive's hum), vibraphone, glockenspiel, staccato trumpet and trombone, horn, timpani, bass drum, suspended cymbal, orchestral snare, claps, spiccato cellos, contrabass.
-- Foley (procedural, `audio/mix.py` from `events.json`): chunk slams, counter rattles, whooshes into cards, highlighter squeaks, the camera shutter on the freeze, a stamp on "+6%", pops, map ticks, a riser into the map push, paper on each card.
-- Natural sound: the swarm's own audio (Сарапулов, CC BY 4.0) low under the hook, alone under the freeze (J-cut 0.3 s before it), and under the verdict and end card.
-- Mix: music about 10 dB under the voice and ducked; under speech the music also loses 1.2–5 kHz (the consonant band) — without it, speech-to-text heard "colonies" as "collins" in the full mix; −14.1 LUFS integrated.
-- Voice: Kokoro `af_bella`, 12 lines, speed 1.0–1.17; numbers spelled out in the TTS text, digits in the captions.
+- 120 BPM，4/4. A小调（Am–F–G），用于钩子；被蜇后有一条小沟； **硬停止**在10.5处陷入沉默（只有蜂群自己的嗡嗡声和问题），从12.15开始暂停的铙钹声； 13.0 处的转折是 C 大调铜管和弦，带有碰撞和钟琴； C 大调 (C–G–A​​m–F) 的 B 槽，在转弯下带有颤音琴的另类节拍和拍手、图表呼吸（钟琴图形，16–19 秒）、账本和网格（计数器到达时的钟琴敲击声和每个网格词）； varroa 文件下的一根细底鼓和短笛大提琴； 30.6 处的小旋律落在定音鼓、低音鼓和低音长号上，然后半场用大提琴演奏 D 小调；在 39.75 处将军鼓构建（八分之一 → 十六分之一）到尖峰（碰撞 + B♭ 铜管对 A：最差数字上的错误和弦）；通鼓和铙钹在地图推动下膨胀，面罩上发出撞击声；在重建过程中，凹槽回归，更加明亮； 0.5秒的静默；大调的判定为 50.5（铜管、圆号、定音鼓、管钟）； 片尾卡将圆号和低音提琴置于钟琴 A–C♯–E–A 下并渐弱。
+- 乐器：MuldjordKit 鼓、电贝司、马林巴（一种十六分音符固定音：蜂巢的嗡嗡声）、电颤琴、钟琴、断奏小号和长号、圆号、定音鼓、低音鼓、悬钹、管弦军鼓、拍手、短笛大提琴、低音提琴。
+- 拟音（程序，来自`events.json`的`audio/mix.py`）：大块撞击、计数器嘎嘎声、嗖嗖地进入卡片、荧光笔吱吱声、摄影机快门冻结、“+6%”上的标记、弹出、地图滴答声、地图推入提升器、每张卡片上都有纸。
+- 自然声音：群自己的音频（Сарапулов，CC BY 4.0）在钩子下低，在冻结下单独（J-cut 0.3秒之前），在判决和片尾卡下。
+- 混音：音乐低于人声10分贝左右并闪避；在语音下，音乐也会损失 1.2-5 kHz（辅音频带）——没有它，语音到文本在完整混音中听到的“殖民地”会变成“柯林斯”； −14.1 LUFS 集成。
+- 语音：Kokoro `af_bella`，12线，速度1.0–1.17； TTS 文本中拼写的数字、标题中的数字。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Ink `#0E0E0C`, ivory `#F7F5EF`, honey `#FFC21A` (the point, gains, keywords, the bug), loss red `#FF4A3D`, label grey `#8D8B83`, the ledger sheet `#151512` with ruled lines and a red double margin.
-- Type: Noto Sans SC 900 / 500, Inter Tight 800 / 500 / 600 italic (OFL subsets in `demo/fonts/`).
-- Channel bug "简闻 | 蜜蜂账本 THE BEE LEDGER" (fictional channel).
+- 墨水`#0E0E0C`，象牙色`#F7F5EF`，蜂蜜`#FFC21A`（要点，收益，关键词，bug），损失红色`#FF4A3D`，标签灰色`#8D8B83`，带有格线和红色双边距的帐单`#151512`。
+- 类型：Noto Sans SC 900 / 500、Inter Tight 800 / 500 / 600 斜体（`demo/fonts/` 中的 OFL 子集）。
+- 频道错误“简闻|蜜蜂账本THE BEE LEDGER”（虚构频道）。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-From 54.5 s, held five seconds over the blurred, darkened hive entrance: "蜜蜂账本" (150 px), "The Bee Ledger" (honey), a thin rule, "CAPTION NEWS · 字幕新闻", "LemoLab × Claude Opus 5.5", then five lines of sources: the data (USDA NASS report, its scope, and that 2025 losses and additions are four quarters summed), every CC BY work with title, author and licence, and the public-domain sources. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+从 54.5 秒开始，在模糊、黑暗的蜂巢入口处停留 5 秒：“蜜蜂账本”（150 px）、“蜜蜂账本”（亲爱的）、一条细尺、“CAPTION NEWS·字幕新闻”、“LemoLab × Claude Opus 5.5”，然后是五行来源：数据（USDA NASS 报告、其范围，以及 2025 年损失和增加是四个季度的总和），每个 CC BY 作品都带有标题、作者和许可证以及公共领域来源。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -78,6 +85,6 @@ demo/
   FACTS.md, SOURCES.md, SOURCES.jsonl, CREDITS
 ```
 
-`sh demo/build.sh` (library set up with `setup.sh deps voice music`, sample packs freepats / vsco2ce / vcsl): sources → fonts → frames → voice + speech check → cues → reading check → events → render (1,785 frames, 30 fps) → mix → .srt → master (−14 LUFS, grain 1) → `caption-news-small.mp4` (1280 px, CRF 24) → poster and styleframe (22.3 s, the split screen) → final checks.
+`sh demo/build.sh`（使用 `setup.sh deps voice music` 设置的库，示例包 freepats / vsco2ce / vcsl）：源 → 字体 → 帧 → 语音 + 语音检查 → 提示 → 阅读检查 → 事件 → 渲染（1,785 帧，30 fps）→ 混合 → .srt → 主控（−14 LUFS，颗粒 1）→ `caption-news-small.mp4`（1280 px，CRF 24）→ 海报和风格定帧（22.3 秒，分屏）→ 最终检查。
 
-Demo-specific choices and pitfalls: the hive-rows footage is Dutch (Altena TV) and is used only as "a box is a colony", never labelled as a US location; its station logo is cropped out and two hive stencils with a beekeeper's phone number are blurred. The almond photo is from 2014 and says so. The report's own wording sets the words: "stressor", not "killer"; "four quarters summed", not "annual net loss"; the report's page-1 figure for varroa in April–June 2026 (26.3 %) disagrees with its own table (22.2 %), so only January–March is used. A first draft spent a bar chart on "11–12 % every quarter" and later a line chart with the same quarters — the same fact twice; the bar chart was cut. Chart titles longer than six characters failed the reading check and were shortened; the California label was moved earlier so it holds 2.5 s before the push.
+示范特定的选择和陷阱：蜂巢行镜头是荷兰语（Altena TV），仅用作“盒子是殖民地”，从未标记为美国位置；它的车站标志被裁剪掉，两个带有养蜂人电话号码的蜂巢模板也变得模糊。杏仁照片是 2014 年的，也是这么说的。报告自己的措辞是：“压力源”，而不是“杀手”； “四个季度合计”，而不是“年度净亏损”；该报告第一页 2026 年 4 月至 6 月的瓦螨数据 (26.3%) 与其自己的表格 (22.2%) 不一致，因此仅使用 1 月至 3 月。第一稿用条形图表示“每个季度 11-12%”，后来用折线图表示相同的季度——同一事实两次；条形图被剪切。超过六个字符的图表标题未通过阅读检查并被缩短；加利福尼亚标签被移动得更早，因此它在推送前保留了 2.5 秒。

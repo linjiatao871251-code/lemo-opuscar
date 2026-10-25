@@ -1,116 +1,128 @@
-# Whiteboard Explainer — Style Prompt
+<a id="whiteboard-explainer--style-prompt"></a>
+# 白板讲解：风格提示词
 
-> An explainer drawn live on one glossy dry-erase board: single-line handwriting that is actually *written* stroke by stroke, floating markers with no hand, magnets that can move, an eraser that can rewind, and a camera that travels across the board instead of cutting.
-> References (grammar only): RSA Animate / Cognitive Media (one continuous board, the camera travels instead of cutting, a full-board view); minutephysics (one sentence = one drawing, the simplest geometry that carries the idea); Steve Reich's *Piano Phase* (two copies of one figure at two tempi as a structure). Never copy their drawings, characters, hands or music.
+> 在光滑的干擦板上实时绘制的解释者：实际上是逐笔“书写”的单行手写体、无需用手的浮动标记、可移动的磁铁、可倒带的橡皮擦以及可在黑板上移动而不是切割的摄影机。
+> 参考资料（仅语法）：RSA Animate / Cognitive Media（一块连续板，摄影机移动而不是切割，全板视图）；分钟物理学（一句话=一张图，承载思想的最简单的几何）； Steve Reich 的*钢琴阶段*（一个人物以两种速度的两个副本作为一个结构）。切勿复制他们的图画、人物、手或音乐。
 
-Suits explainers, usually science or "how does X work"; the length follows how many ideas the board has to hold.
+适合解释者，通常是科学或“X 是如何工作的”；长度取决于董事会必须容纳的想法数量。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **One physical whiteboard.** Everything the viewer learns is drawn in dry-erase marker in front of them, in real handwriting order.
-- **The board is a map**: each idea lives in its own region; the camera travels between regions, often led by the pen. Distance on the board = distance in the argument.
-- **Real marker, not animated text**: ink pools where the nib lands, dry streaks and speckle, strokes overshoot and don't quite close, ghosts of old lessons remain, a glossy sheen drifts slower than the board, and **every stroke makes a sound**.
-- **No hands.** Markers float with a real cast shadow that grows when they lift, park outside the frame between phrases and fly back in. Magnets and the eraser move on their own. Never draw a hand, an arm or a cursor.
+- **一块物理白板。** 观看者所学到的所有内容都以真实的手写顺序用干擦记号笔绘制在他们面前。
+- **棋盘是一张地图**：每个想法都存在于自己的区域； 摄影机经常在笔的带领下在不同地区之间旅行。棋盘上的距离=争论中的距离。
+- **真实标记，而不是动画文本**：笔尖落地处的墨池、干燥的条纹和斑点、笔划过冲且不太接近、旧课程的幽灵仍然存在、光滑的光泽比木板移动得慢，以及**每一次划动都会发出声音**.
+- **没有手。** 标记漂浮着真实的投射阴影，当它们抬起时，阴影会变大，在乐句之间停在框架外并飞回。磁铁和橡皮擦会自行移动。切勿画手、手臂或光标。
 
-Not Blueprint (no blue sheet, no drafting conventions), not Crayon Picture Book (no wax texture, no children's story), not a kinetic-type explainer (text is handwritten stroke by stroke, never animated as blocks).
+不是蓝图（没有蓝纸，没有绘图惯例），不是蜡笔图画书（没有蜡质纹理，没有儿童故事），不是动态型解释器（文本是一笔一笔地手写，从来没有像块一样动画）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Board**: a warm white gradient, a faint scuff and micro-scratch tile, a few dozen **ghost marks** (old words, circles, arrows) at 5–10 % in grey or pale blue, and a soft diagonal **window sheen** (white, 10–16 %) moving at ~0.35× the camera: this one detail sells "glossy".
-- **Ink**: alpha ~0.94, composited with **multiply** so overlaps darken like real marker. Width 6–11 px for drawing, ~13 % of cap height for lettering.
-- **Stroke character**: resampled every ~0.6 × width; low-frequency hand wobble along the normal (a few px, long wavelength) plus a finer tremor; chisel-tip width modulated by direction; a pressure ramp at the start and a small taper at the end; circles start at an angle and **overlap past closure**; rectangles are four strokes with small corner overshoot; a darker pooled dot *inside* the start of long strokes.
-- **Dry-marker texture**: a speckle-and-streak tile subtracted from the ink layer (destination-out), locked to board space, faded out when the camera is wide.
-- **Lettering**: a single-line (single-stroke) font written in stroke order, each glyph with small rotation, baseline and scale jitter. Missing symbols (μ ≈ → × − ✓ ² ° ±) are hand-defined.
-- **Props**: dry-erase markers (white barrel, colour band and cap in the ink colour, felt nib), a felt eraser, magnets (glossy, with specular highlight and soft cast shadow). Frame, tray and wall appear only if the camera ever goes past the board edge.
+- **木板**：暖白色渐变、微弱磨损和微划痕瓷砖、几十个 **鬼痕**（旧字、圆圈、箭头），灰色或淡蓝色 5-10%，以及柔和的对角线 **窗口sheen**（白色，10–16%）的移动速度约为摄影机的 0.35 倍：这一细节卖的是“光泽”。
+- **墨色**：alpha ~0.94，与 **乘** 合成，因此重叠像真实标记一样变暗。绘图宽度为 6–11 像素，字母约为大写字母高度的 13%。
+- **笔画字符**：每~0.6×宽度重新采样；低频手部沿着正常方向摆动（几个像素，长波长）加上更细微的震颤；凿尖宽度按方向调节；开始处有一个压力斜坡，最后有一个小锥度；圆圈以一定角度开始，**与闭合部分** 重叠；矩形是四笔画，角超调小；长笔画开始处*内部*有一个较暗的汇集点。
+- **干标记纹理**：从墨水层中减去斑点和条纹瓷砖（目的地输出），锁定到板空间，当摄影机较宽时淡出。
+- **刻字**：按笔画顺序书写的单行（单笔划）字体，每个字形都有较小的旋转、基线和刻度抖动。缺失的符号 (μ ≈ → × − ✓ ² ° ±) 是手动定义的。
+- **道具**：干擦记号笔（白色笔杆、墨色色环和笔帽、毛毡笔尖）、毛毡橡皮擦、磁铁（光面、带镜面高光和柔和投射阴影）。仅当摄影机越过板边缘时，框架、托盘和墙壁才会出现。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Three marker colours at most**, each with a meaning held for the whole film: one dark ink for things and structure, one for signals / measurement / process, one accent for the thing that matters (one accent per region).
-- **Monochrome variant**: everything in the dark ink, one element in the accent (the "only colour").
-- Ghost marks and board stay neutral; the accent never appears on props except its own marker cap and the hero magnet.
-- Example sets: black `#23262c` / blue `#2a5cb3` / orange `#d97757`; black / green `#2e8b57` / red `#c8363a`; navy `#1f2a44` / teal `#1f8a8a` / purple `#7a4fb3`.
+- **最多三种标记颜色**，每种颜色都对整个影片有意义：一种深色墨水用于事物和结构，一种用于信号/测量/过程，一种重音用于重要事物（每个区域一种重音）。
+- **单色变体**：深色墨水中的所有内容，强调的一个元素（“唯一颜色”）。
+- 鬼痕和木板保持中立；除了它自己的标记帽和英雄磁铁之外，重音永远不会出现在道具上。
+- 示例套装：黑色 `#23262c` / 蓝色 `#2a5cb3` / 橙色 `#d97757`；黑色/绿色`#2e8b57`/红色`#c8363a`；海军蓝 `#1f2a44` / 青色 `#1f8a8a` / 紫色 `#7a4fb3`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Handwriting only**: a single-line hand (e.g. EMS Tech, OFL) for all board text; titles large (~120–200 px cap height), labels 30–70 px.
-- **Title and end card are written on the board** in the same hand.
-- **Burned subtitles**: an off-white rounded label (~90 %), a handwriting-like face (e.g. Architects Daughter ~44 px), dark text, a short accent-colour marker dash. Split at clauses, ≤ 44 characters per line, bottom ~12 % of the frame kept free for them in every shot. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Writing finishes on the word**: a term appears exactly when the narrator says it.
-- A label is fully in or fully out of every shot it appears in.
+- **仅限手写**：所有板文本的单行手写（例如 EMS Tech、OFL）；标题大（~120–200 px 上限高度），标签 30–70 px。
+- **标题和片尾卡是同一手写在板上的**。
+- **烧毁的字幕**：灰白色圆形标签（〜90％），类似手写的脸（例如建筑师的女儿〜44像素），深色文本，短强调色标记破折号。在子句中分割，每行 ≤ 44 个字符，每个镜头中框架的底部 ~12% 为它们保留。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **单词上的书写完成**：一个术语在叙述者说出它时准确地出现。
+- 标签完全位于或完全超出其出现的每个镜头。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Hand speed**: every stroke follows a slow-fast-slow curve (`u − sin(2πu)/2π × 0.8`). Strokes are scheduled into a **time window** and the engine solves the speed, so writing always finishes on time.
-- **Pen hops** between strokes lift in proportion to distance (shadow slides and blurs); long gaps send the pen off-frame to park and back shortly before its next stroke.
-- **Magnet**: drop with a shrinking shadow; slide with a small lift; lift-off and sink possible.
-- **Eraser**: constant speed along a path, a wide band at ~90 % strength (a ghost always remains).
-- **Speed**: faster than real hands (a sped-up lesson) but never so fast the stroke order is lost: a label ~0.3–0.8 s, a title ~3 s.
-- Camera on ones with real motion blur when it moves fast.
+- **和速度**：每个行程遵循慢-快-慢曲线(`u − sin(2πu)/2π × 0.8`)。笔画被安排到 **时间窗口** 中，引擎解决速度问题，因此写入总是按时完成。
+- **笔跳** 笔画之间的提升与距离成比例（阴影滑动和模糊）；长间隙会使笔在下一次笔划之前不久离开框架并停止和返回。
+- **磁铁**：下降时阴影缩小；带有小型升降机的滑梯；可能升起和下沉。
+- **橡皮**：沿路径恒定速度，约 90% 强度的宽带（始终存在鬼影）。
+- **速度**：比真手更快（加速课程），但笔画顺序丢失的速度从未如此之快：标签〜0.3–0.8秒，标题〜3秒。
+- 摄影机在快速移动时具有真实运动模糊的效果。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A 2D camera over a large board (e.g. 8000 × 4500): position, zoom interpolated in 1/z so pushes feel like dollies, a little roll. A vocabulary, not a route. Opening and ending come from the topic.
+大板上的 2D 摄影机（例如 8000 × 4500）：位置、缩放在 1/z 中插值，因此推动感觉像推车一样，有一点滚动。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Pull back from a tiny drawing | scale | a surprising size; context |
-| Ride the line the pen is drawing | one idea leads to the next | a transition; a process; a path |
-| Hold still | read now | an equation; a definition; a list |
-| Whip to a new region | a new idea after a pause | a twist; a "but" |
-| Return to an earlier region | a callback, for free | reusing a result; a comparison |
-| Split view of two regions (zoomed out enough for both) | two things at once | a duet; before/after |
-| Slow push into one symbol | this term is the point | a unit; a variable; a name |
-| Track along a long diagram | sequence, time | a timeline; a pipeline; a journey |
-| Pull back past the board edge to the wall | the whole lesson as one picture | a summary; a scale jump |
+|从一幅小图画中拉回来|规模|令人惊讶的尺寸；语境|
+|沿着笔所画的线骑行|一个想法导致下一个想法|一个过渡；一个过程；一条路|
+|保持不动|现在阅读|一个方程；定义；一个清单|
+|鞭打到新地区|暂停后的新想法|一个转折；一个“但是”|
+|返回较早的区域|回电，免费|重用结果；比较|
+|两个区域的分割视图（对两个区域都放大到足够大）|同时做两件事|二重唱； before/after|
+|缓慢推入一个符号|这个词是重点|一个单位；一个变量；一个名字|
+|沿着长图追踪|顺序、时间|时间表； 制作流程；一段旅程|
+|拉回经过板边缘到墙壁|整个课程就像一张图片|总结；规模跳跃|
 
-Motion blur: when the camera moves more than ~14 px per frame, render and average sub-frames (≤ 4 px apart). No cuts on the board; if a cut is needed, it is a whip.
+运动模糊：当摄影机运动每帧超过约 14 像素时，渲染并平均子帧（相距≤ 4 像素）。板上无切口；如果需要砍，那就是鞭子。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Every stroke sounds**: band-passed felt-on-gloss noise (a hiss band ~2–7.5 kHz + body ~0.5–1.5 kHz) enveloped by the stroke's own speed curve, a tiny nib tick at the start, stick-slip grains, and on some long strokes the **dry-erase squeak** (a 1.5–2.6 kHz sine with 7–13 Hz vibrato). Each colour sounds slightly different. Pan = the stroke's screen x; closer camera = louder.
-- **Props**: magnet on steel = click + metal modes + a low board thump; eraser = felt rub modulated by its zig-zag; cap off/on; marker tray bounce.
-- **Room**: low room tone; a single diegetic ticker (a wall clock, a fridge hum, a projector fan) can own a silence.
-- **Music** options: a solo piano figure; a small jazz trio with brushes; plucked strings and kalimba; a synth arpeggio for tech topics; clockwork minimalism (marimba, pizzicato, woodblock, glockenspiel). Mickey-mouse details: a rising whistle for growth, pings for signals, a harp run for a fall.
-- **Techniques to pick from**: adding one instrument per step of a mechanism; a key change when the frame of reference changes; a full stop into silence before a surprise; the previous cue reversed and squeezed for a rewind; two copies of one figure at two tempi (phasing) for anything that diverges, snapping into unison when resolved.
-- **Mix**: voice on top (compressed, light room), music well under voice and ducked further under speech, foley ~11 dB under voice; −14 LUFS.
+- **每个笔划声音**：带通毛毡光泽噪声（嘶嘶声带〜2–7.5 kHz +主体〜0.5–1.5 kHz）被笔划自身的速度曲线包围，开始时有微小的笔尖滴答声，粘滑颗粒，以及在一些长笔划中**干擦squeak**（1.5–2.6 kHz 正弦波，7–13 Hz 颤音）。每种颜色听起来都略有不同。平移 = 笔划的屏幕 x；更近摄影机 = 更响亮。
+- **道具**：钢上磁铁 = 点击 + 金属模式 + 低板重击；橡皮擦=通过其之字形调制的毛毡摩擦；帽 off/on；标记托盘弹跳。
+- **房间**：房间音调低；一个单一的叙事计时器（挂钟、冰箱嗡嗡声、投影仪风扇）可以拥有一片寂静。
+- **音乐** 选项：独奏钢琴人物；带刷子的小型爵士三重奏；弹拨琴和卡林巴琴；科技主题的合成器琶音；发条极简主义（马林巴琴、拨奏、木刻、钟琴）。米老鼠的细节：不断上升的口哨代表成长，叮当声代表信号，竖琴奔跑代表坠落。
+- **可供选择的技术**：机制的每个步骤添加一个仪器；当参考系发生变化时，关键发生变化；惊喜前的沉默句号；前一个提示反转并挤压以倒带；一个人物的两个副本，以两种速度（定相）处理任何分歧，解决后迅速一致。
+- **混音**：声音在顶部（压缩，明亮的房间），音乐在声音下很好，在语音下进一步躲避，拟音在声音下〜11 dB； −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Writing in stroke order.** The reveal is the explanation: a formula term by term as it is spoken. *Fits content like:* compound interest; the Drake equation; a recipe's ratios.
-- **The pen leads the camera.** Transitions are drawn lines the camera rides. *Fits content like:* a nerve signal; a supply chain; the water cycle.
-- **Magnets.** The only things allowed to move on a board: give the hero to a magnet; slide, lift, drop, sink it. *Fits content like:* a delivery truck on a route; a cell in a bloodstream; a player on a pitch.
-- **The eraser rewinds.** Wiping a trail backwards reads as undoing time. *Fits content like:* an undo in software; reversing a chemical reaction; "what if we hadn't…".
-- **Two pens at once.** A live duet comparing two quantities. *Fits content like:* two savings plans; two runners; a population vs its food supply.
-- **Ghosts of the old lesson.** A faint previous drawing becomes relevant. *Fits content like:* a theory replaced; last year's forecast; a first draft.
-- **The full-board view.** Every region seen at once as one picture. *Fits content like:* a system diagram; a history; a map of a field.
+- **按笔画顺序书写。** 揭示的是解释：一个公式一个术语一个术语地说出来。 *适合以下内容：*复利；德雷克方程；食谱的比例。
+- **The pen leads the 摄影机.** Transitions are drawn lines the 摄影机 rides. *适合以下内容：*神经信号；供应链；水循环。
+- **磁铁。** 板上唯一允许移动的东西：给英雄一个磁铁；滑动、提升、下降、下沉。 *适合以下内容：*路线上的送货卡车；血液中的细胞；球场上的球员。
+- **橡皮擦倒回。** 向后擦拭轨迹读取为撤消时间。 *适合以下内容：* 软件中的撤消；逆转化学反应； “如果我们没有……怎么办？”
+- **一次两支笔。** 比较两个数量的现场二重唱。 *适合以下内容：* 两个储蓄计划；两名赛跑者；人口与其食物供应。
+- **旧课的幽灵。** 以前的模糊绘图变得相关。 *适合以下内容：*理论被替换；去年的预测；初稿。
+- **全板视图。** 每个区域一次视为一张图片。 *适合以下内容：*系统图；一段历史；一个领域的地图。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **One pen, too many jobs** drifts later and later → give each drawing a deadline window and let overlapping jobs go to another pen.
-- **Minimum stroke duration × many dashes** makes a dashed line take seconds → dashes need their own floor.
-- **A pooled-ink dot bigger than the stroke start** leaves halos on every letter → keep it inside.
-- **Punctuation vanishes** (a font period is a 1 px stroke) → render sub-width strokes as dots.
-- **Labels half-cut by a push-in** look sloppy.
-- **Motion blur with few sub-frames** strobes text.
-- **Eraser paths** crossing labels you want to keep.
-- **Voice and phoneme set mismatch** (a British voice with US phonemes) mispronounces → match the language code to the voice; ASR-check.
+- **一支笔，太多作业**越来越晚→给每张图一个截止日期窗口，让重叠的作业转到另一支笔。
+- **最小行程持续时间×许多破折号**使虚线需要几秒钟→破折号需要自己的地板。
+- **A 比笔划起始点更大的混合墨点** 在每个字母上留下光晕 → 将其保留在内部。
+- **标点符号消失**（字体周期是1像素笔划）→将亚宽度笔划渲染为点。
+- **推入式标签被半切** 看起来很草率。
+- **带有少量子帧的运动模糊** 频闪文本。
+- **E 激光路径** 您想要保留的交叉标签。
+- **语音和音素设置不匹配**（带有美国音素的英国语音）发音错误→将语言代码与语音匹配； ASR 检查。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine/wb.js`: hand-drawn shapes (`line`, `curve`, `poly`, `arc`, `circle`, `rect`, `arrow`, `dashed`, `hatch`), `text()` in writing order from a single-line font (`loadFont`), `Stroke`, floating `Pen`s, `Timeline.draw(pen, shapes, t, {by})` (solves hand speed to a deadline), `Timeline.erase`, `Timeline.cue`, keyed `Camera`, `Board` (ink multiply, dry texture, erasers, sheen, props), prop drawers. API table and a minimal example that draws something new: [DEMO.md](DEMO.md#engine-reference).
+`demo/engine/wb.js`：手绘形状（`line`、`curve`、`poly`、`arc`、`circle`、`rect`、`arrow`、 `dashed`、`hatch`)、`text()` 从单行字体开始依次书写(`loadFont`)、`Stroke`、浮动 `Pen`s、`Timeline.draw(pen, shapes, t, {by})`（在截止日期前解决手速）、 `Timeline.erase`，`Timeline.cue`，带键`Camera`，`Board`（墨水倍增，干燥纹理，橡皮擦，光泽，道具），道具抽屉。 API 表和一个绘制新内容的最小示例：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the topic's object, the board layout, the colours within the logic, the voice, the music family, the camera route, the opening, the ending and the length.
+您决定主题的对象、板布局、逻辑内的颜色、声音、音乐系列、摄影机路线、开头、结尾和长度。
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **a proof** (one claim at the top, the board fills downward step by step, each step boxed when proven); **a debate** (two pens, two halves of the board, each drawing its side until the drawings meet in the middle); **a timeline** (one long horizontal line ridden left to right, with events hanging off it).
-- Openings: **a question mark** drawn huge in the centre, then shrunk to become a dot in the first diagram; **an erased board** where the ghost of a wrong answer is still visible; **a magnet dropping** onto an empty board with a clack.
-- Endings: **the answer circled** twice and the pen capped; **the board wiped** except for one line that survives; **a push into the smallest symbol** on the board, which becomes the title.
+- 结构：**a证明**（顶部有一个索赔，棋盘向下逐级填充，证明时每一步都装箱）； **a辩论**（两支笔，两半板，各画其一边，直到图纸在中间相遇）； **a 时间线**（一条从左到右的长水平线，上面挂着事件）。
+- 开口：**a问号**在中心画得很大，然后缩小成为第一个图中的一个点； **an 擦除了棋盘**，其中错误答案的幽灵仍然可见； **磁铁将** 掉落到空板上，发出咔哒声。
+- 结尾：**答案圈**两圈，笔盖上； **该板擦掉了**，除了一根幸存的线； **a 推入棋盘上最小的符号**，这成为标题。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

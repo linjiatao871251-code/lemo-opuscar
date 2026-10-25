@@ -1,91 +1,99 @@
-# ASCII / CRT Terminal — our demo
+<a id="ascii--crt-terminal--our-demo"></a>
+# ASCII / CRT 终端 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *TRANQUILITY.LOG* (59.8 s) · `ascii-crt.mp4` · source in [`demo/`](demo/)
+示范：*TRANQUILITY.LOG* (59.8 s) · `ascii-crt.mp4` · 来源在 [`demo/`](demo/)
 
 
-Brief the demo was made to: a 30–60 second film in the ASCII / CRT Terminal style.
+简而言之，示范的用途是： ASCII / CRT 终端风格的 30-60 秒影片。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A machine left on the Moon has logged `NO SIGNAL` for 40 years. A message arrives; it replies `I AM STILL HERE.`, and the letters of that reply become an earthrise. We picked a story where **text is the only way the character can act**: a machine, a remote operator, a message across distance or time. How the native powers were used:
+留在月球上的机器已记录`NO SIGNAL`40年。一条消息到达；它回复`I AM STILL HERE.`，而那封回信就变成了大地升起。我们选了一个故事**文字是角色行动的唯一方式**：机器、远程操作员、跨越距离或时间的消息。如何使用原生权力：
 
-| Native power | Story use |
+|原生电源|故事运用|
 |---|---|
-| **The picture is made of words** | The climax *is* a sentence turning into an image. The reply `I AM STILL HERE.` breaks apart and its letters, sorted by ink density, become an earthrise. The image contains **only the letters of that sentence**. |
-| **Font size = camera** | Push in until one character fills the screen. That character is itself made of smaller text, which reveals scale and meaning. One `M` is made of 40 years of `NO SIGNAL` logs. |
-| **Typing rhythm = editing rhythm** | Machine typing is even and fast. Human typing is uneven, with pauses and bursts. A cursor blinking three times is the most important performance in the film. |
-| **CRT physics** | The screen powers on as a dot, then a line, then the full frame, and powers off by collapsing to a dot. Used for the opening and the ending. |
-| **A single color change** | Blue-white `#BFE4FF` for Earth, the only non-amber thing, is the emotional peak. Switched on a musical downbeat. |
+|**图片为文字**|高潮是句子变成图像。回复 `I AM STILL HERE.` 分解，其字母按墨水密度排序，变成了土升。该图像仅包含 **该句子的字母**。|
+|**字体大小=相机**|推入直到一个字符填满屏幕。该字符本身是由较小的文本组成的，它揭示了规模和含义。一根 `M` 由 40 年的 `NO SIGNAL` 原木制成。|
+|**打字节奏=编辑节奏**|机器打字均匀且快速。人类打字不均匀，有停顿和突发。光标闪烁3次是影片最重要的性能。|
+|**CRT物理**|屏幕开机时显示为一个点，然后显示一条线，然后显示全屏，最后关闭时显示为一个点。用于开头和结尾。|
+|**A单色改**|蓝白色`#BFE4FF`对于地球来说，唯一非琥珀色的东西，就是情感高峰。打开音乐节拍。|
 
-Adapting ideas we noted while writing it (examples, not rules): a product launch becomes a spec sheet that assembles into the product's silhouette; a love letter becomes its own words raining into a face; a history lesson becomes a log file whose dates zoom out into a map.
+调整我们在编写时注意到的想法（示例，而不是规则）：产品发布变成了组装成产品轮廓的规格表；一封情书变成了自己的话语，雨点般地落在脸上；历史课变成了一个日志文件，其日期缩小为地图。
 
-**Emotional arc (59.8 s):** dark and a cursor, then waking (boot log, a date jumping), then disturbance (handshake noise, a line of text), then holding breath (cursor blinks), then setback (`NOT FOUND` ×3 on three beats), then decision (typing the reply), then **near-silence for 1–1.5 s**, then the climax (letters become the image, the one color appears), then the scale reveal, then waiting, then a tiny reply, then an echo (pull out of the screen, power off to a dot).
+**E情感弧线（59.8秒）：**黑暗和光标，然后醒来（开机日志，日期跳跃），然后干扰（握手噪音，一行文字），然后屏住呼吸（光标闪烁），然后挫折（`NOT FOUND`×3三拍），然后决定（打字回复），然后**n 近乎沉默1-1.5秒**，然后高潮（字母变成图像，出现一种颜色），然后刻度显示，然后等待，然后是一个微小的回复，然后是回声（从屏幕中拉出，断电到一个点）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | CRT off, then a dot, a line and the full frame. A giant cursor blinks 3× in empty space. |
-| Title | The title is the file the machine opens, typed at 20 columns. It then **pulls out** to 80 columns as it becomes line 1 of the boot log. |
-| Suspense | Static 80-column terminal. The only motion is text and the cursor. Hold on blinks. |
-| Decision | **Push in** from 21 px to 80 px cells around the prompt. The reply is typed huge and centered. |
-| Climax | The grid shrinks while falling (80 px letters become 8 px cells). Hold on the finished picture, and switch color on the downbeat. |
-| Scale reveal | Push into one glyph until it becomes its own sub-grid of text, then snap back. |
-| Ending | The **only** shot outside the screen: pull back until the screen image sits inside a character-drawn terminal in a dark room. Next to it is a large porthole showing the real Earth (18–20 rows tall). Only two things glow: the tiny reply and the planet. Then power off to a dot. |
+|开幕|CRT 关闭，然后是一个点、一条线和全帧。一个巨大的光标在空白处闪烁 3 次。|
+|标题|标题是机器打开的文件，共 20 列。然后，当 **成为引导日志的第 1 行时，它将** 拉出到 80 列。|
+|悬念|静态 80 列终端。唯一的运动是文本和光标。坚持眨眼。|
+|决定|**在提示周围从 21 像素到 80 像素的单元格中推入**。回复的字体很大并且居中。|
+|高潮|网格在下降时会收缩（80 px 字母变成 8 px 单元格）。保留完成的图片，然后在悲观的方向上切换颜色。|
+|规模揭示|推入一个字形，直到它成为自己的文本子网格，然后弹回。|
+|结束|屏幕外的 **仅有的** 镜头：向后拉，直到屏幕图像位于暗室中的字符绘制终端内。旁边有一个大舷窗，显示真实的地球（18-20 排高）。只有两件事会发光：微小的回复和星球。然后断电到点。|
 
-Why this route, for this story: the title typed as a file the machine opens made the machine the narrator; the push-in on the reply made the decision intimate; the only shot outside the screen came last, so the room and the real Earth were a reveal. Each of these is one choice from STYLE.md §6, not the style's default opening or ending.
+为什么这个故事要走这条路线：作为机器打开的文件输入的标题使机器成为叙述者；回复的推送使决定变得亲密；屏幕外唯一的镜头最后出现，所以房间和真实的地球都被揭示了。其中每一个都是 STYLE.md §6 中的一个选择，而不是该风格的默认开头或结尾。
 
-### The letter fall (the demo's climax, step by step)
+<a id="the-letter-fall-the-demos-climax-step-by-step"></a>
+### 信坠落（示范的高潮，一步步来）
 
-1. Hold the sentence for 1.5 s with the cursor blinking.
-2. At the split, letters jitter and throw a ghost copy.
-3. Each target cell spawns a particle from a random point inside a matching source letter (only letters of the sentence exist in the ramp). The particle starts at 18 px, shrinks to the grid size and fades in over 0.2 s so particles never stack into a bright bar. Its path eases smoothly in x, with y = u·(0.6 + 0.4u).
-4. Ground lands bottom to top.
-5. Earth letters first all fall *behind the horizon*, then rise into place from bottom to top, so the planet literally rises.
-6. Source letters dim as they are used up.
-7. The landing flash is 1.9× brightness decaying over 0.12 s.
+1. 按住该句子 1.5 秒，光标闪烁。
+2. 在裂缝处，字母会抖动并抛出一个幽灵副本。
+3. 每个目标单元格从匹配源字母内的随机点生成一个粒子（斜坡中仅存在句子的字母）。粒子从 18 像素开始，缩小到网格大小，并在 0.2 秒内淡出，因此粒子永远不会堆叠成明亮的条形。它的路径在 x 上平滑地缓和，其中 y = u·(0.6 + 0.4u)。
+4. 地面从下到上落地。
+5. 地球字母首先全部落在“地平线后面”，然后从下到上上升到位，因此地球实际上是上升的。
+6. 源字母用完后会变暗。
+7. 着陆闪光的亮度为 1.9 倍，在 0.12 秒内衰减。
 
-**Fractal push-in**: push to a framing where the whole `M` is clear and **hold 1 s**, then push further until the log text is readable (cell 450 px, sub-text about 28 px). Text inside the glyph is at full brightness, text outside is at 3–6%, and neighbor glyphs are at 20%.
+**分形推送**：推送到整个`M`清晰且**保持1s**的框架，然后进一步推送直到日志文本可读（单元格450像素，子文本约28像素）。字形内部的文本处于全亮度，外部文本的亮度为 3-6%，相邻字形的亮度为 20%。
 
-**Typing speeds used**: boot lines 12 ms/char, commands 38 ms, title and reply 120–150 ms (sixteenth notes at 100 BPM). Human typing uses hand-timed offsets with pauses.
+**使用的打字速度**：引导行 12 ms/char，命令 38 毫秒，标题和回复 120–150 毫秒（十六分音符，100 BPM）。人工打字使用带有暂停的手动定时偏移。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music**: an original Carpenter-style analog synth score, rendered in numpy and numba.
-  - **Sound sources**: PolyBLEP saw and square oscillators, a resonant 4-pole ladder filter with moving cutoff, and filter envelopes. Add slow tape wow (±3 cents), a long reverb on the pad and gated reverb on the hits.
-  - **Grid and key**: D minor at 100 BPM, with every cut on a bar or beat.
-  - **Cue shape**: silence under boot, then a drone and a square-wave 16th sequencer while the machine wakes.
-  - **The hard cut**: on the handshake the whole score drops to digital zero, reverb tails included, for five seconds.
-  - **Climax**: a single saw arpeggio grows as the letters fall and opens into Bbmaj7 on the color change. **The only major chord** (D major) lands on the reply.
-  - **Never chiptune.**
-- **Silence is the main instrument.** Handshake, message and cursor blinks play over room tone only, and there are 1.5 s of silence before the picture forms.
-- **Foley** (all synthesized):
-  - **Relay and degauss**: relay click, degauss hum (60 Hz plus harmonics decaying over 0.35 s, with a thump).
-  - **Keys**: buckling-spring keys (plastic click, a 3.4 kHz spring ping, key-cap thock). The space bar is duller and Enter heavier. Remote characters get a dry teletype tick.
-  - **Modem**: an original handshake (2100 Hz answer tone with two phase reversals, a dual tone, 1200/2400 FSK, scrambled band noise, all band-limited to a phone line).
-  - **Beeps**: a square-wave error beep, a lower one for the final error, and a 1 kHz BEL for the reply.
-  - **Particles**: particle landings as clusters of tiny 2–6 kHz ticks.
-  - **Room tone**: a fan bed with 120 Hz hum and a **very quiet** 15.7 kHz flyback whine (about −50 dBFS before loudness normalization).
-- **Voice**: the machine's log, read by Kokoro `am_echo` at speed 0.8. Process it with 16% ring modulation at 52 Hz, a 6 ms comb (0.22), a 140–7000 Hz band-pass and soft saturation. Whisper still reads it 5/5. Use 4–6 short lines. Under the voice the music is ducked about −8 dB. The master is −14 LUFS with no grain (the noise lives in the picture).
+- **音乐**：原始的 Carpenter 风格模拟合成器配乐，以 numpy 和 numba 渲染。
+  - **声源**：PolyBLEP 锯齿形和方形振荡器、带移动截止的谐振 4 极梯形滤波器和滤波器包络。添加慢速磁带哇（±3 美分）、打击垫上的长混响和点击时的门控混响。
+  - **Grid 和 key**：D 小调，100 BPM，每个剪辑都在小节或节拍上。
+  - **提示形状**：启动时静音，然后机器唤醒时发出嗡嗡声和方波第16音序器。
+  - **硬切**：在握手时，整个配乐下降到数字零，包括混响尾部，持续五秒。
+  - **高潮**：单锯琶音随着字母落下而增长，并在颜色变化时打开为 Bbmaj7。 **唯一的大调和弦**（D大调）登陆回复。
+  - **从不chiptune.**
+- **Silence 是主要乐器。** 握手、消息和光标闪烁仅在房间音上播放，并且在图像形成之前有 1.5 秒的静音。
+- **弗利**（全部合成）：
+  - **继电器和消磁**：继电器咔哒声，消磁嗡嗡声（60 Hz加上谐波衰减超过0.35秒，带有重击声）。
+  - **按键**：屈曲弹簧按键（塑料咔嗒声、3.4 kHz 弹簧脉冲、键帽塞）。空格键更沉闷，Enter 更重。远程字符会得到干涩的电传打字机滴答声。
+  - **调制解调器**：原始握手（具有两相反转的 2100 Hz 应答音、双音、1200/2400 FSK、扰频频带噪声，所有频带仅限于电话线）。
+  - **蜂鸣声**：方波错误蜂鸣声，较低的蜂鸣声表示最终错误，以及 1 kHz BEL 用于回复。
+  - **颗粒**：粒子以微小的 2-6 kHz 蜱虫簇形式着陆。
+  - **房间音**：具有120 Hz嗡嗡声的风扇床和**非常安静的** 15.7 kHz反激啸叫（响度归一化前约-50 dBFS）。
+- **嗓音**：机器的日志，由Kokoro `am_echo`以0.8的速度读取。使用 52 Hz 下的 16% 环形调制、6 ms 梳 (0.22)、140–7000 Hz 带通和软饱和对其进行处理。 Whisper 仍然读它 5/5. 使用 4-6 行短行。在声音下，音乐被降低了约-8 dB。大师是-14 LUFS，没有颗粒（噪音存在于图片中）。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Font and grids**: VT323 atlas prerendered at 160 px with a 2.2 px stroke. Grids used: title 20 columns (cell width 84 px), terminal 80 columns (21 px), picture 240 columns (8 px), room 213 columns (9 px), fractal push-in up to a 450 px cell with a 40-column sub-grid inside each cell.
-- **Ramp values**: attributes dim / normal / bold = 0.42 / 0.7 / 1.0; dither amplitude 0.7; cells with luminance < 0.05 stay blank. Negative sampled 3×6 per cell: R = amber luminance, G = second-color luminance, B = a flag such as "night side". Rooms get a 3×3 local-contrast boost.
-- **Earth that reads as Earth**: continent polygons in lon/lat (rasterized once to an equirectangular mask) rather than noise. Ocean albedo 0.14 (sparse dim glyphs), land 0.96 (dense bold glyphs), clouds 0.5 (mid-density swirls). A narrow terminator (smoothstep −0.03…0.10) and the night side as sparse `.` only. Angle with a clear silhouette: Africa and Europe.
-- **Lunar ground**: far ground darker and sparser (×0.3), near ground brighter and denser. The horizon gets a thin bright rim (10 px falloff). Craters: the left inner wall is in black shadow, the right inner wall is lit, the rim lip is bright. A few big defined foreground craters.
-- **CRT post** (`demo/crt.js`): R maps to amber: dim `#FF6605`, mid `#FFB000`, overexposed toward `#FFEBB8`. G maps to `#B8E0FF`. Four-level bloom at 0.55 plus a halo at 0.22. 3 px scanlines at 0.3; barrel curvature 0.045; unlit glass `#090604`; faint top-left reflection, 1.2% HV flicker.
-- **Afterglow**: τ = 0.12 s; one extra trail sample at t − 35 ms × 0.3.
-- **LOG strip**: dim dashed separator, inverse-video `LOG` tag, `> ` and the line in uppercase VT323 at 45 px; holds 1.4 s after the line is complete; idle states `TRANSMIT [#####.....] 40%`, `SENT … AWAITING REPLY`.
-- **Title**: the filename, typed with key clicks, plus a small dim sub-line.
+- **字体和网格**：VT323图集以160像素预渲染，笔画为2.2像素。使用的网格：标题 20 列（单元格宽度 84 像素）、终端 80 列（21 像素）、图片 240 列（8 像素）、房间 213 列（9 像素）、分形推入至 450 像素单元格，每个单元格内有 40 列子网格。
+- **斜坡值**：属性暗淡/正常/粗体= 0.42 / 0.7 / 1.0；抖动幅度0.7；亮度 < 0.05 的单元格保持空白。每个单元负采样 3×6：R = 琥珀色亮度，G = 第二色亮度，B = 标志，例如“夜面”。房间的局部对比度提升了 3×3。
+- **Eearth 读作 Earth**：lon/lat 中的大陆多边形（光栅化一次为等距矩形掩模）而不是噪声。海洋反照率 0.14（稀疏暗淡字形），陆地 0.96（密集粗体字形），云 0.5（中等密度漩涡）。狭窄的终止符（smoothstep -0.03…0.10）和夜间侧仅稀疏 `.`。轮廓清晰的角度：非洲和欧洲。
+- **月球地面**：远地较暗且较稀疏（×0.3），近地较亮且较密集。地平线有一个薄而明亮的边缘（10 像素衰减）。火山口：左内壁处于黑色阴影中，右内壁被照亮，边缘边缘明亮。一些大的明确的前景陨石坑。
+- **显像管柱** (`demo/crt.js`)：R 映射到琥珀色：暗淡 `#FF6605`，中 `#FFB000`，朝向 `#FFEBB8` 过度曝光。 G 映射到 `#B8E0FF`。四级绽放为 0.55，加上光环为 0.22。 3 像素扫描线为 0.3；枪管曲率0.045；不发光玻璃 `#090604`；左上反射微弱，1.2% HV 闪烁。
+- **余辉**: τ = 0.12 s; t − 35 ms × 0.3 处的一个额外跟踪样本。
+- **原木条**：暗淡虚线分隔符、反视频 `LOG` 标签、`> ` 和 45 像素处的大写 VT323 线；线路完成后保持 1.4 秒；空闲状态 `TRANSMIT [#####.....] 40%`、`SENT … AWAITING REPLY`。
+- **标题**：通过按键输入的文件名，加上一条暗淡的小子线​​。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Typed over the final room shot (`ASCII / CRT TERMINAL`, `LemoLab × Claude Opus 5.5`), followed by the CRT power-off. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+敲完最后一个房间镜头（`ASCII / CRT TERMINAL`、`LemoLab × Claude Opus 5.5`），然后关闭CRT电源。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/ascii-crt/demo/
@@ -97,14 +105,14 @@ styles/ascii-crt/demo/
   music/score.py  original analog-synth score      tools/subs.mjs  export window.SUBS
 ```
 
-1. `node core/render/still.mjs styles/ascii-crt/demo --range 33.4:37.4:0.2` renders frames of any section; `?frame=earth|fractal|base|poster` renders single tests; `?nosub=1` renders without the LOG strip.
-2. `sh styles/ascii-crt/demo/build.sh` goes from zero to the finished film: TTS, voice FX, whisper, score, events, mix, SRT, render (1435 frames in about 50 s with 3 workers), mux, styleframe, poster.
+1. `node core/render/still.mjs styles/ascii-crt/demo --range 33.4:37.4:0.2` 渲染任意截面的帧； `?frame=earth|fractal|base|poster` 渲染单个测试； `?nosub=1` 渲染时没有 LOG 条带。
+2. `sh styles/ascii-crt/demo/build.sh` 从零到完成的影片：TTS、语音 FX、耳语、配乐、事件、混合、SRT、渲染（大约 50 秒内 3 名工作人员完成 1435 帧）、复用器、风格定帧、海报。
 
-Pitfalls tied to this demo's props:
+与示范的道具相关的陷阱：
 
-- **Offscreen negative drift** showed up as doubled stars and misaligned crater edges across 200 columns.
-- **A noise-textured Earth reads as a textured ball.** Use continent silhouettes, a dark sparse ocean and a dot-only night side.
-- **Particles bursting from 13 letter centers stack into a glowing bar.**
-- **Earth letters rising through the still-visible sentence look messy.** Send them all behind the horizon first, then rise.
-- **The thick (stroked) atlas glyph closes the gaps of `M`.** For the fractal mask, sample a separate *thin* (fill-only) glyph bitmap.
-- **Lazily built data**: without building the particle schedule first, the foley for the fall was silent.
+- **离屏负漂移** 在 200 列中显示为双星和未对准的火山口边缘。
+- **A 噪声纹理地球读起来就像一个纹理球。** 使用大陆轮廓、黑暗稀疏的海洋和仅点的夜晚面。
+- **从 13 个字母中心爆发的粒子堆积成发光条。**
+- **E 地球字母通过仍然可见的句子上升，看起来很混乱。** 首先将它们全部发送到地平线后面，然后上升。
+- **厚（描边）图集字形闭合了 `M`.** 对于分形蒙版，采样单独的*薄*（仅填充）字形位图。
+- **懒惰地构建数据**：在没有先构建粒子计划的情况下，秋季的拟音保持沉默。

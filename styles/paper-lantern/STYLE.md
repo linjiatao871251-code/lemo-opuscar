@@ -1,114 +1,126 @@
-# Paper-cut Lightbox — Style Prompt
+<a id="paper-cut-lightbox--style-prompt"></a>
+# 纸雕灯影：风格提示词
 
-> A layered paper-cut shadow box (纸雕灯) lit from behind: 6–9 sheets of cut card stacked in a shallow box, a warm light glowing through the paper, windows and moons burning through holes, soft shadows falling from each layer onto the next. The frame is the box; the camera is a macro lens inside a lamp.
-> References (grammar only): commercial paper-cut shadow-box lamps (纸雕灯 / "shadow box lightbox") for the layer stack and backlight; Lotte Reiniger's silhouette films for the cut-out, jointed figure language; Chinese 剪纸 motifs (auspicious clouds, eaves, mountains) as one possible vocabulary. Do not copy any specific lamp design, film frame or character.
+> 分层的纸雕灯从后面照亮：6-9张剪纸叠在一个浅盒子里，温暖的光线透过纸张发出光芒，窗户和月亮透过孔洞燃烧，柔和的阴影从每一层投射到下一层。框架就是盒子； 摄影机是灯内的微距镜头。
+> 参考资料（仅语法）：用于图层堆叠和背光的商业剪纸灯箱灯（纸雕灯/“shadow box lightbox”）； Lotte Reiniger 的剪影影片用于剪裁、关节的人物语言；中国剪纸图案（祥云、屋檐、山脉）作为一种可能的词汇。请勿复制任何特定的灯设计、影片框架或字符。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Every shot is **one physical object**: a shallow box (a cavity about 0.56 × 0.33 m, 0.16 m deep) holding parallel sheets of cut paper. Everything on screen is one of three things:
+每个镜头都是**one物理对象**：一个浅盒子（空腔约0.56 × 0.33 m，深0.16 m），容纳平行的剪纸。屏幕上的所有内容都是以下三件事之一：
 
-1. **A paper layer**: a flat cut sheet, one flat colour, fibre grain, a thin warm **rim of light on its top edge** and a **dark band on its bottom edge**. Back layers lighter and cooler, the front almost black: that value ladder *is* the depth.
-2. **Light through paper**: a warm, cloudy translucency (pulp mottling), strongest near the light source. Windows, lanterns, trails of light are **holes / emissive windows** that burn and bloom.
-3. **Shadows**: a top spot casts **soft shadows** from every layer onto the layers behind. This sells "real paper in a real box"; never turn it off.
+1. **A纸层**：一张平切的纸张，一种平面颜色，纤维纹理，顶部边缘有一条薄薄的温暖**光环**，底部边缘有一条**暗带**。后面的层更轻、更凉爽，前面几乎是黑色的：价值阶梯*就是*深度。
+2. **透光纸**：温暖的、浑浊的半透明感（纸浆斑驳），在光源附近最强。窗户、灯笼、光迹是 **孔/发射窗** 燃烧和绽放。
+3. **阴影**：顶部聚光灯将 **软阴影** 从每一层投射到后面的层上。这卖的是“真纸装在真盒子里”；切勿将其关闭。
 
-The film may step out of the box into the **real world** (the lit lamp on a table, spill light on nearby objects) to say "this is an object someone keeps"; whether, where and how often is a choice of the film.
+影片可能会走出盒子进入 **现实世界**（桌子上点亮的灯，将光洒在附近的物体上）说“这是某人保留的物体”；是否、在哪里以及多久可以选择影片。
 
-Not flat paper-cut animation (here: depth, backlight, cast shadows), not shadow puppetry (no single screen, no rods), not a 3D diorama (every element is a flat sheet parallel to the box front).
+不是平面剪纸动画（这里：深度、背光、投射阴影），不是皮影戏（没有单屏，没有杆），不是 3D 立体模型（每个元素都是与盒子正面平行的平面）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Units in metres, y up.** Layers from z ≈ −0.14 (sky) to 0 (front); camera at z ≈ 0.3–0.56, fov ~26°. Full-bleed sheets are **never larger than the cavity**.
-- **A layer** is a Canvas2D drawing in metre space mapped to a plane; cut-outs are `destination-out` holes. Finish on every sheet: fibre grain (`source-atop`), a warm top rim and a dark bottom shade, each shifted a few px.
-- **Backlight shader**: `emissive += albedo × lightCol × trans × lit × falloff × (base + cloud)`, with a Gaussian falloff around a per-shot light point and a tiled pulp-mottle texture. `trans` per layer goes from ~.9 (far) to ~.05 (front).
-- **Emissive windows**: a second canvas (white = light) gated by a 0→1 "switch on" uniform; bloom makes them burn. Titles, lights and curtains in front neither cast nor receive shadows.
-- **Lens**: shallow depth of field, bloom, a gentle vignette; supersample 2× so cut edges stay crisp.
-- **Real-world set** (when used): wood frame, black lining, a dark room, an area light as the box's spill onto real objects.
+- **单位为米，y 向上。** 从 z ≈ -0.14（天空）到 0（前面）的层； 摄影机 z ≈ 0.3–0.56，视场 ~26°。全出血板材 **永远不会大于型腔**。
+- **A层**是映射到平面的米空间中的Canvas2D绘图；切口为 `destination-out` 孔。每张纸上的饰面：纤维颗粒（`source-atop`）、温暖的顶部边缘和深色的底部阴影，每个都移动了几个像素。
+- **背光着色器**：`emissive += albedo × lightCol × trans × lit × falloff × (base + cloud)`，在每个镜头光点周围具有高斯衰减和平铺的纸浆斑驳纹理。 `trans` 每层从 ~.9（远）到 ~.05（前）。
+- **E发射窗**：第二个画布（白色=光）由0→1“打开”制服控制；绽放让它们燃烧。前面的标题、灯光和窗帘既不投射也不接收阴影。
+- **镜片**：浅景深，光晕，柔和的小插图；超级采样 2×，因此切割边缘保持清晰。
+- **真实世界套装**（使用时）：木框架、黑色衬里、黑暗的房间、盒子溢出到真实物体上时的区域光。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Back layers bright and translucent, front layers dark and opaque.** Each layer is one flat colour; the ladder of values from back to front is the depth. Never break it (a pale front layer flattens the box).
-- **One temperature per stack**, chosen by the scene (cool night, warm interior, violet or green elsewhere). Changing ladder is how the film says "another place".
-- **Light is warm** (amber to gold) against the stack, and it is the only saturated element besides one accent.
-- **One accent colour** (a seal red, or a single object's colour) marks what the story is about. A second accent only when the story has two sides (one each).
-- Examples of ladders: night village — `#0a1330` sky → `#6a86c2` far → `#3f5a92` mid → `#0e1532` front, windows `#ffb862`; desert caravan — `#f0c890` dusk sky → `#c07850` dunes → `#6a3020` → `#1e0e08`, fires `#ffd080`; winter forest — `#dfe6ee` → `#9aaec4` → `#4a6078` → `#101820`, one red scarf.
+- **后层明亮且半透明，前层黑暗且不透明。** 每层都是一种单色；从后到前的价值观阶梯是深度。切勿打破它（浅色的前层使盒子变平）。
+- **每个堆栈一个温度**，根据场景选择（凉爽的夜晚、温暖的室内、其他地方的紫色或绿色）。换梯子就是影片所说的“另一个地方”。
+- **灯光在堆叠的映衬下显得温暖**（琥珀色到金色），它是除了一个口音之外唯一饱和的元素。
+- **一种强调色**（印章红色，或单个物体的颜色）标志着故事的内容。仅当故事有两个方面（各一个）时才使用第二重音。
+- 梯子示例：夜村——`#0a1330`天空→`#6a86c2`远→`#3f5a92`中→`#0e1532`前面，窗户`#ffb862`；沙漠商队 — `#f0c890` 黄昏天空 → `#c07850` 沙丘 → `#6a3020` → `#1e0e08`，火灾 `#ffd080`；冬季森林 — `#dfe6ee` → `#9aaec4` → `#4a6078` → `#101820`，一条红领巾。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Text in the picture is paper**: titles, letters, poems and captions are cut strips inside the box, revealed by growing from an anchor edge (scale the texture repeat with the mesh so glyphs aren't squashed), with an optional small seal.
-- Chinese: an OFL brush font (e.g. Ma Shan Zheng) for titles, a running script for handwriting, Noto Serif SC for subtitles. Latin: an OFL serif (e.g. Cormorant) at similar weight.
-- **Subtitles** are a quiet burned-in line under the box (serif 500, ~40 px CJK / ~38 px Latin, warm off-white, soft shadow, ~74 px from the bottom), fading in just before the line. Split long lines at the comma nearest the middle (~21 CJK / ~42 Latin characters).
-- **Words that appear as paper are not subtitled**: never show the same words twice.
-- Hold ≥ max(1.8 s, speech + 0.6 s).
+- **图片中的文本是纸质的**：标题、字母、诗歌和说明文字在框内被切割成条状，通过从锚点边缘生长而显露出来（使用网格缩放纹理重复，以便字形不会被压扁），并带有可选的小密封。
+- 中文：用于标题的 OFL 毛​​笔字体（例如马山正）、用于手写的行书字体、用于字幕的 Noto Serif SC。拉丁语：粗细相似的 OFL 衬线（例如 Cormorant）。
+- **字幕**是框下一条安静的烧线（衬线500，〜40像素CJK /〜38像素拉丁语，暖灰白色，柔和的阴影，距底部约74像素），在线前淡入。在最靠近中间的逗号处分割长行（~21 个 CJK/~42 个拉丁字符）。
+- **以纸张形式出现的单词没有副标题**：切勿将相同的单词显示两次。
+- 保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Everything moves like paper on a stick**: layers slide (x/y), rotate about a pivot, scale in from 0 along one axis ("written out"), or light up. No squash and stretch, no morphing, no bending.
-- **Jointed figures**: a body sheet + separate limb sheets anchored at the joint; animate rotation only.
-- **Light cues are the big motion**: the source, then each layer's translucency in a ~0.4 s stagger, then windows, then flicker (`1 + .06·sin(7.3t)·sin(3.1t)`).
-- **Hard action lands on spoken words** (use whisper word timings): an object slams, a character flashes, a light arc grows on its word.
-- Hand-held micro-drift on the camera (~0.6 mm) keeps a locked frame alive. Render on ones at 30 fps; never step.
+- **一切都像纸棒上的纸一样移动**：层滑动（x/y），绕枢轴旋转，沿一个轴从0开始缩放（“写出”），或点亮。没有挤压和拉伸，没有变形，没有弯曲。
+- **关节人物**：身体片+固定在关节处的独立肢体片；仅动画旋转。
+- **灯光提示是大运动**：源，然后每层的半透明度以约0.4秒的速度交错，然后是窗口，然后闪烁（`1 + .06·sin(7.3t)·sin(3.1t)`）。
+- **硬动作落在口语上**（使用耳语词计时）：物体猛烈撞击，角色闪烁，其词上出现光弧。
+- 摄影机（~0.6 毫米）上的手持式微漂移可保持锁定的框架保持活动状态。以 30 fps 渲染；永远不要迈出一步。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. The lens is small and the box is shallow: moves are short. Opening and ending come from the topic.
+是词汇，而不是路线。镜头小，盒子浅：动作短。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Slow dolly in, nearly frontal | intimacy; being drawn into a place | a memory; a detail that matters; a lit window |
-| Slow dolly out | context; loneliness; scale | a figure alone; before/after; the whole place at once |
-| Rack focus between layers | attention moving in depth | two people near and far; a clue behind; now and then |
-| Lateral travel with depth parallax | journey; time passing | a road trip; a process in stages; a timeline |
-| Top-down layer stack | a made thing seen as a craftsman sees it | a recipe; a letter; a map; a product being assembled |
-| Pull out of / push into the box | the frame as object; "this is a story told" | a keepsake; a framing device; returning to the present |
-| Locked frame with only light changing | waiting; the passage of a day or a night | a vigil; seasons; a city going to sleep |
-| Tilt up/down the stack | climbing; falling; sky vs ground | a mountain; a well; hope and weight |
-| Near-plane occluder wipe | a curtain between scenes | chapter changes; dreams; a secret revealed |
+|缓慢推车进入，几乎正面|亲密关系；被吸引到一个地方|一段记忆；重要的细节；一扇亮着的窗户|
+|缓慢推车出去|语境;孤独；规模|一个单独的人物； before/after；整个地方同时|
+|层间机架焦点|注意力深入|两个人远近；背后有线索；时不时|
+|具有深度视差的横向移动|旅行;时间流逝|公路旅行；一个分阶段的过程；时间线|
+|自上而下的层堆栈|工匠眼中的人造物|食谱；一封信；地图；正在组装的产品|
+|从盒子中拉出/推入|框架作为对象； “这是一个故事”|纪念品；装框装置；回到现在|
+|锁定框架，仅改变光线|等待;一天或一夜的流逝|守夜；季节；一座即将沉睡的城市|
+|倾斜 up/down 堆栈|攀登;坠落；天空与地面|一座山；一口井；希望和重量|
+|近平面遮挡器擦拭|场景之间的幕布|章节变更；梦想；一个秘密被揭露|
 
-Framing: the story layer in focus, foreground and far layers soft; box edges fully out of frame inside, clearly in frame outside, never half. Transitions: dissolves (0.5–1.2 s), an iris, light off/on, a near-plane curtain whose halves meet exactly. No whip pans, no digital zooms.
+取景：焦点故事层，前景层和远处层柔和；盒子边缘完全超出框架内部，明显位于框架外部，绝不是一半。转场：溶解（0.5–1.2 秒）、虹膜、光 off/on、两半精确接合的近平面幕。没有快速平移，没有数码变焦。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instruments** that sit like light behind paper: felt piano, music box, celesta, harp or plucked zithers, bamboo flutes, soft strings; a solo instrument of the topic's culture. No drum kit; percussion only as single soft strokes (woodblock, small gong, hand drum).
-- **Foley is paper and light**: switch click + rising shimmer when a light turns on; paper rustle and slide; card-stock tap; lid thud; chimes on reveals; soft whoosh for curtains; beds from the scene (river, rails, city hum, crickets, snow wind).
-- **Silence**: the lamp switched off — all sound but a room tone drops out, then returns with the light.
-- **Mix character**: voice compressed and forward (RMS ~−18 dB), music underneath with ~5–6 dB of ducking under speech, foley low (−24…−34 dB), peak-limited, final at −14 LUFS.
-- **Options**: a new instrument entering when the film changes place; one foley sound per light cue; a music hand-over solved backwards so a swell lands on the line that matters.
-- **Voice**: warm, a storyteller at a table, not an announcer. Proof every line with whisper; for Chinese polyphonic characters feed TTS a homophone and keep the real text for subtitles.
+- **乐器**像光一样坐在纸后面：毛毡钢琴、音乐盒、钢片琴、竖琴或古筝、竹笛、软弦；主题文化的独奏乐器。没有架子鼓；仅以单一轻敲击打（木版、小锣、手鼓）。
+- **Foley是纸和光**：开关点击+开灯时闪烁；纸张沙沙作响和滑动；卡片纸龙头；盖子砰的一声；钟声揭晓；窗帘发出轻柔的嗖嗖声；场景中的床（河流、铁轨、城市嗡嗡声、蟋蟀、雪风）。
+- **沉默**：灯关闭 - 除室内音调外的所有声音均消失，然后随灯一起返回。
+- **混合特征**：语音压缩和前向（RMS ~−18 dB），音乐下方有约5–6 dB的音量闪避语音，拟音低（−24…−34 dB），峰值限制，最终为−14 LUFS。
+- **选项**：影片更换位置时进入的新仪器；每个灯光提示发出一个拟音声音；音乐交接向后解决，因此重要的线路上有一个膨胀。
+- **嗓音**：温暖，是餐桌上的讲故事者，而不是播音员。用耳语验证每一行；对于中文多音字，TTS 提供同音字并保留字幕的真实文本。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The lamp turns on.** Source, then far layers, then windows light up one by one. *Fits content like:* a shop opening at dawn; a startup's first customer; a stadium before a match.
-- **Two windows, one light.** Two lit places sharing one light source (a moon, a lighthouse, a satellite). *Fits content like:* a long-distance friendship; two labs working on the same problem; a sister city pair.
-- **Depth as distance.** A stack of ranges or streets makes "far away" visible; travel moves layers at speeds proportional to depth. *Fits content like:* a migration route; shipping a parcel; the history of a river.
-- **Paper that writes itself.** A strip grows from its edge on the spoken word. *Fits content like:* a recipe; the terms of a treaty; a child's first word.
-- **The box as keepsake.** The camera finds the real lamp in a room, real objects lit by its spill. *Fits content like:* a wedding anniversary; a product unboxing; a museum object's story.
-- **Light burst from an opened thing.** A lid lifts and analytic glow spills out. *Fits content like:* a gift; a discovery; a new idea.
-- **Silhouette in a window.** One jointed figure inside a lit frame. *Fits content like:* someone working late; a portrait of a craftsperson; a patient waiting.
+- **灯亮。** 光源，然后远一层，然后窗户一一亮起来。 *适合以下内容：* 黎明时分开门营业的商店；初创公司的第一个客户；比赛前的体育场。
+- **两扇窗户，一盏灯。** 两个照亮的地方共享一个光源（月亮、灯塔、卫星）。 *适合以下内容：*远距离友谊；两个实验室致力于同一问题；一对姐妹城市。
+- **深度为距离。** 一堆范围或街道使“远方”可见；行进以与深度成比例的速度移动层。 *适合以下内容：*迁移路线；运送包裹；一条河流的历史。
+- **自己书写的纸。** 一条条从其边缘生长到所说的单词上。 *适合以下内容：*食谱；条约条款；孩子的第一句话。
+- **作为纪念品的盒子。** 摄影机在房间里找到真正的灯，通过其溢出物照亮真实的物体。 *适合以下内容：*结婚纪念日；产品拆箱；博物馆物品的故事。
+- **光线从打开的物体中迸发出来。** 盖子升起，分析光芒溢出。 *适合以下内容：* 礼物；一个发现；一个新想法。
+- **窗户中的剪影。** 照亮的框架内的一个关节人物。 *适合以下内容：*有人工作到很晚；工匠肖像；一个病人在等待。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- `destination-out` cut-outs need an **opaque fillStyle** before punching, or the hole is half-cut (`props.js` `cut(x, fn)` does it).
-- Soft shadows bleed and halo: layers that must not take part need **both** `shadow: false` and `recv: false`.
-- A transparent radial-gradient texture shows a square edge as an additive glow → use an analytic shader falloff (`burst()`).
-- A near-plane curtain whose halves don't meet at their **front edges** leaves a slit of the old shot.
-- Sheets larger than the cavity poke through the frame in outside shots.
-- **Grade state must not carry over** between shots: every grade key a shot omits must fall back to a default each frame, or renders depend on which frame a worker started on (visible pops at worker boundaries).
-- Headless Chrome must run with GPU flags; SwiftShader is ~6× slower.
+- `destination-out` 切口在冲孔之前需要 **不透明填充风格**，或者孔是半切的（`props.js` `cut(x, fn)` 可以做到）。
+- 软阴影出血和光晕：不得参与的图层需要 **两个都** `shadow: false` 和 `recv: false`。
+- 透明的径向渐变纹理将方形边缘显示为附加发光 → 使用分析着色器衰减 (`burst()`)。
+- 两半在 **前边缘** 处不相交的近平面窗帘会在旧镜头上留下一条狭缝。
+- 比腔体大的板材穿过镜头外部的框架。
+- **Grade 状态不得在镜头之间延续**：镜头省略的每个等级键必须回退到每个帧的默认值，或者渲染取决于工作人员开始的帧（在工作人员边界处可见弹出）。
+- Headless Chrome 必须使用 GPU 标志运行； SwiftShader 速度慢约 6 倍。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/src/`: `paper.js` (`sheet()` = one lit paper layer; `skyPanel`, `moon`, `text`, `burst`), `stage.js` (scene, top spot, `aim()` camera), `post.js` (DoF, bloom, transitions, grade), `room.js` (the real box and table), `art.js` / `people.js` / `props.js` (motifs, jointed figures, props), `lib.js`. `src/main.js` schedules shots, each `build(E) → { S, update(t), post(t), grade(t) }`. API table and a minimal shot: [DEMO.md](DEMO.md) "Engine reference".
+在 `demo/src/` 中：`paper.js`（`sheet()` = 一层点亮的纸层；`skyPanel`、`moon`、`text`、`burst`）、`stage.js`（场景、顶部位置、 `aim()` 摄影机）、`post.js`（DoF、绽放、过渡、等级）、`room.js`（真实的盒子和桌子）、`art.js` / `people.js` / `props.js`（图案、关节人物、道具），`lib.js`。 `src/main.js` 调度镜头，每个 `build(E) → { S, update(t), post(t), grade(t) }`。 API 表和最小镜头：[DEMO.md](DEMO.md)“引擎参考”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the places, the figures (or none), the ladders, the light source, whether the real world appears, the opening, the ending and the camera path. All far from our demo:
+你决定地点、人物（或没有）、梯子、光源、现实世界是否出现、开头、结尾和摄影机路径。与我们的示范相去甚远：
 
-- Structures: **one window, one year** (a locked lamp; the scene inside changes season by season, light the only transition); **a vertical stack** (the film tilts down through sky, city, street, underground, each a chapter); **a relay of objects** (a single object passes hand to hand across five small boxes, each a different ladder).
-- Openings: **already lit, mid-scene** (a figure walking through a lit street; we learn it is paper only when the camera racks focus); **darkness and one hole** (a single pinprick of light widens into a moon, a door, an eye); **top-down** (hands' view of a sheet being cut; the cut sheet slides into the stack).
-- Endings: **the lights go out one by one**, the last window last; **rack focus to the front layer** until the story blurs into warm light; **a new sheet slides in** at the front, starting the next story.
+- 结构：**一扇窗，一年**（一盏锁着的灯；里面的场景随着季节的变化而变化，灯光是唯一的过渡）；**垂直堆栈**（这影片向下倾斜穿过天空、城市、街道、地下，每一章）；**对象的中继**（一个物体手拉手地穿过五个小盒子，每个小盒子都有一个不同的梯子）。
+- 开场：**已经点亮，场景中**（一个人物走过点亮的街道；只有当摄影机对焦时我们才知道它是纸）； **黑暗和一个洞**（单个光点扩大为月亮、一扇门、一只眼睛）； **自上而下**（正在切割的纸张的手视图；切割后的纸张滑入堆栈）。
+- 结局：**灯一一熄灭**，最后一个窗口最后； **将焦点拉到前层**，直到故事模糊成温暖的光线； **一张新纸滑入** 的前面，开始下一个故事。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

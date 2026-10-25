@@ -1,66 +1,73 @@
-# Constructivist Montage — our demo
+<a id="constructivist-montage--our-demo"></a>
+# 构成主义蒙太奇——我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *410 Days* (410 天, 60.0 s) · `kino-montage.mp4` · subtitles `kino-montage.srt` · source in [`demo/`](demo/)
+示范：*410天*（410天，60.0秒）·`kino-montage.mp4`·字幕`kino-montage.srt`·来源在[`demo/`](demo/)
 
-The Empire State Building went from first steel (17 March 1930) to opening day (1 May 1931) in 410 days. Its own 1931 brochure has a column headed "The Men Who Did the Job" that lists owners, directors and contractors. The film asks that heading as a question and answers it with the construction film and Lewis Hine's photographs: 2,500 men a day, up to about 4,000.
+帝国大厦从第一块钢材（1930 年 3 月 17 日）到开业（1931 年 5 月 1 日）仅用了 410 天。其 1931 年的宣传册中有一个标题为“完成这项工作的人”的专栏，列出了业主、董事和承包商。 影片将这个标题作为一个问题提出，并用结构影片和 Lewis Hine 的照片来回答它：每天 2,500 人，最多大约 4,000 人。
 
-It is an unofficial film made entirely from public archives and real documents: a 1930–31 construction film by the steel fabricator (American Bridge Company / U.S. Steel, *Empires of Steel*), three Lewis Hine photographs (U.S. National Archives; The Metropolitan Museum of Art, CC0), and the 1931 brochure *What Everybody Wants to Know About Empire State* (Columbia University Libraries). It is not affiliated with or endorsed by the building or any company named in it. Every fact is sourced in [`demo/FACTS.md`](demo/FACTS.md), every asset in [`demo/CREDITS`](demo/CREDITS) and [`demo/SOURCES.md`](demo/SOURCES.md).
+这是一份非官方的影片，完全由公共档案和真实文件制成：由钢铁制造商（美国桥梁公司/美国钢铁公司，*钢铁帝国*）于 1930-31 年建造的影片，三张刘易斯·海因照片（美国国家档案馆；大都会艺术博物馆，CC0），以及 1931 年的小册子*《每个人都想知道的事》关于帝国大厦*（哥伦比亚大学风格库）。它不隶属于该建筑物或其中指定的任何公司，也不受其认可。每个事实均源自 [`demo/FACTS.md`](demo/FACTS.md)，每个资产均源自 [`demo/CREDITS`](demo/CREDITS) 和 [`demo/SOURCES.md`](demo/SOURCES.md)。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Shape: a document asks, the footage answers; the turn sits in the middle.
+形状：文件提出问题，镜头回答；转弯位于中间。
 
-- Setup (0–11.5 s): title on a red girder over a man riding a hoisted beam into the sky; the brochure's map, the site circled in red; the circle opens onto the excavation; first steel, 17 March 1930.
-- Development, the machine (11.5–28 s): nine derricks (a grid that fills cell by cell), the frame in split strips, a 44-ton column frozen and annotated, four and a half floors a week (the brochure's sentence marked in red), 80 hours from the mill to a rivet (a rising staircase of windows).
-- Turn, the men (28–35.5 s): the heading "THE MEN WHO DID THE JOB", circled; a red question mark; the orchestra stops and only a real rivet-gun recording drives an accelerating cut of workers while a counter climbs; the answer printed over a multiple exposure: 2,500 a day, up to about 4,000.
-- Ending, the result (35.5–60 s): the brochure's own height drawing is turned and stood up as a chart (held, then the verdict "tallest in the world"); the camera pushes into the winner; the photomontage tower climbs from floor 86 to 102 with workers cut out and stacked on every floor, a figure on top; half a bar of silence; 410 days, 102 floors, opened nearly a month early; end card.
+- 准备（0-11.5 秒）：标题位于红色大梁上，上方是一个骑着吊梁冲向天空的人；小册子的地图，红色圈出的地点；圆圈通向挖掘区域；第一钢，1930 年 3 月 17 日。
+- 开发，机器（11.5-28秒）：九个井架（一个接一个单元填满的网格），分裂条状的框架，一根冷冻并注释的44吨重的柱子，每周四层半（手册中的句子用红色标记），从工厂到铆钉（窗户上升的楼梯）需要80小时。
+- 轮到男人们（28-35.5 秒）：标题“完成这项工作的男人”，圈出；红色问号；管弦乐队停下来，只有真正的铆钉枪录音才能推动工人加速砍伐，而计数器则在攀升；多次曝光后打印出的答案是：每天 2,500 个，最多可达 4,000 个左右。
+- 结束，结果（35.5-60秒）：小册子本身的高度图被翻转并立为图表（举行，然后判定“世界上最高”）； 摄影机推入胜者；蒙太奇塔从 86 层爬升至 102 层，每一层都有工人被剪下来并堆放，顶部有一个人物；半格沉默； 410天，102层，提前近一个月开业； 片尾卡。
 
-Why it fits the style: the material is all evidence and the argument is made by editing: a document's heading collides with the footage it leaves out (A + B → idea), the counts are driven by cuts, and the signature shot builds the structure out of the people who built it.
+为什么它适合这种风格：材料都是证据，论证是通过编辑得出的：文档的标题与它遗漏的镜头相冲突（A + B → 想法），计数由剪辑驱动，标志性镜头从构建它的人那里构建了结构。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-Times in seconds (120 BPM: beat 0.5, bar 2.0).
+时间以秒为单位（120 BPM：节拍 0.5，小节 2.0）。
 
-| # | Time | Format | Picture | Native move / note |
+|#|时间|格式|图片|风格特有表现手法/注|
 |---|---|---|---|---|
-| 1 | 0.00–5.00 | title package | red girder slams on 0; a window cut to the girder's edge: rider on the beam (0.25), boom (2.0), climber (3.0), derrick top (4.0); "410" stamped digit by digit, "天" red, "410 DAYS"; "帝国大厦 · 纽约 1930–1931" on the girder | strong action in the first 0.25 s; title held 4 s |
-| 2 | 4.75–8.25 | map + lower third | red wipe; the brochure map pushes toward the site; red marker circle (5.5); lower third "第五大道 33–34 街" | document as map |
-| 3 | 8.25–8.75 | iris | the red circle becomes an aperture onto the site from above | transition inside the medium |
-| 4 | 8.75–11.50 | vertical title, date on a girder | grillage guided onto its footing in a tall window; "第一根钢" stacked; "1930.3.17" on a red band; day counter "第 0 天" | type as structure |
-| 5 | 11.50–14.50 | grid | 3 × 3 windows light every sixteenth in a spiral, the centre counts to 9 and lights red; "九台吊车 NINE DERRICKS" | counting by cuts |
-| 6 | 14.50–16.00 | split strips | three strips of two panels on the −18° axis, one panel changes per beat | machine rhythm |
-| 7 | 16.00–18.50 | freeze + annotation | flash, freeze on a column section going up, red ellipse, leader, "44 吨 / 44 TONS EACH"; jump-in at 17.25; the film keeps running in a red-framed inset | freeze-frame format |
-| 8 | 18.25–23.25 | document close-up | red wipe; the statistics page, red marker over "Four and one-half stories of steel were erected every week"; red block "每周 4½ 层"; a tall slot of the facade rushing past | the document is marked, not quoted |
-| 9 | 23.25–28.00 | process staircase | truck with steel → floor beam on the derrick → men bolting a column, red arrows; counter 0 → 80 小时; the brochure's own sentence strip, marked | whistle J-cut at 23.0 |
-| 10 | 28.00–29.50 | the question | ink ground; "THE MEN WHO DID THE JOB" (heading only), red ellipse; a red "?" slams at 29.0 | music stops (near-silence) |
-| 11 | 29.50–31.50 | acceleration + count | 0.5 → 0.25 → 0.125 s cuts of workers (film and Hine), tilted windows, red / ink grounds alternating; four-digit counter with its unit "人 MEN" jumping | rivet-gun recording alone, J-cut at 29.05 |
-| 12 | 31.50–35.50 | multiple exposure | steel field from above, high workers in `screen`, two Hine cut-outs in `multiply`; "每天 2,500 人" / "最多一天约 4,000 人" | the answer |
-| 13 | 35.25–43.25 | chart from the document | red wipe; the page turns a quarter; the four outlines lift off and stand on one line to scale (36.25 / 36.625 / 37.0 / 37.375), dimension lines and numbers; held 37.4–40.0; verdict "世界最高" (40.0); push into the red Empire State outline | comparison held ≥ 2.5 s before the verdict |
-| 14 | 43.25–48.25 | photomontage tower (signature) | ten floors in a run (43.3–44.2) while the counter climbs 0 → 86; the count rests on 86 while "1930.9.15 钢架 86 层" and "第 182 天" are up (44.25–47.2) and the camera climbs slowly; six more floors (47.2–47.6), 86 → 102; mooring-mast steel with flag as the crown (47.65); Hine's *Icarus* on top (48.0) | people build the structure; number and caption never disagree |
-| 15 | 48.25–48.75 | silence beat | ink, one red rivet | true silence |
-| 16 | 48.75–56.00 | result composition | the finished tower in a slanted window (camera tilts up it), *Icarus* in a tilted frame, red wedge; "410 天", "102 层", "1931.5.1 开放 · 比计划提前近一个月"; "410" restamped on red at 53.6 | heaviest hit at 48.75 |
-| 17 | 56.00–60.00 | end card | see below | held 4 s |
+|1|0.00–5.00|标题包|红色大梁猛击0；切到大梁边缘的窗口：梁上的骑手（0.25），动臂（2.0），爬升器（3.0），井架顶部（4.0）； “410”逐位戳印，“天”红色，“410 DAYS”；大梁上的“大厦帝国·纽约1930–1931”|前 0.25 秒内动作强烈；头衔保持4秒|
+|2|4.75–8.25|地图+下三分之一|红色擦拭；宣传册地图推向现场；红色标记圆圈（5.5）；下第三“第五大道33-34街”|文档作为地图|
+|3|8.25–8.75|虹膜|红色圆圈成为从上方观察场地的一个光圈|表现媒介内部的过渡|
+|4|8.75–11.50|垂直标题，日期在梁上|格架被引导到一扇高高的窗户上； “第一根钢”叠放；红色条带上写着“1930.3.17”；日计数器“第 0 天”|类型作为结构|
+|5|11.50–14.50|网格|3 × 3 个窗户呈螺旋状，每隔 16 个窗口亮起一次，中心数到 9 时亮起红色； “九台吊车 NINE DERRICKS”|按削减数|
+|6|14.50–16.00|分割条|-18° 轴上有两个面板的三条带，每个节拍一个面板会发生变化|机器节奏|
+|7|16.00–18.50|冻结+注释|闪光，冻结在向上的柱截面上，红色椭圆，前导，“44 吨/44 吨每个”； 17.25 入场； 影片继续在红框插图中运行|冻结帧格式|
+|8|18.25–23.25|文档特写|红色擦拭；统计页面，红色标记为“每周建造四层半钢铁”；红色块“每周4½层”；立面的一个高槽冲过去|该文件已标记，未引用|
+|9|23.25–28.00|流程楼梯|装有钢材的卡车 → 井架上的地板梁 → 人员用螺栓固定一根柱子，红色箭头；计数器0→80小时；小册子自己的句子条，标记为|哨声 J 切 23.0|
+|10|28.00–29.50|问题|墨地； “THE MEN WHO DID THE JOB”（仅标题），红色椭圆；一个红色的“？”猛击29.0|音乐停止（接近安静）|
+|11|29.50–31.50|加速度+计数|0.5 → 0.25 → 0.125 s 工人切割（影片和 Hine）、倾斜的窗户、红色/墨水地面交替；四位数计数器，其单位“人MEN”跳跃|仅铆钉枪录音，J-cut 为 29.05|
+|12|31.50–35.50|多重曝光|钢场俯视图，`screen` 中的高位工人，`multiply` 中的两个 Hine 切口； “每天 2,500 人” / “最多一天约 4,000 人”|答案|
+|13|35.25–43.25|文档中的图表|红色擦拭；页面翻了四分之一；四个轮廓升起并站在一条线上，按比例 (36.25 / 36.625 / 37.0 / 37.375)、尺寸线和数字；保持在 37.4–40.0；判决“世界最高”（40.0）；推入红色帝国州轮廓|判决前比较持续时间≥2.5秒|
+|14|43.25–48.25|蒙太奇塔（签名）|连续上升十层 (43.3–44.2)，同时计数器上升 0 → 86；计数停留在86，而“1930.9.15钢架86层”和“第182天”则上升（44.25–47.2），摄影机缓慢攀升；另外六层 (47.2–47.6), 86 → 102;钢制系泊桅杆，顶部带有旗帜（47.65）；海因的*伊卡洛斯*位居榜首 (48.0)|人们建造结构；数字和标题永远不会不一致|
+|15|48.25–48.75|沉默的节拍|墨水，一颗红色铆钉|真正的沉默|
+|16|48.75–56.00|结果组成|成品塔位于倾斜的窗户中（摄影机将其向上倾斜），*伊卡洛斯*位于倾斜的框架中，红色楔子； “410天”、“102层”、“1931.5.1开放·比计划提前近一个月”； “410”在 53.6 处重新标记为红色|最重击48.75|
+|17 号|56.00–60.00|片尾卡|见下文|举行了4次|
 
-Narration (Kokoro `am_michael`, eleven short lines) and bilingual subtitles: 5.15, 8.9, 12.75, 16.4, 19.4, 23.6, 28.2, 32.0, 37.6, 49.0, 53.6 s (`VO` in `index.html`; cues exported from the same table).
+旁白（Kokoro `am_michael`，十一行短句）和双语字幕：5.15、8.9、12.75、16.4、19.4、23.6、28.2、32.0、37.6、49.0、53.6 s（`VO` in `index.html`；从同一个表导出的提示）。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- 120 BPM, D minor, turning to D major at the chart's winner and staying there for the result. Instruments (VSCO 2 CE, VCSL; CC0): spiccato cellos, staccato bassoon, staccato tuba and trombone, horns, trumpets, contrabass, violins, violas, snare, gran cassa, timpani, xylophone, suspended cymbal, clash, gong, tubular bells.
-- Arc: strike (gran cassa, timpani, tuba, trombone) → trombone D–F–A under the stamped digits → the machine ostinato (D D F D A D E F in eighths) → half band under the map → timpani roll into the iris → full machine under the grid (one xylophone note per lit cell, rising) → trumpet motif over the strips → one held chord on the freeze, timpani on the jump-in → horn stabs on the brochure, ostinato an octave up → up a fourth for the 80 hours with motif and a timpani roll → **everything stops at 28** except one boom → the rivet gun alone → strings swell under the answer → pizzicato ticks under the chart, one brass chord per building (Dm, F, A, D major) held under the comparison → tutti D-major stab on the verdict → the machine rebuilds → the tower: one rising xylophone / violin note per floor, trombone chords stepping up each bar, snare roll → brass fanfare on the crown → **half a bar of silence** → D-major tutti with gong and gran cassa → strings under the last lines → a low D and tubular bell under the end card.
-- Foley (procedural, `audio/mix.py`): slams (thump + steel clank), stamps, whooshes for wipes and the iris, marker scrubs, paper rustles, pitched clanks for cells, strips and floors, a freeze click. Real recordings: the rivet gun (CC BY 4.0), a steam whistle (CC0), a construction site ambience (public domain).
-- Mix: music ducked 70 % under the voice (about 10 dB under it), foley 35 %, ambience about 20 dB under the voice and out for the silence; mastered to −14 LUFS with peaks at −1.8 dBFS before `mux.sh`.
+- 120 BPM，D 小调，在图表的获胜者处转向 D 大调并停留在那里等待结果。乐器（VSCO 2 CE、VCSL；CC0）：断奏大提琴、断奏巴松管、断奏大号和长号、圆号、小号、低音提琴、小提琴、中提琴、军鼓、大卡萨、定音鼓、木琴、悬钹、撞音、锣、管钟。
+- 弧线：打击（大卡萨、定音鼓、大号、长号）→ 压印数字下的长号 D–F–A → 机器固定音型（八分之一的 D D F D A D E F）→ 地图下的半个乐队 → 定音鼓卷入虹膜 → 网格下的完整机器（每个发光单元一个木琴音符，上升）→ 条带上的小号主题 → 冻结上的一个和弦，定音鼓上的定音鼓跳入→小册子上的圆号刺入，固定音阶上升一个八度→在80小时内上升四分之一，带有主题和定音鼓卷→**一切都停止在28**，除了一个繁荣→铆钉枪单独→琴弦在答案下膨胀→拨奏在图表下滴答作响，每座建筑（Dm，F，A，D大调）在下面举行比较 → D 大调合奏对判决的刺击 → 机器重建 → 塔：每层有一个上升的木琴/小提琴音符，长号和弦在每个小节上递增，小军鼓卷奏 → 冠部的铜管号角 → **半小节的沉默** → D 大调合奏，带有锣和大卡萨 → 最后一行下的琴弦 → 在最后一行下的低音 D 和管状钟片尾卡。
+- 拟音（程序，`audio/mix.py`）：猛击（重击+钢铁叮当声），印章，擦拭和虹膜的嘶嘶声，标记擦洗，纸张沙沙声，细胞、条带和地板的尖锐叮当声，冻结点击。真实录音：铆钉枪（CC BY 4.0）、蒸汽哨（CC0）、建筑工地氛围（公共领域）。
+- 混音：音乐在人声以下降低 70%（约低于人声 10dB），拟音 35%，环境在人声以下约 20dB，然后进入静音；在`mux.sh`之前掌握到-14 LUFS，峰值为-1.8 dBFS。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-Red `#D52B1E`, ink `#141210`, paper `#EDE4D0`; axis −18°, wipe band 72°. Type: Noto Sans SC 900 / 700, Oswald 500–700, Space Mono for tags (all OFL, in `demo/fonts/`). Props are only documents (the brochure's map, statistics page, scale drawing, heading, chronology strip), film windows, Hine cut-outs and red / ink geometry.
+红色`#D52B1E`，墨水`#141210`，纸张`#EDE4D0`；轴-18°，擦拭带72°。类型：Noto Sans SC 900 / 700、Oswald 500–700、用于标签的 Space Mono（所有 OFL，在 `demo/fonts/` 中）。道具只是文件（小册子的地图、统计页、比例图、标题、年表条）、影片窗户、海因剪纸和红色/墨水几何图形。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Paper ground; "410 天" / "410 DAYS"; a red rule; "构成主义蒙太奇 / CONSTRUCTIVIST MONTAGE"; "LemoLab × Claude Opus 5.5"; five credit lines (the film, the photographs, the document, the CC BY rivet recording with author, title and licence, and "Unofficial film from public archives · fonts OFL · samples CC0"); a still of the rider and the returning red girder. Held 4 s. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library demo only; a user's film carries no LemoLab credit and no copy of this card.
+纸磨； "410 天" / "410 天";红色规则； “构成主义蒙太奇 / CONSTRUCTIVIST MONTAGE”； “LemoLab × 克劳德 Opus 5.5”；五个信用额度（影片、照片、文档、包含作者、标题和许可证的 CC BY 铆钉记录，以及“来自公共档案馆的非官方影片·字体 OFL·样本 CC0”）；骑手和归来的红梁的剧照。举行了4秒。 “LemoLab × Claude Opus 5.5”签名仅属于该库示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -74,7 +81,7 @@ demo/
   FACTS.md · CREDITS · SOURCES.md / SOURCES.jsonl · stills/styleframe.jpg
 ```
 
-1. `sh demo/build.sh` (library set up with `setup.sh deps voice music`): downloads the sources (~95 MB) and fonts, makes a python with onnxruntime and the u2net_human_seg model if needed, prepares the footage (~2 min), voices and checks every line, runs the reading check, exports events and cues, renders 1,440 frames, mixes, writes the subtitles, masters to −14 LUFS (grain 4), writes the poster (51.0 s), the styleframe (2.5 s) and a 1280-wide small copy, then runs the rhythm report and the speech check on the final mix.
-2. Footage windows never show the 704-pixel film source above 2.5×: full-frame shots of the film are avoided on purpose (windows, panels, an iris that opens onto a 1,760 px image on ink).
+1. `sh demo/build.sh`（使用 `setup.sh deps voice music` 设置的库）：下载源（约 95 MB）和字体，使用 onnxruntime 和 u2net_ human_seg 模型（如果需要）制作 python，准备素材（约 2 分钟），配音并检查每一行，运行阅读检查，导出事件和提示，渲染 1,440 帧，混合，写入字幕，母版为−14 LUFS（颗粒 4），写入海报（51.0 秒）、风格定帧（2.5 秒）和 1280 宽的小副本，然后在最终混音上运行节奏报告和语音检查。
+2. 镜头窗口永远不会显示高于 2.5 倍的 704 像素影片源：故意避免影片的全帧镜头（窗口、面板、打开墨水上 1,760 像素图像的虹膜）。
 
-Pitfalls met in this demo: the first title put the bilingual line off the girder's left end (now placed from the band's centre line); the split strips first stretched one clip across 2,300 px (3.3× the source) and were split into two panels; the iris and the multiple exposure first filled the whole frame from the 704 px film and were windowed; the answer block was red on the red exposure ground and became ink; the verdict first sat on a band across the chart and covered two of the compared numbers (now a block in the empty corner, after the hold); the freeze held 3 s with almost no motion (now 2.5 s with a jump-in and a live inset); the 80-hours English line ran under a dark window (now on a paper tab above it); the tower's counter ran 87 → 97 beside a caption saying 86 (now it rests on 86 while the dated line is up); the people counter had no unit (now "人 MEN"); the result held 7 s nearly still (now the camera tilts up the tower and the last line restamps "410"); a hit at sample 0 overshot the AAC encode to +3 dBTP (a 25 ms fade fixed it).
+示范中遇到的陷阱：第一个标题将双语线置于大梁的左端（现在置于带的中心线）；分割条首先将一个剪辑拉伸到 2,300 像素（源的 3.3 倍），然后分割成两个面板；虹膜和多重曝光首先从 704 px 影片开始填充整个画面，并进行窗口化；答案块在红色曝光底上呈红色并变成墨水；判决首先位于图表上的一条带上，并覆盖了两个比较的数字（现在是保留后空角的一个块）；冻结持续了 3 秒，几乎没有任何动作（现在是 2.5 秒，有跳入和实时插入）； 80 小时的英语线路在黑暗的窗户下运行（现在在窗户上方的纸质标签上）；塔楼柜台的数字是 87 → 97，旁边的标题是 86（现在，当日期已满时，它停留在 86）；人数统计器没有单位（现在的“人MEN”）；结果保持了 7 秒几乎静止（现在摄影机使塔倾斜，最后一行重新标记为“410”）；样本 0 处的命中超出了 AAC 编码至 +3 dBTP（25 毫秒的淡入淡出修复了该问题）。

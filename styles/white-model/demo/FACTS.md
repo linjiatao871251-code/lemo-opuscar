@@ -1,41 +1,44 @@
-# Fact sheet: 《被炸平的城市怎样长回来》 (How a Bombed-flat City Grew Back)
+<a id="fact-sheet-被炸平的城市怎样长回来-how-a-bombed-flat-city-grew-back"></a>
+# 情况说明书：《被炸平的城市怎样长回来》（被炸平的城市如何长回来）
 
-Every number, year and factual claim in the film is in the tables below: claim → source (URL) → source wording. Checked on 2026-10-16.
+影片中的每个数字、年份和事实声明如下表所示：声明 → 来源 (URL) → 来源措辞。于 2026 年 10 月 16 日检查。
 
-On-screen text and subtitles are Chinese; they are quoted as they appear, with an English gloss. Dutch source wording is quoted in the original, with an English translation in brackets.
+屏幕文字和字幕为中文；它们按原样被引用，带有英文注释。原文中引用了荷兰语原文，括号内为英文译文。
 
-Two kinds of number must be kept apart:
+两种数字必须分开：
 
-- **Official / published claims** (table A below): the wording of the Rotterdam City Archives (Stadsarchief Rotterdam, a municipal body); the roof height of Zalmhaven also takes the Wikipedia article as a reference, cross-checked against this film's own measurement.
-- **Data measurements** (table B below): computed by this film from public data (share by construction period, building counts per period, number of buildings over 100 m, roof height, sun elevation, shadow length, roofs in the shadow). All the algorithms are in `tools/prep.py`, the results are written to `data/stats.json`, and the page reads only that file. On screen they are labelled "按建筑占地面积 · BAG 建成年份" (by building footprint · BAG year of construction), "3DBAG 激光实测" (3DBAG laser measurement) and "太阳位置按天文算法" (sun position by astronomical algorithm).
+- **官方/公布的声明**（下表A）：鹿特丹市档案馆（Stadarchief Rotterdam，市政机构）的措辞； Zalmhaven的屋顶高度也以维基百科文章为参考，与影片自己的测量进行交叉核对。
+- **数据测量**（下面的表B）：由影片根据公共数据计算得出（按施工周期、每个周期的建筑物数量、超过100 m的建筑物数量、屋顶高度、太阳高度、阴影长度、阴影中的屋顶）计算。所有算法都在`tools/prep.py`中，结果写入`data/stats.json`，页面只读取该文件。屏幕上标有“按建筑定位·BAG建成年份”（按建筑占地面积·BAG建造年份）、“3DBAG激光实测”（3DBAG激光测量）和“太阳按天文算法”（按天文算法计算太阳位置）。
 
-## A. History and published sources
+<a id="a-history-and-published-sources"></a>
+## A. 历史和公开资料来源
 
-| # | Claim in the film (picture / narration) | Source | Wording |
+|#|影片中的索赔（图片/旁白）|来源|措辞|
 |---|---|---|---|
-| A1 | Pin label "1940.5.14  13:27"; narration "May fourteenth, nineteen forty."; subtitle "1940 年 5 月 14 日。" (14 May 1940.) | Rotterdam City Archives, "Rotterdam in oorlog" https://stadsarchief.rotterdam.nl/rotterdam-oorlog | "Daarom bombarderen Duitse Heinkels op 14 mei 1940 om 13.27 uur de binnenstad van Rotterdam." [That is why German Heinkels bomb the centre of Rotterdam on 14 May 1940 at 13.27.] |
-| A2 | Narration "Bombs and fire took much of the centre."; subtitle "炸弹和大火吞掉了大片市中心。" (Bombs and fire swallowed much of the city centre.) | Same as A1 | "Binnen een kwartier zijn grote delen van de binnenstad verwoest." [Within a quarter of an hour large parts of the city centre are destroyed.] / "De bommen en de branden daarna verwoesten 25.000 woningen en 11.000 andere panden." [The bombs and the fires afterwards destroy 25,000 homes and 11,000 other buildings.] |
-| A3 | Second line of the pin label "258 公顷城区成为废墟" (258 hectares of the city in ruins) | Same as A1 | "Een oppervlakte van 258 hectare stad ligt in puin." [An area of 258 hectares of the city lies in ruins.] |
-| A4 | Pin label "市政厅 · 1920 / 轰炸中几乎完好" (City Hall · 1920 / almost undamaged in the bombing) | Rotterdam City Archives, "Het stadhuis tijdens het bombardement" https://stadsarchief.rotterdam.nl/het-stadhuis-tijdens-het-bombardement ; the year 1920 see B3 | "Maar hoe kan het dat zo'n groot gebouw de verwoesting van 14 mei 1940 vrijwel ongeschonden heeft doorstaan?" [But how is it that such a large building came through the destruction of 14 May 1940 almost unscathed?] / "Het vuur krijgt geen vat op het vrijstaande stadhuis." [The fire gets no hold on the free-standing city hall.] |
-| A5 | Pin label "Kop van Zuid / 马斯河南岸" (south bank of the Maas) (pinned on the Wilhelminapier) | Wikipedia, "Kop van Zuid" https://en.wikipedia.org/wiki/Kop_van_Zuid | "…located on the south bank of the Nieuwe Maas opposite the center of town." / the district "includes the Wilhelmina Pier" |
-| A6 | Pin label "Zalmhaven I / 屋面 203 m" (roof 203 m) (measure: roof, mast excluded) | Wikipedia, "De Zalmhaven" https://en.wikipedia.org/wiki/De_Zalmhaven ; agrees with the measured value in B5 | "The main tower of the complex, Zalmhaven I, reaches 215 metres (705 ft) in height," / "The roof height is 203 metres (666 ft), while the mast takes up the last 12 metres (39 ft) of height." |
-| A7 | Pin label "Zalmhaven I / 2022 年建成" (completed 2022) | BAG original construction year 2022 (B5); Wikipedia as above | "…the entire project was completed in April 2022." |
+|A1|引脚标签“1940.5.14 13:27”；旁白“五月十四日十九点四十分”；副标题“1940年5月14日。”（1940年5月14日。）|鹿特丹市档案馆，“oorlog 中的鹿特丹”https://stadsarchief.rotterdam.nl/rotterdam-oorlog|“Daarom 轰炸机 Duitse Heinkels op 14 mei 1940 om 13.27 uur de binnenstad van Rotterdam”。 [这就是为什么德国亨克尔于 1940 年 5 月 14 日 13 点 27 分轰炸鹿特丹市中心。]|
+|A2|旁白“炸弹和大火占领了中心的大部分地区。”；副标题“炸弹和大火吞掉了大片市中心。”（炸弹和大火吞噬了市中心的大部分地区。）|与A1相同|“Binnen een kwartier zijn grote delen van de binnenstad verwoest。” [一刻钟之内，市中心的大部分地区被摧毁。] /“De bommen en de Branden daarna verwoesten 25.000 woningen en 11.000 andere panden。” [随后的炸弹和大火摧毁了 25,000 所房屋和 11,000 座其他建筑物。]|
+|A3|图钉标签第二行“258 城区成为废墟”（258 公顷的城市成为废墟）|与A1相同|“Een oppervlakte van 258 公顷stad lightt in puin。” [城市面积258公顷成为废墟。]|
+|A4|图钉标签“市政厅·1920 / 轰炸中几乎完好”（市政厅·1920 / 在轰炸中几乎完好无损）|鹿特丹市档案馆，“Het stadhuis tijdens het 轰炸”https://stadsarchief.rotterdam.nl/het-stadhuis-tijdens-het-bombardement； 1920年见B3|“Maar hoe kan het dat zo'n groot gebouw de verwoesting van 14 mei 1940 vrijwel ongeschonden heeft Doorstaan​​？” [但是如此巨大的建筑为何在 1940 年 5 月 14 日的摧毁中几乎毫发无伤？]/“Het vuur krijgt geen vat op het vrijstaan​​de stadhuis”。 [大火没有烧毁独立的市政厅。]|
+|A5|图钉标签“Kop van Zuid / 马斯河南岸”（马斯河南岸）（固定在 Wilhelminapier 上）|维基百科，“Kop van Zuid”https://en.wikipedia.org/wiki/Kop_van_Zuid|“……位于新马斯河南岸，镇中心对面。” / 该地区“包括威廉明娜码头”|
+|A6|引脚标签“Zalmhaven I / 屋面 203 m”（屋顶 203 m）（尺寸：屋顶，桅杆除外）|维基百科，“De Zalmhaven”https://en.wikipedia.org/wiki/De_Zalmhaven；与B5中的测量值一致|“该建筑群的主塔 Zalmhaven I 高达 215 米（705 英尺）”/“屋顶高度为 203 米（666 英尺），而桅杆占据了最后 12 米（39 英尺）的高度。”|
+|A7|徽章标签“Zalmhaven I / 2022 年建成”（2022 年竣工）|BAG原建年份2022年（B5）；维基百科如上|“……整个项目于 2022 年 4 月完成。”|
 
-Note: the Laurenskerk (St Lawrence Church) is not labelled with a year. The original construction year registered in BAG is 1640 (when the tower was raised), while the church's website only says "The Laurenskerk is the only remaining late Gothic building from the medieval Rotterdam." (https://laurenskerk.nl/en/visit/) and gives no construction year; the "15th century" and 1640 readings would contradict each other. So the building labelled with a year in the film is the City Hall, for which the City Archives give wording.
+注意：Laurenskerk（圣劳伦斯教堂）没有标注年份。 BAG 登记的原始建造年份是 1640 年（塔楼升起时），而教堂的网站只说“劳伦教堂是中世纪鹿特丹仅存的晚期哥特式建筑”。 (https://laurenskerk.nl/en/visit/)并且没有给出建造年份； “15世纪”和“1640年”的解读会相互矛盾。因此，影片中标有年份的建筑物是市政厅，市档案馆对此给出了措辞。
 
-## B. Data measurements (computed by this film)
+<a id="b-data-measurements-computed-by-this-film"></a>
+## B.数据测量（通过本影片计算）
 
-Data: 3DBAG (LOD1.3 roof parts, reconstructed from the AHN laser point cloud, CC BY 4.0) + the BAG field it carries, `oorspronkelijkbouwjaar` (original construction year, CC0); BGT water and bridge surfaces (CC0). Model extent: RD coordinates x 91700–94000, y 435300–437900 (2.3 × 2.6 km, centre 51.914°N, 4.484°E). Only roof parts lying entirely inside the extent are kept: 3,887 buildings, 8,860 parts. Building height = 70th-percentile roof height of the part − ground height (`b3_h_70p − b3_h_maaiveld`); each building takes its highest part.
+数据：3DBAG（LOD1.3屋顶部件，由AHN激光点云重建，CC BY 4.0）+其携带的BAG场，`oorspronkelijkbouwjaar`（原建造年份，CC0）； BGT 水面和桥梁表面 (CC0)。模型范围：RD 坐标 x 91700–94000，y 435300–437900（2.3 × 2.6 km，中心 51.914°N，4.484°E）。仅保留完全位于范围内的屋顶部分：3,887 座建筑物，8,860 个部分。建筑高度=该部分70%屋顶高度-地面高度（`b3_h_70p − b3_h_maaiveld`）；每栋建筑都占据其最高的部分。
 
-| # | Claim in the film | Method | Result |
+|#|影片中的索赔|方法|结果|
 |---|---|---|---|
-| B1 | Readout "23% · 1940 年以前建成 · 按建筑占地面积" (23% · built before 1940 · by building footprint); "1,606 栋" (1,606 buildings) | Footprint (sum of part areas) of buildings with BAG original construction year < 1940 ÷ footprint of all buildings | 0.2276 → 23%; 1,606 buildings |
-| B2 | Period legend "1940–1964 · 1,113 栋 / 1965–1989 · 522 栋 / 1990–2009 · 413 栋 / 2010–2025 · 233 栋" (栋 = buildings); rolling year 1940 → 2025 | Count by original construction year, binned | 1,113 / 522 / 413 / 233 |
-| B3 | City Hall "1920" | BAG original construction year (NL.IMBAG.Pand.0599100000701897) | 1920 |
-| B4 | Readout "24/25 · 百米高楼，1990 后建" (24/25 · buildings over 100 m, built after 1990) (the finished film has only this readout; the narration "Twenty-four of its twenty-five tallest…" and its subtitle from an earlier draft are not used in the finished film) | Buildings taller than 100 m, binned by period | 25 in total: 1 in 1965–89, 13 in 1990–2009, 11 in 2010–25 → 24/25. The buildings above 100 m are exactly the 25 tallest |
-| B5 | "Zalmhaven I · 屋面 203 m · 2022 年建成" (roof 203 m · completed 2022); top of the height legend 203 m; "最高那栋楼" (the tallest building) | NL.IMBAG.Pand.0599100100020122, the building with the highest roof in the model | 203.0 m, BAG year 2022 |
-| B6 | "14.6° · 冬至正午太阳高度" (14.6° · sun elevation at noon on the winter solstice); narration "below fifteen degrees"; the clock stops at 12:40 | NOAA/Meeus sun position algorithm (`tools/sun.py`), 2025-12-21, CET (UTC+1), latitude/longitude of the model centre; maximum elevation taken at 5-minute steps | 12:40 CET, elevation 14.647°, azimuth 179.94° |
-| B7 | "777 m · 冬至正午的影长" (777 m · shadow length at noon on the winter solstice); narration "nearly eight hundred metres" | Shadow length = roof height ÷ tan(sun elevation) = 203.0 ÷ tan 14.647°; separately, ray marching through a height field on a 2 m grid puts the actual end of the shadow 784 m from the centre of the tower's top part | 776.6 m → 777 m |
-| B8 | "16 个屋顶落在它的影里 · 其中 9 栋建于 1940 年以前" (16 roofs fall in its shadow · 9 of them built before 1940); narration "across sixteen roofs. Nine were there before the war." | 2 m grid height field: for each cell, step along the sun direction; if Zalmhaven I's height minus distance × tan(elevation) is still more than 0.5 m above the cell's roof, the cell is in its shadow; a building counts if the centre cell of its highest part is in shadow | 16 buildings (262–734 m from the tower), of which 9 have a BAG year < 1940 (1928–1939) |
+|B1|读出“23%·1940年以前建成·按建筑精度”（23%·1940年以前建成·按建筑占地面积）； “1,606栋”（1,606栋建筑物）|BAG 原始建造年份 < 1940 年的建筑物占地面积（部分面积之和） ÷ 所有建筑物的占地面积|0.2276 → 23%； 1,606 栋建筑物|
+|B2|时期图例“1940–1964 · 1,113 栋 / 1965–1989 · 522 栋 / 1990–2009 · 413 栋 / 2010–2025 · 233 栋”（栋 = 建筑物）；滚动年份 1940 → 2025|按原建设年份计数，分箱|1,113 / 522 / 413 / 233|
+|B3|市政厅“1920”|BAG 原始建造年份 (NL.IMBAG.Pand.0599100000701897)|1920年|
+|B4|读出“24/25·百米高楼，1990后建”（24/25·100m以上的建筑物，1990年以后建造）（成品影片只有这个读出；旁白“二十五座最高的二十四座……”及其早期草稿的副标题在成品中没有使用影片)|高度超过 100 m 的建筑物，按时期分类|总共 25 座：1965–89 年 1 座、1990–2009 年 13 座、2010–25 年 11 座 → 24/25. 100 m 以上的建筑物正是 25 座最高的建筑物|
+|B5|“Zalmhaven I·屋面203 m·2022年建成”（屋顶203 m·2022年竣工）；顶部高度图例为 203 m； “最高那栋楼”（最高的建筑物）|NL.IMBAG.Pand.0599100100020122，模型中屋顶最高的建筑物|203.0 m，BAG 2022 年|
+|B6|“14.6°·冬至正午太阳高度”（14.6°·冬至正午太阳高度角）；旁白“十五度以下”；时钟停在 12:40|NOAA/Meeus太阳位置算法（`tools/sun.py`），2025年12月21日，CET（UTC+1），模型中心latitude/longitude； 5 分钟步数的最大海拔高度|12:40 CET，仰角 14.647°，方位角 179.94°|
+|B7|“777 m·冬至正午的影长”（777 m·冬至正午的影子长度）；旁白《近八百米》|阴影长度 = 屋顶高度 ÷ tan(太阳高度角) = 203.0 ÷ tan 14.647°；另外，光线穿过 2 m 网格上的高度场时，阴影的实际末端距离塔顶部中心 784 m|776.6 m → 777 m|
+|B8|“16个屋顶分别是它的影里·其中9栋建于1940年以前”（16个屋顶落在它的阴影里·其中9栋建于1940年之前）；旁白“跨越十六个屋顶。战前有九个屋顶。”|2 m网格高度场：对于每个单元格，沿着太阳方向步进；如果 Zalmhaven I 的高度减去距离 × tan(高程) 仍高于牢房屋顶 0.5 m 以上，则该牢房位于其阴影中；如果建筑物最高部分的中心单元处于阴影中，则建筑物计数|16 栋建筑（距塔楼 262–734 m），其中 9 栋 BAG 年份 < 1940 年 (1928–1939)|
 
-"Were there before the war" (Nine were there before the war) means buildings with a BAG original construction year earlier than 1940 that still stand today.
+“战前有九座”（Nine were there before the war）是指 BAG 最初建造年份早于 1940 年且至今仍矗立的建筑物。

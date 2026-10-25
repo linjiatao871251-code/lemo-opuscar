@@ -1,140 +1,152 @@
-# Time-lapse Symphony — Style Prompt
+<a id="time-lapse-symphony--style-prompt"></a>
+# 延时交响：风格提示词
 
-> A city film cut like a piece of minimalist music: time-lapse turns traffic, crowds and clouds into rivers of light, the cuts get denser with the score's subdivisions, one thing is slowed almost to a stop, and the film ends on a hard cut to black on a downbeat. No narrator. The music carries it.
-> Grammar learned from the city-symphony tradition and the "Qatsi" films (Reggio / Fricke, scores in the Philip Glass manner). Nothing is taken from those films: no footage, no melody, no title lettering, no names in the film.
+> 一座城市影片的剪辑就像一首极简主义音乐：延时摄影将交通、人群和云彩变成了光之河流，随着配乐的细分，剪辑变得更加密集，有件事几乎减慢到停止，影片以悲观的硬剪辑结束。没有解说员。音乐承载着它。
+> 语法从城市交响乐传统和“Qatsi”影片（Reggio / Fricke，以 Philip Glass 方式评分）中学习。 影片中没有任何内容：影片中没有镜头、没有旋律、没有标题字母、没有名字。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **An edit style.** The picture is real footage of a place (time-lapse, hyperlapse, aerials, slow motion, archive film, photographs). The style lives in *how time is bent* and *where the cuts fall*, not in a drawn look.
-- **The score is the script.** It is written first, with a clear arc: minimal repetition → acceleration → climax → a sudden stop → acceleration again → hard stop → a quiet coda. Every cut sits on a beat or a subdivision of it.
-- **Machines fast, people slow.** Cars, trains, clouds and light are sped up until they become lines; the one slowed moment is something fragile (a soap bubble, steam, a flag, a flock), and people appear as crowds, tracks or long-exposure ghosts.
-- **Few words, each one earned.** On-screen text is a title, a handful of numbers that state the size of the place (each from an official source), an archive date, and one line from a real public-domain text at the end.
-- **It is not** a travel reel (no drone-porn montage on a pop track), a vlog, a news package, an explainer with a narrator, or a slideshow of postcards. No lower thirds with names, no headers, no centred title cards with page-turn transitions, no logo stings.
+- **一种编辑风格。** 该图片是一个地方的真实镜头（延时、延时摄影、航拍、慢动作、档案影片、照片）。风格在于“时间如何弯曲”和“切口落在哪里”，而不是一种绘制的外观。
+- **配乐是脚本。**是先写的，有清晰的弧线：最小重复→加速→高潮→突然停止→再次加速→硬停止→安静的尾声。每个剪辑都位于一个节拍或其细分上。
+- **机器快，人慢。** 汽车、火车、云彩和光加速，直到成为线条；一个缓慢的时刻是一些脆弱的东西（肥皂泡、蒸汽、一面旗帜、一群人），而人们则表现为人群、足迹或长时间曝光的鬼魂。
+- **字数不多，每个人都赚到了。** 屏幕上的文字是一个标题、一些说明地点大小的数字（每个数字都来自官方来源）、存档日期以及最后一行来自真实公共域文本的文字。
+- **它不是**旅行卷轴（流行歌曲上没有无人机色情蒙太奇）、视频博客、新闻包、带有旁白的解释器或明信片幻灯片。下三分之一处没有名字，没有标题，没有带有翻页过渡的居中标题卡，没有徽标刺。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- Footage only (2D). Sources mixed freely: tripod time-lapse, long single-camera time-lapse (≥ 12 h, sunrise and sunset in the same frame), hyperlapse, drone aerials (top-down is gold), high-frame-rate slow motion, archive film (pre-1931), photographs (a pair from the same camera position is gold), a scanned page of a historic text.
-- Everything is unified into one **35 mm release-print** look: 1.85:1 matte (21 px bars on 1920×1080), warm highlights, lifted blacks, highlight bloom, clumped mid-tone grain, ±0.5 px gate weave, soft vignette.
-- Never generated images; never restored, colourised or speed-corrected archive copies; never YouTube mirrors of archive films.
-- Upscale limits: archive ≤ 2.5× (denoise → lanczos → light sharpen → grain); modern ≤ 1.5×.
+- 仅镜头 (2D)。来源自由混合：三脚架延时、长单摄影机延时（≥12小时，日出和日落在同一帧）、延时摄影、无人机天线（自上而下是金色）、高帧率慢动作、档案影片（1931年之前）、照片（来自同一摄影机位置的一对是金色）、扫描页的历史文本。
+- 一切都统一为一个 **35 毫米释放打印** 外观：1.85:1 哑光（1920×1080 上有 21 像素条）、暖色高光、提升黑色、高光绽放、丛集中间色调颗粒、±0.5 像素门纹、柔和晕影。
+- 从未生成过图像；从未修复、着色或速度校正的存档副本；从来没有存档影片的 YouTube 镜像。
+- 高档限制：存档≤2.5×（去噪→lanczos→光锐化→颗粒）；现代≤1.5×。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-| Use | Value |
+|使用|价值|
 |---|---|
-| Type (warm white) | `#EDE8DF` |
-| Secondary line (English, labels) | `#B0AAA0` |
-| Sodium orange — the only accent (rules under numbers, source lines, crowd tracks, the day ring's hand) | `#D9772F` |
-| Matte and black | `#000000` |
+|类型（暖白）|`#EDE8DF`|
+|副线（英文、标签）|`#B0AAA0`|
+|钠橙色——唯一的口音（数字、源线、人群轨迹、日环指针下的规则）|`#D9772F`|
+|哑光和黑色|`#000000`|
 
-Grade (`tools/render.py → make_luts / grade`): per-shot partial grey-world white balance first (only pixels with luminance 0.12–0.88, strength 0–0.6; **0 for night shots**, which keep their sodium and blue), then one LUT for all shots: S-curve (sigmoid slope 6.2, pivot 0.47, blended 55/45 with linear) → black 7/255, white 250/255 → R ×1.025, B ×0.965 (warm highlights, a little cold in the shadows) → saturation 0.86. Bloom: pixels above 170/255, blurred 6 px at ⅛ size, added back × (1, .82, .62); 0.09 by day, 0.15–0.2 at night. Grain: half-resolution Gaussian noise up-sampled and blurred 0.6 px, weighted `0.35 + 1.3·L·(1−L)`, strength 9/255. Archive film stays black-and-white and goes through the same LUT, so it reads as part of the same print.
+等级 (`tools/render.py → make_luts / grade`)：首先按镜头部分灰色世界白平衡（仅亮度为 0.12-0.88，强度为 0-0.6 的像素；**0 用于夜间拍摄**，保留钠色和蓝色），然后为所有像素提供一个 LUT 镜头：S曲线（S形斜率6.2，枢轴0.47，55/45与线性混合）→黑色7/255，白色250/255→R×1.025，B×0.965（温暖的高光，阴影中有点冷）→饱和度0.86。 Bloom：170/255 上方的像素，在 ⅛ 大小处模糊 6 px，添加回来 × (1, .82, .62)；白天 0.09，夜间 0.15–0.2。颗粒：半分辨率高斯噪声上采样和模糊 0.6 px，加权 `0.35 + 1.3·L·(1−L)`，强度 9/255. 存档影片保持黑白并通过相同的 LUT，因此它作为同一打印的一部分读取。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Latin: **Michroma** (OFL), capitals, tracking 0.06–0.32 em. Chinese: **Noto Sans SC** variable, weight 300–350, tracking 0.08–0.14 em. Credits: Noto Sans SC 17 px.
-- **Left-aligned**, left margin 168–196 px, never centred, never on a box. Legibility comes from a very soft elliptical darkening behind the block (α ≤ 0.6), not a panel.
-- **Number card**: the number in Michroma 84 px (44 px when three numbers stack); a 2 px sodium rule grows under it; one Chinese line (28 px) and one English line (14–16 px) say what it counts and the source year. A census-type number locks digit by digit on sixteenths (one glockenspiel note per digit); a flow number counts up from 0 in 0.6 s (ease-out). "About" numbers carry `≈` and "约".
-- **Archive date**: just the year, Michroma 22 px, bottom-left of the archive panel.
-- **Closing quote**: on the page shot the whole sentence is lit; on the card, a short fragment over the last moving shot — Chinese 60 px, English original in capitals 20 px, source line 14 px sodium, fading in within 0.25 s and held just past the reading time.
-- One line per language, never wrapped; every text block stays fully in frame at least CJK ÷ 4.5 + other ÷ 15 + 1.5 s (`readcheck.mjs`). Text may stay up across cuts underneath it, but only while the shots under it belong to what it counts.
-- `.srt`: the film has no voice, so the subtitle file carries the on-screen text (one Chinese and one English line per cue) for muted or accessible playback.
+- 拉丁语：**Michroma**(OFL)，大写字母，跟踪 0.06–0.32 em。中文：**Noto Sans SC** 可变，粗细 300–350，跟踪 0.08–0.14 em。鸣谢：Noto Sans SC 17 px。
+- **左对齐**，左边距168–196像素，从不居中，从不在盒子上。易读性来自于块后面非常柔和的椭圆形变暗 (α ≤ 0.6)，而不是面板。
+- **号码卡**：Michroma 84 px中的数字（三个数字叠加时为44 px）； 2 px 钠尺在其下方生长；一行中文（28 px）和一行英文（14-16 px）说明了它的含义和来源年份。人口普查类型的数字将数字锁定为十六分之一（每个数字一个钟琴音符）；流数在 0.6 秒内从 0 开始计数（缓出）。 “关于”号码带有 `≈` 和“约”。
+- **存档日期**：仅年份，Michroma 22 px，存档面板的左下角。
+- **结束语**：在页面镜头上整个句子被点亮；在卡片上，最后一个移动的镜头上有一小段片段 — 中文 60 px，英文大写原文 20 px，源代码行 14 px 钠，在 0.25 秒内淡入，并在阅读时间过后保持。
+- 每种语言一行，不换行；每个文本块完全保持在框架中至少 CJK ÷ 4.5 + other ÷ 15 + 1.5 s (`readcheck.mjs`)。文本可能会在其下方的切口中保留，但只有当其下方的镜头属于其计数时才有效。
+- `.srt`：影片没有语音，因此字幕文件带有屏幕文本（每个提示一行中文和一行英文），用于静音或无障碍播放。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- Speed is the main instrument. Shot speeds run from 0.3× to 75×; every speed above 1× uses **frame blending** (a 360° shutter): each output frame averages the source frames it covers, capped at N frames. Headlights become continuous lines, crowds become fog, clouds become water.
-- **Speed ramps** are smooth (smoothstep between key speeds) and always mean something: a corridor accelerates out of real time (1× → 6×), a time-lapse ramps into a frenzy (1× → 7×), a fast shot brakes into slow motion (2.2× → 0.3× in 0.55 s) on the bar where the music stops.
-- Camera moves are added sparingly in post: slow push-ins (1.00 → 1.05–1.10 over the shot), a falling push on the opening still (1.0 → 1.3 in 0.35 s, ease-out, then accelerating to ×2 by the cut). No shakes, no whip pans, no digital zooms past the upscale limit.
+- 速度是主要手段。 镜头速度从0.3×到75×；每个高于 1× 的速度都使用 **帧混合**（360° 快门）：每个输出帧对其覆盖的源帧进行平均，上限为 N 帧。车头灯变成了连续的线条，人群变成了雾，云朵变成了水。
+- **速度斜坡**是平滑的（关键速度之间的平滑步）并且总是意味着一些东西：走廊非实时加速（1×→6×），延时斜坡进入疯狂（1×→7×），快速镜头制动为慢动作（0.55中2.2×→0.3×） s) 在音乐停止的酒吧。
+- 摄影机运动在后期少量添加：缓慢推入（在镜头上为 1.00 → 1.05–1.10），对开场静止的下降推力（0.35 秒内 1.0 → 1.3，缓出，然后通过剪切加速至 ×2）。没有抖动，没有快速平移，没有超出高档限制的数码变焦。
 
-## 6. Camera grammar — editing
+<a id="6-camera-grammar--editing"></a>
+## 6. 镜头语言 — 编辑
 
-**Cut-point table (the score decides; numbers at 120 BPM and 30 fps: 1 beat = 15 frames, triplet = 5, sixteenth = 3.75)**
+**切点表（配乐决定；120 BPM和30 fps的数字：1节拍= 15帧，三连音= 5，第十六= 3.75）**
 
-| Score texture | Cut length | Frames | Use |
+|配乐纹理|切割长度|画面|使用|
 |---|---|---|---|
-| Opening hit + eighth-note arpeggio | 2 bars → 1 bar | 120 → 60 | the opening still, the first single-camera time-lapse |
-| Eighths | 2 beats → 1 beat | 30 → 15 | dawn, match cuts |
-| Triplets against eighths (3:2) | 1 beat → ½ beat | 15 → 7/8 alternating | morning, the montage of streets |
-| Sixteenths, full ensemble | grid cells light every 1–2 frames; cells re-cut every sixteenth | 1–4 | the grid |
-| Arpeggios stop, one long chord | 3–4 s, one or two shots | 90–120 | the brake: the slowed thing, the archive split |
-| Sixteenths + triplets + horns | ½ beat → 4 frames → 2 frames | 7 → 4 → 2 | dusk to night, the reverse flashback |
-| Dry cut of the whole ensemble, reverb left ringing | hard cut to black on the bar line | — | the hard stop |
+|开场曲+八分音符琶音|2 巴 → 1 巴|120 → 60|开场静止，第一单摄影机延时摄影|
+|八分之一|2 拍 → 1 拍|30 → 15|黎明，比赛剪辑|
+|三连音对八分之一 (3:2)|1 拍 → ½ 拍|15 → 7/8 交替|早晨，街道蒙太奇|
+|十六度，完整的合奏|网格单元每 1-2 帧亮起一次；细胞每十六次重新切割一次|1-4|网格|
+|琶音停顿，一个长和弦|3–4 秒，一个或两个镜头|90–120|刹车：放慢速度，存档分裂|
+|十六度音+三连音+圆号|½ 节拍 → 4 帧 → 2 帧|7 → 4 → 2|黄昏到夜晚，反向闪回|
+|整个合奏的干切，混响左振铃|条线上硬剪成黑色|—|硬停止|
 
-Rules:
+规则：
 
-- **Cuts land on beats.** All cut times come from one function, `bar(n, beat)` in `tools/timeline.py`; shot lengths are never typed in seconds. The music is rendered from the same file.
-- **One long single-camera time-lapse is the clock.** It returns three or four times (night → dawn, noon clouds, a one-second nightfall, a day/night flicker), always from the same position, so the viewer knows the time without a caption.
-- **Density follows the score.** The editor never cuts faster than the current subdivision, and the slowest picture sits under the place where the arpeggios stop.
-- **Shape match cuts** on the beat: clock → clock, arch → arch, grid of streets → grid of cells. A small-to-large punch-in on the same shape is allowed.
-- **The grid** is the split screen of this style: 1×2 → 2×2 → 3×3 → 4×4, one stage per half bar or bar, the new cells lighting up in a scattered order over the previous stage within 0.3 s (never back to black), gutters 6 px black; in the last beat the cells re-cut on every sixteenth.
-- **Counterpoint split**: two halves, archive left, today right, the same kind of place or shape; the gutter grows from the centre in 8 frames.
-- **Day/night flicker**: the same camera, a noon frame and a night frame alternating every 2 frames; a pair of same-position photographs alternating every 2 frames.
-- **Reverse flashback**: in the last bar before the hard stop, earlier shots return in reverse order, 4 frames each, then 2 frames each.
-- Transitions: hard cuts only, plus the hard cut to black. No dissolves except fades from black for the page and the end card.
+- **在节拍上剪切。** 所有剪切时间都来自一个函数，即 `tools/timeline.py` 中的 `bar(n, beat)`； 镜头长度永远不会以秒为单位输入。音乐是从同一个文件渲染的。
+- **一个长单摄影机延时是时钟。**它返回三到四次（夜晚→黎明，中午云彩，一秒黄昏，day/night闪烁），总是从同一位置，因此观看者无需字幕即可知道时间。
+- **Density 遵循配乐.** 编辑器的剪辑速度永远不会比当前细分快，最慢的画面位于琶音停止的位置下方。
+- **形状匹配在节拍上切割**：时钟→时钟，拱门→拱门，街道网格→细胞网格。允许在同一形状上进行从小到大的打孔。
+- **网格**是这种风格的分屏：1×2 → 2×2 → 3×3 → 4×4，每半条或条一个阶段，新单元格在0.3秒内以分散的顺序在前一个阶段上点亮（不会回到黑色），排水沟6 px黑色；在最后一次搏动中，细胞每十六次重新切割一次。
+- **对位分割**：两半，存档左，今天右，同一种地方或形状；装订线从中心开始增长 8 帧。
+- **Day/night闪烁**：同摄影机，每2帧交替一个中午帧和一个晚上帧；每两帧交替出现一对相同位置的照片。
+- **反向闪回**：在硬停止之前的最后一个小节中，较早的镜头以相反的顺序返回，每个4帧，然后每个2帧。
+- 过渡：仅硬剪切，加上硬剪切为黑色。除了页面和片尾卡的黑色褪色之外，不会溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music only.** No narrator, no source sound (the footage soundtracks are other people's music), no sound effects. A narrator would turn watching into listening and would fight the score for the structure; that is why the style has none. If a voice is ever required, one short line at the very start or end, never over the cuts.
-- Orchestration (sampled, CC0 — `core/audio/sampler.py`): pipe organ (full and soft stops, pedal), winds staccato (flute, clarinet), strings (spiccato cellos and violins, sustained cellos, violins, double bass), horn pair for the last two bars, concert bass drum on section downbeats, suspended-cymbal crescendos into the hits, glockenspiel only for numbers locking.
-- Writing: arpeggios over a one-chord-per-bar progression; additive layering (eighths → triplets over eighths → sixteenths); the *break* is all arpeggios stopping at once into one held chord (maj7 or 9th); the return is a full-organ hit; the hard stop is a dry cut of every instrument in 15 ms with the reverb tail left ringing; the coda is one soft chord that does not resolve, with the opening figure returning in quarter notes under the end card.
-- Reverb: `S.room(size .7, mix .28)` for the body, `size .78, mix .36` for the coda. Master to −14 LUFS / −1.2 dBTP with `core/render/mux.sh` (grain 0: the grain is already in the picture).
+- **仅音乐。** 无旁白，无源声音（素材配乐是其他人的音乐），无音效。叙述者会将观看转变为聆听，并会与配乐争夺结构；这就是为什么这种风格没有。如果需要配音，请在开头或结尾加上简短的台词，切勿超过剪辑。
+- 编排（采样，CC0 — `core/audio/sampler.py`）：管风琴（全音和软音、踏板）、管乐器断奏（长笛、单簧管）、弦乐（短笛大提琴和小提琴、持续大提琴、小提琴、低音提琴）、最后两小节的圆号对、强拍部分的音乐会低音鼓、敲击中的悬钹渐强、仅用于数字锁定的钟琴。
+- 写作：每小节一个和弦进行的琶音；加法分层（八分之一 → 三连音超过八分之一 → 十六分之一）； *break* 是所有琶音立即停止到一个保持的和弦（maj7 或 9th）；回归是一场完整的管风琴打击；硬停止是在 15 毫秒内对每种乐器进行干切，混响尾部留下响声；尾声是一种无法解析的柔和和弦，开头数字在片尾卡下的四分音符中返回。
+- 混响：`S.room(size .7, mix .28)` 代表主体，`size .78, mix .36` 代表尾声。使用 `core/render/mux.sh` 控制至 −14 LUFS / −1.2 dBTP（颗粒 0：颗粒已在图片中）。
 
-## 8. Native moves (and how they are built)
+<a id="8-native-moves-and-how-they-are-built"></a>
+## 8. 风格特有表现手法（以及它们是如何构建的）
 
-| Move | Code |
+|移动|代码|
 |---|---|
-| **Light river** | `tools/prep.py`: integrate the speed curve to source time; each output frame averages the source frames in its window (cap `blend`). Speed 40× / blend 30 at night, 37.5× / 24 for clouds, 75× / 30 for a one-second nightfall. |
-| **Speed ramp** | `speed=[(t, v), …]` keyframes, smoothstep between them, same integrator. |
-| **Brake into slow motion** | ramp 2.2× → 0.3× with `interp=3` (ffmpeg `minterpolate` mci, bidir) for soft subjects; `mix=True` (crossfade of the two nearest frames) for thin lines such as cables, where motion compensation tears. |
-| **Crowd → tracks** (people as data) | `Trails` in `tools/render.py`: background = per-pixel median of the whole fixed-camera shot; blobs that differ by > 22/255 (scipy `ndimage.label`, area 8–900 px at half size) are people; each centroid joins the nearest one from the previous frame (< 70 px) with a 2 px line; lines fade × 0.9 per frame; the plate is darkened and desaturated as the tracks appear (0.15 → 0.55 s). Fixed cameras only. |
-| **Traffic → light** | a static or slowly drifting top-down aerial at 5× with full frame blending. |
-| **Grid** | `grid_plate()`: pool clips of 30 frames held in memory at 960×540; stages from `GRID_STAGES`; light-up order scattered; last beat re-cuts cells every sixteenth. |
-| **Counterpoint split** | `split_plate()`: archive 4:3 centre 960 px | today centre 960 px, 6 px gutter grown from the centre. |
-| **Day/night flicker** | two 15-frame clips from the same camera (noon, night), alternating every 2 frames. |
-| **Photo that moves** | a same-position photo pair alternating every 2 frames. |
-| **Number lock** | `lock_digits()`: one digit locks per sixteenth, the others roll; `counter()`: ease-out count-up; music adds one glockenspiel note per lock. |
-| **Day ring** | a thin 24-hour ring bottom-right with a sodium hand and a 3-hour arc: it runs with the film's day, **freezes and dims during the brake**, and **spins backwards during the reverse flashback**. It is a graphic, not a clock reading. |
-| **Reading light on a page** | scanned page, 16:9 window pushed 1.06 → 1.56 page widths, side light (bright top-left), paper tint (1, .93, .80), a Gaussian band (σ 95–140 px) over the quoted line growing to +38 %. |
-| **Hard stop** | picture cuts to black on the bar line; the music's dry signal is cut in 15 ms on the same frame; only reverb remains. |
+|**小河**|`tools/prep.py`：将速度曲线积分到源时间；每个输出帧对其窗口中的源帧进行平均（cap `blend`）。夜间速度 40×/混合 30，云时速度 37.5×/24，一秒黄昏时速度 75×/30。|
+|**速度斜坡**|`speed=[(t, v), …]` 关键帧，它们之间的平滑步长，相同的积分器。|
+|**刹车进入慢动作**|对于软主题，使用 `interp=3` (ffmpeg `minterpolate` mci, bidir) 进行斜坡 2.2× → 0.3×； `mix=True`（两个最近帧的淡入淡出）适用于电缆等细线，运动补偿会撕裂。|
+|**人群→轨迹**（人作为数据）|`tools/render.py`中的`Trails`：背景=整个固定的每像素中值-摄影机镜头；差异 > 22/255（scipy `ndimage.label`，面积 8–900 像素，半尺寸）的斑点是人；每个质心用一条 2 px 线连接距前一帧最近的质心 (< 70 px)；每帧线条淡入 × 0.9；当轨迹出现时，板变暗并降低饱和度（0.15 → 0.55 秒）。仅固定相机。|
+|**交通→灯光**|静态或缓慢漂移的自上而下天线，放大倍数为 5 倍，具有全帧混合。|
+|**网格**|`grid_plate()`：内存中保存的30帧960×540的池剪辑； `GRID_STAGES` 阶段；点亮顺序分散；最后一次心跳每十六次重新切割一次细胞。|
+|**对位分体**|`split_plate()`：存档 4:3 中心 960 像素|今天中心 960 px，从中心开始 6 px 间距。|
+|**Day/night 闪烁**|来自同一摄影机（中午、晚上）的两个 15 帧剪辑，每 2 帧交替一次。|
+|**会动的照片**|同一位置的照片对每 2 帧交替一次。|
+|**号码锁**|`lock_digits()`：每十六位一位数字锁定，其他数字滚动； `counter()`：缓出计数；音乐为每个锁添加一个钟琴音符。|
+|**日环**|右下角有一个细长的24小时圆环，带有钠指针和3小时弧线：它与影片的一天一起运行，**在制动**期间冻结并变暗，而**在反向闪回**期间向后旋转。这是一个图形，而不是时钟读数。|
+|**页面上的阅读灯**|扫描页面，16:9 窗口推动 1.06 → 1.56 页面宽度，侧光（左上明亮），纸张色调（1, .93, .80），引用线上的高斯带（σ 95–140 px）增长至 +38 %。|
+|**硬停**|图片在条线上切为黑色；音乐的干信号在同一帧上以 15 ms 的间隔被切割；只剩下混响。|
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Watermarks and slates hidden in CC footage**: corner logos (scale from the centre until they leave frame, within 1.5×), opening thank-you cards, end-card music credits, title text over the first shots. Check a 1-second contact sheet (`tools/secsheet.py`) of every source before choosing in-points.
-- **Hidden cuts inside sources.** Hyperlapse reels hide 2–3-frame jump cuts and whip transitions; frame blending across a cut makes ghosts. Scan with `ffmpeg … select='gt(scene,0.25)',showinfo` and keep every clip's source window inside one shot.
-- **Too much blending** turns noon clouds into grey mush: about 40 % shutter (24 of 60 frames) looks better than 100 %.
-- **Grey-world balance kills night**: it washes sodium light to white. Strength 0 for night shots.
-- **Tracking needs a fixed camera.** A drifting drone flags every building as motion. Use a median background only on tripod shots; for moving aerials use blending instead.
-- **Motion-compensated slow motion tears thin lines** (cables, rails, text): use the crossfade mode there.
-- **Text over bright sky** disappears: put number cards over the dark half of the frame or add the soft darkening; never a box.
-- **A slow face is not a free subject.** Do not make an identifiable ordinary person the slowed or close-up hero. Slow a thing; show people as crowds, tracks or ghosts. Public figures and people in news events are a different case.
-- **Numbers drift.** Official pages update; quote the page and the year, keep the quote in `FACTS.md`, and recheck before the last render. Prefer one clean figure over a range.
-- **CC BY credits are long.** Each one needs author, full title and licence on the end card. Treat them as fine print (16 px, 29 px line pitch, the licence and changes on one header line) and keep the end card short (4–5 s); a 10 s card of text on black loses the audience. The film's last moving shot runs on under the card, darkened.
-- **Don't end on dead black.** After the hard stop, the coda is a page (≈1 s), then the quote laid over one last moving city shot (≈4 s, just long enough to pass `readcheck`), then the end card over the same shot.
-- Commons rate-limits (HTTP 429): search and download serially with back-off (`tools/s.sh`, `tools/f.sh`); for long 4K files download only the needed excerpt (`tools/seg.py`) or the 1080p transcode.
+- **隐藏在CC素材中的水印和石板**：角标志（从中心开始缩放直到离开框架，在1.5×以内），打开感谢卡，结束卡音乐制作人员，第一个镜头上的标题文本。在选择入点之前，请检查每个来源的 1 秒联系表 (`tools/secsheet.py`)。
+- **H隐藏剪辑内部源。** Hyperlapse 卷轴隐藏 2-3 帧跳剪辑和鞭状过渡；跨剪切的帧混合会产生重影。使用 `ffmpeg … select='gt(scene,0.25)',showinfo` 进行扫描，并将每个剪辑的源窗口保留在一个镜头内。
+- **混合过多**将中午的云变成灰色的糊状物：大约40％的快门（60帧中的24帧）看起来比100％更好。
+- **灰世界平衡杀夜**：它水彩晕染钠光转为白色。夜间强度 0 镜头。
+- **Tracking 需要固定的摄影机。** 漂移的无人机将每个建筑物标记为运动。仅在三脚架镜头上使用中间背景；对于移动天线，请使用混合。
+- **运动补偿慢动作撕裂细线**（电缆、导轨、文本）：使用交叉淡入淡出模式。
+- **明亮天空上的文字** 消失：将数字卡放在框架的黑暗一半上或添加柔和的变暗；从来没有一个盒子。
+- **A 慢脸不是自由主题。** 不要将可识别的普通人作为慢速或特写英雄。慢一点；将人物表现为人群、轨道或幽灵。公众人物和新闻事件中的人物则不同。
+- **号码漂移。**官方页面更新；引用页面和年份，将引用保留在 `FACTS.md` 中，并在最后一次渲染之前重新检查。更喜欢一个干净的数字而不是一个范围。
+- **CC BY 学分很长。** 每一篇都需要片尾卡上的作者、完整标题和许可证。将它们视为小字体（16 px、29 px 行距、许可证和一个标题行上的更改）并保持片尾卡较短（4-5 秒）；一张 10 秒的黑色文字卡会失去观众。 影片的最后一个移动镜头在卡下方运行，变暗。
+- **不要以死黑结束。** 硬停止后，尾声是一页（约1秒），然后报价覆盖最后一个移动城市镜头（约4秒，刚好足够通过`readcheck`），然后片尾卡覆盖相同的城市镜头。
+- 公共速率限制（HTTP 429）：带回退的串行搜索和下载（`tools/s.sh`、`tools/f.sh`）；对于长 4K 文件，仅下载所需的摘录 (`tools/seg.py`) 或 1080p 转码。
 
-## 10. Footage: where it comes from
+<a id="10-footage-where-it-comes-from"></a>
+## 10. 镜头：它来自哪里
 
-1. **Ask the user first** whether they have their own footage, photographs, documents or data for the place: their own time-lapses, a phone hyperlapse, family photos, a city's open data. Their material comes first.
-2. If not, search these sources (all searchable with `demo/tools/footage.py`, which records title, author, licence and page in `SOURCES.jsonl` and writes `SOURCES.md`):
-   - **Wikimedia Commons** — modern time-lapse, aerial and slow-motion footage under CC BY / CC0, photographs (for example the Carol M. Highsmith Archive, dedicated to the public domain), scans of old maps and books. Check the licence on each file page. Many videos are YouTube or Vimeo imports: use one only when its page carries a passed review (YouTubeReview / VimeoReview / LicenseReview / Flickrreview with a reviewer and a date) or the author's own source page still shows the licence. A pending review is not enough: a channel can later switch to the standard licence and claim the footage through Content ID.
-   - **Library of Congress** (loc.gov, also mirrored on Commons) — archive films published in the US before 1931 are public domain; a rights statement of "no known restrictions" alone is **not** enough: you need the publication date or another public-domain basis.
-   - **NASA** (images.nasa.gov, ISS crew photographs) — public domain; the night photos of cities from orbit make a strong opening.
-   - **Internet Archive** — scanned books and documents marked NOT_IN_COPYRIGHT with a pre-1931 publication date; take the line you quote from the scan, not from a modern edition.
-   - **National archives** (US National Archives, other governments' open archives) — check each country's terms.
-   - Licences allowed: public domain, CC0, CC BY. Not allowed: CC BY-SA, "no known restrictions" without a basis, YouTube mirrors, unknown sources, restored or colourised archive copies.
-3. **Before downloading, tell the user** what you will download, from where, under which licence, and how it will be credited.
+1. **首先询问用户** 他们是否有自己的镜头、照片、文档或该地点的数据：他们自己的延时摄影、手机延时摄影、家庭照片、城市的开放数据。他们的材料是第一位的。
+2. 如果没有，请搜索这些来源（均可使用 `demo/tools/footage.py` 进行搜索，其中在 `SOURCES.jsonl` 中记录标题、作者、许可证和页面，并写入 `SOURCES.md`）：
+   - **Wikimedia Commons** — CC BY / CC0 下的现代延时、航拍和慢动作镜头、照片（例如 Carol M. Highsmith 档案馆，致力于公共领域）、旧地图和书籍的扫描。检查每个文件页面上的许可证。许多视频都是 YouTube 或 Vimeo 导入的：仅当其页面已通过审核（YouTubeReview / VimeoReview / LicenseReview / Flickrreview 以及审核者和日期）或作者自己的源页面仍显示许可证时才使用视频。等待审核是不够的：频道可以稍后切换到标准许可证并通过 Content ID 声明素材。
+   - **国会风格库**（loc.gov，也反映在 Commons 上）- 档案影片1931 年之前在美国出版的内容属于公共领域；仅“无已知限制”的权利声明就是**不是**足够了：您需要发布日期或其他公共领域的基础。
+   - **NASA**（images.nasa.gov，国际空间站机组人员照片）——公共领域；从轨道上拍摄的城市夜景照片成为了一个强有力的开场。
+   - **Internet Archive** — 扫描的书籍和文档，标记为 NOT_IN_COPYRIGHT，出版日期为 1931 年之前；引用的内容来自扫描版，而不是现代版本。
+   - **国家档案馆**（美国国家档案馆、其他政府的开放档案馆）—检查每个国家的条款。
+   - 允许的许可证：公共领域、CC0、CC BY。不允许：CC BY-SA、无依据的“无已知限制”、YouTube 镜像、未知来源、恢复或着色的存档副本。
+3. **在下载之前，告诉用户** 您将下载什么、从哪里下载、使用哪个许可证以及如何记入。
 
-Data for number cards comes from official pages (census, transport department, the place's own statistics); write the claim, URL and quoted wording into `FACTS.md`.
+号码卡数据来自官方页面（人口普查、交通部门、地方自己的统计）；将声明、URL 和引用的文字写入 `FACTS.md`。
 
-Recipe for another place: one single-camera time-lapse of ≥ 12 hours (the clock); 10–15 ground time-lapses and hyperlapses (streets, stations, bridges); 2–4 aerials, one of them top-down at night; one slow-motion shot of a fragile thing; one fixed-camera crowd shot for tracks; one archive film of the same kind of place; one night photograph from orbit or above; a same-position photo pair; three official numbers; one public-domain sentence written about the place.
+另地配方：单张摄影机延时≥12小时（时钟）； 10-15 个地面延时摄影和超延时摄影（街道、车站、桥梁）； 2-4 个天线，其中一个在夜间自上而下；一个易碎物品的慢动作镜头； 1个固定摄影机人群镜头为轨道；同类场所档案影片一份；从轨道或上空拍摄的一张夜间照片；同一位置的照片对；三个官方号码；一篇关于该地点的公共领域句子。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-- Place: any city, port, airport, market, campus, factory, a river over a year (the clock becomes a season).
-- Length: 30–90 s; one brake at least; one hard stop always.
-- Score: organ/winds/strings is the default; a choir, a piano ensemble or analogue synth arpeggios also work if the writing stays additive and the break stays a sudden held chord.
-- Tempo 96–132 BPM; at 30 fps prefer tempos whose beat is a whole number of frames (120: 15, 100: 18, 112.5: 16).
-- Grid sizes and the counterpoint pair change with the material (archive vs today, day vs night, two cities).
-- Number cards: 2–4 at most; the day ring may be dropped for non-daily structures.
-- Fixed: footage only, the frame-blended light, cuts on the beat, the brake, few words, one quote, the hard stop, the release-print grade.
+- 地点：任何城市、港口、机场、市场、校园、工厂、一年以上的河流（时钟变成季节）。
+- 长度：30–90 秒；至少一个制动器；总是硬停下来。
+- 配乐：默认为organ/winds/strings；如果写作保持加性并且中断保持突然保持的和弦，合唱团、钢琴合奏或模拟合成器琶音也可以工作。
+- 节奏 96–132 BPM；在 30 fps 时更喜欢节拍为整数帧的节奏（120: 15、100: 18、112.5: 16）。
+- 网格大小和对位对随材料而变化（档案与今天，白天与夜晚，两个城市）。
+- 数字卡：最多2-4张；对于非日常结构，日环可能会被删除。
+- 固定：仅素材、帧混合光、节拍剪辑、刹车、几句话、一句引言、硬停止、发行印刷等级。
 
-See [`DEMO.md`](DEMO.md) for the example film.
+有关示例影片，请参阅 [`DEMO.md`](DEMO.md)。

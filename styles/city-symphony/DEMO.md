@@ -1,78 +1,85 @@
-# Time-lapse Symphony — our demo
+<a id="time-lapse-symphony--our-demo"></a>
+# 延时交响曲——我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-**"One Day in New York" (纽约的一天)**, 52 s, 1920×1080 at 30 fps, 1.85:1 matte inside the frame, no voice, original score. An unofficial film made from real footage and records: CC BY time-lapses, street footage and aerials from Wikimedia Commons and Flickr (each with a passed licence review or a source page that still shows the licence), U.S. Marine Corps Fleet Week footage (public domain, DVIDS), a public-domain Edison film of 1899 from the Library of Congress, a NASA photograph from the International Space Station, Carol M. Highsmith's public-domain photographs (Library of Congress) and a scan of Walt Whitman's *Leaves of Grass* (1860, Internet Archive). No person or institution in it endorses the film. Facts: [`demo/FACTS.md`](demo/FACTS.md). Assets: [`demo/CREDITS`](demo/CREDITS), [`demo/SOURCES.md`](demo/SOURCES.md).
+**《纽约的一天》（纽约的一天）**，52秒，1920×1080，30fps，1.85:1内框遮罩，无声音，原版配乐。由真实镜头和记录制作的非官方影片：来自 Wikimedia Commons 和 Flickr 的 CC BY 延时摄影、街道镜头和航拍（均已通过许可证审查或仍显示许可证的源页面）、美国海军陆战队舰队周镜头（公共领域，DVIDS）、来自美国国会风格库的 1899 年公共领域爱迪生影片，来自国际空间站的 NASA 照片、Carol M. Highsmith 的公共领域照片（国会风格库）以及 Walt Whitman 的《草叶集》扫描件（1860 年，互联网档案馆）。其中没有任何人或机构认可影片。事实：[`demo/FACTS.md`](demo/FACTS.md)。资产：[`demo/CREDITS`](demo/CREDITS)、[`demo/SOURCES.md`](demo/SOURCES.md)。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-From orbit, Manhattan is a grid of orange light. The film falls into it and watches the city wake: one camera on a 36th floor turns night into dawn in two seconds, a station clock cuts to a bigger clock, a corridor speeds out of real time, and the crowd in a station hall turns into tracks of light. At noon the population locks into place digit by digit, then the screen splits into a grid that fills with the city on the sixteenth notes — and everything stops. A soap bubble drifts in slow motion. On a split screen a train crosses the Brooklyn Bridge in 1899 beside the same towers today, with the bridge's daily traffic. In a long exposure of Grand Central, people are only ghosts. The pulse comes back; dusk, one-second nightfall, day and night flickering, Times Square from above and at street level with the number of people who walk into it each day; the whole day flashes back in reverse and the film cuts to black on the bar line. A page of Whitman lights up on *Just as any of you is one of a living crowd, I was one of a crowd*; then the same 36th-floor camera watches the next dawn come up under the line's last words, and the end card settles over it.
+从轨道上看，曼哈顿是一个橙色的光网格。 影片掉进其中，看着城市苏醒：36楼的摄影机在两秒内将黑夜变成黎明，车站时钟切换到更大的时钟，走廊速度脱离了实时，车站大厅里的人群变成了光轨。中午，人群一一锁定到位，然后屏幕分裂成一个网格，在十六分音符上填满了城市——然后一切都停止了。肥皂泡以慢动作漂浮。在分屏上，一列火车于 1899 年穿过布鲁克林大桥，旁边的塔楼与今天相同，桥上每天都有交通。在大中央的长时间曝光下，人只是鬼魂。脉搏回来了；黄昏，一秒钟的夜幕降临，昼夜交替，从上方和街道上看时代广场，每天走进它的人数；全天反向闪回，影片在条线上切至黑色。惠特曼的一页点亮了*正如你们中的任何一个人都是活着的人群中的一员一样，我也是人群中的一员*；然后，同一个 36 楼的摄影机看着下一个黎明在线路的最后一句话下出现，片尾卡解决了它。
 
-Structure (chosen over a "clock face" structure and a "people vs machines" structure): four movements following the score — night to morning, noon and the grid, the brake, dusk to the hard stop — then the coda.
+结构（选择“钟面”结构和“人与机器”结构）：配乐之后的四个乐章——夜晚到早晨，中午和发车，刹车，黄昏到硬停止——然后是尾声。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-120 BPM, bar = 2 s, first beat at 0.0. All times come from `bar(n, beat)` in `demo/tools/timeline.py`.
+120 BPM，小节 = 2 秒，第一节拍为 0.0。所有时间均来自 `demo/tools/timeline.py` 中的 `bar(n, beat)`。
 
-| Time (s) | Bar.beat | Shot | Speed / treatment | Text |
+|时间（秒）|酒吧节拍|镜头|速度 / 创作方案|文本|
 |---|---|---|---|---|
-| 0.0–4.0 | 0–1 | ISS047 night photo of New York | falling push 1.0 → 1.3 in 0.35 s, then accelerating to ×2 | 纽约的一天 / ONE DAY IN NEW YORK |
-| 4.0–6.0 | 2 | Schwab 36th-floor camera, night → dawn | 40×, blend 30 (light river) | day ring appears |
-| 6.0–7.0 | 3 | aerial, Bethesda Terrace in Central Park, early morning | 3× | |
-| 7.0–7.5 | 3.2 | Grand Central clock (video) | 1× | |
-| 7.5–8.0 | 3.3 | Grand Central clock (Highsmith photo) | punch-in match cut | |
-| 8.0–9.0 | 4 | Oculus corridor | ramp 1× → 6× | |
-| 9.0–10.0 | 4.2 | straight down on Central Park West, a street full of people | 2× | |
-| 10.0–12.0 | 5 | Oculus hall | 2.1×; crowd → sodium tracks | |
-| 12.0–14.0 | 6 | street, a tunnel drive, Fifth Avenue, the N train over the Manhattan Bridge (1 beat each) | 2–3× | |
-| 14.0–16.0 | 7 | 8 shots, half a beat each (Lower Manhattan from the water, the Park Avenue Viaduct, the Rockefeller Center flags, a tower from below among them) | 1.2–3× | |
-| 16.0–20.0 | 8–9 | Schwab camera, noon clouds | 37.5×, blend 24 | **8,804,190** locks on sixteenths |
-| 20.0–24.0 | 10–11 | the grid: 1×2 → 2×2 → 3×3 → 4×4, each stage re-tiling over the last in 0.3 s; last beat re-cuts every sixteenth | pool of 16 one-second clips | |
-| 24.0–27.0 | 12–13.2 | giant soap bubble, Washington Square | ramp 2.2× → 0.3×, motion-compensated | ring freezes, dims |
-| 27.0–31.0 | 13.2–15.2 | split: 1899 train on the Brooklyn Bridge \| the towers today | 0.75× / 0.72×, frame crossfade | 1899; **103,051 / 28,845 / 5,504** a day |
-| 31.0–32.0 | 15.2 | Highsmith long exposure of Grand Central (people as ghosts) | slow push | |
-| 32.0–33.0 | 16 | Brooklyn Bridge at sunset | 3× | |
-| 33.0–34.0 | 16.2 | ferry skyline, an empty street under a pink sunset | 2–3× | |
-| 34.0–35.0 | 17 | Schwab camera, one-second nightfall | 75×, blend 30 | |
-| 35.0–35.5 | 17.2 | day/night flicker, same camera | 2-frame alternation | |
-| 35.5–36.0 | 17.3 | Times Square photo pair | 2-frame alternation | |
-| 36.0–40.0 | 18–19 | looking down on 42nd Street at Times Square (time-lapse, ramp 1× → 7×), the TKTS steps at night, the same street at 5× (traffic → light), Times Square from above at night, the steps again | 3–7×, blend up to 7 | **≈220,000** people a day |
-| 40.0–42.0 | 20 | the day in reverse: 8 cuts × 4 frames, 14 × 2 frames | | ring spins backwards |
-| 42.0 | 21 | hard stop | dry cut | |
-| 42.3–43.25 | 21.0.6 | *Leaves of Grass* (1860) p. 380, reading light on the line | | |
-| 43.25–47.25 | 21.2.5 | Schwab camera, the next dawn (night → blue → morning) | 8×, blend 8, slow push | 我也曾在人群里。/ …I WAS ONE OF A CROWD, / source |
-| 47.25–52.0 | 23.2.5 | the same shot, darkened to 22 % | | end card |
+|0.0–4.0|0–1|ISS047纽约夜间照片|0.35秒内下降推力1.0 → 1.3，然后加速至×2|纽约的一天 / 纽约的一天|
+|4.0–6.0|2|施瓦布 36 楼摄影机，夜晚→黎明|40×，混合30（光河）|日环出现|
+|6.0–7.0|3|空中，中央公园贝塞斯达露台，清晨|3×| |
+|7.0–7.5|3.2|中央车站时钟（视频）|1×| |
+|7.5–8.0|3.3|大中央钟（海史密斯照片）|打孔匹配剪切| |
+|8.0–9.0|4|眼环走廊|斜坡 1× → 6×| |
+|9.0–10.0|4.2|一直往中央公园西走，一条街上挤满了人|2×| |
+|10.0–12.0|5|奥库斯大厅|2.1×；人群 → 钠轨道| |
+|12.0–14.0|6|街道、隧道、第五大道、曼哈顿大桥上的 N 号列车（各 1 拍）|2–3×| |
+|14.0–16.0|7|8 镜头，每个半拍（从水中看曼哈顿下城、公园大道高架桥、洛克菲勒中心旗帜、从下面看一座塔）|1.2–3×| |
+|16.0–20.0|8-9|Schwab 摄影机，中午的云|37.5×，混合24|**8,804,190** 锁定十六位|
+|20.0–24.0|10–11|网格：1×2 → 2×2 → 3×3 → 4×4，每个阶段在 0.3 秒内重新平铺上一个阶段；最后一个节拍每十六分之一重新剪辑一次|16 个一秒剪辑池| |
+|24.0–27.0|12–13.2|华盛顿广场巨型肥皂泡|斜坡 2.2× → 0.3×，运动补偿|环冻结、变暗|
+|27.0–31.0|13.2–15.2|分裂：1899年布鲁克林大桥上的火车\|今天的塔楼|0.75× / 0.72×，帧交叉淡入淡出|1899； **103,051 / 28,845 / 5,504** 一天|
+|31.0–32.0|15.2|海史密斯长曝光中央车站（人如鬼）|慢推| |
+|32.0–33.0|16|日落时的布鲁克林大桥|3×| |
+|33.0–34.0|16.2|轮渡天际线，粉红色夕阳下的一条空荡荡的街道|2–3×| |
+|34.0–35.0|17 号|施瓦布摄影机，一秒黄昏|75×，混合30| |
+|35.0–35.5|17.2|day/night 闪烁，同摄影机|2帧交替| |
+|35.5–36.0|17.3|时代广场照片对|2帧交替| |
+|36.0–40.0|18–19|俯视时代广场 42 街（延时，坡道 1× → 7×），TKTS 夜间台阶，同一条街 5×（交通 → 灯光），时代广场夜景，再次台阶|3–7×，混合最多 7|**≈220,000** 人一天|
+|40.0–42.0|20|反转日：8 个剪辑 × 4 帧、14 × 2 帧| |环向后旋转|
+|42.0|21|硬停止|干切| |
+|42.3–43.25|21.0.6|*草叶集* (1860) p。 380，阅读灯就行| | |
+|43.25–47.25|21.2.5|施瓦布摄影机，下一个黎明（夜晚→蓝色→早晨）|8×，混合8，慢推|我也曾在人群里。/ …我是人群中的一员，/来源|
+|47.25–52.0|23.2.5|相同的镜头，变暗至 22 %| |片尾卡|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-`demo/tools/music.py`, sampled instruments (CC0): organ (full, soft, pedal), flute and clarinet staccato, strings, horns, bass drum, suspended cymbal, glockenspiel, bowed vibraphone.
+`demo/tools/music.py`，采样乐器（CC0）：风琴（全音、弱音、踏板）、长笛和单簧管断奏、弦乐、圆号、低音鼓、悬钹、钟琴、弓弦颤音琴。
 
-| Bars | Time | Harmony | Texture |
+|酒吧|时间|和谐|质地|
 |---|---|---|---|
-| 0–3 | 0–8 | Cm · A♭ · Fm · G | full-organ hit + bass drum; eighth-note arpeggio; cellos from bar 2 |
-| 4–7 | 8–16 | Cm · A♭ · E♭ · B♭ | triplets over eighths (clarinet); violins bar 6; flute sixteenths bar 7 |
-| 8–9 | 16–20 | A♭ · Fm | hit; held violins and cellos under the long noon shot; 7 glockenspiel notes = 7 digits locking |
-| 10–11 | 20–24 | D♭ · G | sixteenths, full ensemble, cymbal crescendo; dry cut at 24.0 |
-| 12–13.2 | 24–27 | A♭maj7 | arpeggios stop: one held chord, cello, high violin, bowed vibraphone |
-| 13.2–15.2 | 27–31 | Fm9 | held chord, double bass, a three-note flute line; three glockenspiel notes as the counters land |
-| 15.2–16 | 31–32 | — | the pulse returns, soft sixteenths, cymbal crescendo |
-| 16–20 | 32–42 | Cm · A♭ · Fm · G · Cm | hit; eighths → triplets → sixteenths; horns bars 19–20; bass-drum roll; dry cut at 42.0 |
-| — | 42.3 | C pedal | one breath under the page |
-| — | 43.25 | A♭(add9)/C | soft organ and violins under the quote |
-| — | 47.25–52 | Fm9/A♭ | the last chord lands on the end card; the opening figure returns in quarter notes, fading; unresolved |
+|0–3|0–8|厘米·A♭·Fm·G|全风琴打击+低音鼓；八分音符琶音；第 2 小节的大提琴|
+|4-7|8-16|厘米·A♭·E♭·B♭|八分之一以上的三连音（单簧管）；小提琴第6小节；长笛十六分之一小节 7|
+|8-9|16–20|A♭·调频|打;在正午镜头下拉小提琴和大提琴； 7 个钟琴音符 = 7 个数字锁定|
+|10–11|20–24|D♭·G|十六度，全合奏，铙钹渐强； 24.0 干切|
+|12–13.2|24-27日|A♭maj7|琶音停止：单音和弦、大提琴、高提琴、弓弦颤音琴|
+|13.2–15.2|27–31|FM9|和弦、低音提琴、三音长笛线；计数器落地时发出三个钟琴音符|
+|15.2–16|31–32|—|脉冲返回，柔和的十六分之一，铙钹渐强|
+|16–20|32–42|厘米·A♭·Fm·G·Cm|打;八分之一 → 三连音 → 十六分之一；牛角条19-20；低音鼓滚动；干切 42.0|
+|—|42.3|C踏板|书页下一口气|
+|—|43.25|A♭(add9)/C|引言下的软风琴和小提琴|
+|—|47.25–52|Fm9/A♭|最后一个和弦落在片尾卡上；开头的数字以四分音符的形式回归，逐渐消失；未解决的|
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-Warm white `#EDE8DF`, secondary `#B0AAA0`, sodium orange `#D9772F` (rules, source lines, crowd tracks, day-ring hand). Fonts Michroma and Noto Sans SC (OFL). Props: the day ring (graphic, not a clock reading), three number cards, the year label, the page.
+暖白`#EDE8DF`，次级`#B0AAA0`，钠橙`#D9772F`（规则、源线、人群轨迹、天环手）。字体 Michroma 和 Noto Sans SC (OFL)。道具：日环（图形，不是时钟读数）、三张数字卡、年份标签、页面。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Held 4.75 s over the last shot (darkened to 22 %, still moving), left-aligned, in this order: 纽约的一天 ONE DAY IN NEW YORK (one line) · a sodium rule · 延时交响 TIME-LAPSE SYMPHONY · LemoLab × Claude Opus 5.5 · footage credits: a header line with both licences (CC BY 3.0 and CC BY 2.0), their links and the changes made, then every CC BY work with author, full title and licence (two to a line), then the public-domain sources. The credit lines are fine print (16 px): they are written in full and legible but are not reported to `readcheck` (title, style name and sign-off are). The "LemoLab × Claude Opus 5.5" line belongs to this library demo only; a user's film carries no LemoLab credit and no watermark.
+最后镜头持续 4.75 秒（变暗至 22%，仍在移动），左对齐，按以下顺序：纽约的一天 ONE DAY IN NEW YORK（一行）·钠规则·延时交响 TIME-LAPSE SYMPHONY·LemoLab × Claude Opus 5.5·素材制作人员：具有两个许可证的标题行（CC BY） 3.0 和 CC BY 2.0），它们的链接和所做的更改，然后每个 CC BY 作品都有作者、完整的标题和许可证（两行），然后是公共域源。致谢行采用小字体（16 像素）：它们写得完整且清晰，但不会报告给 `readcheck`（标题、风格名称和签名）。 “LemoLab × Claude Opus 5.5”系列仅属于该库示范；用户的影片不带有 LemoLab 署名且没有水印。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
-- One command: `sh demo/build.sh` (fetches the sources listed in `demo/SOURCES.jsonl` and the fonts if missing, ≈ 1 GB).
-- `tools/timeline.py` — beats and section times (the only time source). `tools/shots.py` — shot list, clip specs, grid stages, flashback list. `tools/prep.py` — retiming engine (speed curves, frame blending, ramps, slow motion) → `work/clips/`. `tools/music.py` — score. `tools/render.py` — compositing, grade, grid, split, tracks, type, grain; `--still t out.jpg …` for review frames (`tools/stills.sh`). `tools/used.py` — writes usage spans into `SOURCES.jsonl` / `SOURCES.md`.
-- Footage search and logging: `tools/footage.py`, `tools/s.sh`, `tools/f.sh`, `tools/seg.py` (excerpts of long Commons files), `tools/peek.py` (remote contact sheet), `tools/secsheet.py` (per-second sheet), `tools/cat.py` (lists the files or subcategories of a Commons category), `tools/info.py` (prints size, licence, author and video derivatives of Commons files), `tools/pdfpage.py` (previews or fetches single pages of a Commons PDF/DjVu, e.g. a scanned book page).
-- `index.html` + `texts.json` expose the on-screen text to `core/render/readcheck.mjs`; `cues.json` → `city-symphony.srt` (on-screen text only; the film has no voice).
-- Checks: `readcheck.mjs` passes; `mux.sh` −14 LUFS, no warning. No `asr_check` (no voice).
+- 一条命令：`sh demo/build.sh`（获取 `demo/SOURCES.jsonl` 中列出的源以及字体（如果缺失），约 1 GB）。
+- `tools/timeline.py` — 节拍和部分时间（唯一的时间源）。 `tools/shots.py` — 镜头列表、剪辑规格、网格阶段、闪回列表。 `tools/prep.py` — 重定时引擎（速度曲线、帧混合、斜坡、慢动作）→ `work/clips/`。 `tools/music.py` — 配乐。 `tools/render.py` — 合成、等级、网格、分割、轨道、类型、颗粒； `--still t out.jpg …` 用于审查框架 (`tools/stills.sh`)。 `tools/used.py` — 将使用范围写入 `SOURCES.jsonl` / `SOURCES.md`。
+- 录像搜索和记录：`tools/footage.py`、`tools/s.sh`、`tools/f.sh`、`tools/seg.py`（长Commons文件的摘录）、`tools/peek.py`（远程联系表）、`tools/secsheet.py`（每秒表）、 `tools/cat.py`（列出 Commons 类别的文件或子类别）、`tools/info.py`（Commons 文件的打印尺寸、许可证、作者和视频衍生物）、`tools/pdfpage.py`（预览或获取 Commons PDF/DjVu 的单页，例如扫描的书页）。
+- `index.html` + `texts.json` 将屏幕文本暴露给 `core/render/readcheck.mjs`； `cues.json` → `city-symphony.srt`（仅屏幕文本；影片无语音）。
+- 检查：`readcheck.mjs` 通过； `mux.sh` -14 LUFS，无警告。无 `asr_check`（无语音）。

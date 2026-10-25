@@ -1,117 +1,130 @@
-# Data Physicalization — Style Prompt
+<a id="data-physicalization--style-prompt"></a>
+# 数据实物化：风格提示词
 
-> Real statistics built as real objects: every unit is a countable piece of material (a plate, a block, a coin, a bar) stacked to exact scale on a crafted base, shot like a product in a studio — soft key, long shadows, shallow depth of field, physically based materials. The camera reads a number at the edge of one plate, follows the data as it grows, and pulls back until the chart is an installation.
-> References (grammar only): data-sculpture and physical-visualisation practice (one unit = one object, the object is the axis); product and still-life photography (a warm key at a low angle, a cool rim, a seamless sweep); annual-report editorial design (one reading per screen, a source line, a quiet grotesk). Copy none of them; never name them in the film.
+> 作为真实对象构建的真实统计数据：每个单位都是一块可数的材料（盘子、块、硬币、条），按照精确的比例堆叠在精心制作的底座上，镜头就像工作室中的产品 - 软键、长阴影、浅景深、基于物理的材料。 摄影机读取一个板边缘的数字，随着数据的增长跟踪数据，然后拉回，直到图表安装完毕。
+> 参考资料（仅语法）：数据雕塑和物理可视化实践（一个单位=一个物体，物体就是轴）；产品和静物摄影（低角度的暖色调、冷色调的边缘、无缝扫描）；年度报告编辑设计（每个屏幕一篇阅读，一条源代码行，一个安静的grotesk）。不复制其中任何一个；切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The unit is an object.** One plate, block or coin equals one stated quantity, and the rule is said on screen once ("1 plate = 10 GW"). A heavier material marks every tenth unit, so the stack is its own ruler.
-- **Scale is exact.** Heights, counts and areas are computed from the data; rounding is one unit at most and written in the facts. Two series compared on the same base use the same unit.
-- **Studio light, real matter.** Metal reflects an HDRI, wood shows grain, acrylic transmits; nothing glows, nothing is outlined, no fake UI.
-- **Growth is assembly.** Data increases by pieces being placed, one after another, with weight and sound; it never scales or morphs.
-- **The pull-back.** At least once the chart is revealed as a made thing: a dial, a table piece, a landscape of stacks.
-- **Every number has a source on screen**: real published statistics (or the user's own figures), credited in frame.
+- **该单位是一个物体。** 一块板、一块或硬币等于一个规定数量，并且规则在屏幕上显示一次（“1板= 10 GW”）。每十个单位就有一个较重的材料标记，因此堆栈是它自己的标尺。
+- **比例是精确的。** 高度、计数和面积是根据数据计算的；四舍五入最多为一个单位，并写在事实中。在同一基础上比较的两个系列使用相同的单元。
+- **Studio 光，真实物质。** 金属反射 HDRI，木材显示纹理，亚克力透射；没有任何发光，没有任何轮廓，没有假UI。
+- **增长是组装。** 数据随着棋子的不断放置而增加，有重量和声音；它永远不会缩放或变形。
+- **回调。** 至少有一次，图表被揭示为一个制成品：一个表盘，一个桌面，一个堆栈的风景。
+- **每个数字在屏幕上都有一个来源**：真实发布的统计数据（或用户自己的数字），记入框架中。
 
-Not Isometric Infographic (no icons, no flat colour coding), not Glass Product Render (the object is data), not Data Storytelling (no paper chart or inked axes), not Dark Tech Keynote (no black stage or neon), not Brick Toy (no toy proportions, no characters).
+不是等距信息图（没有图标，没有平面颜色编码），不是玻璃产品渲染（对象是数据），不是数据讲故事（没有纸质图表或墨水轴），不是黑暗科技主题演讲（没有黑色舞台或霓虹灯），不是砖块玩具（没有玩具比例，没有角色）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Pieces**: thin boxes or cylinders instanced in the thousands, each with a few-millimetre random offset and yaw, a ±7 % value change and a hairline gap: that is what makes a stack read as stacked, not as a bar.
-- **Material per series**, chosen so two series separate in one glance at thumbnail size: brushed metal against tinted acrylic, pale wood against dark stone, copper coins against paper. A third material (e.g. brass) only for the ruler pieces, shared by every series.
-- **Base**: a real-texture slab (wood veneer, stone) with inlaid marks: a tick ring, the series' paths, the labels of categories or years, cut into the surface at the base's own scale, lit with the scene.
-- **Rendering**: PBR (transmission for acrylic), an HDRI at low intensity for reflections only, a warm key at 20–35° with long soft shadows, one or two cool rims so metal and acrylic separate from wood at distance; GTAO, physical depth of field, 2× supersampling, a light vignette.
-- **Screen space only for type**: readings, verdicts, the source line, subtitles, the title card. Every reading is pinned to its object through the same world → screen function as the camera.
-- **Post**: grain light (the background is pale), no lens flares, no chromatic aberration.
+- **件**：数千个薄盒子或圆柱体，每个都有几毫米的随机偏移和偏航，±7％的值变化和细小的间隙：这就是使堆栈看起来像堆叠的，而不是条形的原因。
+- **每个系列的材料**，选择后两个系列一眼就能看出缩略图大小：拉丝金属与有色亚克力，浅色木材与深色石材，铜币与纸张。第三种材料（例如黄铜）仅用于尺子，由每个系列共享。
+- **根据**：带有镶嵌标记的真实纹理板（木饰面、石头）：刻度环、系列路径、类别或年份标签，以底座自身的比例切割到表面，并用场景照亮。
+- **渲染**：PBR（亚克力透射），仅用于反射的低强度 HDRI，20-35° 的暖键，带有长而柔和的阴影，一两个冷色边缘，使金属和亚克力与木材在一定距离处分开； GTAO，物理景深，2×超级采样，光晕。
+- **屏幕空间仅用于输入**：读数、判决、源行、字幕、标题卡。每个读数都通过与摄影机相同的世界 → 屏幕功能固定到其对象。
+- **邮政**：颗粒光（背景苍白），无镜头眩光，无色差。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- The set is warm and neutral: a seamless greige sweep, the base in a natural material, the series in material colours (silver, pale teal, brass, oak). Material, not paint, separates series.
-- **One accent** (e.g. signal orange) for the reading or verdict that matters on this screen; nothing else is accent-coloured.
-- Ink is near-black at two strengths (value, then labels at ~60 %).
-- No rainbow series palettes, no colour ramps on the objects, no dark mode.
+- 该套装温暖而中性：无缝的灰色扫帚，天然材料的底座，该系列的材料颜色（银色，浅青色，黄铜，橡木）。材料，而不是油漆，区分了系列。
+- **一个重音**（例如信号橙色）用于在此屏幕上重要的阅读或判决；没有其他东西是强调色的。
+- 墨水在两种强度下接近黑色（值，然后标签约为 60%）。
+- 没有彩虹系列调色板，对象上没有颜色渐变，没有黑暗模式。
 
-Example (our demo): sweep #C4BEB4, walnut base, aluminium #C8CCD1 (metal), acrylic #9FD3D6 with teal attenuation, brass #D2B07A, ink #1C1D20, accent #D4521C.
+示例（我们的示范）：扫描#C4BEB4，胡桃木底座，铝#C8CCD1（金属），带有青色衰减的丙烯酸#9FD3D6，黄铜#D2B07A，墨水#1C1D20，口音#D4521C。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Roles**: a light grotesk for numbers (e.g. Inter 200–300; the hero reading 130–170 px, a stack reading 46–56 px); a sans for labels and verdicts in the film's language (e.g. Noto Sans SC 500, 24–46 px); a monospace for units, years and source lines (20–24 px); a serif only for the title. OFL, self-hosted, CJK subset.
-- **A reading** = a dot on the object, a 1.4 px leader, a small swatch of the series' material, the category line, then the value and unit, on a translucent paper plate (~84 %). Two readings of one pair stack in one column, larger value on top.
-- **The source line** (dataset, publisher, year, licence, e.g. "数据：IRENA (2026)，经 Our World in Data 整理 · CC BY 4.0") is in frame with the data, small (20–22 px, ink at ~60 %) in a corner away from the subtitles, at least from the first reading to the summary, and on the title card.
-- **A verdict** sits in the upper-left third on its own plate in the accent colour, underlined by a growing rule; it appears only after the readings it judges have been still for ≥ 2.5 s.
-- **Subtitles**: bottom-left, a 2 px ink rule and a paper plate fading right; if the film is bilingual, the film's language on top; each line one line only, measured with the real font (`nowrap`), split into two cues rather than wrapped. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Labels hold ≥ CJK characters ÷ 4.5 + 1.5 s / letters ÷ 15 + 1.5 s; a counter reports its landing value; nothing below 20 px.
+- **角色**：一个用于数字的轻型 grotesk（例如 Inter 200–300；英雄读数 130–170 px，堆栈读数 46–56 px）； a sans 用于影片语言的标签和判决（例如 Noto Sans SC 500，24–46 像素）；单位、年份和源代码行的等宽字体（20-24 像素）；仅用于标题的衬线。 OFL，自托管，CJK 子集。
+- **A 读数** = 对象上的一个点、一个 1.4 px 引线、系列材料的小样本、类别线、然后是值和单位，位于半透明纸盘上 (~84 %)。一对的两个读数堆叠在一列中，较大的值位于顶部。
+- **源行**（数据集、出版商、年份、许可证，例如“数据：IRENA (2026)，经我们的数据世界·CC BY 4.0”）与数据在框架内，小（20–22像素，墨水在〜60%）在远离字幕的角落，至少从第一次阅读到摘要，并在标题卡上。
+- **A判决**位于其自己的板的左上角三分之一处，以强调色，由一条不断增长的规则强调；仅当其判断的读数静止≥2.5秒后才会出现。
+- **字幕**：左下角，一条2像素的墨水尺和一个向右淡出的纸盘；如果影片是双语的，则影片的语言在上面；每行只有一行，用真实字体（`nowrap`）测量，分成两个提示而不是换行。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 标签包含 ≥ CJK 字符 ÷ 4.5 + 1.5 秒/字母 ÷ 15 + 1.5 秒；计数器报告其着陆值；没有任何低于 20 px 的内容。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- On ones, 24 fps; the camera never stops (2–5 % creep on holds).
-- **Cascade**: a stack assembles bottom-to-top in 0.5–1.0 s, each piece dropping a few centimetres with an ease-out.
-- **Feed**: one period's increase arrives piece by piece from out of frame, quintic ease-out, a yaw that unwinds ("placed", not "dropped"), 8–16 pieces per second, the counter rolling with the pieces landed.
-- **A single heavy object** falls with gravity, lands with one small damped bounce, its shadow tightening.
-- Readings fade in with a 16 px rise and draw their leader; they leave by fading, never by sliding.
-- Never moves: the base, a piece once landed, the ruler pieces.
+- 在 1 上，24 fps； 摄影机永不停止（保持时蠕动 2-5%）。
+- **级联**：堆栈在 0.5–1.0 秒内从下到上组装，每个部件都会随着缓出而下降几厘米。
+- **喂养**：一个周期的增加从框架外逐块到达，五次缓出，展开的偏航（“放置”，而不是“放下”），每秒 8-16 个块，计数器随着块落地而滚动。
+- **单个重物**在重力作用下下落，落地时有一个小的阻尼弹跳，其阴影收紧。
+- 读数以 16 px 上升的方式淡入并绘制其引线；它们通过褪色而离开，而不是通过滑动而离开。
+- 永远不会移动：底座、落地的棋子、尺子的棋子。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Macro dolly along a stack's edge, rack focus | the unit is real and countable | the rule "1 piece = X"; a single record |
-| Low lateral track along the series | time passing; growth | a decade; a ranking; a sequence of sites |
-| Locked three-quarter frame on two subjects | comparison | before/after; A against B; a crossover |
-| Crane with the rising top | accumulation | one year's increase; a target being reached |
-| Pull-back to near top view | the whole as an object | a summary; a ratio; an ending |
-| Slow orbit around the base | the installation as sculpture | a title; a breath |
+|沿着堆栈边缘的微距移动车，机架焦点|该单位是实数且可数的|规则“1 件 = X”；单个记录|
+|沿系列的低侧向轨道|时间流逝；生长|十年；排名；一系列站点|
+|锁定两个主题的四分之三画面|比较|before/after； A对抗B；交叉|
+|具有上升顶部的起重机|积累|一年增加；正在达到的目标|
+|拉回到近顶视图|整体作为一个对象|总结；一个比率；一个结局|
+|绕基地慢速运行|作为雕塑的装置|标题；一口气|
 
-The subject fills at least a third of the frame height at key moments; readings live in empty background, never over the subtitle strip; comparisons keep both subjects completely in frame. Transitions are camera moves inside one set (one continuous take where possible); no cuts to a chart, no wipes, no page turns.
+在关键时刻，拍摄对象至少占据画面高度的三分之一；阅读内容存在于空白背景中，永远不会超出字幕条；比较使两个主题完全在框架内。一组内的转场为摄影机运动（如果可能，连续拍摄一次）；无需剪切图表、无需擦除、无需翻页。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **The material's own sound** is the foley: metal plates tick bright and short (inharmonic partials 3–8 kHz), acrylic toks duller (1–3 kHz), wood knocks, coins ring. A cascade is a burst of these at the landing times, scaled down as density rises.
-- **The ruler sings**: every ruler piece (each 10th) rings a pitched mallet note, one timbre per series (e.g. glockenspiel for metal, glass harp for acrylic), climbing a pentatonic scale with the count — the chart becomes an arpeggio.
-- **Score**: mallets and air — marimba ostinato, bowed and struck vibraphone, harp, glass, a soft synth pad and a pulse bass with audible 2nd/3rd harmonics; horns for a turn. Accelerate by subdivision (8ths → 16ths), not tempo.
-- **Impacts**: a turn or a last object lands on punch (60–120 Hz) + bass drum + timpani + a bell; the two or three designed impacts are the loudest moments.
-- **Silence**: a 0.3–0.6 s suck-out (music and foley −30 dB) before each designed impact; a thin studio-air bed stays.
-- **Mix**: voice ~10 dB over music, ruler notes under the voice, −14 LUFS, true peak ≤ −1.2 dBTP. Voice: calm, precise, short sentences.
+- **材料本身的声音**是拟音：金属板滴答声明亮且短促（不和谐的分音3–8 kHz），丙烯酸托克斯较暗（1–3 kHz），木头敲击声，硬币响声。级联是在着陆时爆发的，随着密度的增加而缩小。
+- **尺子唱**：每个尺子（每10个）都会发出音高的木槌音符，每个系列一个音色（例如，金属为钟琴，亚克力为玻璃竖琴），随着计数上升五声音阶 - 图表变成琶音。
+- **配乐**：木槌和空气 - 马林巴固定音型、弓弦和敲击电颤琴、竖琴、玻璃琴、软合成器垫和脉冲贝斯，带有可听见的 2nd/3rd 和声；喇叭转弯。通过细分加速（8 分 → 16 分），而不是节奏。
+- **影响**：一个回合或最后一个物体落在打孔器（60–120 Hz）+低音鼓+定音鼓+铃上；设计的两到三个撞击是最响亮的时刻。
+- **沉默**：每次设计撞击前 0.3–0.6 秒的吸出（音乐和拟音 -30 dB）；保留了一张薄薄的单间充气床。
+- **混音**：音乐之上的声音 ~10 dB，声音之下的标尺音符，−14 LUFS，真实峰值 ≤ −1.2 dBTP。声音：平静、准确、短句。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **The unit close-up.** Push into the side of a stack until one piece fills the frame; bracket one piece ("= 10 GW") and one ruler piece ("= 100 GW"). *Fits content like:* tonnes of CO₂ as steel plates; a budget as banknote bricks; a population as wooden discs.
-- **The paired climb.** Two series on one base, one material each, built year by year as the camera tracks; the crossover is held still with both readings before the verdict. *Fits content like:* imports vs exports; renewables vs fossil capacity; two companies' revenue.
-- **The feed.** One period's increase arrives piece by piece onto last period's level, the counter rolling with the landings. *Fits content like:* this year's new hires on last year's team; a quarter's sales; a record harvest.
-- **Chart to installation.** Pull back until the bars are a dial, a skyline or a table piece; the base's inlaid marks become its typography. *Fits content like:* twelve months as a clock; regions as a map-shaped base; product lines as a city.
-- **The last object.** One single heavier piece (a brass puck, a coin, a weight) lands on the base carrying the final number engraved. *Fits content like:* a total; a ratio; a target met.
+- **单元特写。** 推入堆叠的一侧，直到其中一个填满框架；支架一件（“= 10 GW”）和一件标尺（“= 100 GW”）。 *适合以下内容：* 吨二氧化碳作为钢板；预算就像钞票砖一样；人口如木盘。
+- **成对攀爬。** 一个底座上有两个系列，每种材料一种，作为摄影机轨道逐年建造；判决前两个读数的交叉保持静止。 *适合以下内容：* 进口与出口；可再生能源与化石能源产能；两家公司的收入。
+- **进给。** 一期的涨幅逐渐回到上一期的水平，柜台随着着陆而滚动。 *适合以下内容：*去年团队中今年的新员工；一个季度的销售额；创纪录的收获。
+- **安装图。** 向后拉，直到条形变成表盘、天际线或桌面碎片；底座的镶嵌标记成为它的版式。 *适合以下内容：*十二个月作为时钟；区域作为地图形状的基础；作为一个城市的产品线。
+- **最后一个物体。** 一个较重的物体（一个黄铜圆盘、一枚硬币、一个重物）落在底座上，上面刻有最终的数字。 *适合的内容如下：*总计；一个比率；达到了目标。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Two materials too alike (bright aluminium vs clear acrylic) read as one series: give one a tint or a finish change, and check at thumbnail size.
-- Long shadows and warm reflections turn metal brown at distance: add a cool rim light and keep the base darker than the pieces.
-- Thin pieces moiré at 2–3 px per layer: random per-piece value and offset, 2× supersampling.
-- A reading pinned to a moving object can leave the frame: clamp it to a safe box.
-- Counters that roll by time instead of by landed pieces lie; tie them to the object count.
-- Rounding to whole pieces can invert close values; when two values are within one unit, say so on screen or choose a finer unit.
-- Transmission streaks at low angles: acrylic roughness ≥ 0.2, tinted attenuation.
+- 两种非常相似的材料（明亮的铝材与透明的亚克力）被视为一个系列：对其中一种进行色调或饰面更改，并检查缩略图尺寸。
+- 长长的阴影和温暖的反射在远处会变成金属棕色：添加冷色边缘光并保持底部比碎片更暗。
+- 每层 2-3 px 的薄片莫尔条纹：随机每片值和偏移，2× 超级采样。
+- 固定在移动物体上的读数可以离开框架：将其夹在保险箱上。
+- 计数器按时间滚动，而不是按落地棋子滚动；将它们与对象计数联系起来。
+- 四舍五入到整块可以反转接近的值；当两个值在一个单位以内时，请在屏幕上注明或选择更精细的单位。
+- 低角度透射条纹：亚克力粗糙度≥0.2，有色衰减。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-- `demo/set.js` — `buildSet(scene)` (HDRI, warm key + cool rims, base with inlay canvas, instanced pieces per material, the last object) and the landing schedule (`SHEETS`, `EVENTS`, `landed(stack, t)`); change `PAIRS`, the unit and the materials for any single or paired series.
-- `demo/film.js` — cylindrical camera keys (`track`, `core/lib.js`) with focus on a target point, the reading kit (`pairLabels`, `verdict`, `plate`, `swatch`), counter, subtitles (`SUBCHECK`), `TEXTS`, `EV`. `demo/mix.py` — material foley (`tick_alu`, `tok_acr`), ruler notes, suck-outs, master.
-- **Extra packages and packs**: beyond `setup.sh deps` only the studio HDRI, `sh tools/fetch.sh hdri` (Poly Haven, CC0, 12 MB); with narration `setup.sh deps voice`; for a sampled score `sh tools/fetch.sh instruments vsco2ce` / `vcsl` / `freepats`. The walnut veneer is in `core/assets/polyhaven/`. Anything you add (a spreadsheet reader, other textures) goes into a private venv / node_modules in the project folder, never into `$LIB/.venv`.
-- Minimal example, not in the demo: one series of twelve monthly values on a 12-position circle, the annual total engraved on the last object.
+- `demo/set.js` — `buildSet(scene)`（HDRI、暖键 + 冷边、镶嵌画布底座、每种材料的实例件、最后一个对象）和着陆时间表（`SHEETS`、`EVENTS`、`landed(stack, t)`）；更改任何单个或成对系列的 `PAIRS`、单元和材料。
+- `demo/film.js` — 圆柱形摄影机键（`track`、`core/lib.js`），聚焦于目标点，读取套件（`pairLabels`、`verdict`、`plate`、 `swatch`)、计数器、字幕 (`SUBCHECK`)、`TEXTS`、`EV`。 `demo/mix.py` — 材料拟音（`tick_alu`、`tok_acr`）、标尺注释、吸盘、母版。
+- **Extra 软件包和包**：除了 `setup.sh deps` 之外，仅工作室 HDRI，`sh tools/fetch.sh hdri`（Poly Haven，CC0，12 MB）；带旁白 `setup.sh deps voice`；对于采样的配乐 `sh tools/fetch.sh instruments vsco2ce` / `vcsl` / `freepats`。胡桃木贴面的型号为`core/assets/polyhaven/`。您添加的任何内容（电子表格阅读器、其他纹理）都会进入项目文件夹中的私有 venv / node_modules，而不是进入 `$LIB/.venv`。
+- 最小的例子，不在示范中：12 个位置的圆上有一系列 12 个每月值，年度总数刻在最后一个物体上。
 
-### Sources, licences, facts
+<a id="sources-licences-facts"></a>
+### 来源、许可、事实
 
-- **Statistics for a new topic**: Our World in Data (each chart's "About this data" names the original source; CC BY 4.0 — credit both), World Bank Open Data (CC BY 4.0), Eurostat (CC BY 4.0), US Census / BLS / EIA (public domain); UN Data, IRENA, IEA free tables and other national statistics offices (e.g. 国家统计局): check each dataset's terms. Search the portal for the indicator, download the CSV, keep the file and its metadata in the project's `data/`.
-- **Licences**: CC0, public domain and CC BY are fine with a credit. ODbL, CC BY-SA, "no known restrictions" or "free for non-commercial use" are not CC0: name the terms to the user and ask before using them. Textures and HDRIs: Poly Haven / ambientCG (CC0).
-- **The user's own numbers** (annual report, ESG data, sales): ask for them and for the document they come from; never invent or round them into a better story. Never let generated images stand in for real data or material.
-- **Keep a FACTS.md in the project folder** — each on-screen number and spoken claim, its source URL, the quoted wording or row, and how any derived value (ratio, difference, units per piece) was computed — and deliver it with the film.
+- **新主题的统计**：我们的数据世界（每个图表的“关于此数据”均指定原始来源；CC BY 4.0 — 两者均受信任）、世界银行开放数据 (CC BY 4.0)、欧盟统计局 (CC BY 4.0)、美国人口普查/BLS/EIA（公共领域）； UN Data、IRENA、IEA 免费表和其他国家统计局（例如国家统计局）：检查每个数据集的术语。在门户中搜索指标，下载 CSV，将文件及其元数据保存在项目的 `data/` 中。
+- **许可证**：CC0、公共领域和 CC BY 都可以，有信用。 ODbL、CC BY-SA、“无已知限制”或“免费用于非商业用途”不是 CC0：向用户命名这些术语并在使用前询问。纹理和 HDRI：Poly Haven /ambientCG (CC0)。
+- **用户自己的号码**（年度报告、ESG数据、销售）：询问它们以及它们来自的文档；永远不要发明或将它们变成一个更好的故事。切勿让生成的图像代替真实数据或材料。
+- **在项目文件夹中保留一个FACTS.md**——每个屏幕上的数字和口头声明、其源URL、引用的措辞或行，以及如何计算任何派生值（比率、差值、每件单位）——并与影片一起交付。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-Decided per film: the unit and its materials, the base and its shape, which series share it, the camera route, pacing, the last object, accent hue within the colour logic.
+根据影片决定：单元及其材料、底座及其形状、共享哪个系列、摄影机路线、节奏、最后一个对象、颜色逻辑中的强调色调。
 
-- Structures: a single series rising to a record; two series and their crossover; a ranking of regions laid out as a map-shaped base.
-- Openings: the macro of one piece being placed; the finished installation seen from above, then the dive to the first unit; an empty base with its inlay waiting.
-- Endings: the last object landing at the centre; a slow orbit of the whole installation; a single piece lifted off to show what one unit is.
+- 结构：单一系列上升至纪录；两个系列及其交叉；以地图形状为基础的区域排名。
+- 开局：一件棋子被放置的宏；从上面看到的安装完毕，然后潜入第一个单元；空底座及其镶嵌物正在等待。
+- 结局：最后一个物体落在中心；整个装置的缓慢轨道；一个单独的部件被升起以显示一个单元是什么。
 
 ---
 
-How our demo was made (story, shots, score, title card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、标题卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

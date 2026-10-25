@@ -1,63 +1,67 @@
-# Facts and sources · 《兴登堡号：四分钟与三十二秒》 (The Hindenburg: Four Minutes and Thirty-two Seconds)
+<a id="facts-and-sources--兴登堡号四分钟与三十二秒-the-hindenburg-four-minutes-and-thirty-two-seconds"></a>
+# 事实与来源·《兴登堡号：四分钟与三十二秒》（兴登堡：四分三十二秒）
 
-Every fact in the film's on-screen text, subtitles and narration, listed with its source and the source's wording. Checked on 2026-10-20; before the last render, each item was compared one by one against the subtitles in `audio/lines.json` and `film.json`.
+影片的屏幕文本、字幕和旁白中的每一个事实都列出了其来源和来源的措辞。 2026年10月20日检查；在最后一次渲染之前，每个项目都与 `audio/lines.json` 和 `film.json` 中的字幕进行了逐一比较。
 
-Main source **R**: US Department of Commerce, "Report of Airship "Hindenburg" Accident Investigation", Air Commerce Bulletin vol. 9 no. 2, 1937-08-15 (signed by South Trimble Jr., R. W. Schroeder, Denis Mulligan). No downloadable scan of the original publication was found; the text transcription at https://www.airships.net/?p=2041 is used (LibriVox reads the same text: https://librivox.org/report-of-the-airship-hindenburg-accident-investigation-by-united-states-department-of-commerce ). All times in the report are US Eastern Standard Time (E.S.T.): "All times reported herein, unless otherwise indicated, are Eastern Standard Time (E.S.T.)."
+主要来源**R**：美国商务部，《飞艇“兴登堡”号事故调查报告》，航空商务公报第1卷。 9 没有。 1937 年 8 月 15 日 2 日（由 South Trimble Jr.、R. W. Schroeder、Denis Mulligan 签名）。未找到原始出版物的可下载扫描件；使用 https://www.airships.net/?p=2041 处的文本转录（LibriVox 读取相同的文本： https://librivox.org/report-of-the-airship-hindenburg-accident-investigation-by-united-states-department-of-commerce ）。报告中的所有时间均为美国东部标准时间 (E.S.T.)：“除非另有说明，本文报告的所有时间均为东部标准时间 (E.S.T.)。”
 
-Other sources: **FBI** = FBI Hindenburg file, part 1 (https://archive.org/details/HindenburgFBI , `Hindenburg 01.pdf`); **NR** = Universal Newsreel special release, 1937-05-10 (https://archive.org/details/1937-05-10_Special_Release_Zeppelin_Explodes ).
+其他来源：**FBI**= FBI Hindenburg 文件，第 1 部分（https://archive.org/details/HindenburgFBI 、 `Hindenburg 01.pdf`）；**NR** = 环球新闻片特别发行，1937 年 5 月 10 日 (https://archive.org/details/1937-05-10_Special_Release_Zeppelin_Explodes )。
 
-On-screen text in the film is Chinese; it is quoted as it appears, with an English gloss.
+影片中的屏幕文字为中文；它是按原样引用的，带有英文注释。
 
-## On screen / narration
+<a id="on-screen--narration"></a>
+## 屏幕上/旁白
 
-| In the film | Claim | Source and wording |
+|在影片|宣称|来源和措辞|
 |---|---|---|
-| Location strap "新泽西 · 莱克赫斯特" (New Jersey · Lakehurst); VO1 "May sixth, 1937. The Hindenburg reaches Lakehurst, hours late." | Date and place of the accident; several hours later than planned | R: "was destroyed by fire at 6:25 P.M., E.S.T., May 6, 1937, at the Naval Air Station, Lakehurst, New Jersey." / "was due at Lakehurst on the morning of Thursday, May 6 … Because of unfavorable winds encountered en route, its arrival at Lakehurst was deferred until 6:00 P.M." |
-| Wind chart band "雷暴" (thunderstorm) (15:43–16:45) | Thunderstorm period recorded by the air station | R: "The records of the Naval Air Station show that the thunderstorm began at 3:43 P.M. and ended at 4:45 P.M." |
-| Wind chart band "阵雨" (showers) (17:00–18:00) | Shower period | R: "Several heavy showers occurred between 5:00 and 6:00 P.M., with accompanying thunder." |
-| Radio message 16:42 "…RECOMMEND DELAY LANDING…" / "建议推迟着陆" (recommend delaying the landing) | Sent by the air station to the airship | R: "At 4:42 P.M., the commander of the station radioed the ship: Conditions still unsettled recommend delay landing until further word from station advise your decision." |
-| Radio message 16:52 "WE WILL WAIT…" / "我们等着" (we will wait); VO2 "The ship waits." | The airship's reply | R: "At 4:52 P.M., the commander of the ship replied: 'We will wait till you report that landing conditions are better.'" |
-| Radio message 17:22 "RECOMMEND LANDING NOW." | Sent by the air station to the airship | R: "At 5:22 P.M. station commander radioed ship: 'Recommend landing now.'" |
-| Radio message 18:08 "…RECOMMEND EARLIEST POSSIBLE LANDING." | The last message | R: "At 6:08 P.M. station commander sent last message: 'Conditions definitely improved recommend earliest possible landing.'" |
-| VO2 "The station's answer: delay landing." | Summary of the 16:42 message | As above (16:42) |
-| Wind chart "17:12 · 8 节" (17:12 · 8 knots) | Surface wind in the 17:12 message (the gusts are no longer shown on screen) | R: "At 5:12 P.M. … surface wind west-southwest eight knots gusts to 20 knots" |
-| Wind chart "18:00 · 4 节" (18:00 · 4 knots) | Surface wind in the 18:00 message | R: "At 6:00 P.M. station transmitted to ship: '… surface wind west-southwest four knots gusts under 10 knots …'" |
-| Wind chart "≈ 着陆 · 1 节" (≈ landing · 1 knot) | Surface wind at the start of the landing; placing the point at 18:18 is only illustrative (the report gives no exact time, hence the ≈) | R: "surface wind light, variable and shifting and at the precise moment of the beginning of the landing was southeast 1 knot." |
-| VO3 "At six twenty-one, the ropes go down"; plan view "18:21 放绳处" (18:21 ropes dropped here), "30°"; conclusion graphic "放绳" (ropes dropped) | The bow landing ropes are dropped, bearing 30° from the mooring mast | R: "At 6:21 P.M., the bow trail ropes were dropped, on a bearing of 30 degrees from the mooring mast" |
-| VO3 "at least seven hundred feet from the mast"; plan view "≥ 700 ft" | Distance from the mast | R: "At no time during the approach did the ship come closer to the mooring mast than 700 feet." |
-| "放绳后 4 分钟 · 18:21 → 18:25" (4 minutes after the ropes · 18:21 → 18:25); conclusion graphic "4 分钟" (4 minutes) | Interval from the ropes dropping to the fire | R: "Ship was first observed afire at 6:25 P.M."; R also has "the four-minute interval between the dropping of the trail ropes and the accident" |
-| VO4 "Seconds before the fire, a man on the ground sees the cover flutter, near cell five."; quotation "a noticeable fluttering of the outer cover"; "抖动 · 5 号气囊" (flutter · cell No. 5) | Ward's testimony (as summarised in the report) | R: "Witness R.H. Ward, in charge of the port bow landing party, a couple of seconds before the fire, had his attention attracted by a noticeable fluttering of the outer cover on the top port side between frames 62 and 77, which includes cell No. 5." |
-| Side view gas cells numbered 1–16, No. 1 at the stern ("船头" bow and "船尾" stern marked at the two ends) | Number of cells and direction of numbering | R: "In each of the sixteen compartments of the ship was a gas cell" / "The cells were numbered from stern to bow, from 1 to 16." |
-| Testimony page + quotation "a burst of flame just forward of the port fin" | Testimony of Lt. Tyler (the Navy mooring officer) | FBI part 1 p.39: "in this position, he noticed a burst of flame just forward of the port fin and just above the longitudinal axis of the ship"; R calls Tyler "the mooring officer, Witness Tyler" |
-| Source audio C1 "a roar and a burst of flame near the big tail fins" | Commentary of the 1937-05-10 newsreel (a claim of the time, not used as a factual source, only as an "agrees" comparison) | NR src 78.1–81.6 s |
-| Photo annotation circle "船尾上方" (above the stern) | Position of the fire and of the bow in the Pasquarella photograph | The photograph itself (Commons description: "taken during the initial explosion", see SOURCES.md) |
-| Report quotation "…on the top of the ship forward of the entering edge of the vertical fin over Cells 4 and 5."; VO5 "above gas cells four and five" | The ignition point the report settles on | R: "we conclude that the first open flame, produced by the burning of the ship's hydrogen, appeared on the top of the ship forward of the entering edge of the vertical fin over Cells 4 and 5." |
-| VO6 "From first flame to impact: thirty-two seconds."; "32 秒" (32 seconds); quotation "…first glimpse of flame and the impact … was 32 seconds." | The 32 seconds is the report's estimate | R: "It is estimated that the interval between the first glimpse of flame and the impact of the main body of the ship with the ground was 32 seconds." |
-| Teletype "商务部周一上午十点开公开调查" (Commerce Department opens a public inquiry Monday at 10 a.m.), label "FBI 电传 · 1937-05-08" (FBI teletype · 1937-05-08) | How the inquiry began | FBI part 1 p.13 (teletype 5-8-37): "MAJOR R W SCHROEDER AND SOUTH TRIMBLE OF DEPT OF COMM. WILL START OPEN INQUIRY MONDAY AT TEN AM AS TO WRECK." |
-| Established "起火：船顶，4–5 号气囊上方" (fire: top of the ship, above cells 4–5) | Same ignition point as above | Same as VO5 |
-| Established "首见火光到触地：32 秒" (first flame to impact: 32 seconds) | As above | Same as VO6 |
-| Established "原因：泄漏的氢气被点燃" (cause: leaking hydrogen, ignited); VO7 "The inquiry names the cause: leaking hydrogen, ignited." | The report's conclusion | R: "The cause of the accident was the ignition of a mixture of free hydrogen and air. Based upon the evidence, a leak at or in the vicinity of cell 4 and 5 caused a combustible mixture of hydrogen and air to form in the upper stern part of the ship in considerable quantity" |
-| Not established "氢气怎么漏出来" (how the hydrogen leaked) | The report gives only possibilities (e.g. a snapped shear wire), and settles on none | R: "A shear wire in one of the panels at the place from which the gas was escaping could have snapped while the ship was turning"; "As yet, with the few exceptions to be noted, no more has been provided than a hypothetical approach to the answer." |
-| Not established "火源：刷形放电，仅称'最可能'" (ignition source: brush discharge, called only 'most probable'); VO7 "The spark itself remains a theory." | The ignition source is only the most probable inference | R: "The theory that a brush discharge ignited such mixture appears most probable." |
-| Not established "蓄意破坏：查无证据" (sabotage: no evidence found) | The report looked into sabotage and found no evidence | R: "To date, there is no evidence to indicate that sabotage produced the grim result." |
-| Source audio C2 "taking the lives of almost half its 99 passengers and crew" (struck through) | The newsreel's figure of the time, which disagrees with the report | NR src 40.4–44.7 s |
-| Check "机上 97 人 · 遇难 35" (97 on board · 35 died); "据商务部报告" (per the Commerce Department report); dot grid "乘客 36" (passengers 36), "机组 61" (crew 61) | Number on board and deaths | R: "the personnel on board, including officers, numbered 61, of whom 22 died" / "36 persons besides the Crew were on board. Of these, 13 died" (61 + 36 = 97; 22 + 13 = 35) |
-| Check "另有地勤 1 人遇难" (plus 1 ground crew member died); dot grid ground crew 1 | Ground crew | R: "One member of the ground crew died as a result of burns received during the accident." |
-| VO8 "Thirty-six people died."; "36 人遇难" (36 died) | 35 + 1 = 36 | The two items above |
-| Map label "USGS 1947"; map credit on the end card | Date of the map | USGS Lakehurst NJ 1:24,000, 1947 edition (SOURCES.md) |
+|地点带“新泽西·莱克赫斯特”（New Jersey·Lakehurst）； VO1 “1937 年 5 月 6 日。兴登堡号抵达莱克赫斯特，晚了几个小时。”|事故发生的日期和地点；比计划晚了几个小时|R：“于 1937 年 5 月 6 日美国东部时间下午 6 点 25 分，在新泽西州莱克赫斯特海军航空站被大火烧毁。” /“原定于 5 月 6 日星期四早上抵达莱克赫斯特……由于途中遇到不利风，抵达莱克赫斯特的时间被推迟到下午 6:00。”|
+|风图乐队“雷暴”（15:43–16:45）|航空站记录的雷暴期|R：“海军航空站的记录显示，雷暴从下午 3:43 开始，到下午 4:45 结束。”|
+|风图带“阵雨”（阵雨）（17:00–18:00）|淋浴时间|R：“下午 5:00 至 6:00 期间下了几场大阵雨，并伴有雷声。”|
+|广播消息 16:42 “…RECOMMEND DELAY LANDING…”/“建议延迟着陆”（建议延迟着陆）|由航空站发送至飞艇|R：“下午 4 点 42 分，空间站指挥官通过无线电向该船发送了消息：情况仍不稳定，建议推迟着陆，直到空间站进一步通知你的决定。”|
+|广播消息 16:52 “WE WILL WAIT…”/“我们等待”（我们会等待）； VO2“船在等待。”|飞空艇的回复|R：“下午 4 点 52 分，舰长回复：‘我们会等到你报告着陆条件好转为止。’”|
+|无线电消息 17:22“建议立即着陆。”|由航空站发送至飞艇|R：“下午 5 点 22 分，电台指挥官通过无线电向船只发送：‘建议立即登陆。’”|
+|无线电消息 18:08 “……建议尽早着陆。”|最后一条消息|R：“下午 6 点 08 分，站长发送了最后一条消息：‘情况明显改善，建议尽早着陆。’”|
+|VO2“车站的答复：延迟降落。”|16:42 消息摘要|如上 (16:42)|
+|风图“17:12·8节”（17:12·8节）|17:12消息中的地面风（阵风不再显示在屏幕上）|R：“下午 5 点 12 分……表面风为西南偏西 8 节阵风至 20 节”|
+|风图“18:00·4节”（18:00·4节）|18:00 消息面风|R：“下午 6:00，电台向船舶发送：‘……表面风为西偏西南，四节阵风，阵风低于 10 节……’”|
+|风向图“≈着陆·1节”（≈着陆·1节）|着陆开始时的地面风；将时间点定为 18:18 只是说明性的（报告没有给出确切的时间，因此 ≈）|R：“表面风轻，多变且移动，在着陆开始的精确时刻为东南 1 节。”|
+|VO3“六点二十一分，绳索放下”；平面视图“18:21 放绳处”（18:21 绳索在此落下），“30°”；结论图形“放绳”（绳子掉落）|船头着陆绳索掉落，与系泊桅杆成 30° 角|R：“下午 6 点 21 分，船首尾绳被抛下，与系泊桅杆呈 30 度角”|
+|VO3“距离桅杆至少七百英尺”；平面图“≥ 700 英尺”|距桅杆距离|R：“在进场过程中，船舶距离系泊桅杆的距离从未超过 700 英尺。”|
+|“放绳后4分钟·18:21→18:25”（放绳后4分钟·18:21→18:25）；结论图“4分钟”（4分钟）|从绳索掉落到着火处的时间间隔|R：“第一次观察到船舶着火是在下午 6 点 25 分”； R还规定了“绳索掉落与事故发生之间的四分钟间隔”|
+|VO4“火灾发生前几秒，地面上的一名男子看到五号牢房附近的盖子在颤动。”；引用“外壳明显颤动”； " 居住 · 5 号电梯" (颤动 · 5 号细胞)|沃德的证词（如报告中概述）|R：“目击者 R.H. 沃德（R.H. Ward），负责左舷船头登陆队，在起火前几秒钟，他的注意力被第 62 号和第 77 号舱室之间左舷顶部外盖的明显颤动所吸引，其中包括 5 号舱室。”|
+|侧视气室编号为1-16，1号位于船尾（两端标有“船头”船尾）|单元格数量和编号方向|R：“船的十六个隔间中的每一个都有一个气室”/“这些气室从船尾到船头编号，从 1 到 16。”|
+|证词页 + 引用“左舷前方突然爆发火焰”|泰勒中尉（海军系泊官）的证词|FBI 第 1 部分第 39 页：“在这个位置，他注意到左舷鳍前方和船的纵轴上方突然爆发火焰”； R 称泰勒为“系泊官，泰勒证人”|
+|源音频C1“大尾鳍附近发出轰鸣声和一阵火焰”|1937-05-10 新闻片的评论（当时的说法，不用作事实来源，仅用作“同意”比较）|NR src 78.1–81.6 秒|
+|照片注释圈“船尾上方”（船尾上方）|帕斯夸雷拉照片中火和弓的位置|照片本身（共享描述：“在最初爆炸期间拍摄”，请参阅 SOURCES.md）|
+|报告引用“……位于 4 号和 5 号单元上方垂直尾翼入口边缘前方的船舶顶部。”； VO5“第四和第五气室上方”|报告确定的燃点|R：“我们得出的结论是，由船上氢气燃烧产生的第一道明火出现在船的顶部，位于第 4 号和第 5 号电池上方垂直尾翼的进入边缘之前。”|
+|VO6“从第一次火焰到撞击：三十二秒。”； “32秒”（32秒）；引用“……第一次看到火焰和撞击……持续了 32 秒。”|32 秒是报告的估计值|R：“估计从第一次看到火焰到船体主体撞击地面的时间间隔为32秒。”|
+|电传打字机“商务部周一上午十点公开调查”（商务部周一上午 10 点开放公开调查），标签“FBI 电传·1937-05-08”（FBI 电传·1937-05-08）|调查是如何开始的|FBI 第 1 部分第 13 页（电传 5-8-37）：“R W 施罗德少校和通讯部南特林布尔将于周一上午 10 点开始公开调查沉船情况。”|
+|建立“起火：船顶，4–5号上方”（起火：船顶，4–5号单元上方）|与上述相同的燃点|与VO5相同|
+|建立“首见火光到触地：32秒”（第一火焰撞击：32秒）|如上所述|与VO6相同|
+|设立“原因：漏出的气体被点燃”（原因：泄漏氢气，被点燃）； VO7“调查指出原因：氢气泄漏，被点燃。”|报告的结论|R：“事故原因是游离氢气和空气的混合物着火。根据证据，4号和5号电池或其附近的泄漏导致船尾上部形成大量可燃的氢气和空气混合物”|
+|不成立“氢气怎么漏出来”（氢气是如何泄漏的）|该报告仅给出了可能性（例如，剪断线），并没有确定|R：“在船舶转弯时，气体逸出处的其中一个面板上的剪力线可能会折断”； “到目前为止，除了少数需要注意的例外情况，我们只提供了一个假设的答案。”|
+|不成立“火源：刷形放电，仅称'最可能'”（点火源：刷形放电，仅称'最可能'）； VO7 “火花本身仍然是一个理论。”|点火源只是最可能的推论|R：“刷子放电点燃这种混合物的理论似乎最有可能。”|
+|未成立“蓄意破坏：查无证据”（sabotage: noevidencefound）|该报告调查了破坏行为，但没有发现任何证据|R：“迄今为止，没有证据表明破坏行为造成了可怕的结果。”|
+|源音频 C2“夺走了 99 名乘客和机组人员近一半的生命”（删除）|新闻片当时的数据与报道不符|NR src 40.4–44.7 秒|
+|勾选“机上97人·遇难35”（机上97人·35人死亡）； “据商务部报告”（根据商务部报告）；点格“乘客 36”（乘客 36）、“集装箱 61”（机组人员 61）|船上人数和死亡人数|R：“船上人员，包括军官，人数为 61 人，其中 22 人死亡”/“船上除船员外还有 36 人，其中 13 人死亡”（61 + 36 = 97；22 + 13 = 35）|
+|勾选“有地勤 1 人遇难”（加上 1 名地勤人员死亡）；点网格地勤人员1|地勤人员|R：“一名地勤人员因事故中烧伤而死亡。”|
+|VO8“三十六人死亡。”； 《36人遇难》（36人死亡）|35 + 1 = 36|以上两项|
+|地图标签“USGS 1947”； 片尾卡上的地图信用|地图日期|USGS 新泽西州莱克赫斯特 1:24,000，1947 年版 (SOURCES.md)|
 
-## The film's inferences (all marked as such in the film)
+<a id="the-films-inferences-all-marked-as-such-in-the-film"></a>
+## 影片的推论（在影片中均如此标记）
 
-- **Photo camera position / view cone**: inferred from the relative position of the foreground mooring mast and the airship in the Pasquarella photograph; labelled "推断" (inferred).
-- **Newsreel camera position**: not found, so no camera position is drawn on screen (an earlier cut labelled it "未定" (undetermined); removed to cut down on text).
-- **Photo times**: Pasquarella ≈T+2 s (Commons description "taken during the initial explosion"); NH 57973 ≈T+26 s (matched against the airship's attitude in the newsreel); both marked ≈.
-- **Footage alignment**: the newsreel's main-body impact (source 01:43.6) is aligned to the report's +32 s, which puts the start of the newsreel at about 7 s after the first flame; there is an exposure splice at source 01:43.3, error ±1–2 s. In the three-column grid the newsreel column lights up only at ≈T+7 s (no "无影像" (no footage) placeholder box any more, and no small-print note on the alignment error).
-- **Plan view**: a diagram with the mooring mast as origin, drawn to scale in feet; the 1947 map does not show the mooring mast of 1937, so the plan view is not laid over the map; only a locator inset is used.
-- **Side view**: 16 gas cells of equal size, not to exact scale, labelled "示意" (schematic).
-- **The "landing begins" point in the wind chart**: the report gives no time; the point is placed at 18:18 and marked ≈.
+- **照片摄影机位置/视锥**：根据Pasquarella照片中前景系泊桅杆和飞艇的相对位置推断；标记为“推断”（推断）。
+- **新闻片摄影机位置**：未找到，因此屏幕上未绘制摄影机位置（较早的剪辑将其标记为“未定”（未确定）；删除以减少文本）。
+- **照片时间**：Pasquarella ≈T+2 s（公共描述“在初始爆炸期间拍摄”）； NH 57973 ≈T+26 s（与新闻片中飞艇的姿态相符）；两者都标记为 ≈。
+- **素材对齐**：新闻片的主体影响（来源01:43.6）与报告的+32秒对齐，这使得新闻片的开始时间在第一个火焰之后大约7秒；源 01:43.3 处有一个曝光拼接，误差 ±1–2 秒。在三列网格中，新闻片列仅在约 T+7 秒时亮起（不再有“无影像”（无素材）占位符框，也不再有关于对齐错误的小字注释）。
+- **平面图**：以系泊桅杆为原点的图表，按英尺比例绘制； 1947 年的地图没有显示 1937 年的系泊桅杆，因此平面图没有覆盖在地图上；仅使用定位器插入。
+- **侧视图**：16个大小相等的气室，未按精确比例，标记为“示意”（示意图）。
+- **风图上的“着陆开始”点**：报告没有给出时间；该点位于 18:18 并标记为 ≈。
 
-## Material used as picture only, not as a factual source
+<a id="material-used-as-picture-only-not-as-a-factual-source"></a>
+## 材料仅用作图片，不作为事实来源
 
-- FBI part 1 p.7 (memo from the evening of 1937-05-06) gives 6:25 for the ropes, 210 ft and casualty figures that disagree with the final report; the film does not use it.
-- The newsreel commentary (1937-05-10) appears only as "the claim of the time": one line agrees with the report (fire near the tail fins), one is corrected by the check ("近半" (almost half), "99 人" (99 people)).
-- The newsreel's Archive description ("explodes three hundred feet over the landing field") disagrees with the report ("descended to about 135 to 150 feet when the accident happened"); the film does not use it.
+- FBI 第 1 部分第 7 页（1937 年 5 月 6 日晚间的备忘录）给出了 6 点 25 分的绳索、210 英尺和伤亡数字，与最终报告不一致； 影片不使用它。
+- 新闻片评论（1937-05-10）仅以“当时的主张”出现：一行与报道一致（尾鳍附近起火），一行经检查纠正（“近半”（几乎一半）、“99人”（99人））。
+- 新闻片的档案描述（“在着陆场上方 300 英尺处爆炸”）与报道不符（“事故发生时下降到约 135 至 150 英尺”）； 影片不使用它。

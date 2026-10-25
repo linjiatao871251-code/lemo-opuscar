@@ -1,118 +1,130 @@
-# Blueprint — Style Prompt
+<a id="blueprint--style-prompt"></a>
+# 蓝图 / 工程制图：风格提示词
 
-> Engineering drawings that come alive on a sheet of cyanotype paper: white technical line work on Prussian blue, drawn in drafting order, with annotations that move.
-> References (grammar only, never copy): the moving technical drawings in Prologue Films' *Iron Man* (2008) end credits, Leonardo's *Codex Atlanticus* pages, 19th-century US patent drawings (Fig. 1 / Fig. 2, part balloons, fine-line shading), the automaton drawings in *Hugo* (2011). No Marvel elements, no real patents, no real inventor's machine or signature.
+> 在一张蓝晒纸上栩栩如生的工程图：普鲁士蓝上的白色技术线条，按照绘图顺序绘制，带有移动的注释。
+> 参考资料（仅语法，切勿复制）：Prologue 影片' *Iron Man* (2008) 片尾字幕中的移动技术图纸、Leonardo 的 *Codex Atlanticus* 页面、19 世纪美国专利图纸（图 1 / 图 2，部分气球、细线阴影）、*Hugo* (2011) 中的自动机图纸。没有漫威元素，没有真正的专利，没有真正的发明人的机器或签名。
 
-Suits films of 30–60 s.
+适合 30-60 秒的影片。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The whole film happens on one sheet of blueprint paper** lying on a dark drafting table. The camera moves over it like an eye reading a drawing.
-- **White line work on uneven Prussian blue**: centre lines, outlines, hatching, dimension lines, leader lines with numbered balloons, a title block, a notes column.
-- **A 2D line-drawing language**: orthographic and oblique/isometric projection are allowed, **3D rendering never**.
-- **Rigorous convention carries the tone**: the drawing is dry and exact; the notes can carry wit, warmth or gravity.
-- **The designed thing is the character.** A machine, object, building or plan acts through its parts; people appear only as a hand shadow with a pen, or a signature.
+- **整个影片发生在一张蓝图纸**躺在黑暗的绘图桌上。上面的摄影机运动就像一只眼睛在读图画。
+- **在不均匀的普鲁士蓝上进行白线工作**：中心线、轮廓、剖面线、尺寸线、带编号气球的引导线、标题栏、注释栏。
+- **A 2D 画线语言**：允许正交和oblique/isometric 投影，**3D 渲染从不**。
+- **严谨的惯例基调**：绘图干练、准确；这些音符可以带有智慧、温暖或严肃。
+- **被设计的东西就是性格。** 机器、物体、建筑或计划通过其部件起作用；人们仅以钢笔的手影或签名的形式出现。
 
-Not Hologram HUD (no glowing wireframe, no 3D orbit), not Whiteboard (no marker on white), not Copperplate Engraving (no burin tonal hatching as the whole look).
+不是全息 HUD（没有发光线框，没有 3D 轨道），不是白板（白色上没有标记），不是铜板雕刻（整个外观没有刻刀色调阴影）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Sheet**: procedural cyanotype in a shader in *sheet coordinates*, crisp at any zoom: fbm between two Prussian blues, coating streaks, fibres, fold creases (bright edge, dark edge, whitening), bleached edges, specks. Around it: dark drafting cloth with a drop shadow.
-- **Lines**: pale blue-white, slightly soft (mipmap bleed), a faint ink breakup driven by paper grain. Four weights (outline, detail, thin, hair; e.g. 3.2 / 2.0 / 1.25 / 0.9 sheet units). **Screen width = sheet width × zoom^0.65**, so close-ups don't turn into sausages and wides don't vanish.
-- **Dash conventions**: centre line (long-short), hidden (short dashes), phantom / cutting plane (long-short-short), scaled with zoom so the pattern stays on the paper.
-- **Occlusion by painter's order**: every solid is filled with "paper" before its outline is stroked. Oblique extrusion: stroke the outline at N depth steps at 2× width, then fill the same steps with paper; a clean silhouette survives.
-- **Composite in buffers**: ink (white = exposed line); fx (shadow, wetness, stamp ink as channels); a subtitle overlay last. Shadows darken lines too: that is how a lifted object proves it has left the paper.
-- **Hatching** (fine-line shading) for sections, soil, weights, at 45°, spacing 8–14 units.
-- **Cyanotype and water**: a drop blooms deeper blue with a pale tide line; white lines inside the stain go soft; ink signatures bleed.
-- **The one real thing** (optional, at most once): a drawing symbol that leaves the drawing language gets soft volume, one gradient across its whole shape, glow, and a shadow falling across the lines. It leaves a pale unexposed imprint where it was drawn.
+- **床单**：*图纸坐标*中着色器中的程序蓝晒，在任何缩放下都清晰：两个普鲁士蓝之间的 fbm、涂层条纹、纤维、折叠折痕（亮边、暗边、白化）、漂白边缘、斑点。周围：带有阴影的深色绘图布。
+- **线路**：淡蓝白色，稍软（mipmap 渗色），由纸粒驱动的微弱的墨水破裂。四种粗细（轮廓、细节、细度、头发；例如 3.2 / 2.0 / 1.25 / 0.9 纸张单位）。 **屏幕宽度=纸张宽度×缩放^0.65**，因此特写不会变成香肠，宽幅也不会消失。
+- **短划线约定**：中心线（长-短），隐藏（短划线），幻影/切割平面（长-短-短），通过缩放进行缩放，以便图案保留在纸张上。
+- **按照画家的命令进行遮挡**：每个实体在其轮廓被描画之前都被“纸”填充。斜向挤压：以2×宽度描出N个深度台阶的轮廓，然后用纸填充相同的台阶；干净的轮廓得以保留。
+- **缓冲器中的复合**：墨水（白色=暴露的线）； fx（阴影、湿度、印章墨水作为通道）；最后叠加字幕。阴影也会使线条变暗：这就是举起的物体证明它已经离开纸张的方式。
+- **孵化**（细线阴影），用于剖面、土壤、权重，角度为 45°，间距 8-14 个单位。
+- **氰版和水**：一滴绽放更深的蓝色，带有浅色潮线；污渍内的白线变软；墨水签名渗色。
+- **一件真实的事情**（可选，最多一次）：离开绘图语言的绘图符号获得柔和的体积，整个形状的渐变，发光，以及落在线条上的阴影。它在绘制的地方留下了一个苍白的未曝光的印记。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Blue and white only.** The blue varies in value (coating, stains, folds); the white varies in weight and softness, never in hue.
-- **One non-blue colour, used exactly once**: a rubber-stamp ink (red is classic; a green APPROVED or black VOID work too). It carries the verdict.
-- The "real" object at the climax may carry light (white glow, soft value), not a new hue.
-- Example blues: `#18336B` → `#2A58A6` with lines `#E7F0F9` and table `#0D1116`; a faded sun-bleached sheet `#3A6DA8` → `#5B8CC4`; a deep over-exposed sheet `#0F2350` → `#1D3F80`.
+- **仅蓝色和白色。** 蓝色的值不同（涂层、污渍、褶皱）；白色的重量和柔软度各不相同，但色调却没有变化。
+- **一种非蓝色，仅使用一次**：橡皮图章墨水（红色是经典；绿色批准或黑色无效也可以）。它承载着判决。
+- 高潮处的“真实”物体可能带有光（白光、柔和的值），而不是新的色调。
+- 蓝调示例：`#18336B` → `#2A58A6`，其中线 `#E7F0F9` 和表 `#0D1116`；褪色的晒漂白床单 `#3A6DA8` → `#5B8CC4`；深度过度曝光的片材 `#0F2350` → `#1D3F80`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Hand lettering** for header, labels, notes and subtitles (e.g. Architects Daughter); a technical sans for title-block fields (e.g. B612); a script only for the signature (e.g. Allura). All OFL.
-- **Text is written on left to right** with a glowing nib, like everything else.
-- **Subtitles are drawing notes**: a light translucent box with double white rules, a "NOTE / n" cell, the text lettered on in ~0.35 s, a small leader tick. **Placed per shot in empty sky**, never fixed to the bottom (the bottom of a drawing is ground line, base and title block). Wrap at ~880 px. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Every subtitle is also lettered into the sheet's **GENERAL NOTES** column, so the final wide shows the whole voiceover as drawing notes.
-- The **title is the sheet header**; the **title block** holds status and verdict fields.
+- **和字母** 用于标题、标签、注释和副标题（例如 Architects Daughter）；标题栏字段的技术 sans（例如 B612）；仅用于签名的脚本（例如 Allura）。所有OFL。
+- **文本从左到右** 书写，笔尖发光，就像其他东西一样。
+- **字幕是绘图注释**：带有双白色规则的浅色半透明框，“NOTE / n”单元格，在〜0.35秒内刻出的文本，一个小引线刻度线。 **按照镜头放置在空旷的天空中**，从不固定到底部（绘图的底部是地线、底座和标题栏）。以 ~880 像素换行。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 每个字幕也都写在工作表的 **一般说明** 列中，因此最终的宽幅将整个画外音显示为绘图注释。
+- **标题是工作表标题**； **标题块** 保存状态和判决字段。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Camera and draw-on on ones (24 fps).** Continuous moves within a section, hard cuts on downbeats between sections; tiny camera bumps only for physical impacts (paper slap, stamp).
-- **Draw-on** truncated by arc length with a glowing nib at the head; items staggered within a layer; each layer starts on a beat.
-- **Drafting order**: centre lines → outlines → detail → hatching → dimensions → balloons → labels.
-- **Exploded views**: parts leave in sequence on subdivisions of the beat, eased, and return one per beat-group with a click.
-- **Mechanisms step on the grid** like an escapement: a gear advances one tooth per subdivision with a short ease-out; meshing phases computed so teeth really interlock; chains move with their sprockets.
-- **Machine acting**: angles, droops, volumes and gauge needles are the face. Failure = slowing, sagging, winding down over ~1.5 s; joy = snapping upright, a needle overshooting (back-ease).
+- **相机和绘图（24 fps）。** 在一个部分内连续移动，在部分之间硬剪切强拍；微小的摄影机碰撞仅适用于物理撞击（纸拍打、印章）。
+- **绘制** 按弧长截断，头部有发光笔尖；物品在一层内交错排列；每层都以节拍开始。
+- **绘图顺序**：中心线→轮廓→细节→剖面线→尺寸→气球→标签。
+- **分解视图**：部件按节拍细分顺序离开，缓和，然后通过单击为每个节拍组返回一个。
+- **机制踩在网格上**就像擒纵机构：齿轮每细分前进一个齿，并有一个短暂的缓出；计算啮合相位，使齿真正互锁；链条随链轮一起移动。
+- **机械动作**：角度、下垂度、体积和表针为面。失败 = 减速、下垂、减弱超过约 1.5 秒；喜悦 = 突然直立，针过冲（后缓）。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Whole sheet on the table | scale, the document as an object | establishing; a verdict; a series of sheets |
-| Medium on a figure, subject ~80 % of height, sky on one side | the design being drawn | drafting; explaining a part |
-| Track along a path of force (chain, pipe, wire, beam) | cause and effect | how it works; a sequence of operations |
-| 2× close-up cut on a downbeat | the mechanism's heart | gears meshing; a valve; a joint |
-| Locked-off, hold a beat | deliberation | a hand revising; a decision |
-| Oblique depth factor 0 → 0.5 | the flat drawing "turns" and gains thickness | from plan to object; a reveal of depth |
-| Section line sweeping across | inside vs outside | a cutaway; hidden structure |
-| Lateral pan across Fig. 1 → Fig. 2 → Fig. 3 | versions, steps, time | revisions; stages of construction |
-| Slow push-in, no voice | wonder | the one real thing |
+|整张纸放在桌子上|缩放，将文档作为对象|建立；判决；一系列的床单|
+|表现媒介人物，主体高度约 80%，天空在一侧|正在绘制的设计|起草；解释一部分|
+|沿着力的路径（链条、管道、电线、梁）进行追踪|因果|它是如何运作的；一系列操作|
+|2× 悲观特写镜头|机制的心脏|齿轮啮合；阀门；一个联合|
+|锁定，保持节拍|审议|一只手修改；一个决定|
+|倾斜深度系数0→0.5|平面绘图“转动”并增加厚度|从计划到目标；深度的揭示|
+|剖面线横扫|内部与外部|剖面图；隐藏结构|
+|横向平移图 1 → 图 2 → 图 3|版本、步骤、时间|修订；施工阶段|
+|推入缓慢，无声音|想知道|唯一真实的事情|
 
-Keep storytelling shots close; full-sheet wides are rare. Keep the main figure at least `960/zoom` from any sheet edge you will frame. Transitions: cuts on downbeats, or fig-number rewrites on the sheet; no dissolves.
+保持讲故事镜头的紧密性；全幅宽幅照片很少见。使主体人物距离您要框的任何纸张边缘至少为 `960/zoom`。转场：强拍的削减，或者在纸上重写数字；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Contrapuntal, mechanical music**: harpsichord, bassoon, strings spiccato, harp, celesta, music box, clavichord, a small wind ensemble. Imitative lines (an invention, a canon, a fugato) feel like interlocking parts; a short repeated motive can be the "gear".
-- **Foley follows materials**. Paper: roll crackle and slap, T-square wood slide, technical pen scratch (2–6 kHz grain, length = stroke length), lettering bursts, compass squeak, hatching strokes, eraser rub, tracing-paper rustle. Brass and wood: part clicks (resonances ~3–5 kHz), escapement ticks, chain rattle, spring twang, wind-down ticks that slow geometrically. Water: soft damped pats per drop, a light rain bed. Rubber stamp thump, pen cap click.
-- **Options for the arc** (in any order, use what the story needs): instruments dropping out with a written-out ritardando into true silence; a single questioning figure alone; a suspended chord held without resolution under the magic; a full cadence on the stamp; the theme in augmentation for a close; adding a section per mechanism that joins.
-- **Silence** may contain paper sounds only.
-- **Voice**: dry, understated, reading design notes, a few short lines. Leave the most emotional moment voiceless.
-- **Mix**: music ducks well under voice (~0.36 ×), foley by half; whooshes low-passed so they don't mask consonants. −14 LUFS. Little added grain (the paper already has it).
+- **对位、机械音乐**：大键琴、巴松管、弦乐、竖琴、钢片琴、八音盒、古钢琴、小型管乐团。模仿的台词（一个发明、一个经典、一个赋格）感觉像是互锁的部件；一个简短的重复动机可以是“齿轮”。
+- **Foley 遵循材料**。纸张：滚动裂纹和拍击声、T 形木幻灯片、技术笔划痕（2-6 kHz 纹理，长度 = 笔划长度）、刻字爆发、罗盘吱吱声、阴影线、橡皮擦、描图纸沙沙声。黄铜和木材：零件咔嗒声（共振〜3-5 kHz）、擒纵机构滴答声、链条嘎嘎声、弹簧声、几何减速的上弦滴答声。水：每滴都轻轻拍打，小雨床。橡皮图章重击，笔帽咔嗒声。
+- **弧** 的选项（以任何顺序，使用故事需要的内容）：乐器随着写出的慢节奏进入真正的沉默；一个单独的提问者；魔法下悬而未决的和弦；邮票上有完整的节奏；增强主题以结束；为每个连接的机制添加一个部分。
+- **沉默** 可能仅包含纸张声音。
+- **嗓音**：干巴巴、低调，阅读设计笔记，几行短句。让最激动人心的时刻无声无息。
+- **混音**：音乐在声音下很好地躲避（~0.36 ×），拟音减半；嘶嘶声低通，这样就不会掩盖辅音。 −14 LUFS。添加的颗粒很少（纸张已经有）。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Drafting order.** The object draws itself as an engineer would, a layer per beat. *Fits content like:* a bridge; a violin; a kitchen renovation.
-- **Live annotations.** Dimensions measure moving parts and the numbers change; balloons fly with parts; a section line reveals the inside. *Fits content like:* a heart valve; a folding bicycle; a rocket stage separating.
-- **Fig. numbers as transitions.** "FIG. 1" struck through and rewritten "FIG. 2 · EXPLODED VIEW". *Fits content like:* versions of a product; phases of a construction; a recipe's stages.
-- **Projection as camera.** The oblique factor animates; exploded parts fly along the depth axis. *Fits content like:* a floor plan becoming a building; a circuit board; flat-pack furniture.
-- **A symbol made real** (once, if at all). A convention leaves the drawing language: a dimension arrow flies, a hatch becomes rain, a centre line becomes a road, a weld symbol sparks. *Fits content like:* an invention finally working; a city plan becoming a street; a dream becoming a plan.
-- **Cyanotype and water.** Drops bloom and soften lines. *Fits content like:* a flood-defence design; grief; a harbour wall.
-- **The title block as story.** Status field = the verdict; revision rows = history. *Fits content like:* a rejected permit; REV. 1–5 of a city; an approval after years.
+- **绘图顺序。** 对象像工程师一样绘制自己，每个节拍一层。 *适合以下内容：*一座桥；一把小提琴；厨房装修。
+- **实时注释。** 尺寸测量运动部件和数字变化；气球带着零件飞翔；剖面线揭示了内部。 *适合以下内容：*心脏瓣膜；折叠自行车；火箭级分离。
+- 图 **** “图 1”被删除并重写为“图 2·分解图”。 *适合以下内容：*产品版本；施工阶段；食谱的阶段。
+- **投影为摄影机.** 倾斜因子动画；爆炸的零件沿着深度轴飞行。 *适合以下内容：* 平面图变成建筑物；电路板；平板包装家具。
+- **A 符号变为真实**（一次，如果有的话）。惯例离开了绘图语言：尺寸箭头飞舞，舱口变成雨，中心线变成道路，焊接符号火花。 *适合以下内容：*一项发明终于发挥作用；城市规划变成街道；梦想变成计划。
+- **氰版和水。** 滴花并柔化线条。 *适合以下内容：*防洪设计；悲伤；港口墙。
+- **标题栏为故事。** 状态字段 = 判决；修订行=历史记录。 *适合以下内容：* 被拒绝的许可证；修订版。 1-5 个城市；多年后的批准。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Main figure near the sheet edge** → wides show the desk. Keep margins or enlarge the sheet.
-- **Upward explosions hit the header** → explode sideways and flatten long parts during the explode.
-- **Subtitles on the ink buffer** vanish off-sheet and can't occlude lines → separate overlay, premultiplied alpha.
-- **An object darkened by its own shadow** → zero the shadow channel only in its area.
-- **Per-lobe shading on a blobby shape reads as grapes** → one gradient across the union; crescents from a union-minus-shifted mask; fill unions as one path (`nonzero`) or overlapping fills make bubbles.
-- **A small payoff undersells the return** → the payoff object ~⅓ of frame height, centred, drawn stroke by stroke, subtitles off it.
-- **Line weights not scaled with zoom** → sausages in close-ups, vanishing wides.
+- **靠近板材边缘的主图** → 宽幅显示桌子。保留页边距或放大纸张。
+- **向上爆炸击中头部** → 向侧面爆炸并在爆炸过程中将长部件压平。
+- **墨水缓冲区上的字幕** 在纸外消失，并且不能遮挡线条 → 单独叠加，预乘 Alpha。
+- **被自身阴影变暗的对象** → 仅在其区域将阴影通道归零。
+- **斑点形状上的每叶阴影读作葡萄** → 整个联盟的一个渐变；来自并减移位掩模的新月；将联合填充为一条路径 (`nonzero`) 或重叠填充会产生气泡。
+- **A 小回报低于回报** → 回报对象〜框架高度⅓，居中，逐笔绘制，字幕关闭。
+- **线宽未随变焦缩放** → 特写镜头中的香肠，广角镜头中消失。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/paper.js` (WebGL2 compositor: procedural cyanotype, ink bleed, wet stains, shadows, stamp, roll), `demo/draw.js` (drafting engine: camera, oblique projection, draw-on polylines, solids with paper fill, hatching, dimensions, balloons, text), `demo/sheet.js` (border, header, title block, parts list, notes, revision cloud, rain, hand shadow, stamp), `demo/film.js` (timeline on a beat grid: cameras, acting, subtitles, sound events). A new machine goes in its own module like `demo/machine.js`. File map and build: [DEMO.md](DEMO.md#build-notes).
+`demo/paper.js`（WebGL2 合成器：程序蓝晒、渗墨、湿污渍、阴影、图章、滚动）、`demo/draw.js`（绘图引擎：摄影机、倾斜投影、绘制多段线、带纸张填充的实体、剖面线、尺寸、气球、文本）、`demo/sheet.js` （边框、标题、标题栏、零件列表、注释、修订云、雨、手影、图章）、`demo/film.js`（节拍网格上的时间线：摄像机、表演、字幕、声音事件）。新机器有自己的模块，如 `demo/machine.js`。文件映射和构建：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide what is designed, its figures, the flaw or turn (if any), the voice, the one real thing (or none), the camera path, the opening, the ending and the length.
+你决定设计什么，它的人物，缺陷或转弯（如果有的话），声音，一个真实的东西（或没有），摄影机路径，开头，结尾和长度。
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **a city through revisions** (one site plan, REV. 1 to REV. 6, each revision a decade, the title block filling with dates); **two sheets, one table** (two designs drawn in parallel that turn out to fit together); **a teardown in reverse** (the sheet starts full and parts are erased one by one until only the centre line of the idea remains).
-- Openings: **a single centre line** crossing an empty sheet on the first beat; **the stamp first** (REJECTED lands, then we see what was rejected); **tracing paper** lifted off a finished drawing to reveal a blank sheet underneath.
-- Endings: **the sheet folds up** along its creases into a pocket-sized square; **a coffee ring** lands on the title block and the tide line becomes the last circle of the design; **the lights go off** and the white lines glow faintly on the dark sheet.
+- 结构：**a城市经过修订**（一份场地平面图，REV.1至REV.6，每次修订十年，标题栏填写日期）； **两张一张，一张桌子**（两个平行绘制的设计结果吻合在一起）； **反向拆解**（纸张开始已满，零件被一一擦除，直到只剩下想法的中心线）。
+- 开局：**a 单中心线**在第一拍穿过空纸；**邮票首先是**（REJECTED 落地，然后我们看到什么被拒绝了）； **描图纸** 从完成的图纸上取下，露出下面的一张空白纸。
+- 结局：**床单折叠起来**沿着折痕变成口袋大小的正方形；**一个咖啡圈**落在标题栏上，潮线成为设计的最后一个圆圈；**灯灭了**白色的线条在黑色的床单上发出微弱的光芒。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

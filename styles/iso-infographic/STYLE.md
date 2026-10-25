@@ -1,115 +1,127 @@
-# Isometric Infographic — Style Prompt
+<a id="isometric-infographic--style-prompt"></a>
+# 等距信息图：风格提示词
 
-> A system diagram comes alive: an isometric diorama of flat three-tone blocks, thin ink labels and Isotype numbers, where things open up to show their insides and the numbers are drawn, not stated.
-> References (grammar only): *Monument Valley* (true-isometric architecture, flat colour blocks, three fixed tones per face, a camera that pans and zooms but never breaks the projection); *SimCity 2000*-style cutaway dioramas (a floating board with soil strata, the whole system visible at once); Kurzgesagt (a question, a steady push forward, one clear visual metaphor per step, a change of scale when a number is too big to feel); Isotype, Otto Neurath / Gerd Arntz (repeated identical icons stand for quantity); *Powers of Ten* (a continuous dive through nested scales). Use none of their characters, buildings, icons, palettes or music.
+> 系统图变得栩栩如生：由平面三色调块、薄墨水标签和同型数字组成的等距立体模型，其中事物打开以显示其内部，并且绘制了数字，而不是说明。
+> 参考资料（仅语法）：*纪念碑谷*（真正的等距建筑、平面色块、每个面三种固定色调、可平移和缩放但不会破坏投影的摄影机）； *SimCity 2000*风格的剖面立体模型（带有土层的浮板，整个系统立即可见）； Kurzgesagt（一个问题，稳步推进，每一步都有一个清晰的视觉隐喻，当数字太大而无法感觉时改变比例）； Isotype，Otto Neurath / Gerd Arntz（重复相同的图标代表数量）； *十的幂*（通过嵌套音阶连续潜水）。请勿使用他们的角色、建筑、图标、调色板或音乐。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **Flat, true isometric.** No perspective, no outlines on solids; shapes are separated only by the three tones of each face. The projection never rotates or tilts.
-- **Infographic furniture is part of the picture**: leader lines, label pins, dashed cut lines, hatched section faces, tracking rings, a legend, a route line all live in the world.
-- **Numbers are built from icons** (Isotype), and they add up.
-- **A diorama**: the system sits on a floating board or plinth with a visible cross-section at its edges, on a pale ground.
+- **平面，真正的等距。** 无透视图，实体上无轮廓；形状仅由每个面的三种色调分开。投影永远不会旋转或倾斜。
+- **信息图表家具是图片的一部分**：引导线、标签销、虚线切割线、剖面线、跟踪环、图例、路线线都存在于世界中。
+- **数字是根据图标**（同型）构建的，并且它们相加。
+- **立体模型**：该系统位于浮板或底座上，其边缘有可见的横截面，位于苍白的地面上。
 
-Not low-poly 3D (no perspective, no lighting beyond three face tones), not a flat 2D explainer (everything has isometric depth), not a blueprint (colour blocks, not line drawings on blue).
+不是低多边形 3D（没有透视，没有超过三种面部色调的照明），不是平面 2D 解释器（一切都有等距深度），不是蓝图（色块，不是蓝色线条图）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Projection**: axes at 30°. `sx = (x − y)·cos30°·k`, `sy = ((x + y)·½ − z)·k`; x runs down-right, y down-left, z up; painter depth = x + y + z. Everything is queued and depth-sorted, then flushed.
-- **Three tones per face** chosen from its normal: top light, left (+y) mid, right (+x) dark. Derive tones from one base colour: mix toward warm white ~20 % for the top and toward a cool dark (e.g. `#231A2C`) ~22 % for the dark side, so shadows are slightly cool.
-- **Ink lines** (2 px) only for infographic elements: leaders, pins, cut lines, rings, routes, labels.
-- **The board**: floats on a pale background with a faint isometric dot lattice and a soft blurred shadow; its front faces show strata (soil, water column, floors, pipes) where the section meets the edge.
-- **Composites** (a terraced hill with shrubs, a crane over a ship) are drawn as one ordered item or given a depth bias; generic painter sorting fails on them.
-- **People**: minimal billboards (round head, tapered two-tone body, a thick arm stroke, a hat or hair shape for identity, no faces), stepping at 12 fps.
-- **Close-ups** of hands or objects: flat faceted shapes in three tones, same logic as the blocks.
-- **Level of detail by zoom**: skip small world detail at high zoom, fade tall objects in by zoom so a pull-out never sweeps a giant shape through the frame.
+- **投影**：轴为30°。 `sx = (x − y)·cos30°·k`、`sy = ((x + y)·½ − z)·k`； x 向右下运行，y 向左下运行，z 向上运行；画家深度 = x + y + z。所有内容都会排队并进行深度排序，然后刷新。
+- **每个面有三种色调** 从其正常状态中选择：顶光、左 (+y) 中、右 (+x) 暗。从一种基色导出色调：将顶部混合为暖白色约 20%，将暗面混合为冷深色（例如 `#231A2C`）约 22%，因此阴影略显冷色。
+- **墨线**（2像素）仅适用于信息图表元素：引线、引脚、切割线、环、路线、标签。
+- **棋盘**：漂浮在苍白的背景上，带有微弱的等距点格和柔和的模糊阴影；它的正面显示了剖面与边缘相交处的地层（土壤、水柱、地板、管道）。
+- **复合材料**（一座长满灌木的梯田山，一艘船上的起重机）被绘制为一个订购的项目或给予深度偏差；通用画家排序对他们失败。
+- **人们**：最小的广告牌（圆头、锥形双色身体、粗手臂、帽子或头发形状的身份，没有面孔），步进速度为 12 fps。
+- **手或物体的特写**：三种色调的平面形状，与块的逻辑相同。
+- **变焦细节级别**：在高变焦时跳过小世界细节，通过变焦淡入高大的物体，这样拉出就不会扫过框架中的巨大形状。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **A pale neutral ground** (cream, paper grey or pale blue) and **5–7 flat hues**, each with its three tones; one ink colour.
-- **Colour codes meaning**, the way a legend does: one hue per material or role (water is always the same blue, the subject always its hue). Never reuse a hue for two meanings.
-- **The subject's hue is reserved**: when the story needs "this one", everything else desaturates toward warm grey and only the subject keeps its colour (focus + context).
-- Stations that must be found in a wide shot get a pale plate with a dashed ink outline plus one accent hue.
-- Examples: a recycling chain — bottle green, kraft brown, can silver-blue, compost umber, mustard on cream; a hospital — teal, coral, lavender, steel grey on pale grey; a data centre — electric blue, amber, graphite, mint on off-white.
+- **A浅色中性底色**（奶油色、纸灰色或淡蓝色）和**5-7平色调**，每种都有三种色调；一种墨水颜色。
+- **颜色代码的含义**，就像传说中的那样：每种材料或角色一种色调（水始终是相同的蓝色，主题始终是其色调）。切勿将同一种色调重复用于两种含义。
+- **保留主体的色调**：当故事需要“这个”时，其他所有内容都会向暖灰色去饱和，只有主体保持其颜色（焦点+上下文）。
+- 必须在宽镜头中找到的电台将获得一个带有虚线墨水轮廓和一种强调色调的浅色板。
+- 例如：回收链——瓶绿色、牛皮纸棕色、罐头银蓝色、堆肥棕色、芥末奶油色；医院——青色、珊瑚色、淡紫色、浅灰色上的钢灰色；数据中心 — 电蓝色、琥珀色、石墨色、薄荷色、灰白色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- One geometric sans (e.g. Jost): titles 600 all caps with ~0.12 em tracking, numbers 400 large (~44 px), units at half size. All text has a ~7 px halo in the ground colour so it reads over any block.
-- **Label pins**: dot (ink ring, pale fill) → vertical leader → horizontal rule → text. Pins point up or down, left or right, chosen per station so labels never cover the subject.
-- **Titles** can be isometric type on a world plane, extruded as blocks.
-- **The subtitle is a map label**: a pale card with a small radius and an ink border, a tiny iso cube as legend chip, sans ~42 px, bottom-centre; border draws first, text wipes in. Keep the bottom ~170 px clear for it. Hold ≥ max(1.8 s, speech + 0.6 s); lines never overlap titles or other lines.
-- **An end frame can be the legend**: title, totals, the Isotype key, credits, "NOT TO SCALE".
+- 一种几何 sans（例如 Jost）：标题 600 全部大写，跟踪 ~0.12 em，数字 400 大（~44 像素），单位为一半大小。所有文本的底色都有约 7 像素的光晕，因此可以在任何块上读取。
+- **标签针**：点（墨环，浅色填充）→垂直引线→水平线→文本。图钉指向上或下、左或右，根据每个站进行选择，因此标签永远不会覆盖主题。
+- **标题** 可以是世界平面上的等距类型，挤压为块。
+- **副标题是地图标签**：一张带有小半径和墨水边框的苍白卡片，一个微小的iso立方体作为图例芯片，无〜42像素，底部中心；首先绘制边框，然后擦除文本。保持底部约 170 像素的清晰。保持 ≥ max(1.8 s，语音 + 0.6 s)；行永远不会与标题或其他行重叠。
+- **结束帧可以是图例**：标题、总数、同型密钥、致谢人员、“不按比例”。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Nothing moves without a line leading it**: a route line is drawn slightly ahead, a leader grows before an inset opens, a cut line draws before a skin slides away.
-- **Cutaway**: cut line (~0.3 s) → the near skin slides out along its normal and fades (~0.35 s, ease-out) → hatched section rims fade in over the last part.
-- **Isotype fill**: icons pop with a back-ease (overshoot), one per subdivision of the beat; count-up numbers run over the same span.
-- **Accumulation = acceleration**: arrivals on quarter notes, then eighths, then waves; the eye feels the system taking over. Solids arrive by motion, never by alpha (semi-transparent blocks look like ghosts).
-- **Objects perform**: squash on landing (~18 %) and small bounces; colour changes that show a process (raw → cooked, empty → full).
-- **Vehicles** follow polylines with ease-in-out and face their tangent.
+- **没有线引导，任何东西都不会移动**：稍微向前绘制路线线，在插入打开之前绘制引导线，在皮肤滑开之前绘制切割线。
+- **剖面图**：切割线（~0.3 秒）→ 近处皮肤沿其法线滑出并淡出（~0.35 秒，缓出）→ 阴影线部分边缘在最后一部分上淡入。
+- **同型填充**：带有向后缓动（过冲）的图标弹出，每个节拍细分一个；计数数字在同一范围内运行。
+- **积累=加速**：到达四分音符，然后到达八分之一，然后到达波浪；眼睛感觉到系统正在接管。固体是通过运动到达的，而不是通过 alpha 到达的（半透明块看起来像幽灵）。
+- **对象执行**：着陆时挤压（~18％）和小弹跳；颜色变化显示一个过程（生→熟，空→满）。
+- **车辆** 遵循缓入缓出的折线并面向其切线。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. The camera is a world centre plus a **log-interpolated zoom** k (px per unit); the projection never changes. Opening and ending come from the topic.
+是词汇，而不是路线。 摄影机是世界中心加上 **log 插值缩放** k（每单位像素）；投影永远不会改变。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Follow along a route | process; cause → effect | a supply chain; a journey; a signal |
-| Hold wide + circular inset | the system and the individual together | one worker in a factory; one cell in an organ |
-| Push through nested cutaways | a fall into scale; finding one thing among millions | a needle in a haystack; inside a machine |
-| Fast log pull-out | release; the big picture after a detail | scale reveal; a statistic made physical |
-| Locked frame while things accumulate | a system filling up; overload | a queue; traffic; data growing |
-| Lateral follow over emptiness | a breath; distance | an ocean; a wait; a quiet phase |
-| Top-to-bottom tilt through strata | layers; depth; history | geology; a city's underground; a software stack |
-| Switch boards (a second diorama) | before/after; here vs there | two cities; two eras; two designs |
+|沿着路线走|过程;因→果|供应链；一次旅行；一个信号|
+|保持宽+圆形插入|系统和个人在一起|工厂一名工人；器官中的一个细胞|
+|推动嵌套剖面图|陷入规模；在数百万中找到一件事|大海捞针；机器内部|
+|快速日志拉出|发布;细节之后的大局|规模揭示；物理统计|
+|当东西堆积时锁定框架|系统已满；超载|队列；交通;数据增长|
+|横向跟随空虚|一口气；距离|一片海洋；等待；安静的阶段|
+|地层自上而下倾斜|层；深度;历史|地质学;城市的地下；软件堆栈|
+|开关板（第二个立体模型）|before/after；这里与那里|两个城市；两个时代；两种设计|
 
-Framing: the subject ≥ 1/3 of frame height at key moments; labels never cover it; the subtitle zone stays clear. One continuous take is one option; a cut to a new board or an inset is another.
+取景：关键时刻被摄体≥1/3取景高度；标签永远不会掩盖它；字幕区域保持清晰。一种选择是连续拍摄；切割到新板或插入物是另一回事。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music**: acoustic and light: kalimba, marimba, nylon guitar, pizzicato, woodblock and hand percussion (shaker, bongo, cajon), upright or synth bass, glockenspiel, toy piano, or a clean electronic pulse for technical systems. A short motif can mark the subject each time it appears.
-- **Techniques (options)**: one sound per icon as numbers fill; instruments dropping out and a low-pass closing as the camera dives; J-cuts (the next station's sound 0.5 s before it appears); one note per station during a final pull-back.
-- **Ambience beds per station**, crossfaded (wind and birds, harbour, sea, city hum, machine room, crowd murmur).
-- **Foley by material**: fibre snap, fleshy thud, grains pouring, granular rattles, inharmonic steel partials for containers, paper tear, ceramic plink, liquid pour with rising pitch, servo whine, keyboard clicks.
-- **Silence**: digital zero or one faint sound; the first sound after it should be one of the most important in the film.
-- **Mix**: music ducked ~8 dB under voice, ambience ~7 dB; keep high-band beds (2.5–7 kHz) very low under speech or whisper mishears words. Final −14 LUFS.
-- **Voice**: clear, friendly explainer; short lines.
+- **音乐**：声学和灯光：卡林巴琴、马林巴琴、尼龙吉他、拨奏、木板和手打击乐器（摇床、手鼓、箱鼓）、立式或合成贝司、钟琴、玩具钢琴或用于技术系统的干净电子脉冲。一个简短的主题可以在每次出现时标记主题。
+- **技术（选项）**：数字填充时每个图标一个声音；当摄影机跳水时，仪器退出并低通关闭； J-cuts（下一站的声音出现前 0.5 秒）；在最后一次撤退期间，每个站一张音符。
+- **每个站的氛围床**，淡入淡出（风和鸟、港口、海洋、城市嗡嗡声、机房、人群杂音）。
+- **Foley（按材料）**：纤维断裂声、肉质撞击声、谷物倾倒声、粒状嘎嘎声、容器钢部件不和谐、纸张撕裂、陶瓷叮当声、音高升高的液体倾倒声、伺服呜呜声、键盘咔哒声。
+- **沉默**：数字零或一微弱声音；之后的第一个声音应该是影片中最重要的声音之一。
+- **混音**：音乐在语音下闪避~8 dB，氛围~7 dB；将高频段 (2.5–7 kHz) 保持在非常低的水平，以便在讲话或耳语时听错单词。最终−14 LUFS。
+- **嗓音**：清晰、友好的讲解员；短线。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Cutaway.** Cut line, skin slides away, hatched rims remain. *Fits content like:* a heart's chambers; a server rack; a beehive.
-- **Isotype number.** Identical icons in a new arrangement each time (a calendar, a bar, a silhouette formed by the icons themselves). *Fits content like:* votes in an election; litres of water per product; users of an app.
-- **Focus + context.** Everything greys except the subject. *Fits content like:* one patient in a hospital; one packet in a network; one tree in a forest.
-- **Frame within the frame.** A leader grows into a circular inset with a close-up. *Fits content like:* a chip on a circuit board; a worker's hands; a crack in a bridge.
-- **Scale reveal.** Pull back until every label is on screen and the last frame is a finished infographic. *Fits content like:* how a city is powered; a school's day; a festival site.
-- **Tracked subject.** One object followed with a "you are here" ring. *Fits content like:* a letter through the post; a drop through a water plant; a vaccine dose.
-- **Strata cross-section.** The board's edge becomes the story (layers added or removed). *Fits content like:* a mine; an archaeological dig; a building's floors.
+- **剖面图。** 切割线，蒙皮滑走，阴影线边缘保留。 *适合以下内容：*心室；服务器机架；一个蜂箱。
+- **Isotype 编号。** 每次都有新排列的相同图标（日历、条形图、由图标本身形成的轮廓）。 *适合以下内容：*选举中的投票；每个产品的水升数；应用程序的用户。
+- **焦点 + 上下文。** 除了主题之外，所有内容都是灰色的。 *适合以下内容：* 医院里的一名患者；网络中的一个数据包；森林里的一棵树。
+- **框架内的框架。** 引线长成带有特写的圆形插图。 *适合以下内容：*电路板上的芯片；工人的手；桥上的裂缝。
+- **缩放显示。** 向后拉，直到每个标签都出现在屏幕上，并且最后一帧是完成的信息图。 *适合以下内容：*城市如何供电；学校的一天；一个节日场地。
+- **被跟踪的对象。** 一个物体后带有“你在这里”的铃声。 *适合以下内容：*一封邮寄的信件；通过水厂的一滴水；一剂疫苗。
+- **地层横截面。** 板的边缘成为故事（添加或删除的层）。 *适合以下内容：*矿井；考古挖掘；建筑物的楼层。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Newell normals depend on vertex order: faces get culled as back faces → give every face an outward hint and flip the normal to match before culling.
-- Painter sorting breaks on composites → draw them as one ordered item; add depth bias for overhangs.
-- Semi-transparent moving solids look like ghosts → motion only, no alpha.
-- A hull or wheel touching the wrong surface reads as an accident → leave visible clearance.
-- World geometry behind a close-up becomes giant discs → skip detail above a zoom threshold, paint a flat backdrop behind hero layers.
-- A pull-out through a tall object gives one ugly frame → fade tall objects in by zoom.
-- Hidden jumps (a time or place change during a dive) must be drawn in screen space anchored on the tracked subject, so the frame doesn't reveal the jump.
-- An object drawn with the wrong silhouette reads as something else (a white box with a red roof is a house) → give machines their tell-tale parts.
+- 纽厄尔法线取决于顶点顺序：面被剔除为背面 → 给每个面一个向外的提示，并在剔除之前翻转法线以匹配。
+- 画家对复合材料进行分类→将它们绘制为一个有序项目；添加悬垂的深度偏差。
+- 半透明的移动实体看起来像幽灵→只有运动，没有阿尔法。
+- 船体或车轮接触到错误的表面将被视为事故 → 留下明显的间隙。
+- 特写镜头后面的世界几何形状变成巨大的圆盘→跳过缩放阈值以上的细节，在英雄图层后面绘制平坦的背景。
+- 通过一个高的物体拉出会产生一个丑陋的框架→通过缩放淡入高的物体。
+- 隐藏的跳跃（潜水期间的时间或地点变化）必须绘制在锚定于跟踪对象的屏幕空间中，因此框架不会显示跳跃。
+- 用错误的轮廓绘制的物体看起来像是其他东西（带有红色屋顶的白色盒子是一座房子）→给机器提供了泄露秘密的部分。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine.js` is dependency-free Canvas 2D: `Iso` (projection, camera, depth-sorted queue: `box`, `prism`, `cyl`, `cone`, `roof`, `sphere`, `flat`, `line3`, `bill`, `text3`, `push/pop` local frames, `desat` + `keep` one-colour hook), `tri()` three-tone generator, `pin`, `inset`, `cutLine`, `hatch`, `ring`, `ICON.*` + `iconGrid`, `person`, and `shape()` which turns any 2D outline into a shaded isometric solid. API table and a minimal example (a shape the demo never uses): [DEMO.md](DEMO.md) "Engine reference".
+`demo/engine.js` 是无依赖的 Canvas 2D：`Iso`（投影、摄影机、深度排序队列：`box`、`prism`、`cyl`、`cone`、 `roof`、`sphere`、`flat`、`line3`、`bill`、`text3`、`push/pop` 本地帧、`desat` + `keep`单色挂钩）、`tri()` 三音发生器、`pin`、`inset`、`cutLine`、`hatch`、`ring`、`ICON.*` + `iconGrid`、 `person` 和 `shape()` 将任何 2D 轮廓转换为阴影等距实体。 API 表和一个最小示例（示范从未使用的形状）：[DEMO.md](DEMO.md)“引擎参考”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the system, the board (or several), whether there is a tracked subject, the numbers, the camera path, the opening and the ending. All far from our demo:
+您决定系统、棋盘（或几个）、是否有跟踪主题、数字、摄影机路径、开头和结尾。与我们的示范相去甚远：
 
-- Structures: **one building, floor by floor** (a tilt down through a cutaway tower, each floor a step); **two boards compared** (the same system in two places or eras, alternating, then side by side); **a cycle** (a loop route that returns to its start with one number changed each lap).
-- Openings: **the finished infographic**, which then comes apart into its moving parts; **one icon** that multiplies until it becomes the landscape; **a question written as an isometric title** on an empty board.
-- Endings: **an unanswered station** (the route stops at an empty plate with a question mark); **the legend alone**, the board faded out; **a close-up of a single icon**, the whole number behind it out of focus.
+- 结构：**一栋建筑，逐层呈现**（通过剖面塔向下倾斜，每层一个台阶）； **两块板比较**（同一系统在两个地方或时代，交替，然后并排）； **a 循环**（返回起点的循环路线，每圈改变一个数字）。
+- 空缺：**完成的信息图**，然后分解成其运动部件；**一个图标**不断繁殖，直至成为风景；**以等距标题形式写出的问题**在一块空板上。
+- 结局：**an无应答站**（路线停在带问号的空车牌处）； **传说独**，板子淡出； **单个图标**的特写，其后面的整个数字都处于失焦状态。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

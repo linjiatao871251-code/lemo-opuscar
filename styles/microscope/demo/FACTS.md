@@ -1,39 +1,42 @@
-# Fact sheet: 《量出来的蓝》 Measured Blue
+<a id="fact-sheet-量出来的蓝-measured-blue"></a>
+# 情况说明书：《量出来的蓝》Measured Blue
 
-Every number and factual claim in the film is in the tables below: claim, source (URL), source wording. Quotations are kept in the original English. Checked on 2026-10-16.
+影片中的每个数字和事实声明均位于下表中：声明、来源 (URL)、来源措辞。引文均以英文原文保存。于 2026 年 10 月 16 日检查。
 
-On-screen labels are Chinese; they are quoted as they appear, with an English gloss.
+屏幕标签为中文；它们按原样被引用，带有英文注释。
 
-The numbers fall into two kinds:
+数字分为两类：
 
-- **File and sources**: taken directly from the slide file's metadata or from public descriptions (table A).
-- **Measured by this film**: measured on this scan by the film itself (table B). On screen each comes with its measuring method (a pixel count under “胶原（蓝）占组织面积” (collagen (blue) share of tissue area), “核膜外缘拟合” (fit to the outer edge of the nuclear membrane) under the nucleus diameter); the methods are given here and can be reproduced with `tools/plates.py` and `tools/nucleus.py`.
+- **文件和来源**：直接取自幻灯片文件的元数据或公共描述（表A）。
+- **通过该胶片测量**：通过影片本身在本次扫描中测量（表 B）。屏幕上均附有其测量方法（“胶原（蓝）占组织面积”（胶原蛋白（蓝色）占组织面积的比例）下的像素数，核直径下的“核膜外缘缘”（适合核膜的外缘））；此处给出了这些方法，并且可以使用 `tools/plates.py` 和 `tools/nucleus.py` 进行重现。
 
-The film only describes measurement results; it makes no diagnosis and assigns no stage.
+影片仅描述测量结果；它不进行任何诊断，也不指定阶段。
 
-## A. File and sources
+<a id="a-file-and-sources"></a>
+## A. 文件和来源
 
-| # | Claim in the film (picture / narration) | Source | Wording |
+|#|影片中的索赔（图片/旁白）|来源|措辞|
 |---|---|---|---|
-| A1 | “一片人肝组织” (a slice of human liver tissue), “人肝组织 · 三色染色” (human liver tissue · trichrome stain); narration “One slice of human liver.” | OpenSlide test data index https://openslide.cs.cmu.edu/download/openslide-testdata/Ventana/index.yaml | `Ventana-1.bif: credit: PathAI · description: Human liver, trichrome stain, brightfield, joint direction LEFT, scanned on Ventana DP 200 · license: CC0-1.0` |
-| A2 | Source credit “全切片扫描 Ventana DP 200 · PathAI · CC0” (whole-slide scan) | Same as A1; file XMP | `ScannerModel="VENTANA DP 200"` |
-| A3 | Narration “The stain turns collagen blue.”; readout label “胶原（蓝）” (collagen (blue)) | Wikipedia “Trichrome staining” https://en.wikipedia.org/wiki/Trichrome_staining | “A trichrome stain can colour the muscle tissue red, and the collagen fibres green or blue. Liver biopsies may have fine collagen fibres between the liver cells, and the amount of collagen may be estimated based on the staining method.” |
-| A4 | Scale bar, field-of-view readout | File XMP (level 0), and the TIFF XResolution of level 0 | `Magnification="40" ScanRes="0.25"`; XResolution 40000 px/cm (i.e. 0.25 µm/px) |
-| A5 | Gauge “等效 1.25× / 2.5× / 5× / 10× / 20× / 40×” (equivalent magnification) | TIFF ImageDescription of each pyramid level | `level=0 mag=40`, `level=1 mag=20` … `level=5 mag=1.25` |
-| A6 | The opening photo of the whole slide and its scale | Page 0 of the file, `Label_Image`, XResolution = 4294967295/9091032 px/cm; the scan-area coordinates are in AOI0 in the XMP | `<AOI0 Left="297" Top="2323" Right="574" Bottom="2069"/>`. Computed at 21.167 µm/px, with Top counted from the bottom edge |
+|A1|“一片人肝组织”（人体肝脏组织的切片）、“人肝组织·三色染色”（人体肝脏组织·​​三色染色）；旁白“一片人类肝脏。”|OpenSlide测试数据索引 https://openslide.cs.cmu.edu/download/openslide-testdata/Ventana/index.yaml|`Ventana-1.bif: credit: PathAI · description: Human liver, trichrome stain, brightfield, joint direction LEFT, scanned on Ventana DP 200 · license: CC0-1.0`|
+|A2|来源来源“全切片扫描 Ventana DP 200 · PathAI · CC0”（全切片扫描）|与A1相同；文件 XMP|`ScannerModel="VENTANA DP 200"`|
+|A3|旁白“染色剂使胶原蛋白变成蓝色。”；读出标签“胶原（蓝）”（胶原蛋白（蓝色））|维基百科“三色染色”https://en.wikipedia.org/wiki/Trichrome_staining|“三色染色剂可以将肌肉组织染成红色，将胶原纤维染成绿色或蓝色。肝脏活检可能在肝细胞之间存在细小的胶原纤维，并且可以根据染色方法估计胶原蛋白的量。”|
+|A4|比例尺、视野读数|文件 XMP（级别 0）和级别 0 的 TIFF XResolution|`Magnification="40" ScanRes="0.25"`； X分辨率 40000 px/cm（即 0.25 µm/px）|
+|A5|规格“相当于1.25× / 2.5× / 5× / 10× / 20× / 40×”（等效倍率）|TIFF 图像每个金字塔级别的描述|`level=0 mag=40`、`level=1 mag=20` … `level=5 mag=1.25`|
+|A6|整个幻灯片的开场照片及其比例|文件第0页，`Label_Image`，XResolution = 4294967295/9091032 px/cm；扫描区域坐标位于 XMP 中的 AOI0 中|`<AOI0 Left="297" Top="2323" Right="574" Bottom="2069"/>`。在 21.167 µm/px 处计算，顶部从底部边缘开始计算|
 
-## B. Measured by this film
+<a id="b-measured-by-this-film"></a>
+## B.用影片测量
 
-| # | Number in the film | Method | Result |
+|#|影片中的编号|方法|结果|
 |---|---|---|---|
-| B0 | (registration check, not on screen) | The slide photo and the scan are registered via AOI0 and the pixel sizes of both; then a darkness mask on each gives the tissue centroid and area, cross-checked | Centroids differ by 19 µm (less than 1 pixel of the photo); area ratio 0.999 |
-| B1 | “4.80 mm”; narration “Four point eight millimeters across.” | On level 3 (2 µm/px), take a tissue mask (not glass and not low saturation), close it and fill holes, keep the largest connected component, run principal component analysis and take its projected extent along the main axis | 4.80 mm (width 2.80 mm) |
-| B2 | Circle A “胶原（蓝）占组织面积 13.5%” (collagen (blue) share of tissue area 13.5%), “97,058 / 716,763 px”; narration “blue covers thirteen point five percent” | Pixel-by-pixel classification on level 2 (1 µm/px): tissue = (luminance < 200) or (RGB range > 40); blue collagen = tissue and B > R + 12 and B ≥ G. Circle centre at level-0 coordinates (8393, 13083), diameter 1 mm (1000 px); share = blue pixels in the circle / tissue pixels in the circle | 97,058 / 716,763 = 13.5% |
-| B3 | Circle B “32.6%”, “232,688 / 713,354 px”; narration “thirty two point six” | Same as B2, centre (13425, 10578) | 232,688 / 713,354 = 32.6% |
-| B4 | “相隔 1.41 mm” (1.41 mm apart); narration “One point four millimeters away” | Distance between the two circle centres × 0.25 µm/px | 1.41 mm |
-| B5 | “B 的蓝色占比是 A 的 2.4 倍” (B's blue share is 2.4 times A's); narration “Two point four times the blue.” | B3 / B2 | 32.6 / 13.5 = 2.41 |
-| B6 | “肝细胞核 8.5 µm” (hepatocyte nucleus 8.5 µm); narration “eight point five microns across” | On level 0 (0.25 µm/px), cast 72 rays from the nucleus centre; on each ray take the darkest point within 2–5 µm (the nuclear membrane), then search outwards for the point where brightness has recovered halfway, as the outer edge; fit a least-squares circle to the edge points, remove outliers and iterate 6 times | Radius 17.04 px, residual 0.72 px, diameter 8.52 µm; centre at (13295.0, 9266.8) |
+|B0|（注册检查，不在屏幕上）|幻灯片照片和扫描件通过 AOI0 以及两者的像素大小进行注册；然后每个上的深色掩模给出组织质心和面积，并进行交叉检查|质心相差 19 µm（小于照片的 1 个像素）；面积比0.999|
+|B1|“4.80 毫米”；旁白“四点八毫米宽。”|在第 3 级 (2 µm/px) 上，取一个组织遮罩（不是玻璃且饱和度不低），将其关闭并填充孔，保留最大的连通分量，运行主分量分析并沿主轴获取其投影范围|4.80 毫米（宽 2.80 毫米）|
+|B2|圆圈A“胶原（蓝）占组织面积13.5%”（胶原蛋白（蓝色）占组织面积13.5%），“97,058 / 716,763 px”；旁白“蓝色覆盖百分之十三点五”|2 级逐像素分类 (1 µm/px)：组织 = (亮度 < 200) or (RGB range > 40)；蓝色胶原蛋白 = 组织且 B > R + 12 且 B ≥ G。圆心位于 0 级坐标 (8393, 13083)，直径 1 mm (1000 px)；份额 = 圆圈中的蓝色像素 / 圆圈中的组织像素|97,058 / 716,763 = 13.5%|
+|B3|B 圈“32.6%”，“232,688 / 713,354 像素”；旁白《三十二点六》|与 B2 相同，中心 (13425, 10578)|232,688 / 713,354 = 32.6%|
+|B4|“相隔1.41 mm”（相隔1.41毫米）；旁白“一点四毫米远”|两圆心间距离×0.25 µm/px|1.41毫米|
+|B5|“B的蓝色份额是A的2.4倍”（B的蓝色份额是A的2.4倍）；旁白“两点四倍蓝色。”|B3/B2|32.6 / 13.5 = 2.41|
+|B6|“细胞肝核8.5 µm”（肝细胞核8.5 µm）；旁白“八点五微米宽”|在 0 级（0.25 µm/px），从原子核中心投射 72 条射线；每条射线取2~5μm（核膜）内的最暗点，然后向外寻找亮度恢复一半的点，作为外缘；将最小二乘圆拟合到边缘点，删除异常值并迭代 6 次|半径 17.04 px，残差 0.72 px，直径 8.52 µm；中心位于 (13295.0, 9266.8)|
 
-The thresholds are empirical values for this trichrome-stained slide; the result of the blue mask was checked region by region with overlays (the counted pixels are visible on the measurement frames in `stills/`). The readouts mean “inside this circle, at these thresholds”; they are not a fibrosis grade in the clinical sense.
+阈值是该三色染色玻片的经验值；蓝色掩模的结果通过覆盖区域逐个区域进行检查（计数的像素在 `stills/` 的测量帧上可见）。读数的意思是“在这个圆圈内，在这些阈值处”；它们不是临床意义上的纤维化级别。
 
-`tools/export.mjs` checks every number in the narration and subtitles in `timeline.js`; they must match the measured values in `assets/plates/plates.json` and `nucleus.json`, or the build fails.
+`tools/export.mjs` 检查`timeline.js` 中旁白和字幕中的每个数字；它们必须与 `assets/plates/plates.json` 和 `nucleus.json` 中的测量值匹配，否则构建会失败。

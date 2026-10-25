@@ -1,113 +1,120 @@
-# Broadcast News Package — our demo
+<a id="broadcast-news-package--our-demo"></a>
+# 广播新闻包 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Week in AI* (本周 AI 四件事, 53.5 s) · `news-package.mp4` · subtitles `news-package.srt` (external only, Chinese + English) · source in [`demo/`](demo/)
+示范: *The Week in AI* (本周AI四件事，53.5秒) · `news-package.mp4` · 字幕`news-package.srt` (仅外部，中文+英文) · 来源在[`demo/`](demo/)
 
-LEMO AI NEWS, LemoLab's own channel, reports four stories from the week of 12–18 October 2026, with a Chinese anchor voice:
+LemoLab 自己的频道 LEMO AI NEWS 用中文主播的声音报道了 2026 年 10 月 12 日至 18 日这一周的四个故事：
 
-1. Google opens Gemini 4 Argon to every developer, at an introductory price that doubles on 1 December.
-2. Korea's Kospi falls 7.57 % in a day, the seventh losing session in a row, and ends more than 20 % below its September high.
-3. The EU's AI Office sends questions to OpenAI and Anthropic (as reported by Euronews). In Dublin, the Commission's Executive Vice-President says the office "has started enforcing these rules".
-4. Meta releases the weights of Muse Spark Open: 816B parameters, 42B active per token, running on two Mac Studios.
+1. Google 以 12 月 1 日起双倍的推介价格向所有开发者开放 Gemini 4 Argon。
+2. 韩国综合股价指数全天下跌 7.57%，连续第七个交易日下跌，收盘较 9 月份高点下跌逾 20%。
+3. 欧盟人工智能办公室向 OpenAI 和 Anthropic 发送问题（据 Euronews 报道）。在都柏林，该委员会的执行副主席表示，该办公室“已开始执行这些规则”。
+4. Meta 发布了 Muse Spark Open 的权重：816B 参数，每个代币 42B 活跃，在两个 Mac Studio 上运行。
 
-Every number and sentence is checked against the sources in [`demo/FACTS.md`](demo/FACTS.md). The Kospi line is drawn from real daily closes.
+每个数字和句子均根据 [`demo/FACTS.md`](demo/FACTS.md) 中的来源进行检查。 Kospi 线是根据实际每日收盘价绘制的。
 
-This is an unofficial film made from public information: company pages, exchange data, news reports and a European Commission speech. None of Google, Meta, OpenAI, Anthropic, Samsung, SK hynix, Apple, Euronews or the European Commission made or endorsed it. Their names are set in type, never as logos. Two background plates (a server aisle, a silicon wafer) are AI-generated illustrations and carry an "ILLUSTRATION / 示意" tag whenever they are on screen.
+这是根据公共信息制作的非官方影片：公司页面、交换数据、新闻报道和欧盟委员会演讲。谷歌、Meta、OpenAI、Anthropic、三星、SK 海力士、苹果、Euronews 或欧盟委员会都没有制作或认可它。他们的名字是用字体设置的，而不是作为徽标。两个背景板（服务器过道、硅晶圆）是人工智能生成的插图，只要它们出现在屏幕上，就会带有“插图/示意”标签。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Shape: a bulletin round-up.
+形状：公告摘要。
 
-1. The sting (0–1.5 s) becomes the channel bug.
-2. The rundown lists four stories (1.5–6.0).
-3. Story ① runs 6.0–13.0, ② 13.0–24.0, ③ 24.0–35.5 and ④ 35.5–45.0. Each is entered with the band wipe and announced by the strap's category tab. The package layer (strap words, tab, source line, corner tag) belongs to each picture: the band brushes the old strap words off and the new ones in, and the new picture's first frame already has its graphic entering.
-4. The rundown returns and is ticked off (45.0–47.5).
+1. 刺痛（0-1.5 秒）成为通道虫。
+2. 概要列出了四个故事（1.5-6.0）。
+3. 故事① 6.0–13.0、② 13.0–24.0、③ 24.0–35.5 和 ④ 35.5–45.0。每个都通过表带擦除输入，并通过表带的类别选项卡公布。包层（带字、选项卡、源行、角标记）属于每张图片：带子刷掉旧带字并放入新带字，新图片的第一帧已经有图形输入。
+4. 返回列表并勾选（45.0–47.5）。
 5. End card (47.5–53.5).
 
-The strap stays at the bottom from the first story to the recap. There is no crawl and no burned-in subtitles.
+从第一个故事到回顾，带子一直位于底部。没有爬行，也没有内置字幕。
 
-Each story reduces its fact to one or two graphics:
+每个故事都将其事实简化为一两个图形：
 
-- **①** The name (big type over the server plate), then the price change (split-flap board).
-- **②** The line breaking the −20 % threshold from the September high, on real closes, with a readout. Then who it hit: two chip stocks.
-- **③** Who sent what: a map where two requests fly out of Brussels. The film does not show their contents, so the letters carry only grey text lines. Then what the official said: a quote card from the Commission's own speech, and the stamp.
-- **④** A spec card. The whole and the part on one scale (816B vs 42B), then what it runs on (two Mac Studios, 512 GB each, ≈ 1 TB).
+- **①** 名称（服务器板上方的大类型），然后是价格变化（分瓣板）。
+- **②** 实际收盘价线突破 9 月高点 -20% 阈值，并有读数。然后它打击了谁：两只芯片股。
+- **③** 谁发送了什么：一张地图，其中有两个请求从布鲁塞尔飞出。 影片不显示其内容，因此字母仅带有灰色文本行。然后是官员所说的：委员会自己演讲的引述卡，以及邮票。
+- **④** 规格卡。整体和部分在一个规模上（816B 与 42B），然后是它的运行环境（两个 Mac Studio，每个 512 GB，约 1 TB）。
 
-Formats spent, each for a new fact:
+使用的格式，每个格式都代表一个新事实：
 
-- sting that becomes the bug;
-- rundown opened and ticked off;
-- one lower-third strap with category tabs, including a profile strap;
-- a source line per story;
-- illustration corner tags;
-- big-type title with a GA stamp and a typed model ID;
-- split-flap price board;
-- threshold line chart of real closes, with streak counter, readout panel and a stamp;
-- falling bars with a reference line and badge;
-- explainer map long take (members lighting from the city, push, pan) with documents flying out of the city;
-- quote card with an underline and a stamp;
-- spec card with proportion bars, a percentage badge, a context chip and a hardware group bracketed to its total;
-- band wipe, hard cuts on timpani, slanted wipe;
+- 蜇伤后变成虫子；
+- 纲要打开并勾选；
+- 一根带有类别标签的下三分之一带，包括一条轮廓带；
+- 每个故事一个源代​​码行；
+- 插图角标签；
+- 大字标题，带有 GA 印章和打印的型号 ID；
+- 分瓣价格板；
+- 实际收盘阈值折线图，带有条纹计数器、读数面板和印章；
+- 带有参考线和徽章的下降条；
+- 讲解员地图长镜头（成员从城市照明、推、平移），文件飞出城市；
+- 带有下划线和印章的报价卡；
+- 规格卡，其中包含比例条、百分比徽章、上下文芯片和硬件组（包含在总数中）；
+- 乐队擦拭、定音鼓上的硬切、倾斜擦拭；
 - end card.
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-Times in seconds; cuts and wipes on the 120 BPM grid (beat 0 = 1.5 s).
+时间以秒为单位；在 120 BPM 网格上剪切和擦除（节拍 0 = 1.5 秒）。
 
-| # | Time | Shot | Format / move | Note |
+|#|时间|镜头|格式化/移动|笔记|
 |---|---|---|---|---|
-| 1 | 0.0–1.5 | sting | slashes 0.04 / 0.10, plate slam 0.16–0.42 with ring and shake, wordmark 0.5, glint 0.85, plate flies to the bug 1.12–1.45 | band wipe 1.2–1.5 |
-| 2 | 1.5–6.0 | rundown | date block already entering under the band (1.3–2.3); four rows flip in 2.3 / 2.7 / 3.1 / 3.5; row 01 outlined 4.4 | v1 1.6 |
-| 3 | 6.0–9.0 | big type over the server plate (ILLUSTRATION) | Gemini slides in under the band 5.8 / 4 6.1 / Argon 6.6, 正式开放 GA stamp 7.1, model ID typed 7.6 | strap, tag and source line arrive with the band; v2 6.1 |
-| 4 | 9.0–13.0 | split-flap price card | intro $2 / $10 (to 30 Nov) 9.2–9.4; then $4 / $20 (from 1 Dec) 9.9–10.1; ×2 10.3 | held 2.5 s complete |
-| 5 | 13.0–20.0 | line chart, % from the 23 Sep high (real closes 15 Sep – 15 Oct) | axes and the first days drawn under the band from 12.6, 12 days by 13.5, then the streak one day per step 14.15–15.65 with a counter; silence 16.0–16.5; the break 16.5 (shake, ring); readout 16.55; 熊市 BEAR MARKET stamp 17.35 | v3 13.1 |
-| 6 | 20.0–24.0 | two bars over the wafer plate (ILLUSTRATION) | Samsung −9.48 % 20.3, SK hynix −11.06 % 20.8, −9 % line 21.3, 都超过 9% badge 21.5 | v4 20.1; hard cut: strap and source change on the same frame |
-| 7 | 24.0–30.5 | Europe map, one take | EU members light from Brussels 23.75 (under the band); Belgium flashes and the Brussels ring 24.05; push 24.55–25.45; EU AI Office label 24.95; pan 25.35–26.05; requests fly to OpenAI 25.45 and Anthropic 26.2 | v5 24.1; letters held 4 s |
-| 8 | 30.5–35.5 | quote card (Commission speech) | quote mark 30.45, two lines 30.65 / 30.83, slow push, underline on "enforcing" 33.3, 已开始执法 ENFORCING stamp 33.9 | hard cut, profile strap on the same frame; v6 30.6; silence 2 from 33.9 |
-| 9 | 35.5–45.0 | spec card | title pushed up under the band 35.25, 开放权重 OPEN WEIGHTS stamp 36.0; bars 816B 36.9 and 42B 38.2, 约 5% badge 38.65; 1M token chip 39.0; two Mac Studios slide in 40.0 / 40.25 and fill their memory cells; bracket 41.2, ≈ 1 TB 41.4 | v7 35.6; bars held 6 s, Macs 3.5 s |
-| 10 | 45.0–47.5 | rundown, recap | ticks 45.8 / 46.2 / 46.6 / 47.0 | v8 45.1; the strap leaves under the band |
-| 11 | 47.25–53.5 | slanted wipe → end card | the end card is already animating under the wipe; fade 52.7–53.4 | |
+|1|0.0–1.5|蜇|斜线 0.04 / 0.10，板猛击 0.16–0.42（带铃声和摇动），字标 0.5，闪烁 0.85，板飞向虫子 1.12–1.45|带擦拭 1.2–1.5|
+|2|1.5–6.0|撞倒|日期块已进入范围 (1.3–2.3) 下；四排翻转2.3 / 2.7 / 3.1 / 3.5； 4.4 第 01 行概述|v1 1.6|
+|3|6.0–9.0|服务器板上的大字（插图）|Gemini 滑入乐队 5.8 / 4 6.1 / Argon 6.6，正式开放 GA 邮票 7.1，型号 ID 输入 7.6|表带、标签和源线随表带一起到达； v2 6.1|
+|4|9.0–13.0|分瓣价格卡|介绍 $2 / $10（截至 11 月 30 日）9.2–9.4；然后 4 美元/20 美元（12 月 1 日起）9.9–10.1； ×2 10.3|保持 2.5 秒完成|
+|5|13.0–20.0|折线图，与 9 月 23 日高点相比的百分比（9 月 15 日至 10 月 15 日实际收盘价）|轴和从 12.6、12 天到 13.5 的区间下绘制的第一天，然后用计数器每步 14.15–15.65 绘制一天的条纹；沉默 16.0–16.5；打破16.5（摇动、响铃）；读数16.55； 熊市 BEAR MARKET 邮票 17.35|v3 13.1|
+|6|20.0–24.0|威化盘上方有两根棒（插图）|三星-9.48％20.3，SK海力士-11.06％20.8，-9％线21.3，都超过9％徽章21.5|v4 20.1；硬剪：在同一帧上更换表带和源|
+|7|24.0–30.5|欧洲地图，一张|欧盟成员国灯光来自布鲁塞尔23.75（下带）；比利时闪光，布鲁塞尔环24.05；推24.55–25.45；欧盟人工智能办公室标签24.95；平盘 25.35–26.05；请求飞往 OpenAI 25.45 和 Anthropic 26.2|v5 24.1；字母持有 4 s|
+|8|30.5–35.5|报价卡（委员会演讲）|引号 30.45，两行 30.65 / 30.83，慢推，“强制执行”下划线 33.3，已开始强制执行 ENFORCING 印章 33.9|硬剪裁，同框型材表带； v6 30.6；沉默 2 从 33.9|
+|9|35.5–45.0|规格卡|标题上升至35.25，开放权重OPEN WEIGHTS邮票36.0；条形 816B 36.9 和 42B 38.2，约 5% 徽章 38.65； 1M令牌芯片39.0；两台 Mac Studio 滑入 40.0 / 40.25 并填充其内存单元；支架 41.2，约 1 TB 41.4|v7 35.6；酒吧保持 6 秒，Macs 3.5 秒|
+|10|45.0–47.5|纲要，回顾|刻度 45.8 / 46.2 / 46.6 / 47.0|v8 45.1；表带留在表带下方|
+|11|47.25–53.5|倾斜擦拭 → 片尾卡|片尾卡已经在擦除下产生动画；淡出 52.7–53.4| |
 
-`readcheck.mjs` passes on every key text: strap headlines, price board, chart readout, bars, map labels, letters, quote, spec card and end card. The exception is the opening rundown rows. They are previews: they return in the recap, and each story's strap repeats them.
+`readcheck.mjs` 传递每个关键文本：表带标题、价格板、图表读数、条形图、地图标签、字母、报价、规格卡和片尾卡。例外是开头的列表行。它们是预览：它们在回顾中回归，每个故事的带子都会重复它们。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- 120 BPM, E minor news theme: spiccato violins (root–fifth–octave eighths), pizzicato bass on the beat, horn pads, a low-passed 16th-note saw pulse, kick on 1 and 3, snare on 2 and 4.
-- **Sting:** tremolo violins, then a brass/timpani/crash tutti on the plate slam, then a glockenspiel run on the glint. Each rundown row lands on a glockenspiel note; timpani on every story change and hard cut.
-- **Story ①:** full theme with a server-room hum under the plate.
-- **Story ②:** violins an octave down, tremolo pads, four-on-the-floor kick and trading-room ticks. The music stops for one beat at 16.0. The break at 16.5 is the heaviest hit of the film (low brass, timpani E2, crash, bass drum), followed by a timpani roll and a tubular bell on the stamp.
-- **Story ③:** pizzicato and horns only, soft air under the map, typewriter ticks as the letters fill. After the ENFORCING stamp (33.9) only cellos, contrabass and a horn hold a low E.
-- **Story ④:** lifts to G major with a brass stab and a glockenspiel figure.
-- **Recap and end card:** a glockenspiel note per tick, then a timpani roll into an E-major tutti on the end card.
-- **Voice:** Doubao TTS 2.0, voice 解说小明 2.0 (`zh_male_jieshuoxiaoming_uranus_bigtts`), eight lines, `speech_rate` 0–15.
-  - It is the closest of the three male 2.0 voices tried (云舟 `m191`, 大壹 `dayi`, 解说小明) to a brisk broadcast read. It reads briskly, in a steady mid-low register.
-  - Spoken text in `vo/lines.json` writes numbers as Chinese words (`say`); the strap and subtitles keep the digits.
-  - Speech-to-text hears 海力士 as 海利市 and 都柏林 as 督伯林 (same sounds); those lines carry the expected transcript in their `asr` field.
-  - Music is ducked ≈ 7 dB and thinned in 1.2–5 kHz under speech.
-- **Master:** −14.0 LUFS, peak −1.1 dBFS. Speech-to-text of the final mix matches the script.
+- 120 BPM，E小调新闻主题：拨奏小提琴（根音-五度-八度八度），节拍上的拨弦低音，喇叭垫，低通十六分音符锯齿脉冲，1和3上的底鼓，2和4上的军鼓。
+- **蜇：** 颤音小提琴，然后是 brass/timpani/crash 合奏，然后是闪光上的钟琴。每行都以钟琴音符为背景；每个故事的变化和硬剪辑上都有定音鼓。
+- **故事①：**完整主题，盘下有服务器机房的嗡嗡声。
+- **故事②：**小提琴降低八度，颤音垫，四地板踢和交易室滴答声。音乐在 16 点停止一拍。 16.5 处的中断是影片中最重的打击（低音铜管乐器、定音鼓 E2、碰撞音、低音鼓），随后是定音鼓卷轴和邮票上的管状铃。
+- **故事③：** 只有拨奏和喇叭，地图下柔和的空气，打字机随着字母的填充而滴答作响。在 ENFORCING 标记 (33.9) 之后，只有大提琴、低音提琴和圆号具有低音 E。
+- **故事④：**用铜管刺和钟琴琴弦升到G大调。
+- **Recap 和片尾卡:** 每个刻度一个钟琴音符，然后在片尾卡上将定音鼓卷成 E 大调合奏。
+- **语音：**豆宝TTS 2.0，语音解说小明2.0（`zh_male_jieshuoxiaoming_uranus_bigtts`），八行，`speech_rate` 0–15。
+  - 这是尝试过的三个男性2.0声音（云舟`m191`、大壹`dayi`、解说小明）中最接近轻快广播朗读的。它以稳定的中低音域读起来轻快。
+  - `vo/lines.json`中的口语文本将数字写成中文单词（`say`）；表带和字幕保留数字。
+  - 语音转文本将海力士听成海利市，将都柏林听成督伯林（发音相同）；这些行在其 `asr` 字段中携带预期的转录本。
+  - 在语音下，音乐被降低了约 7 dB，并在 1.2-5 kHz 范围内变薄。
+- **掌握：** −14.0 LUFS，峰值−1.1 dBFS。 最终混音的语音转文本与脚本匹配。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Colours:** ink `#121417`, cards `#1B1E23` / `#22262C`, lemon `#F2CF1D` (light `#F8DE4A`, dark `#D8B30C`), gold `#D4B064`, paper `#F4F1E8`. Breaking orange `#FE6B3D` is reserved and unused. The colours are LemoLab's own brand.
-- **Type:** Noto Sans SC 900/700, Barlow Condensed 800/600/600 italic, IBM Plex Mono 500 (OFL subsets in `demo/fonts/`).
-- **Props:** the LEMO plate (sting, bug, end card), the rundown, the strap, request letters, stamps, the spec card.
+- **颜色：**墨水`#121417`，卡片`#1B1E23` / `#22262C`，柠檬色`#F2CF1D`（浅色`#F8DE4A`，深色`#D8B30C`），金色`#D4B064`，纸`#F4F1E8`。破橙`#FE6B3D` 已保留，未使用。颜色是LemoLab自己的品牌。
+- **类型：** Noto Sans SC 900/700、Barlow Condensed 800/600/600 斜体、IBM Plex Mono 500（`demo/fonts/` 中的 OFL 子集）。
+- **道具：** LEMO 板（刺、虫子、片尾卡）、清单、表带、请求信、邮票、规格卡。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-From 47.5 s, held six seconds:
+从 47.5 秒开始，保持六秒：
 
-1. Dateline "LEMO AI NEWS · WEEK 42 · 12–18 OCT 2026".
-2. "本周 AI 四件事" (120 px), then "The Week in AI" (lemon italic).
-3. A thin rule.
-4. "LEMO AI NEWS · 电视新闻包装 BROADCAST NEWS PACKAGE".
-5. "LemoLab × Claude Opus 5.5".
-6. The large plate and wordmark on the right.
-7. Six lines: news sources; data and speech sources; CC0 samples and public-domain map data; OFL fonts; the Doubao voice; the two AI-generated plates.
+1. 日期线“​​LEMO AI 新闻·第 42 周·2026 年 10 月 12-18 日”。
+2. “本周人工智能四件事”（120 px），然后是“人工智能一周”（柠檬斜体）。
+3. 一条细细的规则。
+4. “LEMO AI NEWS·电视新闻包装BROADCAST NEWS PACKAGE”。
+5. “LemoLab × 克劳德 Opus 5.5”。
+6. 右侧的大盘子和文字标记。
+7. 六行：新闻来源；数据和语音来源； CC0 样本和公共领域地图数据； OFL 字体；豆包声音；两个人工智能生成的盘子。
 
-There is no CC BY material in this film. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card. No mascot, no watermark.
+此影片中没有 CC BY 材料。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。没有吉祥物，没有水印。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -125,43 +132,44 @@ demo/
   FACTS.md, SOURCES.md, CREDITS
 ```
 
-Where the moves live in `main.js`:
+`main.js` 中的动作所在：
 
-| Move | Code |
+|移动|代码|
 |---|---|
-| sting | `shotSting()`, `stingLogo()`, `plate()` |
-| rundown | `rundown(t, close)`; the recap calls it shifted, as `RECAP` |
-| strap | `strap(t)` over the `STRAP` table |
-| split-flap | `flipTile()`, `shotPrice()` |
-| threshold chart | `shotKospi()` over `KDATA` (`PK` = peak index, `ST` = last day before the streak) |
-| bars | `shotChips()` |
-| map long take | `shotEU()`, `euView()`, `doc()` with the `EUT` timing table |
-| quote card | `shotQuote()` with the `QUOTE` object |
-| spec card | `shotStory4()` with the `S4` timing table |
-| end card | `shotEnd()`, shifted as `END` |
+|蜇|`shotSting()`、`stingLogo()`、`plate()`|
+|撞倒|`rundown(t, close)`；回顾称其已转移，如 `RECAP`|
+|带子|`strap(t)` 在 `STRAP` 表上|
+|裂瓣|`flipTile()`、`shotPrice()`|
+|阈值图|`shotKospi()` 超过 `KDATA`（`PK` = 峰值指数，`ST` = 连续上涨前的最后一天）|
+|酒吧|`shotChips()`|
+|地图长镜头|`shotEU()`、`euView()`、`doc()` 与 `EUT` 时序表|
+|报价卡|`shotQuote()` 与 `QUOTE` 对象|
+|规格卡|`shotStory4()` 与 `S4` 时序表|
+|片尾卡|`shotEnd()`，转换为 `END`|
 
-`sh demo/build.sh` needs the library set up with `setup.sh deps voice music` and the vsco2ce / vcsl sample packs.
+`sh demo/build.sh` 需要使用 `setup.sh deps voice music` 和 vsco2ce / vcsl 示例包设置的库。
 
-1. Fonts.
-2. Plates and map.
-3. Voice: Doubao if `DOUBAO_API_KEY` is set. Otherwise it uses existing `vo/*.wav`, or stops and points to Kokoro.
-4. Speech check.
-5. Reading check.
-6. Events.
-7. Render (1,605 frames, 30 fps).
-8. Mix.
-9. Master (−14 LUFS, no grain).
+1. 字体。
+2. 盘子和地图。
+3. 语音：如果设置了`DOUBAO_API_KEY`则豆包。否则，它使用现有的 `vo/*.wav`，或停止并指向 Kokoro。
+4. 言语检查。
+5. 读书检查。
+6. 活动。
+7. 渲染（1,605 帧，30 fps）。
+8. 混合。
+9. 大师（−14 LUFS，无颗粒）。
 10. `.srt`.
-11. Poster and styleframe (18.4 s, the broken threshold with its readout).
+11. 海报和风格定帧（18.4 秒，损坏的阈值及其读数）。
 
-The voice is optional equipment: with no Doubao key, write the same lines for Kokoro (`core/tts/tts.py`, a `zf_*`/`zm_*` voice with `"lang": "cmn"`) and retime `VO_AT` and `CUES` from the new `words.json`.
+语音是可选设备：没有豆包键，为Kokoro编写相同的行（`core/tts/tts.py`，`zf_*`/`zm_*`语音与`"lang": "cmn"`）并从新的重新定时`VO_AT`和`CUES` `words.json`。
 
-### Demo-specific choices and pitfalls
+<a id="demo-specific-choices-and-pitfalls"></a>
+### 示范特定的选择和陷阱
 
-- **Rebuilt from the first short cut.** This version was rebuilt from the user's first short Chinese cut. An intermediate cut added a virtual studio, numbered slat bumpers and a locator map; the user preferred the plain bulletin, and they were removed.
-- **Plates are committed.** The plates were generated once and are committed as JPEGs, so a clone builds the same film.
-- **Story ③ was cut back twice:**
-  - The Commission's own speeches contradicted "for the first time" and "no fines".
-  - The incident details behind the requests come from a single report about real companies, so they stay out of picture and voice.
-- **"Bear market" depends on the peak.** From June's record close the Kospi had been more than 20 % down since July. The film uses the September high, as the report does, and says so on the axis.
-- **Story ④ says "open weights", not "open source".** The licence has limited commercial terms. "Most capable" is Meta's own claim and is not reported.
+- **从第一个快捷方式重建。** 该版本是从用户的第一个中文快捷方式重建。中间剪辑添加了虚拟工作室、编号板条保险杠和定位图；用户更喜欢简单的公告，因此它们被删除了。
+- **板已提交。** 板已生成一次并以 JPEG 形式提交，因此克隆会构建相同的影片。
+- **故事③被删减两次：**
+  - 该委员会自己的讲话与“首次”和“不罚款”相矛盾。
+  - 这些请求背后的事件细节来自一份有关真实公司的报告，因此它们不会出现在图片和声音中。
+- **“熊市”取决于峰值。** 从6月份创纪录的收盘价来看，Kospi指数自7月份以来已经下跌了20%以上。正如报告所言，影片使用 9 月高点，并在轴上如此表示。
+- **Story ④ 说的是“开放权重”，而不是“开源”。** 该许可证具有有限的商业条款。 “最有能力”是Meta自己的说法，并未被报道。

@@ -1,45 +1,49 @@
-# Fact sheet: 《两条螺旋》Two Spirals
+<a id="fact-sheet-两条螺旋two-spirals"></a>
+# 情况说明书：《扭转螺旋》Two Spirals
 
-Every number and factual claim in the film is in the tables below: claim → source (URL) → source wording. The data are IRENA's "Renewable Energy Statistics" (2026 edition), as processed and published by Our World in Data (CC BY 4.0). The original CSVs and metadata were downloaded on 2026-10-16 and are stored unchanged in `data/`:
+影片中的每个数字和事实声明如下表所示：声明 → 来源 (URL) → 来源措辞。这些数据是 IRENA 的“可再生能源统计数据”（2026 年版），由 Our World in Data (CC BY 4.0) 处理和发布。原始 CSV 和元数据于 2026 年 10 月 16 日下载，并原样存储在 `data/` 中：
 
 - `data/world_solar_capacity_irena2026.csv`, `data/owid_solar_capacity.metadata.json` — https://ourworldindata.org/grapher/installed-solar-pv-capacity
 - `data/world_wind_capacity_irena2026.csv`, `data/owid_wind_capacity.metadata.json` — https://ourworldindata.org/grapher/cumulative-installed-wind-energy-capacity-gigawatts
 
-Definitions of the two datasets (metadata wording):
+两个数据集的定义（元数据措辞）：
 
-- Solar: "Total solar (on- and off-grid) electricity installed capacity, measured in gigawatts. This includes solar photovoltaic and concentrated solar power." Chart subtitle: "Cumulative installed solar capacity, measured in gigawatts (GW)."
-- Wind: "Total wind (on- and off-grid) electricity installed capacity, measured in gigawatts. This includes onshore and offshore wind." Chart subtitle: "Cumulative installed wind energy capacity including both onshore and offshore wind sources, measured in gigawatts (GW)."
-- Citation format (metadata wording): "IRENA (2026) – processed by Our World in Data. “Total solar capacity” [dataset]. IRENA, “Renewable Energy Statistics” [original data]." (wind the same, "Total wind capacity")
+- 太阳能：“太阳能（并网和离网）电力装机总量，以吉瓦为单位。这包括太阳能光伏发电和聚光太阳能发电。”图表副标题：“累计太阳能装机容量，以吉瓦 (GW) 为单位。”
+- 风能：“风能（并网和离网）总装机容量，以吉瓦为单位。这包括陆上和海上风能。”图表副标题：“累计风能装机容量，包括陆上和海上风源，以吉瓦 (GW) 为单位。”
+- 引文格式（元数据措辞）：“IRENA (2026) – 由我们的数据世界处理。“太阳能总容量”[数据集]。IRENA，“可再生能源统计”[原始数据]。” （风力相同，“总风量”）
 
-So in the film "solar" = photovoltaic + concentrated solar power and "wind" = onshore + offshore, both cumulative installed capacity at year end (GW), world total (OWID entity "World").
+因此，在影片中，“太阳能”= 光伏 + 聚光太阳能发电，“风能”= 陆上 + 海上，均为年末累计装机容量 (GW)，世界总量（OWID 实体“世界”）。
 
-On-screen text and subtitles are Chinese; they are quoted as they appear, with an English gloss.
+屏幕文字和字幕为中文；它们按原样被引用，带有英文注释。
 
-## A. Numbers in the picture and narration
+<a id="a-numbers-in-the-picture-and-narration"></a>
+## A.图中的数字和旁白
 
-| # | Claim in the film (picture / narration) | Source | Wording (CSV row) |
+|#|影片中的索赔（图片/旁白）|来源|措辞（CSV 行）|
 |---|---|---|---|
-| A1 | Readout "2014 风电 349.5 GW" (2014 wind 349.5 GW) | Wind CSV | `World,OWID_WRL,2014,349.49323` |
-| A2 | Readout "2014 太阳能 178.8 GW" (2014 solar 178.8 GW) | Solar CSV | `World,OWID_WRL,2014,178.84773` |
-| A3 | Verdict "风电 = 太阳能 × 1.95" (wind = solar × 1.95); narration "In 2014, the world had almost twice as much wind power as solar." / subtitle "将近太阳能的两倍" (nearly twice solar) | A1 ÷ A2 | 349.49323 ÷ 178.84773 = 1.954 → 1.95, "nearly twice" |
-| A4 | Readouts "2020 风电 733.3 GW" (2020 wind), "2020 太阳能 721.2 GW" (2020 solar) | Both CSVs | `World,OWID_WRL,2020,733.2712`; `World,OWID_WRL,2020,721.2222` |
-| A5 | Readouts "2021 风电 824.2 GW" (2021 wind), "2021 太阳能 865.9 GW" (2021 solar) | Both CSVs | `World,OWID_WRL,2021,824.1905`; `World,OWID_WRL,2021,865.921` |
-| A6 | Verdict "2021 · 太阳能超过风电" (2021 · solar passes wind); narration "In 2021, solar passed wind." | A4, A5: at the end of 2020 solar was still 12.0 GW behind, at the end of 2021 it was 41.7 GW ahead. Wind was ahead in every year 2014–2020 (see CSVs) | Measured as cumulative installed capacity; the first year it passed is 2021 |
-| A7 | 2025 counter rolls from "1,883.2" to "2,396.7 GW", "2025 · 太阳能累计装机" (2025 · cumulative solar capacity) | Solar CSV | `World,OWID_WRL,2024,1883.1776`; `World,OWID_WRL,2025,2396.7092` |
-| A8 | "当年新增 +513.5 GW" (added that year +513.5 GW); narration "In 2025 alone, solar added more than five hundred gigawatts." / subtitle "新增了 500 多 GW" (added more than 500 GW) | Difference in A7 | 2396.7092 − 1883.1776 = 513.53 GW (difference between two cumulative values, including PV and CSP; not IRENA's separately published "additions" table, and IRENA revises earlier cumulative values every year) |
-| A9 | Disc engraving "×1.86 · 太阳能 ÷ 风电 · 2025" (×1.86 · solar ÷ wind · 2025); "2025 · 太阳能装机是风电的 1.86 倍" (2025 · solar capacity is 1.86 times wind); narration "Now it is the other way round." | Both CSVs | 2396.7092 ÷ 1291.015 = 1.856 → 1.86; wind 2025: `World,OWID_WRL,2025,1291.015` |
-| A10 | Narration "Wind kept growing. Solar grew faster." | Both CSVs | 2014→2025 wind 349.5 → 1,291.0 (×3.7), solar 178.8 → 2,396.7 (×13.4); wind grew every year |
-| A11 | Narration "Step back, and twelve years become one dial." | 2014–2025 is 12 years | Rhetorical line |
+|A1|读数“2014 风电 349.5 GW”（2014 年风电 349.5 GW）|风 CSV|`World,OWID_WRL,2014,349.49323`|
+|A2|读数“2014 太阳能 178.8 GW”（2014 年太阳能 178.8 GW）|太阳能CSV|`World,OWID_WRL,2014,178.84773`|
+|A3|结论“风电=太阳能×1.95”（风=太阳能×1.95）；旁白 “2014 年，全球风能发电量几乎是太阳能发电量的两倍。” /副标题“几乎太阳的两倍”（几乎太阳的两倍）|A1 ÷ A2|349.49323 ÷ 178.84773 = 1.954 → 1.95，“几乎两倍”|
+|A4|读数“2020 风电 733.3 GW”（2020 年风电）、“2020 太阳能 721.2 GW”（2020 年太阳能）|两个 CSV|`World,OWID_WRL,2020,733.2712`； `World,OWID_WRL,2020,721.2222`|
+|A5|读数“2021 风电 824.2 GW”（2021 年风）、“2021 太阳能 865.9 GW”（2021 年太阳能）|两个 CSV|`World,OWID_WRL,2021,824.1905`； `World,OWID_WRL,2021,865.921`|
+|A6|判决“2021·太阳能超过风电”（2021·太阳能超过风电）；旁白“2021年，太阳能超过了风能。”|A4、A5：2020年底太阳能装机容量仍落后12.0吉瓦，2021年底则领先41.7吉瓦。 2014-2020 年，风能每年都处于领先地位（参见 CSV）|以累计装机容量计量；它过去的第一年是 2021 年|
+|A7|2025年计数器从“1,883.2”滚动到“2,396.7 GW”，“2025·太阳能累计装机”（2025·累计太阳能装机容量）|太阳能CSV|`World,OWID_WRL,2024,1883.1776`； `World,OWID_WRL,2025,2396.7092`|
+|A8|“当年新增+513.5吉瓦”（当年新增+513.5吉瓦）；旁白 “仅 2025 年，太阳能发电量就增加了超过 500 吉瓦。” / 副标题“新增了 500 多吉瓦”（新增超过 500 吉瓦）|A7的区别|2396.7092 − 1883.1776 = 513.53 GW（两个累计值之间的差值，包括PV和CSP；不是IRENA单独发布的“增量”表，IRENA每年都会修改较早的累计值）|
+|A9|圆盘雕刻“×1.86·太阳能÷风电·2025”（×1.86·太阳能÷风电·2025）； “2025·太阳能装机是风电的1.86倍”（2025·太阳能发电量是风电的1.86倍）；旁白“现在情况正好相反。”|两个 CSV|2396.7092 ÷ 1291.015 = 1.856 → 1.86；风2025：`World,OWID_WRL,2025,1291.015`|
+|A10|旁白“风不断增长。太阳能增长得更快。”|两个 CSV|2014→2025年风能349.5→1,291.0（×3.7），太阳能178.8→2,396.7（×13.4）；风年年增长|
+|A11|旁白 “退一步，十二年变成了一个表盘。”|2014年-2025年是12年|修辞路线|
 
-## B. Scale of the physical objects (a conversion set by this film)
+<a id="b-scale-of-the-physical-objects-a-conversion-set-by-this-film"></a>
+## B、实物的比例（本影片设置的换算）
 
-- **1 disc = 10 GW** (the same unit for both materials): number of discs = round(capacity ÷ 10). E.g.: 2025 solar 239.67 → 240 discs, wind 129.10 → 129 discs; 2014 solar 17.88 → 18 discs, wind 34.95 → 35 discs. Height error < half a disc (5 GW).
-- **Every 10th disc is brass**: brass discs mark each full 100 GW.
-- In 2020 the two values differ by 12.0 GW (73 discs vs 72); after rounding wind is still one disc higher, so rounding never flips the order.
-- Numbers on screen always use the original values (one decimal place); the physical height is only to scale.
-- Discs dropped for the 2025 additions = 240 − 188 = 52 discs (= 2025 disc count − 2024 disc count); the counter interpolates linearly over the discs that have landed, and shows the original value 2,396.7 when the last disc lands.
+- **1 圆盘 = 10 GW**（两种材料的单位相同）：圆盘数量 = 圆形（容量 ÷ 10）。例如：2025年太阳能239.67→240盘，风能129.10→129盘； 2014年太阳能17.88→18盘，风能34.95→35盘。高度误差 < 半个光盘 (5 GW)。
+- **每 10 个圆盘都是黄铜**：黄铜圆盘标记每个完整的 100 GW。
+- 2020 年，这两个值相差 12.0 GW（73 个光盘 vs 72 个光盘）；舍入后风仍然高一盘，因此舍入永远不会翻转顺序。
+- 屏幕上的数字始终使用原始值（一位小数）；物理高度仅按比例绘制。
+- 2025 年添加的盘数下降 = 240 − 188 = 52 个盘（= 2025 个盘数 − 2024 个盘数）；计数器对已落地的圆盘进行线性插值，并在最后一个圆盘落地时显示原始值 2,396.7。
 
-## C. Check
+<a id="c-check"></a>
+## C、检查
 
-- Before the last render, the narration and `LABELS` in `timeline.js` were compared item by item with this table (2026-10-16).
-- On-screen numbers are formatted directly from `data.js` (`fmt`, one decimal place); 1.95, 1.86 and +513.5 are values computed in this table and written into `LABELS` in `timeline.js`; the disc engraving in `set.js` is computed from the data as `(SOLAR[11] / WIND[11]).toFixed(2)`.
+- 在最后一次渲染之前，`timeline.js`中的旁白和`LABELS`与此表（2026-10-16）逐项进行了比较。
+- 屏幕上的数字直接从`data.js`开始格式化（`fmt`，一位小数）； 1.95、1.86和+513.5是本表中计算出的值，并写入`timeline.js`中的`LABELS`中； `set.js` 中的光盘雕刻是根据 `(SOLAR[11] / WIND[11]).toFixed(2)` 的数据计算得出的。

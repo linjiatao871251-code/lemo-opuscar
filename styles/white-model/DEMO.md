@@ -1,70 +1,77 @@
-# Projection on White Model — our demo
+<a id="projection-on-white-model--our-demo"></a>
+# 白色模型上的投影 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *How a Flattened City Grew Back* 《被炸平的城市怎样长回来》 (40.0 s) · `white-model.mp4` · source in [`demo/`](demo/)
+示范：*一座被夷为平地的城市如何长回来* 《被炸平的城市怎样长回来》（40.0 s）·`white-model.mp4`·来源[`demo/`](demo/)
 
-Rotterdam's centre as a 1:1000 white model (2.3 × 2.6 km: 3,887 buildings, 8,860 roof parts, 108 bridge decks). Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). This is an unofficial film made from open data (3DBAG, Kadaster BAG, BGT); 3DGI, TU Delft, Kadaster and the City of Rotterdam did not make or endorse it.
+鹿特丹市中心为 1:1000 白色模型（2.3 × 2.6 km：3,887 栋建筑物、8,860 个屋顶部件、108 个桥面）。中文屏幕，英文旁白，双语字幕（中文上行，英文下行）。这是由开放数据（3DBAG、Kadaster BAG、BGT）制成的非官方影片； 3DGI、代尔夫特理工大学、卡达斯特和鹿特丹市并未制作或认可它。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Logline: light picks out everything on the model built before 1940 and finds a hole in the middle; decade by decade the hole fills and the city climbs; then the tallest new tower's midwinter-noon shadow runs 777 m across sixteen roofs, nine of them pre-war.
+梗概：光线挑出了 1940 年之前建造的模型上的所有东西，并在中间发现了一个洞；几十年来，这个洞被填平，城市不断攀升；然后，最高的新塔在仲冬中午的影子长达 777 m，横跨 16 个屋顶，其中 9 个是战前的。
 
-Arc: the white model under gallery light → lights out, the lamp strikes, the pre-war layer (23 % of the footprint) and the hole → 14 May 1940, 13:27; the city hall that came through almost undamaged → four post-war layers pop on, faster each time, a year counter rolling 1940 → 2025; the city crosses the river (Kop van Zuid) → a level of light climbs every facade and tops out on Zalmhaven I (roof 203 m); 24 of the 25 buildings over 100 m are post-1990 → the projector goes dark (silence) → the winter sun at solar noon (14.6°), the tower's shadow traced and measured (777 m), the sixteen roofs inside it light up, the nine pre-war ones in the first layer's amber → house lights up, white model, end card.
+弧形：画廊灯光下的白色模型 → 灯光熄灭，灯亮，战前层（占足迹的 23%）和洞 → 1940 年 5 月 14 日，13:27；几乎完好无损地穿过的市政厅→四层战后层弹出，每次都更快，一年计数器滚动1940年→2025年；城市穿过河流 (Kop van Zuid) → 一定程度的光线爬上每个立面，并在 Zalmhaven I 上达到顶峰（屋顶 203 m）； 25座100m以上的建筑中有24座是1990年后的→投影仪变暗（静音）→太阳正午的冬日阳光（14.6°），追踪测量塔楼的影子（777m），塔内十六个屋顶亮起，第一层琥珀色的九个战前屋顶→房屋亮起，白色模型，片尾卡。
 
-Native moves spent: *lights out, lamp on* at 1.8–2.4 s; *the hole* for 1940; *layers by time* for the growth; *the rising level* for heights; *the sun clock* plus a projected shadow trace and a range line as the signature; *the pick-out* for the roofs; *lights up* as the bookend.
+风格特有表现手法花费：*在 1.8–2.4 秒内熄灭，灯亮*； *1940 年的洞*； *按时间分层*以促进生长； *身高的上升水平*； *太阳钟*加上投影阴影轨迹和范围线作为签名； *屋顶的挑选*； *亮起*作为书挡。
 
-Every number on screen is computed by `demo/tools/prep.py` into `demo/data/stats.json`; every claim and its source is in [`demo/FACTS.md`](demo/FACTS.md).
+屏幕上的每个数字都由`demo/tools/prep.py`计算为`demo/data/stats.json`；每项声明及其来源均在 [`demo/FACTS.md`](demo/FACTS.md) 中。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-One continuous take. Camera = target, azimuth (0 = south of the target looking north, 90 = east), elevation, distance in model metres.
+连续拍摄一张。 摄影机 = 目标、方位角（0 = 目标南面向北看，90 = 东面）、仰角、距离（以模型米为单位）。
 
-| # | Time | Shot | Camera | Native move / note |
+|#|时间|镜头|摄影机|风格特有表现手法/注|
 |---|---|---|---|---|
-| 1 | 0.0–1.8 | white roofs at rooftop height, shallow focus, gallery light, AO | macro glide from the north-east (az 152 → 142, el 7 → 11, d 0.55 → 0.72) | the model as an object |
-| 2 | 1.8–2.4 | house lights cut (0.25 s), darkness | glide continues | relay; silence of the room |
-| 3 | 2.4–6.0 | the lamp strikes with a flicker; an amber wash spreads from the projector axis over every pre-1940 building | crane up and back (el 11 → 36, d 0.72 → 1.85) | the hole appears as the camera rises; readout 23 % |
-| 4 | 6.0–11.6 | 14 May 1940 stamp in the hole (6.0), the city hall pinned (7.8) | slow push and orbit (az 128 → 104, d 1.85 → 1.62) | short suck-out before the date hit |
-| 5 | 11.6–17.1 | four post-war layers switch on building by building (1.0 / 0.9 / 0.9 / 0.75 s spreads), year counter, legend rows; Kop van Zuid pinned at 14.6 | orbit to the south-east with a rise (az 104 → 52, d 1.62 → 2.75) | acceleration by spread, not by tempo |
-| 6 | 18.0–21.6 | a soft level of light climbs every facade (heights ramp, 25 m rings), the reading rides up Zalmhaven I to 203 m | boom down to a low angle (el 36 → 17, d 1.95) | towers against black |
-| 7 | 21.6–22.8 | projector dark | drift | silence |
-| 8 | 22.8–27.0 | winter sun at the real azimuth, clock 10:55 → 12:40 (solar noon), data put away, shade projected blue | rise and turn (az 34 → 28, el 24) | first sound after the silence: brass in A♭ |
-| 9 | 27.0–35.4 | the tower's noon shadow traced (fill + edge) as a range line grows 0 → 777 m with 100 m ticks; 16 roofs ping on (29.4–31.2), 9 amber | side-on from the south-east, closing in (az 40 → 32, d 1.6 → 1.16) | **signature**: poster at 30.4 s |
-| 10 | 35.4–40.0 | house lights up, data off, end card | pull back and rise (d 1.3 → 2.85, el 35 → 44) | bookend |
+|1|0.0–1.8|屋顶高度的白色屋顶，浅焦点，画廊灯，AO|来自东北的宏观滑翔（az 152 → 142，el 7 → 11，d 0.55 → 0.72）|将模型作为对象|
+|2|1.8–2.4|屋内灯光熄灭（0.25 秒），黑暗|滑翔继续|中继;房间里一片寂静|
+|3|2.4–6.0|灯闪烁着；琥珀色的水彩晕染从投影仪轴散布到每座 1940 年之前的建筑上|起重机向上和向后 (el 11 → 36, d 0.72 → 1.85)|当摄影机上升时，孔出现；读数 23%|
+|4|6.0–11.6|1940 年 5 月 14 日邮票在洞中 (6.0)，市政厅固定 (7.8)|慢推和轨道（az 128 → 104，d 1.85 → 1.62）|在日期到来之前短暂吸出|
+|5|11.6–17.1|四个战后层按建筑物逐个切换（1.0 / 0.9 / 0.9 / 0.75 秒分布）、年份计数器、图例行； Kop van Zuid 定于 14.6|轨道向东南方向上升（az 104 → 52，d 1.62 → 2.75）|通过传播加速，而不是通过节奏加速|
+|6|18.0–21.6|柔和的光线爬上每个立面（高度坡道，25 m 环），读数上升到 Zalmhaven I 至 203 m|动臂下降至低角度（el 36 → 17，d 1.95）|塔反对黑色|
+|7|21.6–22.8|投影仪暗|漂移|沉默|
+|8|22.8–27.0|冬日太阳真实方位角，时钟 10:55 → 12:40（太阳正午），数据收起，阴影投影为蓝色|上升和转动（az 34 → 28，el 24）|寂静后的第一声：A♭铜管乐|
+|9|27.0–35.4|当范围线以 100 m 刻度增长 0 → 777 m 时，跟踪塔的正午阴影（填充 + 边缘）； 16 个屋顶开启 (29.4–31.2)，9 个琥珀色|从东南方侧向逼近（az 40 → 32，d 1.6 → 1.16）|**签名**：30.4 秒时的海报|
+|10|35.4–40.0|房屋亮起，数据关闭，片尾卡|拉回并上升 (d 1.3 → 2.85, el 35 → 44)|书挡|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-100 BPM, 4/4; every layer onset, the date, the top of the climb, the sun, the line landing, the roofs and the lights sit on a beat (`demo/tools/cuecheck.py`: 0 ms on 19 cues).
+100 BPM，4/4；每层开始、日期、攀登顶部、太阳、线路着陆、屋顶和灯光都按节拍进行（`demo/tools/cuecheck.py`：19 个提示上的 0 毫秒）。
 
-| Section | Time | Palette | Notes |
+|部分|时间|调色板|笔记|
 |---|---|---|---|
-| White | 0–1.8 | bowed vibraphone G4/C5, room tone, idle projector fan | |
-| Lamp | 1.8–6.0 | relay, lamp strike, wash air swell; contrabass C2 + cellos G2, bowed vibraphone E♭5, a quiet marimba pulse in 8ths | suck-out 5.55–6.0 |
-| Date | 6.0 | timpani C3, gran cassa, gong, bass drum, low brass stab in C minor (tuba, trombones, horns) + a 60–120 Hz punch | loudest moment of the film |
-| Aftermath | 6.0–12.0 | contrabass C2, cellos E♭3, bowed vibraphone A♭4 → G4, sparse vibraphone; glass tick on the city-hall pin | |
-| Growth | 12.0–18.0 | E♭ major; bass climbs E♭–F–G–A♭ one step per layer; marimba 8ths → 16ths → 16th-note triplets, pizzicato violins from layer 2, hand-chime chord per layer, horns swell from the river crossing; a soft tick per building switching on | |
-| Height | 18.0–21.6 | A♭: contrabass A♭1, bowed vibraphone C5/E♭5, glockenspiel + vibraphone line climbing with the level, air riser; tubular bell E♭5 + cymbal on the top | |
-| Silence | 21.6–22.8 | thin fan hum only | |
-| Sun | 22.8–27.0 | horns A♭3/C4/E♭4, trombones A♭2/E♭3, tuba A♭1, timpani, gran cassa, bowed cymbal; organ (soft) and bowed vibraphone hold | second-loudest moment |
-| Shadow | 27.0–31.2 | F minor floor (contrabass, cellos, soft organ), timpani heartbeat every two beats, a click per 100 m, timpani + bell when the line lands; one glass note per roof (G5 pre-war, C6 newer) | |
-| Coda / lights | 31.2–40.0 | D♭ → E♭ held; at the lights a C major chord (horns, bowed vibraphone), relays, fan settling; tubular bell C5 and two glass notes on the end card | |
+|白色的|0–1.8|弓形颤音琴 G4/C5，室内音调，闲置投影仪风扇| |
+|灯|1.8–6.0|继电器，灯亮，水彩晕染空气膨胀；低音提琴 C2 + 大提琴 G2，弓弦颤音琴 E♭5，八分之一安静的马林巴脉动|吸出 5.55–6.0|
+|日期|6.0|定音鼓 C3、大卡萨、锣、低音鼓、C 小调低音铜管乐器（大号、长号、圆号）+ 60–120 Hz 冲孔器|影片最响亮的时刻|
+|后果|6.0–12.0|低音提琴 C2、大提琴 E♭3、弓弦颤音琴 A♭4 → G4、稀疏颤音琴；市政厅别针上的玻璃蜱虫| |
+|生长|12.0–18.0|E♭ 大调；鲈鱼每层爬 E♭–F–G–A♭ 一步；马林巴八分音符→十六分音符→十六分音符三连音，第二层拨奏小提琴，每层手编和弦，号角从河渡口吹起；每栋建筑都会有一个软滴答声| |
+|高度|18.0–21.6|A♭：低音提琴A♭1，弓形颤音琴C5/E♭5，钟琴+颤音琴线随水平上升，空气上升器；管状钟 E♭5 + 顶部钹| |
+|沉默|21.6–22.8|仅薄风扇嗡嗡声| |
+|太阳|22.8–27.0|圆号 A♭3/C4/E♭4、长号 A♭2/E♭3、大号 A♭1、定音鼓、大卡萨、弓形钹；管风琴（软）和弓形颤音琴握持|第二响亮的时刻|
+|阴影|27.0–31.2|F小调地板（低音提琴、大提琴、软风琴），每两拍定音鼓心跳一次，每100 m一次咔哒声，线路落地时定音鼓+铃声；每个屋顶一张玻璃钞票（G5 战前，C6 较新）| |
+|尾声/灯光|31.2–40.0|D♭ → E♭ 举行；在灯光下，C 大调和弦（圆号、弓弦琴）、继电器、风扇稳定； 片尾卡上的管状钟 C5 和两个玻璃音符| |
 
-Mix (`demo/mix.py`): music balanced to sit 10 dB under the voice while it speaks and ducked 40 %; hits ducked 20 %, uncompressed; bus compression on music, foley and beds only; a 38 Hz high-pass (46 Hz, 4th order on hits) and a −5 dB shelf below 62 Hz on everything but the voice; master at −14.4 LUFS with a true-peak limiter at −4.6 dBTP; `mux.sh` measures the film at −13.8 LUFS, LRA 6.1 LU. `demo/tools/impactcheck.py`: the date is the loudest momentary moment, the sun −0.7 dB under it; each follows a dip of −20 and −28 dB; the silence sits 16 dB under the median program.
+混音 (`demo/mix.py`)：音乐平衡至说话时声音下方 10 dB，并闪避 40%；命中闪避 20%，未压缩；仅对音乐、拟音和床进行总线压缩； 38 Hz 高通（46 Hz，点击时为 4 阶）和除语音外的所有内容均低于 62 Hz 的 −5 dB 架；主控为-14.4 LUFS，真实峰值限制器为-4.6 dBTP； `mux.sh` 在 −13.8 LUFS、LRA 6.1 LU 处测量影片。 `demo/tools/impactcheck.py`：日期是最响亮的瞬间，太阳在其下方-0.7 dB；每个都遵循 -20 和 -28 dB 的下降；安静程度比中值节目低 16 分贝。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Model #F3F3F1 (roughness 0.88), plate water inlay (0.10, 0.13, 0.17) satin, plinth #17181A; room background a dark radial gradient.
-- Layers: pre-1940 #FFA13D; 1940–64 #2A46FF; 1965–89 #2F98FF; 1990–2009 #6FDCFF; 2010–25 #E6FBFF; height ramp #1A1440 → #5A35D6 → #E2509A → #FFE7C4; projected shade #1C2C66; sun #FFD9AD; shadow trace fill (0.10, 0.22, 0.65) with a pale edge; newer shaded roofs #BFF3FF.
-- Props: the model (3DBAG LOD1.3, BAG construction years), BGT water and bridge decks, the 2 m heightfield noon shadow of Zalmhaven I, the sun table for 21 Dec 2025 at 51.914° N, 4.484° E.
-- Narrator: Kokoro `bm_george`, speeds 0.95–1.08.
-- Real places and buildings appear as data; this is not an official film of the City of Rotterdam or of any building's owner.
+- 型号#F3F3F1（粗糙度0.88），板水镶嵌（0.10、0.13、0.17）缎面，底座#17181A；房间背景为深色径向渐变。
+- 图层：1940 年之前#FFA13D； 1940–64#2A46FF； 1965–89#2F98FF； 1990–2009 #6FDCFF； 2010–25#E6FBFF；高度坡道#1A1440→#5A35D6→#E2509A→#FFE7C4；投影阴影#1C2C66；太阳#FFD9AD；阴影痕迹填充（0.10、0.22、0.65），边缘苍白；较新的遮阳屋顶#BFF3FF。
+- 道具：模型（3DBAG LOD1.3，BAG 建造年份）、BGT 水面和桥面、Zalmhaven I 的 2 m 高场正午阴影、2025 年 12 月 21 日北纬 51.914°、东经 4.484° 的太阳表。
+- 旁白：Kokoro `bm_george`，速度 0.95–1.08。
+- 真实的地点和建筑物以数据的形式出现；这不是鹿特丹市或任何建筑物所有者的官方影片。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Over the white model as the house lights return, a left block: 被炸平的城市怎样长回来 (Noto Sans SC 500, 64 px), *How a Flattened City Grew Back* (Inter Tight 200), an amber rule, `白模投影 · PROJECTION ON WHITE MODEL`, `3DBAG · BAG · BGT · 鹿特丹市档案馆`, `LemoLab × Claude Opus 5.5`. 35.7–40.0 s. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+当房子灯光返回时，在白色模型上方，有一个左块：被炸平的城市怎样长回来（Noto Sans SC 500, 64 px），*平坦的城市如何恢复*（Inter Tight 200），琥珀规则，`白模投影 · PROJECTION ON WHITE MODEL`，`3DBAG · BAG · BGT · 鹿特丹市档案馆`，`LemoLab × Claude Opus 5.5`。 35.7–40.0 秒。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -82,6 +89,6 @@ demo/
   FACTS.md, CREDITS, stills/styleframe.jpg
 ```
 
-- `sh demo/build.sh` takes about 4 minutes on Apple silicon (picture ~60 s with 4 workers; TTS and the Whisper check most of the rest). `FETCH=1` re-downloads the data (~55 MB).
-- Checks it runs: `asr_check.py` with `small.en` (British spellings "centre", "metres" set in the `asr` fields), cue grid, single-line subtitle widths with the real fonts (widest 618 px against 1500 px), `readcheck.mjs`, motion per second (no flat stretch; the jumps at 2.0, 2.6 and 35.6 s are the lights and the lamp), the impact ranking. `tools/finalasr.py` checks every narration line on the final mix.
-- Demo-specific pitfalls: the 3DBAG WFS returns all LOD1.3 parts in one request at `count=20000` for this box (13,345 features); parts are kept only when fully inside the crop, which leaves a clean street margin at the plate edge. The heightfield shadow counts a roof as shaded when its tallest part's centroid cell is under the tower's shadow height (2 m grid); the 16 roofs are listed in `stats.json` with distances 262–734 m. Zalmhaven's 3DBAG roof (203.0 m above ground, 70th percentile of the highest part) matches the published roof height; the 12 m mast is not in the model. GTAO is faded out after the lamp strikes because it bands on the wide grazing views.
+- `sh demo/build.sh` 在 Apple 芯片上大约需要 4 分钟（图片为 4 个工作人员约 60 秒；TTS 和 Whisper 检查其余大部分）。 `FETCH=1` 重新下载数据 (~55 MB)。
+- 检查其运行情况：`asr_check.py` 和 `small.en`（在 `asr` 字段中设置的英国拼写“中心”、“米”）、提示网格、带有真实字体的单行字幕宽度（最宽 618 像素对 1500 像素）、`readcheck.mjs`、每秒运动量（无平面）拉伸；2.0、2.6 和 35.6 秒的跳跃是灯和灯），影响排名。 `tools/finalasr.py` 检查最终混音上的每条旁白行。
+- 示范特定的陷阱：3DBAG WFS 在 `count=20000` 的一次请求中返回此框的所有 LOD1.3 部件（13,345 个功能）；仅当零件完全位于作物内部时，零件才会保留，从而在板边缘留下干净的街道边缘。当屋顶最高部分的质心单元低于塔的阴影高度（2 m 网格）时，高度场阴影将屋顶视为阴影； `stats.json` 中列出了 16 个屋顶，距离为 262–734 m。 Zalmhaven 的 3DBAG 屋顶（距地面 203.0 米，最高部分的 70%）与公布的屋顶高度相符； 12 m 桅杆不在模型中。 GTAO 在灯亮后就逐渐消失，因为它会在广阔的放牧视野中形成带状。

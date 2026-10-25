@@ -1,57 +1,63 @@
-# 1920s Newsreel — our demo
+<a id="1920s-newsreel--our-demo"></a>
+# 1920 年代新闻片 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Knock-Knee Alert* (膝盖警报, 54.6 s) · `newsreel.mp4` · source in [`demo/`](demo/)
+示范：*敲膝警报*（膝关节警报，54.6 s）·`newsreel.mp4`·来源[`demo/`](demo/)
 
-March 1926: a Texas newspaper warns that the Charleston will make Americans knock-kneed and pigeon-toed. The newsreel traces the dance from a 1923 Broadway show across the map, lets a Hollywood star teach it in nine steps, then brings on the opposition: Henry Ford, whose orchestra plays the dances of his youth and whose 1926 dance book says the jazzy new dances "are losing vogue everywhere". Old-time against Charleston in a split screen; the verdict comes from Ford's own workers' picnic, where a 1925 record of "Charleston" takes over the soundtrack and the kids are doing the dance. Knock-kneed? Who cares.
+1926 年 3 月：德克萨斯州的一家报纸警告说，查尔斯顿将使美国人变得外八字和内八字。新闻短片追溯了 1923 年百老汇演出中的舞蹈，让一位好莱坞明星分九步教它，然后引入了反对者：亨利·福特，他的管弦乐队演奏了他年轻时的舞蹈，他 1926 年的舞蹈书称爵士新舞蹈“正在各地失去时尚”。过去在分屏中对阵查尔斯顿的比赛；这一结论来自于福特自己的工人野餐，1925 年的《查尔斯顿》唱片占据了配乐，孩子们正在跳舞。外翻膝盖？谁在乎。
 
-All pictures are real archive material: U.S. National Archives films (Ford Motor Company Film Collection, 1924–27), *The Austin Statesman* (5 March 1926), *Photoplay* (October 1925), the Fords' book "Good Morning" (1926), and the Golden Gate Orchestra's 1925 Edison record of "Charleston" (UC Santa Barbara Library transfer). "THE SPOTLIGHT NEWS" is an invented newsreel; this is an unofficial film, not affiliated with any archive, museum, newspaper, publisher or company shown. Facts and quotations: [`demo/FACTS.md`](demo/FACTS.md).
+所有图片均为真实档案资料：美国国家档案馆影片（福特汽车公司影片收藏，1924–27 年）、*奥斯汀政治家*（1926 年 3 月 5 日）、*Photoplay*（1925 年 10 月）、福特夫妇的书《早安》（1926 年）以及金门交响乐团 1925 年的爱迪生“查尔斯顿”记录（加州大学圣塔芭芭拉分校风格库转让）。 《焦点新闻》是一部发明的新闻影片；这是非官方的影片，与所示的任何档案馆、博物馆、报纸、出版商或公司无关。事实和引述：[`demo/FACTS.md`](demo/FACTS.md)。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Shape: one issue of a newsreel with two sides and a verdict. Hook (0–0.2 s): the searchlights snap on with a flash and the fanfare. Setup (3.6–13.2 s): the warning (spinning newspaper, grease pencil on the dancer's knees) and the spread (map, years rolling 1923 → 1926). Development (13.2–28.2 s): the lesson (nine *Photoplay* stills dealt on the beat, then played as a flip-book), the item card "ENTER MR. FORD", Ford's side in footage and in his own printed words (page turned, two lines underlined). Turn (28.2–32.4 s): the split-screen duel, each side with its own band in its own channel, trading bars, then half bars, then beats. Climax (32.4–44.4 s): the Charleston panel pushes the old-time one out; the band cuts dead and the 1925 record plays under the Ford workers' picnic: couples in the pavilion, tap dancers, a four-way grid, the kids. Button (44.4–46.8 s): the record's final chord lands on a freeze, the needle lifts, grease pencil on the kids' knees, one line in near-silence. Sign-off: the ident again ("THAT'S THE NEWS!"), then the end card.
+形状：一期新闻片，有两个侧面和一个判决。挂钩（0–0.2 秒）：探照灯突然亮起并发出闪光和喇叭声。准备阶段（3.6-13.2 秒）：警告（旋转报纸，舞者膝盖上的油性铅笔）和展开（地图，1923 → 1926 年滚动）。发展（13.2-28.2秒）：课程（九个*照片播放*剧照按节拍处理，然后作为翻页书播放），项目卡“进入福特先生”，福特在镜头中的一面和他自己的印刷文字（翻页，两行下划线）。回合（28.2–32.4 秒）：分屏对决，双方在自己的频道中都有自己的乐队，交易小节，然后是半小节，然后是节拍。高潮（32.4-44.4 秒）：查尔斯顿面板将旧面板推出；乐队停了下来，1925 年的唱片在福特工人的野餐下播放：亭子里的情侣、踢踏舞者、四向网格、孩子们。按钮（44.4-46.8秒）：唱片的最后和弦停顿，唱针抬起，油性铅笔放在孩子们的膝盖上，一行诗几乎一片寂静。结束：再次确认身份（“这就是新闻！”），然后是片尾卡。
 
-Why it fits the style: the story is told by news objects (a newspaper, a map, a magazine, a book, a record) and by real film, each filmed with its own move; the band edits the film and stops for the punchline; the "knee" thread runs from the headline through Ford's book (on page 12 it also says "a bent-knee dance is ungainly") to the last freeze.
+为什么它适合这种风格：故事是通过新闻对象（报纸、地图、杂志、一本书、一张唱片）和真实的影片来讲述的，每个对象都有自己的动作；乐队编辑影片并停下来欣赏妙语； “膝盖”线索从标题贯穿福特的书（第12页还说“弯曲膝盖的舞蹈很笨拙”）一直到最后的定格。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-Times in seconds; the grid is 200 BPM (beat 0.3 s, bar 1.2 s).
+时间以秒为单位；网格为 200 BPM（节拍 0.3 秒，小节 1.2 秒）。
 
-| # | Time | Shot | Move | Material / native move |
+|#|时间|镜头|移动|材质 / 风格特有表现手法|
 |---|---|---|---|---|
-| 1 | 0.0–3.6 | ident | searchlights on at 0.15, globe grows, name lands, iris closes on the globe | ident ritual |
-| 2 | 3.6–7.2 | newspaper | spins 2.5 turns into lens, slams on 4.8, pushes to the headline | *Austin Statesman*, 5 Mar 1926 · spinning paper |
-| 3 | 7.2–8.4 | insert: the dancer's knee | punch-in on the beat, grease-pencil ring + arrow | same page · grease pencil |
-| 4 | 8.4–13.2 | US map | diagonal wipe in; Broadway star; dotted arcs to Hollywood (10.2) and Austin (10.55); odometer 1923 → 1926; push to Hollywood | Natural Earth outline · map spread |
-| 5 | 13.2–15.9 | 5 + 4 grid | flip in; nine stills dealt one per beat | *Photoplay*, Oct 1925 · grid deal |
-| 6 | 15.9–18.0 | full frame | dive into step 1, then steps on the beat | flip-book |
-| 7 | 18.0–21.0 | item card "ENTER MR. FORD · 福特登场" | venetian blinds in; frame draws, title lands, slow push | title card |
-| 8 | 21.0–24.0 | orchestra → violinist → man dancing to the band | iris open; hard cuts on bars | NARA FC-2275 (1926), FC-2307 (1925) |
-| 9 | 24.0–27.0 | "Good Morning" (1926) | title page slams, turns; push to p. 30; two underlines (25.87, 26.9) | document underline |
-| 10 | 27.0–28.2 | field of dancers in a circle | slow push | NARA FC-2292 (1927) |
-| 11 | 28.2–32.4 | split screen OLD-TIME · 1927 / CHARLESTON · 1924 | circle squeezes left, kids slide in from the right; labels one beat apart; held 4 s | split-screen duel |
-| 12 | 32.4–34.7 | pavilion couples | right panel pushes the left out; needle drop | NARA FC-4158 (1924) · needle drop |
-| 13 | 34.7–39.5 | pavilion couples, then tap dancers ("Special events") | four cuts on the record's beat (0.12 s ahead of the grid) | same |
-| 14 | 39.5–41.9 | four-way grid | cells pop in one per beat | same |
-| 15 | 41.9–44.4 | the kids doing the Charleston | clock wipe | same (NARA: "kids doing the 'Charleston'") |
-| 16 | 44.4–46.8 | freeze on the kids' knees | jolt; two grease-pencil rings; iris closes | grease-pencil freeze · band stop |
-| 17 | 46.8–50.4 | ident reprise "THAT'S THE NEWS! · 本期完" | iris opens; brass "da–DA!" | |
-| 18 | 50.4–54.6 | end card | fade through black; held 4.2 s | |
+|1|0.0–3.6|身份|探照灯在 0.15 处打开，地球仪变大，命名土地，虹膜在地球仪上关闭|身份仪式|
+|2|3.6–7.2|报纸|旋转2.5变镜头，猛击4.8，推上头条|*奥斯汀政治家*，1926 年 3 月 5 日 · 纺纸|
+|3|7.2–8.4|插入：舞者的膝盖|在节拍上打孔，油笔环+箭头|同页·油性铅笔|
+|4|8.4–13.2|美国地图|对角擦拭；百老汇明星；通往好莱坞 (10.2) 和奥斯汀 (10.55) 的虚线弧线；里程表 1923 → 1926；推向好莱坞|自然地球轮廓·地图展开|
+|5|13.2–15.9|5+4格|翻进去；每节拍一张 9 张剧照|*照片播放*，1925 年 10 月 · 网格交易|
+|6|15.9–18.0|全画幅|潜入步骤 1，然后踏上节拍|翻页书|
+|7|18.0–21.0|物品卡“ENTER MR. FORD·福特登场”|百叶窗；框架抽签、标题落地、慢推|标题卡|
+|8|21.0–24.0|管弦乐队 → 小提琴手 → 男人随着乐队跳舞|虹膜打开；棒材上的硬切口|奈良 FC-2275 (1926)、FC-2307 (1925)|
+|9|24.0–27.0|《早安》（1926）|扉页猛地一转，推至 p. 30；两条下划线 (25.87, 26.9)|文档下划线|
+|10|27.0–28.2|舞者围成一圈的场地|慢推|奈良 FC-2292 (1927)|
+|11|28.2–32.4|分屏旧时代 · 1927 年 / 查尔斯顿 · 1924 年|圆圈向左挤压，孩子们从右侧滑入；标签相隔一拍；举行了4次|分屏对决|
+|12|32.4–34.7|凉亭情侣|右面板将左面板推出；针滴|NARA FC-4158 (1924) · 落针|
+|13|34.7–39.5|亭子里的情侣，然后是踢踏舞者（“特别活动”）|唱片节拍被削减四次（领先网格 0.12 秒）|相同的|
+|14|39.5–41.9|四路网格|每节拍细胞弹出一个|相同的|
+|15|41.9–44.4|孩子们在查尔斯顿|时钟擦除|同样（NARA：“孩子们在做‘查尔斯顿’”）|
+|16|44.4–46.8|冻结在孩子们的膝盖上|颠簸;两个油笔环；虹膜关闭|油笔冻结·带阻|
+|17 号|46.8–50.4|ident reprise 《这就是新闻！·本期完》|虹膜打开；铜管“哒——哒！”| |
+|18|50.4–54.6|片尾卡|淡入黑色；保持 4.2 秒| |
 
-Place cards (top left): AUSTIN · MARCH 5, 1926; PHOTOPLAY · OCT. 1925; FORD FILMS 1925–26; GOOD MORNING · 1926; FORD WORKERS' PICNIC · 1924; and the record's label under the spinning 78 at top right ("CHARLESTON" · 1925 RECORD). Every caption passes `readcheck.mjs`.
+席位卡（左上）：奥斯汀·1926 年 3 月 5 日；摄影·十月。 1925；福特影片 1925–26；早上好·1926；福特工人野餐 · 1924 年；右上角旋转的 78 下方是唱片标签（“CHARLESTON”·1925 RECORD）。每个字幕都通过 `readcheck.mjs`。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- 200 BPM. Fanfare in F (timpani roll, trumpets C–F–A … G–A–C, crash) → original hot Charleston band in F (tuba, banjo, trombones on the Charleston figure, snare, honky-tonk piano; muted trumpet tune under the map, open trumpet + clarinet from the lesson) with glockenspiel pings on each map arrival and a woodblock on every flip-book page → a dead stop on the item card (one D7 stab, crash, timpani roll and two strokes) → original old-time reel in D (fiddle in eighths, a plucked dulcimer double, upright piano, tuba), entering one beat before the iris (J-cut) → the duel (reel left, band right, gated: 1 bar each, then ½, then ¼) → **needle drop**: the band stops dead and the last 12.4 s of the Golden Gate Orchestra's 1925 "Charleston" play, varispeeded +1.06 % to 200 BPM and placed so its final chord lands on the freeze → needle lift, near-silence (projector only) for the button → "da–DA!" (C7 stab, then F with crash and timpani) → a soft clarinet tag under the end card.
-- Foley: carbon-arc snap, spinning-paper whoosh with flutter, thump + paper slap, grease-pencil squeaks, telegraph clicks under the map arcs, a camera shutter per still, paper flicks per flip-book page, slat flutter, book slam, page turn, soft-lead scratches, needle drop, stylus skid, freeze thump; projector bed throughout.
-- Voice: Kokoro, blend `am_liam:0.6,bm_george:0.4`, speed 1.12–1.18, ten lines; treated as a 1930 optical track (`period_voice()`); band and record ducked ≈ 4.6 dB under it; −14 LUFS.
+- 200 BPM。 F 号大曲（定音鼓、小号 C–F–A … G–A–C、崩溃）→ F 号原创热门查尔斯顿乐队（查尔斯顿人物上的大号、班卓琴、长号、小军鼓、下流酒吧钢琴；地图下的静音小号曲调，打开小号 + 课程中的单簧管），每个地图到达时都会有钟琴声，每个翻页书页上都会有一个木版画 → 完全停止物品卡（一次 D7 刺击、撞击、定音鼓卷和两次敲击）→ 原始旧式 D 卷轴（八分之一小提琴、双拨弦扬琴、立式钢琴、大号），在虹膜前进入一拍（J 型剪切）→ 决斗（左卷轴、右带、门控：各 1 小节，然后 1/2，然后 1/4）→ **针滴**：乐队停了下来，金门管弦乐团 1925 年“查尔斯顿”演奏的最后 12.4 秒，变速 +1.06 % 至 200 BPM，并放置在其最终和弦上冻结→针抬起，近乎静音（仅限投影仪）按钮→“da–DA！” （C7 刺，然后 F 带有碰撞和定音鼓）→ 片尾卡下的软单簧管标签。
+- 拟音：碳弧卡扣、旋转纸张的颤动声、重击声+纸拍击声、油脂铅笔吱吱声、地图弧下的电报咔嗒声、每张静止图像的摄影机快门、每翻书页的纸张弹动、板条颤动、书本猛击、翻页、软铅划痕、针掉落、手写笔打滑、冻结重击；整个投影床。
+- 声音：Kokoro，混合 `am_liam:0.6,bm_george:0.4`，速度 1.12–1.18，十行；被视为1930年光学轨道（`period_voice()`）；乐队和唱片在其下方闪避了约 4.6 dB； −14 LUFS。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-50.4–54.6 s, inside a thin double frame: "膝盖警报 Knock-Knee Alert" on one line; a thin rule; "1920s 新闻影片 · 1920s NEWSREEL"; "LemoLab × Claude Opus 5.5"; four lines of source credits (NARA Ford collection, the 1925 record and its UCSB transfer, the three print sources, Natural Earth; "All archive material public domain · An unofficial film"). The "LemoLab × Claude Opus 5.5" line belongs to this library demo only; a user's film carries no LemoLab credit and no copy of this card.
+50.4-54.6 秒，在一个细长的双帧内：一行显示“膝盖敲膝警报”；细尺； 《1920 年代新闻影片·1920 年代新闻片》； “LemoLab × 克劳德 Opus 5.5”；四行来源学分（NARA Ford 收藏、1925 年记录及其 UCSB 转让、三个印刷来源、《自然地球》；“所有档案材料公共领域·非官方影片”）。 “LemoLab × Claude Opus 5.5”系列仅属于该库示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -66,7 +72,7 @@ demo/
   voice/lines.json      the ten lines (en, zh)             SOURCES.jsonl / SOURCES.md, CREDITS, FACTS.md
 ```
 
-1. `sh demo/build.sh` (library set up with `setup.sh deps voice music`): fetches sources and fonts (~500 MB, first run only) → timeline → prep → voice (kept unless `VOICE=1`) + speech check → reading check + subtitle check → events → render (1,310 frames) → mix → subtitles → mux (−14 LUFS, grain 7) → speech check on the film → poster/style frame (rendered without subtitles, `?nosub=1`) → `newsreel-small.mp4`.
-2. Change the story by editing `tools/timeline.py` (bars, clips, cards) and `voice/lines.json`; every scene reads its times from `timeline.json`.
+1. `sh demo/build.sh`（使用 `setup.sh deps voice music` 设置的库）：获取源和字体（约 500 MB，仅首次运行）→ 时间轴 → 准备 → 语音（除非 `VOICE=1`，否则保留）+ 语音检查 → 阅读检查 + 字幕检查 → 事件 → 渲染（1,310 帧）→ 混合 → 字幕 → 复用器（−14 LUFS，颗粒） 7) → 对影片进行语音检查 → poster/style 帧（无字幕渲染，`?nosub=1`）→ `newsreel-small.mp4`。
+2. 通过编辑 `tools/timeline.py`（条、剪辑、卡片）和 `voice/lines.json` 来更改故事；每个场景都从 `timeline.json` 读取其时间。
 
-Pitfalls tied to this demo: photographs whose rights read only "no known restrictions" (e.g. Library of Congress National Photo Company, Missouri Historical Society) are not used. The NARA description of the 1924 picnic lists "old time dances" as well as "kids doing the 'Charleston'": the old-time couples are not Charleston evidence; only the pavilion couples, the tap dancers and the kids are used as such. The record's beat runs 0.12 s ahead of the grid once its final chord is placed on the freeze, so the cuts inside the record follow the record. Kokoro read "Bessie" as "Bestie" until the line became "Hollywood star Bessie Love"; Whisper hears "knock-kneed" as "knock-need" through the period treatment (homophone, allowed in the final check). The four-way grid and freeze use 2.3×-upscaled 1924 film, which is soft; the freeze stays wide instead of pushing in.
+与此示范相关的陷阱：不使用其权利仅显示“无已知限制”的照片（例如国会风格库国家摄影公司、密苏里历史学会）。 NARA 对 1924 年野餐的描述列出了“古老的舞蹈”以及“孩子们跳‘查尔斯顿’”：这些古老的情侣并不是查尔斯顿的证据；只有展馆情侣、踢踏舞者和孩子们被这样使用。一旦最后和弦被冻结，唱片的节拍就会比网格提前 0.12 秒，因此唱片内的剪辑会跟随唱片。 Kokoro 将“Bessie”读作“Bestie”，直到这句话变成“好莱坞明星 Bessie Love”； Whisper 在创作方案期间将“knock-kneed”听成“knock-need”（同音词，在最终检查中允许）。四路网格和冻结使用2.3倍放大的1924 影片，比较软；冻结保持在较宽的范围而不是向内推进。

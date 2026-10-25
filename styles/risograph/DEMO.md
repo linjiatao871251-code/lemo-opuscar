@@ -1,58 +1,65 @@
-# Risograph Print — our demo
+<a id="risograph-print--our-demo"></a>
+# Risograph 打印 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Sunday Ride* (40 s) · `risograph.mp4` · source in [`demo/`](demo/)
+示范：*周日骑行*（40 秒）·`risograph.mp4`·来源在 [`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A lanky man in round glasses cycles across town on a Sunday morning to eat breakfast by the river. The city starts printed in the Blue plate only; each place he passes adds a plate: the bakery brings Yellow (a baguette handed over without him slowing down), the park brings Pink (a burst of pigeons, one of which hitches a ride on the baguette), and by the river all three plates overprint. He shares the bread with the pigeon; the camera pulls back and the whole film was one sheet sliding out of the printer onto a stack of earlier prints. Theme line: "Same ride every Sunday. Never quite the same print."
+周日早上，一名戴着圆眼镜的瘦长男子骑着自行车穿过城镇，在河边吃早餐。城市一开始只印在蓝盘上；他经过的每个地方都会增加一个盘子：面包店带来黄色（他没有放慢速度就递上法棍面包），公园带来粉红色（一群鸽子，其中一只搭上了法棍面包），而在河边，所有三个盘子都叠印了。他与鸽子分享面包； 摄影机向后拉，整个影片就是一张从打印机滑出到一堆早期打印件上的纸张。主题行：“每周日同样的骑行。从来没有完全相同的印刷品。”
 
-Arc (40 s = 20 bars of 2 s): quiet one-ink opening, hook inside 3 s (the ink being laid down) → each location adds a plate and an instrument → a small turn (the pigeon passenger) → full-overprint climax with a held silent bar → warm resolution (sharing) → scale reveal of the paper. One character, one goal, one turn.
+弧线（40秒=20条2秒）：安静的一墨开场，3秒内挂钩（落墨）→每个位置增加一个盘子和一个仪器→一个小转（鸽子乘客）→全叠印高潮，一个保持沉默的条→温暖的分辨率（共享）→纸张的尺度揭示。一个角色，一个目标，一个回合。
 
-Plate recipe for the story: first plate = the "before" state (the sleepy city), each added plate = a turning point, full overprint = the climax. Native moves spent: plates as narrative (Blue → Yellow → Pink), overprint transition (a pink disc swallows the park and becomes the river sun), registration as rhythm (kicks on the title, plate arrivals and the pigeon burst; a drift in the silent bar, snap on the downbeat), reflections as separated plates (the river), every frame a print (grain boil), it is a sheet of paper (the final pull-back).
+故事的板块配方：第一个板块=“之前”的状态（沉睡的城市），每添加一个板块=一个转折点，完整的套印=高潮。 风格特有表现手法花费：板块作为叙事（蓝色→黄色→粉红色），套印过渡（粉红色的圆盘吞噬了公园，变成了河边的太阳），配准作为节奏（标题上的踢，板块到达和鸽子爆裂；沉默酒吧中的漂移，悲观的声音），作为分离的板块的反射（河流），每一帧都是印刷品（谷物沸腾），它是一张纸（最后的拉回）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| # | Time | Plates | Shot | Camera / note |
+|#|时间|盘子|镜头|摄影机/注|
 |---|---|---|---|---|
-| 1 | 0–2 | B | Bell ECU | Blue plate **rolled on** left→right over handlebar and bell; thumb flicks the bell on the first beat (1.0) |
-| 2 | 2–8 | B | Sleepy blue street | Wide lateral tracking: the figure small, the sky big and empty for the title (2.0–5.4); narration from 5.6 |
-| 3 | 8–16 | B+Y | Bakery | Cut to medium tracking as Yellow sweeps across; the baker's hand offers the baguette at 11.3, caught without slowing at 12.0 (Tati's no-slowdown hand-off), staged at the rider's reach height, ahead of him, above the basket so nothing covers it |
-| 4 | 16–19 | all | Park | Static wide as Pink arrives: let him cross the frame (Tati) |
-| 5 | 19–21.5 | all | Pigeons | Ground-level low angle, pigeons big in the foreground; bell at 19.5, the flock bursts at 20.0 with a registration kick |
-| 6 | 21.5–24 | all | Passenger | Medium close on rider + pigeon on the baguette for a two-beat look |
-| 7 | 24–26 | all | Overprint transition | A pink disc grows from the basket, turns every blue beneath it violet, shrinks into the huge low river sun |
-| 8 | 26–29 | all | River | Haugomat composition, locked off; he brakes and stops (the only moment he stops); silent bar, plates drift, snap back at 28.0 |
-| 9 | 29–32 | all | Sharing | Medium side shot, the sun behind him; bread crack at 29.5, half to the pigeon at 30.5 |
-| 10 | 32–36 | all | Top-down → pull back | Straight top-down with long shadows, then pull back to the paper coming out of the printer onto a stack of earlier prints (blue street, bakery, park visible underneath) |
-| 11 | 36–40 | all | End card | Last bell at 38.0 |
+|1|0–2|乙|贝尔ECU|蓝色板**滚在**左→右上方车把和车铃上；拇指在第一拍时轻弹铃 (1.0)|
+|2|2-8|乙|昏昏欲睡的蓝色街道|宽横向追踪：标题中人物小、天空大、空旷（2.0-5.4）； 5.6的旁白|
+|3|8-16|B+Y|面包店|当黄色横扫时，切换到表现媒介跟踪；面包师的手在 11.3 处提供法棍面包，在 12.0 处没有减速地接住（塔蒂的无减速交接），在骑手可触及的高度上演，在他前面，在篮子上方，因此没有任何东西覆盖它|
+|4|16–19|全部|公园|当平克到达时静态宽：让他穿过框架（塔蒂）|
+|5|19–21.5|全部|鸽子|地面低角度，鸽子在前景很大；钟声在 19.5 钟响，羊群在 20.0 钟爆发，并有登记踢球|
+|6|21.5–24|全部|乘客|表现媒介靠近骑手 + 长棍上的鸽子，呈现两拍外观|
+|7|24–26|全部|套印过渡|一个粉红色的圆盘从篮子里长出来，把它下面的每一个蓝色都变成紫色，收缩成巨大的低河太阳|
+|8|26–29|全部|河|Haugomat 组合物，锁定；他刹车并停下来（这是他停下来的唯一时刻）；静音条，板块漂移，快速回到 28.0|
+|9|29–32|全部|分享|表现媒介侧面镜头，太阳在他身后；面包裂为 29.5，一半鸽子为 30.5|
+|10|32–36|全部|自上而下→回拉|直接自上而下绘制长阴影，然后将打印机中出来的纸张拉到一堆早期的打印件上（蓝色街道、面包店、公园可见在下面）|
+|11|36–40|全部|片尾卡|最后钟声 38 点|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-Original light **bossa nova**, D major, 120 BPM (1 bar = 2 s, so cuts land on even seconds), `demo/music/score.py` (numpy) + `demo/music/bell.py`. **The music is layered like the plates**: one ink = nylon guitar alone; + Yellow = shaker, rim clave, soft brushes (and the bicycle bell as percussion); + Pink = upright bass and a whistled melody; full overprint = + vibraphone. Bar 1 has no music (paper feed, drum, bell). A fully silent bar (reverb tails cut) under the climax drift (26–28) holds only water, birds and a distant church bell (it is Sunday) at 26.3; the full band returns on the snap at 28.0. During the pull-back the instruments leave one by one (vibraphone → whistle → bass → percussion), one per step of the pull-back; guitar and a held Dmaj9 over the end card.
+原始灯光 **博萨诺瓦**，D 大调，120 BPM（1 小节 = 2 秒，因此在偶数秒上切入），`demo/music/score.py` (numpy) + `demo/music/bell.py`。 **音乐像盘子一样分层**：一种墨水=单独的尼龙吉他； + 黄色 = 振动器、轮辋克拉夫、软刷（以及作为打击乐器的自行车铃）； +粉色=直立的低音和口哨的旋律；完整套印 = + 电颤琴。第 1 节没有音乐（送纸、鼓、铃声）。高潮漂移 (26-28) 下的一个完全安静的酒吧（混响尾部被切断）只有水、鸟和远处教堂的钟声（今天是周日），位于 26.3；整个乐队在 28.0 立即返回。在回拉过程中，乐器一一离开（电颤琴→口哨→低音→打击乐器），回拉每一步离开；吉他和片尾卡上的 Dmaj9。
 
-Foley: the riso machine at every plate arrival (paper feed "shhk" + drum "ka-chunk"; motor and paper rub at the end; a soft paper landing at 39.5). Bicycle bell (two inharmonic partials ~2.1 / 3.4 kHz, 5 fast strikes per ring), freewheel ticks, brake squeal. Bread crust crunch (dense tiny band-passed clicks). Pigeon wings (short band-passed noise bursts), coo (gliding 300–400 Hz tone). Water lapping.
+拟音：每版到达时的里索机（送纸“shhk”+滚筒“ka-chunk”；电机和纸张在末端摩擦；软纸在39.5着陆）。自行车铃（两个不和谐的分音 ~2.1 / 3.4 kHz，每环 5 次快速敲击）、飞轮滴答声、刹车尖叫声。面包皮嘎吱作响（密集的微小带通咔嗒声）。鸽子翅膀（短带通噪声突发）、咕咕声（滑翔 300-400 Hz 音调）。水拍打。
 
-Voice: relaxed male narrator, Kokoro `am_adam`, speed 0.95, 5 short lines at 5.6, 9.0, 21.7, 28.3, 32.8, each verified with whisper. Music ducks −8 dB under voice; −14 LUFS; mux grain 0.
+声音：轻松的男旁白，Kokoro `am_adam`，速度0.95，5条短线5.6、9.0、21.7、28.3、32.8，每条都用耳语验证。音乐在声音下减弱-8 dB； −14 LUFS；多路复用器颗粒 0。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Inks: Riso Blue `#0078BF` (screen 15°), Yellow `#FFE800` (0°), Fluorescent Pink `#FF48B0` (75°) on paper `#F6F1E6`. Mixes: Blue + Yellow = green, Blue + Pink = violet/indigo, Yellow + Pink = orange-red, all three = near-black; 60 % Blue dots over solid Pink = purple.
-- Shader numbers: rotation ±0.0005 rad; halftone period **7 px at 1080p**, threshold smoothstep ±0.07; solid at ≥ 0.9; grain ±0.08 on the threshold; pinholes where noise > 0.93 (×0.75); ink density `k = 0.80 + 0.14·streak + 0.08·blot` (streak = noise stretched ×10 along the feed); paper fibre ±1.5 %; grain boil 35 %.
-- Sky bands 20 / 38 / 62 / 100 %. Paper halo 4–5 px, 12 stamps in a ring.
-- The rider (plate densities): skin Yellow 26 % (cream; paper in the one-ink scene); sweater Blue 40 + Pink 100 (light blue dots → berry purple); trousers Blue 75 + Yellow 100 (→ olive green); hair Blue 100 + Pink 22; shoes Blue 100. The chunky scarf is Yellow + Pink only, so it is **blank paper** until the Yellow plate arrives and is the first thing to light up. His head sits against the sun disc at the river.
-- Pedalling: crank angle from wheel travel (`crank = distance / wheelRadius / 2.2`), legs by 2-bone IK to the pedals, scarf as a travelling sine wave.
-- Pigeons: about 1.2× his head size, round chest, tiny steps with a head bob, head tilts for "thinking", a **4-frame flap cycle** (up / half / down / tuck) on twos; flocks mix sizes 1.2–2.4× and stagger take-off by up to 0.35 s.
+- 墨水：Riso 蓝色 `#0078BF`（屏幕 15°）、黄色 `#FFE800`（0°）、荧光粉 `#FF48B0`（75°），纸质 `#F6F1E6`。混合：蓝色 + 黄色 = 绿色，蓝色 + 粉色 = violet/indigo，黄色 + 粉色 = 橙红色，所有三种 = 近黑色； 60 % 蓝点覆盖纯粉红色 = 紫色。
+- 着色器数量：旋转±0.0005 rad； 1080p**时半色调周期**7 像素，阈值 smoothstep ±0.07；固体≥ 0.9；阈值上的颗粒±0.08；噪声 > 0.93 (×0.75) 的针孔；墨水密度 `k = 0.80 + 0.14·streak + 0.08·blot`（条纹 = 沿进纸方向拉伸的噪声 ×10）；纸纤维±1.5%；谷物煮沸35%。
+- 天空波段 20 / 38 / 62 / 100 %。纸光环 4-5 像素，一环 12 个邮票。
+- 骑手（印版密度）：皮肤黄色 26%（奶油色；单墨场景中的纸）；毛衣蓝色40+粉色100（浅蓝色圆点→浆果紫）；裤子蓝色 75 + 黄色 100（→ 橄榄绿）；发蓝色100+粉色22；鞋子蓝色100。粗围巾只有黄色+粉色，所以它是**白纸**，直到黄色板到达并且是第一个点亮的东西。他的头靠在河边的太阳圆盘上。
+- 踏板：曲柄角来自车轮行程 (`crank = distance / wheelRadius / 2.2`)，腿通过 2 骨 IK 到踏板，围巾作为行进的正弦波。
+- 鸽子：大约1.2倍头大小，圆胸，小步，头部摆动，头部倾斜“思考”，**4框架襟翼循环**（上/半/下/折叠），双双；鸡群混合尺寸为 1.2–2.4 倍，起飞时间错开最多 0.35 秒。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Subtitles: paper-white knockout strip, 6 px radius, centred 1000 px down, Blue text, Jost 500 42 px, 0.5 px tracking. Title card: "SUNDAY RIDE", Bricolage 800 190 px on the Blue plate in the sky, revealed by a left→right wipe on the first chord, removed on a beat.
+字幕：纸白色淘汰带，6 像素半径，居中向下 1000 像素，蓝色文本，Jost 500 42 像素，0.5 像素跟踪。标题卡：“SUNDAY RIDE”，Bricolage 800 190 px，在天空中的蓝色板上，通过第一个和弦上的左→右擦拭显示，在节拍上删除。
 
-End card: blank paper, the title double-hit in Pink + Blue (10 px offset), "RISOGRAPH PRINT", the credit line, registration crosshairs in the corners, and a tiny rider crossing the baseline while the bell rings. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+片尾卡：空白纸，粉色+蓝色双打标题（10 像素偏移），“RISOGRAPH PRINT”，字幕线，角落处的注册十字准线，以及铃声响起时越过基线的小骑手。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/risograph/demo/
@@ -67,15 +74,15 @@ styles/risograph/demo/
   tools/      video_png.mjs (PNG frames, lossless intermediate), mux.sh (crf16 -tune grain), subs.py
 ```
 
-1. Design the plates first: what the one-ink frame looks like and what each plate adds. The model sheet (`?sheet=1&v=2`, [`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg)) has a "plates = story" row: the same character with 1, 2, 3 plates via `S.mask`.
-2. `sh styles/risograph/demo/build.sh` rebuilds everything: TTS → whisper → score → events → mix → SRT → render (960 frames, ~2–4 min with 3 workers) → mux → style frame, poster, model sheet.
-3. Review: `node core/render/still.mjs styles/risograph/demo --range 0:40:1.5` + `core/render/sheet.py`; key actions at 0.2 s steps; the encoded film at 100 % and 50 % for moiré.
+1. 首先设计印版：单墨框架的外观以及每个印版添加的内容。 角色设定表（`?sheet=1&v=2`，[`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg)）有一个“盘子=故事”行：通过`S.mask`具有1、2、3个盘子的相同角色。
+2. `sh styles/risograph/demo/build.sh` 重建一切：TTS → Whisper 语音识别 → 配乐 → 事件 → 混合 → SRT → 渲染（960 帧，约 3 名工作人员约 2–4 分钟）→ 复用器 → 风格定帧，海报，角色设定表。
+3. 评测：`node core/render/still.mjs styles/risograph/demo --range 0:40:1.5` + `core/render/sheet.py`；关键动作以 0.2 秒为步长；莫尔条纹的编码影片为 100 % 和 50 %。
 
-Encoding: PNG frames → lossless intermediate (qp 0, yuv444) → one encode at crf 16 `-tune grain` (~280 MB for 40 s); crf 20 without `-tune grain` is ~120 MB and still clean at 1080p and 50 %. Per-frame jitter + per-frame streaks had pushed x264 to 900 MB.
+编码：PNG 帧→无损中间（qp 0，yuv444）→在 crf 16 `-tune grain` 处进行一次编码（40 秒约 280 MB）；没有 `-tune grain` 的 crf 20 约为 120 MB，在 1080p 和 50% 下仍然干净。每帧抖动 + 每帧条纹已将 x264 推至 900 MB。
 
-Pitfalls tied to this demo's props:
-- The hand-off: the baker's arm is in the background plane and disappeared behind the rider → the exchange staged ahead of and above him.
-- Bridge arches filled solid with `evenodd` → underside traced with `arc(..., true)`.
-- The first design (lanky, round glasses, horizontal stripes) read as a famous picture-book character → solid knitwear and a different signature (the chunky scarf).
-- Sweater and trousers without Blue showed a floating head in the one-ink opening.
-- Pink dots on skin looked like measles → skin is Yellow only.
+与示范的道具相关的陷阱：
+- 交接：面包师的手臂位于背景平面中并消失在骑手身后→交换在他的前方和上方进行。
+- 桥拱用 `evenodd` 实心填充 → 底部用 `arc(..., true)` 描画。
+- 第一个设计（瘦长的圆形眼镜、水平条纹）读起来像是著名的图画书人物→纯色针织品和不同的标志（粗围巾）。
+- 没有蓝色的毛衣和裤子在一墨汁的开口处露出了一个漂浮的头像。
+- 皮肤上的粉红色斑点看起来像麻疹 → 皮肤只是黄色。

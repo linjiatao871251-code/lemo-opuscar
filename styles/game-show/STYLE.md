@@ -1,116 +1,128 @@
-# Game Show Flat — Style Prompt
+<a id="game-show-flat--style-prompt"></a>
+# 综艺节奏扁平：风格提示词
 
-> A rhythm-game variety show in flat vector: toy-like mascots with thick ink outlines on candy-coloured stripes and sunbursts, every hit landing on a fixed tempo grid, call-and-response patterns, and a judgement word when each round is won.
-> References (grammar only): rhythm-action party games in the Rhythm Heaven mould (cue → answer, round cards, judgement words), Japanese variety-show telops (thick outlined captions, stripe and sunburst sets), WarioWare-style stage cards. Never use their names, characters, UI, levels or music.
+> 平面矢量形式的节奏游戏综艺节目：类似玩具的吉祥物，在糖果色条纹和旭日上有厚厚的墨水轮廓，每次击中都会落在固定的节奏网格上，呼叫和响应模式以及每轮获胜时的判断词。
+> 参考资料（仅语法）：节奏天堂模式中的节奏动作派对游戏（提示 → 答案、圆形卡片、判断词）、日本综艺节目字幕（粗轮廓字幕、条纹和旭日纹集）、WarioWare 风格的舞台卡片。切勿使用他们的名字、角色、用户界面、关卡或音乐。
 
-The length follows the number of rounds: each round is a title card plus its bars of play. Narration is optional: the style can carry a film on short shouts and telops alone.
+长度取决于回合数：每一回合都是一张标题卡及其游戏条。旁白是可选的：该风格可以仅在简短的喊叫和字幕上带有影片。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **Everything is on the grid.** One fixed, fast tempo. Every pop, drop, stamp, typed character and camera punch sits at a (bar, beat) and is also a sound event; the score is generated from the picture's own timeline, so they can't drift.
-- **One drawing kit, many sets.** Flat fills, one heavy ink outline, round caps, hard offset shadows; each round gets a new saturated background colour and pattern.
-- **Characters are toys.** One body construction for the whole cast, told apart by colour, a belly patch, one head accessory and a name tag. They hop on the beat, squash on hits, throw arms up on a shout.
-- **A round = a repeatable verb + a win.** The topic is split into rounds; each round has one action that can repeat on a beat, and ends on a judgement the audience reads in one glance.
+- **一切都在网格上。** 一种固定的快速节奏。每个弹出、掉落、印记、键入的字符和摄影机拳头都位于（小节、节拍），也是一个声音事件； 配乐是根据图片自己的时间线生成的，因此它们不会漂移。
+- **一个绘图套件，多套。** 平面填充，一个重墨轮廓，圆形帽，硬偏移阴影；每一轮都会有一个新的饱和背景颜色和图案。
+- **角色是玩具。** 整个演员采用一体式结构，通过颜色、腹部贴片、一个头部配件和姓名标签进行区分。他们随着节拍跳跃，随着击球而踩踏，随着喊叫而举起双臂。
+- **A round = 一个可重复动词+一个win。** 主题被分成几轮；每一轮都有一个可以在一个节拍上重复的动作，并以观众一眼就能读懂的判断结束。
 
-Not a microgame frenzy (no timer or one-verb command per 3 s game, no change of art style per round), not a mid-century cartoon (no textured painted backgrounds, no character acting), not a keynote (no slow reveals, no gradients).
+不是微游戏狂热（每 3 秒游戏没有计时器或单动词命令，每轮没有艺术风格的变化），不是中世纪卡通（没有纹理的绘画背景，没有角色表演），不是基调（没有缓慢的揭示，没有渐变）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Vector only**, SVG or canvas paths at 1920×1080: flat fills, one outline colour (near-black), 8 px outlines on characters and props, 5–7 px on small parts, round joins and caps.
-- **No gradients, no blur, no texture, no soft shadow.** Depth is a **hard offset shadow**: the same shape in outline colour shifted ~10 px (stickers, banners) to ~14 px (cards), then the coloured shape on top.
-- **Sets** = one saturated background + a same-hue pattern one step lighter: diagonal stripes (often scrolling slowly), offset polka dots (~20 % white), or a rotating sunburst. A darker floor band with an ink line on top grounds the characters.
-- **Characters**: a rounded bean body, stubby arms with mitten hands, oval eyes with a catch-light, a mouth that swaps to an open one. Humans share the construction; older machines or eras read through a boxier silhouette.
-- **UI kit**: round card, corner sticker banner, judgement word, burst (star + ring + speed lines), scoreboards.
-- `render(t)` is a pure function of `t`: every element's state is recomputed from `t`, never carried over from the previous frame.
+- **仅矢量**、1920×1080 的 SVG 或画布路径：平面填充、一种轮廓颜色（接近黑色）、角色和道具上的 8 像素轮廓、小零件上的 5-7 像素、圆形连接和大写字母。
+- **没有渐变，没有模糊，没有纹理，没有软阴影。**深度是**硬偏移阴影**：轮廓颜色相同的形状从〜10像素（贴纸，横幅）转移到〜14像素（卡片），然后是顶部的彩色形状。
+- **套** = 一个饱和背景 + 一个同色调图案，但要淡一些：对角条纹（通常缓慢滚动）、偏移圆点（~20% 白色）或旋转旭日形。颜色较深的地板带顶部有墨线，为角色奠定了基础。
+- **角色**：圆润的豆子身体，粗短的手臂，戴着手套，椭圆形的眼睛带有反光，嘴巴张开。人类共享建设；较旧的机器或时代可以解读出更为方形的轮廓。
+- **UI套件**：圆卡、角贴横幅、判断字、连发（星+环+速度线）、记分牌。
+- `render(t)` 是 `t` 的纯函数：每个元素的状态都是从 `t` 重新计算的，永远不会从前一帧中继承。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Ink + paper + candy.** Near-black ink, white, and a warm cream for cards and paper props; around eight saturated candy hues (yellow, orange, red, pink, green, lime, sky, blue) plus two or three deep hues with darker partners for night or finale sets.
-- **One set = one hue.** The background, its pattern and the round card share a hue; the card changes colour to match the set it introduces. Neighbouring rounds never share a hue.
-- **Characters own colours.** A contestant's body colour is its identity and never changes; keep it distinct from the set it stands on (a character is never the same hue as the background).
-- Big words are white or yellow with a thick ink stroke; judgement words may be pink or yellow.
-- Set examples: tangerine ground `#FFB870` with `#FFA85A` stripes; teal with mint dots; navy with a gold sunburst.
+- **墨水+纸张+糖果。** 近乎黑色的墨水、白色和温暖的奶油色，用于卡片和纸质道具；大约八种饱和的糖果色调（黄色、橙色、红色、粉色、绿色、石灰、天空、蓝色）加上两到三种深色调以及夜间或压轴场景的深色搭配。
+- **一套=一种色调。** 背景、其图案和圆卡共享一个色调；该卡片会改变颜色以匹配它介绍的套装。相邻的子弹永远不会共享颜色。
+- **角色自己的颜色。** 参赛者的身体颜色是其身份，永不改变；保持它与它所在的场景不同（角色的色调永远不会与背景相同）。
+- 大字为白色或黄色，墨迹较粗；判断词可能是粉红色或黄色。
+- 设置示例：橘色地面 `#FFB870`，带 `#FFA85A` 条纹；青色，带薄荷点；海军蓝，带有金色旭日纹。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Display**: a heavy rounded sans for Latin and numbers (e.g. Fredoka 700); a black-weight sans for CJK (e.g. Noto Sans SC 900); a hand-lettered face only for handwritten props (e.g. ZCOOL KuaiLe).
-- **Telop text**: white or yellow fill with an ink stroke ≈ 14 % of the font size painted *under* the fill (`paint-order: stroke`). Titles are built glyph by glyph so each character can pop in.
-- **The telops are the subtitles.** Round cards, corner banners, labels, prop text and judgement words carry the meaning; keep them short (≤ ~20 CJK characters on a banner line, ≤ ~12 on a plate; Latin runs ~1.6× wider). With narration, subtitles are telop plates at the bottom in the same outlined type, never a thin generic caption.
-- Hold every text ≥ max(1.8 s, speech + 0.6 s); a judgement word may be shorter because it is read at a glance.
+- **展示**：用​​于拉丁文和数字的重圆角无衬线（例如 Fredoka 700）； CJK 的黑色粗细 sans（例如 Noto Sans SC 900）；手写脸仅用于手写道具（例如ZCOOL快乐）。
+- **Telop 文本**：白色或黄色填充，墨迹描边 ≈ 填充*下方*绘制的字体大小的 14 % (`paint-order: stroke`)。标题是逐个字形构建的，因此每个字符都可以弹出。
+- **字幕为字幕。** 圆卡、角标、标签、道具文字、判断词带有含义；保持简短（横幅上≤约 20 个 CJK 字符，盘子上≤约 12 个字符；拉丁文宽度约 1.6 倍）。对于旁白，字幕是底部相同轮廓类型的字幕板，而不是细小的通用标题。
+- 保留每个文本 ≥ max(1.8 s, 语音 + 0.6 s)；判断词可能会较短，因为它是一目了然的。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Idle = hop on the beat**: a parabola per beat (8–30 px); neighbours hop on the off-beat so a crowd ripples.
-- **Hit = squash**: a damped wobble (~30 rad/s, ~0.35 s) after each hit; a small squash on every downbeat.
-- **Entrances drop from the sky** with ease-in and land exactly on their beat, so the sound lands with them. Crowds drop in one per beat or half-beat.
-- **Pops use back-ease** for anything appearing (cards, stickers, stamps, words); ease-in for exits. Nothing fades in slowly: things are either on or popping.
-- **Shout pose**: arms up + open mouth for about half a beat.
-- **Typewriter** reveals on fractions of a beat, with a click every few characters.
-- Scene changes are **hard cuts on bar lines**, with a very short white flash. A fade is saved for the very end, if at all.
-- Nothing moves off the grid: an event between beats sits on a subdivision.
+- **Idle = 在节拍上跳跃**：每节拍一条抛物线（8–30 像素）；邻居们不按常理出牌，引起了人群的涟漪。
+- **击中=挤压**：每次击中后阻尼摆动（~30 rad/s，~0.35 s）；每次悲观时都会受到一点挤压。
+- **入口从天而降** 具有缓入功能并完全按照其节拍降落，因此声音也随之降落。人群每节拍或半节拍就会减少一个人。
+- **Pops 对任何出现的东西（卡片、贴纸、邮票、文字）使用 back-ease**；退出时的缓入。没有什么会慢慢消失：事物要么正在发生，要么正在突然消失。
+- **喊叫姿势**：双臂举起+张嘴约半拍。
+- **打字机** 以一小部分节拍显示，每隔几个字符点击一下。
+- 场景变化是 **小节线上的硬剪切**，带有非常短的白色闪光。如果有的话，淡入淡出会保留到最后。
+- 没有任何东西会脱离网格：节拍之间的事件位于细分中。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-The stage is a frontal, symmetrical proscenium; the frame itself does the moving. A vocabulary, not a route. Opening and ending come from the topic.
+舞台是正面对称的台口；框架本身进行移动。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Beat punch (zoom 0.8–5 % around centre, decays in ~0.16 s) | the hit, felt in the frame | any accent; a slam; a count-in |
-| Several punches in one bar | the frame breathing with the music | a chorus; an escalating pattern |
-| Locked frontal wide | the whole stage as a game board | a pattern being set up; a crowd; a scoreboard |
-| Hard cut on the bar line + flash | a new round, a new set | chapter changes; a before/after |
-| Split stage (two halves, two sets) | two sides answering each other | a rivalry; human vs machine; old vs new |
-| Shrink to thumbnail (a finished bit scales down into a slot) | memory, accumulation | a recap; "and then all of this happened" |
-| Vertical scroll of the set (floor to sky) | rising stakes or scale | a leaderboard; growth; a tower of items |
-| Snap zoom onto one prop (hard cut to a 2× framing, back on the next bar) | this detail is the joke | a price tag; a number; a face reacting |
+|节拍冲孔（围绕中心缩放 0.8–5%，在 ~0.16 秒内衰减）|撞击，在框架中感受到|任何口音；猛击；预备拍|
+|一杠中多拳|框架随着音乐呼吸|合唱团；不断升级的模式|
+|锁定额宽|整个舞台就像一个游戏盘|正在建立的模式；一群人；记分牌|
+|棒线硬切+闪光|新一轮，新一组|章节变更； before/after|
+|分阶段（两半，两组）|双方互相应答|竞争；人类与机器；旧与新|
+|缩小到缩略图（完成的位缩小到一个插槽中）|记忆、积累|回顾； “然后这一切都发生了”|
+|集合的垂直滚动（从地板到天空）|赌注或规模不断增加|排行榜；生长;一座物品塔|
+|将变焦捕捉到一个道具（硬剪切到 2× 框架，回到下一个栏）|这个细节就是个笑话|价格标签；一个数字；一张脸有反应|
 
-Keep the sum of simultaneous punches below ~0.06 so the frame edge never shows. Characters stand on the floor band; banners top-left, judgement words centre-top. Hard cuts only; no dissolves.
+将同时出拳的总和保持在约 0.06 以下，这样框架边缘就不会出现。角色站在地板带上；横幅位于左上方，判断词位于中上方。仅硬切削；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **All synthesized** from the picture's events: a sine kick with soft saturation, band-passed noise snare and clap, hats, slap bass, detuned-saw brass stabs with a closing filter, square lead with vibrato, marimba-like pluck, music-box bell, triangle pad, square arp, cowbell.
-- **A bright major pop harmony** on a short chord loop, one chord per bar; each round gets its own flavour (funk, quiz, electro, dream, heavy…), not a new song.
-- **Event foley is toy-like and pitched**: pops, plop + boing landings, stamps, typewriter clicks, buzzers, dings, servo whirs, splats; pitched pips can spell a melody as a crowd drops in.
-- **Shouts, not sentences**: one- to three-word calls ("Hey!", a number, a verdict), placed 20–30 ms before the beat so the consonant lands on it. A crowd shout = several different voices stacked a few ms apart and panned across the stereo field.
-- Options to vary intensity (pick what the film needs): a jingle (crash + rising brass + snare roll) into each round; a transposition up for a finale; dropping to drums only for one bar before a big hit; a half-time bar for a reveal; one bar of silence broken by a single shout.
-- **Mix**: voices and foley on their own bus; music ducked from that bus's envelope; soft-clip rather than hard limit; −14 LUFS, true peak ≤ −1 dB.
+- **全部从图片的事件中合成了**：具有柔和饱和度的正弦踢，带通噪声军鼓和拍手，帽子，拍击贝司，带有关闭滤波器的失谐锯铜管刺，带有颤音的方铅，马林巴般的拨弦，音乐盒铃，三角垫，方形琶音，牛铃。
+- **A 明亮的大调流行和声** 位于短和弦循环上，每小节一个和弦；每一轮都有自己的风格（放克、测验、电子、梦想、重...），而不是一首新歌。
+- **事件拟音类似于玩具并有音调**：爆裂声、扑通声 + 轰鸣声着陆、印记、打字机咔嗒声、蜂鸣声、叮当声、伺服呼呼声、啪嗒声；当人群涌入时，音调可以拼写出旋律。
+- **喊叫，而不是句子**：一到三个单词的呼叫（“嘿！”，一个数字，一个判决），放置在节拍前 20-30 毫秒，以便辅音落在上面。人群的呼喊 = 几个不同的声音以几毫秒的间隔叠加并在立体声场上平移。
+- 改变强度的选项（选择影片需要的）：每轮都有一首叮当声（碰撞+上升的铜管+军鼓）；结局的换位；在大热门之前只敲击一小节鼓；中场休息时间揭晓；一声喊叫打破了一片寂静。
+- **混音**：声音和拟音在自己的总线上；音乐从那辆公共汽车的外壳中消失了；软限制而不是硬限制； −14 LUFS，真实峰值 ≤ −1 dB。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Rounds with a card.** A 1-bar card (round number + name + a tag such as a year or a step) flies in on a jingle, then play. *Fits content like:* the steps of a recipe; the stages of a startup; the chapters of a museum tour.
-- **Report card.** A typewritten recap with a grade stamp. *Fits content like:* a quarterly review; a trip summary; a final score.
-- **Call-and-response.** Anything with a turn becomes a rhythm pattern; speeding up the pattern (quarters → eighths) *is* the plot. *Fits content like:* a teacher's question and the class answer; a customer order and the barista's reply; ping-pong between two negotiators.
-- **Next-level tease.** Something hatches or unlocks. *Fits content like:* a next version; next season; a next grade.
-- **Judgement word.** A big outlined word pops at an angle on the round's last hit. *Fits content like:* "Delivered!" on a logistics step; "Approved!" on a permit; "Personal best!" on a training plan.
-- **Remix board.** One set with a timeline ribbon; each item gets a few bars centre stage, then shrinks into a slot along the bottom; at a climax all slots bounce together. *Fits content like:* a year in review; a team's release list; a festival line-up.
-- **Stats as game UI.** Numbers become podium scores, counters racing to a target, price tags getting hammered, bar charts that grow per beat. *Fits content like:* fundraising progress; calories per dish; downloads of an app.
-- **Crowd drop.** Many contestants drop in one per beat, each with a pitched pip. *Fits content like:* every member of a club; the planets; the ingredients of a dish.
+- **带有卡片的回合。** 一张 1 格卡片（回合号 + 名称 + 标签，如年份或步骤）随着叮当声飞入，然后玩。 *适合以下内容：*食谱的步骤；初创公司的各个阶段；博物馆之旅的章节。
+- **成绩单。** 带有成绩印章的打字总结。 *适合以下内容：*季度回顾；旅行总结；最终的配乐。
+- **呼叫和响应。** 任何有转动的东西都会成为节奏模式；加速模式（四分之一→八分之一）*是*情节。 *适合以下内容：* 老师的问题和课堂答案；顾客订单和咖啡师的回复；两个谈判者之间打乒乓球。
+- **下一级挑逗。** 有东西孵化或解锁。 *适合以下内容：*下一个版本；下个赛季；下一年级。
+- **判断词。** 在该回合的最后一次击中时，一个大的轮廓词以一定角度弹出。 *适合以下内容：*“已交付！”在物流步骤上； “得到正式认可的！”持有许可证； “个人最好成绩！”关于培训计划。
+- **混音板。** 一套带时间线功能区；每个项目在中心舞台都有几个条，然后收缩到底部的一个槽中；在高潮时，所有插槽都会一起弹跳。 *适合以下内容：*一年回顾；团队的发布列表；节日阵容。
+- **Stats 作为游戏 UI。** 数字变成登上领奖台的分数，计数器竞相达到目标，价格标签被敲击，条形图每节拍增长。 *适合以下内容：*筹款进度；每道菜的卡路里；应用程序的下载。
+- **人群掉落。** 许多参赛者每节拍掉落一个，每个都有一个音高点。 *适合以下内容：*俱乐部的每个成员；行星；一道菜的配料。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Stateful updates break parallel renders**: a worker starting cold shows the initial state. Recompute every pose from `t`; compare single stills with a sequential render.
-- **Cue lists drift** when cut flashes, jingles and arrangement are separate hand lists: derive them from one table.
-- **Fixed-length audio buffers** cut the tail: size them from the duration.
-- **Text measured before fonts load** overflows plates: load fonts, then build.
-- **TTS misreads digits and symbols** in shouts: spell them out.
-- **Real products as characters**: names on tags, original mascots, no logos or UI; real people only as generic stand-ins.
+- **有状态更新会破坏并行渲染**：冷启动的工作人员显示初始状态。重新计算 `t` 中的每个姿势；将单个剧照与顺序渲染进行比较。
+- **Cue 列出了当剪切闪光、叮当声和排列是单独的手列表时的漂移**：从一张表中导出它们。
+- **固定长度音频缓冲区** 剪切尾部：根据持续时间调整它们的大小。
+- **在字体加载之前测量的文本** 溢出板：加载字体，然后构建。
+- **TTS 在喊叫中误读了数字和符号**：将它们拼出来。
+- **真实产品作为角色**：标签上的名称，原创吉祥物，无徽标或UI；真人只是作为通用替身。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/frame_head.html` (SVG helpers: `el`, `txt`, `tf`, `op`, easing `E`, per-glyph `chars`/`charsPop`, `measure`), `demo/main_v1.js` (tempo grid `at(bar, beat)`, `ev()` sound events, `punch()`, `hopY`/`hitSq`, `gtext` telops, `stripes`/`dots`/`raysEl` sets, `burst`, `judge`, `banner`), `demo/main_b.js` (`bean()` characters + `pose()`, `human()`, `scene(t0, t1, build)`, `card()`, `dropY`, `heyAt`), `demo/music.py` + `demo/synth_lib.py` (event-driven score and SFX). The contract: `scene()` builds nodes once and returns `update(t)`, which only sets attributes. Module table and a minimal new round: [DEMO.md](DEMO.md#engine-reference).
+`demo/frame_head.html`（SVG 帮助程序：`el`、`txt`、`tf`、`op`、缓动 `E`，每个字形`chars`/`charsPop`、`measure`)、`demo/main_v1.js`（速度网格 `at(bar, beat)`、`ev()` 声音事件、`punch()`、 `hopY`/`hitSq`、`gtext` 幻灯片、`stripes`/`dots`/`raysEl` 套、`burst`、`judge`、 `banner`)、`demo/main_b.js`（`bean()` 字符 + `pose()`、`human()`、`scene(t0, t1, build)`、`card()`、`dropY`、 `heyAt`)、`demo/music.py` + `demo/synth_lib.py`（事件驱动的配乐和 SFX）。合约：`scene()` 构建一次节点，返回`update(t)`，仅设置属性。模块表和最小的新一轮：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the rounds and their verbs, the cast, the sets and colours, whether there is narration, the tempo, the opening, the ending and the length. The grid, the drawing kit and the telop language stay.
+您可以决定回合及其动词、演员阵容、布景和颜色、是否有旁白、节奏、开头、结尾和长度。网格、绘图工具和字幕语言保留了下来。
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **a tournament bracket** (two contestants per round, the winner advances, the final is a split stage); **one long round** that keeps escalating its single pattern from quarters to sixteenths as the story's pressure rises; **a quiz show** with three contestants where each question is a fact of the topic and the scoreboard is the argument.
-- Openings: **the judgement first** (a "Perfect!" pops on an empty stage, then we rewind to how it was earned); **a single contestant alone** hopping on a bare floor until the crowd drops in; **the scoreboard** showing a final number, then counting back to zero.
-- Endings: **a group photo** (everyone freezes mid-hop, a flash, the frame becomes a polaroid on a card); **a level-select map** where every finished round is a lit node; **a curtain** falling bar by bar with the last shout under it.
+- 结构：**a 锦标赛分组**（每轮两名选手，胜者晋级，决赛分阶段进行）； **one长轮**，随着故事压力的上升，其单一模式不断从四分之一升级到十六分之一； **问答节目** 共有三名参赛者，其中每个问题都是主题的事实，记分板是论点。
+- 开局：**首先判断**（在空荡荡的舞台上弹出“完美！”，然后我们倒回如何获得它）； **一名参赛者单独** 在光秃秃的地板上跳跃，直到人群涌入； **记分板**显示最终数字，然后倒数到零。
+- 结局：**合影**（大家中途定格，一闪，相框变成卡片上的拍立得）； **一个关卡选择地图**，其中每个完成的回合都是一个点亮的节点； **窗帘** 一根一根地落下，下面是最后的呼喊。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

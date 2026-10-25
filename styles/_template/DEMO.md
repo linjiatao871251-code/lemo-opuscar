@@ -1,46 +1,53 @@
-# Style Name — our demo
+<a id="style-name--our-demo"></a>
+# 风格名称 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Title of the Demo Film* (NN s) · `<slug>.mp4` · source in [`demo/`](demo/)
+示范：*示范影片的标题*（NN s）·`<slug>.mp4`·来源在 [`demo/`](demo/)
 
 <!--
-How to fill this template (delete this comment):
-- Everything specific to our film: the story and its arc, the shot table with times, the score structure,
-  the demo palette and props, the end card, build notes, pitfalls of demo props, and for scene styles the content.json fields.
-- Numbers go here as examples; the rule behind each one lives in STYLE.md.
+填写模板的方法（完成后删除本注释）：
+- 本片特有的内容都写在这里：故事及情节弧线、带时间的镜头表、配乐结构、示范配色和道具、片尾卡、构建说明、道具相关问题；场景型风格还需说明 content.json 字段。
+- 数值在此作为实例；数值背后的通用规则写在 STYLE.md。
 -->
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Logline, the arc, why it fits the style, which native moves it spends where.
+故事梗概，弧线，为什么它符合风格，哪个风格特有表现手法它花在哪里。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-The demo's camera route, opening and ending included.
+示范的摄影机路线，包括开头和结尾。
 
-| # | Time | Shot | Camera | Native move / note |
+|#|时间|镜头|摄影机|风格特有表现手法/注|
 |---|---|---|---|---|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-The score arc (section sequence), tempo, key, cue-by-cue structure, silences with times, how the mix was balanced for this film.
+配乐弧线（部分序列）、速度、调性、逐个提示结构、随时间静音，以及影片的混音如何平衡。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-The demo's actual colours, characters, objects and their design notes.
+示范的实际颜色、字符、物体及其设计说明。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-What our end card shows. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+我们的片尾卡显示了什么。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
-File map of `demo/`, build order, commands (`sh demo/build.sh`), review steps, render times, and pitfalls tied to this demo's props.
+`demo/` 的文件地图、构建顺序、命令 (`sh demo/build.sh`)、审查步骤、渲染时间以及与此示范道具相关的陷阱。
 
-## content.json fields (scene styles only)
+<a id="contentjson-fields-scene-styles-only"></a>
+## content.json 字段（仅限场景风格）
 
-| Field | Type | Allowed | If out of range |
+|场地|类型|允许|如果超出范围|
 |---|---|---|---|
 
-Swapping this file and running `build.sh` checks that the engine re-flows; it is not how a user's film is made.
+交换此文件并运行 `build.sh` 检查引擎是否重新流动；用户的影片不是这样制作的。

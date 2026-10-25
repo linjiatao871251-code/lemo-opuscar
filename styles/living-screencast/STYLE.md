@@ -1,122 +1,134 @@
-# Living Screencast — Style Prompt
+<a id="living-screencast--style-prompt"></a>
+# 活体实机录屏：风格提示词
 
-> A product walkthrough that looks like a real screen recording, where a low-resolution mascot lives inside a high-resolution interface and acts out what the software is doing.
-> References (grammar only):
-> - **Screen Studio-style product recordings:** auto-zoom to the cursor, cursor smoothing, click push-ins, and a window floating on wallpaper.
-> - **Apple "Guided Tour" videos:** real interface, calm narration, one feature per sentence.
-> - **Duolingo and Headspace mascot motion:** squash and stretch, anticipation, a character that performs inside the UI.
-> - **The Browser Company (Arc) launch films:** playful tone and fast cutting.
+> 看起来像真实屏幕录制的产品演练，其中低分辨率吉祥物位于高分辨率界面内，并表现出软件正在做什么。
+> 参考文献（仅语法）：
+> - **Screen Studio 风格的产品录制：** 自动缩放光标、光标平滑、单击推送以及浮动在壁纸上的窗口。
+> - **苹果“导览”视频：**真实界面，平静叙述，一句特色。
+> - **Duolingo 和 Headspace 吉祥物运动：** 挤压和拉伸、预期、在 UI 内执行的角色。
+> - **浏览器公司（Arc）推出影片：**俏皮的语气和快速的剪辑。
 >
-> Never copy their characters, UI, music or footage.
+> 切勿复制他们的角色、用户界面、音乐或镜头。
 
-A walkthrough of a piece of software, typically 45–75 s. The user gives the product and the features; you decide the story, shots, choreography, sound and music.
+一个软件的演练，通常 45-75 秒。用户给出产品和功能；你决定故事、镜头、编舞、声音和音乐。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-The film looks like a **screen recording of the real product**, but it is not a recording. Every window, menu, diff line and button is **redrawn in 2D (HTML/CSS/SVG)**, so the camera can go anywhere, every pixel is controllable and text stays sharp at any zoom.
+影片看起来像**真实产品**的屏幕录制，但它不是录制。每个窗口、菜单、差异线和按钮都是 **以 2D (HTML/CSS/SVG)** 重新绘制的，因此摄影机可以去任何地方，每个像素都是可控的，并且文本在任何缩放下都保持清晰。
 
-A **mascot made of big square pixels** lives in that high-resolution world. The clash of two resolutions, a hard-edged low-res sprite against anti-aliased UI, is the look.
+由大方形像素**制成的**吉祥物生活在那个高分辨率的世界中。两种分辨率的冲突，硬边的低分辨率精灵与抗锯齿用户界面的冲突，就是外观。
 
-The mascot is the software's agency made visible: when the software reads, it runs along the rows it reads; when it plans, it holds a pixel pencil; when it tests, it stomps the button.
+吉祥物是软件可见的机构：当软件读取时，它沿着读取的行运行；当它计划时，它拿着一支像素铅笔；当它测试时，它会踩下按钮。
 
-**Two actors, never a hand:** the **cursor** is the user; the **mascot** is the software.
+**两个演员，从来没有一只手：** **光标** 是用户； **吉祥物** 是该软件。
 
-Not a dark tech keynote (no black stage, no invented abstract UI: this is the real product), not a pixel-art game (the world is hi-res vector UI; only the mascot and its props are pixels), not a real capture (nothing is a screenshot).
+不是黑暗科技主题演讲（没有黑色舞台，没有发明的抽象 UI：这才是真正的产品），不是像素艺术游戏（世界是高分辨率矢量 UI；只有吉祥物及其道具是像素），不是真正的捕捉（没有任何截图）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Real UI, redrawn**: every label, mode name and shortcut matches the real product; no screenshots, no lorem ipsum. Demo content (code, data, test output) is coherent, and the app under test really changes.
-- **Pixel grid is sacred**: the mascot, its props (pencil, "!", sparkles, heart, dust) and trails share one square-pixel grid with crisp edges. It scales with the camera; its position snaps to half-pixels, so its motion feels stepped.
-- **Gravity = top edges of UI**: the mascot only stands on the top edge of a real element (input box, menu, list row, code line, button, status bar, the letters of a heading). Its position comes from **measuring the live DOM** every frame, never hand-placed coordinates.
-- **Window on wallpaper**: the app floats on a desktop with a soft shadow; zoom never shows beyond the monitor.
-- **Depth** only where it serves attention: rack focus (blur the pane that doesn't matter), a vignette spotlight. Never blur text the viewer must read.
-- **Motion blur** is derived from camera speed and applied as an anisotropic blur on an **untransformed wrapper**, only on whips. Slow moves stay sharp.
+- **真实UI，重绘**：每个标签、模式名称和快捷方式都与真实产品匹配；没有屏幕截图，没有 lorem ipsum。 示范内容（代码、数据、测试输出）是连贯的，并且被测试的应用程序确实发生了变化。
+- **像素网格是神圣的**：吉祥物、它的道具（铅笔、“！”、闪光、心形、灰尘）和路径共享一个边缘清晰的方形像素网格。它可与摄影机一起扩展；它的位置捕捉​​到半像素，因此它的运动感觉是阶梯式的。
+- **重力=UI**的上边缘：吉祥物仅站在真实元素（输入框、菜单、列表行、代码行、按钮、状态栏、标题字母）的上边缘。它的位置来自**每帧测量现场DOM**，绝不是手工放置的坐标。
+- **壁纸上的窗口**：应用程序漂浮在桌面上，带有柔和的阴影；变焦永远不会超出显示器范围。
+- **深度** 仅在需要注意的地方：机架焦点（模糊无关紧要的窗格）、晕影聚光灯。切勿模糊观众必须阅读的文本。
+- **运动模糊**源自摄影机速度，并在**未变换的包装器**上用作各向异性模糊，仅在鞭子上。缓慢的动作保持敏锐。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- The product's own interface colours rule: follow its real light and dark themes exactly.
-- The mascot keeps the product's or brand's mascot colour, or one saturated hue that no UI element uses, so it finds the eye in any frame.
-- Overlays (chapter pill, key HUD, captions) are neutral frosted glass; one accent at most, taken from the product.
-- A theme switch can be a story event: the whole film may change state with it.
+- 产品自己的界面颜色规则：完全遵循其真实的浅色和深色主题。
+- 吉祥物保留了产品或品牌的吉祥物颜色，或者没有 UI 元素使用的一种饱和色调，因此它在任何框架中都能吸引眼球。
+- 覆盖层（章节药丸、按键 HUD、字幕）为中性磨砂玻璃；最多一种口音，取自产品。
+- 主题切换可以是一个故事事件：整个影片可能会随之改变状态。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- UI type follows the product (or licence-free look-alikes such as Inter, JetBrains Mono, a serif for editorial UIs).
-- **Information layers only**: a chapter pill (01–04), a KeyCastr-style keystroke HUD, frosted-glass caption pills, an optional "▶▶ 4×" time-lapse tag. Nothing else overlays the screen.
-- Captions sit in a pill at the bottom, never over the element being discussed and never under the mascot; hold ≥ max(1.8 s, speech + 0.6 s).
-- A title, if any, is diegetic: it appears as part of the UI (an empty-state heading, a window title, a notification).
+- UI 类型遵循产品（或免许可的类似产品，例如 Inter、JetBrains Mono、用于编辑 UI 的衬线）。
+- **仅信息层**：章节药丸 (01–04)、KeyCasstr 式击键 HUD、毛玻璃字幕药丸、可选的“▶▶ 4×”延时标签。没有其他东西覆盖屏幕。
+- 说明文字位于底部的药丸中，永远不会位于正在讨论的元素上方，也永远不会位于吉祥物下方；保持 ≥ max(1.8 s，语音 + 0.6 s)。
+- 标题（如果有的话）是叙事性的：它作为 UI 的一部分出现（空状态标题、窗口标题、通知）。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 30 fps; UI on ones; mascot position stepped to its pixel grid.
-- **Mascot acting**: jumps with anticipation crouch, stretch on take-off, tucked legs, landing squash with a damped bounce and dust. Idle breathes (a tiny squash) on the score's beat and blinks irregularly. Walks by leg alternation, flipping the sprite for direction.
-- **Eyes carry the acting** (neutral / left / right / up / down / wide / happy / shut / blink): they look at what matters. Arms: down / up (cheer) / wave.
-- **Cursor**: smoothed, spring-eased paths, small push on click, never teleports.
-- **Cause and effect**: every mascot action triggers a real UI state change; every user action is a cursor move, click or keystroke shown on the HUD.
-- UI animates like the real product (its own menus, popovers, diff reveals); don't invent flourishes the product doesn't have.
+- 30 帧/秒； UI 上的；吉祥物位置步入其像素网格。
+- **吉祥物表演**：跳跃时预判蹲下，起跳时伸展，双腿卷起，着陆时有阻尼弹跳和灰尘挤压。 Idle 随着配乐的节拍呼吸（一个小挤压），并且不规则地眨眼。通过双腿交替行走，翻转精灵寻找方向。
+- **E眼睛携带表演**（中立/左/右/上/下/宽/快乐/关闭/眨眼）：他们看重要的事情。手臂：向下/向上（欢呼）/挥手。
+- **光标**：平滑、弹簧缓和的路径，点击时小推，从不传送。
+- **因果**：每个吉祥物动作都会触发真实的UI状态变化；每个用户操作都是 HUD 上显示的光标移动、单击或击键。
+- UI 动画就像真实产品一样（它自己的菜单、弹出窗口、差异显示）；不要发明产品没有的优点。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A recording-software camera: one continuous take inside the screen, zoom ≥ 1, cuts only under chapter transitions. Opening and ending come from the topic.
+录音软件摄影机：屏幕内连续拍摄，变焦≥1，仅在章节过渡处剪切。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Push-in to the cursor or caret | "this is where it happens" | typing a prompt; choosing a menu item; a setting |
-| Slow drift at rest | the app is alive while we listen | a line of narration; waiting for a result |
-| Whip-pan between panes (with blur) | cause here, effect there | sending a message → a result appearing; code → preview |
-| Push-in + vignette freeze | the one promise to remember | a safety guarantee; a price; an undo |
-| Rack focus between panes | attention moves, nothing else does | reading files; logs scrolling while chat waits |
-| Pull back to the full window | the whole workflow in view | a summary; parallel tasks; before/after |
-| Follow the mascot along a list | the software working through items | scanning results; a checklist; a migration |
-| Split-window reframe | two things at once | parallel sessions; compare two versions |
+|推入光标或插入符号|“这就是事情发生的地方”|输入提示；选择菜单项；一个设置|
+|静止时缓慢漂移|当我们聆听时，该应用程序仍处于活动状态|一行叙述；等待结果|
+|在窗格之间快速平移（模糊）|此处因，彼处果|发送消息 → 结果出现；代码 → 预览|
+|推入+晕影冻结|那个承诺要记住的人|安全保证；价格；撤消|
+|窗格之间的机架焦点|注意力移动，其他什么都不动|读取文件；聊天等待时日志滚动|
+|拉回到全窗口|整个工作流程尽收眼底|总结；并行任务； before/after|
+|沿着列表跟随吉祥物|软件通过项目进行工作|扫描结果；清单；一次迁移|
+|分割窗口重构|同时做两件事|平行会议；比较两个版本|
 
-Framing: the thing being discussed and its caption never overlap; the mascot never covers text to be read. Transitions: chapter pill wipes, pixel wipes, a theme reveal circle; never dissolves or screenshots.
+框架：正在讨论的事情和它的标题永远不会重叠；吉祥物永远不会覆盖要阅读的文字。过渡：章节丸擦拭、像素擦拭、主题显示圈；永远不会溶解或截图。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Two resolutions in the music**: a hi-fi layer (piano, upright or electric bass, brushed or tight kit, glockenspiel, real samples) is the world; a chiptune square or pulse voice is the mascot. They can trade, duet or merge.
-- Options: a low-passed "night" version of the band for a dark theme; a tom fill and crash at chapter seams; dropping the drums to build tension; the mascot's notes on words it lands on; a stereo split for split screens; a single held pad under a freeze.
-- **Foley**: keyboard (a thock plus a click, human timing jitter), trackpad clicks, pane swishes, popup pops, notification chimes, CI ticks, a shutter for screenshots. Mascot steps, jumps and landings are 8-bit.
-- **Silence**: a short drop to room tone before the key promise makes it land.
-- **Voice**: calm, one feature per line; product names verified with whisper. Keep effects off word onsets. Duck music under voice; −14 LUFS.
+- **音乐中的两种分辨率**：高保真层（钢琴，立式或电贝斯，拉丝或紧套，钟琴，真实样本）是世界；吉祥物是芯片音乐方形或脉冲声音。他们可以交易、二重奏或合并。
+- 选项：低通“夜间”版本的乐队，适合黑暗主题；汤姆鼓在章节接缝处填充和碰撞；放下鼓来营造张力；吉祥物对它所落在的单词的注释；用于分屏的立体声分割；冻结下的单个固定垫。
+- **弗利**：键盘（敲击加点击，人为计时抖动）、触控板点击、窗格滑动、弹出窗口、通知铃声、CI 滴答声、屏幕截图快门。吉祥物的步数、跳跃和落地都是 8 位的。
+- **沉默**：在关键承诺落地之前短暂降低室内音调。
+- **嗓音**：冷静，每行一个功能；产品名称经过耳语验证。保持单词开头的效果。声音下的鸭子音乐； −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your walkthrough needs.
+菜单：使用您的演练所需的菜单。
 
-- **Match-cut origin.** The mascot is born from something already in the UI (a logo's block characters, an icon, a loading spinner) and climbs out, leaving an outline. *Fits content like:* a chat bubble turning into a guide; an icon becoming an assistant; a spinner becoming a helper.
-- **Diegetic title.** The name appears as a real UI element; the mascot lands on it on a downbeat. *Fits content like:* an empty state; a new-project dialog; a welcome email.
-- **Moving floor.** The mascot rides a caret, a popup, a sent message, a progress bar. *Fits content like:* a message flying into a thread; an upload bar; a drag-and-drop.
-- **Time-lapse with a tag.** Long work runs at N× with a flashing tag and rack focus. *Fits content like:* indexing a library; a data import; a build.
-- **Spotlight freeze.** Push in and vignette the one badge that holds the promise. *Fits content like:* "Saved"; "Encrypted"; "No charges until…".
-- **The film changes state.** A toggle's effect escapes the preview and takes over the whole film, and returns later. *Fits content like:* dark mode; a language switch; offline mode.
-- **Cell division.** A new session or window splits the screen and the mascot splits with a pixel burst. *Fits content like:* parallel tasks; multiple accounts; team members.
-- **Cursor and mascot as characters.** The cursor pets, pokes or drags the mascot, and it reacts. *Fits content like:* approving a suggestion; undoing; onboarding delight.
-- **Karaoke-ball words.** The mascot hops from word to word as they are spoken. *Fits content like:* a slogan; a shortcut list; step names.
+- **匹配切割起源。** 吉祥物是从 UI 中已有的东西（徽标的块字符、图标、加载旋转器）中诞生的，然后爬出来，留下轮廓。 *适合以下内容：*聊天气泡变成指南；偶像成为助手；纺纱工变成帮手。
+- **饮食标题。** 该名称显示为真实的 UI 元素；吉祥物悲观地落在上面。 *适合以下内容：*空状态；新项目对话框；欢迎电子邮件。
+- **移动地板。** 吉祥物骑着一个插入符号、一个弹出窗口、一条已发送的消息、一个进度条。 *适合以下内容：*飞入线程的消息；上传栏；拖放操作。
+- **带标签的延时拍摄。** 长时间工作以 N× 运行，带有闪烁标签和机架焦点。 *适合以下内容：* 为风格库建立索引；数据导入；一个构建。
+- **聚光灯冻结。** 推入并装饰一个具有承诺的徽章。 *适合以下内容：*“已保存”； “加密”； “不收费，直到……”。
+- **影片更改状态。** 切换的效果脱离预览并接管整个影片，并稍后返回。 *适合以下内容：* 深色模式；语言切换；离线模式。
+- **细胞分裂。** 新会话或窗口会分割屏幕，吉祥物会随着像素突发而分裂。 *适合以下内容：*并行任务；多个账户；团队成员。
+- **光标和吉祥物作为字符。** 光标抚摸、戳或拖动吉祥物，它会做出反应。 *适合以下内容：*批准建议；撤销；入职喜悦。
+- **卡拉 OK 球单词。** 吉祥物在说出单词时从一个单词跳到另一个单词。 *适合以下内容：*口号；快捷方式列表；步骤名称。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Invented features or renamed modes → check every button, mode and shortcut against the product's documentation; if it isn't in the docs, it isn't in the film.
-- The mascot floats or drifts off its element → measure the DOM every frame, stand only on top edges.
-- The mascot covers text or sits under a caption → reserve a text-free lane for it.
-- Blur-filter "fake depth" on text you want read, or zooming out past the screen → rack focus only on panes not being read; zoom ≥ 1.
-- A hand, arm or finger on screen → the cursor is the user.
-- Motion blur applied to a transformed layer smears the pixel sprite wrong → blur an untransformed wrapper, and only on whips.
-- A keypress or pop landing on a product name masks it → shift foley off word onsets; re-check with whisper on the final mix.
-- TTS mispronounces the product name → try voices and spellings, verify with whisper.
+- 发明的功能或重命名的模式 → 根据产品文档检查每个按钮、模式和快捷方式；如果它不在文档中，则它不在影片中。
+- 吉祥物漂浮或偏离其元素 → 每帧测量 DOM，仅站在顶部边缘。
+- 吉祥物覆盖文本或位于标题下方 → 为其保留无文本通道。
+- 对您想要阅读的文本进行模糊过滤“假深度”，或缩小屏幕→仅将焦点放在未阅读的窗格上；变焦≥1。
+- 屏幕上的手、手臂或手指 → 光标就是用户。
+- 应用于变换层的运动模糊会错误地涂抹像素精灵→模糊未变换的包装器，并且仅在鞭子上。
+- 按下或弹出产品名称会掩盖它→将拟音移出单词开头；使用最终混音上的耳语重新检查。
+- TTS 发音错误的产品名称 → 尝试声音和拼写，用耳语验证。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `film.js` (timeline: VO at fixed times, every visual beat hung on a spoken word with `W(id, word)`, camera moves, `Actor` mascot segments, `Cursor`, sound events), `ui.js` (state → HTML for each interface), `clawd.js` (sprite grid, poses, pixel props: replace the sprite with your own mascot), `main.js` (light/dark layers, DOM anchor measurement, motion blur, HUD: captions, keys, pixel wipes, spotlight), `sound.py` (score, foley and VO from `events.json`, with ducking). Build notes: [DEMO.md](DEMO.md#build-notes).
+在`demo/`中：`film.js`（时间线：固定时间的VO，每个视觉节拍都挂在带有`W(id, word)`，摄影机运动，`Actor`吉祥物片段，`Cursor`，声音事件的口头单词上），`ui.js` （每个界面的状态 → HTML），`clawd.js`（精灵网格，姿势，像素道具：用您自己的吉祥物替换精灵），`main.js`（light/dark图层，DOM锚点测量，运动模糊，HUD：标题，按键，像素擦拭，聚光灯），`sound.py` （配乐、拟音和来自 `events.json` 的 VO，以及音量闪避）。构建注释：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the features and their order, the mascot (the product's own, or an original pixel character), the story, the opening, the ending, the camera path, the chapters and the music. All far from our demo:
+您可以决定功能及其顺序、吉祥物（产品自己的或原始像素角色）、故事、开头、结尾、摄影机路径、章节和音乐。与我们的示范相去甚远：
 
-- Structures: **a bug hunt** (the mascot chases one error through logs, code and a fix, a single chapter); **a day of one user** (morning to evening in one app, the theme and music shifting with the hour); **a race** (two windows side by side, old way vs. new way, the mascot winning on the right).
-- Openings: **mid-task** (a half-written document; the mascot is already pushing the cursor's selection); **the notification** (a system toast lands; the mascot is inside it); **empty state** (a blank app, a caret blinking; the mascot drops from the menu bar).
-- Endings: **the mascot goes to sleep** on the finished item as the window dims; **the app closes** and the mascot is left standing on the dock; **a real share** (the result is sent and the mascot rides it out of frame).
+- 结构：**虫子狩猎**（吉祥物通过日志、代码和修复、一章来追踪一个错误）； **一个用户的一天**（在一个应用程序中从早到晚，主题和音乐随时间变化）； **一场比赛**（两个窗口并排，旧方式与新方式，吉祥物在右侧获胜）。
+- 开口：**任务中期**（写了一半的文档；吉祥物已经推动光标的选择）； **通知**（系统吐司落地；吉祥物在里面）； **空状态**（空白应用程序，插入符号闪烁；吉祥物从菜单栏中掉落）。
+- 结局：**当窗户变暗时，吉祥物在完成的物品上睡觉**； **应用程序关闭**，吉祥物留在码头上； **a 真实分享**（结果已发送，吉祥物将其骑出框架）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

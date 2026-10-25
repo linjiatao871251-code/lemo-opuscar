@@ -1,94 +1,103 @@
-# Dark Tech Keynote — our demo
+<a id="dark-tech-keynote--our-demo"></a>
+# 黑暗科技主题演讲 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Room to Think* (42 s) · `dark-keynote.mp4` · source in [`demo/`](demo/) · a launch film for **Tidy**, a fictional app that sorts your desktop, photos and inbox in one press.
+示范：*思考空间*（42 秒）·`dark-keynote.mp4`·来源在 [`demo/`](demo/)·影片的 **整齐的** 的发布，这是一个虚构的应用程序，可排序一键操作您的桌面、照片和收件箱。
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-The brief we set ourselves: a 30–45 second launch film for a software product (topic → story, shots, sound, music, captions → finished film).
+我们为自己设定的简报：软件产品的 30-45 秒发布影片（主题 → 故事、镜头、声音、音乐、字幕 → 完成的影片）。
 
-How the native moves were spent on this story:
+风格特有表现手法如何花在这个故事上：
 
-| Native power | Story use in the demo |
+|原生电源|示范中的故事使用|
 |---|---|
-| **UI can be generated without limit** | The problem as accumulation: notifications, files, tabs and photos spawning faster and faster, hundreds of them (264 elements). |
-| **The snap grid** | The whole product promise as one motion: everything flies into a grid in one beat. The grid stayed invisible until that moment. |
-| **The cursor is the only thing alive on a screen** | The cursor is the protagonist. It blinks on the beat, gets shoved by interruptions, hesitates, winds up and presses. It is also the Tidy brand mark, so the reveal pays off twice. |
-| **Screens can pause** | Everything freezes mid-air and the sound cuts to digital silence. |
-| **Dark stage + soft light** | The product is revealed by a band of light sweeping across it. |
-| **Numbers roll out of glyph noise** | The one stat ("0.8") gets its own screen and scrambles into place digit by digit, one digit per sixteenth note. |
+|**UI 可无限制生成**|问题是积累：通知、文件、选项卡和照片生成得越来越快，有数百个（264 个元素）。|
+|**卡扣网格**|整个产品承诺就像一个动作：所有东西都一下子飞进网格。在那一刻之前，网格一直保持隐形。|
+|**光标是屏幕上唯一活着的东西**|光标是主角。它随着节拍闪烁，因中断而被推挤，犹豫，结束并按下。这也是 Tidy 的品牌标志，因此展示会带来双重回报。|
+|**屏幕可以暂停**|一切都冻结在半空中，声音也变成数字寂静。|
+|**暗舞台+柔光**|扫过产品的光带显露出来。|
+|**数字滚出字形噪声**|一个统计数据（“0.8”）有自己的屏幕，并逐个数字地打乱到位，每个十六分音符一位数字。|
 
-**Arc:** calm hook (a cursor types the title in silence) → interruption (first notification at 3 s) → accumulation in one continuous pull-back (each bar adds a layer) → overload inserts → **freeze + silence** → **the one action** (all layers realign into one chord) → light reveal of the product → the big number → a breath where the UI puts itself away and the music subtracts itself → echo (the cursor finishes the sentence it started).
+**弧：**平静勾（光标默默打出标题）→中断（3秒第一次通知）→一次连续回拉累积（每小节加一层）→重载插入→**冻结+沉默**→**第一个action**（所有层重新排列成一个和弦）→产品的轻微显示→大数字→UI收起自身并音乐减去自身的呼吸→回声（光标完成它开始的句子）。
 
-**The core directing idea — sound and picture share one timeline.** Every UI element spawns *on a note* of the score. Two marimbas play the same 12-note pattern; the second slowly speeds up and drifts out of phase. Files and photos appear on the on-grid line, notifications on the drifting line, so the visual chaos *is* the audible phasing. At the press both lines realign into one chord. We wrote the note table first (`timeline.js`), then let the picture read it.
+**核心指导思想——声音和图像共享同一个时间线。** 每个UI元素都在配乐的“音符”上产生。两个马林巴琴演奏相同的 12 音符模式；第二个缓慢加速并异相漂移。文件和照片出现在网格线上，通知出现在漂移线上，因此视觉上的混乱*是听觉上的相位。在按下时，两条线重新排列成一个和弦。我们先写注释表（`timeline.js`），然后让图片读取它。
 
-The recipe we followed for this topic: pick the one verb the product does (here: sort). Show its absence as generated UI noise tied to a phasing score. Give the cursor the action. Reveal with light. One number. Put everything away. End on the smallest thing on an empty screen. This is one route, not the style's shape.
+我们针对此主题遵循的秘诀是：选择产品所做的一个动词（此处：排序）。将其缺失显示为与定相配乐相关的生成 UI 噪声。为光标指定操作。用光揭示。一个数字。把所有东西都收起来。以空白屏幕上最小的东西结束。这是一种路线，而不是风格的形状。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Hook | Locked extreme close-up of the cursor and one line of text (text ~150 px). Barely perceptible push (×1.04). |
-| Accumulation | **One continuous pull-back** from ×5 to ×1 over 4 bars, keyed per bar in log space with monotone interpolation (one "notch" per bar, continuous velocity). Foreground cards pass the lens blurred. From 10.5 s a 1–2° dutch angle and a handheld wobble build. |
-| Overload | Three half-second **inserts**, each expanding out of its source position (UI expand transition): 999+ badge / 148 thin tabs / red storage bar. |
-| Freeze | Silent push-in through the frozen mess onto the cursor (×0.8 → ×2.6, ease-in-out). |
-| Press | **Whip pull-out** in one beat (×2.6 → ×0.78, cubic ease-out) so the audience sees both the press point and the whole grid landing. |
-| Reveal | The window turns in from a 3/4 angle (−24° → 0°) over 4.5 s while light sweeps across. The camera barely moves: only light and product move. |
-| Number | Dive into the status bar counter (log-zoom to ×16), then match cut to the full-screen number. Back out the same way. |
-| Breath | Slow push (×1.08) while the UI puts itself away. |
-| Echo | The exact framing of the first shot. The cursor sits in the same pixel. |
+|钩|锁定光标和一行文本的极端特写（文本约 150 像素）。几乎察觉不到的推力 (×1.04)。|
+|积累|**在 4 个小节上从 ×5 到 ×1 一次连续拉回**，在对数空间中的每个小节上用单调插值键控（每个小节一个“凹口”，连续速度）。前景卡经过镜头模糊。从 10.5 秒起，1–2° 荷兰角和手持摆动构建。|
+|超载|三个半秒 **插入物**，每个都扩展出其源位置（UI 扩展过渡）：999+ 徽章/148 个薄标签/红色存储栏。|
+|冻结|通过冻结的混乱无声地推入光标（×0.8 → ×2.6，缓入缓出）。|
+|按|**鞭子拉出**一拍（×2.6→×0.78，立方缓出），这样观众就可以看到按压点和整个网格着陆。|
+|揭示|当光线扫过时，窗户在 4.5 秒内从 3/4 角度 (−24° → 0°) 转向。 摄影机几乎不移动：只有灯光和产品移动。|
+|数字|深入了解状态栏计数器（对数缩放至 16 倍），然后匹配剪切到全屏数字。以同样的方式退出。|
+|气息|当 UI 自行收起时，缓慢推动 (×1.08)。|
+|回声|第一个镜头的精确取景。光标位于同一像素中。|
 
-Every shot change is a UI expand / collapse; no fades, no blank frames.
+每一次镜头的改变都是UI的展开/折叠；没有褪色，没有空白帧。
 
-### Motion numbers used in the demo
+<a id="motion-numbers-used-in-the-demo"></a>
+### 示范中使用的运动编号
 
-- **Spawn motions** (mess section): files drop 34 px with a 6 px bounce (0.22 s), photos fling in from off-screen with rotation (0.3 s), notifications slide 90 px from the right (0.24 s), windows pop 0.94 → 1.0 (0.22 s). Everything trembles ±2.4 px in the last second before the freeze.
-- **The collapse (signature move of this demo)**: a ring expands from the cursor at 2600 px/s. As the ring front passes, each element launches **towards its own type's row** (files → Desktop rows, photos → Photos rows, notifications → Inbox rows) along a curved path; each type bends the same way, so the screen shows **three coloured streams**. Within a group, rows are filled by the elements' y order and x order, so paths don't cross. Flights last 0.26–0.40 s depending on distance, morph into uniform tiles in the first third, overshoot along their final tangent and settle. Light trails in the stream colour, 9 segments, additive. Grid slot outlines light up in the accent just behind the ring front.
-- **Cursor acting**: blink = 0.5 s on / 0.5 s off (it is the metronome). Interrupted: 8 px shove + 10 % squash, 0.25 s decaying wobble, then it stays solid ("frozen"). Wind-up: height ×1.35, width ×0.8, ease-in over 12 frames (≥ 8). Press: 2 frames at height ×0.3, width ×2.4. Follow-through: spring back with overshoot over 0.6 s.
-- **Light reveal**: the lit area trails the front by 700 px, a 360 px soft glint rides the front at 20 %, unlit areas stay at 7 %. It takes 1.3 s.
-- **Number scramble**: glyphs cycle at 24 fps with a 3-copy vertical smear; digits lock right to left on sixteenth notes, each drops in with a small damped bounce.
-- **Put-away**: one element retracts per beat (sidebar, status bar, title bar, headers), then the window rim lights in the accent, then the window collapses vertically like a CRT switching off (ease-in, 0.22 s) and shrinks into the cursor.
+- **Spawn 动作**（混乱部分）：文件下降 34 像素，反弹 6 像素（0.22 秒），照片从屏幕外旋转飞入（0.3 秒），通知从右侧滑动 90 像素（0.24 秒），窗口弹出 0.94 → 1.0（0.22 秒）。在冻结之前的最后一秒，一切都颤抖了 ±2.4 px。
+- **折叠（示范的标志性移动）**：一个环从光标2600处展开 px/s. 当环前端经过时，每个元素都会向其自己类型的行**发射**（文件→桌面行，照片→照片行，通知→收件箱行）沿着弯曲的路径；每种类型的弯曲方式相同，因此屏幕显示 **三色流**。在组内，行按元素的 y 顺序和 x 顺序填充，因此路径不会交叉。飞行持续 0.26-0.40 秒，具体取决于距离，在前三分之一处变成均匀的瓷砖，沿着最终切线超调并稳定下来。流颜色中的光迹，9 段，附加的。网格槽轮廓在戒指正面后面的强调处亮起。
+- **光标作用**：闪烁= 0.5秒开/0.5秒关（这是节拍器）。中断：8 px 推力 + 10 % 挤压，0.25 秒衰减摆动，然后保持固态（“冻结”）。发条：高度×1.35，宽度×0.8，缓入超过12帧（≥8）。按：2个框，高度×0.3，宽度×2.4。随动：回弹，超调超过 0.6 秒。
+- **光显露**：照亮区域落后于前方 700 px，360 px 柔和闪烁以 20 % 的速度骑在前方，未照亮的区域保持在 7 %。需要1.3秒。
+- **号码争夺**：字形周期为 24 fps，具有 3 副本垂直涂抹；数字在十六分音符上从右向左锁定，每个音符都会有一个小的阻尼弹跳。
+- **上架**：每个节拍都有一个元素缩回（侧边栏、状态栏、标题栏、标题），然后窗口边缘以强调色点亮，然后窗口像 CRT 关闭一样垂直折叠（缓入，0.22 秒）并收缩到光标处。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music first**: `timeline.js` holds the tempo grid (**120 BPM**), the 12-note pattern and the note tables of all voices (phasing is computed there as a time warp). The picture spawns elements from the same tables. `tools/cuecheck.py` checks the key cues and that every spawned element sits on a score note.
-- **Score (original, minimalist)**: marimba (voice 1, on grid) + hard-mallet vibraphone (voice 2, unison, then phasing ahead; slightly detuned and brighter at the peak) + glockenspiel (voice 3, drifting the other way) + a numpy pad (A drone that gains G#/D# dissonance and rises) + a low sine pulse (eighths → sixteenths) + a quiet noise shaker. At the press all voices land on **one A major 9 chord**, the bowed vibraphone carries it into the reveal (L-cut), then one clean pattern plays, and in the breath the pattern subtracts notes bar by bar until one quarter note is left. Samples: VCSL (CC0).
-- **Sound families**: the mess sounds are scattered (every notification pitched ±45 cents off, random pans, a different timbre per source). Tidy's sounds are one family: felt ticks and glass taps, all in A major pentatonic, centred. The 264 landing taps form one in-key shimmer.
-- **Layers**: ambience (quiet room + computer fan and a 6.8 kHz coil whine that grow through the mess, **held back until the last voice-over line ends**), foley (cursor tick, low-profile keys, return, notification glass, file plop, photo flick, window whoosh, glitch accents, storage buzz, stacking thumps, the press "doom" = felt mallet + 55→40 Hz sine drop, grid tick, felt ticks, light-sweep shimmer, digit grains, CRT-off), music.
-- **Silences**: 15.0–16.0 s is **digital zero on every track** (the screen paused); the first sound after it is the press. 33.0–34.0 s is near-silence (−60 dB room); the first sound after it is the cursor tick, the same sound as frame 1.
-- **J / L cuts**: a muffled crowd of notifications fades in under the close-up before the pull-back (J); the press chord rings into the reveal (L); the light shimmer starts 0.4 s before the light (J); the number chord rings into the breath (L).
-- **Voice**: Kokoro `af_kore`, speed 0.95, confident and restrained: short declaratives. Music ducks −8 dB and foley −4 dB under voice.
+- **音乐first**：`timeline.js`保存速度网格（**120 BPM**），12音符模式和所有声音的音符表（相位作为时间扭曲计算）。该图片从同一个表中生成元素。 `tools/cuecheck.py` 检查关键提示以及每个生成的元素是否位于配乐音符上。
+- **Score（原始，极简）**：马林巴琴（声音1，在网格上）+硬槌颤音琴（声音2，齐声，然后逐步前进；稍微失谐，在峰值时更明亮）+钟琴（声音3，向另一个方向漂移）+一个numpy pad（获得G＃/D＃的无人机不和谐和上升）+一个低正弦脉冲（八分之一→十六分之一）+一个安静的噪音振动器。在按下时，所有声音都落在 **one A 大调 9 和弦** 上，弓形电颤琴将其带入显示（L 切），然后播放一个干净的模式，在呼吸中，该模式逐节减去音符，直到剩下四分之一音符。示例：VCSL (CC0)。
+- **声音系列**：混乱的声音是分散的（每个通知的音调相差±45美分，随机平移，每个源的音色不同）。 Tidy 的声音是一个家族：毛毡滴答声和玻璃水龙头声，全部为 A 大调五声音阶，居中。 264 个着陆点形成一个键内闪光。
+- **层数**：氛围（安静的房间+电脑风扇和在混乱中增长的6.8 kHz线圈呜呜声，**一直保留到最后一个画外音结束**），拟音（光标勾号，低调键，返回，通知）玻璃、文件扑通一声、照片轻弹、窗口嗖嗖声、小故障口音、存储嗡嗡声、堆叠重击声、按“厄运”=毛毡槌+55→40赫兹正弦下降、网格滴答声、毛毡滴答声、光扫闪光、数字颗粒、CRT关闭）、音乐。
+- **段落**：15.0–16.0 s 是 **每个轨道上的数字零**（屏幕暂停）；按下后的第一个声音是按下。 33.0–34.0 s 接近安静（-60 dB 房间）；它之后的第一个声音是光标滴答声，与第 1 帧相同的声音。
+- **J / L 剪切**：在拉回之前，一群低沉的通知在特写镜头下淡入（J）；按下和弦响入显示（L）；灯光闪烁在灯光 (J) 前 0.4 秒开始；数字和弦进入呼吸（L）。
+- **嗓音**：心`af_kore`，速度0.95，自信又内敛：简短的陈述语。音乐在语音下降低了−8 dB，拟音 −4 dB。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-**Stage**: base `#0A0B0F`, radial lift to `#151822` at the upper centre, one large cool glow `#3B4CCA` at 8 % in the upper right, vignette 50–55 % at the corners. Hairline grid `rgba(255,255,255,.032)` every 48 px with every 4th line at `.06`. Grain: none (`mux.sh` grain 0).
+**阶段**：底座`#0A0B0F`，径向提升到上部中心的`#151822`，右上角8％处有一个大的冷光`#3B4CCA`，角落处有50-55％的晕影。细线网格 `rgba(255,255,255,.032)` 每 48 像素，每 4 行位于 `.06`。颗粒：无（`mux.sh` 颗粒 0）。
 
-| Role | Value |
+|角色|价值|
 |---|---|
-| Window surface / raised / raised-2 | `#12151C` / `#1A1E28` / `#222734` |
-| Border / inner top highlight | `rgba(255,255,255,.08)` / `rgba(255,255,255,.07)` (1 px) |
-| Text / secondary / label | `#E8EAF0` / `#8A90A0` / `#5C6272` |
-| **Brand accent (the one colour)** | lime `#B7F34A`, glow `rgba(183,243,74,.35)` — the cursor, the "Tidy up" pill, the checkmarks, "0.8" |
-| Noise red (problem section only) | `#FF5A5F` badges. After the press, no red ever appears again |
-| Three flow colours (collapse trails) | files `#C9D3E6`, photos `#F2A65A`, notifications `#7E95FF` |
+|窗户表面 / 凸起式 / 凸起-2|`#12151C` / `#1A1E28` / `#222734`|
+|边框/内顶高亮|`rgba(255,255,255,.08)` / `rgba(255,255,255,.07)` (1 像素)|
+|文本/辅助/标签|`#E8EAF0` / `#8A90A0` / `#5C6272`|
+|**品牌口音（单色）**|石灰 `#B7F34A`、发光 `rgba(183,243,74,.35)` — 光标、“整理”药丸、复选标记、“0.8”|
+|红色噪声（仅限问题部分）|`#FF5A5F` 徽章。按下后，不再出现红色|
+|三种流动颜色（折叠轨迹）|文件 `#C9D3E6`、照片 `#F2A65A`、通知 `#7E95FF`|
 
-**Props**: the Tidy brand mark (squircle + cursor) and wordmark; windows (radius 14, 40 px title bar); notification cards with "now"; folded-corner file icons with mono filenames (`final_FINAL_2.pdf`, `Untitled 38.txt`); procedural landscape photo thumbnails; inbox rows with unread dots; a tab strip that keeps splitting (148 tabs); a 999+ badge; a red storage bar; uniform snap tiles (60–64 px, radius 20 %). Product shots rotate up to 24°.
+**道具**：Tidy 品牌标志（方圆+光标）和字标；窗口（半径 14，标题栏 40 像素）；带有“现在”的通知卡；带有单声道文件名的折叠角文件图标（`final_FINAL_2.pdf`、`Untitled 38.txt`）；程序风景照片缩略图；带有未读点的收件箱行；不断分裂的标签条（148 个标签）； 999+ 徽章；红色储物条；均匀的对齐瓷砖（60–64 像素，半径 20%）。产品镜头旋转角度可达 24°。
 
-**Captions as used**: toast `rgba(12,14,19,.72)` pill (`.88` during the mess), 1 px `rgba(255,255,255,.09)` border, Inter 500 40 px `#E8EAF0`, 8 px accent dot, 12 px rise + fade in 0.16 s. The title and final line are typed by the cursor in frame (only in the .srt). The product window is lifted 25 px while captions are up.
+**使用的标题**：吐司`rgba(12,14,19,.72)`药丸（混乱期间的`.88`），1 px `rgba(255,255,255,.09)`边框，Inter 500 40 px `#E8EAF0`，8 px重音点，12 px 0.16 秒内上升 + 淡出。标题和最后一行由光标在框架中键入（仅在 .srt 中）。产品窗口提升 25 像素，同时标题向上。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-**Title card** = the cursor typing the film title in the close-up, with a small mono overline `TIDY · A LAUNCH FILM`. **End card** = the typed tagline plus, left-aligned beneath it: film title, "a launch film for Tidy, a fictional app", style name, `Lemo-Opuscar`, `LemoLab × Claude Opus 5.5`, credits. Then everything fades except the cursor, which blinks twice and goes out.
+**标题卡**= 光标在特写镜头中键入影片标题，带有小单声道上划线`TIDY · A LAUNCH FILM`。**结束卡** = 输入的标语加号，在其下方左对齐：影片标题、“Tidy 的发布影片，一个虚构的应用程序”、风格名称、`Lemo-Opuscar`、`LemoLab × Claude Opus 5.5`、制作人员。然后，除了光标闪烁两次然后熄灭之外，所有内容都消失了。
 
-The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+“LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Rights
+<a id="rights"></a>
+## 权利
 
-Tidy is fictional. Every interface element is original and drawn in code; no real OS chrome, app layout, font, logo or melody from the reference films is used. Samples: VCSL (CC0); fonts OFL (see `demo/CREDITS`).
+整洁是虚构的。每个界面元素都是原创的，都是用代码绘制的；不使用参考影片中的真实操作系统镶边、应用程序布局、字体、徽标或旋律。样品：VCSL (CC0)；字体 OFL（参见 `demo/CREDITS`）。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/dark-keynote/demo/
@@ -99,44 +108,45 @@ styles/dark-keynote/demo/
   music/score.py   original score (sub-agent), stems, score.json      mix.py   foley + voices + ducking + silences
   tools/        dump_timeline.mjs export.mjs cuecheck.py
 ```
-1. Write `timeline.js` (grid, pattern, voices, key times) → `node tools/dump_timeline.mjs` → hand `timeline.json` + the cue map to a music sub-agent. Draw in parallel.
-2. Build the engine and the product window first (they are the style frames), then the mess generator from the note tables, then the collapse.
-3. `sh demo/build.sh` rebuilds everything: TTS → whisper → score → events → cue check → mix → srt → render → mux (−14 LUFS, grain 0).
-4. Review with `node core/render/still.mjs demo --range 0.5:42:1` + `sheet.py` at least twice, plus frame strips of the collapse and the press.
+1. 将`timeline.js`（网格、模式、声音、按键时间）→`node tools/dump_timeline.mjs`→手`timeline.json` + 音画节拍对照表到音乐子代理。平行绘制。
+2. 首先构建引擎和产品窗口（它们是风格定帧），然后是注释表中的混乱生成器，然后是崩溃。
+3. `sh demo/build.sh` 重建一切：TTS → Whisper 语音识别 → 配乐 → 事件 → 提示检查 → 混合 → srt → 渲染 → 复用器（−14 LUFS，颗粒 0）。
+4. 用`node core/render/still.mjs demo --range 0.5:42:1`+`sheet.py`复习至少两次，加上折叠和压机的框架条。
 
-Pitfalls tied to this demo's props:
-- Nearest-slot snapping of the 264 elements looked like a flicker; sending each type to its own rows (Desktop / Photos / Inbox) along curved paths with trails fixed it.
-- The first generator left holes in the grid; we trimmed or padded each group to exactly its slot count.
-- The "window closes" first used a flat tinted rectangle; the real window is now squashed and tinted only in the last 45 %.
-- Fan and coil whine (300 Hz–7 kHz) masked the voice; they are held down until the last line of the section ends.
-- Caption toasts clipped the bottom of the product window; the product is lifted 25 px while captions are up.
+与示范的道具相关的陷阱：
+- 264 个元素的最近插槽捕捉看起来像闪烁；沿着弯曲路径将每种类型发送到其自己的行（桌面/照片/收件箱），并用路径固定它。
+- 第一个发电机在网格上留下了洞；我们对每个组进行了修剪或填充，使其恰好达到其槽数。
+- “窗口关闭”首先使用了一个平坦的有色矩形；真实的窗户现在仅在最后 45% 处被压扁并着色。
+- 风扇和线圈的呜呜声 (300 Hz–7 kHz) 掩盖了声音；它们被按住，直到该部分的最后一行结束。
+- 标题 toast 剪裁在产品窗口的底部；当标题向上时，产品会提升 25 像素。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-`demo/engine.js` is a plain ES module (Canvas 2D, no dependencies besides `core/lib.js`). All drawing functions take the context first. Coordinates are in pixels of whatever transform is active.
+`demo/engine.js` 是一个普通的 ES 模块（Canvas 2D，除了 `core/lib.js` 之外没有任何依赖项）。所有绘图函数首先获取上下文。坐标以像素为单位，无论变换处于活动状态。
 
-| Function | What it does |
+|功能|它的作用|
 |---|---|
-| `setAccent(hex)` | Set the one brand colour (default `#B7F34A`). Everything accent-driven follows: cursor, toast dot, `litShape({accent:true})`, `trail`. |
-| `bg(g, {lift, cool, dark})` | Near-black stage with radial lift and cool glow. |
-| `grid(g, {ox, oy, scale, module, alpha, rect})` | Hairline grid that can follow a camera. |
-| `glow(g, x, y, r, color, a)` · `vignette(g, a)` | Soft light pools, corner falloff. |
-| `panel(g, x, y, w, h, {r, fill, shadow, cheap})` | Rounded UI surface: soft shadow, top-lit fill, 1 px border, inner highlight. `cheap` = offset shadow for hundreds of items. |
-| `litShape(g, path2d, {accent, color, glowR, sweep, bbox})` | **Draw any shape in this style**: dark lit surface with rim light, or (with `accent`) a glowing accent fill; `sweep` 0..1 adds a moving light band. |
-| `sparklePath(cx, cy, r, k, rot)` | A four-point star path (for sparkles, "new" marks). |
-| `trail(g, pts, {color, width, caretH})` | A fading light trail along points, optionally ending in a cursor. |
-| `caret(g, x, y, h, {sx, sy, on, glow, color})` | The cursor with squash/stretch and blink. |
-| `tidyMark(g, x, y, s)` · `wordmark(g, x, y, px)` | Brand mark (squircle + cursor) and word + cursor. Rename for your product. |
-| `windowBox` / `windowContent(kind)` / `notif` / `fileIcon` / `photo` / `badge` / `appIcon` / `storageBar` | The UI kit. `windowContent` kinds: note, inbox, browser, sheet, chat, viewer, code. |
-| `flyPose(from, to, p)` · `motionBlur(p, span, n, draw)` | Snap flight with overshoot, spring rotation and morph; multi-sample motion blur. |
-| `lightReveal(g, src, x, y, w, h, p, {base, soft, band, glint, angle})` | Light-sweep reveal of any canvas. |
-| `perspective(g, src, cx, cy, w, h, rotY, {slices})` | Strip-rendered Y-rotation of a flat canvas; returns `map(u,v)` to screen. |
-| `scramble(g, text, x, y, t, locks, {px, fam, color, tracking})` | Glyph-noise-to-number roll with per-character lock times. |
-| `toast(g, text, a, {dense})` | The caption component. |
-| `camera({x, y, zoom, rot, sx, sy})` | 2.5D camera: `.apply(g, z)` transforms to depth z; `.proj(x, y, z)` returns screen position and scale. |
-| `buf(name, w, h)` · `rr(g, …)` · `font(px, wt, fam)` · `rgba` · `mix` | Helpers. |
+|`setAccent(hex)`|设置一种品牌颜色（默认`#B7F34A`）。所有重音驱动的内容如下：光标、吐司点、`litShape({accent:true})`、`trail`。|
+|`bg(g, {lift, cool, dark})`|近乎黑色的舞台，具有径向升力和冷光。|
+|`grid(g, {ox, oy, scale, module, alpha, rect})`|可以遵循摄影机的细线网格。|
+|`glow(g, x, y, r, color, a)` · `vignette(g, a)`|柔和的光池，角落衰减。|
+|`panel(g, x, y, w, h, {r, fill, shadow, cheap})`|圆形 UI 表面：柔和阴影、顶光填充、1 像素边框、内部高光。 `cheap` = 数百个项目的偏移阴影。|
+|`litShape(g, path2d, {accent, color, glowR, sweep, bbox})`|**以这种风格绘制任何形状**：带有边缘光的暗光表面，或（使用`accent`）发光强调填充； `sweep` 0..1 增加了移动光带。|
+|`sparklePath(cx, cy, r, k, rot)`|四点星形路径（用于闪光、“新”标记）。|
+|`trail(g, pts, {color, width, caretH})`|沿着点的渐隐光迹，可以选择以光标结束。|
+|`caret(g, x, y, h, {sx, sy, on, glow, color})`|光标带有 squash/stretch 并闪烁。|
+|`tidyMark(g, x, y, s)` · `wordmark(g, x, y, px)`|品牌标记（方圆+光标）和文字+光标。为您的产品重命名。|
+|`windowBox` / `windowContent(kind)` / `notif` / `fileIcon` / `photo` / `badge` / `appIcon` / `storageBar`|用户界面套件。 `windowContent` 种类：笔记、收件箱、浏览器、表格、聊天、查看器、代码。|
+|`flyPose(from, to, p)` · `motionBlur(p, span, n, draw)`|带有超调、弹簧旋转和变形的快速飞行；多样本运动模糊。|
+|`lightReveal(g, src, x, y, w, h, p, {base, soft, band, glint, angle})`|轻轻一扫即可展现任何画布。|
+|`perspective(g, src, cx, cy, w, h, rotY, {slices})`|平面画布的条带渲染 Y 旋转；返回 `map(u,v)` 到屏幕。|
+|`scramble(g, text, x, y, t, locks, {px, fam, color, tracking})`|字形噪声到数字滚动以及每个字符的锁定时间。|
+|`toast(g, text, a, {dense})`|标题组件。|
+|`camera({x, y, zoom, rot, sx, sy})`|2.5D 摄影机：`.apply(g, z)` 变换到深度 z； `.proj(x, y, z)` 返回屏幕位置和比例。|
+|`buf(name, w, h)` · `rr(g, …)` · `font(px, wt, fam)` · `rgba` · `mix`|帮手。|
 
-**Minimal example: a warm orange four-point spark with a cursor tail, in this style.**
+**最小示例：带有光标尾部的温暖橙色四点火花，采用这种风格。**
 ```js
 import * as E from './engine.js';
 const g = document.querySelector('canvas').getContext('2d');
@@ -150,4 +160,4 @@ const card = new Path2D(); card.roundRect(300, 200, 420, 160, 28);
 E.litShape(g, card, { sweep: 0.5, bbox: [300, 200, 420, 160] });   // any shape as a lit dark UI surface
 E.vignette(g);
 ```
-Render it with `?scene=engineDemo` (see `frames.js`). To keep a single element in colour in an otherwise neutral frame, draw everything with default `litShape` and only that element with `{accent: true}`.
+使用 `?scene=engineDemo` 渲染它（请参阅 `frames.js`）。要在中性框架中保持单个元素的颜色，请使用默认的 `litShape` 绘制所有内容，并仅使用 `{accent: true}` 绘制该元素。

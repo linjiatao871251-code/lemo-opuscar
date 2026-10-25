@@ -1,92 +1,104 @@
-# Facts and sources · 《410 天》 (410 Days)
+<a id="facts-and-sources--410-天-410-days"></a>
+# 事实与来源·《410天》（410天）
 
-Every claim in the on-screen text and narration, listed with its source and the source's wording. Checked on 2026-10-20 (before the last render, each item was compared against `audio/lines.json` and the on-screen text in `index.html`).
+屏幕文本和旁白中的每项主张均列出其来源和来源的措辞。于 2026 年 10 月 20 日检查（在最后一次渲染之前，将每个项目与 `audio/lines.json` 和 `index.html` 中的屏幕文本进行比较）。
 
-On-screen text is Chinese (some of it bilingual); it is quoted as it appears, with an English gloss where needed.
+屏幕文字为中文（部分为双语）；它按其出现的样子被引用，并在需要时加上英文注释。
 
-The main sources are two first-hand documents of the time:
+主要来源是当时的两份第一手文献：
 
-- **S1 Official brochure**: *What Everybody Wants to Know About Empire State: Facts and Figures About the World's Greatest Structure*, Empire State, Inc., printed 1931 (catalogued by Columbia University Libraries as "[1930?]", but its chronology runs to the opening on 1 May 1931). Internet Archive `ldpd_11290475_000`: https://archive.org/details/ldpd_11290475_000 (page 2 = scan 0001 "How Big Is It?", page 3 = 0002 "Empire State Statistics" and the scale drawing, page 4 = 0003 chronology, "The Men Who Did the Job", map)
-- **S2 Film intertitles**: *Empires of Steel* (produced by American Bridge Company / U.S. Steel, made by Pathescope, 1930–31, silent). https://archive.org/details/EmpiresOfSteel (seconds are times within that file)
+- **S1 官方手册**：*每个人都想了解帝国大厦：关于世界上最伟大建筑的事实和数据*，帝国大厦有限公司，1931 年印刷（哥伦比亚大学风格库编目为“[1930？]”，但其年代顺序为 1931 年 5 月 1 日开业）。互联网档案馆 `ldpd_11290475_000`：https://archive.org/details/ldpd_11290475_000（第 2 页 = 扫描 0001“它有多大？”，第 3 页 = 0002“帝国统计数据”和比例图，第 4 页 = 0003 年表，“干这活的人”，地图）
+- **S2 影片字幕**：*钢铁帝国*（美国桥梁公司/美国钢铁公司出品，Pathescope 制造，1930-31 年，无声）。 https://archive.org/details/EmpiresOfSteel（秒是该文件内的时间）
 
-## On screen / narration
+<a id="on-screen--narration"></a>
+## 屏幕上/旁白
 
-| On screen | Narration | Claim | Source |
+|在屏幕上|旁白|宣称|来源|
 |---|---|---|---|
-| Title 「410 天」 (410 days), and 「410 天」 at the end | "Four hundred and ten days." | 1930-03-17 first steel → 1931-05-01 opening = 410 days | F1, F8 (our arithmetic), F9 |
-| 帝国大厦 · 纽约 1930–1931 (Empire State Building · New York 1930–1931) | — | Years of construction and opening | F1, F8 |
-| 第五大道 33–34 街 (Fifth Avenue, 33rd–34th Streets) (lower third on the map) | "Fifth Avenue. The old Waldorf-Astoria site." | Location; the plot is the old Waldorf-Astoria hotel site | F2 |
-| 第一根钢 · 1930.3.17 · 第 0 天 (first steel · 1930.3.17 · day 0) | "March seventeenth, nineteen thirty. First steel." | Date the first steel was set | F1 |
-| 九台吊车 (nine derricks) | "Nine derricks lift the frame." | Nine derricks start raising the steel frame from the basement | F6 |
-| 44 吨 / 44 TONS EACH | "Some columns weigh forty-four tons." | Some of the lower column sections weigh 44 tons each | F7 |
-| 每周 4½ 层 (4½ floors a week) | "Four and a half floors of steel, every week." | Four and a half stories of steel frame erected every week | F3 |
-| 出厂 80 小时，就铆进楼里 (riveted into the building 80 hours after leaving the mill) | "Eighty hours from the mill in Pittsburgh to a rivet in the frame." | Steel members were riveted into the building 80 hours after leaving the mill in Pittsburgh | F3 |
-| Brochure heading "THE MEN WHO DID THE JOB" | "The men who did the job?" | The brochure really has a column with this heading (the film shows only the heading, not the list of names below it) | F4 |
-| 每天 2,500 人 / 最多一天约 4,000 人 (2,500 men a day / about 4,000 at most in one day) | "Twenty-five hundred men a day. Up to four thousand." | An average of 2,500 men a day, about 4,000 at most in a single day | F3 |
-| Scale chart: 伍尔沃斯 (Woolworth) 792 / 埃菲尔铁塔 (Eiffel Tower) 984 / 克莱斯勒 (Chrysler) 1,046 / 帝国大厦 (Empire State) 1,250 (feet) | "Twelve hundred and fifty feet." | Heights of the four structures; the line drawings are taken from the brochure's own scale drawing | F5 |
-| 世界最高 / TALLEST IN THE WORLD | "The tallest structure in the world." | In 1931 it was the tallest structure (of any kind) in the world | F5 |
-| 1930.9.15 钢架到 86 层 · 第 182 天 (1930.9.15 steel reaches the 86th floor · day 182) | — | Date the last steel was set on the 86th floor; 1930-03-17 → 09-15 = 182 days (our arithmetic) | F1 |
-| 102 层 (102 floors) (end point of the tower's counter, and the ending) | — | 102 stories above the street | F5 |
-| 1931.5.1 开放 · 比计划提前近一个月 (1931.5.1 opened · nearly a month ahead of schedule) | "May first, nineteen thirty-one. Open, nearly a month early." | Formal opening date; nearly a month ahead of the schedule set at the start of construction | F1 |
+|标题「410天」（410天），结尾「410天」|“四百一十天。”|1930-03-17首钢→1931-05-01开盘=410天|F1、F8（我们的算术）、F9|
+|大厦帝国·纽约 1930–1931（帝国大厦·纽约 1930–1931）|—|建设开业年数|F1、F8|
+|第五大道 33–34 街（第五大道，第 33–34 街）（地图下三分之一）|“第五大道。华尔道夫酒店旧址。”|地点;该地块是华尔道夫酒店旧址|F2|
+|第一根钢·1930.3.17·第0天（第一根钢·1930.3.17·第0天）|“三月十七日十九点三十分。第一钢。”|第一块钢材的设定日期|F1|
+|九台吊车（九台吊车）|“九个井架抬起框架。”|九台井架开始从地下室升起钢架|F6|
+|44 吨 / 每个 44 吨|“有些柱子重四十四吨。”|一些较低的塔段每段重 44 吨|F7|
+|每周 4½ 层（每周 4½ 层）|“每周都有四层半的钢铁结构。”|每周架设四层半钢架|F3|
+|出厂80小时，就铆进楼里（离开工厂后80小时铆进大楼）|“从匹兹堡的工厂到框架上的铆钉需要八十个小时。”|离开匹兹堡工厂 80 小时后，钢构件被铆接到建筑物上|F3|
+|小册子标题为“完成这项工作的人”|“那些干这活的人？”|该手册确实有一栏包含此标题（影片仅显示标题，而不显示其下方的姓名列表）|F4|
+|每天 2,500 人 / 最多一天约 4,000 人 (一天 2,500 人 / 一天最多约 4,000 人)|“每天有两千五百人。最多可达四千人。”|平均每天2500人，最多一天4000人左右|F3|
+|比例表：伍尔沃斯（Woolworth）792 / 埃菲尔铁塔（Eiffel Tower）984 / 克莱斯勒（Chrysler）1,046 / 帝国大厦（Empire State）1,250（英尺）|“一千二百五十英尺。”|四个结构的高度；线条图取自小册子自己的比例图|F5|
+|世界最高/世界最高|“世界上最高的建筑。”|1931 年，它成为世界上最高的建筑（任何类型）|F5|
+|1930.9.15 钢架到86层·第182天（1930.9.15钢架到86层·第182天）|—|第 86 层最后一块钢材安放的日期； 1930-03-17 → 09-15 = 182 天（我们的算术）|F1|
+|102层（102层）（塔柜台的终点，也是结局）|—|街道上方 102 层|F5|
+|1931.5.1 开放·比计划提前近一个月（1931.5.1开放·提前近一个月）|“五月一号，十九点三十一分。开门，提前了近一个月。”|正式开业日期；比开工时设定的工期提前了近一个月|F1|
 
-The floor counter in the tower section (86 → 102) is a graphic animation: the floors in between carry no dates, and only the two points dated in F1 (86th floor on 15 September, opening on 1 May) appear as text. The same holds for the 80-hour counter and the 2,500-men counter: only the end figure is a fact.
+塔楼部分（86 → 102）的楼层柜台是图形动画：中间的楼层没有日期，只有 F1 中注明日期的两个点（9 月 15 日的 86 层，5 月 1 日开放）以文本形式显示。 80小时计数器和2500人计数器也是如此：只有最终数字才是事实。
 
-## F1 Chronology (S1 page 4, scan 0003)
+<a id="f1-chronology-s1-page-4-scan-0003"></a>
+## F1年表（S1第4页，扫描0003）
 
-> "March 17, 1930—First steel for the Empire State foundations set in place."
-> "September 15, 1930—Last steel set on the 86th floor."
-> "May 1, 1931—Empire State formally opened to the public less than two years from the beginning of demolition on the site and nearly a month ahead of the schedule made at the beginning of construction."
+> “1930 年 3 月 17 日——帝国大厦地基的第一块钢材就位。”
+> “1930 年 9 月 15 日——第 86 层最后一块钢架。”
+> “1931 年 5 月 1 日——帝国大厦正式向公众开放，距离开始拆除不到两年，比开始施工时的计划提前了近一个月。”
 
-From "How Big Is It?" (S1 page 2):
-> "Steel work was begun March 17, 1930, and completed in 6 months — a record."
+摘自《有多大？》 （S1 第 2 页）：
+> “钢结构工程于 1930 年 3 月 17 日开始，并在 6 个月内完成——创纪录。”
 
-## F2 Location and plot (S1 page 2, scan 0001)
+<a id="f2-location-and-plot-s1-page-2-scan-0001"></a>
+## F2 位置和绘图（S1 第 2 页，扫描 0001）
 
-> "LOCATION: West side of Fifth Avenue, between 34th Street and 33rd Street."
-> "DIMENSIONS OF PLOT: 197.5 feet on Fifth Avenue, 424.95 feet on 34th Street and 33rd Street. (This comprises the plot of the old Waldorf-Astoria and additional land.)"
+> “位置：第五大道西侧，第 34 街和第 33 街之间。”
+> “地块尺寸：第五大道 197.5 英尺，第 34 街和第 33 街 424.95 英尺。（这包括旧华尔道夫酒店的地块和其他土地。）”
 
-The map in the film is the map on page 4 of the same brochure; the red circle is drawn where the map marks "EMPIRE STATE BLDG.".
+影片中的地图是同一手册第4页的地图；红色圆圈绘制在地图标记“EMPIRE STATE BLDG”的位置。
 
-## F3 Workforce, speed, 80 hours (S1 page 3 "Empire State Statistics", scan 0002)
+<a id="f3-workforce-speed-80-hours-s1-page-3-empire-state-statistics-scan-0002"></a>
+## F3 劳动力，速度，80 小时（S1 第 3 页“帝国统计”，扫描 0002）
 
-> "An average of 2,500 men were employed daily in Empire State construction work, the maximum number for any one day being about 4,000."
-> "Four and one-half stories of steel were erected every week. Each steel member reached the building accurately marked to indicate its position and was riveted into place only 80 hours after being fabricated in the mills at Pittsburgh."
+> “平均每天有 2,500 名工人参与帝国大厦的建筑工作，一天的最多人数约为 4,000 人。”
+> “每周都会竖立四层半的钢结构。每个钢构件都准确地标记以指示其位置到达建筑物，并在匹兹堡工厂制造后仅 80 小时就被铆接到位。”
 
-The red marker in the film underlines exactly these two sentences of the original (document close-up 18.5–23.25 s, 80-hours section 25.25–28.0 s).
+影片中的红色标记恰好强调了原文的这两句话（文档特写 18.5–23.25 秒，80 小时部分 25.25–28.0 秒）。
 
-## F4 "The Men Who Did the Job" (S1 page 4, scan 0003)
+<a id="f4-the-men-who-did-the-job-s1-page-4-scan-0003"></a>
+## F4“干这活的人”（S1 第 4 页，扫描 0003）
 
-The heading of the brochure's right-hand column reads: "THE MEN WHO DID THE JOB"; below it are listed the owners, directors, architects, contractors and engineers in charge. The film only circles this heading to ask the question, then answers with site footage and photographs of the workers; the list itself neither appears nor is altered.
+宣传册右栏的标题是：“完成这项工作的人”；下面列出了业主、董事、建筑师、承包商和负责工程师。 影片只是绕着这个标题提问，然后用现场录像和工人的照片来回答；列表本身既不出现也不改变。
 
-## F5 Height and comparisons (S1 pages 2 and 3)
+<a id="f5-height-and-comparisons-s1-pages-2-and-3"></a>
+## F5 身高和比较（S1 第 2 页和第 3 页）
 
-> "HEIGHT OF BUILDING: 102 stories above the street, 2 stories below grade. 1,250 feet to the tip of the mooring mast. … The building is the tallest structure of any kind in the world. The Eiffel Tower is 984 feet, the Chrysler Building, 1,046 feet to the tip of its spire … The Bank of Manhattan Building is 838 feet, the Woolworth Building 792 feet."
+> “建筑高度：街道以上 102 层，地面以下 2 层。距系泊桅杆顶端 1,250 英尺……该建筑是世界上最高的建筑。埃菲尔铁塔高 984 英尺，克莱斯勒大厦距尖顶顶端 1,046 英尺……曼哈顿银行大厦高 838 英尺，伍尔沃斯大厦 792 英尺。”
 
-Labels on the scale drawing on the right of page 3: "WOOLWORTH BLDG. 792 feet", "EIFFEL TOWER 984 feet", "CHRYSLER 1046 feet", "EMPIRE STATE 1250 feet". The four line drawings in the film are cut from this drawing, straightened, and stood again on one ground line at a common scale (0.56 px / foot); the red measuring lines are drawn to length in feet.
+第 3 页右侧比例尺图上的标签：“WOOLWORTH BLDG. 792 英尺”、“EIFFEL TOWER 984 英尺”、“CHRYSLER 1046 英尺”、“EMPIRE STATE 1250 英尺”。 影片中的四张线条图是从该图中剪下、拉直，并以通用比例（0.56 像素/英尺）再次站在一条地线上；红色测量线的长度以英尺为单位。
 
-Note on the claim: "tallest in the world" is the 1931 brochure's statement, and the film uses it only in the context of 1931.
+关于声明的说明：“世界最高”是 1931 年手册的表述，影片仅在 1931 年的背景下使用它。
 
-## F6 Nine derricks (S2 intertitle, about 181–183 s)
+<a id="f6-nine-derricks-s2-intertitle-about-181183-s"></a>
+## F6 九个井架（S2 字幕，约 181–183 秒）
 
-> "Nine derricks in action start the erection from the basement."
+> “九个正在运行的井架从地下室开始安装。”
 
-## F7 44-ton column sections (S2 intertitle, about 238–240 s)
+<a id="f7-44-ton-column-sections-s2-intertitle-about-238240-s"></a>
+## F7 44吨塔段（S2字幕，约238-240秒）
 
-> "Some of the lower column sections weigh 44 tons each."
+> “一些较低的立柱部分每个重 44 吨。”
 
-The freeze frame is the column-lifting shot that immediately follows this intertitle (from source 248.4 s, the frame at 1.1 s).
+定格帧是紧随该字幕之后的立柱镜头（来自源 248.4 秒，帧位于 1.1 秒）。
 
-## F8 410 days (our arithmetic) and date check
+<a id="f8-410-days-our-arithmetic-and-date-check"></a>
+## F8 410 天（我们的算术）和日期检查
 
 - 1930-03-17 → 1931-05-01: `python3 -c "from datetime import date; print((date(1931,5,1)-date(1930,3,17)).days)"` → 410
-- 1930-03-17 → 1930-09-15: same method → 182
+- 1930-03-17 → 1930-09-15: 同样的方法 → 182
 
-## F9 Corroboration
+<a id="f9-corroboration"></a>
+## F9 佐证
 
-- Wikipedia "Empire State Building": https://en.wikipedia.org/wiki/Empire_State_Building
-  > "Construction started on March 17, 1930, and the building opened thirteen and a half months afterward on May 1, 1931."
+- 维基百科“帝国大厦”：https://en.wikipedia.org/wiki/Empire_State_Building
+  > “于 1930 年 3 月 17 日动工，十三个半月后于 1931 年 5 月 1 日启用。”
 
-## Conflicts noticed during checking (not in the film)
+<a id="conflicts-noticed-during-checking-not-in-the-film"></a>
+## 检查过程中发现的冲突（不在影片中）
 
-- The film's intertitle says "September 19th—Six months after placing the first billet, the steel erection of the main building is completed—85 stories, involving 58,000 tons of steel"; the brochure says the last steel was set on the 86th floor on 15 September and the steel frame weighs 60,000 tons in total. The two disagree; the film uses only the brochure's 15 September / 86th floor and no tonnage.
-- The film intertitle "First column set April 8, 1930" refers to the first **column**; the brochure's 17 March refers to the first **foundation steel** (billets / grillage). The film's "第一根钢" (first steel) uses 17 March, and the picture is the steel grillage being set (source 114 s), consistent with the brochure.
+- 影片的副标题是“9月19日——打下第一根钢坯6个月后，主楼钢结构安装完毕——85层，用钢5.8万吨”；宣传册上称，9月15日最后一根钢材在86层完成，钢架总重6万吨。两人意见不合； 影片仅使用手册中的 9 月 15 日/86 楼，没有吨位。
+- 影片副标题“First column set April 8, 1930”指的是第一个 **柱子**；该手册的3月17日指的是第一批**基础钢**（钢坯/格架）。 影片的“第一根钢”（第一根钢）使用3月17日，图为正在设置的钢格架（来源114s），与宣传册一致。

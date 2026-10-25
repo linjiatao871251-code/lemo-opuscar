@@ -1,114 +1,126 @@
-# 60s Spy Title Sequence — Style Prompt
+<a id="60s-spy-title-sequence--style-prompt"></a>
+# 60s 间谍片头：风格提示词
 
-> A cut-paper, four-ink opening title sequence for a film that never existed: silhouettes move through sets built out of the credits themselves, every brass stab is a cut, and a title is assembled from the pieces.
-> References (grammar only): Saul Bass's titles for *North by Northwest*, *Anatomy of a Murder* and *Vertigo* (flat opaque inks, abstraction down to silhouettes, type as structure); the 2002 homage by Kuntzel + Deygas for *Catch Me If You Can* (a cut-paper chase through graphic sets, lateral tracking). Not a gun-barrel opening, not a tiptoeing cartoon panther, not a copy of any real title's logo, lettering, characters or shots.
+> 从未存在过的影片的剪纸、四墨水开场标题序列：剪影在由制作人员名单本身构建的场景中移动，每一个黄铜刺都是一个剪辑，标题是由各个片段组合而成的。
+> 参考资料（仅语法）：Saul Bass 的《西北偏北》、《谋杀案解剖》和《眩晕》标题（平面不透明墨水、抽象到轮廓、打字结构）； Kuntzel + Deygas 于 2002 年向 *Catch Me If You Can* 致敬（通过图形集进行剪纸追逐，横向追踪）。不是枪管开口，不是踮起脚尖的卡通豹，不是任何真实标题的徽标、字母、字符或镜头的副本。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **Flat, opaque inks on paper**: four colours, no gradients.
-- **Hand-cut edges** on every shape; pieces layered with cut gaps and small paper shadows.
-- **Abstraction down to silhouettes**: figures in profile, all acting in outline and timing.
-- **Typography is the picture's structure**: credits are architecture, props, vehicles.
-- **Music cuts the picture**: brass stabs are edit points.
-- A title sequence is a story in itself: one goal, a few locations, one reveal.
+- **纸上平面不透明墨水**：四种颜色，无渐变。
+- **各种形状的手工切割边缘**；带有切割间隙和小纸阴影的分层碎片。
+- **抽象到剪影**：轮廓中的人物，所有的动作都在轮廓和时间上。
+- **Typography是图片的结构**：学分是建筑、道具、车辆。
+- **音乐剪切图片**：铜管刺是编辑点。
+- 片头本身就是一个故事：一个目标、几个地点、一个揭示。
 
-Not flat vector motion graphics (the edges are cut, the paper is physical), not a halftone print style (no dots), not a Swiss grid (diagonals, jaunty type, playful), not a spy parody with gadgets and gun barrels.
+不是平面矢量运动图形（边缘被切割，纸张是物理的），不是半色调打印风格（无点），不是瑞士网格（对角线，活泼的类型，俏皮），不是带有小玩意和枪管的间谍模仿。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Scissor-cut edges**: every polygon resampled every ~9–10 px and displaced along its normal by low-frequency noise (amp ~1.2–2.2 px, larger for bigger shapes) plus a rare 1–2 px notch. **Cut the edge once in the piece's local space and cache it**, so a moving cutout keeps the same edge, exactly like real cutout animation (screen-space edges crawl).
-- **Paper layering**: separate pieces are separated by a ~2.4 px cut gap in the ground colour and cast a small paper shadow (offset a few px, blur ~5, alpha ~0.3). Whole figures get the gap as an outline, so a black figure reads in front of a black letter.
-- **Paper texture**: one full-frame texture multiplied on top (mottling + faint fibres), a sparse "ink void" speckle on dark ink, faint squeegee streaks; film grain in the mux (~6).
-- **Silhouette figures**: tall stylised adults (~7 heads), identity by hat, coat cut, shoes and **one colour accent** that doubles as a motion indicator (a tie or scarf streaming back when running). Pieces **merge into one outline** inside the figure, with only thin slits at shoulder, elbow, hip and knee. Hands are sharp wedges; no faces except an eye slit in close-ups.
-- **The object of the chase** sits on a black backing (an ink keyline) so it reads on any ground; it is the brightest thing in frame.
-- **Type**: a condensed OFL display face (e.g. League Gothic) for credits, glyph outlines extracted (opentype.js) and **re-cut** per letter (edge noise, ±0.8° rotation, ±1.5 px baseline jitter). A title in custom geometric cut glyphs (straight cuts + arcs, uneven weights, staggered baselines), never a real title's lettering.
+- **剪刀式边缘**：每个多边形每隔~9-10 px重新采样一次，并通过低频噪声（amp~1.2-2.2 px，更大的形状）加上罕见的1-2 px凹口沿其法线移位。 **在片段的本地空间中剪切一次边缘并将其缓存**，因此移动的剪切图保持相同的边缘，就像真正的剪切图动画一样（屏幕空间边缘爬行）。
+- **纸张分层**：单独的部分在底色中以~2.4 px的剪切间隙分隔开，并投射一个小的纸张阴影（偏移几个p​​x，模糊~5，alpha~0.3）。整个数字将间隙作为轮廓，因此黑色数字在黑色字母前面读取。
+- **纸张纹理**：顶部乘以一个全帧纹理（斑点+微弱的纤维），深色墨水上稀疏的“墨水空白”斑点，微弱的刮刀条纹；多路复用器中的影片颗粒 (~6)。
+- **剪影人物**：高大的程式化成人（~7 头），通过帽子、外套剪裁、鞋子和**一种颜色强调**它兼作运动指示器（跑步时领带或围巾会向后流）。件**合并为一个轮廓**在人物内部，只有肩部、肘部、臀部和膝盖处有细细的缝隙。双手是锋利的楔子；除了特写镜头中的一条狭缝外，没有任何面孔。
+- **追逐的物体** 位于黑色背衬（墨水键线）上，因此可以在任何地面上读取；它是画面中最亮的东西。
+- **字体排版**：用于制作人员名单的压缩 OFL 显示面（例如 League Gothic）、提取的字形轮廓（opentype.js）和 **每个字母的重新切割**（边缘噪声、±0.8° 旋转、±1.5 px 基线）抖动）。自定义几何切割字形（直线切割+弧线、不均匀重量、交错基线）的标题，从来不是真正的标题字母。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Four inks**: ink black, paper cream, one hot colour, one warm secondary. Darker "shadow paper" variants of those inks only for depth.
-- **One dominant ground colour per scene**, changing with the location; figures and type in the other inks.
-- The hot colour is reserved for one accent on the hero and for danger; the secondary marks the object of the chase.
-- Background props go in a darker version of the ground, never in black, or they read as letters.
-- Examples: black `#1b1714` / cream `#efe4c9` / red `#d23a22` / mustard `#e2a52a`; ink `#161a22` / bone `#ece6d6` / teal `#1f8a8a` / orange `#f07a28`; black / pale pink `#f3d6cc` / cobalt `#2a46b8` / lemon `#f0d23a`.
+- **四种墨水**：墨水黑色、纸奶油色、一种热色、一种暖色。这些墨水的深色“影子纸”变体仅用于深度。
+- **每个场景一个主要底色**，随位置而变化；用其他墨水绘制数字和文字。
+- 热烈的颜色是为强调英雄和危险而保留的；第二个标记了追逐的对象。
+- 背景道具采用较暗的地面版本，绝不是黑色，或者它们读起来像字母。
+- 示例：黑色 `#1b1714` / 奶油色 `#efe4c9` / 红色 `#d23a22` / 芥末色 `#e2a52a`；墨水 `#161a22` / 骨色 `#ece6d6` / 青色 `#1f8a8a` / 橙色 `#f07a28`；黑色/淡粉色`#f3d6cc`/钴色`#2a46b8`/柠檬色`#f0d23a`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Credits live in the set**, never in the subtitle band: one line per location, fully readable at some moment. Credits are fictional roles only, never real people's names.
-- **Subtitles** on a narrow paper strip (scissor-cut ends, slightly tilted) bottom-left, a small glyph from the film as bullet, a geometric OFL sans (e.g. League Spartan 600, ~44 px). Light strip on dark scenes, dark strip on light scenes; slides in from the left in ~0.18 s. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Hold each credit long enough to read alongside a subtitle.
+- **制作人员名单位于** 中，从未出现在字幕带中：每个位置一行，在某些时刻完全可读。片尾字幕只是虚构的角色，而不是真实人物的名字。
+- **字幕**位于左下角的窄纸条上（两端剪裁，稍微倾斜），影片的小字形作为子弹，几何OFL sans（例如斯巴达联盟600，〜44像素）。暗场景亮带，亮场景暗带；在约 0.18 秒内从左侧滑入。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 保持每个学分足够长的时间，以便与副标题一起阅读。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Puppets on twos** (12 fps): poses and positions of figures, hands, letters landing, vehicles. **Camera, credit slides and grid growth on ones** (24 fps): a stepped camera judders.
-- Run cycles of ~8 drawings, one step per beat, a strong lean, the accent flying back. Walks one step per beat, coats swinging.
-- Credits slide in along grid lines and **stop dead on the beat** (short ease-out); letters land with a paper slap.
-- **Stop-time**: at a stab the whole picture freezes (background scroll included) for a couple of beats in total silence, then resumes.
-- Shattering: a scene sliced into strips parallel to a cut line that slide off alternately along the diagonal.
+- **双人木偶** (12 fps)：人物、手、字母着陆、车辆的姿势和位置。 **相机、信用幻灯片和**（24 fps）上的网格增长：阶梯式摄影机颤抖。
+- 运行大约 8 个图画的循环，每个节拍一个步骤，强烈的倾斜，重音飞扬。每节拍走一步，外套摆动。
+- 片尾字幕沿着网格线滑入，**停止在节拍上**（短暂的缓出）；字母随着纸的拍击落地。
+- **停止时间**：突然整个画面（包括背景滚动）在完全沉默中冻结了几拍，然后恢复。
+- 破碎：场景被切成与切割线平行的条带，这些条带沿着对角线交替滑落。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Graphic, flat, decisive. Opening and ending come from the topic.
+是词汇，而不是路线。图形、平面、果断。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Wide on a full credit line, then truck in | reading, then action | any location built from type |
-| Lateral tracking, one screen direction | pursuit; momentum | a chase; a race; a delivery |
-| Hard cut on a brass stab | punch; a new location | montage; a reveal; a gag |
-| Graphic match cut (same shape, same position) | rhyme; acceleration | wheel → coin → pupil → moon |
-| Locked single shape on a flat ground | mystery; an icon | a cold open; a clue; a logo |
-| Silhouette against a giant circle | the hero moment | a catch; a triumph; a stand-off |
-| Diagonal split into a grid | fragmentation; many at once | a split screen; a conspiracy; a team |
-| Vertical pan down a column of type | descent; a list | a building; a roster; a countdown |
-| Push into a letter until it fills frame | a letter becomes a place | a door; a tunnel; a window |
+|获得全额信用额度，然后用卡车运来|阅读，然后行动|从类型构建的任何位置|
+|横向追踪，一屏方向|追求；势头|一场追逐；一场比赛；送货|
+|黄铜刺上的硬切口|冲床;一个新的地点|剪辑;揭示；一个笑话|
+|图形匹配切割（相同形状、相同位置）|韵;加速度|轮子→硬币→瞳孔→月亮|
+|在平坦的地面上锁定单一形状|神秘;一个图标|冷开；一条线索；一个标志|
+|一个巨大的圆圈的剪影|英雄时刻|一个捕获；胜利；对峙|
+|对角线分割成网格|碎片化；一次很多|分屏；阴谋；一个团队|
+|垂直平移一列文字|血统；一个清单|一座建筑物；名册；倒计时|
+|推入字母直至填满框架|一封信变成一个地方|一扇门；隧道；一扇窗户|
 
-Framing: strong diagonals (~30°), big flat grounds, figures small against type. Match cuts keep circle centres and sizes identical across the cut. No dissolves.
+取景：强烈的对角线（~30°）、大而平坦的地面、相对于字体而言较小的人物。匹配切割使切割过程中的圆心和尺寸保持一致。没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **1960s spy big band**: stacked staccato trumpets and trombones in octaves with crash (the stab), surf guitar low-string twang through a spring reverb, walking upright bass, brushes or sticks, bongos and shakers, vibraphone, flute, organ stabs, harpsichord. Minor keys, chromatic lines, dotted rhythms. Original motifs only: avoid the famous chromatic crawl of the most famous spy theme and its minor-major-ninth ending chord.
-- **Stabs = edit points**: place staccato brass ~8 ms early so the sample's peak hits the frame.
-- **Techniques (options)**: a cut interval that shrinks as a chase accelerates; stop-time silence; a big chord for the title followed by a short button; a solo instrument alone for a quiet scene.
-- **Foley follows the material**: paper (cut "shh", slides, card slaps for letters landing, blind flips, a tear), metal (keys, chains, locks, clicks), tape (click, hiss). Environments only hinted: a jet pass panned, train wheels in tempo, roulette ticks slowing, wind, a phone ring, footsteps on stairs.
-- **Silence**: true zero, reverb tails included; a single tape click or hiss may remain.
-- **Mix**: music ducks ~7 dB under voice; a peaky mix needs a few dB into a limiter before loudnorm to reach −14 LUFS.
-- **Voice**: a briefing through a tape chain (band-pass ~220–5200 Hz, soft saturation, slow wow, hiss rising under the voice); a few very short lines.
+- **1960年代的间谍大乐队**：八度音阶中堆叠的断奏小号和长号，带有碰撞（刺），冲浪吉他低弦音通过弹簧混响，走直立贝斯，刷子或棍子，手鼓和摇摇器，颤音琴，长笛，风琴刺，羽管键琴。小调、半音阶、附点节奏。仅原创主题：避免最著名的间谍主题及其小调九度结尾和弦的著名半音阶爬行。
+- **Stabs = 编辑点**：提前约 8 毫秒放置断奏铜管，以便样本的峰值到达框架。
+- **技术（选项）**：随着追逐加速而缩小的剪切间隔；停止时间沉默；标题的大和弦，后面跟着一个短按钮；单独的独奏乐器，用于安静的场景。
+- **Foley 遵循材料**：纸张（剪切“嘘”、幻灯片、用于字母落地的卡片拍打、盲翻、撕裂）、金属（钥匙、链条、锁、咔哒声）、胶带（咔哒声、嘶嘶声）。环境只是暗示：喷气式飞机的摇摄、火车车轮的节奏、轮盘赌的滴答声减慢、风、电话铃声、楼梯上的脚步声。
+- **沉默**：真正的零，包括混响尾音；可能会残留磁带的咔哒声或嘶嘶声。
+- **混音**：音乐在声音下减弱约 7 dB；峰值混音需要在响度范数达到 −14 LUFS 之前进入限制器几 dB。
+- **嗓音**：通过磁带链进行简报（带通〜220-5200 Hz，软饱和，慢哇，声音下发出嘶嘶声）；几行很短的线。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Type is the set.** Each location is one line of credits and that line is its architecture (letters as pillars, words as carriages, a letter as a lock). *Fits content like:* a conference programme as a city; a menu as a restaurant; team names as a stadium.
-- **Credits are rhythm.** Credits land on beats; stabs are cuts. *Fits content like:* a product's features; a festival line-up; an award's nominees.
-- **Graphic match cuts.** Shape rhymes, the interval shrinking as tension rises. *Fits content like:* a coin → a planet → a clock; a gear → a wheel → a sun.
-- **The diagonal grid.** A diagonal cut multiplies into a grid, and the pieces later fly back along it to assemble something. *Fits content like:* a puzzle solved; a team forming; a logo assembled.
-- **Silhouette puppets.** Profile cut-outs whose acting is outline and timing. *Fits content like:* a heist; a courier on a deadline; a detective.
-- **Stop-time gag.** Freeze on a stab, silence, resume. *Fits content like:* a near miss; a double take; a price reveal.
-- **The object of the chase is the title.** What everyone pursues becomes the last thing assembled. *Fits content like:* a product launch; a book's name; a birthday name.
+- **Type 是集合。** 每个位置都是一行信用，该行是其架构（字母作为柱子，单词作为车厢，字母作为锁）。 *适合以下内容：* 作为城市的会议计划；餐厅的菜单；球队名称作为体育场。
+- **积分是节奏。** 积分落在节拍上；刺即是砍。 *适合以下内容：*产品的功能；节日阵容；奖项的提名者。
+- **图形匹配剪切。** 形状押韵，音程随着张力的上升而缩小。 *适合以下内容：*一枚硬币→一颗行星→一个时钟；齿轮→轮子→太阳。
+- **对角网格。** 对角切割成网格，然后碎片沿着它飞回以组装一些东西。 *适合以下内容：*解决了难题；团队组建；组装好的标志。
+- **剪影木偶。** 轮廓剪纸，其作用是轮廓和定时。 *适合以下内容：*抢劫；截止日期的快递员；一名侦探。
+- **停止时间搞笑。** 刺伤冻结，沉默，恢复。 *适合以下内容：*险些失手；双重考虑；价格揭晓。
+- **追逐的对象是标题。** 每个人所追求的，都成为最后组装的东西。 *适合以下内容：* 产品发布；一本书的名字；一个生日名字。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Every internal piece outlined with a gap looks like a mannequin diagram → merge pieces in an offscreen layer, cut only joint slits (`destination-out`), outline the whole figure.
-- A `clear()` that resets the transform silently kills the camera.
-- A figure fully hidden behind a letter reads as "nobody there" → let hat, nose and accent stick out. A stiff streamer reads as a tongue → multi-segment ribbon with a travelling sine.
-- A credit only ever seen partially is uncomfortable → always open wide on the full line.
-- Black background props read as letters → darker ground colour.
-- An object in the same ink as its ground vanishes → black backing.
-- Circular props dropped into a word cover neighbouring letters → lay the word out around a gap.
-- Match cuts fail if circle centres move across the cut.
-- Flat inks + grain make huge files at low CRF → a higher CRF looks the same.
+- 每个带有间隙的内部部件看起来都像一个人体模型图→将部件合并到屏幕外层中，仅切割接缝狭缝（`destination-out`），勾勒出整个图形。
+- 静默重置变换的 `clear()` 会杀死摄影机。
+- 完全隐藏在字母后面的人物读作“那里没有人”→让帽子、鼻子和口音突出。僵硬的飘带读作舌头→具有行进正弦的多段丝带。
+- 只看到部分信用是不舒服的 → 总是在整条线上敞开。
+- 黑色背景道具读作字母 → 较暗的底色。
+- 与地面颜色相同的物体消失 → 黑色背景。
+- 放入单词中的圆形道具会覆盖相邻的字母 → 将单词放在间隙周围。
+- 如果圆心移动穿过切割，匹配切割就会失败。
+- 平墨 + 颗粒在低 CRF 下生成巨大的文件 → 较高的 CRF 看起来是一样的。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `paper.js` (four inks, cached scissor edges, cut gaps, paper shadow, texture, silhouette layer with joint slits), `glyph.js` (League Gothic → opentype.js outlines → re-cut letters), `chars.js` (silhouette rigs, poses, run/walk cycles), `title.js` (custom cut title glyphs, diagonal split), `story.js` (tempo grid, single source of timing), `film.js` (timeline, acting, cameras, subtitles, sound events). `?sheet=1` renders a model sheet, `?frame=<scene>` a style frame. File list and build steps: [DEMO.md](DEMO.md) "Build notes".
+在`demo/`中：`paper.js`（四种墨水，缓存的剪刀边缘，剪切间隙，纸张阴影，纹理，带有接缝的剪影层），`glyph.js`（League Gothic→opentype.js轮廓→重新剪切字母），`chars.js`（剪影）装备、姿势、run/walk 循环）、`title.js`（自定义剪切标题字形、对角分割）、`story.js`（节奏网格、单一计时源）、`film.js`（时间线、表演、摄像机、字幕、声音事件）。 `?sheet=1` 渲染角色设定表、`?frame=<scene>` 渲染风格定帧。文件列表和构建步骤：[DEMO.md](DEMO.md)“构建说明”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide what is pursued, by whom, the locations (as credits), the inks, the opening and the ending. All far from our demo:
+你可以决定追寻什么、追寻什么人、地点（作为片尾字幕）、墨水、开头和结尾。与我们的示范相去甚远：
 
-- Structures: **no chase: a countdown** (ten credits, ten locations, a bomb-clock number built from type in each); **a heist in reverse** (the object is returned, location by location, to where it belongs); **two agents, one frame** (split diagonally, each side a different ground colour, until they meet).
-- Openings: **a full-frame title** that shatters into the sequence (the reveal moved to the start); **a telephone rings** in a single cut-out room; **the hero already falling** through a column of type.
-- Endings: **the title never assembles**, one piece missing, the hero walking off with it; **a slow pull-out** showing every location was one giant credit page; **a stop-time freeze** on the final stab, held.
+- 结构：**无追逐：倒计时**（十个学分，十个地点，每个炸弹钟数字由类型构建）； **反向抢劫**（物体被逐个位置地返回到它所属的地方）； **两个特工，一帧**（对角分割，每一面都有不同的底色，直到相遇）。
+- 开场：**一个全画幅标题**，粉碎到序列中（显示移到开头）； **a 电话在单间隔离室中响起**； **英雄已经通过一列类型掉落**。
+- 结局：**标题永远不会组装**，缺少一件，英雄带着它走开； **缓慢拉出**，显示每个位置都是一个巨大的信用页面； **a 停止时间冻结** 最后一击，举行。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

@@ -1,115 +1,127 @@
-# Dark Tech Keynote — Style Prompt
+<a id="dark-tech-keynote--style-prompt"></a>
+# 暗色科技发布：风格提示词
 
-> A software launch film where the interface itself is the star: near-black gradient, hairline grid, soft light, one brand accent, and UI that moves with snap-grid precision. Light reveals, one giant number, and a sound design that is as ordered as the pixels.
-> **References (grammar only):** Apple product reveals (black stage, light sweeps, one line per screen, the lone giant number); Linear / Stripe / Vercel launch videos (snap-grid motion, 1 px lines, one accent); Steve Reich's process music (phasing, subtraction); Edgar Wright's insert cuts. Never use their names, interfaces, fonts, system controls, melodies or logos, and never name them in the film.
+> 一款软件发布影片，其界面本身就是明星：近乎黑色的渐变、细线网格、柔和的光线、单一品牌口音以及以网格精度移动的 UI。光线揭示了一个巨大的数字，以及与像素一样有序的声音设计。
+> **参考资料（仅语法）：** 苹果产品展示（黑色舞台、光扫、每屏一行、孤独的巨型数字）；线性/条纹/Vercel 启动视频（捕捉网格运动、1 像素线、一个重音）； Steve Reich 的过程音乐（定相、减法）；埃德加·赖特的插入式切削。切勿使用它们的名称、界面、字体、系统控件、旋律或徽标，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A keynote-grade product film for **software**. There is no physical product and no glass render: the protagonist is the interface (a cursor, windows, notifications, tiles, a number). It lives on a dark stage lit by soft, cool light, with **one brand accent** reserved for the single most important element.
+适用于 **软件**的主题演讲级产品影片。没有实体产品，也没有玻璃渲染：主角是界面（光标、窗口、通知、图块、数字）。它生活在一个黑暗的舞台上，灯光柔和、凉爽，**one 品牌口音** 保留给最重要的一个元素。
 
-The style is defined by **precision**: every element snaps to a grid, every motion lands on a beat, every sound belongs to one designed family. Drama comes from contrast: disorder shown as generated UI, one decisive action, then empty space.
+这种风格由 **精确** 定义：每个元素都捕捉到网格，每个动作都落在节拍上，每个声音都属于一个设计系列。戏剧性来自于对比：生成的用户界面显示出无序，一个决定性的动作，然后是空白的空间。
 
-Not a glass product render (no physical object), not a screencast (no real OS or apps), not a hologram HUD (no scanlines), not a chart film (one number, not a chart).
+不是玻璃产品渲染（没有物理对象），不是截屏视频（没有真正的操作系统或应用程序），不是全息图 HUD（没有扫描线），不是图表影片（一个数字，不是图表）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Stage**: a near-black base with a radial lift at the upper centre, one large cool glow at single-digit opacity off-centre, a 50–55 % corner vignette. A hairline grid (white at ~3 %, every 4th line ~6 %) on a 48 px module. No grain.
-- **UI kit, all original and drawn in code**: rounded windows (title bar with only a small glyph and title; never traffic-light buttons, menu bars or docks), notification cards, file icons with mono filenames, procedural thumbnails, list rows, tabs, badges, bars, uniform tiles.
-- **Surfaces**: three steps of raised dark surface, 1 px border (~8 % white), 1 px inner top highlight, soft shadows.
-- **Depth**: a 2.5D camera (`s = 1/(1/zoom − z)`); cards near the lens blur with magnification. Rotations use strip-rendered perspective (rotY ≤ ~24°).
-- **Light** is the reveal tool: only pixels the light has passed turn on; unlit areas sit at a few percent.
+- **阶段**：近乎黑色的底座，上部中心有径向升力，偏心个位数不透明度的大冷光，50-55% 的角晕影。 48 px 模块上的细线网格（白色约 3%，每 4 行约 6%）。没有谷物。
+- **UI 套件，全部原创并用代码绘制**：圆形窗口（标题栏只有一个小字形和标题；绝不是交通灯按钮、菜单栏或停靠栏）、通知卡、带有单声道文件名的文件图标、程序缩略图、列表行、选项卡、徽章、栏、统一图块。
+- **表面**：三级凸起深色表面，1 px 边框（~8 % 白色），1 px 内部顶部高光，柔和阴影。
+- **深度**：2.5D 摄影机 (`s = 1/(1/zoom − z)`)；镜头附近的卡片会因放大而变得模糊。旋转使用带状渲染透视（rotY ≤ ~24°）。
+- **光** 是显示工具：仅打开光线经过的像素；未照明的区域仅占百分之几。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- A cool neutral ladder only: near-black stage, three surface steps, text in three greys (primary, secondary, label). Neutrals are slightly blue, never warm brown.
-- **One accent**, saturated and luminous, with its own glow. It is reserved for what the product *is* or *does*: the protagonist element, the call to action, confirmations, the key number. If two things are accent-coloured, one is wrong.
-- **A problem colour** (typically a red for badges and warnings) may exist only while the problem exists; after the turn it never returns. Problem colour = noise, accent = the product.
-- Secondary hues only as **category codes** in motion (a trail per data type), desaturated, and never on static UI.
-- Example accents, pick one per film: lime `#B7F34A`, electric violet `#8B7CFF`, signal orange `#FF7A1A`.
+- 仅一个很酷的中性梯子：近乎黑色的舞台，三个表面台阶，三种灰色的文本（主要、次要、标签）。中性色是浅蓝色，绝不是暖棕色。
+- **一个口音**，饱和而明亮，自带光芒。它是为产品“是什么”或“做什么”而保留的：主角元素、号召性用语、确认、关键数字。如果两件事都是强调色的，那么其中一件就是错误的。
+- **A 问题颜色**（通常为徽章和警告的红色）仅在问题存在时才可能存在；转弯后，它永远不会返回。问题颜色=噪音，重点=产品。
+- 次要色调仅作为运动中的 **类别代码**（每个数据类型的轨迹）、去饱和度且绝不在静态 UI 上。
+- 示例重音，为影片选择一种：石灰 `#B7F34A`、电紫 `#8B7CFF`、信号橙 `#FF7A1A`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **OFL faces**: Inter (UI, captions, headlines; variable weight), Inter Tight 600 for giant numbers (tracking around −4.5 %), JetBrains Mono for labels, filenames and status text (wide tracking in small-caps labels).
-- One line per screen for headlines. The big number gets its own screen and **no caption over it**: the number is the message.
-- **Captions are a UI component**: a bottom-centre toast (dark translucent pill, 1 px light border, soft shadow, Inter 500 around 40 px, a small accent "speaking" dot). It enters with a small rise + fade in ~0.16 s and can turn more opaque over busy frames. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Typed text is its own subtitle**: text the cursor types in frame is not burned twice (it goes only into the .srt).
-- Lift product content while captions are up so toasts never clip it.
+- **OFL 面孔**：Inter（UI、字幕、标题；可变权重）、Inter Tight 600 用于巨型数字（跟踪约 -4.5 %）、JetBrains Mono 用于标签、文件名和状态文本（小型大写字母标签中的宽跟踪）。
+- 每个屏幕一行的标题。大数字有自己的屏幕，**上面没有标题**：数字就是消息。
+- **Captions 是一个 UI 组件**：底部中心的 toast（深色半透明药丸、1 px 浅边框、柔和阴影、Inter 500 约 40 px、一个小口音“说话”点）。它在大约 0.16 秒内以小幅度上升 + 淡入淡出进入，并且可以在繁忙的帧上变得更加不透明。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **键入的文本是其自己的副标题**：光标在框架中键入的文本不会被刻录两次（它仅进入.srt）。
+- 在标题出现时提升产品内容，这样吐司就不会夹住它。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 24 fps on ones, no stepping, no boil: this is precision, not craft.
-- **Everything lands on the grid and on the beat.** Moves start a beat early and land on it. Easing is fast-out with one small overshoot (`back`, s ≈ 1.3) and an immediate settle. No floaty sine drift.
-- **Spawns are short and typed** (drop + bounce, fling, slide-in, pop; 0.2–0.3 s), one motion per element type. Tension can be a tremble of a few px.
-- **Flights** follow curved paths with overshoot along the final tangent; same-type elements bend the same way and never cross.
-- **A living element can act**: squash, stretch, anticipation (≥ 8 frames of wind-up), a 2-frame contact, spring follow-through. The blink of a cursor makes a natural metronome.
-- **Disappearing is designed** (retract one part per beat, CRT-off squash into a point); nothing just fades.
-- The stage and grid never move on their own; only the camera moves them.
+- 24 fps，无步进，无沸腾：这是精度，而不是工艺。
+- **一切都落在网格和节拍上。** 移动提前开始节拍并落在它上面。 缓动是快速输出，具有一个小过冲（`back`，s ≈ 1.3）并立即稳定。无浮动正弦漂移。
+- **Spawn 较短且类型为**（掉落 + 弹跳、投掷、滑入、弹出；0.2–0.3 秒），每种元素类型一个动作。紧张可能会导致几像素的颤抖。
+- **航班** 遵循曲线路径，并沿最终切线出现超调；相同类型的元件以相同的方式弯曲并且从不交叉。
+- **A活体元件可作用**：挤压、拉伸、预期（≥8帧上发条）、2帧接触、弹簧随动。光标的闪烁构成了一个自然的节拍器。
+- **消失设计**（每拍缩回一部分，CRT关闭挤压成一点）；没有什么会消失。
+- 舞台和网格永远不会自行移动；只有摄影机运动他们。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Locked extreme close-up on a tiny UI element | Intimacy, one thing alive on a screen | a single action; a thought forming; a quiet status |
-| Continuous pull-back, keyed per bar in log space | Accumulation, scale growing out of one point | spreading load; a network growing; a team joining |
-| Push-in through a frozen frame | Time stopped, focus narrowing | a decision; the instant before a commit; a bug found |
-| Whip pull-out in one beat | Cause and effect seen at once | a sync completing; a deploy landing everywhere |
-| Dive into a small UI element (log-zoom) + match cut | Going inside the detail | a counter that matters; a log line; a setting |
-| Half-second inserts expanding from their source | Overload, too much to read | notification storms; errors; choice overload |
-| Near-locked frame while an object turns and light sweeps | Presentation, the product as hero | a reveal; a new version; a feature name |
-| Slow lateral track across a UI plane | Order read by the eye | a timeline; a pipeline |
-| Top-down plan over the grid | System view, structure | architecture; permissions; a workflow map |
-| Return to an earlier framing | Rhyme: what changed | before/after; a loop closed; an echo |
+|锁定在一个微小的 UI 元素上的极端特写|亲密，屏幕上活生生的一件事|单一动作；一个思想的形成；安静的状态|
+|连续回拉，在日志空间中按条键控|积累，规模由一点增长|分散载荷；网络不断发展；一个团队加入|
+|通过冻结框架推入|时间停止，焦点缩小|决定；提交之前的瞬间；发现一个错误|
+|一拍抽出鞭子|因果一目了然|同步完成；到处部署登陆|
+|深入研究一个小的 UI 元素（日志缩放）+ 匹配剪切|深入细节|重要的计数器；日志行；一个设置|
+|半秒插入从源扩展|超载，太多读不完|通知风暴；错误；选择超载|
+|当物体转动和光线扫过时接近锁定的框架|演示，产品为主角|揭示；新版本；功能名称|
+|穿过 UI 平面的缓慢横向轨迹|肉眼读取的顺序|时间表； 制作流程|
+|网格上自上而下的计划|系统视图、结构|建筑学;权限；工作流程图|
+|返回到较早的框架|押韵：什么改变了|before/after；闭环；回声|
 
-Framing: generous negative space, one focal element, the accent at the focal point. Dutch angle and wobble only for disorder.
+取景：宽大的负空间，一个焦点元素，焦点处的重音。荷兰角和摆动仅适用于无序。
 
-**Transitions = UI expand / collapse**: every shot change is an interface element expanding into the frame or the frame collapsing into an element. No fades, no blank frames. An expansion on a beat starts one frame early so the beat frame is already ~80 % open.
+**Transitions = UI 展开/折叠**：每个镜头更改都是界面元素扩展到框架中或框架折叠成元素。没有褪色，没有空白帧。节拍的扩展提前一帧开始，因此节拍帧已经打开约 80%。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Tuned percussion and pads**: marimba, vibraphone (mallet or bowed), glockenspiel, celesta, a synth pad or drone, a low sine pulse, a shaker, plucked synth, felt piano. Clean, dry, minimal; samples e.g. VCSL (CC0).
-- **Music as a visible process**: options include phasing (two voices on one pattern, one drifting), additive build (one note per bar), subtractive process (notes removed until one is left), dividing the beat to accelerate instead of changing tempo, or one chord that everything lands on. Picture events can spawn on score notes from a shared note table.
-- **Two sound families = story**: disorder sounds *scattered* (detuned by tens of cents, random pans, a different timbre per source); the product's sounds are *one family* (felt ticks, glass taps, all in one mode, centred), so many landings form one in-key shimmer.
-- **Foley materials**: cursor tick, low-profile keys, notification glass, file plop, window whoosh, glitch accents, stacking thumps, felt mallet + sine drop for a press, light-sweep shimmer, digit grains, CRT-off.
-- **Ambience**: a quiet room, a computer fan, a high coil whine that can grow with pressure. Fan and whine live in the voice band: keep them down until a line ends.
-- **Silence is a tool**: digital zero on every track when the screen pauses; near-silence (a −60 dB room) for a breath. The first sound after a silence is the most important one.
-- **J / L cuts** carry sound across UI transitions (a chord ringing on, a shimmer arriving before the light).
-- **Mix**: music ducks ~8 dB and foley ~4 dB under voice; −14 LUFS; no grain. **Voice**: confident and restrained, short declaratives.
+- **调谐打击乐器和打击垫**：马林巴琴、颤音琴（木槌或弓形）、钟琴、钢片琴、合成器打击垫或无人机、低正弦脉冲、振动器、弹拨合成器、毛毡钢琴。清洁、干燥、最少；样品例如VCSL (CC0)。
+- **音乐作为一个可见的过程**：选项包括定相（一种模式上的两个声音，一个漂移），加法构建（每个小节一个音符），减法过程（删除音符直到剩下一个），划分节拍以加速而不是改变节奏，或者所有东西都落在一个和弦上。图片事件可以在共享笔记表中的配乐笔记上生成。
+- **两个声音系列=故事**：混乱的声音*分散*（失谐数十美分，随机平移，每个源的不同音色）；该产品的声音是“一个系列”（毛毡滴答声、玻璃敲击声、全部在一种模式中、居中），因此许多着陆形成一个键内闪烁。
+- **Foley 材料**：光标刻度、低调按键、通知玻璃、文件扑通声、窗口嗖嗖声、故障口音、堆叠重击声、毛毡槌 + 按下时的正弦波、光扫闪光、数字颗粒、CRT 关闭。
+- **环境**：安静的房间，电脑风扇，随着压力而增强的高线圈呜呜声。声带中充满了风扇和呜呜声：请保持安静，直到线路结束。
+- **静音是一个工具**：屏幕暂停时每轨数字归零；呼吸近乎安静（−60 dB 的房间）。沉默后的第一声声音是最重要的。
+- **J / L 剪切** 在 UI 转换中携带声音（和弦响起，闪光到达灯光之前）。
+- **混音**：在语音下音乐鸭子 ~8 dB 和拟音 ~4 dB； −14 LUFS；没有谷物。 **嗓音**：自信又内敛，简短的陈述语。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Generated accumulation.** UI spawned by rule, faster and faster, hundreds of items; you don't draw the mess, you generate it. *Fits content like:* unread tickets piling up; cloud costs creeping; a dependency tree exploding.
-- **The snap grid.** A whole promise in one motion: everything flies into a grid in one beat; the grid stays invisible until then. *Fits content like:* a CMS publishing to every channel; a scheduler filling a week; an audit turning green.
-- **The living element.** The cursor (or the product's smallest live element) is the protagonist and the brand mark. *Fits content like:* a search box that grows ambitious; a progress ring that refuses to finish; a status dot.
-- **Freeze.** Everything stops mid-air and the sound drops to digital zero; only a screen can stop time like this. *Fits content like:* a security breach caught; a failed deploy; the second before "send".
-- **Light reveal.** A soft band sweeps across and only lit pixels turn on (soft front, glint ≤ 20 %, ≤ ~1.3 s so nothing stays dark). *Fits content like:* a redesign; a new pricing page; an API console.
-- **Number from glyph noise.** Digits scramble and lock one per sixteenth note with a small bounce. *Fits content like:* latency cut; a count of users; a price.
-- **Type streams.** Elements fly to their own rows along coloured curved trails, so categories read as streams. *Fits content like:* an inbox triaged; logs routed by severity; files synced by device.
-- **Put-away.** The UI dismantles itself one part per beat until one element is left. *Fits content like:* "less is more" features; offboarding; focus mode.
+- **生成累积。** UI按规则生成，越来越快，数百个项目；混乱不是你造成的，而是你造成的。 *适合以下内容：*未读票据堆积；云成本不断攀升；依赖树爆炸。
+- **快速网格。** 一次动作完成整个承诺：所有东西都一下子飞进网格；在此之前网格将保持不可见。 *适合以下内容：* CMS 发布到每个渠道；一周的日程表；审计变成绿色。
+- **活体元素。** 光标（或产品最小的活体元素）是主角，也是品牌标志。 *适合以下内容：* 一个雄心勃勃的搜索框；拒绝完成的进度环；状态点。
+- **冻结。** 一切都停止在半空中，声音降到数字零；只有屏幕才能让时间这样停止。 *适合以下内容：*发现安全漏洞；部署失败； “发送”之前的第二个。
+- **光显露。** 一条柔和的带扫过，并且仅亮起的像素打开（柔和的前部，闪烁 ≤ 20 %，≤ ~1.3 秒，因此没有任何东西保持黑暗）。 *适合以下内容：*重新设计；新的定价页面； API 控制台。
+- **来自字形噪声的数字。** 数字打乱并锁定每十六分之一音符一个小弹跳。 *适合以下内容：* 延迟缩短；用户数量；一个价格。
+- **类型流。** 元素沿着彩色弯曲轨迹飞到自己的行，因此类别读作流。 *适合以下内容：*已分类的收件箱；按严重性路由的日志；由设备同步的文件。
+- **收起。** UI 每节拍自行拆卸一个部件，直到剩下一个元素。 *适合以下内容：*“少即是多”功能；离职；对焦模式。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Strip perspective of a semi-transparent canvas shows vertical seams (overlapping slices double alpha) → project the *opaque* surface, then light it in screen space.
-- A hard white glint reads as a sticker reflection → soft front, glint ≤ 20 %.
-- Nearest-slot snapping looks like a flicker, not a collapse → typed destinations, curved paths, trails.
-- Too few elements leave holes in a grid that read as a mistake → generate by rule, then trim or pad to exactly the slot count per group.
-- A flat tinted rectangle for "closing" looks like a placeholder → squash the real surface.
+- 半透明画布的条形透视显示垂直接缝（重叠切片双 Alpha）→ 投影*不透明*表面，然后在屏幕空间中照亮它。
+- 硬白色闪光读取为贴纸反射 → 软正面，闪光 ≤ 20 %。
+- 最近的插槽捕捉看起来像是闪烁，而不是折叠 → 输入的目的地、弯曲的路径、小径。
+- 太少的元素会在网格中留下孔，这些孔会被视为错误 → 按规则生成，然后修剪或填充到每组的槽数。
+- 用于“关闭”的扁平有色矩形看起来像占位符 → 挤压真实表面。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine.js` (Canvas 2D ES module): `setAccent`, `bg`, `grid`, `panel`, `litShape` (any shape in this style), `trail`, `caret`, the UI kit, `flyPose`, `lightReveal`, `perspective`, `scramble`, `toast`, `camera` (2.5D). Function table and a minimal example: [DEMO.md](DEMO.md#engine-reference); `?scene=engineDemo` renders it.
+`demo/engine.js`（Canvas 2D ES模块）：`setAccent`、`bg`、`grid`、`panel`、`litShape`（此风格中的任何形状）、`trail`、 `caret`、UI 套件、`flyPose`、`lightReveal`、`perspective`、`scramble`、`toast`、`camera` (2.5D)。功能表和最小示例：[DEMO.md](DEMO.md#engine-reference)； `?scene=engineDemo` 渲染它。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the product's verb, the protagonist element (or none), the problem image, the accent, the structure, the opening, the ending, the camera path and the score process. All far from our demo:
+您决定产品的动词、主角元素（或没有）、问题图像、重音、结构、开头、结尾、摄影机路径和配乐过程。与我们的示范相去甚远：
 
-- Structures: **a countdown** (a release checklist ticking through its items, each a UI moment, ending on "shipped"); **side by side** (two versions of a workflow run in split screen, the old one drowning, the new one finishing early); **a zoom ladder** (one pixel → a component → a screen → a fleet of devices, each level a new fact).
-- Openings: **the number first** (a huge stat on black, its meaning revealed backwards); **a plan view of an empty grid** that fills slot by slot; **a hard insert storm** from frame one, calm arriving only later.
-- Endings: **one tile left** lit in the accent on an empty grid; **the product running quietly** in a wide shot, no text; **a shipped state** (a single confirmation toast, then darkness).
+- 结构：**a 倒计时**（发布清单，逐一列出其项目，每个 UI 时刻，以“已发货”结尾）； **并排**（分屏运行工作流程的两个版本，旧版本淹没，新版本提前完成）； **a 缩放阶梯**（一个像素→一个组件→一个屏幕→一组设备，每个级别都是一个新事实）。
+- 开局：**，数字第一**（黑色的巨大数字，其含义倒着显示）； **一个空网格的平面图**逐个填充槽； **从第一帧硬插风暴**，平静到后来才到。
+- 结局：**还剩一格**在空网格上点亮重音；**产品安静运行**在宽广的镜头，无文字；**已发货状态**（一次确认祝酒，然后黑暗）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

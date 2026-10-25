@@ -1,122 +1,132 @@
-# Facts and sources ·《蜜蜂账本 The Bee Ledger》
+<a id="facts-and-sources-蜜蜂账本-the-bee-ledger"></a>
+# 事实和来源·《蜜蜂账本 The Bee Ledger》
 
-Every number on screen and every fact in the voice-over comes from one official report:
+屏幕上的每个数字和画外音中的每个事实都来自一份官方报告：
 
-**USDA NASS, "Honey Bee Colonies"**, ISSN 2470-993X, released 3 August 2026 (US federal government work, public domain).
-- PDF: https://release.nass.usda.gov/reports/hcny0726.pdf
-- Release page: https://esmis.nal.usda.gov/publication/honey-bee-colonies
-- Scope: operations with five or more colonies, United States total. The report is a **quarterly** survey.
+**USDA NASS，“蜜蜂殖民地”**，ISSN 2470-993X，2026 年 8 月 3 日发布（美国联邦政府工作，公共领域）。
+- PDF：https://release.nass.usda.gov/reports/hcny0726.pdf
+- 发布页面：https://esmis.nal.usda.gov/publication/honey-bee-colonies
+- 范围：美国总共有五个或更多殖民地的行动。该报告是一份 **季度** 调查。
 
-Checked on 2026-10-20. Before the last render, the table below was compared item by item against `audio/lines.json` and `timeline.json`.
+于 2026 年 10 月 20 日检查。在上次渲染之前，下表与 `audio/lines.json` 和 `timeline.json` 进行了逐项比较。
 
-## On screen / voice-over
+<a id="on-screen--voice-over"></a>
+## 屏幕上/画外音
 
-The on-screen text is Chinese and is quoted as it appears, with an English gloss.
+屏幕上的文本是中文，并按原样引用，并带有英文注释。
 
-| # | On screen (Chinese) | Voice-over (English) | Figure | Source |
+|#|屏幕上（中文）|画外音（英语）|数字|来源|
 |---|---|---|---|---|
-| 1 | 一年没了 130 万箱蜜蜂 (1.3 million colonies gone in one year) | "In one year, American beekeepers lost one point three million honey bee colonies." | Losses of the four quarters of 2025 added up: 1,305,540 colonies | F1 (derived, arithmetic below) |
-| 2 | ≈49% · 接近年初总数的一半 (nearly half of the total at the start of the year) | "Nearly half of what they started with." | 1,305,540 ÷ 2,639,300 = 49.5 % | F1, F2 (derived) |
-| 3 | 那美国的蜜蜂快没了？ (So are America's bees running out?) | "So, are America's bees running out?" | (question, no figure) | — |
-| 4 | Highlighted source line "January 1 Honey Bee colonies Up 6 Percent"; +6%; 1 月 1 日的总数涨了 6% (the January 1 total rose 6%) | "No. By January, colonies were up six percent." | 2.81 million colonies on 2026-01-01, +6 % on 2025-01-01 | F3 |
-| 5 | Colony line chart: 264 / 288 / 312 / 295 / 281 / 284 (万箱, tens of thousands of colonies); +6%; 总数不降反升 (the total rose instead of falling) | (no voice-over) | Colonies on the first day of each quarter | F2, F3 |
-| 6 | 死掉 1,305,540 箱 (1,305,540 died) / 补上 1,453,600 箱 (1,453,600 added) / 多补 148,060 箱 (148,060 more added than lost); 2025 · 四个季度相加 (2025 · four quarters added up); 因为养蜂人一直在补：145 万箱 (because beekeepers kept rebuilding: 1.45 million colonies) | "Because beekeepers kept rebuilding: almost one and a half million new colonies." | Additions added up: 1,453,600; difference 148,060 | F1 (derived) |
-| 7 | 新建 / 整箱买 / 换蜂王 (raise new / buy whole / requeen); 补法有三种 (three ways to rebuild) | "They raise new ones, buy them whole, or give old ones a new queen." | The report's definitions of "added" and "requeened" | F6 |
-| 8 | Highlighted source lines "Varroa Mites Top Colony Stressor…" and "Varroa mites were the number one stressor … during all quarters surveyed in 2025."; 2025 年每个季度的头号威胁：瓦螨 (top threat in every quarter of 2025: varroa mites) | "The top stressor, every quarter of 2025: varroa mites." | Varroa share in the four quarters of 2025: 28.3 / 26.3 / 22.2 / 25.4 %, the highest in each quarter | F4 |
-| 9 | 谁在伤害蜂群 (what is harming the colonies): 瓦螨 (varroa mites) 21.8%, 农药 (pesticides) 6.4%, 其他虫害 (other pests) 5.6%, 疾病 (diseases) 4.8%, 原因不明 (unknown) 4.6%, 其他 (other) 3.5%; 2026 年初，超过五分之一的蜂群受害 (early 2026: more than one in five colonies affected) | "In early 2026, they affected more than one in five colonies." | National stressor shares, January–March 2026 | F5 |
-| 10 | Loss rate by quarter 12 / 11 / 11 / 12 / 16 / 11 %; 16% · 六个季度最高 (16% · highest of six quarters); 这一季最糟：三个月没了 16% (the worst quarter: 16% gone in three months) | "That quarter was the worst in six: sixteen percent gone in three months." | Losses January–March 2026: 454,890 colonies, 16 % | F1, F3 |
-| 11 | Map of loss rate by state (2026 Q1); 加州 −220,000 · 损失率 18% (California −220,000 · loss rate 18%); 光加州就没了 22 万箱 (California alone lost 220,000 colonies) | "California alone lost two hundred and twenty thousand." | California, January–March 2026: 220,000 colonies lost, 18 % | F7 |
-| 12 | 到 6 月，又补了 108 万箱 (by June, another 1.08 million colonies added) | "And still, by June, they had added over a million more." | 2026 January–March 464,320 + April–June 619,850 = 1,084,170 | F1 (derived) |
-| 13 | 蜜蜂没有消失 / 是养蜂人在硬撑 (the bees aren't vanishing / beekeepers are holding the line) | "The bees aren't vanishing. Beekeepers are holding the line." | Conclusion (follows from 4, 6, 12) | — |
-| End card | 2025 年损失和新增为四个季度相加 (2025 losses and additions are the four quarters added up) | — | Note on scope | — |
+|1|一年没了 130 万箱蜜蜂（一年内消失了 130 万个蜂群）|“一年之内，美国养蜂人失去了一点三百万蜂群。”|2025 年四个季度的损失总计：1,305,540 个殖民地|F1（导出，下面算术）|
+|2|≈49% · 接近年初总数的一半（接近年初总数的一半）|“几乎是他们开始时的一半。”|1,305,540 ÷ 2,639,300 = 49.5 %|F1、F2（导出）|
+|3|那美国的蜜蜂快没了？（那么美国的蜜蜂快用完了吗？）|“那么，美国的蜜蜂快用完了吗？”|（问题，无图）|—|
+|4|突出显示的源行“January 1 Honey Bee colonies Up 6 Percent”； +6%； 1月1日总数涨了6%（1月1日总数涨了6%）|“不。到一月份，菌落数量增加了百分之六。”|2026年1月1日有281万菌落，2025年1月1日增加6%|F3|
+|5|菌落折线图：264 / 288 / 312 / 295 / 281 / 284（万箱，数万个菌落）； +6%； 总数不降反升（总数不降反升）|（无画外音）|每个季度第一天的菌落|F2、F3|
+|6|死掉 1,305,540 箱（死亡 1,305,540 人）/ 补上 1,453,600 箱（增加 1,453,600 人）/ 多补 148,060 箱（增加比损失多 148,060 人）； 2025·四个季度相加（2025·四个季度相加）； 因为养蜂人一直在补：145万箱（因为养蜂人不断重建：145万个蜂群）|“因为养蜂人不断重建：几乎有五十万个新蜂群。”|新增数量总计：1,453,600；差异 148,060|F1（派生）|
+|7|新建/整箱买/换蜂王（加新/买整箱/重新排序）； 补法有透明（三种重建方式）|“他们饲养新的，把它们整个买下来，或者给旧的带来一个新的女王。”|该报告对“添加”和“重新排序”的定义|F6|
+|8|突出显示的源行“瓦螨是首要群体压力源……”和“瓦螨是头号压力源……在 2025 年调查的所有季度中。”； 2025年每个季度的头号威胁：瓦螨（2025年每个季度的最大威胁：瓦螨）|“2025 年每个季度的最大压力源：瓦螨。”|2025年四个季度瓦螨占比：28.3/26.3/22.2/25.4%，各季度最高|F4|
+|9|谁在伤害蜂群（什么正在伤害蜂群）：瓦螨（瓦螨）21.8%，农药（农药）6.4%，其他虫害（其他害虫）5.6%，疾病（疾病）4.8%，原因不明（未知）4.6%，其他（其他）3.5%； 2026 年初，超过五分之一的蜂群受害（2026 年初：超过五分之一的蜂群受到影响）|“到 2026 年初，它们影响了超过五分之一的殖民地。”|2026 年 1 月至 3 月全国压力源份额|F5|
+|10|按季度亏损率 12 / 11 / 11 / 12 / 16 / 11 %； 16% · 六个季度最高（16% · 六个季度最高）； 本季最糟糕：三个月下降了 16%（最差季度：三个月下降了 16%）|“该季度是六个月来最糟糕的：三个月内损失了百分之十六。”|2026 年 1 月至 3 月损失：454,890 个菌落，16%|F1、F3|
+|11|按州划分的损失率地图（2026 年第一季度）； 加州-220,000·损失率18%（加利福尼亚州-220,000·损失率18%）； 光加州损失了22万箱（仅加州就损失了22万个殖民地）|“仅加利福尼亚州就损失了二十二万。”|加利福尼亚州，2026 年 1 月至 3 月：220,000 个菌落损失，18%|F7|
+|12|到6月，又补了108万箱（到6月，又补充了108万个菌落）|“而且到了六月，他们又增加了超过一百万。”|2026 年 1 月至 3 月 464,320 + 4 月至 6 月 619,850 = 1,084,170|F1（派生）|
+|13|蜜蜂没有消失 / 是养蜂人在硬撑（蜜蜂没有消失 / 养蜂人坚守阵地）|“蜜蜂并没有消失。养蜂人正在坚守阵地。”|结论（来自 4、6、12）|—|
+|片尾卡|2025 年损失和新增为四个季度相加（2025 年损失和新增为四个季度相加）|—|关于范围的说明|—|
 
-## F1 Losses and additions by quarter (national row, tables on pages 3–8)
+<a id="f1-losses-and-additions-by-quarter-national-row-tables-on-pages-38"></a>
+## F1 按季度划分的损失和增加（国家行，第 3-8 页的表格）
 
-| Quarter | Colonies at start of quarter | Lost | Loss rate | Added | Renovated | Page |
+|四分之一|季度初的殖民地|丢失的|损失率|额外|已装修|页|
 |---|---|---|---|---|---|---|
-| 2025 Jan–Mar | 2,639,300 | 328,500 | 12 | 539,200 | 158,710 | 3 |
-| 2025 Apr–Jun | 2,876,810 | 302,100 | 11 | 561,090 | 514,790 | 4 |
-| 2025 Jul–Sep | 3,121,610 | 327,840 | 11 | 182,750 | 356,810 | 5 |
-| 2025 Oct–Dec | 2,954,950 | 347,100 | 12 | 170,560 | 121,970 | 6 |
-| 2026 Jan–Mar | 2,805,370 | 454,890 | 16 | 464,320 | 215,440 | 7 |
-| 2026 Apr–Jun | 2,841,280 | 321,910 | 11 | 619,850 | 507,890 | 8 |
+|2025 年 1 月至 3 月|2,639,300|328,500|12|539,200|158,710|3|
+|2025 年 4 月至 6 月|2,876,810|302,100|11|561,090|514,790|4|
+|2025 年 7 月至 9 月|3,121,610|327,840|11|182,750|356,810|5|
+|2025 年 10 月至 12 月|2,954,950|347,100|12|170,560|121,970|6|
+|2026 年 1 月至 3 月|2,805,370|454,890|16|464,320|215,440|7|
+|2026 年 4 月至 6 月|2,841,280|321,910|11|619,850|507,890|8|
 
-Source wording (national row of the table on page 3):
-> "United States ........... 2,639,300 (X) 328,500 12 539,200 158,710 6"
+来源措辞（第 3 页表格的国家行）：
+>“美国....... 2,639,300 (X) 328,500 12 539,200 158,710 6”
 
-Derived figures (added up by us; labelled "四个季度相加" (four quarters added up) in the film):
-- 2025 losses: 328,500 + 302,100 + 327,840 + 347,100 = **1,305,540** (≈1.3 million)
-- 2025 additions: 539,200 + 561,090 + 182,750 + 170,560 = **1,453,600** (≈1.45 million; voice-over "almost one and a half million")
-- Difference: 1,453,600 − 1,305,540 = **148,060**
-- 2026 first-half additions: 464,320 + 619,850 = **1,084,170** (≈1.08 million; voice-over "over a million")
-- Caution on scope: the report surveys each quarter separately, so the four quarterly losses added together are **not a "net annual loss"** (colonies are added between quarters all the time). The film therefore says only "一年没了" (gone in one year) and "四个季度相加" (four quarters added up), never "net loss".
+得出的数字（由我们加起来；在影片中标记为“四个季度相加”（四个季度加起来））：
+- 2025年损失：328,500 + 302,100 + 327,840 + 347,100 = **1,305,540**（约130万）
+- 2025年新增：539,200 + 561,090 + 182,750 + 170,560 = **1,453,600**（约145万；画外音“几乎一百五十万”）
+- 差值：1,453,600 − 1,305,540 = **148,060**
+- 2026年上半年新增：464,320 + 619,850 = **1,084,170**（约108万；画外音“过百万”）
+- 注意范围：报告对每个季度进行单独调查，因此四个季度损失加起来是 **，而不是“年度净损失”**（菌落始终在季度之间添加）。因此，影片只说“一年没了”（一年没了）和“四个季度相加”（四个季度加起来），而没有说“净亏损”。
 
-## F2 Colonies at the start of the year, and "nearly half"
+<a id="f2-colonies-at-the-start-of-the-year-and-nearly-half"></a>
+## 年初的 F2 殖民地，“接近一半”
 
-Page 1 wording:
-> "During 2025, honey bee colonies on January 1, April 1, July 1, and October 1 were 2.64 million, 2.88 million, 3.12 million, and 2.95 million colonies, respectively."
+第1页文字：
+> “2025 年期间，1 月 1 日、4 月 1 日、7 月 1 日和 10 月 1 日的蜜蜂群体分别为 264 万、288 万、312 万和 295 万个群体。”
 
-1,305,540 ÷ 2,639,300 = 0.4947 → the film's "≈49%" and "接近年初总数的一半" (nearly half of the total at the start of the year).
+1,305,540 ÷ 2,639,300 = 0.4947 → 影片的“≈49%”和“接近年初总数的一半”（接近年初总数的一半）。
 
-## F3 +6 %, the latest two quarters
+<a id="f3-6--the-latest-two-quarters"></a>
+## F3 +6%，最近两个季度
 
-Page 1 wording:
-> "Honey bee colonies for operations with five or more colonies in the United States on January 1, 2026 totaled 2.81 million colonies, up 6 percent from January 1, 2025. The number of colonies in the United States on April 1, 2026, was 2.84 million colonies."
-> "Honey bee colonies lost for operations with five or more colonies from January through March 2026, was 454,890 colonies, or 16 percent. The number of colonies lost during the quarter of April through June 2026, was 321,910 colonies, or 11 percent."
+第1页文字：
+> “2026 年 1 月 1 日，在美国拥有 5 个或更多蜂群的蜜蜂蜂群总数为 281 万个蜂群，比 2025 年 1 月 1 日增加了 6%。2026 年 4 月 1 日，美国境内的蜂群数量为 284 万个蜂群。”
+> “从 1 月到 2026 年 3 月，因拥有 5 个或更多蜂群的作业而损失的蜂群数量为 454,890 个蜂群，即 16%。从 4 月到 2026 年 6 月，损失的蜂群数量为 321,910 个蜂群，即 11%。”
 
-Check: 2,805,370 ÷ 2,639,300 = 1.063. "六个季度最高" (highest of six quarters): the loss rates of the six quarters are 12, 11, 11, 12, 16, 11; 16 is the highest.
+检查：2,805,370 ÷ 2,639,300 = 1.063。 “六个季度最高”（六个季度最高）：六个季度的亏损率分别为12、11、11、12、16、11； 16是最高的。
 
-## F4 Varroa mites, the top stressor in every quarter of 2025
+<a id="f4-varroa-mites-the-top-stressor-in-every-quarter-of-2025"></a>
+## F4 瓦螨，2025 年每个季度的头号压力源
 
-Page 1 wording (these are the two lines the highlighter sweeps in the film):
-> "Varroa Mites Top Colony Stressor for Operations with Five or More colonies"
-> "Varroa mites were the number one stressor for operations with five or more colonies during all quarters surveyed in 2025."
+第 1 页的措辞（这是影片中荧光笔扫过的两行）：
+>“瓦螨是五个或更多菌落操作的首要菌落压力源”
+> “在 2025 年调查的所有季度中，瓦螨是拥有 5 个或更多蜂群的作业的头号压力源。”
 
-National rows on pages 9–12 (varroa mites / other pests / diseases / pesticides / other / unknown, %): Jan–Mar 28.3 / 7.1 / 4.4 / 6.2 / 5.1 / 5.9; Apr–Jun 26.3 / 9.2 / 4.3 / 6.5 / 5.0 / 2.0; Jul–Sep 22.2 / 6.6 / 3.5 / 4.3 / 2.7 / 2.9; Oct–Dec 25.4 / 5.6 / 5.2 / 4.5 / 4.6 / 5.7. Varroa is the highest in every quarter.
+第 9-12 页上的国家行（瓦螨/其他害虫/疾病/杀虫剂/其他/未知，%）：1 月至 3 月 28.3 / 7.1 / 4.4 / 6.2 / 5.1 / 5.9； 4 月至 6 月 26.3 / 9.2 / 4.3 / 6.5 / 5.0 / 2.0； 7 月至 9 月 22.2 / 6.6 / 3.5 / 4.3 / 2.7 / 2.9； 10 月至 12 月 25.4 / 5.6 / 5.2 / 4.5 / 4.6 / 5.7。瓦螨在每个季度都是最高的。
 
-"Stressor" is the report's word and means "the share of colonies affected by it during the quarter"; it is not a cause of death. The voice-over says "top stressor" and the Chinese text says "头号威胁" (top threat), never "头号杀手" (top killer).
+报告中用“压力源”一词表示“本季度受其影响的群体比例”；它不是死亡原因。画外音说“头号压力源”，中文文本说“头号威胁”（头号威胁），而不是“头号杀手”（头号杀手）。
 
-## F5 Stressors, January–March 2026 (national row, page 13)
+<a id="f5-stressors-januarymarch-2026-national-row-page-13"></a>
+## F5 压力源，2026 年 1 月至 3 月（国家行，第 13 页）
 
-> "United States .................. 21.8 5.6 4.8 6.4 3.5 4.6"
+> “美国...................... 21.8 5.6 4.8 6.4 3.5 4.6”
 
-Column order: Varroa mites / Other pests and parasites / Diseases / Pesticides / Other / Unknown. The film's ranking runs from largest to smallest: varroa mites 21.8, pesticides 6.4, other pests 5.6, diseases 4.8, unknown 4.6, other 3.5. 21.8 % > 1/5 → "超过五分之一" and "more than one in five".
-Table header note:
-> "[Percent of colonies affected by stressors anytime during the quarter. A colony may be affected by multiple stressors during the quarter]"
+列顺序：瓦螨/其他害虫和寄生虫/疾病/农药/其他/未知。 影片的排名从大到小：瓦螨21.8，农药6.4，其他害虫5.6，疾病4.8，未知4.6，其他3.5。 21.8 % > 1/5 →“超过五分之一”和“超过五分之一”。
+表头注：
+>“[该季度内任何时间受到压力源影响的群体百分比。一个群体在该季度可能会受到多个压力源的影响]”
 
-Inconsistency inside the report (not used in the film): the page 1 text says varroa affected "26.3 percent" in April–June 2026, while the national row of the table on page 14 gives 22.2. The film uses only January–March (21.8, where text and table agree).
+报告内部不一致（影片中未使用）：第 1 页的文字称瓦螨在 2026 年 4 月至 6 月期间影响了“26.3%”，而第 14 页表格的国家行给出了 22.2。 影片仅使用 1 月至 3 月（21.8，文本和表格一致）。
 
-## F6 Definitions of added and renovated colonies (page 16)
+<a id="f6-definitions-of-added-and-renovated-colonies-page-16"></a>
+## F6 添加和翻新殖民地的定义（第 16 页）
 
-> "Added colonies: A new or replacement, surviving colony that was either created or purchased whole by an operation."
-> "Renovated colony: An existing colony that was requeened or received a nuc or package."
-> "Package: A shipping container with several pounds of honey bees that may or may not include a queen; used for expansion of the apiary operation or renovating an existing colony."
+> “添加的殖民地：一个新的或替换的、幸存的殖民地，由某次行动创建或购买。”
+>“翻新的殖民地：重新排列或收到 nuc 或包裹的现有殖民地。”
+> “包装：装有几磅蜜蜂的运输容器，可能包含也可能不包含蜂王；用于扩大养蜂场经营或翻新现有蜂群。”
 
-In the film, "新建" (raise new ones) = created; "整箱买" (buy them whole) = purchased whole (a photo of a bee package stands for bought bees); "换蜂王" (give old ones a new queen) = requeened. Note: the report counts requeening as renovated, not as "added"; the film's triptych is about "ways to rebuild", and the voice-over does not say all three count towards the 1.45 million.
+在影片中，“新建”（提出新的）=创建； “整箱买”（买整箱）=整箱购买（蜜蜂包装的照片代表购买的蜜蜂）； “换蜂王”（给旧的蜂王一个新的女王）=重新成为女王。注意：报告将重新排队视为翻新，而不是“添加”； 影片的三联画是关于“重建之路”的，画外音并没有说这三幅作品都计入 145 万。
 
-## F7 States, January–March 2026 (page 7)
+<a id="f7-states-januarymarch-2026-page-7"></a>
+## F7 州，2026 年 1 月至 3 月（第 7 页）
 
-State loss rate = the state's losses ÷ the state's "maximum colonies" (colonies at the start of the quarter + colonies moved in during the quarter); national loss rate = national losses ÷ colonies at the start of the quarter (table note 2). The map colours only the 20 states listed individually in the table; the remaining states (combined as "Other States") are grey, "未单列" (not listed separately).
+州损失率=该州的损失÷该州的“最大殖民地”（季初的殖民地+本季度迁入的殖民地）；全国损失率 = 全国损失 ÷ 季度初的殖民地（表注 2）。地图仅对表中单独列出的 20 个州进行着色；其余状态（合并为“其他状态”）为灰色，“未单列”（未单独列出）。
 
-| State | Loss rate % | State | Loss rate % |
+|状态|损失率%|状态|损失率%|
 |---|---|---|---|
-| California | 18 | New York | 17 |
-| Florida | 15 | North Carolina | 18 |
-| Georgia | 17 | North Dakota | 2 |
-| Idaho | 15 | Ohio | 7 |
-| Iowa | 4 | Oregon | 7 |
-| Louisiana | 8 | Pennsylvania | 23 |
-| Michigan | 5 | South Dakota | 1 |
-| Minnesota | 2 | Texas | 11 |
-| Mississippi | 7 | Washington | 2 |
-| Montana | (Z) <0.5 | Wisconsin | 8 |
+|加利福尼亚州|18|纽约|17 号|
+|佛罗里达|15|北卡罗来纳州|18|
+|乔治亚州|17 号|北达科他州|2|
+|爱达荷州|15|俄亥俄州|7|
+|爱荷华州|4|俄勒冈州|7|
+|路易斯安那州|8|宾夕法尼亚州|23|
+|密歇根州|5|南达科他州|1|
+|明尼苏达州|2|德克萨斯州|11|
+|密西西比州|7|华盛顿|2|
+|蒙大拿|(Z)<0.5|威斯康星州|8|
 
-California row, source wording:
-> "California ................. 885,000 1,250,000 220,000 18 179,000 73,000 6"
+加州行，来源措辞：
+>“加利福尼亚州...................... 885,000 1,250,000 220,000 18 179,000 73,000 6”
 
-## Notes on the pictures (not statements of fact, but they must be honest)
+<a id="notes-on-the-pictures-not-statements-of-fact-but-they-must-be-honest"></a>
+## 图片上的注释（不是事实陈述，但必须诚实）
 
-- The almond orchard photo was taken in February 2014 (USDA, McFarland, California); its corner label reads "加州杏仁园 2014" (California almond orchard 2014). It stands for the apiary setting in California, not the scene of the 2026 losses.
-- The rooftop apiary video was shot in 2013 (on the roof of USDA headquarters in Washington); the lower third gives the place and year.
-- The rows-of-hives video was shot in the Netherlands (Altena TV); in the film it serves only as a picture of "one hive = one colony", carries no place label and is not presented as a US scene.
-- The channel "简闻" (Jianwen) is fictional. The film is an unofficial work and has nothing to do with USDA.
+- 杏仁园照片拍摄于 2014 年 2 月（美国农业部，麦克法兰，加利福尼亚州）；它的角落标签上写着“加州杏仁园 2014”（加州杏仁果园 2014）。它代表的是加利福尼亚州的养蜂场环境，而不是 2026 年损失的现场。
+- 屋顶养蜂场视频为2013年的镜头（位于华盛顿美国农业部总部屋顶）；下三分之一给出了地点和年份。
+- 荷兰的成排荨麻疹视频为镜头（Altena TV）；在影片中，它仅作为“一个蜂巢=一个殖民地”的图片，没有地点标签，也不是作为美国场景呈现的。
+- “简闻”频道纯属虚构。 影片是非官方作品，与 USDA 无关。

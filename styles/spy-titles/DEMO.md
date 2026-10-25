@@ -1,88 +1,96 @@
-# 60s Spy Title Sequence — our demo
+<a id="60s-spy-title-sequence--our-demo"></a>
+# 60 年代间谍标题序列 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Velvet Cipher* (44 s) · `spy-titles.mp4` · source in [`demo/`](demo/)
+示范：*天鹅绒密码*（44 秒）·`spy-titles.mp4`·来源在 [`demo/`](demo/)
 
 
-A 30–60 second film: an agent chases a courier and a stolen key through sets built from the credits, and the key turns out to open the film's title.
+30-60 秒的影片：一名特工通过由制作人员制作的场景追赶一名信使和一把被盗的钥匙，而钥匙最终打开了影片的标题。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-The graphic grammar of late-1950s / 1960s title design (Saul Bass's *North by Northwest*, *Anatomy of a Murder*, *Vertigo*; the 2002 homage by Kuntzel + Deygas for *Catch Me If You Can*): **flat, opaque inks on paper, hand-cut edges, abstraction down to silhouettes, and typography that is part of the picture's structure**. A title sequence is a story in itself: one goal, one chase, a few locations, one reveal — and the reveal is the title.
+20 世纪 50 年代末 / 1960 年代标题设计的图形语法（Saul Bass 的《西北偏北》、《谋杀解剖》、《迷魂记》；2002 年 Kuntzel + Deygas 向《抓住我，如果你能》致敬）：**平面、纸上不透明墨水、手工切割边缘、抽象到轮廓以及排版是图片结构的一部分**。片头本身就是一个故事：一个目标、一次追逐、几个地点、一个揭秘——而揭晓就是片名。
 
-It is **not** a gun-barrel opening, not a tiptoeing cartoon panther, not a copy of any real title's logo, lettering, characters or shots. The credits contain only fictional roles ("A LEMOLAB PICTURE", "STARRING THE AGENT", "MUSIC BY THE SAMPLER") — never real names.
+它是 **而不是** 一个枪管开口，不是一只踮起脚尖的卡通豹，也不是任何真实游戏的徽标、字母、字符或镜头的副本。片尾字幕仅包含虚构角色（“LEMOLAB PICTURE”、“STARRING THE AGENT”、“MUSIC BY THE SAMPLER”），绝无真实姓名。
 
-Pick stories that are **a pursuit of something that turns out to be the film itself**. The demo used all five native powers, the strongest (the diagonal grid assembling the title) at the peak:
+选择 **的故事，追求某种东西，结果就是影片本身**。 示范使用了所有五种原生能力，其中最强的（对角网格组装标题）处于巅峰：
 
-| Native power | Story use |
+|原生电源|故事运用|
 |---|---|
-| **Type is the set** | Each location is exactly one line of credits, and that line *is* the architecture: letters as colonnade pillars (the hero hides behind the **I**), words as train carriages (he leaps the gaps between words), the **O** of a name as a roulette wheel, an em-dash as a roof ledge, a letter as a lock. At some moment every line must be fully readable. |
-| **Credits are rhythm** | Credits land on beats. Brass stabs = hard cuts. Hold each credit long enough to read it alongside a subtitle. |
-| **Graphic match cuts** | Abstraction makes shape rhymes cheap and powerful: wheel → roulette → pupil → moon → keyhole. Cut on the brass, and make the interval shrink (2 bars → 1.5 bars → 2 beats) as the chase accelerates. |
-| **The diagonal grid** | The opening splits along a 30° diagonal that multiplies into a grid; at the climax every fragment flies back along the same diagonals to assemble the title; the title closes along the same cut. Opening wound → closing seam. |
-| **Silhouette puppets** | Figures are flat cut paper, always in profile, animated on twos. All acting is outline and timing: run, flatten, look back, freeze. |
+|**类型为套装**|每个位置恰好是一行字幕，而该行*就是*建筑：字母作为柱廊支柱（英雄隐藏在**I**后面），单词作为火车车厢（他跳过单词之间的间隙），**O**的名字作为轮盘赌轮，em-dash作为屋顶壁架，一封信作为一把锁。在某些时刻，每一行都必须完全可读。|
+|**积分有节奏**|片尾字幕落在节拍上。黄铜刺伤 = 硬切割。保持每个学分足够长的时间，以便与字幕一起阅读。|
+|**图形匹配剪切**|抽象使形状押韵廉价而有力：车轮→轮盘赌→瞳孔→月亮→钥匙孔。切割铜管，随着追奏的加速，使音程缩小（2 小节 → 1.5 小节 → 2 拍）。|
+|**斜格**|开口沿 30° 对角线分裂成网格；在高潮处，每个片段都沿着相同的对角线飞回，组合成标题；标题也以同样的方式结束。打开伤口 → 闭合接缝。|
+|**剪影木偶**|人物是平切的纸，总是侧面的，两两动画。所有的表演都是轮廓和时机：奔跑、展平、回头、定格。|
 
-Adapting any topic: make the topic the **MacGuffin** and the title its destination. A product launch → the product is the stolen object, and its logo is what the fragments assemble into. A lecture → the key idea is chased through four "chapters" set as credits. A birthday → the chase ends with the name assembling.
+调整任何主题：将主题设为 **麦高芬**，将标题设为目标。产品发布→产品是被盗的物品，其标志是碎片组装而成的。一场讲座 → 核心思想通过四个“章节”作为学分来追踪。生日→追逐以名字组合结束。
 
-**Emotional arc (35–45 s):** a cold open on one shape + one line of briefing (hook in 3 s) → the theft → pursuit through 3–4 locations, each shorter than the last → a gag (hero half-hidden; stop-time freeze) → acceleration montage of shape-match cuts → the catch in silhouette against a giant circle → the world shatters along the grid and assembles into the title → a quiet button: one beat of silence, one bongo, one deadpan line.
+**E情感弧线（35-45秒）：** 一种形状的冷开+一行简报（3秒内上钩）→盗窃→追击3-4个地点，每个地点都比上一个短→一个插科打诨（英雄半隐藏；停止时间冻结）→形状匹配剪辑的加速蒙太奇→巨大圆圈的剪影捕捉→世界沿着网格破碎并组装成标题→一个安静的按钮：一拍沉默，一支邦戈，一支面无表情的线条。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Cold open | Locked, centered single shape (the keyhole) on black. It is secretly an extreme close-up of the title's **I**. |
-| Every credit-set location | Start **wide enough to read the entire credit line**, then push/truck in to the action. |
-| Chase | Lateral tracking (Catch Me grammar): screen direction always left → right, pursued ahead, pursuer behind. |
-| Montage | Hard cuts on brass stabs; circles keep the same screen position and size across the cut. |
-| Hero moment | Silhouette in front of a giant cream moon. |
-| Ending | Push in on the title's lock until the frame matches the cold open exactly, then hard-cut back to the full title on the final bongo. |
+|冷开|锁定、居中的单一形状（钥匙孔），黑色。这是标题**I**的秘密极端特写。|
+|每个信用设置位置|启动 **的宽度足以读取整个信用额度**，然后 push/truck 进入操作。|
+|追赶|横向跟踪（Catch Me语法）：屏幕方向始终为左→右，被追赶者在前，追赶者在后。|
+|剪辑|黄铜刺上的硬切口；圆圈在剪切过程中保持相同的屏幕位置和大小。|
+|英雄时刻|巨大的奶油色月亮前的剪影。|
+|结束|推入标题锁，直到框架与冷开完全匹配，然后硬切回到最后的邦戈鼓上的完整标题。|
 
-- **Puppets on twos** (12 fps): poses *and* positions of figures, hands, letters landing, the plane. **Camera, credit slides, grid growth on ones** (24 fps) — a stepped camera reads as judder.
-- Run cycle: 8 drawings, one step per beat (cycle = 2 beats at 132 BPM), lean 0.3 rad, tie flying at ~65°. Walks: 1 step per beat, coat swinging.
-- Credits slide in along grid lines and stop dead on the beat (ease-out, 0.2 s), letters land with a paper slap.
-- **Stop-time**: at a brass stab the whole picture (background scroll included) freezes for 2 beats while the music is dead silent, then resumes — the big-band device made visual, and a wordless gag.
-- The climax: the previous scene is sliced into strips parallel to the cut line that slide off alternately along the diagonal (N×NW), while title glyphs fly in along the same diagonal and land on consecutive 16th notes.
+- **双人木偶** (12 fps)：人物、手、字母着陆、飞机的姿势*和*位置。 **相机、信用幻灯片、**（24 fps）上的网格增长 - 阶梯状的摄影机读起来像是颤抖。
+- 运行周期：8 个绘图，每个节拍一步（周期 = 132 BPM 2 个节拍），倾斜 0.3 rad，领带飞行角度约为 65°。行走：每节拍 1 步，外套摆动。
+- 片尾字幕沿着网格线滑入，并在节拍上停止（缓出，0.2 秒），字母随着纸拍打而落地。
+- **停止时间**：在铜管乐器响起时，整个画面（包括背景卷轴）冻结了 2 个节拍，而音乐却一片寂静，然后恢复——大乐队的设备变成了视觉，无言的笑点。
+- 高潮：前一个场景被切成与切割线平行的条带，沿着对角线（N×NW）交替滑落，而标题符号沿着同一条对角线飞入并落在连续的十六分音符上。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music: 1960s spy big band** (not cool noir jazz, not ragtime), minor key, ~132 BPM. Original motif: a chromatic descent from the fifth, then a leap to the tonic (B–A♯–A–G | E), dotted rhythm. **Avoid** the famous E–F–F♯–F crawl and the Em(maj9) ending chord; end on Em6/9.
-- **Brass stabs = edit points**: `trumpet_stac` + `trombone_stac` stacked in octaves + crash, ~0.25 s, placed 8 ms early so the sample peak hits the frame. Surf guitar low-string twang (`electric_guitar`) through a home-made spring reverb (dispersive chirp echoes, ~41 ms round trip, 2 s decay). `jazz_bass` walking. Brushes early (soft snare + egg shaker), sticks for the train (16th "rail" snare). `world_perc` bongos/shakers for the casino. Big chord for the title, then a short button, **one beat of digital silence**, one dry bongo.
-- **Silence is a tool**: cold open is only a tape click; stop-time and the last beat are true zero (reverb tails included); the final line plays over nothing but tape hiss.
-- **Foley follows the material**: paper (cut "shh", slides, card slaps for every letter landing, blind flips, a tear for the shatter), metal (key jingle, chain snap, key sliding into the lock, the lock click), tape (click, hiss). Environments only hinted: jet pass (panned L→R), train rumble with wheel "ka-chunk" in tempo, roulette ball ticks slowing down, rooftop wind.
-- **Voice**: British mission-briefing male (Kokoro `bm_george`, speed 0.9–0.97) through a tape chain: band-pass 220–5200 Hz, soft saturation, 0.9 Hz wow, hiss that rises under the voice. 4–6 very short lines; the last line pays off the first ("Nobody knows what it opens." → "Now you know what it opens."). Music ducks ~−7 dB under the voice. Loudness −14 LUFS.
+- **音乐：1960年代间谍大乐队**（不是酷黑色爵士乐，不是拉格泰姆），小调，〜132 BPM。原始主题：从第五音开始半音阶下降，然后跳跃到主音（B–A♯–A–G|E)、附点节奏。 **避免** 著名的 E–F–F♯–F 爬行和 Em(maj9) 结尾和弦；结束于 Em6/9.
+- **黄铜刺伤 = 编辑点**：`trumpet_stac` + `trombone_stac` 堆叠在八度音阶 + 崩溃，约 0.25 秒，提前 8 毫秒放置，以便样本峰值到达帧。通过自制弹簧混响（分散的线性调频回声，约 41 毫秒往返，2 秒衰减）发出冲浪吉他低音弦音 (`electric_guitar`)。 `jazz_bass` 行走。早刷（软军鼓+摇蛋器），为火车鼓棒（第16个“轨道”军鼓）。 `world_perc` bongos/shakers 为赌场。标题的大和弦，然后一个短按钮，**one 数字静音节拍**，一首干邦戈。
+- **沉默是工具**：冷开只是磁带的咔哒声；停止时间和最后一个节拍是真正的零（包括混响尾音）；最后一句除了磁带的嘶嘶声之外什么也没有。
+- **Foley 遵循材料**：纸张（剪切“嘘”、幻灯片、每个字母落地时卡片拍打、盲目翻转、粉碎时撕裂）、金属（钥匙叮当声、链条卡扣、钥匙滑入锁中、锁的咔哒声）、胶带（咔哒声、嘶嘶声）。环境仅暗示：喷气式飞机通行证（从左→右平移）、火车隆隆作响，车轮节奏“卡块”、轮盘赌球滴答声减慢、屋顶风。
+- **嗓音**：英国任务简报男（Kokoro `bm_george`，速度0.9-0.97）通过磁带链：带通220-5200 Hz，软饱和度，0.9 Hz哇，声音下上升的嘶嘶声。 4-6 行很短的行；最后一行回报了第一行（“没有人知道它会打开什么。”→“现在你知道它会打开什么。”）。音乐在声音下方减弱约−7 dB。响度−14 LUFS。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Four inks, no gradients**: ink black `#1b1714`, paper cream `#efe4c9`, signal red `#d23a22`, mustard `#e2a52a`. Allowed "darker paper" variants only for depth/shadows: `#9a2a18` (dark red), `#b07e1c`, `#3a322b` (distant city). Each scene gets one dominant ground color: black (cold open, rooftop), red (grid, train, casino), cream (velvet, title), mustard (airport).
-- **Scissor-cut edges**: every polygon is resampled every ~9–10 px and displaced along its normal by low-frequency noise (amp 1.2–2.2 px, larger for bigger shapes) plus a rare 1–2 px notch. **Cut the edge once in the piece's local space and cache it** — a moving cutout keeps the same edge, exactly like real cutout animation. (Edges computed in screen space "crawl" when pieces move.)
-- **Paper layering**: separate pieces are separated by a **2.4 px cut gap in the ground color** and cast a small paper shadow (offset 2.5/3.5 px, blur 5, alpha ~0.3). Whole figures get the gap as an outline, so a black figure still reads in front of a black letter.
-- **Paper texture**: one full-frame texture multiplied on top (low-frequency mottling + faint fibers) and a sparse "ink void" speckle screened on (only shows on dark ink), plus faint horizontal squeegee streaks. Film grain in the mux at ~6. No halftone (that belongs to other styles).
-- **Silhouette figures** (see `demo/stills/modelsheet.jpg`): 7-head-tall agent with narrow-brim hat (the band is a cut slit), broad-shouldered jacket, pointed shoes, **one red tie as his only color** (it streams back when he runs — the motion indicator). Villain 1.2× taller: wide flat brim, A-line coat with a red lining that only shows when he runs, a mustard key chained to his wrist so the MacGuffin is findable in every shot. Pieces **merge into one outline** inside the figure; only thin (1.7 px) slits at shoulder, elbow, hip/hem and knee. Hands are sharp wedges. No faces except a cream eye slit in close-ups.
-- **The MacGuffin** always sits on a black backing (= ink keyline) so it reads on any ground; it is the brightest thing in frame.
-- **Type**: credits in League Gothic (OFL), glyph outlines extracted with opentype.js and **re-cut** per letter (edge noise, ±0.8° rotation, ±1.5 px baseline jitter). The film title uses custom geometric cut glyphs (straight cuts + arcs, uneven weights, jaunty staggered baselines) — never a real title's lettering. Subtitles in League Spartan 600.
+- **四种墨水，无渐变**：墨水黑`#1b1714`、纸奶油色`#efe4c9`、信号红`#d23a22`、芥末色`#e2a52a`。仅适用于 depth/shadows 允许的“深色纸张”变体：`#9a2a18`（深红色）、`#b07e1c`、`#3a322b`（遥远的城市）。每个场景都有一种主要的底色：黑色（冷开放、屋顶）、红色（网格、火车、赌场）、奶油色（天鹅绒、标题）、芥末色（机场）。
+- **剪刀式边缘**：每个多边形每隔~9–10 px重新采样一次，并通过低频噪声（放大器1.2–2.2 px，更大的形状）加上罕见的1–2 px凹口沿其法线移位。 **在片段的本地空间中剪切一次边缘并将其缓存** - 移动的剪切图保持相同的边缘，就像真正的剪切图动画一样。 （当棋子移动时，在屏幕空间中计算的边缘会“爬行”。）
+- **纸张分层**：单独的部分由底色**中的**2.4 px切割间隙分隔开，并投射小纸张阴影（偏移2.5/3.5 px，模糊5，alpha〜0.3）。整个数字将间隙作为轮廓，因此黑色数字仍然在黑色字母前面阅读。
+- **纸张纹理**：顶部乘以一个全帧纹理（低频斑点+微弱纤维）和一个稀疏的“墨水空白”斑点（仅在深色墨水上显示），加上微弱的水平刮刀条纹。 影片多路复用器中的颗粒约为 6。没有半色调（属于其他风格）。
+- **剪影人物**（参见`demo/stills/modelsheet.jpg`）：7头高的特工，戴着窄边帽（带子是剪裁的），宽肩夹克，尖头鞋，**one红色领带作为他唯一的颜色**（当他跑步时会流回来-运动指示器）。反派身高 1.2 倍：宽平帽檐，A 字形外套，红色衬里只有在他跑步时才会显现出来，手腕上挂着一把芥末钥匙，这样在每台镜头中都可以找到麦高芬。棋子**在图形内部合并成一个轮廓**；仅在肩部、肘部、hip/hem 和膝盖处有细缝（1.7 像素）。手是锋利的楔子。除了特写镜头中的奶油色眼缝外，没有任何面孔。
+- **麦高芬** 始终位于黑色背衬（= 墨水键线）上，因此可以在任何地面上读取；它是画面中最亮的东西。
+- **字体排版**：哥特联盟 (OFL) 的制作人员，使用 opentype.js 和 **重新切割** 每个字母提取字形轮廓（边缘噪声、±0.8° 旋转、±1.5 px 基线抖动）。 影片标题使用自定义几何切割字形（直线切割 + 弧线、不均匀的重量、活泼的交错基线）——从来都不是真正的标题字体。斯巴达联盟 600 中的字幕。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- **Subtitles**: a narrow paper strip (scissor-cut ends, tilted −1°) bottom-left at (96, 958), a small red keyhole glyph as the bullet, League Spartan 600 44 px. Cream strip with ink text on dark scenes; ink strip with cream text on cream scenes. Slides in 60 px from the left in 0.18 s. Display ≥ max(1.8 s, voice + 0.6 s).
-- **Credits live in the set**, never in the subtitle band. One line per location.
-- **Title**: custom cut glyphs; the MacGuffin's slot is a letter (here the I of CIPHER is a black "lock plate" with a red keyhole; the key's outline fills it).
-- **End card**: small title, "60s SPY TITLE SEQUENCE" in cut League Gothic, "LemoLab × Claude Opus 5.5" in red Spartan, tiny agent tipping his hat. The LemoLab sign-off (and the "A LEMOLAB PICTURE" credit) belong to this library's demo only: a user's film carries no LemoLab credit and no copy of this card; its fictional credits name the user's own roles.
+- **字幕**：左下角（96, 958）处的一条窄纸条（两端剪刀剪断，倾斜-1°），一个小红色钥匙孔字形作为子弹，斯巴达联盟600 44像素。黑暗场景中带有墨水文字的奶油色条带；奶油色场景上带有奶油色文本的墨带。在 0.18 秒内从左侧滑动 60 px。显示 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **制作人员名单在** 中直播，从未出现在字幕带中。每个位置一根线。
+- **标题**：自定义切割字形； MacGuffin 的插槽是一个字母（这里 CIPHER 的 I 是带有红色钥匙孔的黑色“锁板”；钥匙的轮廓填充了它）。
+- **尾卡**：小标题，“60s SPY TITLE SEQUENCE”，剪裁联盟哥特式，“LemoLab × Claude Opus 5.5”，红色斯巴达式，小特工脱帽致敬。 LemoLab 签核（以及“LEMOLAB PICTURE”信用）仅属于该风格库的示范：用​​户的影片不包含 LemoLab 署名，也没有该卡的副本；其虚构的人员名单命名了用户自己的角色。
 
-## Pitfalls we hit (demo record)
+<a id="pitfalls-we-hit-demo-record"></a>
+## 我们遇到的陷阱（示范记录）
 
-- Every internal piece outlined with a gap made the figures look like wooden-mannequin diagrams. Draw each figure into an offscreen layer where pieces merge, cut only joint slits (`destination-out`), then composite with an 8-direction ground-color outline + one shadow.
-- `clear()` that resets the transform silently kills the camera → keep the camera matrix across the background fill.
-- The hero fully hidden behind the I reads as "nobody there": shift him so hat brim, nose, tie knot and the fluttering tie stick out past the pillar. The tie must wave (multi-segment ribbon with travelling sine + width wobble) or it reads as a tongue.
-- A credit that is only ever seen partially ("R R I N") is uncomfortable to read: always open wide on the full line.
-- Telegraph poles in black between word-carriages read as the letter I — push background props into a darker version of the ground color.
-- A mustard key on a mustard ground vanishes — give it a black backing.
-- A roulette wheel dropped into a space character covers neighbouring letters; lay out the two halves of the word around a gap of 2.2 × radius.
-- A near-arm drawn on top with the wheel/pupil/moon matches: keep circle centers identical across cuts or the match doesn't register.
-- Brass staccato samples need ~8 ms to peak — place them early so the hit lands on the cut.
-- A peaky mix (big stabs over quiet brushes) stops at −14.4 LUFS under the −1.2 dBTP ceiling; push ~4 dB into a limiter before loudnorm.
+- 每个内部部件都带有间隙，使人物看起来像木制人体模型图。将每个图形绘制到屏幕外图层中，其中各个部分合并，仅切割接合缝（`destination-out`），然后与 8 方向底色轮廓 + 一个阴影合成。
+- 重置变换的 `clear()` 会默默地杀死摄影机 → 将摄影机矩阵保留在背景填充中。
+- 完全隐藏在“我”后面的英雄读作“那里无人”：移动他，使帽檐、鼻子、领带结和飘动的领带伸出柱子。领带必须呈波浪状（多段丝带，带有行进正弦+宽度摆动），否则读起来就像舌头一样。
+- 只看到部分内容的出处（“R R I N”）读起来很不舒服：总是在整行上大开。
+- 字车之间的黑色电线杆读作字母“I”——将背景道具推入较深的底色。
+- 芥末色地上的一把芥末钥匙消失了——给它一个黑色的背衬。
+- 放入空格字符中的轮盘赌轮会覆盖相邻的字母；将单词的两半围绕 2.2 × 半径的间隙布置。
+- 用 wheel/pupil/moon 火柴绘制在顶部的近臂：在切口处保持圆心相同，否则火柴不会注册。
+- 铜管断奏样本需要约 8 毫秒才能达到峰值 - 尽早放置它们，以便击中切点。
+- 尖峰混音（安静刷子上的大刺）在 -1.2 dBTP 上限以下停止在 -14.4 LUFS；在响度标准化之前将约 4 dB 推入限制器。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/spy-titles/demo/
@@ -96,8 +104,8 @@ styles/spy-titles/demo/
   music/score.py   original big-band score (sampler)      mix.py  foley + tape voice + ducking
 ```
 
-1. `node core/render/still.mjs styles/spy-titles/demo 12 20.8 --q nosub=1` — review stills (`?sheet=1&v=1`, `?frame=airport|train|title`).
+1. `node core/render/still.mjs styles/spy-titles/demo 12 20.8 --q nosub=1` — 回顾剧照（`?sheet=1&v=1`、`?frame=airport|train|title`）。
 2. `core/tts/tts.py lines.json voices` → `core/tts/asr_check.py` (6/6).
 3. `python music/score.py` → `node core/render/events.mjs` → `python mix.py`.
-4. `node core/render/video.mjs styles/spy-titles/demo --fps 24 --workers 3` (1058 frames ≈ 17 s, Canvas2D).
-5. `CRF=24 sh demo/tools/mux.sh out/video24.mp4 mix.wav spy-titles.mp4 24 6` (core mux + a CRF knob: flat inks + grain at crf19 = 270 MB, at crf24 = 18.5 MB with no visible difference). Or just `sh demo/build.sh`.
+4. `node core/render/video.mjs styles/spy-titles/demo --fps 24 --workers 3`（1058 帧 ≈ 17 秒，Canvas2D）。
+5. `CRF=24 sh demo/tools/mux.sh out/video24.mp4 mix.wav spy-titles.mp4 24 6`（核心多路复用器 + CRF 旋钮：平面墨水 + 颗粒，crf19 = 270 MB，crf24 = 18.5 MB，没有明显差异）。或者只是 `sh demo/build.sh`。

@@ -1,19 +1,20 @@
-# Fonts in `core/fonts/`: licence
+# `core/fonts/` 中的字体与许可
 
-`fonts.css` declares four font families, all licensed under the **SIL Open Font License 1.1** (OFL). The `f0`–`f7.woff2` files are **subsets**: Google Fonts-style `unicode-range` slices that hold only the glyphs listed in `fonts.css`, not the full fonts. The full text of the licence follows the table.
+`fonts.css` 声明了四个字体家族，均使用 **SIL Open Font License 1.1**（OFL）许可。`f0`–`f7.woff2` 文件是**字体子集**，采用 Google Fonts 风格的 `unicode-range` 切片，只包含 `fonts.css` 列出的字形，并非完整字体。表格之后保留许可英文原文。
 
-| Family (style) | Files | Glyph subset (`unicode-range` code points) | Copyright line (from the font's own name table) | Licence URL in the font |
+| 字体家族（字形） | 文件 | 字形子集（`unicode-range` 码位） | 字体自身名称表中的版权声明 | 字体中的许可网址 |
 |---|---|---|---|---|
-| ZCOOL KuaiLe (Regular) | `f0.woff2` | 208 (≈ 200 mostly Chinese characters: **not enough for running Chinese text**) | Copyright 2018 The ZCOOL KuaiLe Project Authors (https://github.com/googlefonts/zcool-kuaile) | https://openfontlicense.org |
-| Fredoka (variable, weights 500, 600 and 700 are used; the file's default instance is named "Fredoka Light") | `f1.woff2` (Hebrew, 172), `f2.woff2` (Latin Extended, 1162), `f3.woff2` (Latin, 387) | see `fonts.css` | Copyright 2016 The Fredoka Project Authors (https://github.com/hafontia/Fredoka-One) | http://scripts.sil.org/OFL |
-| Lilita One (Regular) | `f4.woff2` (Latin Extended, 1162), `f5.woff2` (Latin, 387) | see `fonts.css` | Copyright (c) 2011 Juan Montoreano (juan@remolacha.biz), with Reserved Font Names "Lilita One" | http://scripts.sil.org/OFL |
-| IM Fell English (Italic and Regular) | `f6.woff2` (Italic), `f7.woff2` (Regular), each Latin, 387 | see `fonts.css` | (c) 2007 Igino Marini (www.iginomarini.com) With Reserved Font Name IM FELL English Italic / IM FELL English Roman | http://scripts.sil.org/OFL |
+| ZCOOL KuaiLe（常规） | `f0.woff2` | 208 个字形，约 200 个为汉字：**不足以覆盖连续中文正文** | Copyright 2018 The ZCOOL KuaiLe Project Authors (https://github.com/googlefonts/zcool-kuaile) | https://openfontlicense.org |
+| Fredoka（可变字体；使用字重 500、600、700；文件默认实例名为“Fredoka Light”） | `f1.woff2` (Hebrew, 172), `f2.woff2` (Latin Extended, 1162), `f3.woff2` (Latin, 387) | 见 `fonts.css` | Copyright 2016 The Fredoka Project Authors (https://github.com/hafontia/Fredoka-One) | http://scripts.sil.org/OFL |
+| Lilita One（常规） | `f4.woff2` (Latin Extended, 1162), `f5.woff2` (Latin, 387) | 见 `fonts.css` | Copyright (c) 2011 Juan Montoreano (juan@remolacha.biz), with Reserved Font Names "Lilita One" | http://scripts.sil.org/OFL |
+| IM Fell English（斜体与常规） | `f6.woff2` (Italic), `f7.woff2` (Regular), each Latin, 387 | 见 `fonts.css` | (c) 2007 Igino Marini (www.iginomarini.com) With Reserved Font Name IM FELL English Italic / IM FELL English Roman | http://scripts.sil.org/OFL |
 
-How this table was made: the family-to-file mapping comes from `fonts.css`; the copyright and licence lines are the `name` table records (IDs 0 and 14) read from the `.woff2` files themselves with fontTools 4.66.0 (fontTools is not in the shared `.venv`; it was installed in a throw-away environment just to read the files). The designer field (name ID 9) is empty in these files, so the copyright line above is the attribution. Nothing was fetched from a web page for the table.
+表格制作方法：字体家族与文件的对应关系来自 `fonts.css`；版权与许可声明来自字体文件 `name` 表的记录（ID 0、14），使用 fontTools 4.66.0 从 `.woff2` 文件中直接读取。fontTools 未安装在共享 `.venv` 中，而是仅为读取文件而安装在临时环境中。这些文件的设计者字段（名称 ID 9）为空，因此以上版权声明用于署名。表格未从网页获取信息。
 
-Lilita One and IM FELL English declare **Reserved Font Names** (see their copyright lines). If you modify or rename these files, condition 3 of the licence below applies.
+Lilita One 与 IM FELL English 声明了**保留字体名称**，见其版权声明。修改或重命名字体文件时，适用下方许可第 3 条。
 
-The licence text below is the standard OFL 1.1, in the plain-text layout of the `OFL.txt` that the ZCOOL KuaiLe project ships (https://github.com/googlefonts/zcool-kuaile/blob/main/OFL.txt). It was compared word for word with the official page https://openfontlicense.org/open-font-license-official-text/: the wording is identical, only the dash characters and the list numbering differ in layout. The text itself is unchanged.
+下方为标准 OFL 1.1 英文许可原文，采用 ZCOOL KuaiLe 项目所附 `OFL.txt` 的纯文本排版（https://github.com/googlefonts/zcool-kuaile/blob/main/OFL.txt）。已与官方页面 https://openfontlicense.org/open-font-license-official-text/ 逐词核对：措辞一致，仅连字符和列表编号的排版不同。许可正文保持原样。
+
 
 ## SIL Open Font License 1.1
 

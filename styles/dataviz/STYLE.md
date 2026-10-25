@@ -1,121 +1,133 @@
-# Data Storytelling — Style Prompt
+<a id="data-storytelling--style-prompt"></a>
+# 数据叙事：风格提示词
 
-> A chart that tells a story: real data, drawn mark by mark on cream paper by a red–blue pencil, with handwritten notes pinned to the numbers. The chart itself is the camera, the rhythm and the plot.
-> References (grammar only): Hans Rosling's *200 Countries, 200 Years, 4 Minutes* (one dot is a character), Ed Hawkins' warming stripes (a diverging ramp on a reference mean, no axes), The Pudding / NYT scrollytelling (one idea at a time, growing axes, pinned notes). Copy none of their charts, layouts or typefaces; never name them in the film.
+> 讲述故事的图表：真实数据，用红蓝铅笔在奶油色纸上逐个标记，并在数字上钉上手写注释。图表本身就是摄影机，节奏和情节。
+> 参考文献（仅语法）：Hans Rosling 的 *200 个国家，200 年，4 分钟*（一个点代表一个字符），Ed Hawkins 的温暖条纹（参考平均值上的发散坡道，无轴），The Pudding / NYT 滚动讲述（一次一个想法，增长轴，固定注释）。请勿复制他们的任何图表、布局或字体；切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-**The chart is the film.** Every mark is a real number and every movement is a meaningful chart operation (a mark lands, an axis grows, the scale changes, a series morphs, a note is pinned). The data is real, openly licensed and traceable. You change the framing, never the numbers.
+**图表是影片.** 每个标记都是实数，每次移动都是有意义的图表操作（标记落地、轴增长、刻度变化、系列变形、注释固定）。数据真实、公开许可、可追溯。你改变的是框架，而不是数字。
 
-**Pick the chart the data asks for:**
+**选择数据要求的图表：**
 
-| The data is about | Chart |
+|数据约为|图表|
 |---|---|
-| comparing categories, rankings | bars, a ranked bar race |
-| a relationship between two measures | scatter or bubble chart (one dot can be a character) |
-| place | map, choropleth, dots on a map |
-| parts of a whole, counts of people | unit / waffle chart, proportional squares |
-| before → after | slope or dumbbell chart |
-| a distribution | histogram, beeswarm |
-| where things go | flow / Sankey |
-| change over time | line or dot series, stripes, area |
+|比较类别、排名|酒吧，酒吧排名赛|
+|两个措施之间的关系|散点图或气泡图（一个点可以是一个字符）|
+|地方|地图、分区统计图、地图上的点|
+|整体的一部分，人数|单位/华夫饼图，比例方块|
+|之前→之后|斜率图或哑铃图|
+|分布|直方图，蜂群|
+|事情去向|流/桑基|
+|随着时间的推移而改变|线或点系列、条纹、区域|
 
-Three layers make it a story, not an infographic: **a human scale** (handwritten notes pinned to marks), **a performer** (a physical pencil that draws every mark), and **sonification** (each mark is a pitch; the trend is heard before it is read).
+三层使其成为一个故事，而不是一个信息图：**a 人体比例**（固定在标记上的手写笔记）、**a 表演者**（绘制每个标记的物理铅笔）和**可听化**（每个标记）是一个音调；在阅读之前先听听趋势）。
 
-Not a dashboard (one idea at a time), not a keynote with charts (no slides), never decoration.
+不是仪表板（一次一个想法），不是带有图表的主题演讲（没有幻灯片），也不是装饰。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper**: warm cream, fixed-seed fibre noise and a faint dot grid in world space. **Ink**: dark warm ink for axes and series, pale warm grey for grid and zero line, IBM Plex Mono ticks.
-- **Marks**: data dots carry a thin ink ring so pale values stay visible on cream. A mark lands with a short pop and a thin ripple; suppress ripples when marks arrive closer than ~0.1 s.
-- **Handwriting** (Caveat) in pencil, per-glyph jitter, graphite grain, written on as the tip dances over the x-height. Leaders are wobbly curves ending in an **un-closed** ring around the mark.
-- **The red–blue pencil**: hex body, blue half / red half, sharpened wood cone. Only the tip end shows, from the lower right; its shadow drifts farther and softer with lift; sharp tip, soft body.
-- **Layout**: a plot box fixed in world space, a **memory zone** for early notes, every note pinned in **data space** (value + pixel offset) so rescales keep the layout, a bottom band for the caption.
+- **纸张**：温暖的奶油色、固定种子纤维噪声和世界空间中微弱的点网格。 **墨色**：用​​于轴和系列的深暖墨水，用于网格和零线的浅暖灰色，IBM Plex Mono 刻度。
+- **马克**：数据点带有薄墨环，因此浅色值在奶油色上保持可见。标记落地时发出短暂的爆裂声和细细的波纹；当标记到达距离小于 ~0.1 秒时抑制波纹。
+- **手写**（警告）用铅笔，每个字形抖动，石墨颗粒，当笔尖在x高度上舞动时书写。领导者是摆动的曲线，以围绕标记的 **un 闭合** 环结束。
+- **红蓝铅笔**：六角体，蓝色一半/红色一半，削尖的木锥体。仅显示尖端，从右下角开始；它的影子随着升力飘得更远、更柔和；尖端锋利，身体柔软。
+- **布局**：固定在世界空间中的绘图框，**内存区域**用于早期注释，每个注释固定在**数据空间**（值+像素偏移）中，因此重新缩放保持布局，标题的底部带。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Colour encodes **one thing: the value**. Diverging data uses a ramp (ColorBrewer RdBu family) centred on the mean of a meaningful reference period, with a symmetric span; data with no natural centre uses one sequential ramp. Everything else is ink on cream.
-- **Honesty beats drama**: pale values stay pale; never stretch a ramp to make a change look bigger.
-- The two pencil leads have meanings: **blue for memories and human notes, red for records and warnings**. A change of lead marks a turn.
-- One `accent` colour may bypass the ramp for a mark that is not data (a logo, a highlight).
+- 颜色编码 **one 事物：值**。发散数据使用以有意义的参考周期平均值为中心的斜坡（ColorBrewer RdBu 系列），具有对称跨度；没有自然中心的数据使用一个连续的斜坡。其他一切都是奶油墨水。
+- **诚实胜过戏剧**：苍白的价值观保持苍白；永远不要为了让变化看起来更大而拉长斜坡。
+- 两根铅笔芯各有含义：**蓝色表示记忆和人类笔记，红色表示记录和警告**。领先的变化标志着一个转折。
+- 一种 `accent` 颜色可能会绕过渐变以获得非数据标记（徽标、突出显示）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **The subtitle is the figure caption**: a text serif (Newsreader), ink colour, left-aligned with the chart, ≤ 2 lines, with a hairline rule above it and a small mono kicker for the range drawn so far. Words appear on their whisper timestamps over a paper-colour band. Hold ≥ max(1.8 s, speech + 0.6 s).
-- The title is the **chart's own headline** (Newsreader), set in world space above the plot; it fades when the camera is close and returns with the full view.
-- No captions over a signature chart operation or a silence.
+- **副标题是图标题**：文本衬线（新闻阅读器），墨水颜色，与图表左对齐，≤2行，其上方有细线规则，以及迄今为止绘制的范围的小单声道踢标。文字出现在纸色带上的耳语时间戳上。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 标题是 **图表自己的标题**（新闻阅读器），设置在绘图上方的世界空间中；当摄影机靠近时，它会消失，并以完整视图返回。
+- 签名图表操作上没有字幕或沉默。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **The rhythm of the data is the rhythm of the film.** Map the marks to a musical grid; to accelerate, one option is to **divide the beat instead of changing tempo**. Pick a tempo whose finest subdivision lands on whole frames (at 24 fps a minute has 1440 frames; the count of finest notes per minute must divide it), so picture and sound never drift.
-- **Pencil acting**: lift before each tap, land with the shadow meeting the tip, a tiny rebound; hurry as data densifies, tremble like a seismograph needle at a peak. It can **flinch** (recoil and freeze), **hesitate** (hover before a mark) and **exit** (hand the story to the viewer).
-- **Rescale** reads as ratchet clicks (stepped, each step eased); a calm rescale is smooth.
-- **Morph**: a staggered sweep, each mark easing into its new form; notes fade as it passes and return as tiny marks.
-- **No fades to blank or dissolves.** Transitions are chart operations: axis growth, pull-backs, rescales, morphs, a cell widening into the next frame.
+- **数据的节奏是影片的节奏。**将标记映射到音乐网格；要加速，一种选择是**划分节拍而不是改变节奏**。选择最精细细分落在整个帧上的节奏（每分钟 24 fps 有 1440 帧；每分钟最精细音符的数量必须将其划分），这样图像和声音就不会漂移。
+- **铅笔动作**：每次敲击前抬起，落地时阴影与笔尖相遇，有微小的反弹；随着数据的密集化，速度会加快，就像地震仪针在峰值时一样颤抖。它可以**退缩**（反冲并冻结）、**犹豫**（在标记前悬停）和**出口**（将故事交给观众）。
+- **重新缩放** 读作棘轮咔哒声（步进，每一步都缓和）；平静的重新调整是顺利的。
+- **变形**：交错扫描，每次标记缓动进入其新形态；音符在经过时逐渐消失，并以微小的痕迹返回。
+- **不会淡入空白或消失。** 转换是图表操作：轴增长、拉回、重新缩放、变形、单元格加宽到下一帧。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A 2D camera `{x, y, zoom, roll}` over **one sheet of paper**. A film is one take; a hard cut is rare and meaningful. The moves below are a vocabulary, not a route. Opening and ending come from the topic.
+**** 上的 2D 摄影机 `{x, y, zoom, roll}`。 影片是一次拍摄；硬削减是罕见且有意义的。下面的动作是一个词汇，而不是一条路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Extreme close-up on one mark, following its leader | One fact, one life | a single case; a named person |
-| Full view first, then dive to one mark | The pattern before the case | a familiar trend; a myth to correct |
-| Pull back as axes grow out of the marks | The frame arrives with the unit | naming the measure; widening a claim |
-| Track the pencil, newest mark at ~60 % of width | Progress: the past behind, the future ahead | a series in time; a race; a queue |
-| Pedestal with rising data, a Dutch angle creeping in | Escalation, unease | runaway growth; a debt |
-| Punch-in over 2 frames, decaying shake, jolt on rescale | Surprise, a broken frame | an outlier; a crash |
-| Fast pull-out, roll, small constant tremor | A rush | a boom; a cascade; a panic |
-| Locked-off | The transformation is the movement | a morph; a slow reading |
-| Hold on one mark, then pull back | The part inside the whole | a verdict; context |
-| Pull and pan to add more real data | Scale switch | a longer record; the rest of the list |
-| Lateral pan across notes in the memory zone | Recollection | a biography; a timeline of events |
+|对一个标记进行极端特写，跟随其领导者|一个事实，一种生活|单一案例；一个有名字的人|
+|先全视图，然后潜至一个标记|案例之前的模式|熟悉的趋势；一个需要纠正的神话|
+|当轴长出标记时向后拉|框架随设备一起到达|命名措施；扩大索赔范围|
+|跟踪铅笔，最新标记约为宽度的 60%|进展：过去已过去，未来在前方|及时的系列；一场比赛；一个队列|
+|数据不断上升，荷兰视角悄然而至|升级、不安|失控的增长；一笔债务|
+|插入超过 2 帧、衰减抖动、重新缩放时抖动|惊喜，框架坏了|异常值；一场车祸|
+|快速拉出、滚动、小持续颤动|匆忙|繁荣；级联；恐慌|
+|锁定|转变就是运动|变形；缓慢的阅读|
+|抓住一个标记，然后向后拉|整体中的部分|判决；语境|
+|拉动和平移以添加更多真实数据|刻度开关|更长的记录；列表的其余部分|
+|横向平移记忆区域中的音符|回忆|传记；事件的时间表|
 
-Framing: subjects fill ≥ 1/3 of frame height at key moments. When the real axis scrolls off-screen, pin its tick labels to a paper strip at the frame edge (frozen pane).
+取景：关键时刻主体填充≥1/3的画面高度。当实轴滚动到屏幕外时，将其刻度标签固定到框架边缘（冻结窗格）的纸条上。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Ambience** follows the places the notes evoke (J-cuts in, L-cuts out). **Foley** is graphite, paper and wood: tick-and-paper taps, scratches for handwriting, a ruler hiss for axes, a paper puncture for a broken frame, a wooden click for the pencil flip, ratchet teeth for a rescale, a paper sweep for a morph.
-- **Sonification** is the music: pitch = value, rhythm = time density. Low values snap to a pentatonic scale, middle ones to semitones, extreme ones unquantized, with detune growing away from the reference. Timbre: a **low-pass-gate "plonk"** (sine + FM whose index rises with the value: wood → metal). Dense passages: quieter notes, decay ≤ 1.5 × the gap.
-- **Bed**: detuned-saw pad, soft kick, noise shaker, low-passed hats, sine sub, sample-and-hold blips, drones; harmony can darken or brighten with the data.
-- **Silence** is a tool: true digital silence (all layers) where the data should be heard alone, before a key mark, a morph or a verdict; the first sound after it matters most.
-- **Mix**: compressed calm, neutral narration, music ducked ~−11 dB, foley light except key taps; −14 LUFS, no grain. The voice never talks over a rush, a silence or a morph.
+- **环境**遵循音符唤起的位置（J 切入，L 切出）。**弗利**是石墨、纸和木头：刻度纸水龙头、手写划痕、尺子发出的轴嘶嘶声、纸刺破框架的声音、木制咔哒声用于铅笔翻转、棘轮齿用于重新缩放、纸扫用于变形。
+- **可听化**是音乐：音高=数值，节奏=时间密度。低值捕捉到五声音阶，中间值捕捉到半音，极端值未量化，失谐逐渐远离参考。音色：**低通门“砰”**（正弦+ FM，其指数随值上升：木材→金属）。密集段落：较安静的音符，衰减≤1.5×间隙。
+- **床**：失谐锯齿垫、软底鼓、噪声振动器、低通帽、正弦低音炮、采样保持光点、无人机；和谐可以随着数据而变暗或变亮。
+- **沉默** 是一种工具：真正的数字静音（所有层），在关键标记、变形或判决之前，应单独听到数据；最重要之后的第一个声音。
+- **混音**：压缩平静，中性叙述，音乐闪避~−11 dB，拟音除按键外轻； −14 LUFS，无颗粒。这个声音从不匆忙、沉默或变形。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **One mark = one fact.** *Fits content like:* the first store a chain opened; the first patient of a trial; the first satellite launched.
-- **Axes grow with the story.** The y axis arrives when the narration first names the unit. *Fits content like:* revenue; a city's population; vaccination rates.
-- **Pinned annotations.** Their content and colour carry the arc. *Fits content like:* an athlete's season; a family's migrations; releases on a usage curve.
-- **Breaking the frame.** The chart must make room; the torn edge stays as a scar. *Fits content like:* a viral spike; a price bubble; a record-breaking flood.
-- **Encoding morph.** Bars into a waffle, a map into a ranking, a line into a slope: the reveal of the whole. *Fits content like:* a budget as units of people; countries as a ranking; daily steps as a year strip.
-- **Scale switch.** One value → the series → a longer real record, never extrapolated. *Fits content like:* one day's energy use → a year; one species count → a region.
-- **The empty next cell.** A dashed slot for the value nobody knows yet. *Fits content like:* next year's election; the next launch; tomorrow's reading.
+- **一个标记 = 一个事实。** *适合以下内容：* 连锁店开设的第一家商店；试验的第一位患者；第一颗卫星发射升空。
+- **轴随着故事的发展而增长。** 当叙述第一次命名单位时，y 轴到达。 *适合以下内容：*收入；一个城市的人口；疫苗接种率。
+- **固定注释。** 它们的内容和颜色带有弧线。 *适合以下内容：*运动员的赛季；家庭的迁移；在使用曲线上释放。
+- **打破框架。** 图表必须腾出空间；撕裂的边缘留下疤痕。 *适合以下内容：* 病毒式传播；价格泡沫；破纪录的洪水
+- **编码变形。** 酒吧变成了华夫饼，地图变成了排名，一条线变成了斜坡：整体的揭示。 *适合以下内容：*以人为单位的预算；国家排名；每日步数作为年条。
+- **刻度开关。** 一个值→级数→更长的真实记录，从不外推。 *适合以下内容：*一天的能源使用→一年；一个物种算→一个区域。
+- **下一个空单元格。** 一个虚线槽，用于表示尚无人知晓的值。 *适合以下内容：*明年的选举；下一次发射；明天的读书。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Select data columns by header name, never by index; print every fact the narration claims.
-- Notes collide with later data → data-space pins, a memory zone.
-- A frame break rescaled too fast is invisible → hold the pierced state ≥ half a beat.
-- Right-aligned notes are still written left to right → the pencil hops to the first letter.
-- Helpers that set `globalAlpha` must multiply the incoming alpha, or fades skip them.
-- Tails leak across a hard silence → render before/after in separate buffers; verify on decoded samples.
-- In dense passages the pencil body lies across fresh marks → steepen its angle.
-- Synthesized human sounds (a laugh) are uncanny → use a soft non-human sound.
+- 按标题名称选择数据列，而不是按索引；打印叙述中声称的每一个事实。
+- 音符与后面的数据→数据空间引脚（内存区域）发生冲突。
+- 重新缩放太快的帧中断是不可见的→保持刺穿状态≥半拍。
+- 右对齐的笔记仍然从左到右书写→铅笔跳到第一个字母。
+- 设置 `globalAlpha` 的助手必须乘以传入的 alpha，否则淡入淡出会跳过它们。
+- 尾部泄漏穿过硬静默 → 在单独的缓冲区中渲染 before/after；验证解码样本。
+- 在密集的段落中，铅笔主体位于新的标记上→使其角度变陡。
+- 合成的人类声音（笑声）是不可思议的 → 使用柔和的非人类声音。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine.js` (Canvas 2D, world units = chart pixels at zoom 1) is the style: paper, camera, value ramps, `pencilStroke` (any polyline in pencil), `inkShape` (any closed shape: bars, areas, map shapes), `plotShape`, `handText`, `dataDot`, `morphMark`, annotation geometry, `drawPencil`, `caption`. `demo/music/score.py` holds the sonification. The function table and a minimal example are in [DEMO.md](DEMO.md#engine-reference).
+`demo/engine.js`（画布 2D，世界单位 = 缩放 1 时的图表像素）是风格：纸张、摄影机、值斜坡、`pencilStroke`（铅笔中的任何折线）、`inkShape`（任何闭合形状：条形图、面积图、地图形状）、`plotShape`、 `handText`、`dataDot`、`morphMark`、注释几何、`drawPencil`、`caption`。 `demo/music/score.py` 持有发声功能。函数表和最小示例位于 [DEMO.md](DEMO.md#engine-reference) 中。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the dataset, the chart, the human scale, the notes, the opening, the ending, the camera path, the pacing and the silences. All far from our demo:
+您决定数据集、图表、人体音阶、音符、开头、结尾、摄影机路径、节奏和沉默。与我们的示范相去甚远：
 
-- Structures: **a ranked race** (bars climb and overtake; one bar is the character; a newcomer breaks the frame from below); **a map that becomes a count** (dots gather on a map as events happen, then fall into a unit chart of people in one morph); **before → after dialogue** (two years face each other as a slope chart; one line left unfinished).
-- Openings: **the finished chart** (the whole pattern is already drawn; the film works backwards); **the object before the axis** (a pencil drawing of the thing measured, a ticket, a shoe, becomes the first mark); **the question first** (an empty plot with only the unit and a handwritten question; the pencil hovers).
-- Endings: **one mark, close** (end on a single value and its note, never the full view); **back to the object** (the chart folds into a drawing of the thing it measured); **the headline revised** (the pencil strikes a word of the title and writes the true one).
+- 结构：**a排名赛**（横杠攀爬和超越；一根杠是角色；新人从下面打破框架）； **一张变成计数的地图**（当事件发生时，点聚集在地图上，然后落入一个变形的人的单位图表中）； **对话前→对话后**（两年对峙为斜率图；一行未完成）。
+- 开局：**成品图表**（整个图案已经绘制；影片向后工作）； **轴前的物体**（测量的物体的铅笔图，一张票，一只鞋，成为第一个标记）； **首先是问题**（只有单位和手写问题的空图；铅笔悬停）。
+- 结局：**一标记，关闭**（以单个值及其注释结束，而不是完整视图）；**回到物体**（图表折叠成所测量事物的图画）；**标题已修改**（用铅笔划出标题的一个字，写出真实的字）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

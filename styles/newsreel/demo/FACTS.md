@@ -1,87 +1,97 @@
-# Facts and sources · Knock-Knee Alert (膝盖警报)
+<a id="facts-and-sources--knock-knee-alert-膝盖警报"></a>
+# 事实和来源 · Knock-Knee Alert (膝盖警报)
 
-Every claim in the narration and on screen, with its source and the quoted wording. Checked against the final script on 2026-10-20. The newsreel ("THE SPOTLIGHT NEWS", "ENTER MR. FORD", "THAT'S THE NEWS!") is invented packaging; the archive material and the facts are real.
+旁白和屏幕上的每项主张及其来源和引用的措辞。于 2026 年 10 月 20 日对照最终脚本进行检查。新闻片（“焦点新闻”、“福特先生登场”、“这就是新闻！”）是发明的包装；档案材料和事实都是真实的。
 
-## Narration and on-screen text
+<a id="narration-and-on-screen-text"></a>
+## 旁白和屏幕文字
 
-| On screen / spoken | Claim | Source |
+|屏幕上/口头上|宣称|来源|
 |---|---|---|
-| L1 "Warning! The Charleston will make us knock-kneed and pigeon-toed!" · tag "AUSTIN · MARCH 5, 1926" | A newspaper headline of 5 March 1926 said so | F1 |
-| L2 "It kicked off on Broadway in 1923. Three years on, it's the rage!" · map "NEW YORK · 1923" | The song "Charleston" came from the 1923 Broadway show *Runnin' Wild*; the dance peaked in 1926–27 | F2 |
-| map "HOLLYWOOD · 1925" | Bessie Love, a Hollywood actress, danced the Charleston on film in 1925 and taught it in *Photoplay* (Oct. 1925) | F3 |
-| map "AUSTIN · 1926" | the warning headline (F1) | F1 |
-| L3 "Hollywood star Bessie Love will teach you, in nine easy steps!" · tag "PHOTOPLAY · OCT. 1925" | *Photoplay*, October 1925, published a nine-step Charleston guide with Bessie Love | F3 |
-| L4 "But in Dearborn, Henry Ford has other ideas!" · L5 "Mister Ford's cure? The old-time dances of his youth!" | Ford ran a campaign to revive the dances of his youth, with dancing parties and lessons in Dearborn from the mid-1920s | F4 |
-| tag "FORD FILMS 1925–26" | the footage is from the Ford Motor Company Film Collection: a small orchestra (1926) and a man dancing to a small band with Henry Ford watching (1925) | F6 |
-| L6 "His book says the jazzy new dances are losing vogue everywhere!" · tag "GOOD MORNING · 1926" · the underlined words on screen | Ford's 1926 book "Good Morning" says modern dances, with "their tendency to jazz", "are losing vogue everywhere" | F5 |
-| split "OLD-TIME · 1927" | NARA: "Group of people dancing in a circle on a large field" (Dancing at Botsford Inn, 1927) | F6 |
-| split "CHARLESTON · 1924", tag "FORD WORKERS’ PICNIC · 1924", L7 "Let's ask the Ford workers' picnic!", L8 "Even the youngsters are doing the Charleston!" | NARA: the 1924 picnic given by employees of Ford Motor Company; the catalogue lists couples dancing in the pavilion, tap dancing and "kids doing the 'Charleston.'" | F6 |
-| record label "“CHARLESTON” · 1925 RECORD" | Golden Gate Orchestra, "Charleston", Edison Diamond Disc 51542, recorded 2 April 1925 | F7 |
-| L9 "Knock-kneed? Who cares!" | editorial button (the film's own line, not a claim) | — |
+|L1“警告！查尔斯顿会让我们外翻膝和内八字！” · 标签“奥斯汀·1926 年 3 月 5 日”|1926 年 3 月 5 日的报纸头条如此描述|F1|
+|L2 “它于 1923 年在百老汇拉开帷幕。三年过去了，它风靡一时！” · 地图“纽约·1923”|歌曲《Charleston》来自 1923 年百老汇剧目 *Runnin' Wild*；这种舞蹈在 1926-27 年达到顶峰|F2|
+|地图“好莱坞·1925”|好莱坞女演员 Bessie Love 于 1925 年在影片上跳了查尔斯顿舞，并在 *Photoplay* 中教授了它（1925 年 10 月）|F3|
+|地图“奥斯汀·1926”|警告标题 (F1)|F1|
+|L3“好莱坞明星 Bessie Love 将教您，只需九个简单步骤！” · 标签“PHOTOPLAY·1925 年 10 月”|*Photoplay*，1925 年 10 月，与 Bessie Love 一起出版了查尔斯顿九步指南|F3|
+|L4“但是在迪尔伯恩，亨利·福特有其他想法！” · L5“福特先生的治愈方法？他年轻时的老式舞蹈！”|福特发起了一项运动，旨在复兴他年轻时的舞蹈，从 20 年代中期开始在迪尔伯恩举办舞会和课程|F4|
+|标签“福特影片 1925–26”|该片段来自福特汽车公司影片收藏：一个小型管弦乐队（1926 年）和一个男人在亨利·福特的注视下随着一个小乐队跳舞（1925 年）|F6|
+|L6 “他的书说爵士新舞蹈在各地都不再流行了！” · 标签“早安·1926”· 屏幕上带下划线的文字|福特 1926 年出版的《早安》一书中称，“现代舞带有爵士乐倾向”，“正在各地失去时尚感”|F5|
+|拆分《旧时光·1927》|奈良：“一群人在一大片场地上围成一圈跳舞”（在 Botsford Inn 跳舞，1927 年）|F6|
+|拆分“查尔斯顿·1924”，标签“福特工人野餐·1924”，L7“让我们问福特工人野餐吧！”，L8“连年轻人都在做查尔斯顿！”|NARA：1924 年福特汽车公司员工举办的野餐；目录上列出了在亭子里跳舞的情侣、踢踏舞和“孩子们跳‘查尔斯顿’”。|F6|
+|唱片公司““查尔斯顿”·1925 RECORD”|金门管弦乐团，“查尔斯顿”，爱迪生钻石唱片 51542，录制于 1925 年 4 月 2 日|F7|
+|L9“外翻膝？谁在乎呢！”|编辑按钮（影片自己的行，不是声明）|—|
 
-## F1 · the headline
+<a id="f1--the-headline"></a>
+## F1·头条
 
-- *The Austin Statesman*, Friday, March 5, 1926, page 6 (scan on Wikimedia Commons): https://commons.wikimedia.org/wiki/File:Austin_American_Statesman_1926-03-05_(page_6).jpg
-  > "Charleston To Make Us Knock-Kneed And Pigeon-Toed" (headline, read off the page)
-  > "Page 6—Friday, March 5, 1926. THE AUSTIN STATESMAN" (folio)
-- The warning in the article comes from "Mrs. W. L. Keep, dancing teacher in Omaha", so the narration says only "Warning!" and does not call it a doctor's warning.
+- *《奥斯汀政治家》*，1926 年 3 月 5 日星期五，第 6 页（在维基共享资源上扫描）：https://commons.wikimedia.org/wiki/File:Austin_American_Statesman_1926-03-05_(page_6).jpg
+  >“查尔斯顿让我们内八字内翻”（标题，从页面上读出）
+  > “第 6 页 — 1926 年 3 月 5 日星期五。奥斯汀政治家”（对开页）
+- 文章中的警告来自“Mrs. W. L. Keep，奥马哈的舞蹈老师”，因此旁白只说“警告！”并且不称其为医生的警告。
 
-## F2 · Broadway, 1923, and the craze
+<a id="f2--broadway-1923-and-the-craze"></a>
+## F2·百老汇，1923年，热潮
 
-- Wikipedia, "Charleston (dance)": https://en.wikipedia.org/wiki/Charleston_(dance)
-  > "The rhythm was popularized in mainstream dance music in the United States by a 1923 tune called "The Charleston" by composer/pianist James P. Johnson, which originated in the Broadway show Runnin' Wild and became one of the most popular hits of the decade."
-  > "The Charleston dance's peak popularity occurred from mid-1926 to 1927."
-- Wikipedia, "Charleston (1923 song)": https://en.wikipedia.org/wiki/Charleston_(1923_song)
-  > "The song was featured in the American black Broadway musical comedy show Runnin' Wild, which had its premiere at the New Colonial Theatre in New York on October 29, 1923."
-- "Three years on, it's the rage!" is newsreel hyperbole resting on "peak popularity … mid-1926" (the film is dated March 1926 by its headline).
+- 维基百科，“查尔斯顿（舞蹈）”：https://en.wikipedia.org/wiki/Charleston_(dance）
+  > “这种节奏在 1923 年由 composer/pianist James P. Johnson 创作的一首名为“The Charleston”的曲子在美国主流舞曲音乐中流行起来，它起源于百老汇剧目 Runnin' Wild，并成为这十年来最受欢迎的热门歌曲之一。”
+  > “查尔斯顿舞蹈最流行的时期是 1926 年中期到 1927 年。”
+- 维基百科，“查尔斯顿（1923 年歌曲）”：https://en.wikipedia.org/wiki/Charleston_(1923_song）
+  > “这首歌出现在美国黑人百老汇音乐喜剧节目《狂野奔跑》中，该剧于 1923 年 10 月 29 日在纽约新殖民剧院首演。”
+- “三年过去了，这就是风潮！”这是一部基于“人气高峰……1926 年中期”的新闻片夸张手法（影片的标题日期为 1926 年 3 月）。
 
-## F3 · Bessie Love and Photoplay
+<a id="f3--bessie-love-and-photoplay"></a>
+## F3·贝西·爱与摄影
 
-- Wikipedia, "Charleston (dance)" (same page):
-  > "The accompanying instructions are quoted from the October 1925 issue of Photoplay, which published a nine-step guide to the Charleston featuring actress Bessie Love."
-- Wikipedia, "Bessie Love": https://en.wikipedia.org/wiki/Bessie_Love
-  > "Because of her performance in The King on Main Street (1925), Love is credited with being the first person to dance the Charleston on film, popularizing it in the United States."
-- The nine photographs: Wikimedia Commons, "Photoplay 1925-10 - Bessie Love - Charleston step 1–9", e.g. https://commons.wikimedia.org/wiki/File:Photoplay_1925-10_-_Bessie_Love_-_Charleston_step_1.jpg
-  > "Actress Bessie Love demonstrating the Charleston, 1925. STEP No. 1. …"
+- 维基百科，“查尔斯顿（舞蹈）”（同一页）：
+  > “随附的说明引自 1925 年 10 月号的《Photoplay》，该杂志出版了一份以女演员 Bessie Love 为主角的查尔斯顿九步指南。”
+- 维基百科，“贝西·爱”：https://en.wikipedia.org/wiki/Bessie_Love
+  > “由于她在《大街上的国王》（1925 年）中的表演，Love 被认为是第一个在影片上跳查尔斯顿舞的人，并在美国普及了它。”
+- 九张照片：维基共享资源，“Photoplay 1925-10 - Bessie Love - Charleston step 1–9”，例如https://commons.wikimedia.org/wiki/File:Photoplay_1925-10_-_Bessie_Love_-_Charleston_step_1.jpg
+  > “女演员 Bessie Love 展示查尔斯顿，1925 年。第一步。……”
 
-## F4 · Henry Ford's old-time dance revival
+<a id="f4--henry-fords-old-time-dance-revival"></a>
+## F4·亨利·福特的旧时舞蹈复兴
 
-- The Henry Ford (museum), "Henry Ford with His Old-time Dance Orchestra, 1933", THF108675: https://www.thehenryford.org/collections/explore/artifact/241031
-  > "Here, from the mid-1920s to the mid-1930s, Ford held his old-fashioned dancing parties for adults and hosted dance lessons for children. Ford's Old Time Orchestra provided the music, while Benjamin Lovett called the dance steps."
-  (The room was "a dance room at Ford Motor Company's Engineering Lab", in Dearborn, Michigan, per the same record.)
-- The Henry Ford, "Good Morning…" 1926, THF93574: https://www.thehenryford.org/collections/explore/artifact/254489
-  > "Henry Ford's "Good Morning" book provided illustrated instructions on the proper steps and deportment for old-fashioned dancing--it was part of Ford's crusade to revive the dances of his youth."
+- 亨利·福特（博物馆），“亨利·福特与他的老式舞蹈乐团，1933 年”，THF108675：https://www.thehenryford.org/collections/explore/artifact/241031
+  > “从 20 年代中期到 1930 年代中期，福特在这里为成人举办了老式舞会，并为儿童举办了舞蹈课程。福特的旧时代管弦乐团提供了音乐，而本杰明·洛维特则负责舞步。”
+  （根据同一份记录，这个房间是“福特汽车公司工程实验室的一个舞蹈室”，位于密歇根州迪尔伯恩。）
+- 亨利·福特，“早上好……”1926 年，THF93574：https://www.thehenryford.org/collections/explore/artifact/254489
+  > “亨利·福特的《早安》一书为老式舞蹈的正确舞步和仪态提供了图文并茂的指导——这是福特复兴他年轻时的舞蹈运动的一部分。”
 
-## F5 · the book's words about jazz
+<a id="f5--the-books-words-about-jazz"></a>
+## F5·书中关于爵士乐的话
 
-- "Good Morning": After a Sleep of Twenty-five Years, Old-fashioned Dancing is Being Revived by Mr. and Mrs. Henry Ford, Dearborn Publishing Company, 1926, p. 30 (scan: https://archive.org/details/goodmorning0000unse, leaf 34):
-  > "The modern dances with their lesser demand for skill and spirit, their tuneless music, their tendency to jazz, their essential unsociability, are losing vogue everywhere."
-- "His book": The Henry Ford calls it "Henry Ford's "Good Morning" book" (F4); the title page credits "Mr. and Mrs. Henry Ford", and the museum notes it was written by Ford's dancing master Benjamin Lovett. The film shows the title page and the printed sentence.
+- 《早安》：沉睡二十五年后，亨利·福特夫妇正在复兴老式舞蹈，迪尔伯恩出版公司，1926 年，第 17 页。 30（扫描：https://archive.org/details/goodmorning0000unse,叶34）：
+  > “现代舞对技巧和精神的要求较低，音乐不合调，有爵士乐倾向，本质上不合群，正在各地失去时尚。”
+- “他的书”：亨利·福特称其为“亨利·福特的“早安”书”（F4）；扉页上写着“亨利·福特先生和夫人”，博物馆指出它是由福特的舞蹈大师本杰明·洛维特写的。 影片显示标题页和打印的句子。
 
-## F6 · the films (U.S. National Archives, Ford Motor Company Film Collection)
+<a id="f6--the-films-us-national-archives-ford-motor-company-film-collection"></a>
+## F6·影片（美国国家档案馆，福特汽车公司影片收藏）
 
-Catalogue descriptions as given by NARA ("The original catalog description provided by the Ford Motor Company reads as follows"), via the Internet Archive FedFlix copies:
-- FC-4158, Second Annual Picnic and Outing Given by Employees of Ford Motor Company [1924] — https://archive.org/details/fc-fc-4158
-  > "“Dancing in the pavilion.” Couples dancing. … “Old time dances -- reviving fond memories.” Couple and group dances. “Special events.” Men tap dancing in pavilion, people gathered around - close-ups of kids eating - kids doing the ‘Charleston.’ [1924]"
-  The verdict sequence uses only the pavilion couples, the tap dancers ("Special events") and the kids doing the Charleston; the picnic's own "old time dances" are not shown, and the narration only claims the kids' Charleston.
-- FC-2307(a), Man Dancing [1925] — https://archive.org/details/fc-fc-2307a-b
-  > "Small band, elderly man dancing, Henry Ford and others watching. [1925]"
-- FC-2275(a), Small Orchestra Playing [1926] — https://archive.org/details/fc-fc-2275a-b
-  > "Small orchestra playing - close-up of violinist - orchestra - violinist - elderly woman dancing near orchestra - orchestra. [1926]"
-- FC-2292(c), Dancing at Botsford Inn [1927] — https://archive.org/details/fc-fc-2292a-c (NARA https://catalog.archives.gov/id/7419756)
-  > "Group of people dancing in a circle on a large field - residential area across street, automobile traffic. [1927]"
-- The film does not claim that the orchestra in FC-2275 is Ford's Old Time Orchestra, nor that the dancer in FC-2307 is Henry Ford; the tag says only "FORD FILMS 1925–26".
+NARA 给出的目录描述（“福特汽车公司提供的原始目录描述如下”），通过互联网档案馆 FedFlix 副本：
+- FC-4158，福特汽车公司员工举行的第二次年度野餐和郊游 [1924] — https://archive.org/details/fc-fc-4158
+  > “《亭中舞》。”情侣跳舞。 ......“旧时光的舞蹈——唤起美好的回忆。”双人舞和集体舞。 “特别活动。”男人们在凉亭里跳踢踏舞，人们聚集在周围——孩子们吃饭的特写——孩子们跳“查尔斯顿”。[1924]”
+  判决序列仅使用了亭子里的情侣、踢踏舞者（“特别活动”）和进行查尔斯顿舞的孩子们；野餐自己的“旧时光舞蹈”没有显示，旁白只声称孩子们的查尔斯顿。
+- FC-2307(a)，男子跳舞 [1925] — https://archive.org/details/fc-fc-2307a-b
+  > “小乐队，老人跳舞，亨利·福特和其他人在观看。[1925]”
+- FC-2275(a)，小型管弦乐队演奏 [1926] — https://archive.org/details/fc-fc-2275a-b
+  > “小型管弦乐队演奏 - 小提琴家特写 - 管弦乐队 - 小提琴家 - 在管弦乐队附近跳舞的老妇人 - 管弦乐队。[1926]”
+- FC-2292(c)，在博茨福德旅馆跳舞 [1927] — https://archive.org/details/fc-fc-2292a-c (NARA https://catalog.archives.gov/id/7419756)
+  > “一群人在一大片场地上围成一圈跳舞 - 街对面的住宅区，汽车交通。[1927]”
+- 影片并没有声称 FC-2275 中的管弦乐队是福特的旧时代管弦乐队，也没有声称 FC-2307 中的舞者是亨利·福特；标签上只写着“FORD 影片 1925–26”。
 
-## F7 · the record
+<a id="f7--the-record"></a>
+## F7·记录
 
-- Internet Archive / UC Santa Barbara Library, edison-51542_01_10292: https://archive.org/details/edison-51542_01_10292
-  > "Composer: James P. Johnson · Main talent: Golden Gate Orchestra [California Ramblers] · Matrix number: 10292 · Catalog number: 51542" (date 1925-04-02)
-- Discography of American Historical Recordings: https://adp.library.ucsb.edu/index.php/matrix/detail/2000157151
-- Wikipedia, "Charleston (1923 song)":
-  > "One of the most famous recordings of the song was by The Golden Gate Orchestra in 1925, which has been inducted into the National Recording Registry."
+- 互联网档案馆/加州大学圣巴巴拉分校风格库，edison-51542_01_10292：https://archive.org/details/edison-51542_01_10292
+  > “作曲家：James P. Johnson · 主要演奏家：金门交响乐团 [加州漫步者] · 矩阵编号：10292 · 目录编号：51542”（日期 1925-04-02）
+- 美国历史唱片目录：https://adp.library.ucsb.edu/index.php/matrix/detail/2000157151
+- 维基百科，“查尔斯顿（1923 年歌曲）”：
+  > “这首歌最著名的唱片之一是金门管弦乐团于 1925 年录制的，该唱片已被纳入国家唱片登记处。”
 
-## Rights of the Ford films
+<a id="rights-of-the-ford-films"></a>
+## 福特影片的权利
 
-- NARA, *Prologue* magazine, Winter 2014, "Ford Film Collection": https://www.archives.gov/publications/prologue/2014/winter/ford-film
-  > Ford Motor Company "transferred all rights to their surviving 1.5 million feet of motion pictures to the National Archives" (28 November 1962); "these films are now owned by the American people and are copyright- and royalty-free", except "a few films in the collection that were produced by Ford contractors".
-- The NARA catalogue entry of FC-4158 adds: "All rights were conveyed to the U.S. Government on Nov. 28, 1962. However, proprietary rights or existing copyright in footage obtained from other sources by Ford Motor Company may exist." The films used are company record films (an employees' picnic, dances and music at Ford events); none is credited to an outside producer in its catalogue entry.
+- NARA，*序言*杂志，2014 年冬季，“福特影片系列”：https://www.archives.gov/publications/prologue/2014/winter/ford-film
+  > 福特汽车公司“将其幸存的 150 万英尺电影的所有权利转让给国家档案馆”（1962 年 11 月 28 日）； “这些影片现在属于美国人所有，并且免版权和版税”，除了“该系列中的一些影片是由福特承包商生产的”。
+- FC-4158 的 NARA 目录条目补充道：“所有权利已于 1962 年 11 月 28 日转让给美国政府。但是，福特汽车公司从其他来源获得的视频中的专有权利或现有版权可能存在。”使用的影片是公司记录影片（福特活动中的员工野餐、舞蹈和音乐）；在其目录条目中，没有任何内容归功于外部生产商。

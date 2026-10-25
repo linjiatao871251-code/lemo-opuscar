@@ -1,117 +1,129 @@
-# Pictogram Motion — Style Prompt
+<a id="pictogram-motion--style-prompt"></a>
+# 象形运动图形：风格提示词
 
-> A beat-locked flash-card film built from three things only: a **square-grid "core graphic"** of circles, half-discs and tiny patterned cells whose rows slide past each other; **geometric pictograms** made of round-capped bars and a disc head; and **bold bilingual type** that slides up out of masks. Every cut lands on a drum hit.
-> References (grammar only): Otl Aicher's 1972 Munich pictograms (geometric athletes); multi-sport-games "look of the games" identity systems (a modular pattern + a colour set used for everything); Swiss sports-broadcast graphics (mono meta text, tick-bar progress). Learn the grammar; never copy any real event's pictograms, emblem, slogan, pattern artwork or colour names, and never name them in the film.
+> 节拍锁定闪存卡影片仅由三部分组成：**方形网格“核心图形”**，由圆形、半圆盘和微小图案单元组成，这些单元的行相互滑过； **几何象形图**由圆帽条和盘头制成；以及从面罩中滑出的 **粗体双语型**。每一次剪辑都伴随着鼓声。
+> 参考资料（仅语法）：Otl Aicher 的 1972 年慕尼黑象形图（几何运动员）；多项运动游戏“游戏外观”标识系统（模块化图案+用于所有内容的颜色集）；瑞士体育广播图形（单色元文本、刻度栏进度）。学习语法；切勿复制任何真实事件的象形图、徽章、口号、图案艺术品或颜色名称，并且切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A **catalogue film**: N items (products, dishes, steps, species…) shown one card at a time, fast, on the beat. Each card = **one pictogram doing one action + a huge title + a second-language line + a mono index "07 / N"**. Cards group into chapters; each chapter owns one hue, opened by a full-bleed pattern card.
+**目录影片**：N 个项目（产品、菜肴、步骤、物种……）一次显示一张卡片，速度快、节奏快。每张卡片 = **one 象形图执行一个动作 + 巨大的标题 + 第二语言行 + 单声道索引“07 / N”**。卡片分为章节；每一章都有一种色调，由一张全出血图案卡打开。
 
-What makes a frame read as this style at a glance:
-1. **The grid pattern**: big discs and half-discs spanning square cells, about half the cells carrying a small motif, all in **five tones of one hue**, with **whole rows cut and shifted sideways**: the signature that drives backgrounds and transitions.
-2. **The pictogram figure**: flat, faceless, rounded bars and a disc head; far-side limbs mixed toward the background. Props are discs, rings, capsules, lines.
-3. **Type as architecture**: a 900-weight grotesk title set very large, a heavy second-language line under it, small mono meta text in the corners like a broadcast HUD.
-4. **Beat lock**: every shot starts on a beat, every key action lands on a beat.
+是什么让框架一眼看上去就是这种风格：
+1. **网格图案**：跨越方形单元的大圆盘和半圆盘，大约一半的单元带有小图案，全部为**一种色调的五种色调**，其中**整行剪切和移动sideways**：驱动背景和过渡的签名。
+2. **象形图**：扁平、无面、圆角棒材和盘头；远端肢体混合朝向背景。道具有圆盘、圆环、胶囊、线。
+3. **类型为架构**：一个 900 字重的 grotesk 标题集，非常大，下面有一条沉重的第二语言线，角落里有小的单声道元文本，就像广播 HUD。
+4. **节拍锁定**：每个镜头都以节拍开始，每个关键动作都落在节拍上。
 
-Mood: premium broadcast identity; flat colour, light grain, one soft light sweep as the only gradient.
+心情：优质广播身份；平坦的颜色、浅色颗粒、一束柔和的光扫作为唯一的渐变。
 
-Not an isometric infographic (no depth, no 3D), not Swiss motion graphics (the figure and the pattern carry as much as the type), not a cartoon (figures never emote, have no faces), not a data film (numbers are labels, not charts).
+不是等距信息图（没有深度，没有 3D），不是瑞士动态图形（图形和图案与类型一样多），不是卡通（图形从不表达情感，没有面孔），不是数据影片（数字是标签，不是图表）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Flat Canvas2D**, rendered clean; grain only at mux time. **One square grid** (cell ≈ 1/6 of the frame height) rules bands, transitions and walls.
-- **Pattern model**: fill with a mid-dark tone; on grid nodes randomly place cell-radius discs in random tones and discs-with-inner-discs; then a fraction of cells get one motif from a library of generic geometry (quarter-discs, fish-scale waves, dot and triangle scales, concentric arcs, sun wheels, checkers, crescents…), rotated by multiples of 90°; never mascots, landmarks or logos. Draw it wider than the screen so any row can shift one cell.
-- **Figure model**: unit = body height, origin at the hip; draw far limbs (mixed ~40 % toward the background), torso, near limbs, head. A second person sits behind, mixed further (~60 %).
-- **Stage**: the figure stands on a large **sun disc** in a neighbouring tone, crossed by one faint light sweep.
-- **Figure environments** (water, nets, ramps) live in the figure's own buffer, masked to zero before the text column.
+- **Flat Canvas2D**，渲染干净；仅在复用时间使用谷物。 **一个方形网格**（单元格≈框架高度的1/6）规则带、过渡和墙壁。
+- **图案model**：用​​中暗色调填充；在网格节点上随机放置随机色调的单元半径圆盘和带有内部圆盘的圆盘；然后一小部分细胞从通用几何体库中获得一个图案（四分之一圆盘、鱼鳞波、点和三角形鳞片、同心弧、太阳轮、方格图案、新月……），旋转 90° 的倍数；绝不是吉祥物、地标或标志。将其绘制得比屏幕宽，这样任何行都可以移动一个单元格。
+- **人物模型**：单位=身高，原点在臀部；绘制远肢（向背景混合约 40%）、躯干、近肢、头部。第二个人坐在后面，混合程度进一步（~60%）。
+- **舞台**：人物站在一个巨大的**太阳盘**上，周围的音调被一道微弱的光扫过。
+- **图形环境**（水、网、坡道）位于图形自己的缓冲区中，在文本列之前屏蔽为零。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **A set of five hues + one dark neutral**, each hue in **five tones** (darkest → lightest, the middle one is the base). A chapter = one hue; a multi-hue chapter rotates through the set per card.
-- Under type the pattern runs at **low contrast**; on chapter cards at **full contrast**.
-- **Light hues take dark type and dark figures**, and their disc uses the lighter tone; dark hues take cream. On the dark neutral, the disc uses a lighter tone or it vanishes; its accent is one warm hue.
-- One cream and one ink serve every hue. No outlines, no highlights except the sweep.
-- Choose the set from the topic. Examples: warm festival (red, violet, forest green, gold, ochre); coastal (navy, teal, coral, sand, sky); kitchen (tomato, basil, saffron, aubergine, flour cream). Invent names for your hues; never borrow an event's colour names.
+- **一套五种色调+一种深色中性**，**中的每种色调有五种色调**（最暗→最亮，中间一个是基础）。一章=一种色调；多色调章节在每张卡片的集合中轮流旋转。
+- 在类型下，图案以 **低对比度** 运行；在**全对比度**的章节卡上。
+- **浅色调采用深色字体和深色数字**，其盘采用较浅色调；深色系采用奶油色。在深色中性色上，圆盘会使用较浅的色调或消失；它的口音是一种温暖的色调。
+- 一种奶油和一种墨水适合各种色调。除了扫描之外，没有轮廓，没有亮点。
+- 从主题中选择集合。例如：温暖的节日（红色、紫色、森林绿色、金色、赭色）；沿海（海军蓝、蓝绿色、珊瑚色、沙色、天空色）；厨房（番茄、罗勒、藏红花、茄子、面粉奶油）。为你的颜色起个名字；切勿借用事件的颜色名称。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Title: a 900-weight grotesk (e.g. Inter Tight), 150–330 px at 1080p, tight tracking, auto-fitted. Second language: a heavy face under it. Meta: a mono (e.g. DM Mono) ~22 px, wide tracking; tags as mono chips.
-- **HUD** on every card: mono corner text and a **progress bar of N ticks** (current tall, done dimmed, rest faint), N derived from the item list.
-- **Bilingual rule**: one language is always the big title; the second language is chosen per version by a switch, never by hand-editing cards.
-- The card type *is* the text layer. With narration, captions are a mono line on a solid band in the chapter hue, bottom, never over the title; hold ≥ max(1.8 s, speech + 0.6 s). A card that must be read (a spec, a number) holds ≥ 1.6 s.
-- Deliver an `.srt` of the title cards, generated from the edit list.
+- 标题：900 重的 grotesk（例如 Inter Tight），1080p 时 150–330 像素，紧密跟踪，自动安装。第二语言：下面是一张沉重的脸。元：单声道（例如 DM Mono）~22 px，宽跟踪；标签为单芯片。
+- 每张卡片上的 **HUD**：单角文本和 **N 个刻度的** 进度条（当前高，完成变暗，其余微弱），N 来自项目列表。
+- **双语规则**：一种语言永远是大标题；第二种语言是通过开关为每个版本选择的，而不是通过手动编辑卡来选择。
+- 卡片类型*是*文本层。对于旁白，字幕是章节色调底部实线带上的单线，而不是标题上方；保持 ≥ max(1.8 s，语音 + 0.6 s)。必须读取的卡片（规格、编号）的保存时间≥ 1.6 秒。
+- 交付从编辑列表生成的 `.srt` 标题卡。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **A grid of time**: pick one tempo for the film; every shot starts on a beat and every key action in a pose (release, contact, landing) lands on an integer beat.
-- **Pace ladder**: normal cards last one bar; related sub-items become half-length rapid-fire runs. A second tempo comes from dividing the beat, never from changing tempo.
-- Easing: exponential ease-out for entrances, exponential in-out for whips and wipes; a back ease once at most.
-- **Type enters by mask slide-up**: title first, second line ~0.08 s later, tag after; meta lines type on without a caret. Short cards compress all timings.
-- **Figure assembly**: the figure arrives as horizontal bands sliding into register from alternating sides.
-- **Backgrounds breathe**: rows drift in alternating directions; on chapter cards they jump a quarter-cell on beats.
-- **Transitions** snap to the grid: sliding rows, dropping columns, a push, quarter-discs from cell corners, an iris from the last figure, a tile flip. Rotate them; each lasts a few frames around the cut.
-- **Motion blur only where things move**: sub-frame averaging inside transition and whip windows; static frames render once.
+- **A时间网格**：为影片选择一种节奏；每个镜头都以一个节拍开始，姿势中的每个关键动作（释放、接触、着陆）都以一个整数节拍开始。
+- **步梯**：普通牌最后一栏；相关的子项目变成半长的连射。第二个节奏来自分割节拍，而不是改变节奏。
+- 缓动：入口指数缓出，鞭子和擦拭指数进出；最多一次背部放松。
+- **类型通过掩码向上滑动进入**：标题在前，第二行约0.08秒后，标签在后；元行类型不带插入符号。短卡压缩了所有时间。
+- **人物组装**：人物到达时，水平带从交替的两侧滑入对准位置。
+- **背景呼吸**：行以交替方向漂移；在章节卡上，他们会随着节拍跳四分之一格。
+- **过渡** 捕捉到网格：滑动行、放下列、推动、从单元角移动四分之一圆盘、从最后一个图形移动虹膜、平铺翻转。旋转它们；每个都在剪辑周围持续几帧。
+- **仅在物体移动的地方进行运动模糊**：在过渡和鞭打窗口内进行子帧平均；静态帧渲染一次。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-Mostly a locked flat frame; energy comes from row shifts, transitions and figure actions. When the camera moves, it moves along the grid. Opening and ending come from the topic.
+大部分是锁定的扁平框架；能量来自行移、过渡和图形动作。当摄影机运动时，它沿着网格移动。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Locked flat frame | clarity, the card as a poster | any item; a spec that must be read |
-| Lateral track with a one-screen whip per beat | one continuous family, momentum | a line of stations; a production line; a route |
-| Slow drift along a row | calm, browsing | a gallery; a menu; a slower chapter |
-| Vertical scroll by grid rows | ranking, depth, descent | a top-ten; floors of a building; ocean depths |
-| Push into one motif cell until it becomes the next frame | zooming into a part | an ingredient inside a dish; a city inside a map |
-| Pull back to a tiled wall of items | the whole set at once | a summary; "all of them"; a comparison |
-| Tiles collapsing to one point | many become one | a merger; a shared goal; a count reaching zero |
-| Split screen along a grid line | two items side by side | versus; before/after; two versions |
+|锁定平面框架|清晰度，卡片作为海报|任何物品；必须阅读的规范|
+|横向轨道，每节拍有一个屏幕鞭子|一家人绵绵，动力十足|一排车站；一条生产线；一条路线|
+|沿着一排缓慢漂移|冷静、浏览|画廊；菜单；较慢的一章|
+|按网格行垂直滚动|排名、深度、血统|前十名；建筑物的楼层；海洋深处|
+|推入一个主题单元，直到它成为下一帧|放大某个部分|菜肴中的配料；地图内的城市|
+|拉回到物品的瓷砖墙上|一次性完成整套|总结； “他们所有人”；比较|
+|瓷砖塌陷到一点|许多合而为一|合并；共同的目标；计数达到零|
+|沿网格线分屏|并排的两个项目|相对; before/after；两个版本|
 
-Framing: text and figure never overlap (one text column, one stage); horizontal poses move the stage outward. The HUD stays in the corners. Allowed transitions are the grid ones in §5; never dissolves, 3D camera moves, handheld shake or depth of field.
+框架：文本和图形不重叠（一文本栏，一个阶段）；水平姿势将舞台向外移动。 HUD 位于角落。允许的过渡是第 5 节中的网格过渡；永不溶解、3D 摄影机运动、手持抖动或景深。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Type and music can carry the film alone**; a voice is optional, calm, one line per chapter at most.
-- **Percussion is the spine**: choose a drum family that suits the topic (frame drums, taiko, marching snares, steel pans, body percussion, an electronic kit) plus rim clicks, claps, shakers and crashes.
-- Colour instruments on top: Karplus-Strong plucks (any lute, koto or harp-like voice, with pitch bends), mallets (marimba, glockenspiel), detuned-saw chord stabs, a synth bass, pads, risers and a drone.
-- **Per-family accents**: every shot onset gets a hit chosen by chapter (a splash, a pok, a clank, a crack, a whoosh, a sizzle): foley reads the chapter's matter.
-- **Picture-locked by data**: the score reads the edit list's shot times and places accents there; check every onset to ±15 ms.
-- **Silence as a tool**: half a beat of drums-and-bass-muted before a big hit, or one whole bar stripped to a single ticking sound under a count.
-- Mix: glue compressor and limiter, −14 LUFS, ≤ −1 dBTP.
+- **类型和音乐可以单独携带影片**；声音可选，平静，每章最多一行。
+- **打击乐器是脊柱**：选择适合主题的鼓系列（框架鼓、太鼓、军鼓、钢盘、身体打击乐器、电子套件）以及边缘咔哒声、拍手声、震动器和碰撞声。
+- 顶部的彩色乐器：Karplus-Strong 拨弦乐器（任何鲁特琴、古筝或类似竖琴的声音，带有弯音）、木槌（马林巴琴、钟琴）、失谐锯弦和弦、合成贝司、打击垫、立管和低音炮。
+- **每家庭口音**：每个镜头开始都会受到章节选择的打击（飞溅，戳，叮当，裂纹，嗖嗖，嘶嘶声）：拟音阅读章节的内容。
+- **由数据**锁定图片：配乐读取编辑列表的镜头时间并在那里放置重音符号；检查每个起始点的±15 ms。
+- **沉默作为工具**：在大打击之前将半拍的鼓和贝司静音，或者在计数下将整个小节剥离为单一的滴答声。
+- 混合：胶水压缩器和限制器，−14 LUFS，≤ −1 dBTP。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your film needs.
+菜单：使用您的影片需要的菜单。
 
-- **One card = one item.** The count is the hook ("ALL N"). *Fits content like:* every tool in a workshop; every station of a subway line; every dish of a regional cuisine.
-- **Chapter = colour.** Families become hues so the viewer always knows where they are. *Fits content like:* instrument sections of an orchestra; food groups; departments of a company.
-- **One verb per item.** One body action readable in a bar, or a prop action (a gear turns, a cup pours). *Fits content like:* yoga poses; kitchen techniques; jobs on a construction site.
-- **Pace ladder run.** A sub-family at double speed. *Fits content like:* four knife cuts; the bones of a hand; weekday routines.
-- **Long take down a track.** Stations one screen apart, the camera whipping on each cut. *Fits content like:* the steps of a recipe; checkpoints of a marathon; stages of a rocket launch.
-- **Count-up slam.** A big number rolls to its value on a bar. *Fits content like:* tonnes recycled; members of a club; years of a company.
-- **Icon wall.** All pictograms return as a grid and turn one colour. *Fits content like:* a summary of a year; a periodic table of habits; a team roster.
+- **一张牌 = 一件物品。** 计数为钩子（“ALL N”）。 *适合以下内容：*车间中的每个工具；地铁线路的每个车站；每道菜都是地方美食。
+- **章节=颜色。** 家庭变成色调，因此观看者始终知道他们在哪里。 *适合以下内容：* 管弦乐队的乐器部分；食物组；公司的部门。
+- **每项一个动词。** 在酒吧中可读的一个身体动作，或一个道具动作（齿轮转动，杯子倒出）。 *适合以下内容：*瑜伽姿势；厨房技术；建筑工地上的工作。
+- **步梯运行。** 双速子系列。 *适合以下内容：*四刀切割；手的骨头；工作日的例行公事。
+- **长取下一条轨道。** 间隔一个屏幕，摄影机在每次剪辑时鞭打。 *适合以下内容：*食谱的步骤；马拉松检查站；火箭发射的阶段。
+- **计数满贯。** 一个大数字滚动到其在柱上的值。 *适合以下内容：*回收吨数；俱乐部成员；一家公司的年数。
+- **图标墙。** 所有象形图以网格形式返回并变成一种颜色。 *适合以下内容：*一年的总结；习惯周期表；球队名单。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Figure environments spread into the text column → render the figure layer into its own buffer and fade it out with a gradient mask before the text.
-- Cream on light hues fails contrast → dark type and dark figures on light hues; their disc is the lighter tone.
-- The sun disc vanishes on the dark neutral → use a lighter tone for it.
-- Pattern canvases are large and seeded per card → cache with a bounded LRU; an unbounded cache runs out of memory with parallel renderers.
-- Horizontal poses (swimming, lying, crawling) cross the title → move the stage outward and narrow the text column.
-- Imitating a real identity too closely → your own palette, mark and slogan from the grid motifs.
+- 图形环境扩展到文本列→将图形层渲染到自己的缓冲区中，并在文本之前使用渐变蒙版将其淡出。
+- 浅色上的奶油色无法形成对比→深色类型和浅色上的深色图形；他们的唱片是较轻的音调。
+- 太阳圆盘在深色中性色上消失→使用较浅的色调。
+- 图案画布很大，并且每张卡都有种子 → 具有有限 LRU 的缓存；并行渲染器的无限缓存会耗尽内存。
+- 水平姿势（游泳、躺着、爬行）穿过标题→将舞台向外移动并缩小文本栏。
+- 过于接近地模仿真实身份 → 来自网格图案的您自己的调色板、标记和口号。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `engine.js` (`G.pattern`, `G.motif`, `G.joints` / `G.drawFigure`, `G.keyPose`, `G.maskText`, easings), `poses/base.js` (pose contract, props `G.P`), `edl.js` (edit list in beats), `scenes.js` (layouts, transitions, HUD, motion blur), `lab.mjs` (pose sheets), `music/music.py` (picture-locked score with onset report). API table, pose convention and a minimal example: [DEMO.md](DEMO.md#engine-reference).
+在 `demo/` 中：`engine.js`（`G.pattern`、`G.motif`、`G.joints` / `G.drawFigure`、`G.keyPose`、`G.maskText`、缓动）， `poses/base.js`（姿势合同，道具`G.P`），`edl.js`（节拍编辑列表），`scenes.js`（布局，过渡，HUD，运动模糊），`lab.mjs`（姿势表），`music/music.py`（图片锁定） 配乐与发病报告）。 API 表、姿势约定和最小示例：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the items, grouping, verbs, palette, chapter order, any long take, the pace ladder, opening, ending, music and voice. All far from our demo:
+您可以决定项目、分组、动词、调色板、章节顺序、任何长镜头、节奏阶梯、开头、结尾、音乐和声音。与我们的示范相去甚远：
 
-- Structures: **a countdown** (items ranked from N to 1, the camera scrolling down rows, the pace speeding up as the list shortens); **a day in pictograms** (one figure, one card per hour, the palette moving from dawn to night hues); **an assembly** (each card adds one part to a single growing pictogram machine seen in the corner).
-- Openings: **a single motif cell** (one cell fills the frame and splits into the grid); **mid-action** (the first pictogram is already running when the type slams in); **a blank grid** (hairlines draw the grid on the beat before any colour appears).
-- Endings: **one card held long** (the last item stays while the pattern rows stop, one by one); **the figure walks off** (the last pictogram exits the frame and the HUD ticks out); **reverse assembly** (the grid disassembles into rows that slide off-screen, leaving cream).
+- 结构：**a倒计时**（项目从N到1排列，摄影机向下滚动行，随着列表的缩短，速度加快）； **象形图中的一天**（一个数字，每小时一张卡，调色板从黎明到夜晚的色调）； **an 组件**（每张卡为角落中看到的单个不断增长的象形图机器添加一个零件）。
+- 开口：**a 单图案单元**（一个单元填充框架并分裂成网格）； **行动中期**（当类型猛击时第一个象形图已经运行）； **a 空白网格**（细线在出现任何颜色之前在节拍上绘制网格）。
+- 结局：**one 卡长时间持有**（图案行停止时最后一项保留，逐一）； **人物走开**（最后一个象形图退出框架并且HUD勾选）； **反向组装**（网格分解成行，滑出屏幕，留下奶油）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build, engine reference): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建、引擎参考）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

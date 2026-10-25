@@ -1,125 +1,133 @@
-# Isometric Infographic — our demo
+<a id="isometric-infographic--our-demo"></a>
+# 等距信息图 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *From Bean to Cup* (58.8 s) · `iso-infographic.mp4` · source in [`demo/`](demo/)
+示范：*从豆子到杯子*（58.8 s）·`iso-infographic.mp4`·来源在[`demo/`](demo/)
 
 
-The demo follows one coffee bean from a farm to a cup in a 45–60 s film: one isometric map, one camera take, a Z-shaped route across a square board.
+示范在 45-60 秒的时间里追踪一颗咖啡豆从农场到一杯影片：一张等距地图、一张摄影机镜头、一条穿过方板的 Z 形路线。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-The whole film is **one isometric map**: a square diorama board that projects to a rhombus of almost exactly 16:9. Every step of the process is a **station** on that board. A dashed **route line** connects the stations. The camera never cuts. It rides the route with pushes, pulls, pans and follows, and each station is told the same way: **one action, one label, one number built from icons.**
+整个影片是**one等轴测图**：一块方形西洋镜板，投影到几乎正好16:9的菱形。该过程的每一步都是该板上的一个 **车站**。虚线 **路线** 连接车站。 摄影机永远不会切割。它通过推、拉、平移和跟随来行驶路线，每个站点都以相同的方式告知：**one 操作，一个标签，一个由图标构建的数字。**
 
-What makes it work:
-- **Flat, true isometric.** No perspective, no outlines. Shapes are separated only by the three tones of each face.
-- **Infographic furniture is part of the picture.** Leader lines, label pins, cut lines, hatched section faces, tracking rings and a legend all live on the map.
-- **One tracked subject.** A single object (a bean, a parcel, a drop of water) is followed through the whole system with a "you are here" ring. That turns a diagram into a story.
+是什么让它发挥作用：
+- **平面，真正的等轴测。** 无透视，无轮廓。形状仅由每个面的三种色调分开。
+- **信息图表家具是图片的一部分。** 引导线、标签销、切割线、剖面线、跟踪环和图例都显示在地图上。
+- **一个被跟踪的对象。** 单个物体（一颗豆子、一个包裹、一滴水）通过整个系统跟随“你在这里”的铃声。这将图表变成了故事。
 
-How the demo used the medium:
+示范如何使用表现媒介：
 
-| Native power | Story use |
+|原生电源|故事运用|
 |---|---|
-| **One-take diorama** | Any process becomes a route across one board. Lay the route out as a **Z across a square board** (far corner → right → across the middle → near corner). A straight strip wastes the final pull-back, but a square board fills 16:9 exactly. |
-| **Cutaway** | One unified gesture: a dashed **cut line** draws, the near skin **slides out along its normal and fades**, and **hatched section rims** remain. Use it for a fruit, a ship's hull, a container, a sack, a building or a machine. |
-| **Isotype numbers** | Every station gets a number drawn as identical icons, with a different arrangement each time: a 3×7 calendar of suns, 14 container icons (1 = 1,000), a day/night row, a rising thermometer, 70 beans that **arrange into the silhouette of a cup**, and an 11-cell distance bar. |
-| **Focus + context** | At the emotional peak, **desaturate everything except the subject** (the engine's one-colour hook). This is the infographic's own way of saying "this one". |
-| **Frame within the frame** | A detail callout: a leader line grows from the map and ends in a circular inset showing a close-up. The system and the individual are on screen together. |
-| **Scale reveal** | End by pulling back to the whole board. The route lights station by station and every label is on screen at once, so the last frame is a finished infographic. |
+|**一次性立体模型**|任何流程都会成为跨越一块板的路线。在方板上将路线布置为 **Z**（远角 → 右侧 → 穿过中间 → 近角）。直条浪费了最后的回撤，但方板恰好填满了 16:9。|
+|**剖面图**|一种统一的手势：绘制一条虚线 **切割线**，近处皮肤 **沿其法线滑出并褪色**，而 **阴影部分边缘** 保留。将其用于水果、船体、容器、麻袋、建筑物或机器。|
+|**同种型编号**|每个站点都会获得一个相同图标的数字，每次都有不同的排列：一个 3×7 的太阳日历、14 个容器图标 (1 = 1,000)、一排 day/night、一个上升的温度计、**排列成杯子轮廓的 70 颗豆子** 和一个 11 格距离条。|
+|**焦点 + 上下文**|在情绪高峰时，**降低了除主题**（引擎的单色挂钩）之外的所有内容的饱和度。这是信息图自己表达“这个”的方式。|
+|**框架内框架**|细节标注：引导线从地图中延伸出来，并以显示特写镜头的圆形插图结束。系统和个人一起出现在屏幕上。|
+|**规模揭示**|最后拉回整个板。路线逐站亮起，每个标签都会立即显示在屏幕上，因此最后一帧是完成的信息图。|
 
-**Story shape (proven in the demo):**
-1. Open on an extreme close-up of the subject arriving in a hand, with a tag: **0 km**.
-2. Pull back to the first station and the title.
-3. Numbers grow station by station (2 seeds → 400,000 beans per sack → 14,000 containers). The subject gets lost.
-4. At the busiest point, dive through nested cutaways and find it: the silence, and the only colour left.
-5. The loudest sound in the film breaks the silence, and the camera snaps back out. The time jump is hidden inside the dive.
-6. Transformation stations, a second silence, then the gentle payoff.
-7. **Echo:** the same close-up composition, a different hand and a different object, and the tag now reads the total. Pull back to the full map.
+**故事形状（在示范中得到验证）：**
+1. 打开拍摄对象到达手中的极端特写，标签为：**0 km**。
+2. 拉回到第一站和标题。
+3. 数量逐站增长（2 颗种子 → 每袋 400,000 颗豆子 → 14,000 个容器）。主题迷失了。
+4. 在最繁忙的时刻，潜入嵌套的剖面图并找到它：寂静，以及唯一剩下的颜色。
+5. 影片中最响亮的声音打破了寂静，摄影机突然恢复了安静。时间跳跃隐藏在潜水中。
+6. 转变站，第二次沉默，然后是温柔的回报。
+7. **回声：** 相同的特写构图，不同的手和不同的物体，标签现在读取总数。拉回完整地图。
 
-**The numbers must add up.** This style lives on credibility: 400 + 10,500 + 100 = 11,000 km, and the Isotype bar is coloured in the same proportions. Put the real order of the process on screen (in the demo, beans are shipped green and roasted in the destination country) and say why in your treatment if you change a brief.
+**数字必须相加。** 这种风格依赖于可信度：400 + 10,500 + 100 = 11,000 公里，并且同型条以相同比例着色。将流程的真实顺序显示在屏幕上（在示范中，咖啡豆在目的地国家/地区进行生豆运输和烘焙），如果您更改了简要说明，请在创作方案中说明原因。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-The camera is a world centre plus a **log-interpolated zoom** k (px per unit). The demo runs from k = 3.75 (whole board) to 8,000 (one bean).
+摄影机是世界中心加上 **对数插值缩放** k（每单位像素）。 示范的运行范围为 k = 3.75（整块板）至 8,000（一颗豆）。
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Open | Extreme close-up of the hand (k ≈ 600), drifting slightly. The camera sits 0.17 units above the palm so the branch fits above it. |
-| Title | Pull ×35 to the first station (eio in position, log-linear in zoom) while the title plate rises. |
-| Station | Hold wide, and open a circular inset for the detail. |
-| Transfer | Descend (crane) or follow a vehicle; the next station's sound arrives first. |
-| Busy station | Locked, then pull out as the system fills. |
-| Breath | A long lateral follow over empty water. |
-| Fast-forward | Follow with a wake and a day/night icon row. |
-| **Dive** | Three pushes through nested cutaways, **slow → faster → fastest** (0.9 s, 0.6 s, 0.6 s) so it reads as a fall. One instrument drops out and the low-pass closes further at each level. |
-| Silence | A slow push (k 3,200 → 8,000) while the colour drains from everything but the subject. |
-| Snap-out | Pull ×470 in 1.2 s with an ease-out in log zoom. Fade in any tall object that would sweep through the frame during the pull. |
-| Echo | A push into the second hand with the identical framing. |
-| End | Pull back to the whole board; the end card sits in the empty cream corner. |
+|打开|手部特写（k ≈ 600），轻微漂移。 摄影机位于手掌上方 0.17 个单位，因此树枝位于其上方。|
+|标题|当标题板升起时，将 ×35 拉至第一个位置（eio 到位，对数线性变焦）。|
+|车站|保持宽阔，并打开一个圆形插图以显示细节。|
+|转移|下降（起重机）或跟随车辆；下一站的声音首先到达。|
+|繁忙车站|锁定，然后在系统充满时拉出。|
+|气息|空水面上的长侧向跟随。|
+|快进|随后是唤醒和 day/night 图标行。|
+|**潜水**|三次推动嵌套剖面图，**慢→快→最快**（0.9秒，0.6秒，0.6秒），所以读起来就像是坠落。一台乐器退出，低通在每个级别进一步关闭。|
+|沉默|缓慢推动（k 3,200 → 8,000），同时颜色从除主体之外的所有物体上消失。|
+|弹出式|通过对数变焦的缓出，在 1.2 秒内拉 ×470。淡入任何在拉动过程中会扫过框架的高物体。|
+|回声|以相同的框架推入秒针。|
+|结尾|拉回整板； 片尾卡位于空的奶油角。|
 
-Frame so the subject is at least 1/3 of the frame height at key moments (the hands, the drum, the bean with its ring), and keep the bottom 170 px clear for subtitles.
+框架使主体在关键时刻（手、鼓、带环的豆子）的框架高度至少为 1/3，并保持底部 170 像素的字幕清晰。
 
-- **Nothing moves without a line leading it.** The route line is drawn slightly ahead of the story, a leader grows before an inset opens, and a cut line draws before a skin slides away.
-- **Cutaway timing:** cut line 0.3 s → skin slides out 0.35 s (ease-out, alpha 1 → 0 between 10 % and 75 %) → hatched rims fade in over the last 40 %.
-- **Isotype fill:** icons pop with a back-ease (overshoot 2.2), one per sixteenth note. Count-up numbers (km, °C) run over the same span.
-- **Accumulation = acceleration.** In the demo, containers land on quarter notes (by crane), then eighths, then four sixteenth-note waves of about 44 boxes each (they drop 7 units with a small bounce). The eye feels the system taking over.
-- **The subject performs:** squash on landing (18 %) plus two small bounces; a rock with the ship's sway during the silence (±0.09 rad); a colour change in the roaster (green `#A9B27C` → yellow `#D9C27A` → cinnamon `#B07A45` → brown `#6A3B22`); first-crack pops as radiating ink ticks.
-- **Vehicles** follow polyline paths with ease-in-out and face their tangent. Before a ship turns, move it clear of the quay; otherwise the stern swings through the cranes.
+- **没有线引导，任何东西都不会移动。** 路线线稍微提前绘制在故事之前，在插图打开之前先导会增长，并且在皮肤滑开之前绘制切割线。
+- **剪切时间：**剪切线0.3秒→皮肤滑出0.35秒（缓出，alpha 1→0在10％和75％之间）→阴影边缘在最后40％淡入。
+- **Isotype 填充：** 图标以后缓动方式弹出（超调 2.2），每十六分音符一个。在同一跨度内运行计数数字（公里、°C）。
+- **累积=加速度。** 在示范中，集装箱降落在四分音符上（通过起重机），然后是八分音符，然后是四个十六分音符波浪，每个波浪大约有44个盒子（它们会以小弹跳掉落7个单位）。眼睛感觉到系统正在接管。
+- **对象执行：** 落地时挤压（18%）加上两次小弹跳；寂静时随船摇摆的岩石（±0.09 rad）；烘焙机颜色发生变化（绿色 `#A9B27C` → 黄色 `#D9C27A` → 肉桂色 `#B07A45` → 棕色 `#6A3B22`）；当辐射墨水滴答作响时，第一道裂纹就会爆开。
+- **车辆** 遵循缓入缓出的折线路径并面向其切线。在船舶转向之前，将其移离码头；否则船尾会通过起重机摆动。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music first.** `demo/timeline.js` is the only source of truth for times. The score, the foley events and the checks all read it (`tools/cuecheck.py`: 68 cue points, 0 ms offset).
-- **Score:** original **acoustic world groove**, about 100 BPM. Nylon guitar fingerpicking (D–A–Bm–G) and kalimba, then shaker, bongo, cajon backbeat and conga, plus upright bass (`jazz_bass`) at the port and at sea. The fast-forward takes a B-minor colour. No piano, no string pads. A three-note **bean motif** on kalimba (A4–F#4–D4) plays on the first landing, on the final tag and in the station arpeggio at the end. The café section slows from 100 to about 70 BPM and stops; after the silence one guitar restarts at 80 BPM.
-- **Two real silences:** the dive (30.0–33.6 s; only the line and a −66 dB hull creak) and before the first drop of coffee (45.3–45.9 s; digital zero). The first sound after each is one of the most important in the film: **the ship's horn** (about 10 dB above everything else; a D2 saw stack with detune and a 2.8 s tail) and **one drop into an empty cup**.
-- **Three layers:**
-  - **Ambience beds**, one per station and crossfaded: hill wind, leaves and birds; harbour, gulls and a crane beeper; sea swells; city hum; café murmur; morning sparrows (the same bird synth as the hill, pitched up).
-  - **Foley by material:** fibre snap for the stem, a fleshy thud for the cherry in the palm, granular rattles for cherries on the mesh, grains pouring into jute, inharmonic steel partials for container doors and landings, a burlap tear, drum rumble with rotation, dry crack pops, grinder whine plus crunch, a tamp thock, a ceramic plink and a pitch-rising pour.
-  - **Music**, ducked about 8 dB under the voice. Ambience is ducked 7 dB and birds are muted while the narrator speaks: a bird chirp at the end of a word made whisper hear "travels" for "travel".
-- **Sound transitions:** a J-cut of harbour noise 0.6 s before the port appears, the roaster drum 0.6 s before its walls open, and an L-cut of the horn tail into the city. In the final pull-back, each station plays one kalimba note.
-- **Voice:** Kokoro `bf_alice` at 0.88–1.0, six short lines, every one whisper-verified on the dry take and again in the final mix.
+- **音乐第一。** `demo/timeline.js`是时代唯一的真理来源。 配乐、拟音事件和检查都读取它（`tools/cuecheck.py`：68 个提示点，0 ms 偏移）。
+- **评分：**原版**原声世界凹槽**，约100 BPM。在港口和海上演奏尼龙吉他指弹 (D–A–Bm–G) 和卡林巴琴，然后是摇摇琴、邦戈琴、木箱鼓强拍和康加鼓，以及立式贝司 (`jazz_bass`)。快进采用 B 小调颜色。没有钢琴，没有弦垫。卡林巴琴 (A4–F#4–D4) 上的三音 **bean 主题** 在第一个平台、最后一个标签和最后的站琶音中演奏。咖啡厅部分从 100 BPM 减慢至约 70 BPM 然后停止；沉默之后，一把吉他以 80 BPM 重新开始。
+- **两次真正的寂静：** 潜水时（30.0–33.6 秒；只有线和 −66 dB 船体吱吱声）和第一滴咖啡之前（45.3–45.9 秒；数字零）。每个之后的第一个声音是影片中最重要的声音之一：**船的号角**（比其他声音高出约 10 dB；具有失谐和 2.8 秒尾部的 D2 锯组）和 **one 落入空杯子中**。
+- **三层：**
+  - **氛围床**，每站一张，淡入淡出：山风、树叶和鸟儿；港口、海鸥和起重机蜂鸣器；海浪汹涌；城市嗡嗡声；咖啡厅的低语声；早晨的麻雀（和山一样的鸟合成体，向上倾斜）。
+  - **Foley（按材料分类）：** 茎部纤维卡扣、手掌中樱桃的肉质撞击声、网状樱桃的颗粒状摇铃、倒入黄麻的谷物、集装箱门和平台的不和谐钢部件、粗麻布撕裂、旋转时鼓的隆隆声、干裂爆裂声、研磨机呜呜声和嘎吱声、压实塞、陶瓷叮当声和音高升高的倾倒。
+  - **音乐**，在声音下降低了约8分贝。旁白说话时，气氛降低了 7 分贝，鸟儿也被静音：单词末尾的鸟鸣声让耳语听到“旅行”变成了“旅行”。
+- **声音过渡：** 港口出现前 0.6 秒的港口噪音 J 切，墙壁打开前 0.6 秒的烤鼓，以及进入城市的喇叭尾的 L 切。在最后的回调中，每个电台都会演奏一个卡林巴音符。
+- **语音：** Kokoro `bf_alice` 为 0.88–1.0，六条短线，每一条都在干试中进行耳语验证，并在最终混音中再次进行验证。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Projection:** true isometric, axes at 30°. `sx = (x − y)·cos30°·k`, `sy = ((x + y)·½ − z)·k`. World x runs down-right, y down-left, z up. Painter depth = x + y + z. Never rotate or tilt the view.
-- **Three tones per face** (top light / left = +y face mid / right = +x face dark), picked per face from its normal:
-  - coffee red `#CF5140 / #B3352B / #8C2620`
-  - leaf green `#7BA75F / #5E8C4A / #476F37`
-  - sea blue `#5A9BCB / #3C7FB1 / #2D6390`
-  - cream `#FBF4E6 / #F2E6D0 / #D9C8A9`
-  - soil `#A77850 / #8A5B3A / #6A432A`
-  - mustard (cranes, road) `#E9BE5C / #D9A53A / #B0832A`
-  - ink `#2E2522`
-  - Other colours come from `tri(c)`: mix toward warm white 20 % for the top and toward `#231A2C` 22 % for the dark side, so shadows are slightly cool.
-- **No outlines on solids.** Ink lines (2 px) are reserved for infographic elements: leaders, pins, cut lines, rings, the route and labels.
-- **The board:** it floats on a cream `#F2E6D0` background with a faint isometric dot lattice and a soft blurred shadow. Its two front faces show three soil strata plus pebbles, and a three-blue water column where the sea meets the edge. Coast banks are only drawn where they face the viewer.
-- **Stations** that must be found in the wide shot get a **pale cream plate with a dashed ink outline** and an accent colour (brick-red roastery, red-and-cream awning café). Keep buildings around them low.
-- **People:** Monument-Valley-minimal billboards with a round head, a tapered body in two tones, a thick arm stroke and a hat or hair shape for identity. No faces. They step at 12 fps.
-- **Hero close-ups (hands):** flat faceted shapes in three skin tones (light palm facing up, mid sides, dark underside), a sleeve in the character's colour, and fingers as rounded two-segment capsules curling toward the viewer. The opening and closing hands share **the same pose, camera, zoom and tag position.** Only the skin tone, the sleeve and the object change.
-  The pair side by side: [`demo/stills/frame_v2_hands.jpg`](demo/stills/frame_v2_hands.jpg) (3.4 s and 50.9 s).
-- **Labels (pins):** a dot (ink ring, cream fill) → a vertical leader → a horizontal rule → text. Titles are Jost 600, all caps, tracking 0.12 em. Numbers are Jost 400 at 44 px, and units Jost 500 at half size. Text has a 7 px cream halo so it reads over any colour. Pins can point up or down and left or right; choose per station so labels never cover the subject.
-- **Title:** Jost 700 words extruded as isometric blocks on a cream plate lying on the ground plane (cream face, coffee-red sides), one word per eighth note.
-- **Clouds:** flat isometric clouds with fake parallax (1.25× the ground's motion). They fade out above k ≈ 40.
+- **投影：**真实等轴测，轴为30°。 `sx = (x − y)·cos30°·k`、`sy = ((x + y)·½ − z)·k`。世界 x 向右下运行，y 向左下运行，z 向上运行。画家深度 = x + y + z。切勿旋转或倾斜视图。
+- **每个面三种色调**（顶光/左= + y面中/右= + x面暗），从其法线中挑选每个面：
+  - 咖啡红`#CF5140 / #B3352B / #8C2620`
+  - 叶绿`#7BA75F / #5E8C4A / #476F37`
+  - 海蓝色 `#5A9BCB / #3C7FB1 / #2D6390`
+  - 奶油`#FBF4E6 / #F2E6D0 / #D9C8A9`
+  - 土壤 `#A77850 / #8A5B3A / #6A432A`
+  - 芥末（鹤、路）`#E9BE5C / #D9A53A / #B0832A`
+  - 墨水 `#2E2522`
+  - 其他颜色来自 `tri(c)`：顶部混合 20% 的暖白色，深色一侧混合 `#231A2C` 22%，因此阴影略显冷色。
+- **实体上没有轮廓。** 墨线（2 像素）保留用于信息图表元素：引线、引脚、切割线、环、路线和标签。
+- **板：** 它漂浮在奶油色 `#F2E6D0` 背景上，带有微弱的等距点格和柔和的模糊阴影。它的两个正面显示出三层土层和卵石，以及大海与边缘交汇处的三蓝色水柱。海岸线仅绘制在面向观看者的位置。
+- **车站**必须在宽镜头中找到，获得**浅奶油色盘，带有虚线墨水轮廓** 和强调色（砖红色烘焙店、红色和奶油色遮阳篷咖啡馆）。保持周围建筑物的高度较低。
+- **人物：**纪念碑-山谷-最小的广告牌，有圆头、两种色调的锥形身体、粗手臂笔触和帽子或头发形状的身份。没有面孔。他们以 12 fps 的速度行走。
+- **Hero 特写镜头（手）：**三种肤色的平面形状（浅色手掌朝上、中间侧面、深色下面），袖子采用角色颜色，手指呈圆形两段胶囊状，向观看者卷曲。张开和合拢的手共享**相同的姿势、摄影机、缩放和标记位置。** 仅肤色、袖子和物体发生变化。
+  并排的一对：[`demo/stills/frame_v2_hands.jpg`](demo/stills/frame_v2_hands.jpg)（3.4 s 和 50.9 s）。
+- **标签（引脚）：** 一个点（墨水环、奶油填充）→ 垂直引线→ 水平线→ 文本。标题为 Jost 600，全部大写，字距 0.12 em。数字为 44 像素的 Jost 400，单位为一半大小的 Jost 500。文本有一个 7 像素的奶油色光环，因此可以在任何颜色上阅读。引脚可以指向上或下、左或右；按电台进行选择，这样标签就不会覆盖主题。
+- **标题：** 约斯特 700 个单词作为等距块挤压在位于地平面上的奶油色板上（奶油色表面，咖啡红色侧面），每个八分音符一个单词。
+- **云：** 具有假视差的平坦等距云（1.25×地面运动）。当 k ≈ 40 以上时，它们就会淡出。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- **The subtitle is a map label.** A cream `#FBF4E6` card with 10 px radius and a 2 px ink border, a tiny coffee-red iso cube as the legend chip, Jost 500 at 42 px in ink. It sits bottom-centre, 64 px from the bottom edge. The border draws in first (0.2 s) and the text wipes left to right; on exit it slides down 8 px and fades.
-- Hold each line ≥ max(1.8 s, speech + 0.6 s). Lines never overlap each other, the title or the end card.
-- **End card = the map's legend**, shown in the empty cream corner: title, style name, total with the Isotype bar, "Lemo-Opuscar · LemoLab × Claude Opus 5.5", credits. "NOT TO SCALE" is honest and a small joke. The "Lemo-Opuscar · LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only: a user's film carries no LemoLab credit and no copy of this card.
+- **副标题是地图标签。** 奶油色 `#FBF4E6` 卡，半径为 10 像素，墨水边框为 2 像素，一个微小的咖啡红色 iso 立方体作为图例芯片，墨水为 42 像素的 Jost 500。它位于底部中心，距底部边缘 64 像素。边框首先绘制（0.2 秒），文本从左向右擦除；退出时它会向下滑动 8 像素并淡出。
+- 保持每行 ≥ max(1.8 s，语音 + 0.6 s)。线条、标题或片尾卡永远不会相互重叠。
+- **结束卡=地图的图例**，显示在空白的奶油角中：标题，风格名称，与Isotype栏的总计，“Lemo-Opuscar·LemoLab × Claude Opus 5.5”，制作人员。 “不按比例”是诚实的，也是一个小玩笑。 “Lemo-Opuscar · LemoLab × Claude Opus 5.5”签名仅属于该风格库的示范：用​​户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Pitfalls we hit (demo record)
+<a id="pitfalls-we-hit-demo-record"></a>
+## 我们遇到的陷阱（示范记录）
 
-- **Newell normals versus vertex order:** the +y face of a box was culled as a back face. Give every face an outward hint (`out`) and flip the normal to match it before culling.
-- **Painter sorting of composites:** shrubs on a terraced hill appeared in front of the next terrace. Draw the hill as one item: each terrace, then its back row of shrubs, and after all terraces the front rows from top to bottom. Cranes' booms need a large depth bias so they sit above the ship.
-- **Semi-transparent falling boxes look like ghosts.** Use motion only, no alpha.
-- **The ship's bow over the beach** reads as "run aground" even when it is geometrically in water. Leave visible water around every hull. Undock by translating clear of the quay before turning.
-- **The time jump inside the dive:** the ship teleports from mid-ocean to the destination dock while only beans fill the frame. Draw the bean field **in screen space, anchored on the tracked bean** and scaled by k; its layout then does not depend on the ship's heading, and the jump is invisible.
-- **Giant world geometry behind hero close-ups:** at k = 600 a shrub is a green disc the size of the frame. Skip shrubs above k = 120 and paint a flat backdrop behind the hero layer, fading with it.
-- **The pull-out passing through a crane** gives one ugly frame of a giant boom. Fade tall objects in by zoom (`alpha = clamp((80 − k)/40)`).
-- **whisper and ambience hiss:** a continuous leaf rustle (2.5–7 kHz) after a word turns "travel" into "travels". Keep high-band beds very low under dialogue.
-- **A machine drawn as a white box with a red roof reads as a house.** Use steel greys, a dark front panel, cups on top and a portafilter handle.
-- In zsh a failed glob aborts an `&&` chain, so run shell loops through `bash -c`.
+- **Newell 法线与顶点顺序：** 盒子的 +y 面被剔除为背面。给每个面一个向外的提示（`out`），并在剔除之前翻转法线以匹配它。
+- **复合材料的画家分类：** 梯田山上的灌木出现在下一个梯田前面。将山丘绘制为一个项目：每个梯田，然后是其后排灌木，最后是梯田，从上到下是前排。起重机的吊杆需要较大的深度偏差，因此它们位于船舶上方。
+- **半透明下落的盒子看起来像幽灵。** 仅使用运动，无 Alpha。
+- **海滩上的船头** 读作“搁浅”，即使它在几何形状上处于水中。在每个船体周围留下可见的水。在转弯之前通过平移离开码头来离岸。
+- **潜水内的时间跳跃：** 船从大洋中央传送到目的地码头，而画面中只有豆子。在屏幕空间中绘制 bean 字段 **，锚定在跟踪 bean** 上并按 k 缩放；它的布局不依赖于船的航向，并且跳跃是不可见的。
+- **英雄特写镜头背后的巨大世界几何：** k = 600 灌木是一个与框架大小相同的绿色圆盘。跳过 k = 120 以上的灌木，并在英雄图层后面绘制平坦的背景，并随之褪色。
+- **穿过起重机的拉出**给出了一个丑陋的巨型吊臂框架。通过缩放淡入高的物体 (`alpha = clamp((80 − k)/40)`)。
+- **耳语和氛围嘶嘶声：** 在一个词将“旅行”变成“旅行”后，发出连续的树叶沙沙声（2.5-7 kHz）。在对话中将高频段的床保持在很低的位置。
+- **A 机器绘制为白色盒子，红色屋顶，读作房子。** 使用钢灰色、深色前面板、顶部杯子和手柄。
+- 在 zsh 中，失败的 glob 会中止 `&&` 链，因此通过 `bash -c` 运行 shell 循环。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/iso-infographic/demo/
@@ -131,36 +139,37 @@ styles/iso-infographic/demo/
   music/score.py   original score (sampler)      mix.py   ambience + foley + voice + ducking
   tools/        cuecheck.py subs.py final_asr.py review.sh      tests.js   hero + any-shape test scenes
 ```
-1. Write `timeline.js` and the cue map first. Draw the board as a square in world units (S = 240). Lay out the Z route, then the stations.
-2. Build the station scenes, reviewing each at its zoom with `?k=…&cx=…&cy=…` stills. Render the two hero close-ups on their own (`?test=hero`, `?test=hero&end=1`) until they match.
-3. `sh demo/build.sh` rebuilds everything in about 2 minutes: TTS → whisper → score → events → cue check → mix → srt → render (1,411 frames in about 35 s with 2 workers) → mux (−14 LUFS, grain 0) → final whisper → stills.
-4. Review with `bash demo/tools/review.sh out/revN 6 $(seq 0.3 1 58.3)` at least twice, plus frame strips of the dive, the snap-out, the landing and the pour taken from the muxed mp4.
+1. 首先写入 `timeline.js` 和音画节拍对照表。将棋盘绘制为世界单位 (S = 240) 的正方形。布置 Z 路线，然后布置车站。
+2. 构建车站场景，使用 `?k=…&cx=…&cy=…` 剧照放大查看每个场景。单独渲染两个英雄特写镜头（`?test=hero`、`?test=hero&end=1`），直到它们匹配。
+3. `sh demo/build.sh` 在大约 2 分钟内重建所有内容：TTS → Whisper 语音识别 → 配乐 → 事件 → 提示检查 → 混合 → srt → 渲染（2 个工作人员在约 35 秒内 1,411 帧）→ 复用器（−14 LUFS，颗粒 0）→ 最终耳语 → 剧照。
+4. 使用 `bash demo/tools/review.sh out/revN 6 $(seq 0.3 1 58.3)` 进行至少两次回顾，以及从混合 mp4 中获取的俯冲、突然弹出、着陆和倾倒的帧条。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-`demo/engine.js` is dependency-free ES module code for Canvas 2D. Everything is queued and depth-sorted until `flush()`.
+`demo/engine.js` 是 Canvas 2D 的无依赖 ES 模块代码。所有内容都会排队并进行深度排序，直到 `flush()`。
 
-| API | What it does |
+|应用程序编程接口|它的作用|
 |---|---|
-| `new Iso(ctx, W=1920, H=1080)` | Engine instance. `iso.cam = {x, y, z, k}` sets the world point at screen centre and the zoom (px per unit). |
-| `iso.P(x,y,z)` / `iso.unP(sx,sy,z)` | Project and unproject. |
-| `iso.push(ox,oy,oz,rot,s)` / `iso.pop()` | Local frame (translate, rotate about z, scale) for vehicles and ships. Normals rotate too, so shading stays correct at any heading. |
-| `iso.box(x,y,z,w,d,h,tri,{decal,bias,layer})` | Axis box, three-tone. `decal(I)` draws on its faces (windows, ribs). |
-| `iso.prism(pts2d,z,h,tri)` | Extrudes any footprint polygon. Orientation is automatic and each side face is shaded by its normal. |
-| `iso.cyl(x,y,z,r,h,tri,{axis:'z'|'x'|'y', n, spin, stripe})` · `iso.cone(...)` · `iso.roof(...)` · `iso.sphere(...)` | Cylinders (standing or lying, spinning stripes), cones, gable roofs, and flat-disc spheres with a lit cap and a dark crescent. |
-| `iso.flat(pts,z,color)` · `iso.line3(pts,color,px,{dash})` · `iso.bill(x,y,z,fn)` | Ground decals, 3D polylines, and billboards (2D drawings scaled by zoom: people, hands). |
-| `iso.text3(str,x,y,z,{plane:'xy'|'xz'|'yz', size, extrude, tri})` | Isometric type on a world plane, optionally extruded. |
-| `iso.desat = 0..1`, `iso.keep = true` | **The one-colour hook:** everything drawn is desaturated toward warm grey except items drawn with `keep = true`. |
-| `iso.sub(fn)` | Sorted sub-queue, used for interiors drawn between back and front walls. |
-| `tri(hex)` · `PAL` | Three-tone generator and the palette. |
-| `pin(iso,x,y,z,{title,num,unit,dir,up,len,a,icons})` | Label pin with reveal parameter `a`. `icons(g,x,y,dir)` draws an Isotype row under it. |
-| `inset(iso,ax,ay,cx,cy,r,a,drawIn)` | Circular detail callout with a leader. |
-| `cutLine(g,pts,a)` · `hatch(g,pts)` · `ring(g,x,y,r,a,t,tag)` | Cut line, hatched section face, rotating dashed tracking ring with a tag. |
-| `ICON.sun/moon/box/sack/bean/cherry(g,x,y,size,lit)` · `iconGrid(g,x,y,n,lit,cols,gap,draw)` | Isotype icons in the same three-tone language; lit count m can be fractional (pop-in). |
-| `person(g,{body,hat,hair,skin,arm,face,h,basket,apron,tool})` | Minimal people for `iso.bill`. |
-| `shape(iso, pts2d, [x,y,z], {color, depth, plane, scale})` | **Draw any shape in this style:** a 2D outline becomes an isometric solid shaded with the three-tone rule. `sparkPath(n,r,inner)` and `cursorPath(h,w,x,y)` are ready-made outlines. |
+|`new Iso(ctx, W=1920, H=1080)`|引擎实例。 `iso.cam = {x, y, z, k}` 设置屏幕中心的世界点和缩放（每单位像素）。|
+|`iso.P(x,y,z)` / `iso.unP(sx,sy,z)`|项目和取消项目。|
+|`iso.push(ox,oy,oz,rot,s)` / `iso.pop()`|车辆和船舶的局部框架（平移、绕 z 轴旋转、缩放）。法线也会旋转，因此任何方向的阴影都保持正确。|
+|`iso.box(x,y,z,w,d,h,tri,{decal,bias,layer})`|轴盒，三音。 `decal(I)` 在其表面（窗户、肋骨）上绘制。|
+|`iso.prism(pts2d,z,h,tri)`|挤出任何足迹多边形。方向是自动的，每个侧面都以其法线着色。|
+|`iso.cyl(x,y,z,r,h,tri,{axis:'z'|'x'|'y', n, spin, stripe})` · `iso.cone(...)` · `iso.roof(...)` · `iso.sphere(...)`|圆柱体（立式或卧式，旋转条纹）、圆锥体、山形屋顶以及带有发光帽和深色新月形的平盘球体。|
+|`iso.flat(pts,z,color)` · `iso.line3(pts,color,px,{dash})` · `iso.bill(x,y,z,fn)`|地面贴花、3D 折线和广告牌（按缩放比例缩放的 2D 绘图：人物、手）。|
+|`iso.text3(str,x,y,z,{plane:'xy'|'xz'|'yz', size, extrude, tri})`|世界平面上的等距类型，可选择拉伸。|
+|`iso.desat = 0..1`、`iso.keep = true`|**单色挂钩：** 除用 `keep = true` 绘制的项目外，所有绘制的内容都向暖灰色去饱和。|
+|`iso.sub(fn)`|排序的子队列，用于在后墙和前墙之间绘制的内部。|
+|`tri(hex)` · `PAL`|三音发生器和调色板。|
+|`pin(iso,x,y,z,{title,num,unit,dir,up,len,a,icons})`|带有显示参数 `a` 的标签引脚。 `icons(g,x,y,dir)` 在其下方绘制同型行。|
+|`inset(iso,ax,ay,cx,cy,r,a,drawIn)`|带引线的圆形细节标注。|
+|`cutLine(g,pts,a)` · `hatch(g,pts)` · `ring(g,x,y,r,a,t,tag)`|切割线、剖面线、带有标签的旋转虚线跟踪环。|
+|`ICON.sun/moon/box/sack/bean/cherry(g,x,y,size,lit)` · `iconGrid(g,x,y,n,lit,cols,gap,draw)`|采用相同的三音语言的同型图标；点亮计数 m 可以是小数（弹出）。|
+|`person(g,{body,hat,hair,skin,arm,face,h,basket,apron,tool})`|`iso.bill` 的最少人员。|
+|`shape(iso, pts2d, [x,y,z], {color, depth, plane, scale})`|**以这种风格绘制任何形状：** 2D 轮廓变成用三色调规则着色的等距实体。 `sparkPath(n,r,inner)` 和 `cursorPath(h,w,x,y)` 是现成的轮廓。|
 
-Minimal example: a warm-orange `#D97757` four-point spark with a cursor tail on a plinth, labelled (`?test=spark`, output in `demo/stills/engine_shape.jpg`):
+最小示例：暖橙色 `#D97757` 四点火花，底座上有光标尾部，标记为（`?test=spark`，`demo/stills/engine_shape.jpg` 中的输出）：
 
 ```js
 import { Iso, PAL, shape, sparkPath, cursorPath, pin } from './engine.js';

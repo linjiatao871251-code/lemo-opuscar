@@ -1,134 +1,146 @@
-# 1920s Newsreel — Style Prompt
+<a id="1920s-newsreel--style-prompt"></a>
+# 1920s 新闻影片：风格提示词
 
-> A sound newsreel of the late 1920s, cut from real archive material: a searchlight-and-globe ident with a brass fanfare, a newspaper that spins into the lens, a fast and cheerful announcer on an optical soundtrack, place-and-date cards, maps, magazine pages and documents, wipes, flips and irises, and a hot band that can stop dead for the punchline.
-> References (grammar only): **Fox Movietone News** and **Universal Newspaper Newsreel** (1927–1930s) — the ident ritual, the announcer's patter, one story per location, the stinger after the last story; **Pathé News** — the item title card; Hollywood's **spinning newspaper** montage; **1920s hot dance bands** (Charleston rhythm, banjo, tuba). Never copy a real newsreel's name, logo, globe design, typeface or fanfare.
+> 一部 1920 年代末的有声新闻片，取自真实的档案材料：带有铜管乐曲的探照灯和地球仪标识、旋转到镜头中的报纸、光学配乐中快速而欢快的播音员、地点和日期卡、地图、杂志页面和文档、擦拭、翻转和虹膜，以及可以停下来欣赏妙语的热门乐队。
+> 参考资料（仅语法）：**Fox Movietone News**和**Universal Newspaper Newsreel**(1927–1930s) — 身份仪式、播音员的喋喋不休、每个地点一个故事、最后一个故事之后的刺痛；**Pathé News**— 物品标题卡；好莱坞的**旋转报纸**蒙太奇； **1920 年代热舞乐队**（查尔斯顿节奏、班卓琴、大号）。切勿复制真实新闻片的名称、徽标、地球仪设计、字体或宣传语。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-An edit style: the look is in **how real material is arranged, cut, captioned and carried by sound**, not in a drawing technique.
-- **Archive in a projected gate**: 1.37:1 picture, full height, rounded corners, black outside; everything inside it shares one silver grade, gate weave, flicker, scratches and dust.
-- **News objects** do the explaining: newspapers, magazine pages, books, telegrams, maps, records. They are filmed (spun, slammed, panned, turned, underlined), never typeset as slides.
-- **A voice talks over everything**: short exclamations, half joking, never a lecture.
-- **Music is a band, and it edits**: cuts land on the band's beats; the band stops dead to let a line land; a period record can take over the soundtrack.
+编辑风格：外观是在**中真实材料是如何排列、剪切、添加标题和通过声音**携带的，而不是在绘图技术中。
+- **存档在投影门**：1.37：1图片，全高，圆角，黑色外面；它里面的所有东西都具有同一种银级、门纹、闪烁、划痕和灰尘。
+- **新闻对象**做解释：报纸、杂志页面、书籍、电报、地图、记录。它们被拍摄（旋转、猛烈、平移、翻转、下划线），从未排版为幻灯片。
+- **A 声音胜过一切**：简短的感叹，半开玩笑，从来不是说教。
+- **Music是一个乐队，它编辑**：切入乐队的节拍；乐队停了下来，让一根线落地；时代唱片可以取代原声带。
 
-Not `silent-film` (1920s Silent Film, in this library): that style is a drawn, inked comedy projected between velvet curtains, with intertitles instead of voices, a cinema pianist and no foley. Here nothing is drawn but the packaging; the footage and print are real; somebody always speaks; the soundtrack is brass, banjo and records; titles are news captions (place · date), not dialogue cards; there are no curtains and no theatre.
-Not a documentary with a "vintage filter" either: no talking heads, no slow Ken Burns drifts, no modern lower-third bars.
+不是 `silent-film`（1920 年代的无声影片，在这个库中）：这种风格是天鹅绒窗帘之间投影的绘制的墨水喜剧，有字幕而不是声音，有一个电影钢琴家，但没有拟音。这里除了包装之外什么也没画；镜头和印刷品是真实的；总是有人说话；配乐是铜管乐器、班卓琴和唱片；标题是新闻说明（地点·日期），而不是对话卡；没有窗帘，也没有剧院。
+也不是一部带有“复古滤镜”的纪录片：没有说话的人，没有肯·伯恩斯缓慢的漂移，没有现代的下三分之一酒吧。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Gate**: 1480 × 1080 inside 1920 × 1080 (1.37:1), corner radius 26 px, pure black outside. Nothing is ever drawn outside the gate.
-- **Two layers**: the picture layer (footage, print, maps, cards) gets the film look; the type layer (place cards, labels, subtitles, the record inset) stays sharp and steady. Grease-pencil marks belong to the picture (they weave with it).
-- **Base grade** for every source, before anything else (`tools/prep.py`, `grade()`): greyscale → percentile stretch (0.6 % → black, 99.6 % → white; print: 0.2–0.3 % / 99.0–99.7 % with the black lifted to 26–30, like newsprint) → mild S-curve `x + 0.18·(x−0.5)·(1−|2x−1|)` → output 14–238. **Moving footage uses one level set per clip** (sampled across all its frames), never per frame.
-- **Projection look** (`filmLook()`, picture layer only): warm silver (`multiply #efe7d6`, `screen #17140f`), vignette 0.42 H → 0.95 H, flicker ±3.5 % per frame + 3 Hz drift, gate weave ±1.6 px / ±2.2 px (value noise), 0–3 vertical scratches that live for 9 frames, 0–4 one-frame dust specks. Grain is added at mux (`mux.sh … 24 7`), not in the page.
-- **Archive film upscaling**: at most ~2.5×. NTSC transfers (720 × 480) are treated as 4:3, cropped to 1.37 and scaled 2.31× to 1480 × 1080: `hqdn3d=4:3:6:5` → `lanczos` → `unsharp=5:5:0.55` → base grade. Frames are exported at 24 fps as JPEG sequences and played by `floor((t − t0) · 24)`, so renders are deterministic.
-- **Print**: newspapers, magazines and books at their scan resolution; crop pages to the relevant fold so unrelated (and sometimes ugly) old stories never come into view.
-- **Code-drawn packaging only**: the ident (sunburst, two searchlights, wire globe), item title cards, maps, the end card. Never generate "archive" pictures.
+- **门**：1480 × 1080 内 1920 × 1080 (1.37:1)，圆角半径 26 px，外纯黑。门外从来没有画过任何东西。
+- **两层**：图片层（素材、打印、地图、卡片）获得影片外观；文字层（位置卡、标签、字幕、唱片插图）保持清晰和稳定。油性铅笔标记属于图片（它们与图片一起编织）。
+- **每个来源的基本等级**，首先（`tools/prep.py`、`grade()`）：灰度 → 百分位拉伸（0.6 % → 黑色，99.6 % → 白色；打印：0.2–0.3 % / 99.0–99.7 %，黑色提升至26–30，如新闻纸）→ 温和的 S 曲线 `x + 0.18·(x−0.5)·(1−|2x−1|)` → 输出 14–238。 **移动素材对每个剪辑使用一个级别集**（在其所有帧中采样），而不是每帧使用一个级别集。
+- **投影外观**（`filmLook()`，仅图像层）：暖银色（`multiply #efe7d6`、`screen #17140f`），晕影0.42 H → 0.95 H，闪烁±3.5 %每帧+ 3 Hz漂移，门纹±1.6 px / ±2.2 px（噪声值），0-3 个垂直划痕，持续 9 帧，0-4 个一帧灰尘斑点。 Grain 是在 mux (`mux.sh … 24 7`) 处添加的，而不是在页面中添加的。
+- **存档影片升级**：最多~2.5倍。 NTSC 传输 (720 × 480) 被视为 4:3，裁剪为 1.37，并缩放 2.31× 为 1480 × 1080：`hqdn3d=4:3:6:5` → `lanczos` → `unsharp=5:5:0.55` → 基础等级。帧以 24 fps 导出为 JPEG 序列并由 `floor((t − t0) · 24)` 播放，因此渲染具有确定性。
+- **打印**：报纸、杂志和书籍的扫描分辨率；将页面裁剪到相关折叠，这样不相关（有时是丑陋）的旧故事就永远不会出现在视野中。
+- **仅代码绘制包装**：身份（旭日、两个探照灯、金属丝地球仪）、物品标题卡、地图、片尾卡。切勿生成“存档”图片。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Monochrome warm silver** for the picture; values do the work (check every shot as a thumbnail).
-- Type is cream on near-black (`#f3eee4` / `#d6cfc0` on `rgba(12,11,10,.8)`), framed by a 2 px cream rule; marks are a slightly warm white grease pencil; underlines on printed pages are dark soft lead.
-- Packaging silver: Art Deco gradient lettering `#fff → #d9d4ca | #9e978a → #efebe2` with a hard "metal" break at the middle and a black outline (0.12 em).
-- No colour accents, no sepia wash on top of the silver, no colourised archive.
+- **单色暖银色**为图片；值完成工作（检查每个镜头作为缩略图）。
+- 类型为近乎黑色的奶油色（`#f3eee4` / `#d6cfc0` on `rgba(12,11,10,.8)`），由 2 px 奶油色尺子框住；标记是一支略带暖色的白色油性铅笔；打印页面上的下划线是深色软铅。
+- 银色包装：装饰艺术渐变字母 `#fff → #d9d4ca | #9e978a → #efebe2`，中间有硬质“金属”断裂和黑色轮廓（0.12 em）。
+- 没有颜色强调，银色顶部没有棕褐色水彩晕染，没有彩色档案。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-| Use | Face (all OFL) | Spec |
+|使用|脸部（全部 OFL）|规格|
 |---|---|---|
-| Ident, item cards, end title | Limelight | 104–118 px, silver gradient, black outline |
-| Chinese display (ident, cards, end title) | Noto Serif SC 900 | 50–76 px, letter-spacing 10–26 px, `#ece7dc` |
-| Place card, labels (English) | Oswald 600 | 26–34 px, letter-spacing 4–6 px, upper case "PLACE · DATE" |
-| Place card, labels (Chinese) | Noto Sans SC 500–600 | 24–30 px |
-| Subtitles | Noto Sans SC 600 40 px over Oswald 400 29 px | bottom of the gate (baselines H−82 / H−38), black stroke 8 / 6 px |
+|身份、物品卡、最终标题|聚光灯|104–118 像素，银色渐变，黑色轮廓|
+|中文显示（身份、卡片、结束标题）|诺托衬线 SC 900|50–76 像素，字母间距 10–26 像素，`#ece7dc`|
+|位置卡、标签（英文）|奥斯瓦尔德 600|26–34 像素，字母间距 4–6 像素，大写“地点·日期”|
+|地卡、标签（中文）|Noto Sans SC 500–600|24–30 像素|
+|字幕|Noto Sans SC 600 40 px 超过 Oswald 400 29 px|门的底部（基线 H−82 / H−38），黑色描边 8 / 6 px|
 
-- **Place card** (the newsreel's segment title, instead of full-screen cards for every story): top left of the gate (gate x + 48, y 56), dark box with an inset 2 px cream frame, English "PLACE · DATE" over one Chinese line; it is pulled out left to right in 0.22 s and fades 0.15 s before it leaves. Hold ≥ CJK ÷ 4.5 + Latin ÷ 15 + 1.5 s from the moment it is complete (`readcheck.mjs`), so keep both lines short.
-- **Item title card** (one per film at most, to turn to a new story): black, a double Art Deco frame drawn in 0.35 s with quarter-fan corners, Limelight line + Chinese line, slow push; ≥ 2.5 s.
-- **Labels inside split screens**: one per panel, top centre, same box style, enter one beat apart.
-- **Subtitle strip**: the subtitles sit on a dark strip across the bottom of the gate (180 px, transparent at the top edge, ≈ 93–96 % `#0a0908` below), on every shot, fading in 0.25 s before the first cue of a run and held through gaps under 1 s, so it never blinks; print and pale footage would otherwise swallow the letters (`subBand()`).
-- **Subtitles**: Chinese line over English line, **one line per language, never wrapped** (`tools/subcheck.mjs` measures every cue in the page); a cue lasts max(1.8 s, spoken + 0.6 s) and ends 50 ms before the next. Print in shot is never re-typed as a caption: the announcer and subtitles carry its meaning, an underline points at it.
+- **地点卡**（新闻片的片断标题，而不是每个故事的全屏卡）：大门左上角（大门x + 48，y 56），暗盒内嵌2像素奶油色框架，一行中文上有英文“PLACE·DATE”；它在 0.22 秒内从左向右拉出，并在离开前消失 0.15 秒。从完成 (`readcheck.mjs`) 的那一刻起，保持 ≥ CJK ÷ 4.5 + Latin ÷ 15 + 1.5 秒，因此请保持两行简短。
+- **物品标题卡**（每个影片最多一张，用于翻新故事）：黑色，0.35秒绘制的双装饰艺术框架，四分之一扇角，Limelight线+中国线，慢推； ≥2.5秒。
+- **分屏内的标签**：每个面板一个，顶部中心，相同的盒子风格，间隔输入一个节拍。
+- **字幕条**：在每个镜头上，字幕位于门底部的深色条带上（180像素，顶部边缘透明，下面的93–96％`#0a0908`），在第一个运行提示之前0.25秒内淡出并保持通过间隙小于 1 秒，因此从不闪烁；否则，打印和苍白的镜头会吞掉这些字母（`subBand()`）。
+- **字幕**：中文线覆盖英文线，**每种语言一行，不换行** (`tools/subcheck.mjs`测量页面中的每个提示）；提示持续时间最长（1.8 秒，口头 + 0.6 秒），并在下一个提示之前 50 毫秒结束。打印输入镜头永远不会被重新输入为标题：播音员和字幕带有其含义，下划线指向它。
 
-## 5. Editing grammar
+<a id="5-editing-grammar"></a>
+## 5. 编辑语法
 
-- **The band is the clock**: pick a hot-dance tempo (190–220 BPM); every cut, landing, slam and label entrance sits on a beat, most cuts on bar lines; quick inserts on beat 3 or on the Charleston accent (beat 1 and the "and" of 2). When a period record plays, cut on the record's own beat (measure it), not on the grid.
-- **One story = one place + one kind of material + one line of voice.** Stories get shorter towards the end (2–3 bars → 1 bar → beats), then one held button.
-- **Shot lengths**: archive shots 1–2.5 s; print and documents 2.5–4 s (they must be read); comparisons ≥ 2.5 s fully in frame before the verdict; never a static frame longer than ~1 s without something moving (push, roll, pencil, flicker of a counter).
-- **Transitions are the newsreel's own, each used once, as punctuation**: iris close/open, diagonal hard wipe with a bright 6 px edge, vertical-axis flip, venetian blinds (12 slats turning), clock wipe from 12 o'clock, spinning paper, page turn, panel push-over, freeze. No cross-dissolves between stories, no modern whip pans, no zoom blur.
-- **L-cuts**: the announcer may run 0.3–0.5 s over a cut; a new music state may start one beat before its picture (J-cut).
+- **乐队是时钟**：选择热舞节奏（190–220 BPM）；每个切入、落地、猛击和标签入口都位于节拍上，大多数切入位于小节线上；快速插入节拍 3 或查尔斯顿口音（节拍 1 和节拍 2 的“and”）。当播放一段时期的唱片时，按照唱片本身的节拍进行剪切（测量它），而不是在网格上剪切。
+- **一个故事 = 一个地方 + 一种材料 + 一行语音。** 故事到最后会变短（2–3 小节 → 1 小节 → 节拍），然后按下一个按钮。
+- **拍摄长度**：存档镜头 1–2.5 s；打印和记录 2.5–4 秒（必须阅读）；判决前完全在帧内进行比较 ≥ 2.5 秒；没有物体移动（推、滚、铅笔、计数器闪烁）的静态帧永远不会超过 1 秒。
+- **过渡是新闻片自己的，每个使用一次，作为标点符号**：虹膜close/open，带明亮6像素边缘的对角硬擦拭，垂直轴翻转，百叶窗（12条板条转动），从12点开始的时钟擦拭，旋转纸张，翻页，面板推送，冻结。故事之间没有交叉溶解，没有现代的快速平移，没有变焦模糊。
+- **L 型切口**：播音员可以在剪辑上运行 0.3–0.5 秒；新的音乐状态可能会在其图片之前开始一个节拍（J-cut）。
 
-## 6. Camera on stills and archive
+<a id="6-camera-on-stills-and-archive"></a>
+## 6. 摄影机剧照和档案
 
-| Move | What it does | Typical use |
+|移动|它的作用|典型用途|
 |---|---|---|
-| Spin-and-slam | the paper arrives as news | a headline; a telegram; a poster |
-| Slow push then punch-in on a beat | from the whole page to the one detail | a headline → a photo in it |
-| Pan across a wide print | a crowd, a parade, a skyline | panoramas, group photos |
-| Tilt to reveal | the landmark behind the subject | a building, a monument |
-| Map push | from the country to one city, into the next story | travel, spread, campaigns |
-| Grid deal | many related stills land one per beat | step-by-step, collections, "all of them" |
-| Flip-book | a series of stills played on the beat becomes motion | dance steps, assembly stages, before/after |
-| Freeze + jolt | stop the archive on the telling frame | the punchline, the evidence |
-| Split / quad | two or four places at once, side by side | comparisons, "everybody's doing it" |
+|旋转猛击|报纸作为新闻到达|标题；电报；一张海报|
+|缓慢推动，然后按节拍打拳|从整个页面到一个细节|标题 → 里面有一张照片|
+|平移宽幅印刷品|人群、游行、天际线|全景、集体照|
+|倾斜显示|主题背后的地标|一座建筑，一座纪念碑|
+|地图推送|从乡村到一座城市，进入下一个故事|旅行、传播、活动|
+|网格交易|许多相关剧照每节拍一张|一步一步，收集，“全部”|
+|翻页书|一系列按节拍播放的剧照变成了动作|舞步，组装舞台，before/after|
+|冻结+震动|在告诉框架上停止存档|笑点，证据|
+|分体/四体|两个或四个地方同时并排|比较，“每个人都在这样做”|
 
-Archive footage is not reframed with fake camera moves bigger than ~6 % (it already has its own camera); stills always get a move with a purpose.
+档案片段不会用大于 ~6% 的假摄影机运动重新构建（它已经有自己的摄影机）；剧照总是带着目的而采取行动。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Announcer** (Kokoro): a bright, energetic male voice; a blend of two voices (e.g. `am_liam:0.6,bm_george:0.4`) gives a mid-Atlantic tinge; speed ≈ 1.15–1.2; 6–12 words per line, exclamations and rhetorical questions. Treatment as a 1930 optical track (`period_voice()` in `audio/mix.py`): high-pass 260 Hz, low-pass 3.7 kHz, +4 dB presence at 1.5–2.3 kHz (horn loudspeaker), tanh drive 2.0, compression 4:1, wow 0.22 % at 0.55 Hz + flutter 0.07 % at 6.3 Hz, two short wall reflections (31 ms, 67 ms). The speech check runs on the clean voice and again on the finished film (`tools/final_asr.py`).
-- **Band** (original): tuba on 1 and 3, banjo four to the bar (accent 2 and 4), trombones on the Charleston figure (1 and the "and" of 2), snare backbeat, honky-tonk piano right hand, muted then open trumpet melody with clarinet a sixth below, woodblock pickups; a brass fanfare with timpani for the ident; a dead stop with one stab for the punchline; "da – DA!" to close.
-- **Counter-music**: when the story has two sides, give the other side its own band (here an old-time reel: fiddle, plucked dulcimer, upright piano, tuba) and let them trade bars, then half bars, in a split screen, panned left and right.
-- **Archive record**: a public-domain 78 can take over the soundtrack as "the real thing": needle drop (click + surface noise), band-pass 110–6500 Hz, crackle and rotation rumble only while the needle is down, varispeed by ≤ 2 % to sit on the film's tempo; end it on its own final chord and lift the needle.
-- **Foley** for every move: carbon-arc snap, rising whoosh with flutter for the spinning paper, thump + paper slap, telegraph clicks under a map line, camera shutter per still, paper flicks per flip-book page, slat flutter, page turn, grease-pencil squeak, soft-lead scratch.
-- **Bed**: projector (24 Hz claw clatter, motor hum, optical hiss) from first to last frame.
-- **Mix**: the band and record ducked ≈ 4–5 dB under the voice (voice ≈ 12 dB over the music), the band band-limited 95–7500 Hz with a low shelf and light saturation; two silences (a dead stop before a turn, only the projector before the button); −14 LUFS.
+- **播音员**（Kokoro）：明亮、充满活力的男声；两种声音的混合（例如 `am_liam:0.6,bm_george:0.4`）给出了大西洋中部的色调；速度 ≈ 1.15–1.2；每行 6-12 个字、感叹句和反问句。 创作方案作为 1930 年光学轨道（`audio/mix.py` 中的 `period_voice()`）：高通 260 Hz，低通 3.7 kHz，1.5–2.3 kHz 时 +4 dB 存在（喇叭扬声器），tanh 驱动 2.0，压缩比 4:1，哇 0.22 % 0.55 Hz + 6.3 Hz 时颤振 0.07 %，两次短壁反射（31 ms、67 ms）。语音检查在干净的声音上运行，并在完成的影片 (`tools/final_asr.py`) 上再次运行。
+- **乐队**（原版）：大号在 1 和 3 上，班卓琴四到小节（重音 2 和 4），长号在查尔斯顿数字上（1 和 2 的“和”），军鼓后拍，下酒馆钢琴右手，静音然后开放的小号旋律，下面带有单簧管六度，木版画皮卡；带有定音鼓的铜管喇叭声；一个点子就停顿下来； “哒——哒！”关闭。
+- **反音乐**：当故事有两个方面时，给另一方自己的乐队（这里是一个老式的卷轴：小提琴、拨弦扬琴、立式钢琴、大号）并让他们在分屏中交换小节，然后是半小节，左右平移。
+- **档案记录**：公共领域的78可以像“真实的东西”一样接管配乐：针落下（点击+表面噪音），带通110-6500 Hz，只有当针落下时才发出噼啪声和旋转隆隆声，变速≤2％以适应影片的节奏；将其结束在自己的最后一个和弦上并抬起针。
+- **弗利** 适合每一个动作：碳弧咔嗒声、旋转纸的颤动上升的嗖嗖声、重击+纸拍打声、地图线下的电报咔哒声、摄影机每个静止快门、每个翻页书页的纸张弹动、板条颤动、翻页、油脂铅笔吱吱声、软铅划痕。
+- **床**：从第一帧到最后一帧的投影仪（24 Hz 爪子咔哒声、电机嗡嗡声、光学嘶嘶声）。
+- **混音**：乐队和唱片在声音下闪避了 ≈ 4–5 dB（声音在音乐上约 12 dB），乐队频带限制为 95–7500 Hz，具有低架子和浅饱和度；两次沉默（转弯前完全停止，按钮前只有投影仪）； −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu; use the ones the story needs, each once.
+菜单；使用故事所需的内容，每次一次。
 
-- **The ident ritual.** Searchlights snap on with a flash in the first 0.2 s, the globe grows and turns, the name lands with overshoot, the iris closes on the globe. Code: `sceneLogo()` — `sunburst()`, `beams()`, `globe()`, `decoTitle()`. *Fits:* the opening of any news-shaped film; the reprise is the sign-off.
-- **The spinning paper.** Grows by `u^2.3`, rotation decays by `(1−u)^1.25` over 2.5 turns, three ghost copies 18 ms apart as motion blur, a vertical jolt (damped sine, 16 px) and a 3 % bounce on the slam, then push and punch in on the next beat. *Fits:* a headline, a decree, a press release.
-- **The map spread.** A projected outline (Natural Earth, Albers), dotted arcs from the source city drawn on the beat with telegraph clicks, star pulses on arrival, place labels in screen space, an odometer of years in a corner; push into the city of the next story. *Fits:* a craze, a product launch, a migration, a campaign.
-- **Grid deal → flip-book.** Stills land one per beat (shutter click each), then the camera dives into the first cell and the series plays on the beat as stop motion. *Fits:* a how-to, the stages of a process, a collection.
-- **Document underline.** Slam a book or letter, turn the page, push to the paragraph, draw soft-lead underlines word-exact (positions from the scan's OCR boxes, e.g. archive.org hOCR). *Fits:* a quote, a rule, a contract clause.
-- **Grease-pencil freeze.** Freeze the telling frame, jolt it, ring the detail with a hand-drawn loop (`pencil()` + `ring()`), add an arrow. *Fits:* the evidence, the punchline, "look here".
-- **Split-screen duel → push-over.** Two panels slide in, each labelled, each with its own music in its own channel trading bars; the winner pushes the loser out of frame. *Fits:* old vs new, rival products, two cities.
-- **Needle drop.** The band cuts dead, a 78 spins in the corner, the period record plays under the archive and ends on its own chord at the freeze. *Fits:* any era that has public-domain recordings.
-- **Band stop + button.** One stab, silence with only the projector, one short line from the announcer. *Fits:* the last word of any story.
+- **身份仪式。** 探照灯在前 0.2 秒内闪烁，地球仪变大并旋转，名称超调着陆，虹膜关闭在地球仪上。代码：`sceneLogo()` — `sunburst()`、`beams()`、`globe()`、`decoTitle()`。 *适合：*任何新闻形状的影片的开口；重复就是结束。
+- **旋转纸。** 增长 `u^2.3`，旋转在 2.5 圈内衰减 `(1−u)^1.25`，三个幽灵副本，间隔 18 毫秒作为运动模糊，垂直震动（阻尼正弦，16 像素）和猛击时 3% 的反弹，然后推动并冲入下一个节拍。 *适合：*标题、法令、新闻稿。
+- **地图展开。** 投影轮廓（自然地球，阿尔伯斯），来自源城市的虚线弧线在电报点击的节拍上绘制，到达时的星脉冲，在屏幕空间中放置标签，角落里的里程表；推进下一个故事的城市。 *适合：*热潮、产品发布、迁移、活动。
+- **Grid deal → 翻页书。** Stills 每节拍降落一次（每次按下快门一次），然后摄影机潜入第一个单元格，该系列以定格动画的节拍播放。 *适合：*操作方法、流程的各个阶段、集合。
+- **文档下划线。** 猛击一本书或一封信，翻页，推到段落，精确地绘制软引线下划线（来自扫描 OCR 框的位置，例如 archive.org hOCR）。 *适合：*报价、规则、合同条款。
+- **油脂铅笔冻结。** 冻结讲述框架，摇动它，用手绘环圈住细节（`pencil()` + `ring()`），添加箭头。 *适合：*证据、妙语、“看这里”。
+- **分屏对决→推倒。** 两个面板滑入，每个面板都有标签，每个面板在自己的频道交易栏中都有自己的音乐；胜利者将失败者推出框架。 *适合：*旧与新、竞争对手产品、两个城市。
+- **落针。** 乐队突然停了下来，78号在角落里旋转，时期唱片在档案库下播放，并在冻结时以其自己的和弦结束。 *适合：*任何拥有公共领域录音的时代。
+- **乐队停止 + 按钮。** 一刺，只有投影仪的沉默，播音员的一短线。 *适合：*任何故事的最后一句话。
 
-## 9. Material: where it comes from
+<a id="9-material-where-it-comes-from"></a>
+## 9. 材料：从哪里来
 
-1. **Ask the user first** whether they have their own material: film or video, photographs, newspapers, letters, documents, data, a period recording. Their archive beats anything found online.
-2. **If not, search sources whose licence is clear**, with `demo/tools/footage.py` (`search archive|commons|nasa`, `files`, `fetch`, `used`, `md`; it records licence, author and page in `SOURCES.jsonl`):
-   - **U.S. National Archives** (films, often via Internet Archive "FedFlix" copies): federal works are public domain; donated collections need their own rights note (e.g. the Ford Motor Company Film Collection: all rights transferred to NARA in 1962, "copyright- and royalty-free" except contractor films). Universal Newsreel (1929–1967) is in NARA too.
-   - **Internet Archive**: check every item's licence field and provenance; skip anything that is a YouTube mirror, a colourised or "restored/AI enhanced" version, or has no stated source.
-   - **Wikimedia Commons**: read the licence template on the file page; use PD-US-expired, PD-US-no-notice, PD-USGov, CC0, CC BY. A Library of Congress "No known restrictions" (often with "Copyright-tag-still-required") is **not** enough, nor is DPLA "no known restrictions"; CC BY-SA is not used in library demos.
-   - **Library of Congress** (loc.gov, tile.loc.gov; Chronicling America newspapers before 1931), **NASA**, other national archives.
-   - **Print**: anything published in the US before 1931 (newspapers, magazines, books on archive.org / HathiTrust / Commons) is public domain in the US.
-   - **Recordings**: US sound recordings published before 1926 are public domain in the US from 1 January 2026 (Music Modernization Act: 100 years after publication for pre-1947 recordings); UCSB Library / Internet Archive transfers (Edison, Victor) and the LOC National Jukebox give dates and matrix numbers. Check the composition's date too.
-   - **Maps**: Natural Earth (public domain) for outlines drawn in code.
-3. **Before downloading, tell the user** what you will fetch, from where, under which licence, and how big it is; keep `raw/` under ~1.5 GB.
-4. Everything used goes into `demo/CREDITS` and `SOURCES.md` (title, author, date, licence, page, which seconds). Real people: historical public figures and people in news events may appear; ordinary people's faces are never slowed down or made the close-up subject.
-5. Every fact in the voice and on screen goes into `demo/FACTS.md` with its source and the quoted wording; read the catalogue description of each film before using it (it may say what is really happening in the shot).
+1. **首先询问用户**是否有自己的素材：影片或视频、照片、报纸、信件、文件、数据、一段录音。他们的档案胜过网上找到的任何东西。
+2. **如果没有，则搜索许可明确的来源**，`demo/tools/footage.py`（`search archive|commons|nasa`、`files`、`fetch`、`used`、`md`；记录许可证、作者和页面（`SOURCES.jsonl`）：
+   - **U.S.国家档案馆**（影片，通常通过互联网档案馆“FedFlix”复制）：联邦作品属于公共领域；捐赠的藏品需要有自己的权利说明（例如，福特汽车公司影片藏品：所有权利于 1962 年转让给 NARA，“无版权和版税”，承包商影片除外）。环球新闻片（1929-1967）也在奈良上映。
+   - **Internet Archive**：检查每个项目的许可证字段和出处；跳过 YouTube 镜像、彩色或“restored/AI 增强”版本或没有明确来源的任何内容。
+   - **Wikimedia Commons**：阅读文件页面上的许可证模板；使用 PD-US-过期、PD-US-无通知、PD-USGov、CC0、CC BY。国会风格库“没有已知的限制”（通常带有“仍然需要版权标签”）是 **而不是** 就足够了，DPLA 也不够“没有已知的限制”；库示范中未使用 CC BY-SA。
+   - **国会风格库**（loc.gov、tile.loc.gov；1931年之前的美国报纸编年史）、**NASA**、其他国家档案馆。
+   - **打印**：1931 年之前在美国出版的任何内容（报纸、杂志、archive.org / HathiTrust / Commons 上的书籍）在美国都是公共领域。
+   - **录音**：从 2026 年 1 月 1 日起，1926 年之前出版的美国录音在美国属于公共领域（音乐现代化法案：1947 年之前的录音出版 100 年后）； UCSB 风格库/互联网档案馆传输（爱迪生、维克多）和 LOC 国家点唱机提供日期和矩阵编号。还要检查乐曲的日期。
+   - **地图**：自然地球（公共领域），用于在代码中绘制轮廓。
+3. **下载前，告诉用户** 您要获取什么、从哪里获取、使用哪个许可证以及有多大；将 `raw/` 保持在约 1.5 GB 以下。
+4. 使用的所有内容都进入 `demo/CREDITS` 和 `SOURCES.md`（标题、作者、日期、许可证、页码、秒数）。真实人物：历史公众人物、新闻事件中可能出现的人物；普通人的脸从来不会被放慢或成为特写镜头。
+5. 声音和屏幕上的每一个事实都包含在 `demo/FACTS.md` 中，及其来源和引用的措辞；使用前请阅读每个影片的目录说明（它可能会说明镜头中实际发生的情况）。
 
-## 10. Pitfalls
+<a id="10-pitfalls"></a>
+## 10. 陷阱
 
-- Catalogue descriptions matter: a picnic film can contain both old-time dances and the Charleston; use only the shots that match the claim.
-- Archive transfers start and end with archive slates, "End of Recording" and white flashes; cut inside them. Remove watermarks and archive logos.
-- Newspaper pages hold unrelated, sometimes offensive stories next to yours: crop to the fold you need.
-- Per-frame auto-levels make footage pump; use one level set per clip.
-- `destination-in` irises leave transparent corners that later turn grey under `screen` — paint black behind with `destination-over`.
-- Captions that fade before they can be read fail `readcheck`; shorten the words, not the hold.
-- A fast announcer outruns Chinese subtitles: 6–12 English words per line, ≤ 23 Chinese characters.
-- TTS mispronounces names (Bessie → "Bestie"); rephrase until the speech check passes.
-- Old sources are soft: never exceed ~2.5× upscale; prefer wider framings to crops.
-- Grain belongs to the mux; don't add it in the page as well.
+- 目录描述很重要：野餐影片可以包含旧式舞蹈和查尔斯顿；仅使用与声明相符的镜头。
+- 档案传输开始和结束时会显示档案板、“记录结束”和白色闪烁；切入其中。删除水印和存档徽标。
+- 报纸页面旁边有不相关的、有时令人反感的故事：裁剪到您需要的折叠位置。
+- 每帧自动水平使素材泵；每个剪辑使用一个级别集。
+- `destination-in` 虹膜留下透明的角，随后在 `screen` 下变成灰色 - 用 `destination-over` 在后面涂黑色。
+- 字幕在可读之前就消失了，失败 `readcheck`；缩短单词，而不是保留。
+- 快速播音员跑得比中文字幕快：每行6-12个英文单词，≤23个汉字。
+- TTS 发音错误（Bessie →“Bestie”）；重新措辞，直到语音检查通过。
+- 旧的来源很软：永远不会超过~2.5×高档；与作物相比，更喜欢更宽的框架。
+- Grain属于mux；也不要将其添加到页面中。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-- **Era**: late silent newsreel (no voice, title cards only) ↔ early sound newsreel (this style) ↔ 1940s wartime newsreel (deeper voice, maps with arrows, march music).
-- **Tone**: comic stinger (this demo) ↔ straight reportage (no jokes, still fast) — not for disasters and deaths, where the jaunty grammar is wrong.
-- **Material balance**: all-footage, or print-heavy when film is scarce (maps, pages, flip-books carry the motion).
-- **Music**: Charleston band, march band, swing orchestra, or a period record carrying a whole section.
-- **Packaging**: invent your own ident name and emblem; keep the grammar (searchlights, globe, fanfare, place cards), change the shapes.
+- **时代**：晚期无声新闻片（无声音，仅标题卡）↔早期有声新闻片（这种风格）↔1940年代战时新闻片（低沉的声音，带有箭头的地图，进行曲音乐）。
+- **语气**：漫画毒刺（这个示范）↔直接报告文学（没有笑话，仍然很快） - 不适用于灾难和死亡，其中活泼的语法是错误的。
+- **物料平衡**：全素材，或当影片稀缺时以印刷为主（地图、页面、翻页书承载运动）。
+- **音乐**：查尔斯顿乐队、进行曲乐队、摇摆乐团或包含整个部分的时期唱片。
+- **包装**：发明你自己的身份名称和徽章；保留语法（探照灯、地球仪、喇叭、位置卡），改变形状。
 
-Our demo, its story and build: [`DEMO.md`](DEMO.md).
+我们的示范，它的故事和构建：[`DEMO.md`](DEMO.md)。

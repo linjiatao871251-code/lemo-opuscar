@@ -1,108 +1,120 @@
-# Red Paper-cut — Style Prompt
+<a id="red-paper-cut--style-prompt"></a>
+# 红色窗花剪纸：风格提示词
 
-> Chinese window-flower paper-cuts brought to life: jointed red cut-outs on paper grounds, where the cut *is* the drawing and the holes are where the light gets in.
-> References (grammar only): folk window flowers of Shaanxi and Yuxian (sawtooth, crescent, cloud and swirl cuts, fold-symmetric rosettes, *yin* and *yang* cutting); the 1958–59 Shanghai Animation Film Studio cut-paper shorts (jointed figures, profile acting, paper layers in parallax). Copy no studio character, no named artist's work and no real motif sheet: generate every pattern from code, and never name the references in the film.
+> 中国窗花剪纸栩栩如生：在纸底上剪出连在一起的红色剪纸，剪纸*就是*图画，孔就是光线进入的地方。
+> 参考资料（仅语法）：陕西、蔚县民间窗花（锯齿形、月牙形、云形、漩涡形切割、对称玫瑰花结、*阴*阳*切割）； 1958-59 年上海动画影片工作室剪纸短片（连体人物、侧面表演、视差纸层）。不复制工作室角色，不复制指定艺术家的作品，也不复制真正的主题表：从代码生成每个图案，并且永远不要在影片中命名参考。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Every visible thing is **a piece of paper that was cut with scissors** and laid flat on another sheet. There is no painting, no gradient shading, no outline stroke: detail, volume and expression come only from **what was cut away**. Red paper is the hero material; grounds are paper too (a light paper by day, a deep dyed paper by night). Characters are **jointed cut-outs** (head, torso, upper and lower limbs pinned at rivets) animated in hard 12 fps steps.
+每一个可见的东西都是**一张用剪刀**剪下来并平放在另一张纸上的纸。没有绘画，没有渐变阴影，没有轮廓笔划：细节、体积和表达仅来自**被切掉的**。红纸是英雄材料；地面也是纸（白天是浅色纸，晚上是深染色纸）。角色是 **关节剪裁**（头部、躯干、上肢和下肢固定在铆钉上），以 12 fps 的硬步长进行动画处理。
 
-Not shadow puppetry: no light behind a screen, no translucent dyed hide, no rods. Here the paper is **front-lit and opaque**; backlight is a special event you save for the moment that needs it. Not flat vector art (no strokes, no gradients), not a silhouette film (every shape's interior is cut).
+不是皮影戏：屏风后面没有灯光，没有半透明的染色皮革，没有棍棒。这里的纸张是 **前照式且不透明的**；背光是一个特殊事件，您可以将其保存到需要的时候。不是平面矢量艺术（没有笔画，没有渐变），不是剪影影片（每个形状的内部都被切割）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper grain:** a neutral-grey texture in `soft-light` inside each piece (dye mottling, fibres, specks), then the piece's alpha restored with `destination-in`, so holes stay holes.
-- **Cut edge:** every silhouette is a polyline with a slight low-frequency wobble (hand-cut), a 1 px light rim upper-left and a dark rim lower-right (the cut face). Architecture and machines use straight segments + wobble, never smoothing.
-- **Paper thickness:** each piece casts a tight soft shadow on the layer below; stacked folded paper shows 2–6 offset darker edges.
-- **Figures: red block + yin lines.** Every figure piece gets an **inset contour** (a thin slit a few units inside the outline): the classic double outline, which also separates red-on-red overlaps (an arm over a coat).
-- **Folk cutting vocabulary** (`demo/motifs.js`): sawtooth rows (fur, grass, tiles, fringe), serrated edges, crescents (scales, quilting), swirls (joints), clouds, rosettes, plum, coin, tapered slits.
-- **No floating islands.** A closed ring cut would drop its centre out of real paper. Eyes are two crescents (upper and lower lid) that leave bridges, plus a pupil *hole*.
-- Faces never morph: expressions are **swappable face pieces** (smile, surprise, fear, determined, asleep).
-- **The rosette (团花)** is designed as one 45° wedge and mirrored 8× (D4); other folds give 2×, 4× or 6×. Alternate rings of *yang* cut (band cut away, red lines left) and *yin* cut (lines cut out of a red field). Fold seams leave faint crease lines: keep them, they are true to the craft.
-- **Light:** front-lit scenes use the paper as is. Night: `frame × lightmap` + warm pools, then **emissive** backlit pieces (light × paper transmission via `multiply`; holes at full light), a two-level bloom and optional rays. Keep bloom low enough that the pattern stays legible at the centre.
-- **Projected pattern:** a piece's hole mask, squashed onto the ground and added with `lighter`; on a character, masked by its layer alpha over a solid warm spot, so cut features still read as holes.
+- **纸纹：** 每件内部 `soft-light` 中的中性灰色纹理（染料斑点、纤维、斑点），然后用 `destination-in` 恢复该件的 alpha，因此孔洞始终是孔洞。
+- **切割边缘：** 每个轮廓都是一条折线，具有轻微的低频摆动（手工切割），左上角有一个 1 px 浅色边缘，右下角有一个深色边缘（切割面）。建筑和机器使用直线段+摆动，从不平滑。
+- **纸张厚度：** 每张纸都在下面的图层上投射出紧密柔和的阴影；堆叠的折叠纸显示 2-6 个偏移的较暗边缘。
+- **人物：红色块+阴线。**每个人物作品都有一个**inset轮廓**（轮廓内几个单位的细缝）：经典的双轮廓，也分隔了红对红的重叠部分（外套上的手臂）。
+- **民间剪裁词汇**（`demo/motifs.js`）：锯齿行（毛皮、草、瓦片、流苏）、锯齿边、新月（鳞片、绗缝）、漩涡（接缝）、云纹、玫瑰花结、梅花、硬币、锥形缝。
+- **没有浮岛。** 封闭的环形切割会将其中心从真正的纸上掉下来。眼睛是两个新月形（上眼睑和下眼睑），留有鼻梁，还有一个瞳孔*孔*。
+- 面部永不变形：表情为 **可更换面部部件**（微笑、惊讶、恐惧、坚定、睡着）。
+- **团花**被设计为一个45°楔形和镜面8×（D4）；其他折叠给出 2×、4× 或 6×。 *阳*切割（带状切割，留下红线）和*阴*切割（从红色区域切割出的线）的交替环。折叠接缝会留下微弱的折痕线：保留它们，它们忠于工艺。
+- **光：**前光场景按原样使用纸张。夜间：`frame × lightmap` + 温水池，然后**发射性的** 背光件（通过 `multiply` 进行光 × 纸张传输；全光下的孔），两级绽放和可选光线。保持花朵足够低，以使图案在中心保持清晰。
+- **投影图案：**一块孔掩模，压在地上并添加`lighter`；在一个角色上，被其图层 Alpha 遮盖在实心暖点上，因此剪切特征仍然被视为孔。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **China red** (around `#d2201f`, range `#c8102e`–`#d7261e`) is the hero material. Depth and role are shown by **paper tones one step apart**, not by shading: near pieces one step brighter, far pieces one step darker, an antagonist or a heavy object one step deeper.
-- **Ground and hero must be different paper families.** If background and hero are both red, the silhouettes stop popping. At night, all background layers are one dark dyed family and only the pieces that matter to the story are red; by day, a light paper ground with red and pale-red layers.
-- **Gold foil** is an accent kept for one late moment (a sun, a title, a coin); never a second main colour.
-- Examples of ground families: indigo night papers (far layers lighter blue, near darker); a warm rice-paper day with pale-red far hills; a jade-green or black paper for a story that isn't festive. Choose from the topic.
+- **中国红**（`#d2201f`附近，范围`#c8102e`–`#d7261e`）是英雄材料。深度和角色通过 **纸色调分开一步** 显示，而不是通过阴影显示：近处的碎片更亮，远处的碎片更暗，对手或重物更深一步。
+- **地面和英雄必须是不同的纸张系列。** 如果背景和英雄都是红色，则轮廓将停止弹出。到了晚上，所有的背景层都是一个深色的家族，只有对故事重要的部分是红色的；白天，是一张浅色的纸，上面有红色和浅红色的层。
+- **金箔**是一种保留在某个迟到时刻的口音（一个太阳，一个头衔，一枚硬币）；从来没有第二个主要颜色。
+- 地面族的例子：靛蓝夜报纸（远层浅蓝色，近层深）；温暖的宣纸日，远处的山丘呈淡红色；翠绿色或黑色的纸，用来写不喜庆的故事。从主题中选择。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Subtitles are a paper strip in the world**, e.g. a red banner (横批) darker than the picture's reds so cream text holds, serrated edges, swallow-tail ends; a sturdy OFL serif (e.g. Fraunces SemiBold) around 44 px, low, with a paper shadow. It drops in on two 12 fps steps, like a couplet being pasted. Hold ≥ max(1.8 s, speech + 0.7 s); never overlap.
-- **Titles** are cut-out letters (*yang*-cut, counters are real holes) popping in letter by letter on 12 fps steps, with sawtooth border strips and a seal cut by code.
-- Small credits may be printed ink on paper.
+- **字幕是世界上的一张纸条**，例如横批比图片中的红色更深，因此可以容纳奶油色文字，锯齿状边缘，燕尾形末端；坚固的 OFL 衬线（例如 Fraunces SemiBold），大约 44 像素，低，带有纸质阴影。它以两个 12 fps 的速度下降，就像粘贴的对联一样。保持 ≥ max(1.8 s，语音 + 0.7 s)；永不重叠。
+- **标题** 是剪切字母（*yang* 剪切，计数器是真正的孔），以 12 fps 的速度逐个字母弹出，带有锯齿状边框条和通过代码剪切的密封。
+- 小额信用可以用墨水打印在纸上。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters step at 12 fps** (pose sampled at `floor(t·12)/12`); **camera, light, weather, flames and flying pieces move on ones** at 24 fps.
-- Rigs pin pieces at rivets (neck, shoulders, elbows, hips, knees, jaws, tails). Hard poses, tiny eases, 1-frame overshoots ("pop" = 1.15× for one step). Weight comes from **size and camera shake**.
-- In profile, a raised near arm crosses the face: keep hands forward of the face or let a prop cover them.
-- **Folding:** the flap is split into ~16 strips; each is compressed by cosθ and enlarged along the fold by `1 + 0.28·height` (fake perspective), darkened as it stands up, in a lighter back colour past 90°, with a growing shadow and a crease after. About half a second per fold, each on a hit.
-- **Cutting:** the pattern is revealed through a mask of circles along the scissor path; the offcut drops once the outer edge is passed; blades open and close on a subdivision of the beat; scraps flutter out and land.
-- **Unfolding:** successive unfolds a fraction of a second apart, each flap swinging from folded to flat with ease-out (the "pa!" snap), then a scale bump and warm flash on the accent.
+- **角色步长为 12 fps**（姿势在 `floor(t·12)/12` 采样）； **摄像机、光线、天气、火焰和飞行碎片以 24 fps 的速度在** 上移动。
+- 钻机将零件固定在铆钉上（颈部、肩部、肘部、臀部、膝盖、下巴、尾部）。硬姿势、微小的缓动、1 帧超调（“pop”= 1.15× 一步）。重量来自**size和摄影机 shake**。
+- 从侧面看，举起的近侧手臂穿过脸部：将双手放在脸部前方或用道具遮住它们。
+- **折叠：** 翻盖被分成〜16条；每个都被 cosθ 压缩，并被 `1 + 0.28·height`（假透视）沿折叠放大，直立时变暗，超过 90° 时背面颜色较浅，之后有不断增长的阴影和折痕。每次折叠大约半秒，每次点击一次。
+- **切割：** 沿着剪刀路径通过圆圈掩模显示图案；一旦通过外边缘，边角料就会掉落；叶片按照节拍的细分打开和关闭；碎片飘扬并落地。
+- **展开：** 连续展开，相隔不到一秒，每个襟翼都从折叠摆动到平放，并轻松展开（“啪！”一声），然后是鳞片凸起和口音上温暖的闪光。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Extreme close-up tracking the scissor tip | making; attention to craft | a beginning of work; a precise act; a signature |
-| Flat front view, locked | the cut-out as an emblem | a title; a statement; a family portrait |
-| Slow pan across paper layers (parallax) | a world laid out | a village, a route, a timeline |
-| Low wide, a shape standing up from the ground layer | scale, threat | a storm; a rival; a deadline arriving |
-| Top-down tabletop | the craft as plot | folding, cutting, assembling, sorting |
-| Push toward a lit piece, pull back to many | one act spreading | influence; a network lighting up |
-| Page turn / sheet peel | time or place changing | day to night; before and after; chapters |
-| Pull back to an object in a room | the film was a thing someone made | memory; a gift; a tradition |
-| Rotation around a rosette's centre | order, repetition | a cycle; a team |
+|追踪剪刀尖的极端特写|制作;注重工艺|工作的开始；精确的行为；签名|
+|平面前视图，锁定|作为标志的剪纸|标题；一份声明；全家福|
+|缓慢平移纸层（视差）|一个世界|一个村庄、一条路线、一条时间线|
+|低宽，从地面层站立的形状|规模、威胁|一场风暴；竞争对手；截止日期已到|
+|自上而下的桌面|工艺作为情节|折叠、切割、组装、分类|
+|推向一个点燃的部分，拉回许多|一举一动传播|影响;网络点亮|
+|翻页/纸张剥离|时间或地点改变|白天到晚上；之前和之后；章节|
+|拉回房间中的某个物体|影片是某人制造的东西|记忆;一份礼物；一个传统|
+|围绕莲座中心旋转|顺序、重复|一个周期；一个团队|
 
-Framing: layers stay parallel to the screen; depth comes from parallax and paper tones, never from perspective. Transitions are paper actions (fold, page turn, peel, a sheet flying off, a cut through the frame); no dissolves.
+取景：图层与屏幕保持平行；深度来自视差和纸张色调，而不是透视。过渡是纸张动作（折叠、翻页、剥离、一张纸飞走、穿过框架）；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Foley follows the material:** scissors = metallic shear sweep (2.5–9 kHz) + a short ring + a fibre crack; folds = swish + crease tap; unfold = sharp snap; heavy steps = *cardboard* thud, not flesh; paper peel; pasting = a palm pat; match strike, puff; firecrackers = dense clicks 20–60 ms apart with low booms.
-- **Instruments:** a bright Chinese chamber ensemble, not piano and strings and not the opera percussion of shadow puppetry: pipa (tremolo on long notes), zheng (`dan_tranh`: broken chords, glissandi, tremolo), erhu (glides), dizi (flute), sheng or yangqin colours, woodblock, small and big gong, frame drum. Pentatonic modes.
-- Options: one snip = one beat subdivision; a rising zheng run, one note per thing that appears; a frame-drum heartbeat for weight; one big gong saved for one accent; total silence for a held breath.
-- **Voice:** warm storyteller, few lines. Duck music ≈ 9 dB and foley ≈ 3 dB under the voice; keep impacts out of voice windows. Folk names may need an `asr` alias in `lines.json`.
-- Mix to −14 LUFS, **no film grain** (the paper fibres are the texture).
+- **Foley遵循材料：**剪刀=金属剪切扫描（2.5–9kHz）+一个短环+一个纤维裂纹；折叠 = 嗖嗖 + 折痕敲击；展开=锐利的折断；沉重的脚步=*纸板*重击，而不是肉体；纸剥离；粘贴=手掌拍打；火柴罢工，吹气；鞭炮 = 密集的咔哒声，间隔 20-60 毫秒，轰鸣声低沉。
+- **乐器：** 明亮的中国室内乐团，不是钢琴和弦乐，也不是皮影戏的打击乐：琵琶（长音符上的颤音），古筝（`dan_tranh`：分解和弦，滑音，颤音），二胡（滑音），笛子（长笛），笙或扬琴色彩、木版、小锣、大锣、架鼓。五声音阶。
+- 选项：一次剪辑=一次细分；上升的筝声，每出现一个音符；重量的框鼓心跳；一个大锣保留了一种口音；一片寂静，屏住呼吸。
+- **声音：** 温暖的故事讲述者，几句台词。鸭子音乐 ≈ 9 dB 和拟音 ≈ 3 dB 的声音；让影响远离语音窗口。民间名称可能需要 `lines.json` 中的 `asr` 别名。
+- 混合至−14 LUFS，**no 影片颗粒**（纸纤维是纹理）。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Fold – cut – unfold.** Fold a sheet 2/4/8 times; one cut becomes many. Put the unfold on a strong beat. *Fits content like:* one teacher, many students; a single design mass-produced; one seed becoming a field.
-- **Holes are light.** A cut-out lit from behind glows deep red, every hole glows, and the pattern is projected onto the world. *Fits content like:* an idea shining through a person; a lighthouse; a window at night in a story about home.
-- **Symmetry replicates.** A mirrored motif peels off and multiplies (rosette → window flowers → fireworks). *Fits content like:* a franchise; cell division; a song spreading through a crowd.
-- **Scraps have a future.** The bits that fall while cutting come back later (as snow, confetti, stars). *Fits content like:* recycling; leftover time; small failures that add up.
-- **Everything is one flat sheet.** Things share the same cuts, so a ridge can stand up and be a creature, or a wave become a road. *Fits content like:* a landscape that becomes a map; a factory that turns out to be one machine; a zoom out to the made object.
-- **Mirrored pair.** Two figures cut from one folded sheet. *Fits content like:* twins; a partnership; before/after of the same person.
+- **折叠-剪切-展开。** 将一张纸折叠2/4/8次；一刀变成多刀。让展开节奏强劲。 *适合的内容如下：*一位老师，许多学生；单一设计批量生产；一粒种子变成一片田地。
+- **孔很轻。** 从后面照亮的切口发出深红色的光，每个孔都发光，图案投射到世界上。 *适合以下内容：*一个人身上闪耀的想法；一座灯塔；夜晚的一扇窗，讲述着关于家的故事。
+- **对称复制。** 镜像图案剥落并倍增（玫瑰花结→窗花→烟花）。 *适合以下内容：* 特许经营；细胞分裂；一首在人群中传播的歌曲。
+- **废料有未来。** 切割时掉落的碎片稍后会回来（如雪、五彩纸屑、星星）。 *适合以下内容：*回收；剩余时间；小的失败加起来。
+- **一切都是一张平板。** 事物具有相同的切口，因此山脊可以站立起来成为生物，或者波浪可以成为道路。 *适合以下内容：* 变成地图的风景；工厂变成了一台机器；缩小到所制作的对象。
+- **镜像一对。** 从一张折叠纸上剪下的两个人物。 *适合以下内容：*双胞胎；合伙企业； before/after 为同一人。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Red on red** reads as one blob → different ground family, near/far paper tones, inset contours for overlaps.
-- **Darkening a layer through the light map** also darkens what covers it → tint the layer itself (multiply + restore alpha).
-- **A flat cos-squashed flap reads as a sliding card**, not a fold → strips with fake perspective, darken as it stands up, show the back colour.
-- **Cut reveal shows the uncut stack through the holes** → stack thickness inside the "uncut" mask only; the cut part gets its own offset copies.
-- Scissors pointing backwards → the blade axis follows the direction of travel, the rivet a little behind the cutting point.
-- Blank frames between shots → overlap outgoing and incoming paper actions.
-- Engine traps (`put()` transforms, piece boxes, test pages) are in DEMO.md build notes.
+- **红色上的红色**读作一团→不同的地面系列，near/far纸色调，重叠的插图轮廓。
+- **通过光照贴图使图层变暗** 也会使覆盖它的内容变暗 → 对图层本身进行着色（乘以 + 恢复 Alpha）。
+- **A扁平的压扁翻盖读作滑动卡**，不是折叠→具有假透视的条带，立起来时变暗，显示背面颜色。
+- **切割显示通过孔显示未切割的堆叠**→仅“未切割”掩模内的堆叠厚度；剪切的部分有自己的偏移副本。
+- 剪刀指向后方 → 刀片轴遵循行进方向，铆钉稍微位于切割点后面。
+- 镜头之间的空白框 → 重叠输出和输入纸张操作。
+- 引擎陷阱（`put()` 转换、块盒、测试页）位于 DEMO.md 构建说明中。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `paper.js` (paper textures, piece builder: fill, cut, inset, edge, grain, shadows, transmission), `motifs.js` (folk pattern library), `rig.js` (2D affine rig helpers), `tuanhua.js` (8-fold rosette from one wedge × D4), `light.js` (night lightmap, backlit pieces, bloom, rays, masked projected light), `fold.js` (fold – cut – unfold sequence), `hud.js` (subtitle banner, cut-letter text); `?test=` pages draw model sheets from the real engine. A first test not in the demo: a bicycle from `paper.js` pieces (`sawRow` spokes), wheels riveted in `rig.js`, rolling on 12 fps steps.
+在 `demo/` 中：`paper.js`（纸张纹理、片构建器：填充、剪切、插入、边缘、颗粒、阴影、透射）、`motifs.js`（民间图案库）、`rig.js`（2D 仿射骨骼绑定结构助手）、`tuanhua.js` （8 折玫瑰花从一个楔形 × D4），`light.js`（夜间光照图，背光片，绽放，光线，蒙版投影光），`fold.js`（折叠 - 剪切 - 展开序列），`hud.js`（字幕横幅，剪切文字）； `?test=`页面从真实引擎中绘制角色设定表。第一个测试不在示范中：一辆由 `paper.js` 部件（`sawRow` 辐条）制成的自行车，车轮铆接在 `rig.js` 中，以 12 fps 的速度滚动。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the structure, the cast (or none), the sets, the paper families, the opening, the ending, the camera path, the pacing and which native moves carry the story. All far from our demo:
+您可以决定结构、演员阵容（或没有）、场景、纸张系列、开头、结尾、摄影机路径、节奏以及哪个风格特有表现手法承载故事。与我们的示范相去甚远：
 
-- Structures: **a year of twelve cuts** (a zodiac or calendar wheel, one wedge per month, rotating); **an assembly line** (a product built piece by piece from cut parts, each part a pattern); **a letter** (a folded message unfolds panel by panel, each panel a scene).
-- Openings: **a finished pattern** (a full rosette, then one piece falls out and walks away); **an empty ground** (a blank sheet, one fold crease appears); **a crowd of cut figures** already dancing, parallax full.
-- Endings: **refold** (the world folds back into a small square that is handed to someone); **scraps settle** (every offcut drifts down into a new pattern); **backlit only** (the lights go off except behind one cut piece, which projects the last image on the wall).
+- 结构：**十二年切**（生肖或日历轮，每月一个楔形，旋转）； **an流水线**（将零件逐件组装而成的产品，每个零件一个图案）； **一个字母**（折叠的消息逐个面板展开，每个面板一个场景）。
+- 开口：**a 成品图案**（一个完整的玫瑰花结，然后一块掉下来并走开）； **an空地**（一张空白纸，出现一个折痕）； **一群剪纸人物**已经翩翩起舞，视差十足。
+- 结局：**重新折叠**（世界折叠成一个小方块，交给某人）； **废料沉淀**（每个边角料向下漂移成新的图案）； **仅背光**（除了一个切割件后面的灯熄灭，该切割件将最后一个图像投射到墙上）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

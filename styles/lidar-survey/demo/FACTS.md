@@ -1,36 +1,40 @@
-# FACTS — 《林下的田》 The Fields Under the Forest
+<a id="facts--林下的田-the-fields-under-the-forest"></a>
+# FACTS — 《林下的田》 森林下的田野
 
-Every claim on screen and in the narration, its source and the quoted wording. Measured values come from the data in this folder and are labelled as measured or traced on screen. Checked against the final script (timeline.js, film.js) before the last render, 2026-10-16.
+屏幕上和旁白中的每一个主张、其来源和引用的措辞。测量值来自此文件夹中的数据，并在屏幕上标记为测量或追踪。在最后一次渲染（2026 年 10 月 16 日）之前对照最终脚本（timeline.js、film.js）进行检查。
 
-## Sourced claims
+<a id="sourced-claims"></a>
+## 来源声明
 
-| # | Claim (screen / voice) | Source | Quoted wording |
+|#|声明（屏幕/语音）|来源|引用的措辞|
 |---|---|---|---|
-| 1 | The place is Ashford, Connecticut; 41.8875° N, 72.1960° W is inside Ashford town | US Census Bureau Geocoder, geographies by coordinates (County Subdivisions, current vintage), queried 2026-10-16: `https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-72.196&y=41.8875&benchmark=Public_AR_Current&vintage=Current_Current&layers=County+Subdivisions&format=json` | result: "Ashford town" |
-| 2 | In public lidar, stone walls, old roads and foundations of a farming past show under New England forest; aerial photos don't show them | K. M. Johnson & W. B. Ouimet (2014), "Rediscovering the lost archaeological landscape of southern New England using airborne light detection and ranging (LiDAR)", *Journal of Archaeological Science* 43: 9–20. PDF hosted by the UConn Stone Wall Initiative: https://stonewall.uconn.edu/wp-content/uploads/sites/534/2014/03/Johnson-and-Ouimet-2014-Rediscovering-the-lost-archaeological-landscape-of-southern-New-England-using-airborne-LiDAR.pdf | "In aerial and satellite imagery, these features are often hidden from view by a dense forest canopy; but by using LiDAR as others have done, these features become visible for identification and analysis." |
-| 3 | The ridges are stone walls (voice: "Stone walls. Old fields, under the trees."; screen: 石墙) | same paper | "Stone walls appear as thin linear ridges of raised elevation that can form polygonal or linear patterns dependent on field or farmstead layout or arrangement. The presence of the walls indicates that the land nearby was likely used for agriculture and was cleared at one point in time" |
-| 4 | Ashford ≈ 100 km² (card: 阿什福德全镇 · 约 100 km²) | same paper | "The town is comprised of approximately 100 km2 of land." |
-| 5 | 1870: 67.3 km² cleared farmland (card; voice: "In 1870, two-thirds of Ashford was farmland.") | same paper, citing the 1870 Federal Census agricultural schedule | "the agricultural schedule from the Federal Census of 1870 denotes that 67.3 km2 were listed as “improved,” indicating that it had been cleared for agriculture" |
-| 6 | 2006: 80.2 km² forest (card; voice: "By 2006, four-fifths was forest.") | same paper, citing 2006 land cover (UConn CLEAR) | "The 2006 land cover data for the town indicates that 80.2 km2 are currently forested (includes deciduous, coniferous, and forested wetlands)" |
-| 7 | The photo is a July 2016 summer aerial (2016 年 7 月 · 夏季航拍; NAIP 航拍 · 2016-07-24) | NAIP item `ct_m_4107207_sw_18_.6_20160724_20160913`, Microsoft Planetary Computer STAC, collection `naip` | item datetime 2016-07-24, gsd 0.6 m |
-| 8 | The point cloud is USGS 3DEP 2016 (USGS 3DEP 2016) | `USGS_LPC_CT_Statewide_B8_2016`, Entwine Point Tile on AWS Open Data: https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CT_Statewide_B8_2016/ept.json | dataset name, Connecticut statewide 2016 |
+|1|地点是康涅狄格州阿什福德； 41.8875° N，72.1960° W 位于阿什福德镇内|美国人口普查局地理编码器，按坐标划分的地理位置（县分区，当前年份），2026 年 10 月 16 日查询：`https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-72.196&y=41.8875&benchmark=Public_AR_Current&vintage=Current_Current&layers=County+Subdivisions&format=json`|结果：“阿什福德镇”|
+|2|在新英格兰森林下的公共激光雷达、石墙、古老的道路和过去农业的地基上；航拍照片无法显示它们|K. M. Johnson 和 W. B. Ouimet (2014)，“利用机载光探测和测距 (LiDAR) 重新发现新英格兰南部失落的考古景观”，*《考古科学杂志》* 43：9-20。由康涅狄格大学石墙倡议主办的 PDF：https://stonewall.uconn.edu/wp-content/uploads/sites/534/2014/03/Johnson-and-Ouimet-2014-Rediscovering-the-lost-archaeological-landscape-of-southern-New-England-using-airborne-LiDAR.pdf|“在航空和卫星图像中，这些特征通常被茂密的森林树冠隐藏起来；但通过像其他人一样使用激光雷达，这些特征就变得可见，可以进行识别和分析。”|
+|3|山脊是石墙（声音：“石墙。古老的田野，在树下。”；屏幕：石墙）|同一张纸|“石墙看起来像凸起的细线脊，可以根据田地或农庄的布局或排列形成多边形或线性图案。墙的存在表明附近的土地可能用于农业，并在某个时间点被清理”|
+|4|阿什福德约 100 平方公里（卡：阿什福德全镇·约 100 平方公里）|同一张纸|“该镇由大约 100 平方公里的土地组成。”|
+|5|1870 年：67.3 平方公里的农田被清理（卡片；声音：“1870 年，阿什福德的三分之二是农田。”）|同一篇论文，引用了 1870 年联邦人口普查农业时间表|“1870 年联邦人口普查的农业一览表表明，67.3 平方公里被列为“改良”，表明它已被清理用于农业”|
+|6|2006 年：80.2 平方公里的森林（卡片；声音：“到 2006 年，五分之四是森林。”）|同一篇论文，引用了 2006 年土地覆盖情况（UConn CLEAR）|“该镇 2006 年土地覆盖数据表明，目前有 80.2 平方公里的森林覆盖（包括落叶、针叶和森林湿地）”|
+|7|照片为2016年7月夏季航拍（2016年7月·夏季航拍；NAIP航拍·2016-07-24）|NAIP 商品 `ct_m_4107207_sw_18_.6_20160724_20160913`，微软行星计算机 STAC，系列 `naip`|项目日期时间 2016-07-24，gsd 0.6 m|
+|8|点云为USGS 3DEP 2016（USGS 3DEP 2016）|`USGS_LPC_CT_Statewide_B8_2016`，AWS 开放数据上的缠绕点图块：https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CT_Statewide_B8_2016/ept.json|数据集名称，康涅狄格州全州 2016|
 
-Ratios in the voice: 67.3 / ≈100 km² → "two-thirds"; 80.2 / ≈100 km² → "four-fifths". The bars on the card are drawn against 100 km².
+语音中的比率：67.3 / ≈100 km²→“三分之二”； 80.2 / ≈100 km² → “五分之四”。卡上的条形是针对 100 平方公里绘制的。
 
-## Measured in this folder (labelled as measured / traced on screen)
+<a id="measured-in-this-folder-labelled-as-measured--traced-on-screen"></a>
+## 在此文件夹中测量（在屏幕上标记为测量/描迹）
 
-| Value on screen | How | File |
+|屏幕上的值|如何|文件|
 |---|---|---|
-| 4,789,797 个回波 (returns) | all returns of the EPT nodes (depth 0–10, full resolution) inside the 744 × 1000 m grid, noise classes 7 and 18 removed | `tools/build_data.py` → `data/facts.json` (`points`) |
-| 0.744 km² | grid extent 744 m × 1000 m | `data/facts.json` (`area_km2`) |
-| 27.6 % 打到地面的回波 (1,319,669 / 4,789,797) | share of returns classified ground (class 2) by the data provider | `data/facts.json` (`ground`, `ground_share`) |
-| 树冠高度 ruler 0–30 m and its histogram | height of every non-ground return above a ground model triangulated from the class-2 returns (0.5 m grid); 95th percentile 26.1 m | `data/facts.json` (`veg_hag_hist`, `canopy_p95`) |
-| 3.4 km 已描出的石墙, 22 段 (voice: "We traced 3.4 km of wall") | 22 walls digitised by eye on a local relief model (DTM minus a 5 m Gaussian), each snapped to the ridge crest within ±2.5 m and smoothed; total 3,425.5 m. Conservative: faint ridges were left out | `data/walls_traced.json` (the hand tracing), `tools/trace.py` → `data/walls.json` |
-| 石墙剖面: 0.56 m high, 2.5 m wide at half height (voice: "Just over half a metre high") | wall C, 60 m of wall (along 20–80 m), 1,451 ground returns within 0.5 m of 60 profile lines spaced 1 m, offset across the wall, detrended by a line fitted beyond ±3.5 m; median in 0.5 m bins; height = peak of the median; width = full width at half height | `tools/profile.py` → `data/profile_C.json` |
-| 地形起伏 ×2（局部）| display only: local relief (DTM minus a 5 m Gaussian) doubled on the rendered surface; all measurements use the undistorted data | `tools/build_data.py` (`EXAG`) |
+|4,789,797 个回波 (returns)|744 × 1000 m 网格内 EPT 节点（深度 0–10，全分辨率）的所有回波，噪声类别 7 和 18 已删除|`tools/build_data.py` → `data/facts.json` (`points`)|
+|0.744平方公里|网格范围 744 m × 1000 m|`data/facts.json` (`area_km2`)|
+|27.6 % 打到地面的回波 (1,319,669 / 4,789,797)|数据提供者分类的回报份额（第 2 类）|`data/facts.json` (`ground`、`ground_share`)|
+|树冠高度标尺0~30 m及其直方图|从 2 级回波（0.5 m 网格）三角测量的地面模型上方的每个非地面回波的高度； 95% 26.1 m|`data/facts.json` (`veg_hag_hist`、`canopy_p95`)|
+|3.4 km 已描出的石墙，22 段（语音：“我们追踪了 3.4 km 的墙”）|22 堵墙在局部浮雕模型上通过肉眼数字化（DTM 减去 5 m 高斯），每堵墙都在 ±2.5 m 范围内捕捉到山脊顶部并进行平滑处理；总长 3,425.5 m。保守：忽略了微弱的山脊|`data/walls_traced.json`（手部追踪），`tools/trace.py` → `data/walls.json`|
+|石墙剖面：高0.56m，半高宽2.5m（语音：“高半米多一点”）|墙 C，墙长 60 m（沿 20-80 m），60 条间隔 1 m 的剖面线 0.5 m 范围内有 1,451 个地面回波，穿过墙偏移，通过超出 ±3.5 m 的线消除趋势； 0.5 m 箱中的中位数；高度 = 中位数的峰值；宽度=半高全宽|`tools/profile.py` → `data/profile_C.json`|
+|位置升降×2（局部）|仅显示：局部起伏（DTM 减去 5 m 高斯）在渲染表面上加倍；所有测量均使用未失真的数据|`tools/build_data.py` (`EXAG`)|
 
-## Not claimed
+<a id="not-claimed"></a>
+## 未认领
 
-- No date is given for these particular walls. The paper links walls to agriculture and Ashford's clearance to the 19th century; the film says only "old fields" and gives the town's 1870 and 2006 figures.
-- The film does not say this patch is one of the paper's mapped sites; it is a patch inside the same town, found by scouting the 3DEP elevation service and NAIP imagery.
-- Modern houses and a gravel lane east of x ≈ 235 m are outside the survey window and not shown.
+- 这些特定墙壁的建造日期没有给出。这篇论文将围墙与农业以及阿什福德的清理与 19 世纪联系起来； 影片仅表示“旧田地”，并给出了该镇 1870 年和 2006 年的数据。
+- 影片并没有说这个补丁是该论文的映射站点之一；它是同一个城镇内的一块补丁，是通过侦察 3DEP 高程服务和 NAIP 图像发现的。
+- 现代房屋和 x ≈ 235 m 以东的碎石巷位于测量窗口之外，未显示。

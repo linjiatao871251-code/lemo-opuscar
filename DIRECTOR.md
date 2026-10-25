@@ -1,137 +1,151 @@
-# Directing a Lemo-Opuscar film
+<a id="directing-a-lemo-opuscar-film"></a>
+# Lemo-Opuscar：短片导演指南
 
-The directing method behind every film in this library. Pair it with one `styles/<slug>/STYLE.md` (the style) and [`TECHNIQUE.md`](TECHNIQUE.md) (how to build).
+本页介绍风格库中每部影片采用的导演方法。请配合一个 `styles/<slug>/STYLE.md`（风格定义）以及 [`TECHNIQUE.md`](TECHNIQUE.md)（制作技术）使用。
 
-You are the director, not a tech demo. A film is judged in this order: **sound, rhythm, camera, directing** (performance, staging, emotional arc). Good-looking frames are only the starting point.
+你的职责是执导影片。评价影片时，依次关注**声音、节奏、摄影、导演处理**（表演、场面调度、情感弧线）。好看的单帧画面只是起点。
 
 ---
 
-## 1. Take the brief
+<a id="1-take-the-brief"></a>
+## 1. 确认需求
 
-The user gives a style and a topic, sometimes more (length, language, voice, must-have shots, brand rules). Everything else is your decision. Ask once, in a single message (AGENTS.md, Workflow), then no more questions. Defaults:
+用户提供风格和主题，也可能指定时长、语言、音色、必备镜头及品牌规则。其余由你决定。按照 AGENTS.md 的工作流程，在一条消息中完成唯一一轮提问，之后不再反复询问。默认设置：
 
-- Length **30–60 s**; shorter and tight beats padded. Beyond two or three minutes multiplies time and token cost: tell the user.
-- 1920×1080 at 24 fps by default; an output frame rate set in the style's `STYLE.md` (30 or 60 fps, for example) wins, and is what you pass to `--fps` and `mux.sh`; other sizes (vertical 1080×1920, for example) with `--size WxH` on the render tools.
-- Voice and subtitles in the language the user writes in. Subtitles burned in and exported as `.srt`.
-- Loudness −14 LUFS.
+- 时长 **30–60 s**；宁可简短紧凑，也不拖长凑时。超过两三分钟会显著增加耗时与 token 成本，需告知用户。
+- 默认 1920×1080、24 fps。如果风格的 `STYLE.md` 指定其他输出帧率（如 30 或 60 fps），以风格要求为准，并将该值传给 `--fps` 和 `mux.sh`。其他画幅（如竖屏 1080×1920）通过渲染工具的 `--size WxH` 指定。
+- 配音和字幕使用用户当前语言。字幕烧录进画面，同时导出 `.srt`。
+- 响度 −14 LUFS。
 
-Say it in the questions when it matters: a good Chinese voice uses Microsoft's online service (edge-tts) and needs a connection; offline, Kokoro reads Chinese but sounds plain (TECHNIQUE.md §4).
+必要时在提问中说明：效果较好的中文配音使用微软在线服务 edge-tts，需要联网；离线 Kokoro 也能朗读中文，但音色较普通（TECHNIQUE.md §4）。
 
-Requests that only change the plan:
+以下需求只调整制作计划：
 
-- **No voice, or no subtitles.** Drop those steps and say so in the treatment.
-- **Their own voice recording.** Use it as it is; transcribe it with faster-whisper for word timings.
-- **Their own material**: logos, photos, footage, and for styles built from real material (the Evidence Films) their own data, scans, imagery or CAD. Ask whether they have any; what they give comes first, and the sources in the `STYLE.md` are the fallback. Before you download from those sources, tell the user what you will fetch, from where and under which licence. Rights: section 12.
+- **不需要配音或字幕。** 跳过相应步骤，并在创作方案中注明。
+- **使用用户自己的录音。** 保持原录音，使用 faster-whisper 转写并获取逐词时间戳。
+- **使用用户自己的素材。** 包括标志、照片、影像；实证影像类还包括数据、扫描、图像或 CAD。询问用户是否已有素材，优先使用用户提供的内容，`STYLE.md` 中的来源作为备选。从备选来源下载前，说明下载什么、来源及许可。版权规则见第 12 节。
 
-## 2. Find a benchmark first
+<a id="2-find-a-benchmark-first"></a>
+## 2. 先建立质量标杆
 
-Before writing anything, pick one or two reference works (films, title sequences, games, ads) that set the bar for this style **and this topic**. They are your choice, made for the user's film; don't borrow the demo's. Write down:
+创作前选择一两部同时适合**当前风格和当前主题**的参考作品，如影片、片头、游戏或广告。为用户的影片重新选择，不沿用示范短片的参考。写清楚：
 
-- **What to learn**: composition, pacing, camera grammar, colour logic, score structure.
-- **What not to take**: characters, designs, melodies, specific shots, logos, fonts.
+- **学习什么**：构图、节奏、镜头语言、色彩逻辑、配乐结构。
+- **不照搬什么**：角色、设计、旋律、具体镜头、标志和字体。
 
-The benchmark lifts quality more than any rule below.
+合适的质量标杆比下面任何单条规则都更能提升成片质量。
 
-## 3. Shape the story
+<a id="3-shape-the-story"></a>
+## 3. 塑造故事
 
-- **One subject, one goal, one turn.** A character (or a single object, product or idea) wants something, something changes, it ends differently from how it began.
-- **Hook in the first 3 seconds.** No slow logo reveal before anything happens.
-- **An ending that echoes.** Bookend the opening, reveal the scale, or let the character do the thing right the second time.
-- **One native move**: a moment only this medium can do (a fold that becomes a transition, ink that blooms into the next scene, a type grid that snaps into the logo). Put it at the emotional peak. `STYLE.md` lists the medium's native moves; pick or invent the one your story needs.
-- **Cut the extras.** One gag the audience reads at thumbnail size beats three they can't. If a beat needs explaining, remove it.
+- **一个主体、一个目标、一次转折。** 角色（也可以是物体、产品或概念）有一个诉求，某件事发生变化，结局与开头形成差别。
+- **前 3 秒抓住观众。** 不要在故事开始前缓慢展示标志。
+- **结尾呼应开头。** 首尾照应、揭示整体规模，或者让角色第二次终于把事情做对。
+- **一个风格特有的表现手法。** 安排只有当前媒介才能实现的瞬间，如折纸变成转场、墨迹晕染出下一场景、排版网格拼成标志。把它放在情感高点。`STYLE.md` 列出了该媒介的表现手法，选择或创造适合故事的一种。
+- **删去多余内容。** 一个缩略图尺寸也能看懂的笑点，胜过三个看不清的笑点。需要额外解释才能成立的情节节拍应删去。
 
-## 4. Write the treatment
+<a id="4-write-the-treatment"></a>
+## 4. 编写创作方案
 
-Write `TREATMENT.md` before drawing anything, and before you open the style's `DEMO.md` or demo code (an Edit & Documentary style gathers its material first: AGENTS.md, "Treatment first"):
+开始绘画前、打开风格的 `DEMO.md` 或示范代码前，先编写 `TREATMENT.md`。剪辑与纪实类应先收集素材，见 AGENTS.md 的“先写创作方案，再看示范”。方案包含：
 
-1. **Three candidate structures**, a few lines each (for example: a single journey, a before/after, a countdown, a list that turns), then the one you chose and why. Choose the opening image, the ending and the shape of the score from the topic too; the first idea that comes to mind for a style is usually its cliché.
-2. **Logline and arc**: one sentence, then setup → turn → ending.
-3. **Benchmark**: learn / don't learn (section 2).
-4. **Shot list**: for every shot, the framing (wide / full / medium / close / insert), angle, camera move (push, pull, pan, track, crane, zoom), duration, and **why** it is shot that way.
-5. **Beat sheet**, second by second.
-6. **Cue map**: tempo, bar grid, instrumentation per section, and on which beat every cut, key action and subtitle lands.
-7. **Sound design table**: for each section, the ambience bed, the main foley and the music state.
-8. **Subtitle and title design**: the type is part of the style.
+1. **三种候选结构**，每种几行，例如单次旅程、前后对比、倒计时或带转折的清单。说明最终选择及理由。开场画面、结尾与配乐走向也应从主题出发；一想到某种风格就冒出的第一个点子，往往是套路。
+2. **一句话梗概与情节弧线**：先写一句话，再写铺垫 → 转折 → 结局。
+3. **质量标杆**：列出学习和不照搬的内容（第 2 节）。
+4. **镜头表**：每镜说明景别（远景／全景／中景／近景／插入特写）、角度、运镜（推、拉、摇、跟、升降、变焦）、时长，以及**为什么这样拍**。
+5. **逐秒节拍表**。
+6. **音画节拍对照表**：速度、小节网格、各段配器，以及每个剪切、关键动作和字幕落在哪一拍。
+7. **声音设计表**：逐段列出环境底声、主要拟音和配乐状态。
+8. **字幕与标题设计**：字体也是风格的一部分。
 
-## 5. Prove the look
+<a id="5-prove-the-look"></a>
+## 5. 验证视觉效果
 
-- **With characters**: draw a model sheet (turnaround, 3–4 expressions, 2–3 key poses, palette) plus two style frames.
-- **Without characters**: three style frames from the film, one of them the signature shot.
+- **有角色时**：绘制角色设定表（转面图、3–4 个表情、2–3 个关键姿势、配色），再制作两张风格定帧。
+- **没有角色时**：制作三张影片风格定帧，其中一张呈现标志性镜头。
 
-Render them with the real drawing code, not a mock-up, and check them yourself against the `STYLE.md` before going on.
+必须使用实际绘图代码渲染。继续制作前，自行对照 `STYLE.md` 检查。
 
-### The storyboard (only if the user asked for one)
+<a id="the-storyboard-only-if-the-user-asked-for-one"></a>
+### 分镜审核（仅在用户要求时）
 
-Render 6–9 key shots with the real drawing code, tiled into one sheet (`core/render/sheet.py`) with shot number, framing, duration and line under each. Send it with the logline and what you are least sure about, and **wait for approval**. If the user didn't ask for one, don't stop.
+用实际绘图代码渲染 6–9 个关键镜头，通过 `core/render/sheet.py` 拼成一页，每格下方注明镜号、景别、时长与台词。连同一句话梗概及最不确定的地方一起交给用户，**等待批准**。用户未要求审分镜时，不停下等待。
 
-## 6. Sound is half the film
+<a id="6-sound-is-half-the-film"></a>
+## 6. 声音占影片的一半
 
-- **Every visible action has a sound**: landings, page turns, cuts, drips, clicks, cloth. Match the material (paper, wood, metal, ink and glass all sound different).
-- **Three layers**: ambience (room, wind, rain, city), foley (tied to actions) and music. Duck the music under dialogue and key foley.
-- **At least two real silences**, or near-silences, before the turn or the emotional peak. The first sound after the silence should be one of the most important sounds in the film.
-- **Use sound as a transition** at least twice: bring the next scene's sound in early (J-cut) or let the last scene's sound run over the cut (L-cut).
-- **Avoid generic "piano and strings".** Score in the instruments of the style's sound palette.
+- **可见动作都要有对应声音**：落地、翻页、切换、滴水、点击、衣料摩擦。声音应匹配材质，纸、木、金属、墨与玻璃各不相同。
+- **三个声音层次**：环境声（室内、风、雨、城市）、拟音（与动作同步）、配乐。在对白和关键拟音出现时压低配乐。
+- **至少两次真正的静默或近乎静默**，安排在转折或情感高点之前。静默后的第一个声音应是全片最重要的声音之一。
+- **至少两次用声音衔接场景**：让下一场的声音提前进入（J-cut），或让上一场声音延续到切换后（L-cut）。
+- **避免泛用的“钢琴加弦乐”。** 按风格声音体系指定的乐器进行配乐。
 
-## 7. Rhythm: the music grid comes first
+<a id="7-rhythm-the-music-grid-comes-first"></a>
+## 7. 节奏：先定音乐网格
 
-- Write the cue map before animating. The picture locks to the grid, and a script checks every cue (TECHNIQUE.md §3).
-- **Vary the pace**: alternate fast and slow, include one clear acceleration or deceleration, and give the audience one breath (a long take or a held pause). A film at one even speed has failed.
-- One action, one sound, one cut, but don't cut on every beat. Leave time to see.
-- **Pace for the viewer, not the clock**:
-  - Hold every subtitle at least 1.8 s, and never shorter than the spoken line + 0.6 s.
-  - After text finishes animating in, hold it for roughly (letters ÷ 15 + 1.5) s in English, (characters ÷ 4.5 + 1.5) s in Chinese; `readcheck.mjs` checks this for you.
-  - Hold a title card at least 4 s.
-  - Give failures and gags enough time to be understood.
-  - Fast is fine; make it fast with fewer words per screen, not by cutting before people finish reading.
+- 动画制作前先写音画节拍对照表。画面与网格对齐，并用脚本检查每个提示点（TECHNIQUE.md §3）。
+- **节奏要有变化**：快慢交替，至少一次明显加速或减速，并给观众一次喘息（长镜头或停顿）。全片匀速视为失败。
+- 一个动作、一个声音、一次剪切，但不必每拍都切。给观众看清的时间。
+- **按观众的阅读速度安排时长**：
+  - 每条字幕至少停留 1.8 s，且不短于台词时长 + 0.6 s。
+  - 文字入场动画完成后，英文约停留（字母数 ÷ 15 + 1.5）s，中文约停留（字数 ÷ 4.5 + 1.5）s；使用 `readcheck.mjs` 检查。
+  - 标题卡至少停留 4 s。
+  - 失败动作与笑点要留出理解时间。
+  - 可以快，但应靠减少每屏字数实现，不能在观众读完前切走。
 
-## 8. Camera: every shot needs a reason
+<a id="8-camera-every-shot-needs-a-reason"></a>
+## 8. 摄影：每个镜头都有理由
 
-- Use at least **four different camera moves** and real changes of framing. 2D has a camera too: push, pull, parallax, focus pulls, frames within frames.
-- **One signature shot** people remember: a oner, a scale reveal, a transition made from the medium itself.
-- **Design transitions inside the medium** (a page turn, a carved line growing, ink spreading), as one consistent grammar. Avoid default fades and hard cuts.
-- At key moments the subject fills at least a third of the frame height, with clear staging and a readable silhouette.
+- 至少使用**四种不同的运镜**，并确实改变景别。二维画面也有摄影机：推、拉、视差、焦点转移、框中框。
+- **设计一个令人记住的标志性镜头**：如一镜到底、规模揭示，或由表现媒介本身形成的转场。
+- **在媒介内部设计转场**：如翻页、刻线生长、墨迹扩散，形成一致的镜头语言。避免默认淡入淡出和硬切。
+- 关键时刻，主体高度至少占画面三分之一，场面调度清楚，轮廓易辨。
 
-## 9. Performance
+<a id="9-performance"></a>
+## 9. 表演
 
-- **Anticipation, action, follow-through** on every meaningful move. Characters change emotion. They do not just slide across the screen.
-- **Motion continuity**, especially for characters built from code rigs:
-  - Blend every pose with keyframes and easing; never switch poses inside an `if`. The only exception is a deliberate one-frame comic pop.
-  - Check shoulders and arms on a large action test sheet (reach, raise, run, kneel) before shooting (TECHNIQUE.md §10).
-  - Held props sit **between the palms**, at a depth between the two arms. A hand-over interpolates from one palm to the other. A rolling object turns by distance ÷ radius.
-  - Step through key actions at 0.2 s intervals, enlarged.
-- Check every expression at final size, especially eyebrow direction: "worried" and "angry" are one flip apart.
+- 重要动作都要有**预备、动作、余势**。角色需要改变情绪，不能只是横向滑过屏幕。
+- **保持动作连续**，尤其是用代码骨骼构建的角色：
+  - 用关键帧和缓动衔接姿势，不得在 `if` 中直接切换姿势。唯一例外是有意设计的单帧喜剧突变。
+  - 正式拍摄前，用大尺寸动作测试页检查伸手、举手、跑、跪等动作中的肩臂表现（TECHNIQUE.md §10）。
+  - 手持道具放在**两掌之间**，深度也位于两臂之间。交接时从一只手掌的位置插值到另一只；滚动物体的转角按距离 ÷ 半径计算。
+  - 关键动作每隔 0.2 s 抽帧放大检查。
+- 以最终输出尺寸检查每个表情，尤其是眉毛方向：“担忧”和“愤怒”可能只差一次翻转。
 
-## 10. The failures we saw most
+<a id="10-the-failures-we-saw-most"></a>
+## 10. 常见失败
 
-- Subject too small, too far away, or pushed against the frame edge.
-- Too dark to read, or a colour laid on the same colour (red on red).
-- Subtitles covering the subject.
-- A gag or failure too fast to understand.
-- Blank frames in transitions.
-- A timed effect (iris, zoom, follow cam) that doesn't track the subject after the camera moves (one world → screen function, TECHNIQUE.md §2).
+- 主体过小、太远，或被挤到画面边缘。
+- 画面过暗难以辨认，或同色叠同色（如红色压在红色上）。
+- 字幕遮住主体。
+- 笑点或失败动作过快，看不明白。
+- 转场出现空白帧。
+- 定时效果（光圈、变焦、跟拍）在摄影机移动后没有继续跟随主体。应统一使用世界坐标 → 屏幕坐标函数（TECHNIQUE.md §2）。
 
-## 11. Before you deliver
+<a id="11-before-you-deliver"></a>
+## 11. 交付前
 
-- Run the review loop (TECHNIQUE.md §8): contact sheets, 0.2 s strips of key actions, one full-speed viewing with sound.
-- **One fix round.** Fix everything the review and the checks below find in one round, then check once more. Small fixes that second check turns up (a level, a frame) belong to the same round; anything bigger, tell the user in one line when you deliver. The user's notes after delivery are new rounds: change only what they ask.
-- **Not the demo again.** After the treatment, read `DEMO.md` and compare: structure, opening, signature shot, camera path, score shape, ending. At least four of the six must differ; rethink the ones that match. Before delivery, put your contact sheet next to the demo poster (`styles/<slug>/poster.jpg`) as a last check.
-- Voice: every line transcribes back correctly (speech-to-text check). For Chinese, one misheard character in a short line is normal: listen, and if it is right, let the check expect what the model heard (TECHNIQUE.md §4).
-- Loudness about −14 LUFS; no black frames, no NaN frames; subtitles in sync and not covering key action.
-- Every row of the sound design table is actually in the mix.
-- No LemoLab sign-off: `grep -rniE "lemo ?lab|opus 5\.5" <project folder>` finds nothing outside `LICENSE`, `CREDITS` and the library's path in `LIB=` lines, and you have watched the last seconds of the film (text drawn into an image can't be grepped).
+- 完成复查流程（TECHNIQUE.md §8）：镜头接触表、关键动作每隔 0.2 s 的连帧，以及一次带声音的正常速度全片观看。
+- **集中修复一轮。** 把复查和下面检查发现的问题集中修好，再检查一次。第二次发现的小问题（音量、单帧）归入同一轮；更大的遗留问题在交付时用一句话说明。交付后的用户反馈属于新一轮，只修改用户提出的内容。
+- **不能重做一遍示范短片。** 写完创作方案后，阅读 `DEMO.md`，比较结构、开场、标志性镜头、摄影机路径、配乐走向、结尾六项，至少四项不同；相同处需重新构思。交付前，把自己的镜头接触表与示范海报 `styles/<slug>/poster.jpg` 并排做最后检查。
+- 配音逐句经过语音转写检查。中文短句被误识别一个字很常见；先听，如果实际发音正确，可让检查预期匹配模型识别结果（TECHNIQUE.md §4）。
+- 响度约 −14 LUFS；无黑帧、无 NaN 帧；字幕同步且不遮挡关键动作。
+- 声音设计表中的每一行，都必须实际出现在混音中。
+- 不出现 LemoLab 片尾署名：运行 `grep -rniE "lemo ?lab|opus 5\.5" <project folder>`，除 `LICENSE`、`CREDITS` 和 `LIB=` 行中的库路径外，应无匹配；同时亲自观看结尾几秒，因为画进图像里的文字无法用文本搜索查到。
 
-**Deliver**, in the project folder (the complete list):
+**完整交付清单**，全部放入项目文件夹：
 
-- `<name>.mp4` (24 fps unless `STYLE.md` sets another rate, about −14 LUFS) and `poster.jpg`;
-- `<name>.srt`, when the film has narration, dialogue or subtitles;
-- `TREATMENT.md`;
-- `CREDITS`: every third-party asset in the film (sample libraries, music, fonts, images, the voice engine) with its source and licence (TECHNIQUE.md §11);
-- the source, with a one-command `build.sh` (TECHNIQUE.md §2).
+- `<name>.mp4`（默认 24 fps；`STYLE.md` 另有规定时依其要求；约 −14 LUFS）和 `poster.jpg`；
+- 有旁白、对白或字幕时，提供 `<name>.srt`；
+- `TREATMENT.md`；
+- `CREDITS`：列出影片中全部第三方素材（采样音色库、音乐、字体、图像、配音引擎）及其来源和许可（TECHNIQUE.md §11）；
+- 源码，以及一条命令即可执行的 `build.sh`（TECHNIQUE.md §2）。
 
-**Tell the user**, in their language: where the project folder and the film are; that `CREDITS` lists the third-party assets in the film and their licences; and that they are responsible for the materials they use in it.
+**用用户的语言告知**：项目文件夹与影片位置；`CREDITS` 列出了第三方素材及许可；用户须对所使用的素材负责。
 
-## 12. Copyright red lines
+<a id="12-copyright-red-lines"></a>
+## 12. 版权边界
 
-- References teach grammar only. Don't copy characters, designs, melodies, shots, logos or type designs.
-- No existing works, games, brands or events appear in the film unless the user owns them or has the right to use them. That includes the logos, photos and footage the user hands you: use them when they say they have the right, otherwise draw fictional stand-ins.
-- Some of our demos are unofficial fan films of real events or characters. Keep the style, and never carry those names, marks or characters into a user's film.
+- 参考作品只用于学习表现方法，不复制角色、设计、旋律、具体镜头、标志或字体设计。
+- 只有用户拥有或有权使用时，现有作品、游戏、品牌和事件才能出现在影片中。用户提供的标志、照片和影像也一样：用户声明有使用权时采用，否则绘制虚构替代内容。
+- 部分示范是基于真实事件或角色的非官方同人短片。保留其风格，不把这些名称、标志或角色带入用户影片。

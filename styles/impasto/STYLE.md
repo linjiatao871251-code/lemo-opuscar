@@ -1,101 +1,112 @@
-# Impasto · Palette Knife — Style Prompt
+<a id="impasto--palette-knife--style-prompt"></a>
+# 油画厚涂：风格提示词
 
-> Thick oil paint laid with a palette knife: big, flat, sharp-edged planes of colour, raked by light so every ridge of paint shows. Clarity first: value structure before texture, hard edges at the focus, calm planes everywhere else.
-> References (grammar only): the opening titles of *The Umbrellas of Cherbourg* (1964) (overhead choreography read as moving colour); palette-knife street paintings (Leonid Afremov and the genre around him) (knife mosaic, vertical wet reflections, warm lights against cool shadow); Sorolla / Sargent (few, decisive strokes and strong light); Edgar Wright's music-locked editing (one action, one sound, one cut). Never copy their images, compositions, melodies or characters, and never name them in the film.
+> 用调色刀涂抹厚厚的油画：大、平坦、边缘锋利的色彩平面，在光线的照射下，使油漆的每一个脊线都显现出来。清晰度第一：结构优先于纹理，焦点处的硬边，其他地方的平静平面。
+> 参考资料（仅语法）：《瑟堡的雨伞》（1964 年）的片头（头顶编舞读作动人的色彩）；调色刀街头绘画（列昂尼德·阿夫雷莫夫和他周围的流派）（刀马赛克、垂直湿反射、温暖的灯光与冷色的阴影）；索罗拉/萨金特（很少，果断的笔画和强光）；埃德加·赖特 (Edgar Wright) 的音乐锁定编辑（一个动作、一种声音、一个剪辑）。切勿复制他们的图像、作品、旋律或人物，也切勿在影片中命名他们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A moving oil painting made of knife strokes. Each stroke is a real object: a slanted plane of paint with a ridge where the blade pressed, a lip where it lifted off, broken streaks where the paint ran out, two colours dragged into each other. The world is **repainted from its strokes every frame**, but static paint never moves: only things that move in the story move. Light rakes across a height field, so the paint has body.
+一幅由刀笔画成的动人油画。每一笔都是一个真实的物体：一个倾斜的油漆平面，在刀片按下的地方有一个脊，在刀片抬起的地方有一个唇部，在油漆耗尽的地方有破碎的条纹，两种颜色相互拖拽。世界是 **每帧都根据笔画重新绘制的**，但静态油漆永远不会移动：只有故事中移动的东西才会移动。光线掠过一个高度场，因此油漆具有实体。
 
-The look is clear and graphic (readable like a children's book at thumbnail size) but has the tactile surface of impasto at 100 % crop.
+外观清晰且图形化（像缩略图大小的儿童读物一样可读），但在 100% 裁剪时具有厚涂的触感表面。
 
-Not a Van Gogh swirl filter (strokes boiling everywhere), not a brush texture over flat vector art, not watercolour (paint is opaque), not a "painterly" photo filter (strokes are designed, not sampled from noise).
+不是梵高漩涡滤镜（笔触到处沸腾），不是平面矢量艺术上的画笔纹理，不是水彩画（颜料不透明），不是“绘画式”照片滤镜（笔触是设计的，不是从噪音中采样的）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Value first.** Design each set as a flat, value-planned illustration (3 values minimum), then convert it to strokes. If the reference doesn't read at 480 px wide, no brushwork will save it.
-- **Stroke sizes by importance and depth.** Coarse to fine: large planes in sky and walls, a few px only at edges and faces (per shape: `maxR`, `detail`, `dir`).
-- **Strokes never cross shape groups**, so silhouettes stay crisp. Lost edges are opt-in (put two shapes in the same `group`).
-- **Thin underpainting** (the reference itself, blurred ~1.5 px) under the strokes, so the canvas never peeks through as outlines.
-- **Knife stroke**: longer than wide (≈ 1.7–3.1 × radius long, 0.95–1.45 × radius wide), slanted ends, small angle and value jitter (≈ ±13°, ±6 %). Solid objects that must read as silhouettes (figures, props) get little or no ragged run-out.
-- **Light** rakes over a height field; wet or glossy surfaces get slightly more specular.
-- **Reflections** (wet ground, glass, water) are **explicit stacks of short horizontal knife dabs** under each light source, broken and fading; never a painted rectangle.
-- Render supersampled (2×). **No film grain**: grain plus compression eats the knife edges.
+- **值优先。** 将每组设计为平面、价值规划插图（最少 3 个值），然后将其转换为笔画。如果参考文献不能以 480 像素宽阅读，则任何笔触都无法保存它。
+- **按重要性和深度划分的笔划大小。** 从粗到细：天空和墙壁中的大平面，仅在边缘和面上的几个像素（每个形状：`maxR`、`detail`、`dir`）。
+- **笔画不会交叉形状组**，因此轮廓保持清晰。丢失的边缘是可选的（将两个形状放在同一个 `group` 中）。
+- **笔划下的薄底漆**（参考本身，模糊约1.5像素），因此画布永远不会像轮廓一样窥视。
+- **刀行程**：长大于宽（≈ 1.7–3.1 × 半径长，0.95–1.45 × 半径宽），倾斜末端，小角度和值抖动（≈ ±13°，±6 %）。必须被解读为轮廓的固体物体（人物、道具）很少或没有粗糙的跳动。
+- **光** 掠过高度场；潮湿或光滑的表面会变得更加镜面。
+- **反射**（湿地面、玻璃、水）是**在每个光源下明显堆叠的短水平刀尖**，破碎和褪色；从来没有画过矩形。
+- 渲染超采样 (2×)。 **否影片颗粒**：颗粒加上压缩会吃掉刀刃。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Planes of mixed, slightly broken colour; each stroke may drag a second colour (`c2`) into the first. No gradients made by blending pixels: gradients are made by stroke-to-stroke steps.
-- Warm light against cool shadow is the default temperature structure; the brightest, purest chroma is reserved for the story's subject (a prop, a crowd, a light source), not the background.
-- **Colour can be an event.** Every stroke can hold a grey and a colour version; a monochrome world with one coloured exception, or a world re-laid from grey to colour, is native to the medium. The grey version is the luminance of the same strokes, slightly cool, with a small colour residue.
-- Examples of palettes that fit: an after-rain sunset (cobalt → peach → gold sky, ochre facades, full-chroma props); a harvest field (straw yellow, burnt sienna earth, one viridian tractor); a night kitchen (umber shadows, sodium-lamp orange, one cold blue window). Choose from the topic.
+- 混合的、稍微破碎的颜色的平面；每个笔画都可以将第二种颜色（`c2`）拖动到第一种颜色中。没有通过混合像素创建渐变：渐变是通过笔画到笔画步骤创建的。
+- 暖光对冷影是默认的温度结构；最亮、最纯粹的色度是为故事的主题（道具、人群、光源）保留的，而不是背景。
+- **颜色可以是一个事件。** 每一笔都可以容纳一个灰色和一个彩色版本； 表现媒介原生具有一种单色世界，或者一个从灰色到彩色的世界。灰色版本是同笔画的亮度，略显冷色，有少量色差。
+- 合适的调色板示例：雨后的日落（钴色→桃色→金色的天空、赭石外墙、全彩道具）；一块收获田（稻草黄色、烧焦的赭土、一辆翠绿色的拖拉机）；一间夜间厨房（琥珀色的阴影、橙色的钠灯、一扇冷蓝色的窗户）。从主题中选择。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Titles are **laid in with the knife** (a stroke-by-stroke `appear` sweep of about a second) and can be taken off by the world (washed by rain, scraped, painted over). They move with the world.
-- Small text (credits, data, captions) stays crisp DOM text over the painting: knife strokes can't carry small letters.
-- A serif display face (e.g. Cormorant, OFL). Subtitles, if there is a voice: plain serif, ≤ 2 lines, in a calm plane; hold ≥ max(1.8 s, speech + 0.6 s).
+- 标题是**，用刀**（逐笔`appear`扫描大约一秒钟）放置，可以被世界取下（被雨水冲刷，刮擦，涂漆）。他们与世界一起移动。
+- 小文本（制作人员名单、数据、说明文字）在绘画上保持清晰的 DOM 文本：刀划不能携带小字母。
+- 衬线显示面（例如 Cormorant、OFL）。字幕，如果有声音：纯衬线，≤2行，平面平静；保持 ≥ max(1.8 s，语音 + 0.6 s)。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- Static paint is static. Only the things the story moves move (weather, figures, props, ribbons, light). Smooth 24 fps, no stepping: clarity is the brief.
-- Moving figures are procedural strokes rebuilt each frame from **fixed seeds**, so their paint doesn't boil (walk cycles, IK arms, props that open and close).
-- Actions sit on the music grid: a change of direction, a pop, a swell lands on a beat.
-- Anticipation → action → follow-through on every gesture (lift before the strike, dip before the snap, swing after the stop).
+- 静电涂料是静态的。只有故事中移动的事物才会移动（天气、人物、道具、丝带、光线）。流畅的 24 fps，无步进：清晰度就是要点。
+- 移动人物是从 **固定种子** 的每帧重建的程序笔画，因此它们的油漆不会沸腾（行走循环、IK 手臂、打开和关闭的道具）。
+- 动作位于音乐网格上：方向的改变、流行音乐、节奏上的膨胀。
+- 预期 → 行动 → 每个手势的后续动作（击打前抬起，猛击前下沉，停止后挥动）。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Slow truck + push on a wide | a world observed; patience | a place; a routine; a crowd |
-| Push-in through a silence | inner pressure | a doubt; a decision; giving up |
-| Tilt-up from the ground or a reflection | discovery from below | a small character entering; a first sight |
-| Pull-back from a close-up | reaction; the world answering | consequence; a reveal of who is watching |
-| Rotating crane-out, overhead | pattern emerging from many | choreography; traffic; a gathering |
-| Same wide, repeated | before/after | change of colour, season or time |
-| Locked frame, light moves | time and weather as the actor | a day passing; a storm arriving |
-| Macro slide along the paint surface | the matter itself | a texture; a crafted object; a map |
-| Whip-pan into a new painted plate | energy, a jump | a list; montage; travel |
+|缓慢的卡车+宽阔的推力|观察到的世界；耐心|一个地方；例行公事；一群人|
+|穿过沉默推入|内压|一个疑问；决定；放弃|
+|从地面向上倾斜或反射|从下面发现|一个小字符进入；第一眼看到|
+|从特写镜头拉回|反应;世界回答|结果;揭示谁在观看|
+|旋转吊机，高架|模式从许多|编舞;交通;一次聚会|
+|相同宽度，重复|before/after|颜色、季节或时间的变化|
+|锁定框架，光线移动|作为演员的时间和天气|一天过去了；暴风雨来临|
+|沿着油漆表面的宏观滑动|事情本身|纹理；一件工艺品；一张地图|
+|将锅放入新涂漆的盘子中|能量，跳跃|一份清单；剪辑;旅行|
 
-Framing: keep the camera **inside the painted plate** (`half = W/2/zoom`), or the canvas shows. The subject gets the hard edges and the smallest strokes; everything else stays in big calm planes. Transitions: paint-over sweeps and scrapes, hard cuts on beats; no dissolves (two layers of knife ridges turn to mud).
+装框：将摄影机 **保留在画板**（`half = W/2/zoom`）内，否则画布显示。主题具有硬朗的边缘和最小的笔触；其他一切都保持在平静的大平面上。过渡：油漆覆盖扫描和刮擦，节拍上的硬剪切；不溶解（两层刀脊变成泥）。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Foley follows the paint and the world**: palette-knife scrapes on every repaint or paint-over, wet dabs, the materials of the scene (wet stone, nylon, wood, fabric, glass).
-- **Beds** in layers (a hiss, near grains, one distinct detail), filtered when the camera goes under cover.
-- **Acoustic instruments with a hand-made grain**: solo strings, accordion, pizzicato, harp arpeggios, glockenspiel or celesta for pops, piano, guitar, woodwinds; a solo instrument for a lonely world, an ensemble for a shared one.
-- Options: **one action = one sound = one cut** (music-locked edit); pops pitched as a rising arpeggio so a sequence of events climbs; an unresolved phrase that the film resolves later; a hard silence that cuts music and beds to digital zero, containing at most one sound; a J-cut of the next scene's foley into a silence.
-- Mix: music and ambience duck under any voice (~8 dB); −14 LUFS. Music and foley can carry a film without narration.
+- **Foley 跟随油漆和世界**：调色刀在每次重新油漆或油漆覆盖、湿抹布、场景材料（湿石头、尼龙、木材、织物、玻璃）上刮擦。
+- **床位** 分层（一种嘶嘶声，接近颗粒，一个独特的细节），当摄影机进入掩体时进行过滤。
+- **手工制作的木纹原声乐器**：独奏弦乐、手风琴、拨奏、竖琴琶音、钟琴或流行钢片琴、钢琴、吉他、木管乐器；独奏乐器适合孤独的世界，合奏适合共享的世界。
+- 选项：**one 动作 = 一种声音 = 一次剪切**（音乐锁定编辑）；流行音乐的音调为上升的琶音，因此一系列事件不断上升； 影片稍后解析的未解析短语；一种严酷的沉默，将音乐和床铺削减到数字零，最多包含一种声音；下一个场景的 J 剪辑拟音陷入沉默。
+- 混音：任何声音下的音乐和氛围（~8 dB）； −14 LUFS。音乐和拟音可以携带影片而无需旁白。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Colour re-laid by the knife.** Every stroke keeps a grey and a colour version; a reveal wave re-paints them stroke by stroke (`reveal`, `revC`). *Fits content like:* a town waking up; a patient recovering; a brand relaunch; a season turning.
-- **The one coloured thing.** The world drawn with `grey: 1`, one object with `grey: 0`. *Fits content like:* one person in a crowd; the fruit that ripened; a warning light.
-- **Motion paints the picture.** Moving objects drip their colour as knife dabs; seen from above, their paths leave a painted pattern. *Fits content like:* a dance; delivery routes across a city; a football play; migration.
-- **Raking light.** At the peak, drop the light to a grazing angle so every ridge catches it, then let it settle. *Fits content like:* a sunrise; a moment of recognition; unveiling a sculpture.
-- **Paint-over transition.** The next shot's strokes are laid over the previous one in a sweep (`appear`), with a scrape on the soundtrack. *Fits content like:* a renovation; memory replacing the present; a timeline of versions.
-- **Sound made visible.** A note or a voice becomes a paint ribbon that carries colour to what it touches. *Fits content like:* a song reaching listeners; a radio broadcast; a rumour spreading.
+- **刀重铺颜色。**每一笔都保留一个灰色和一个彩色版本；显示波逐笔重新绘制它们（`reveal`、`revC`）。 *适合以下内容：* 小镇正在苏醒；病人正在康复；品牌重新推出；一个季节的转变。
+- **一种颜色的东西。** 用`grey: 1`绘制的世界，用`grey: 0`绘制的一个物体。 *适合以下内容：*人群中的一个人；成熟的果实；警告灯。
+- **运动描绘了这幅画。** 移动的物体滴下颜色，就像刀子轻拍一样；从上面看，他们的路径留下了彩绘图案。 *适合以下内容：*舞蹈；跨城市的配送路线；一场足球比赛；迁移。
+- **倾斜灯。** 在山顶，将灯降低到掠射角度，以便每个山脊都能捕捉到它，然后让它稳定下来。 *适合以下内容：*日出；认可的时刻；揭幕雕塑。
+- **Paint-over 过渡。** 下一个镜头的笔画以扫频 (`appear`) 的方式覆盖在前一个笔画上，并在配乐上刮擦。 *适合以下内容：* 翻新；记忆取代现在；版本时间表。
+- **声音变得可见。** 音符或声音变成一条油漆带，将颜色带到它所接触的地方。 *适合以下内容：*一首歌曲到达听众；无线电广播；谣言蔓延。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Confined strokes shrink near edges and leave canvas-coloured outlines → add the underpainting texture.
-- Draw order in the reference matters: painting the ground after the buildings covers their feet.
-- Plain rectangles read as posts or blocks → give silhouettes taper, a lit edge, and one or two defining dabs (shoulder, hair, handle).
-- Proportions carry the object's identity at this stroke size: a prop drawn too wide reads as a different thing. Check silhouettes at thumbnail size.
-- Film grain or heavy compression destroys the knife edges → no grain, supersample, high bitrate.
-- Strokes that are re-seeded every frame boil → fixed seeds per stroke.
-- Engine-level WebGL traps (reserved words, VAO binding) are listed in DEMO.md build notes.
+- 有限的笔触在边缘附近收缩并留下画布颜色的轮廓→添加底画纹理。
+- 参考事项中的绘制顺序：在建筑物遮住脚后绘制地面。
+- 普通矩形解读为柱子或块→赋予轮廓锥度、明亮的边缘和一两个定义的点（肩膀、头发、把手）。
+- 比例在这种笔触大小下体现了物体的特性：画得太宽的道具看起来像是不同的东西。以缩略图大小检查剪影。
+- 影片颗粒或重度压缩会破坏刀刃 → 无颗粒、超采样、高比特率。
+- 每帧重新播种的笔画煮沸 → 每笔画固定种子。
+- DEMO.md 构建说明中列出了引擎级 WebGL 陷阱（保留字、VAO 绑定）。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-Files: `demo/engine/impasto.js` (renderer), `demo/engine/plate.js` (reference → strokes).
+文件：`demo/engine/impasto.js`（渲染器）、`demo/engine/plate.js`（参考→笔画）。
 
-Main calls: `new Impasto(canvas,{W,H,ss})`, `E.begin()` / `E.finish(post)` (raking light + grade), `E.batch()` → `E.draw(batch,o)` for static plates (`cam`, `grey`, `reveal`, `appear`), `E.drawNow()` for moving strokes, `E.under()` for the underpainting, `new Strokes().push({...})` (`KNIFE`, `BRUSH`, `DAB`, `LINE`), `new Ref()` + `paintRef()` (reference illustration → coarse-to-fine strokes confined to shape groups), `strokePath()`. Full parameter table: DEMO.md "Engine reference".
+主要调用：`new Impasto(canvas,{W,H,ss})`、`E.begin()` / `E.finish(post)`（耙光+等级）、`E.batch()`→`E.draw(batch,o)`用于静态板（`cam`、`grey`、`reveal`、 `appear`)、`E.drawNow()` 用于移动笔画、`E.under()` 用于底漆、`new Strokes().push({...})` (`KNIFE`、`BRUSH`、`DAB`、`LINE`)、 `new Ref()` + `paintRef()`（参考图→仅限于形状组的从粗到细的笔划），`strokePath()`。完整参数表：DEMO.md“发动机参考”。
 
-Minimal example: a warm-orange four-point sparkle with a short cursor tail, in knife paint.
+最小的例子：带有短光标尾部的暖橙色四点闪光，采用刀漆。
 ```js
 import { Impasto, Strokes, KNIFE, DAB, hex } from './engine/impasto.js';
 const E = new Impasto(canvas), s = new Strokes(), c = hex('#D97757');
@@ -107,16 +118,17 @@ s.push({ x: 960, y: 540, len: 40, wid: 40, c: hex('#f6c0a0'), type: DAB, seed: 9
 s.push({ x: 1060, y: 610, ang: .6, len: 90, wid: 16, c, type: KNIFE, alpha: .8, seed: 10 });   // cursor tail
 E.begin(); E.drawNow(s.data(), { grey: 0, run: 0 }); E.finish();
 ```
-"Only one colour" (monochrome with one exception): draw the world with `grey: 1, reveal: 1e6`, draw the exception with `grey: 0`.
+“只有一种颜色”（除了一个例外的单色）：用`grey: 1, reveal: 1e6`绘制世界，用`grey: 0`绘制例外。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the structure, the cast (or none), the sets, the opening, the ending, the camera path, the pacing, whether there is a voice, and where colour lives. All far from our demo:
+您可以决定结构、演员阵容（或没有）、布景、开头、结尾、摄影机路径、节奏、是否有声音以及色彩所在。与我们的示范相去甚远：
 
-- Structures: **one object, many hands** (a bowl or a boat passes through the people who make and use it, one painted plate per hand); **a still life comes alive** (a locked table whose objects move in turn, the light crossing it hour by hour); **a portrait in layers** (a face painted coarse to fine as a voice tells one life, each layer a decade).
-- Openings: **the bare canvas** (underpainting only; the first knife stroke is the first event); **macro on a ridge of paint** that pulls back to become a mountain or a roof; **mid-action** (a figure already running across a finished plate).
-- Endings: **scraped back** (the knife takes the painting off to the underpainting, leaving one mark); **the light goes out** (raking light sinks until only the ridges glow, then black); **the frame in a room** (the film was a painting hanging somewhere, seen by someone).
+- 结构：**一个物体，很多只手**（碗或船经过制作和使用它的人，每手一个彩盘）；**静物变得栩栩如生**（一张上锁的桌子，桌子上的物体依次移动，光线每小时穿过它）；**分层肖像**（一张脸从粗到细，就像一个声音讲述着一个人生，每一层都是十年）。
+- 开口：**裸画布**（仅底漆；第一刀划动是第一个事件）； **宏观在油漆**的山脊上，向后拉成为一座山或屋顶； **行动中期**（已经跑过成品板的人物）。
+- 结局：**刮回**（刀把画刮到底画上，留下一个痕迹）； **灯熄灭**（耙光下降，直到只有脊发光，然后变黑）； **房间里的框架**（影片是挂在某处的一幅画，被某人看到）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

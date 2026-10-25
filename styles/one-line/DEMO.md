@@ -1,108 +1,116 @@
-# One-line Drawing — our demo
+<a id="one-line-drawing--our-demo"></a>
+# 一笔画 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *The Line That Never Lifted* (47.5 s) · `one-line.mp4` · source in [`demo/`](demo/)
+示范：*从未抬起的线* (47.5 s) · `one-line.mp4` · 来源在 [`demo/`](demo/)
 
 
-A 30–60 second film: one man's life drawn as one line that, in the final pull-back, turns out to be his own face as an old man.
+30-60秒的影片：一个人的一生被画成一条线，在最后的拉回中，原来是他自己作为一个老人的脸。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A film made of **one continuous line** on warm white paper. The pen never lifts: in code the entire film is literally one point array, from the first touch of the nib to the last frame. There are no cuts. The camera follows the nib like a tracking shot, with a little lag and a little anticipation, so the audience always watches the line *being drawn*.
+影片由 **one 连续线** 在暖白纸上制成。笔永远不会抬起：在代码中，从笔尖的第一次触摸到最后一帧，整个影片实际上是一个点阵列。没有削减。 摄影机就像跟踪镜头一样跟随笔尖，有一点滞后和一点预期，所以观众总是看着线条*被绘制*。
 
-Everything is a line: characters, places, objects, even time. No fills, no shading, no second weight of line, no background art. The only things on screen besides ink are the paper itself and a soft **shadow of the pen** (the real world above the paper). One accent colour at most, used once.
+一切都是一条线：人物、地点、物体，甚至时间。没有填充，没有阴影，没有第二重线条，没有背景艺术。屏幕上除了墨水之外唯一的东西就是纸张本身和柔软的纸张。**笔的影子**（纸上的现实世界）。最多一种强调色，使用一次。
 
-Learn the grammar from Osvaldo Cavandoli's *La Linea* (1971) — one line is both the world and the character, and transformations of the line are the jokes and the transitions; from Gjon Mili's 1949 photographs of Picasso drawing with light — the confidence and speed of a single gesture; and from Norman McLaren's *Begone Dull Care* and *Boogie-Doodle* — lines that are drawn *to* the music. Do not copy La Linea's character, its gibberish voice, or any specific continuous-line illustration.
+从奥斯瓦尔多·卡万多利 (Osvaldo Cavandoli) 的《La Linea》（1971）中学习语法——一行既是世界又是人物，而这行的变换就是笑话和过渡；来自 Gjon Mili 1949 年毕加索用光作画的照片——单个手势的自信和速度；以及来自 Norman McLaren 的“Begone Dull Care”和“Boogie-Doodle”——根据音乐绘制的线条。请勿复制 La Linea 的角色、其胡言乱语的声音或任何特定的连续线插图。
 
-Pick stories where **the continuity of the line is the meaning**. The demo used all five native powers and put the strongest one (the scale reveal) at the peak:
+挑故事里的**，线的连续性就是**的意思。 示范使用了所有五种原生力量，并将最强的一种（规模显示）置于峰值：
 
-| Native power | Story use |
+|原生电源|故事运用|
 |---|---|
-| **The pen never lifts** | A life, a journey, a process, a history: anything that is *one continuous thing*. No cuts, ever; the camera follows the nib. |
-| **The line is time** | The character of the stroke changes with age or mood: light and fast in youth, full and steady in adulthood, trembling with dry-brush breaks in old age. One stretch can change colour (love, danger) and change back. |
-| **Transformation** | A kite string becomes a bicycle frame, a smile becomes a road. Scenes don't cut, they *morph*: the last stroke of one image is the first stroke of the next. |
-| **Stopping is an event** | When the nib stops, ink pools and blooms. A 1.5–3 s stop with music cut to silence is the strongest possible beat in this medium (loss, doubt, a decision). |
-| **Reverse-designed scale reveal** | Every vignette drawn in close-up is secretly a part of one big picture. At the end the camera pulls back and the audience sees that the whole story *was* a face (a tree, a map, a word). |
+|**笔永不抬起**|一段生活、一段旅程、一个过程、一段历史：任何“一个连续的事物”。永远不会削减； 摄影机跟随笔尖。|
+|**线路正时**|笔画的性质随着年龄或情绪的变化而变化：青年时期轻快，成年时期饱满稳健，老年时干笔颤抖。一次拉伸可以改变颜色（爱、危险）并变回来。|
+|**改造**|风筝线变成自行车车架，微笑变成路。场景不会剪切，它们会“变形”：一个图像的最后一个笔画是下一个图像的第一个笔画。|
+|**停止是一个事件**|当笔尖停止时，墨水会聚集并绽放。 1.5-3 秒的停顿和音乐的静音是表现媒介中最强烈的节拍（失落、怀疑、决定）。|
+|**反向设计的刻度揭示**|每个以特写镜头绘制的小插图都是一幅大图画的秘密组成部分。最后，摄影机拉回来，观众看到整个故事*是*一张脸（一棵树、一张地图、一个单词）。|
 
-Adapting any topic: find the **one picture** the story can end on, and the 6–8 moments that can each become a part of it. A company history → the founders' first desk, the first product, the first office… are the features of the logo. A city → its landmarks are the lines of a portrait of its founder. A love story → two lives drawn separately that join into one heart.
+适应任何主题：找到**一张照片**故事可以结束，6-8 个时刻可以成为故事的一部分。公司历史→创始人的第一张桌子、第一个产品、第一个办公室……是标志的特征。一座城市 → 它的地标是其创始人肖像的线条。一个爱情故事→两个分开的生命交织在一起。
 
-**Emotional arc for 40–50 s:** a single touch on blank paper (hook in the first 3 s) → quick, light early chapters → the one coloured chapter → a stop (silence, ink blooms) → the line resumes, changed → the final, slow strokes while the camera pulls back → the whole picture, held → a coda that passes the pen on.
+**E情感弧持续40-50秒：**在白纸上轻轻一触（前3秒勾住）→快速、轻盈的早期章节→单一颜色的章节→停止（沉默，墨水绽放）→线条恢复，改变→最后的缓慢笔触，而摄影机向后拉→整个画面，保持→一个传递笔的尾声。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-The camera is one continuous move: keyframes of composition centre, zoom, a few degrees of roll, and a follow weight `f` (0 = composed, 1 = locked to the nib). The follow point is a weighted average of the nib position over −0.55…+0.4 s, which gives lag and anticipation. A soft clamp keeps the nib inside 72 % × 66 % of the frame.
+摄影机是一个连续的移动：构图中心、缩放、几度滚动的关键帧和跟随权重 `f`（0 = 构图，1 = 锁定到笔尖）。跟随点是 -0.55…+0.4 秒内笔尖位置的加权平均值，它给出了滞后和预期。软夹将笔尖保持在框架的 72 % × 66 % 范围内。
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Macro (z ≈ 4.3) on blank paper where the pen will land; the first vignette is composed, f ≈ 0.1 |
-| Traveling lines | Follow (f 0.6–0.85), zoom out to ≈ 2.4 |
-| Each vignette | Composed (f 0.15–0.35), framed so the finished drawing sits centred |
-| The stop | Hold, with a very slow push-in (4.6 → 5.4) through the silence |
-| Mirror chapter | Same framing as the chapter it rhymes with, mirrored |
-| Reveal | One continuous pull-back from ≈ 3 to 1 over 5 s while the last strokes are drawn, then hold ≈ 1 s |
-| Coda | Push in to where the pen rests for the handoff; pull back again as the new line runs; the end card sits in the empty paper |
+|开幕|笔将落在空白纸上的宏 (z ≈ 4.3)；第一个小插图已组成，f ≈ 0.1|
+|旅游线路|跟随 (f 0.6–0.85)，缩小至 ≈ 2.4|
+|每个小插曲|构图（f 0.15–0.35），加框，使成品图位于中心|
+|车站|保持，在寂静中非常缓慢地推入（4.6 → 5.4）|
+|镜章|与与之押韵的章节相同的框架，镜像|
+|揭示|在绘制最后一笔时，在 5 秒内从 ≈ 3 连续拉回 1 秒，然后保持 ≈ 1 秒|
+|结尾|推入笔所在位置以进行交接；当新线路运行时再次拉回； 片尾卡位于空纸中|
 
-- **Everything on ones** (24 fps). The appeal is the continuous act of drawing; stepping it would break the illusion.
-- **Timing = chapter windows + curvature.** Each chapter has a time window; within it, time per point is weighted by `1 + K·turn` (sharp turns get more time, smoothed so speed never jumps). Pin musical beats with marks: by arc-length fraction `f`, or by position `at:[x,y]` ("the second time the pen passes the nose"). A stop is two marks at the same place.
-- Corners (local speed minima at high turn) are exported to the soundtrack as candidate note onsets.
-- Typical speeds: 300–700 units/s for traveling lines, 50–150 for small details (fingers, eyelashes). The last stroke of a life should be the slowest in the film.
+- **** 上的一切（24 fps）。上诉是连续的绘画行为；踏上它就会打破幻象。
+- **Timing = 章节窗口 + 曲率。** 每个章节都有一个时间窗口；其中，每个点的时间由 `1 + K·turn` 加权（急转弯可以获得更多时间，经过平滑处理，因此速度不会跳跃）。用标记固定音乐节拍：按弧长分数 `f`，或按位置 `at:[x,y]`（“笔第二次经过鼻子”）。停靠点是同一地点的两个标记。
+- 角落（高转弯时的局部速度最小值）将作为候选音符开始导出到音轨。
+- 典型速度：对于行进线为 300–700 units/s，对于小细节（手指、睫毛）为 50–150。生命的最后一笔应该是影片中最慢的。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Music: one solo instrument, one unbroken melodic line** — the sound equivalent of the drawing. The demo uses cello (`cellos` at low velocity, mono, slightly left, legato with 0.14 s overlaps), `cellos_pizz` for childhood, one `hand_chimes` note when the next generation starts. No piano, no string pad.
-- Write the score to the drawing: key notes on the marks and corners (the grip closes on the tonic, each kite corner is a pluck, the highest note is the first touch of the two noses, eyelashes of the last eye are the last three notes). Line fast = short notes; line stopped = one long note fading into silence.
-- **Silence is literal**: zero the music bus including reverb tails during the stop; drop room tone to 15 %.
-- **The pen on paper is the most important sound**: synthesized from the pen speed track — band-passed noise (bright 2.2–7.5 kHz when fast, dull 0.7–2.4 kHz when slow), random paper-fibre ticks with density ∝ speed, amplitude ∝ (v/520)^0.5, panned with the nib's screen position; broken up by the dry-brush gaps in old age; lighter and jerkier for the child. Plus a wooden tap on the first touch, a barely audible wet swell for the blot, a tiny rub at the handoff.
-- **Voice**: warm, retrospective male narrator (Kokoro `am_liam`, speed 0.84; high-passed at 85 Hz, low-passed at 7.2 kHz to soften it). 5–6 short lines that leave space for the line. Place them by whisper word timestamps so key words land on picture beats ("holding **on**" on the grip, "**goes** on" when the pen resumes). Music ducks ≈ 5 dB and the pen ≈ 4 dB under voice. Loudness −14 LUFS, **grain 0** (the paper texture is in the render).
+- **音乐：一件独奏乐器，一根不间断的旋律线** — 相当于绘画的声音。 示范使用大提琴（`cellos` 低速、单声道、略左、连奏，重叠 0.14 秒），`cellos_pizz` 适合儿童使用，`hand_chimes` 下一代开始时使用。没有钢琴，没有弦垫。
+- 将配乐写到图上：标记和角上的关键音符（握力在主音上关闭，每个风筝角都是拨弦，最高音符是两个鼻子的第一次接触，最后一个眼睛的睫毛是最后三个音符）。行快=简短的笔记；线路停止=一个长音符逐渐消失。
+- **Silence是字面意思**：在停止期间将包括混响尾部的音乐总线清零；将房间音调降低至 15%。
+- **笔在纸上的声音是最重要的声音**：由笔速度轨迹合成 - 带通噪声（快时明亮2.2-7.5 kHz，慢时沉闷0.7-2.4 kHz），随机纸纤维滴答声，密度∝速度，幅度∝（v/520）^0.5，随着笔尖的屏幕位置平移；被老年时的干笔间隙所打破；对孩子来说更轻更生涩。再加上第一次接触时的木质敲击声、印迹时几乎听不见的湿膨胀、交接处的微小摩擦。
+- **嗓音**：温暖、回顾性的男性旁白（Kokoro `am_liam`，速度0.84；高通在85 Hz，低通在7.2 kHz以柔化它）。 5-6 条短线，为该线留出空间。通过耳语词时间戳放置它们，以便关键词落在图片节拍上（“在握柄上握住 **on**”，当笔恢复时“**去**打开”）。在声音下，音乐鸭子 ≈ 5 dB，笔 ≈ 4 dB。响度 -14 LUFS，**grain 0**（纸张纹理位于渲染中）。
 
-## Palette, props & the reverse-designed face
+<a id="palette-props--the-reverse-designed-face"></a>
+## 调色板、道具和逆向设计的脸部
 
-**Reverse design is the core technique.** Draw the final picture first, then cut it into chapters, then design each chapter so it reads as its own scene in close-up *and* as a feature of the final picture. Rules that made this work in the demo:
-- **Each region of the final picture is drawn exactly once.** Connectors between chapters must fall on natural lines of the final picture: lens rims, nasolabial folds, crow's feet, the jaw contour, a hair. Every "extra" connector becomes a stray wrinkle, a jowl or a beard in the reveal.
-- **Plan the topology like an Euler path.** A closed motif such as a mouth (smile + upper lip + two profiles) is a circuit: you leave where you came in. Either route the next chapter from the same point (a retraced fold is invisible) or reorder the chapters. We moved "loss" before "child" purely for topology, then made it the emotional point ("and then it goes on").
-- **Retracing is legal and invisible:** going back over an existing line only thickens it slightly. In the demo the pen "reels in" the kite by retracing its tail and string back down to the head.
-- **Test the reveal early and often:** render the whole path at once, at final scale, after every change (`?all=1&cam=0,-170,1`).
+**逆向设计是核心技术。** 先画出最终的画面，然后将其切割成章节，然后设计每个章节，使其在特写镜头中读起来就像自己的场景*并*作为最终画面的一个特征。在示范中实现此功能的规则：
+- **最终图片的每个区域都只绘制一次。** 章节之间的连接线必须落在最终图片的自然线条上：镜片边缘、法令纹、鱼尾纹、下巴轮廓、头发。每一个“额外”的连接器都会成为暴露的皱纹、下巴或胡须。
+- **像欧拉路径一样规划拓扑。** 一个闭合的图案，例如一张嘴（微笑+上唇+两个轮廓）是一个回路：你离开你进来的地方。要么从同一点路由下一章（回溯的折叠是不可见的），要么重新排序章节。我们纯粹为了拓扑而将“损失”移到“孩子”之前，然后将其作为情感点（“然后它继续下去”）。
+- **回溯是合法且不可见的：** 回溯现有线只会稍微加厚它。在示范中，笔通过将风筝尾部和绳子拉回到头部来“卷入”风筝。
+- **尽早并经常测试显示：** 在每次更改后以最终比例立即渲染整个路径 (`?all=1&cam=0,-170,1`)。
 
-**Mapping used in the demo** (old man's face): left ear = his birth (a baby fist curled into the C of an ear, gripping an adult finger that is also the arm of his glasses); bald dome = kite string, the kite = his single hair; glasses = the bicycle (wheels = lenses, saddle = left brow, handlebar = right brow, frame = sides of the nose); mouth = first love (two profiles nose to nose; their crowns form the M of the upper lip, the red smile below); nose = the house (the ring and a round window are the nostrils); right eye + tear = the loss; right ear = his own child (mirror of his birth); jaw contour = old age; left eye closing = the last stroke.
+演示中使用的**映射**（老人的脸）：左耳=他的出生（婴儿的拳头蜷缩在耳朵的C处，握住成人的手指，同时也是他的眼镜臂）；秃顶=风筝线，风筝=他的单发；眼镜 = 自行车（轮子 = 镜片，车座 = 左眉毛，车把 = 右眉毛，车架 = 鼻子两侧）；嘴=初恋（鼻子对鼻子的两个轮廓；它们的牙冠形成上唇的M，下面是红色的微笑）；鼻子=房子（圆环和圆窗是鼻孔）；右眼+泪水=损失；右耳=他自己的孩子（他出生的镜子）；下颌轮廓=老年；左眼闭上=最后一次划动。
 
-**Paper**: warm white `#F4EFE4`; procedural mottling (1400-unit tile, soft-light), long fibres (260-unit tile, fading out when zoomed out so it does not shimmer), a sparse "paper tooth" speckle screened over the ink at close zoom; vignette 0.13 multiply. All textures are anchored to the paper and move with the camera.
+**纸张**：暖白色`#F4EFE4`；程序斑点（1400 单位图块，柔光），长纤维（260 单位图块，缩小时淡出，因此不会闪烁），近距离变焦时在墨水上筛选出稀疏的“纸牙”斑点；小插图 0.13 乘以。所有纹理都固定在纸张上并随摄影机移动。
 
-**Ink**: warm black `#1D1A17`, rendered as a filled polygon around the path (not `ctx.stroke`), mixed with paper colour to an opaque tone per point.
-- Width = age base width × pen pressure × fine noise (±8 %). Pressure from speed: `0.66 + 0.8·exp(−v/300)` (fast = thin, slow = fat).
-- Base widths (paper units): child 2.4 (alpha .82), teen 2.5, adult 2.9 (.96), old 2.7 (.93), the next generation 2.0 (.76). Blend styles over ±60 units at chapter boundaries.
-- Ink bleed: the same polygon slightly wider, drawn to an offscreen layer, blurred (≈0.9 × zoom px) and composited at 22 %.
-- Pooling: extra round dots where speed < 45 units/s.
-- Old age: perpendicular tremble (two noise octaves, amplitude up to ≈1.1 units), dry-brush gaps from long-scale noise plus three thin bristle strands; **reduce the dryness again for the final strokes** so the last gesture is clear.
-- The stop: a teardrop-shaped blot (tip at the stopped nib, belly sagging downward as it spreads, dark tide line at the rim).
-- **Keep a screen-space minimum line width.** Line widths scale with zoom like a real line under a macro lens, but during the pull-back clamp the zoom used for width to ≥ 1.3 (≈ 3–4 px at the reveal). Without it the final picture looks like a pencil sketch and loses weight.
+**墨色**：暖黑色`#1D1A17`，渲染为路径周围的填充多边形（不是`ctx.stroke`），与纸张颜色混合以形成每个点的不透明色调。
+- 宽度=年龄基部宽度×笔压×细微噪音（±8%）。来自速度的压力：`0.66 + 0.8·exp(−v/300)`（快=瘦，慢=胖）。
+- 基本宽度（纸张单位）：儿童 2.4 (alpha .82)、青少年 2.5、成人 2.9 (.96)、老年 2.7 (.93)、下一代 2.0 (.76)。在章节边界混合超过 ±60 个单位的风格。
+- 墨水渗色：相同的多边形稍宽，绘制到屏幕外层，模糊（约 0.9 × 缩放像素）并以 22 % 合成。
+- 池化：速度 < 45 units/s. 的额外圆点
+- 老年：垂直颤抖（两个噪音八度，振幅可达约1.1单位），长尺度噪音的干刷间隙加上三根细刷毛束； **再次减少最后一笔的干燥度**，这样最后的手势就清晰了。
+- 笔尖：泪珠状的污点（笔尖位于笔尖停止处，笔腹向下下垂，边缘处有深色潮线）。
+- **保持屏幕空间最小线宽。** 线宽随变焦缩放，就像微距镜头下的真实线一样，但在回拉夹钳期间，用于宽度的变焦≥ 1.3（显示时约为 3-4 像素）。没有它，最终的图片看起来就像铅笔素描并且失去了重量。
 
-**Colour**: at most one accent, used once and kept in the final picture where it means something. The demo's red `#B3332B` starts exactly at the mouth corner and returns to ink at the next chapter, so the old man's only colour is his smile.
+**颜色**：至多一种重音，使用一次并保留在最终图片中，使其有意义。 示范的红色`#B3332B`正好从嘴角开始，到下一章又回到墨色，所以老人唯一的颜色就是他的微笑。
 
-**The pen**: never drawn. Only a soft shadow (blurred wedge from the nib toward the lower right, length ≈ 560 × zoom px, alpha .15) and a 1–4 px contact dot. Hands appear only as shadows at the handoff (each hand composited as one flat shadow so overlaps don't darken).
+**笔**：从未画过。只有一个软阴影（从笔尖到右下角的模糊楔形，长度 ≈ 560 × 缩放像素，alpha 0.15）和一个 1-4 像素的接触点。手在交接处仅显示为阴影（每只手合成为一个平面阴影，因此重叠不会变暗）。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- Subtitles: Caveat 500, 46 px, ink at 84 %, no box, centred with the baseline 100 px from the bottom; they are **written on** left to right (0.2 s + 17 ms per character) behind a soft paper-coloured halo so passing ink lines never cross the letters; fade out over 0.45 s. Stay ≥ voice + 0.6 s and ≥ 1.8 s.
-- Title: Sacramento (a monoline connected script — itself a one-line drawing) 76 px, written on over 1.6 s in empty paper away from the current vignette, with a small Caveat sub-line. Keep it short enough to disappear before the camera moves into it.
-- End card: Sacramento title on two lines, "ONE-LINE DRAWING" in Caveat 600 with wide tracking, the credit line below, written in the empty paper beside the final picture while the new line is still being drawn. Its "LemoLab × Claude Opus 5.5" line (`subs.js`) belongs to this library's demo only: a user's film carries no LemoLab credit and no copy of this card.
+- 字幕：Caveat 500、46 px、墨迹为 84 %、无框、以距离底部 100 px 的基线居中；它们是 **从左到右（每个字符 0.2 秒 + 17 毫秒）写在** 上，位于柔软的纸色光环后面，因此经过的墨线永远不会穿过字母；淡出超过 0.45 秒。停留时间 ≥ 语音 + 0.6 秒且 ≥ 1.8 秒。
+- 标题：萨克拉门托（单行连接脚本 - 本身是单行绘图）76 像素，在远离当前小插图的空纸上写在 1.6 秒以上，带有一条小的警告子线。保持它足够短，以便在摄影机运动进入其中之前消失。
+- 片尾卡：萨克拉门托标题有两行，“一条线画”在警告 600 中，带有宽跟踪，下面的信用线，写在最终图片旁边的空白纸上，同时仍在绘制新线。其“LemoLab × Claude Opus 5.5”系列 (`subs.js`) 仅属于该风格库的示范：用​​户的影片不带有 LemoLab 积分，也没有该卡的副本。
 
-## Pitfalls we hit (demo record)
+<a id="pitfalls-we-hit-demo-record"></a>
+## 我们遇到的陷阱（示范记录）
 
-- **Stray connectors ruin the reveal.** Every early version had lines that read as a beard, jowls, a bib or a mask. Fix the topology (which chapter enters and leaves where), not the drawing.
-- **A kite drawn straight up from the head made a pointed onion dome.** Let the string be the single hair and retrace (reel in) back to the crown so the dome stays a clean arc.
-- **Hands jutting sideways from the temples read as bolts.** Curl the baby fist into the vertical C of an ear, fingertip hidden inside, knuckles as four short round bumps (long loops read as springs).
-- **Two profiles closed by an arc over their heads read as a goblet** (Rubin's vase). Let their crowns become the M of the upper lip instead, and join their necks into the smile at one point.
-- **Profiles too close braid together** once line width is applied; keep ≥ 5 units between lips, touch only at the nose tips.
-- **Eyes**: almond shapes with bags read as toothy mouths; a closed lid (‿) with three short lashes reads best.
-- **A round blot reads as a mole.** Make it a teardrop that sags as it spreads.
-- **Thin lines at the reveal.** Clamp the width zoom (see "Palette, props & the reverse-designed face").
-- **Hand shadows as separate translucent shapes** double-darken where fingers overlap — composite each hand as one layer.
-- **Titles collide with the vignette as the camera moves.** Check the title against every frame of its window, not just the first.
-- **Whisper mishears**: "Sometimes it stops" was heard as "But sometimes it stops" and "Your turn." as "Your turns" — rephrase ("Sometimes the line stops.", "Your turn now.") rather than fight it.
-- **zsh**: `=====` as an echo separator is expanded; heavy machine load makes `still.mjs` slow — the page supports `?cams=` / `?camt=` to render many views in one browser session.
+- **杂散的连接器破坏了展示效果。** 每个早期版本都有看起来像胡须、下巴、围脖或面具的线条。修复拓扑（哪一章进入并离开哪里），而不是绘图。
+- **A 风筝从头部直接向上拉，形成了一个尖尖的洋葱圆顶。** 让绳子成为单根头发，然后折返（卷入）回到冠部，使圆顶保持干净的弧度。
+- **从太阳穴向侧面突出的手读作螺栓。** 将婴儿拳头卷曲成耳朵的垂直C形，指尖隐藏在里面，指节作为四个短圆形凸起（长环读作弹簧）。
+- **头顶上有两个由弧形闭合的轮廓，读作高脚杯**（鲁宾的花瓶）。让他们的牙冠变成上唇的M形，并在一点上将他们的脖子连接到微笑中。
+- **一旦应用线宽，轮廓编织物太靠近**；嘴唇之间保持≥5个单位，仅触摸鼻尖。
+- **眼睛**：带有袋子的杏仁形状读作牙齿的嘴；带有三个短睫毛的封闭盖子 (‿) 阅读效果最佳。
+- **A 圆形印迹读作痣。** 使其成为随着扩散而下垂的泪滴。
+- **露出处的细线。** 夹紧宽度变焦（参见“调色板、道具和反向设计的脸部”）。
+- **和阴影作为单独的半透明形状** 在手指重叠的地方加倍变暗 - 将每只手合成为一层。
+- **Titles 与小插图冲突，如摄影机运动.** 根据窗口的每一帧检查标题，而不仅仅是第一帧。
+- **耳语误听**：“有时它会停止”被听到为“但有时它会停止”和“轮到你了”。作为“轮到你了”——改写（“有时队伍会停下来。”，“现在轮到你了。”）而不是对抗它。
+- **zsh**：`=====`作为回声分离器被扩展；机器负载过重会使 `still.mjs` 变慢 — 该页面支持 `?cams=` / `?camt=` 在一个浏览器会话中渲染多个视图。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/one-line/demo/
@@ -116,9 +124,9 @@ styles/one-line/demo/
   lines.json voice script   music/score.py  solo cello score   mix.py  pen-scratch foley + voice + music   build.sh
 ```
 
-1. Design the final picture in `face.js` and iterate with `node core/render/still.mjs styles/one-line/demo 0 --q 'all=1&nopen=1&nosub=1&cams=0,-170,1.0'` (add more `;x,y,z` views to check vignettes in the same run).
-2. Voice: `core/tts/tts.py lines.json voices` → `asr_check.py`; read `voices/words.json` and place lines in `story.js`.
-3. Set chapter windows and marks in `face.js`; `node demo/tools/probe.mjs 0.5` prints part boundaries and the nib track to write camera keys.
+1. 在 `face.js` 中设计最终图片并使用 `node core/render/still.mjs styles/one-line/demo 0 --q 'all=1&nopen=1&nosub=1&cams=0,-170,1.0'` 进行迭代（添加更多 `;x,y,z` 视图以在同一运行中检查晕影）。
+2. 语音：`core/tts/tts.py lines.json voices` → `asr_check.py`；读取 `voices/words.json` 并将行放入 `story.js` 中。
+3. 在`face.js`中设置章节窗口和标记； `node demo/tools/probe.mjs 0.5` 打印部件边界和笔尖轨迹以写入摄影机按键。
 4. `node core/render/events.mjs styles/one-line/demo` → `music/score.py` → `mix.py`.
-5. `node core/render/video.mjs styles/one-line/demo --fps 24 --workers 3` (1140 frames ≈ 30–45 s) → `sh core/render/mux.sh out/video24.mp4 mix.wav one-line.mp4 24 0`.
-6. Or simply `sh styles/one-line/demo/build.sh`.
+5. `node core/render/video.mjs styles/one-line/demo --fps 24 --workers 3`（1140 帧 ≈ 30–45 秒）→ `sh core/render/mux.sh out/video24.mp4 mix.wav one-line.mp4 24 0`。
+6. 或者简单地称为 `sh styles/one-line/demo/build.sh`。

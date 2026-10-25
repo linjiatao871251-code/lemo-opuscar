@@ -1,94 +1,102 @@
-# Liminal Found Footage — our demo
+<a id="liminal-found-footage--our-demo"></a>
+# 阈值发现片段 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Night Shift Orientation* (59.7 s) · `backrooms.mp4` · source in [`demo/`](demo/)
+示范：*夜班方向* (59.7 s) · `backrooms.mp4` · 源位于 [`demo/`](demo/)
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A new night-shift worker films his orientation walk through an endless office floor, following the printed rules and the PA. The original style notes, as written for this demo:
+一位新的夜班工人影片遵循印刷规则和公共广播，在无尽的办公楼层中行走。原始风格注释，如为此示范所写：
 
-A single first-person **camcorder recording** (1990s VHS, 4:3) walking through an **empty, familiar-but-wrong interior**: mustard wallpaper, damp carpet, drop ceilings full of humming fluorescent panels, repeating forever. Nothing chases anyone. The dread comes from **emptiness, repetition, bureaucratic rules, and the camera's own machinery failing at the wrong moment**. The viewer should feel a chill on the back of the neck, not jump out of their seat.
+单一第一人称**摄像机录制**（1990 年代 VHS，4:3）走过**空荡荡的、熟悉但错误的内部空间**：芥末色壁纸、潮湿的地毯、充满嗡嗡声的荧光板的吊顶，永远重复着。没有什么可以追赶任何人。恐惧来自于**空虚、重复、官僚规则，以及摄影机自己的机器在错误的时刻发生故障**。观众应该感到后颈发凉，而不是从座位上跳起来。
 
-**Never** use the word "Backrooms", wiki "Level" numbers, community entity names, or any existing organisation/logo inside the film. The genre name lives only in this file. Everything on screen — rules, forms, company voice, the "thing" — is original.
+**绝不** 使用“Backrooms”一词、wiki“级别”编号、社区实体名称或影片内任何现有的 organisation/logo。流派名称仅存在于该文件中。屏幕上的一切——规则、表格、公司声音、“事物”——都是原创的。
 
-The recording medium is the storyteller. The demo used all five native powers and put the focus hunt at the emotional peak:
+录音表现媒介是讲故事的人。 示范使用了所有五种原生能力，并将焦点狩猎置于情感高峰：
 
-| Native power | How the demo used it |
+|原生电源|示范如何使用它|
 |---|---|
-| **Autofocus / auto-exposure hunting** | The camera "finds" something only while focus is correct. It is there on the first lock, gone on the second. AE lags after a blackout and the image pumps with gain noise. |
-| **Tape tracking damage** | A tracking tear is a *cut the universe made*. Same framing afterwards, but the OSD clock jumped hours / the battery drained / one light is now dead. |
-| **The OSD is plot** | REC dot, battery, date and time code are diegetic evidence. A camcorder title-generator can write the film's title over the first shot. |
-| **Rules as text in frame** | Printed notices, PA announcements in a calm corporate voice. Rules start ordinary and drift wrong; two of them contradict each other; the last one addresses the viewer. |
-| **Emptiness and repetition** | The same notice appears again in a different place; the same room with one detail changed; a corridor that runs into fog. Emptiness itself is the threat. |
+|**自动对焦/自动曝光狩猎**|摄影机仅在焦点正确时才能“发现”某些东西。它在第一个锁上，在第二个锁上消失了。停电后 AE 会滞后，并且图像会出现增益噪声。|
+|**磁带跟踪损坏**|跟踪撕裂是“宇宙造成的切口”。之后的画面相同，但 OSD 时钟跳了几小时/电池耗尽/一盏灯现在熄灭了。|
+|**OSD 为绘图**|REC点、电池、日期和时间代码是剧情证据。摄像机标题生成器可以将影片的标题写入第一个镜头上。|
+|**规则作为框架中的文本**|印刷的通知、公共广播以平静的公司声音发布。规则一开始很平常，后来逐渐走向错误；其中两个相互矛盾；最后一个是针对观众的。|
+|**空虚与重复**|同样的告示在不同的地方再次出现；同一个房间，只有一个细节发生了变化；一条陷入雾气的走廊。空虚本身就是威胁。|
 
-How we framed the topic (the same trick works for others): turn the topic into **an orientation, a procedure, or a checklist** that someone records on tape — a new job's first shift, a building inspection, a moving-day walkthrough, a school's safety drill, a hotel's night audit. Write 5–6 rules. Let the medium betray the rules.
+我们如何构建主题（同样的技巧也适用于其他人）：将主题变成 **an 方向、程序或某人录制在磁带上的清单** — 新工作的第一个轮班、建筑检查、搬家日演练、学校的安全演习、酒店的夜间审核。写下 5-6 条规则。让表现媒介背叛规则。
 
-**Demo emotional arc (59.7 s):** boring normal (≈20 s of almost nothing) → a small wrongness (a contradiction, a repeated notice) → a rule is tested (lights flicker) → seeing / not seeing (focus hunt) → time removed (tracking tear) → a rule is broken (the exit) → the last rule turns to the audience → REC off. One subject (the camera operator — heard, never seen above the shoes), one goal (follow the procedure), one turn (the time code proves he is no longer in "normal").
+**演示情感弧线（59.7秒）：**无聊的正常（约20秒几乎没有）→一个小错误（矛盾，重复通知）→测试规则（灯光闪烁）→看到/没有看到（焦点搜寻）→时间移除（跟踪撕裂）→规则被打破（退出）→最后一个规则转向观众→REC关闭。一个对象（摄影机操作员——在鞋子上方听说过，从未见过），一个目标（遵循程序），一回合（时间代码证明他不再处于“正常”状态）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Tape rolls in, AWB swings blue→yellow, AF finds a notice on a wall; camcorder title over it |
-| Reveal of space | Slow pan off the notice to a corridor of partitions and lights receding into fog |
-| Routine | Walking POV, glance down at shoes on damp carpet; no events for ~20 s |
-| The contradiction | Crouch to a repeated notice; hold ≥4 s with nothing covering the text |
-| Obeying a rule | Snap down to the shoes; let the light on the carpet change instead of showing the ceiling |
-| Peak | Zoom + autofocus hunt down the corridor; the figure exists only in the ~0.5 s of correct focus |
-| Time cut | Tracking tear, then the *identical* framing — only the OSD changed |
-| Breaking a rule | Turn a corner to the red EXIT; hold still in total silence; push in; door opens on its own |
-| Ending | Final notice in focus ≥3 s → REC off: freeze, tear, black |
+|开幕|胶带滚入，AWB 呈蓝色→黄色，AF 发现墙上有一张通知；摄像机标题位于其上方|
+|空间的揭示|缓慢地从布告栏移至走廊，灯光消失在雾中|
+|常规|行走 POV，低头看湿地毯上的鞋子；大约 20 秒内没有事件|
+|矛盾之处|蹲下以接受重复的通知；保持 ≥4 秒且没有任何东西覆盖文本|
+|遵守规则|扣到鞋子上；让地毯上的光线发生变化，而不是显示天花板|
+|顶峰|变焦+自动对焦搜寻走廊；该图只存在于正确对焦的~0.5秒内|
+|时间缩短|跟踪撕裂，然后是*相同的*框架——只有 OSD 发生了变化|
+|违反规则|拐个弯到红色出口；保持完全沉默；推入；门自行打开|
+|结束|最终对焦时间 ≥3 秒 → 录制关闭：定格、撕裂、黑屏|
 
-**The "thing"** is never a close-up: a 2.4 m silhouette (a colleague who is wrong by 15–40 %: small head, long tilted neck, narrow high shoulders, arms to the knee), drawn as an organic Canvas2D silhouette on a camera-facing billboard, ~33 m away in a stretch of dead lights with only dim light far behind it. Slow small wave (3.6 s cycle). Target: *you can tell it is waving, you cannot count fingers.* Exclude the billboard from the GTAO pre-pass (`mesh.isPoints = true`) or it stamps a dark rectangle.
+**“东西”** 从来都不是特写镜头：一个 2.4 m 的轮廓（一个错误了 15-40% 的同事：小头、长倾斜的脖子、窄高的肩膀、手臂到膝盖），在面向摄影机的广告牌上绘制为有机 Canvas2D 轮廓，距离约 33 m，在一片昏暗的灯光下只有远处的昏暗灯光。慢小波（3.6 秒周期）。目标：*你可以看出它在挥手，但你无法数手指。*从 GTAO 预通行证 (`mesh.isPoints = true`) 中排除广告牌，否则它会标记一个黑色矩形。
 
-Demo motion numbers: 0.72 m stride, head bob 3 cm, sway 1.8 cm, roll ±0.8°, breathing 0.27 Hz, tremor at 1, 3.5 and 9 Hz; looking down at pitch ≈ −1.2 rad with the camera pushed 0.2 m forward; zoom FOV 52° → 27° with aperture ×5; three 0.1 s blackouts per flicker, AE lag ~0.45 s; doors open in 1.3 s. The original motion section:
+示范运动数：步幅 0.72 m，头部摆动 3 cm，摇摆 1.8 cm，侧倾 ±0.8°，呼吸 0.27 Hz，震颤 1、3.5 和 9 Hz；俯视俯仰 ≈ −1.2 rad，摄影机向前推动 0.2 m；变焦FOV 52° → 27°，光圈×5；每次闪烁 3 次 0.1 秒停电，AE 滞后 ~0.45 秒；门在 1.3 秒内打开。原动议部分：
 
-- **One continuous handheld take.** Cuts happen only where the tape breaks: power-on roll-in, tracking tear, REC off.
-- Handheld = walking gait (0.72 m stride, head bob 3 cm, sway 1.8 cm, roll ±0.8°) + breathing (0.27 Hz) + tremor noise at 1, 3.5 and 9 Hz whose amplitude rises with a **fear** curve. At the "held breath" moment **freeze all of it**.
-- Looking down: pitch ≈ −1.2 rad, camera pushed 0.2 m forward — only the shoe toes and carpet in frame, never trouser legs.
-- Autofocus is the DOF focus distance animated with overshoot: blur → lock → slip → lock. Blur comes from pulling focus *near* (a far target barely blurs when focus overshoots to infinity). Zoom narrows FOV 52°→27° and raises aperture ×5.
-- Lights flicker as three 0.1 s blackouts; AE brightens with ~0.45 s lag afterwards.
-- Doors open by themselves, slowly (1.3 s, eased).
+- **一次连续手持拍摄。** 仅在磁带断裂处进行剪切：开机转入、跟踪撕裂、REC 关闭。
+- 手持式 = 步行步态（步幅 0.72 m，头部摆动 3 cm，摇摆 1.8 cm，滚动 ±0.8°）+ 呼吸（0.27 Hz）+ 1、3.5 和 9 Hz 的震颤噪声，其幅度随 **害怕**曲线上升。在“屏住呼吸”的那一刻**将其全部冻结**。
+- 向下看：俯仰值 ≈ −1.2 rad，摄影机向前推了 0.2 m——框架中只有鞋头和地毯，没有裤腿。
+- 自动对焦是带有过冲动画的 DOF 焦距：模糊 → 锁定 → 滑动 → 锁定。模糊来自于将焦点拉近*（当焦点过冲到无穷远时，远目标几乎不会模糊）。变焦缩小FOV 52°→27°并提高光圈×5。
+- 灯光闪烁为 3 次 0.1 秒的停电；随后 AE 变亮，延迟约 0.45 秒。
+- 门会自动缓慢打开（1.3 秒，缓和）。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-There is no score. The sound design as built for the demo:
+没有配乐。为示范构建的声音设计：
 
-- **No score.** Only what the tape would have recorded.
-- **Fluorescent bed**: 120 Hz + harmonics (1, .55, .42, .22, .16, .06 at ×1…×7), a buzzy band-passed square component, a faint ~9 kHz ballast whine, random bad-tube "zzz" bursts; gated by the same light curve as the picture; +3 dB closer in small rooms.
-- **PA**: calm corporate voice (Kokoro `af_bella`, speed 0.82–0.84) through a "ceiling speaker": band-pass ~310–3500 Hz, cone resonance around 1.3 kHz, tanh saturation, room reverb — keep it dry enough for whisper to transcribe (too much reverb made "night shift" into "my church"). Original two-note chime (vibraphone E5→C5) before every rule; after the time jump both chime and voice drift flat with tape wow.
-- **Operator**: 3–4 short lines (`am_michael`), low level, proximity bass, a breath/air layer following the voice envelope, compressed. Kokoro cannot truly whisper — "speaking quietly" is the goal. Close-mic breathing whose rate follows the fear curve; held breath then one long exhale.
-- **Diegetic hold music**: an original easy-listening loop (here 88 BPM F major, vibraphone melody, clean-guitar comps on 2 & 4, finger bass), band-passed and drowned in reverb as if through walls, read with a slowing tape-speed curve (1.00 → 0.97 → 0.89) and growing wow. It cuts out during blackouts and dies at the silence, never to return.
-- **Foley**: damp-carpet steps (60–85 Hz thud + small wet 0.9–2.6 kHz squelch), cloth rustles on turns, camcorder clack + motor on REC on/off, zoom servo whine, AF motor ticks, ballast "tink" + arc buzz on each flicker, a barely audible drag overhead, door latch + stick-slip hinge creak + air push.
-- **Silence is the climax**: one full second of digital zero (including tails) when the exit appears; caption `[SILENCE]`. The only allowed scare is soft: all ballasts restriking at once with a low thunk when sound returns.
-- Low drone (35–55 Hz brown noise + 41/43.5 Hz beating) rising from the time jump to the silence. Duck bed and music ≈ −8 dB under voices. Loudness −14 LUFS, grain 0 (the noise is in the picture).
+- **No 配乐.** 仅磁带将记录的内容。
+- **荧光床**：120 Hz + 谐波（1, .55, .42, .22, .16, .06 at ×1…×7），嗡嗡声带通方波分量，微弱的 ~9 kHz 镇流器呜呜声，随机坏管“zzz”突发；由与图片相同的光曲线进行选通；小房间内的距离更近 +3 dB。
+- **PA**：通过“吸顶扬声器”发出平静的企业声音（Kokoro `af_bella`，速度 0.82–0.84）：带通 ~310–3500 Hz，锥体共振约 1.3 kHz，tanh 饱和度，房间混响 — 保持足够干燥，以便低语转录（太多混响会导致“夜晚”）转移”到“我的教堂”）。每条规则前的原始两音提示音（电颤琴 E5→C5）；时间跳跃后，铃声和声音都随着磁带变平了哇。
+- **操作员**：3–4 条短线 (`am_michael`)，低电平，接近低音，语音包络后面的 breath/air 层，压缩。心不能真正地低声说话——“小声说话”才是目标。近距离呼吸，其速率遵循恐惧曲线；屏住呼吸，然后长长地呼出一口气。
+- **饮食保持音乐**：一个原始的易于聆听的循环（这里是88 BPM F大调，电颤琴旋律，2和4上的干净吉他伴奏，指贝斯），带通并淹没在混响中，就像穿过墙壁一样，用缓慢的磁带速度曲线（1.00 → 0.97 → 0.89）阅读并不断增长哇。它会在停电时中断，并在寂静中消失，再也不会回来。
+- **弗利**：潮湿地毯台阶（60–85 Hz 重击声 + 小湿 0.9–2.6 kHz 静噪）、布转动时沙沙作响、摄录一体机咔哒声 + REC on/off 上的电机、变焦伺服呜呜声、AF 电机滴答声、镇流器“叮当声”+ 电弧嗡嗡声闪烁，头顶上几乎听不见的阻力，门闩+粘滑铰链吱吱作响+空气推动。
+- **沉默是高潮**：退出出现时整整一秒的数字零（包括尾部）；标题 `[SILENCE]`。唯一允许的恐惧是柔和的：当声音返回时，所有镇流器都会立即重新启动，发出一声低沉的撞击声。
+- 低沉的嗡嗡声（35–55 Hz 棕色噪音 + 41/43.5 Hz 跳动）从时间跳跃上升到寂静。鸭床和音乐在声音下 ≈ −8 dB。响度 -14 LUFS，颗粒 0（噪声在图片中）。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- **Frame**: 4:3 image pillarboxed in 1920×1080 (black side bars). Render the 3D at **720×540** and let the VHS pass upscale — low resolution is part of the look and hides CG cleanliness.
-- **Space**: axis-aligned partition walls 0.16 m thick on a 2.4 m grid, random gaps and stubs, occasional square pillars; ceiling 2.70 m; drop-ceiling tiles 0.6×1.2 m; recessed troffers every 2.4 m (0.6×1.2 m prismatic panels). A hand-authored route (start room → long corridor → side corridor → one small room) inside procedurally filled offices so every doorway shows more empty rooms.
-- **Lighting = thousands of lights, no shadows**: store every troffer's colour/intensity in a 128×128 float **DataTexture**; each fragment sums the nearest 5×5 panels (emitter cosine × Lambert / (d²+0.3)) plus a bounce term from the same neighbourhood. No occlusion — backrooms light is flat. Per-light variation: ±8 % warm/cool, +0–7 % green, 3.5 % dead, 2.5 % flickering. GTAO (radius ≈0.55 m) darkens wall/floor seams.
-- **Fog follows local light**: fog colour × (local bounce light / average). Where lights are dead the haze is dark too, so a silhouette there reads as a *hole in the light*. Scene background = fog × 0.15, so corridors dissolve into darkness instead of a bright wall.
-- **Palette** (albedo, sRGB): wallpaper `#d5bd66` with darker stripes `rgba(140,112,40,.7)` and a diamond column, every roll faded differently; baseboard `#4d3d26`; carpet `#8c763c` mottled, damp patches ×0.6 with faint specular; ceiling tile `#d9d3b8`, grid `#e6e1cf`; troffer diffuser `#fbfaf0` at emissive ×5; the **only saturated colour is the red EXIT sign** (`#ff2a1a`, emissive ×9 so it blooms).
-- **Restrained decay** (clean is part of the style — never make it a ruin): water tide-marks at the foot of *some* wall runs, nicotine-yellow band under the ceiling, occasional peeling seam (≈7 % of rolls, pale paper-back triangle + shadow), rare small stains, ~4 % yellowed ceiling tiles, ~2 % return-air grilles, <1 % missing tiles (black holes), dead insects inside diffusers.
-- **Notices**: office laser-print on yellowed paper: IBM Plex Sans Condensed headers ("FLOOR STAFF — PLEASE READ", "FORM NS-01 (REV. 9)"), numbered rules in Plex Sans 600, "Thank you for your cooperation. — Management". Pinned to cork or taped to wallpaper. For close-ups, **lower the camera so the lens is parallel to the page** — pitching down at a vertical sheet shears the words into fake italics.
-- **VHS camcorder pass** (custom shader, *not* a CRT): per-line time-base jitter (small; low-frequency wobble ≤0.25 px or text skews), head-switching band on the bottom 8 lines, tracking tear on demand; barrel distortion 0.07 + vignette 0.42 applied to the image but **not** to the OSD; luma bandwidth limit (Gaussian σ≈1.25 px @720) + edge-enhancement ringing (sharp 0.9); chroma averaged over ±10 px and shifted 1.6 px right; bright lights smear to the right; AWB tint drifting; AGC noise (streaky, stronger in darks); 0–2 dropout lines per frame; black lift 0.045, soft highlight clip. Noise runs at 30 fps (tape rate) even though output is 24 fps. No scanlines, no RGB mask.
-- **OSD**: a hand-made 5×7 bitmap font with a black outline: `● REC` top-left, battery top-right, `PM 11:58` / `SEP.27.1996` bottom-right. The title uses the same font ×2 like a camcorder title generator.
+- **框架**：4:3 图像邮筒式，1920×1080（黑色侧边栏）。在 **720×540** 上渲染 3D，并让 VHS 通过高档——低分辨率是外观的一部分，隐藏了 CG 的清晰度。
+- **空间**：2.4 m网格上的0.16 m厚的轴对齐隔墙，随机间隙和短柱，偶尔有方柱；天花板2.70 m；吊顶瓷砖0.6×1.2 m；每 2.4 m 凹进一个凹槽（0.6×1.2 m 棱柱形面板）。一条手工编写的路线（开始房间→长走廊→侧走廊→一个小房间）在程序上填充的办公室内，因此每个门口都显示更多空房间。
+- **Lighting = 数千个灯光，没有阴影**：将每个灯槽的colour/intensity存储在128×128浮点**DataTexture**中；每个片段将最近的 5×5 面板（发射器余弦 × 兰伯特 / (d²+0.3)）加上来自同一邻域的反弹项相加。无遮挡——后台光线平坦。每个灯的变化：±8 % warm/cool，+0–7 % 绿色，3.5 % 死区，2.5 % 闪烁。 GTAO（半径 ≈0.55 m）使 wall/floor 接缝变暗。
+- **雾跟随局部光**：雾颜色×（局部反射光/平均）。在灯光熄灭的地方，雾霾也是黑暗的，所以那里的剪影看起来就像是“灯光中的一个洞”。场景背景 = 雾 × 0.15，因此走廊会消失在黑暗中，而不是明亮的墙壁。
+- **调色板**（反照率，sRGB）：壁纸`#d5bd66`，带有深色条纹`rgba(140,112,40,.7)`和钻石柱，每卷褪色不同；底板 `#4d3d26`；地毯 `#8c763c` 斑驳、潮湿的斑块×0.6，有微弱的镜面反射；天花板瓷砖 `#d9d3b8`，网格 `#e6e1cf`；凹槽扩散器 `#fbfaf0` 发射率 ×5； **唯一的饱和颜色是红色EXIT标志**（`#ff2a1a`，发射×9，因此它会绽放）。
+- **抑制腐烂**（清洁是风格的一部分——永远不要让它成为废墟）：*一些*墙脚处的水潮痕迹，天花板下的尼古丁黄色带，偶尔剥落的接缝（约7％的卷，浅色平装三角形+阴影），罕见的小污渍，~4％泛黄的天花板瓷砖，~2％回风格栅、<1% 的瓷砖缺失（黑洞）、扩散器内的昆虫尸体。
+- **通知**：泛黄纸张上的办公室激光打印：IBM Plex Sans Condensed 标题（“FLOOR STAFF — 请阅读”、“FORM NS-01 (REV. 9)”）、Plex Sans 600 中的编号规则、“感谢您的合作。 — 管理层”。固定在软木塞上或粘贴在壁纸上。对于特写镜头，**降低摄影机，使镜头平行于页面**——在垂直纸张上向下倾斜，将单词剪切成假斜体。
+- **VHS 摄像机通行证**（自定义着色器，*不是* CRT）：每行时基抖动（小；低频摆动 ≤0.25 px 或文本倾斜），底部 8 行头部切换带，按需跟踪撕裂；桶形畸变 0.07 + 晕影 0.42 应用于图像，但**不是**至 OSD；亮度带宽限制（高斯 σ≈1.25 px @720）+ 边缘增强振铃（尖锐 0.9）；色度平均超过 ±10 px，向右移动 1.6 px；明亮的灯光向右涂抹； AWB色调漂移； AGC 噪声（条纹，黑暗中更强）；每帧 0–2 条丢失线；黑色提升0.045，柔和高光剪辑。尽管输出为 24 fps，噪音仍以 30 fps（磁带速率）运行。没有扫描线，没有 RGB 蒙版。
+- **OSD**：带有黑色轮廓的手工制作的5×7位图字体：`● REC`左上，电池右上，`PM 11:58` / `SEP.27.1996`右下。标题使用与摄像机标题生成器相同的字体 ×2。
 
-## Titles & subtitles
+<a id="titles--subtitles"></a>
+## 标题和副标题
 
-- **CEA-608-style closed captions**: IBM Plex Mono 600, 42 px, white on a solid black box per row, ≤32 characters per row, centred inside the 4:3 frame just above the OSD clock. They are not affected by tape noise (the TV decodes them).
-- Speaker marks: `[PA]` prefix for announcements; italics for the operator (first line tagged `(whispering)`); SDH sound descriptions in brackets: `[FLUORESCENT LIGHTS HUMMING]`, `[LIGHTS FLICKER]`, `[TAPE NOISE]`, `[SILENCE]`.
-- Rules on notices are *not* captioned — they are the picture. Keep text readable at 1080p and give each notice ≥3–4 s uncovered.
-- Title: camcorder title-generator bitmap text typed over the first shot.
+- **CEA-608 风格隐藏式字幕**：IBM Plex Mono 600，42 像素，每行实心黑框上的白色，每行 ≤32 个字符，在 OSD 时钟上方的 4:3 框架内居中。它们不受磁带噪音的影响（电视对它们进行解码）。
+- 发言人标记：`[PA]` 公告前缀；斜体表示操作员（第一行标记为 `(whispering)`）；括号中的 SDH 声音描述：`[FLUORESCENT LIGHTS HUMMING]`、`[LIGHTS FLICKER]`、`[TAPE NOISE]`、`[SILENCE]`。
+- 通知规则*不*带有标题——它们是图片。保持文本在 1080p 下可读，并让每个通知 ≥3-4 秒未被覆盖。
+- 标题：在第一个镜头上键入的摄像机标题生成器位图文本。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Black, bitmap-font title, style name, `LemoLab × Claude Opus 5.5`. This sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+黑色，位图字体标题，风格名称，`LemoLab × Claude Opus 5.5`。此签核仅属于本库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/backrooms/demo/
@@ -103,20 +111,21 @@ styles/backrooms/demo/
   mix.py      all sound → mix.wav        tools/mux.sh  core mux with CRF parameter        build.sh
 ```
 
-1. `node core/render/still.mjs styles/backrooms/demo <t…> [--q nosub=1|raw=1|sheet=1]` — review stills.
-2. `sh styles/backrooms/demo/build.sh` — TTS → whisper → music → events → mix → whisper on processed voices → render (1433 frames ≈ 80 s with 3 workers) → mux (−14 LUFS) → SRT → poster/styleframe.
+1. `node core/render/still.mjs styles/backrooms/demo <t…> [--q nosub=1|raw=1|sheet=1]` — 回顾剧照。
+2. `sh styles/backrooms/demo/build.sh` — TTS → Whisper 语音识别 → 音乐 → 事件 → 混合 → 对处理后的声音进行耳语 → 渲染（1433 帧 ≈ 80 秒，3 个工作人员）→ 复用器 (−14 LUFS) → SRT → poster/styleframe.
 
-### Pitfalls we hit
+<a id="pitfalls-we-hit"></a>
+### 我们遇到的陷阱
 
-- A fully bright scene reads as a hospital corridor. Break walls into partitions with gaps; let far areas fall dark.
-- Lights leak through walls (no occlusion) — a "dead zone" needs all lights within ±5 m across dead, and the corridor behind it dim too, or the figure is framed against a bright window.
-- The scene background showed as a bright rectangle at the corridor's end — set background = fog × 0.15.
-- A uniform fog colour lifts silhouettes to grey; make fog follow local light.
-- Low-frequency line wobble in the VHS pass skews text; keep it ≤0.25 px. Camera pitched down at a notice made words look italic — lower the camera instead.
-- Capsule-built figures read as toys / stick men. Draw the silhouette as organic curves on a billboard.
-- Legs from primitives look like tubes; show only shoe toes (extruded footprint outline with bevel, lighter sole, laces).
-- Emissive red at ×3 never reached the bloom threshold (luminance of pure red is low); use ×9.
-- Normalising a filtered chime by the *pre-filter* peak blew the PA bus up by 16 dB — normalise by the processed signal.
-- Heavy PA reverb destroys intelligibility; check every processed line with whisper and the full mix too.
-- Time-compressing a finished timeline: write keyframes in "original" time and map them through one piecewise-linear warp `W()`; remember to warp any hard-coded times elsewhere.
-- VHS noise makes files big: CRF 24 → ~47 MB for 60 s.
+- 完全明亮的场景看起来就像是医院走廊。将墙壁打碎成有间隙的隔断；让远处的区域变暗。
+- 光线透过墙壁漏出（无遮挡）——“死区”需要死区 ±5 m 范围内的所有灯光，并且其后面的走廊也很暗，或者人物被框在明亮的窗户前。
+- 场景背景在走廊尽头显示为明亮的矩形 - 设置背景 = 雾 × 0.15。
+- 均匀的雾色将轮廓提升为灰色；让雾跟随局部光线。
+- VHS 通行文本中的低频线摆动；保持≤0.25 px。 摄影机在通知处向下倾斜，使单词看起来为斜体 - 相反，降低摄影机。
+- 胶囊人物看起来像是玩具/火柴人。在广告牌上将轮廓绘制为有机曲线。
+- 原始人的腿看起来像管子；仅显示鞋头（带斜角的挤压足迹轮廓、较轻的鞋底、鞋带）。
+- ×3 处的发射红色从未达到光晕阈值（纯红色的亮度较低）；使用×9。
+- 通过*预滤波器*峰值对滤波后的铃声进行归一化，使 PA 总线增大 16 dB — 通过处理后的信号进行归一化。
+- 重的 PA 混响会破坏清晰度；用耳语和完整的混音检查每条处理过的线路。
+- 对完成的时间线进行时间压缩：在“原始”时间写入关键帧并通过一个分段线性扭曲 `W()` 映射它们；记住在其他地方扭曲任何硬编码时间。
+- VHS 噪音使文件变大：CRF 24 → ~47 MB​​，持续 60 秒。

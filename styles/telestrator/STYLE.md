@@ -1,135 +1,149 @@
-# Sports Telestrator — Style Prompt
+<a id="sports-telestrator--style-prompt"></a>
+# 体育战术板：风格提示词
 
-> The TV football analysis segment: play the clip at full speed, rewind, freeze it, and draw on the broadcast picture — rings under players' feet, marker arrows for the ball, a red patch for the space nobody covered — then play on, switch angles, count the frames, and flatten the pitch into a board. Real match footage is the ground; every line is drawn on top of it and moves with it. A studio show's packaging (sting, corner bug, score bar, a yellow wipe) holds it together. 16:9.
-> References (grammar only): touch-screen analysis segments in televised football (the "telestrator" pundit's board), and explainer channels that annotate real match footage. Never copy a broadcaster's or channel's logo, fonts, colours, idents or graphics, and never name them in the film.
+> 电视足球分析片段：全速播放剪辑，倒带，冻结它，并在广播画面上绘制 - 球员脚下的圆环，球的标记箭头，无人覆盖的空间的红色补丁 - 然后继续播放，切换角度，计算帧数，并将球场压平成一块木板。真实的比赛镜头是地面；每条线都画在它上面并随之移动。演播室表演的包装（蜇虫、角虫、配乐条、黄色擦拭巾）将其固定在一起。 16:9。
+> 参考资料（仅语法）：足球电视转播中的触摸屏分析片段（“telestrator”专家板），以及注释真实比赛镜头的解释通道。切勿复制广播公司或频道的徽标、字体、颜色、标识或图形，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-1. **Watch it, then take it apart.** Every piece of action is seen moving before it is explained. A freeze always follows play; the explanation never comes first.
-2. **One freeze, one finding.** Each freeze says one thing (the ball wasn't cleared; nobody stepped out; he struck it from outside the box) with one label and at most two groups of lines. The same few seconds of footage are reused, each pass going one layer deeper.
-3. **Drawn on the real picture.** Rings sit under feet, arrows follow the ball's real path, the box line is traced over the real line. Nothing floats in an abstract diagram until the film deliberately flattens the pitch.
-4. **Data counted from the footage.** Times come from frame counts (a stopwatch that runs on source frames), distances from the pitch markings (a perspective transform). What the footage can't measure (ball speed, sprint distance) is not stated.
-5. **Studio energy.** Bright marker lines, a white flash and a punch on every freeze, the music stopping with the picture.
+1. **观看，然后拆开。** 每一个动作都是先看动再说。比赛结束后总是会出现停顿。解释从来不是第一位的。
+2. **一次冻结，一个发现。** 每次冻结都用一个标签和最多两组线说明一件事（球没有被清除；没有人走出去；他从禁区外射门）。同样的几秒钟的镜头被重复使用，每次传递都会更深一层。
+3. **在真实图片上绘制。** 环位于脚下，箭头跟随球的真实路径，盒子线沿着真实线描画。在影片故意压平音高之前，抽象图表中没有任何内容浮动。
+4. **从素材中计数的数据。** 时间来自帧计数（在源帧上运行的秒表）、距音高标记的距离（透视变换）。没有说明镜头无法测量的内容（球速、冲刺距离）。
+5. **工作室能量。** 明亮的标记线、白色闪光和每次冻结时的冲孔，音乐随着画面停止。
 
-Not **Visual Investigation** (that is restrained, synchronised multi-camera evidence where the timeline is the protagonist; this is a pundit's show with packaging and enthusiasm). Not a **highlight reel** (no montage of goals to music; each clip is analysed). Not **Data Storytelling** or an infographic: charts are not the film; the top-down board appears once, as a summary, and is reached by flattening the real picture.
+不是**视觉调查**（即克制的、同步的多摄影机证据，其中时间线是主角；这是一个包装和热情的专家表演）。不是 **精彩片段**（没有音乐蒙太奇；每个剪辑都经过分析）。不是 **数据故事** 或信息图：图表不是影片；自上而下的板作为摘要出现一次，并通过展平真实图片来达到。
 
-## 2. Frame and layout (1920×1080)
+<a id="2-frame-and-layout-19201080"></a>
+## 2. 框架及布局（1920×1080）
 
-- **Full-frame footage** most of the time. The packaging lives in the corners:
-  - **Corner bug**, top right (x 1452–1880, y 38–110): show name on a yellow block + a mode line in the mode's colour — LIVE (red dot) / ANALYSIS (yellow) / REPLAY (cyan). It is in every footage frame from frame 1, because it sits over the broadcaster's logo.
-  - **Score bar**, bottom right (x 1392–1880, y 926–996): HOME n – n AWAY + minute. The away number flips on the frame the ball crosses the line (a 0.5 s roll with a yellow flash). It sits over the broadcaster's URL.
-  - **Source clock**, top left (x 40–370, y 38–90), on every analysis shot: `❚❚ 04.20s F106` — source seconds and frame number; ▶ ½ in slow motion, ◀◀ in a rewind. Hidden in live play.
-- **Labels** (black card, coloured left bar, Chinese line + small spaced English line) sit in empty grass or crowd, never over the action they describe.
-- **Subtitle bar** bottom, centred at x 880 (its right edge stays left of the score bar), y 938–1044.
-- **Split screen**: two 960×1080 vertical windows, each a 960-px-wide slice of a 1920 frame at 1:1 (no extra scaling), a 6 px yellow divider between them, a camera label at each window's top left (A MAIN CAMERA / B HIGH REVERSE). The slices are chosen so the broadcaster's logo and URL fall outside them.
-- **Board pages** (shot map, data card): dark board `#0C1411` with a faint 60 px grid; left column text, right side drawing. No headers, no centred title-and-bullets.
+- **大部分时间为全画幅镜头**。包装位于角落：
+  - **角落 bug**，右上角（x 1452–1880，y 38–110）：在黄色块上显示名称 + 模式颜色的模式线 — 实时（红点）/分析（黄色）/重播（青色）。它存在于第一帧的每个镜头帧中，因为它位于广播公司的徽标上方。
+  - **记分栏**，右下（x 1392–1880，y 926–996）：HOME n – n AWAY + 分钟。客场号码在球越界时翻转（滚动 0.5 秒，并闪烁黄色）。它位于广播公司的 URL 之上。
+  - **源时钟**，左上角（x 40–370，y 38–90），每次分析镜头： `❚❚ 04.20s F106` — 源秒和帧编号； ▶ 慢动作为 ½，快退为 ◀◀。隐藏在现场表演中。
+- **标签**（黑卡，彩色左条，中文线+小间距英文线）坐在空旷的草地或人群中，永远不要超过他们所描述的动作。
+- **字幕栏** 底部，以 x 880 为中心（其右边缘位于配乐栏的左侧），y 938–1044。
+- **分屏**：两个960×1080垂直窗口，每个窗口都是1:1的1920帧的960像素宽的切片（无额外缩放），它们之间有一个6像素的黄色分隔线，每个窗口左上角有一个摄影机标签（A MAIN 摄影机/B 高反转）。选择这些切片是为了使广播公司的徽标和 URL 位于它们之外。
+- **Board页面**（镜头地图，数据卡）：暗板`#0C1411`，带有微弱的60像素网格；左栏文字，右侧绘图。没有标题，没有居中的标题和项目符号。
 
-## 3. Editing grammar
+<a id="3-editing-grammar"></a>
+## 3. 编辑语法
 
-- **Order inside one piece of action:** live at 1× (original sound) → rewind (0.6 s, reversed with tracking bars and ◀◀) → freeze ① → slow play (0.6–0.85×, frame-blended) → freeze ② → slow play with a stopwatch → freeze ③ → ball flight with a comet trail → another angle (replay), possibly one more freeze.
-- **Lighter variants** for secondary pieces of action, so the deep breakdown stays special:
-  - **Freeze-in-play**: no rewind; play at 1× up to the decisive pass, freeze, draw, then play on to the goal.
-  - **Dual-angle freeze**: both angles play side by side and each arrives at the same instant (each at its own speed) where both freeze together; the same player is ringed in both.
-- **Freeze length** 1.8–2.4 s; a freeze longer than ~2.5 s needs a second action inside it. Two to four freezes per piece of action; more than four, split with a replay.
-- **Cuts between segments**: only the packaging wipe — a yellow slanted band with dark edges crossing the frame in 0.34 s. Inside a segment, hard cuts. No dissolves, no page turns.
-- **Comparison frames** (the shot map, the data card) are fully drawn early and held ≥ 2.5 s before the next cut.
+- **一个动作中的顺序：** 以 1× 实时播放（原声）→ 快退（0.6 秒，用跟踪条和 ◀◀ 反转）→ 定格 ① → 慢打（0.6–0.85×，帧混合）→ 定格 ② → 用秒表慢打 → 定格 ③ → 带有彗星轨迹的球飞行 → 另一个角度（重播），可能还会再冻结一次。
+- **较轻的变体**用于次要动作，因此深度分解保持特殊：
+  - **播放中冻结**：不倒回；以 1× 的速度踢球，直到决定性的传球、冻结、平局，然后直奔球门。
+  - **双角度冻结**：两个角度并排播放，每个角度同时到达（每个角度都有自己的速度），然后两个角度一起冻结；同一名球员在两场比赛中都被戴上了戒指。
+- **冻结长度** 1.8–2.4 s；超过 2.5 秒的冻结需要在其中进行第二次操作。每个动作有两到四次冻结；超过四场，分重赛。
+- **在段之间剪切**：仅包装擦拭布——一条带有深色边缘的黄色倾斜带在0.34秒内穿过框架。在一个片段内，进行硬剪切。没有溶解，没有翻页。
+- **比较帧**（镜头地图，数据卡）提前完全绘制，并在下一次剪切之前保持≥2.5秒。
 
-## 4. Colour identity (the one rule that matters)
+<a id="4-colour-identity-the-one-rule-that-matters"></a>
+## 4. 颜色识别（最重要的一条规则）
 
-| Role | Colour |
+|角色|颜色|
 |---|---|
-| The team/player we follow, the ball, main marker lines | `#FFD400` fluorescent yellow |
-| Opponents (rings, block arrows, link lines) | `#3FD8FF` cyan |
-| Space (a patch nobody covers) | `#FF3B30` red, fill 0.34–0.38 + dashed edge |
-| Pitch lines traced, neutral marks, stamps | `#F4F1E8` chalk |
-| Show board | `#0C1411` ink green-black |
-| Label / bug background | `rgba(8,12,14,0.9)`; opaque `#080C0E` where it covers a logo |
+|我们跟随的 team/player，球，主要标记线|`#FFD400` 荧光黄|
+|对手（环、块箭头、连接线）|`#3FD8FF` 青色|
+|空间（无人覆盖的补丁）|`#FF3B30` 红色，填充 0.34–0.38 + 虚线边缘|
+|描出的节线、中性标记、印章|`#F4F1E8` 粉笔|
+|展示板|`#0C1411` 墨水绿黑|
+|标签/错误背景|`rgba(8,12,14,0.9)`；覆盖徽标的不透明 `#080C0E`|
 
-One colour, one identity, throughout the film: a label's left bar takes the colour of what it names. Change the hues if the show needs to, never the three roles.
+在整个影片中，一种颜色，一种标识：标签的左栏采用其名称的颜色。如果演出需要，可以改变色调，而不是三个角色。
 
-## 5. Type
+<a id="5-type"></a>
+## 5. 类型
 
-- Labels: Noto Sans SC 900, 40 px (30 px for a name), English line Barlow Condensed 600, 21 px, letter-spacing 2 px, in the role colour.
-- Packaging numbers (score, minute, stopwatch, big data): Barlow Condensed 800 Italic.
-- Clock / frame numbers: IBM Plex Mono 500, 24 px.
-- Board pages: title Noto Sans SC 900 60–64 px, rows Noto Sans SC 700 34–42 px with a grey note under each, numbers Barlow Condensed 800 Italic 64–150 px in yellow; text appears left to right with a clip reveal.
-- **No handwriting fonts** anywhere: printed type on a dark card belongs to the same packaging; handwriting reads as a school notebook.
-- Subtitles: Chinese line (Noto Sans SC 500, 38 px) above an English line (Barlow Condensed 600, 32 px), black bar 0.64 with a 4 px yellow edge; one line per language, never wrapped — shorten the line instead of shrinking it.
-- All fonts OFL from Google Fonts, subset to the characters used (`demo/tools/fonts.py`).
+- 标签：Noto Sans SC 900、40 px（名称为 30 px）、英文线 Barlow Condensed 600、21 px、字母间距 2 px、角色颜色。
+- 包装编号（配乐、分钟、秒表、大数据）：Barlow Condensed 800 Italic。
+- 时钟/帧编号：IBM Plex Mono 500，24 像素。
+- 板页：标题 Noto Sans SC 900 60–64 像素，行 Noto Sans SC 700 34–42 像素，每行下方有灰色注释，数字 Barlow Condensed 800 斜体 64–150 像素，黄色；文本从左到右显示，并带有剪辑显示。
+- **任何地方都没有手写字体**：暗卡上的印刷字体属于同一包装；手写读起来就像学校笔记本一样。
+- 字幕：中文线（Noto Sans SC 500，38 px）位于英文线（Barlow Condensed 600，32 px）之上，黑条 0.64，带有 4 px 黄边；每种语言一行，从不换行——缩短行而不是收缩它。
+- 来自 Google Fonts 的所有字体 OFL，所用字符的子集 (`demo/tools/fonts.py`)。
 
-## 6. Motion and drawing
+<a id="6-motion-and-drawing"></a>
+## 6. 动作与绘图
 
-- **Freeze entry**: white flash 0.1 s (0.55) + punch 1.035 → 1.0 in 0.35 s (ease-out) + desaturate 42 % + a cool cast + heavier vignette; then a slow 1.2 % creep. Overlays use the same transform as the picture, or they slide off the players.
-- **Spotlight**: everything outside a focus ellipse darkens to 0.42 (even-odd hole), 0.3 s fade.
-- **Marker line**: dark outline (w + 6, black 0.55) + coloured core with glow 18 + thin white highlight (w × 0.28); drawn along its length; an arrowhead pops in over the last 10 %; deterministic small wobble at the vertices so it feels hand-drawn. Dashed for intended or future paths (a cross, a run), solid for what happened.
-- **Ring**: perspective ellipse (ry = 0.36 r) under the feet, drawn clockwise, outer dashed ring rotating at 60 px/s; a vertical light beam while the player moves.
-- **Draw order inside a freeze**: ring (who) → area or link (what happened) → label (the one-line finding), 0.3–0.6 s apart.
-- **Slow motion**: source frames at 0.6–0.85×, neighbours cross-blended (no stutter).
-- **Rewind**: the clip reversed in 0.6 s (ease-in-out), ±13 px horizontal jitter, four white tracking bars, a big ◀◀ and the word REWIND.
-- **Trails**: in screen space keep only the last ~0.6 s (ball 0.24 s) — the camera pans, so long trails land in the wrong place.
-- **Stamp** (e.g. a VAR decision): a framed card that drops from 1.7× to 1× with overshoot, slightly rotated, with a small flash — once per film.
-- **Perspective flatten**: see Native moves 7.
+- **冻结入口**：白色闪光0.1秒（0.55）+冲孔1.035→1.0英寸0.35秒（缓出）+去饱和42％+冷色演员+较重的晕影；然后缓慢 1.2% 蠕变。叠加层使用与图片相同的变换，或者它们从播放器上滑落。
+- **聚光灯**：焦点椭圆之外的所有内容变暗至 0.42（偶奇孔），0.3 秒褪色。
+- **标记线**：暗轮廓（宽+6，黑色0.55）+带辉光的彩色芯18+细白色高光（宽×0.28）；沿其长度绘制；最后 10% 会出现一个箭头；顶点处确定性的小摆动，因此感觉像是手绘的。虚线表示预期或未来的路径（交叉、奔跑），实线表示发生的事情。
+- **戒指**：脚下的透视椭圆（ry = 0.36 r），顺时针绘制，外虚线环以60 px/s旋转；玩家移动时发出垂直光束。
+- **在冻结**内绘制顺序：环（谁）→区域或链接（发生了什么）→标签（一行发现），间隔0.3–0.6秒。
+- **慢动作**：源帧为0.6–0.85×，相邻帧交叉混合（无卡顿）。
+- **倒带**：剪辑在 0.6 秒内反转（缓入缓出）、±13 px 水平抖动、四个白色跟踪条、一个大 ◀◀ 和单词 REWIND。
+- **步道**：在屏幕空间中仅保留最后约 0.6 秒（球 0.24 秒）——摄影机平移，因此长轨迹会落在错误的位置。
+- **邮票**（例如 VAR 判决）：一张带框的牌，从 1.7 倍下降到 1 倍，并带有过冲，轻微旋转，带有小闪光 - 每个影片一次。
+- **透视展平**：参见风格特有表现手法 7。
 
-## 7. Grade and image quality
+<a id="7-grade-and-image-quality"></a>
+## 7. 等级和图像质量
 
-- Footage: `hqdn3d=1.2:1.2:2.5:2.5` → lanczos to 1920×1080 (modern footage at most 1.5×) → `unsharp=5:5:0.55` → `eq=saturation=0.9:contrast=1.04:gamma=0.97` + slightly cool shadows; one grade for every clip; film grain 2 added once at the master (`mux.sh`).
-- Broadcaster logos and URLs are covered by the packaging (bug and score bar placed exactly over them, present from frame 1), or kept outside split-screen windows — never by cropping past 1.5×.
-- Prefer a broadcaster's native resolution over an "AI-upscaled" stream.
+- 素材：`hqdn3d=1.2:1.2:2.5:2.5` → lanczos 至 1920×1080（现代素材最多 1.5×） → `unsharp=5:5:0.55` → `eq=saturation=0.9:contrast=1.04:gamma=0.97` + 稍冷的阴影；每个剪辑一个等级； 影片颗粒 2 在母版 (`mux.sh`) 处添加一次。
+- 广播公司徽标和 URL 被包装覆盖（bug 和配乐条正好放置在它们上方，从第 1 帧开始出现），或者保留在分屏窗口之外 - 切勿裁剪超过 1.5 倍。
+- 与“人工智能升级”流相比，更喜欢广播公司的原始分辨率。
 
+<a id="8-sound-palette"></a>
 ## 8. Sound palette
 
-- **Layers**: English voice-over (one line per freeze, ≈2.5–3 s) → match sound (commentary + crowd at full level in live play; under freezes only a low-passed crowd bed, looped; the goal roar on the goal frame) → score → foley. Voice ducks everything else to 0.55.
-- **Score**: sampled band (drum kit, electric bass, staccato trumpet and trombone, timpani, horn, cellos, glockenspiel), about 120 BPM. The groove restarts at the head of each played segment, so cuts don't need a global bar grid. **On a freeze the drums stop**: one brass stab + timpani + low thump + camera shutter, then only closed hi-hat — the music freezes with the picture. Goals: a big brass chord with crash and glockenspiel on the score-bar flip.
-- **Foley**: marker squeak (2–5 kHz band-passed noise with flutter) for each line, pops for rings, a tick per landed label, whoosh on every wipe, tape-motor whine on a rewind, a stopwatch tick every 0.2 s, a thump for the stamp, a long whoosh and a timpani roll under the flatten.
-- Mix limited before `mux.sh` normalises to −14 LUFS.
+- **层数**：英语旁白（每次冻结一行，约2.5-3秒）→比赛声音（解说+现场比赛中全音量的人群；下冻结仅低通人群床，循环播放；球门框上的进球怒吼）→配乐→拟音。 Voice 将其他一切都降低到 0.55。
+- **配乐**：采样乐队（鼓组、电贝司、断奏小号和长号、定音鼓、圆号、大提琴、钟琴），约 120 BPM。凹槽在每个播放片段的开头重新开始，因此剪辑不需要全局小节网格。 **鼓停止时**：一根铜管刺击 + 定音鼓 + 低音重击 + 摄影机快门，然后只关闭踩镲 — 音乐与画面一起冻结。目标：配乐-bar 翻转上带有碰撞和钟琴的大铜管和弦。
+- **弗利**：每条线的标记吱吱声（带有颤动的 2-5 kHz 带通噪声）、响铃时的爆裂声、每个着陆标签的滴答声、每次擦拭时的嗖嗖声、倒带时磁带电机的呜呜声、每 0.2 秒秒表滴答声、标记时的重击声、长嗖嗖声和定音鼓的滚动声。压平。
+- 在 `mux.sh` 归一化至 −14 LUFS 之前混合限制。
 
-## 9. Native moves (and how the code does them)
+<a id="9-native-moves-and-how-the-code-does-them"></a>
+## 9. 风格特有表现手法（以及代码如何执行它们）
 
-1. **Freeze and draw** — a freeze segment = one source frame + flash + punch + desaturate + spotlight; overlays drawn by progress (`overlayAnalysis()`, `overlayG1()` in `demo/index.html`).
-2. **Tracked ring** — hand keyframes of the feet point in source pixels every ~3–6 frames, linearly interpolated (`TRK`, `at()`); check them with `?dbg=1`, which paints every tracked point in magenta.
-3. **Frame-counting stopwatch** — starts at the receiving frame and counts source frames ÷ fps; stops and turns yellow on the strike (`stopwatch()`).
-4. **Score-bar flip on the goal frame**, one entry per goal (`GOALS`, `scoreAt()`, `bugScore()`).
-5. **Packaging over watermarks** — corner bug and score bar positioned from the logo and URL coordinates, drawn from frame 1 (`bugTop()`, `bugScore()`).
-6. **Dual-angle freeze** — two windows, each its own clip and frame range, both reaching their freeze frame on the same beat; overlays drawn in each window's source coordinates (`splitView()`, `overlayG2()`).
-7. **Perspective flatten into a shot map** — for each shot, mark 6–8 known pitch points in its own frame (box and six-yard corners, where the penalty arc meets the box line; FIFA dimensions) and fit a ground-plane homography by least squares (`demo/tools/homography.py` reads `tools/pitch.json`, writes `assets/pitch.json`; residuals ≤ 6 px are fine). The strike frame is then drawn as a mesh of triangles in pitch coordinates (1.5 m cells), each vertex moving from its image position to its board position, each triangle affine-mapped (`drawTri()`); the picture fades out as the chalk board takes over, and the other shots' feet points, converted with their own frames' matrices, drop onto the same board (`shotMap()`). The broadcaster's URL is painted out of the source frame first, because the flatten drags it into the middle of the screen.
-8. **Data card** — the counted numbers re-stated on a board page: label left, big yellow number right, red marker circle on the key one (`notes()`).
-9. **Commentary transcript** — original-language words with timecodes and a translation, in a small box during live play; inaudible words become an ellipsis, never a guess (`transcript()`).
+1. **冻结并绘制** — 冻结片段 = 一个源帧 + 闪光 + 打孔 + 去饱和 + 聚光灯；按进度绘制的叠加层（`demo/index.html` 中的 `overlayAnalysis()`、`overlayG1()`）。
+2. **跟踪环** - 脚部关键帧每~3-6帧指向源像素，线性插值（`TRK`、`at()`）；使用 `?dbg=1` 检查它们，它用洋红色绘制每个跟踪点。
+3. **帧计数秒表** — 从接收帧开始计算源帧 ÷ fps；罢工时停止并变为黄色 (`stopwatch()`)。
+4. **球门框上的记分栏翻转**，每个进球一个条目（`GOALS`、`scoreAt()`、`bugScore()`）。
+5. **水印包装** — 角虫和配乐条定位于徽标和 URL 坐标，从第 1 帧绘制（`bugTop()`、`bugScore()`）。
+6. **双角度冻结** — 两个窗口，每个窗口都有自己的剪辑和帧范围，都在同一节拍上达到其冻结帧；在每个窗口的源坐标（`splitView()`、`overlayG2()`）中绘制的叠加层。
+7. **透视图展平为镜头地图** - 对于每个镜头，在其自己的框架中标记6-8个已知节点（盒子和六码角，罚球弧与盒子线相交的地方；FIFA尺寸）并通过最小二乘法拟合地平面单应性（`demo/tools/homography.py` 读取 `tools/pitch.json`，写入 `assets/pitch.json`；残差 ≤ 6 px 即可）。然后，将击球框架绘制为俯仰坐标（1.5 m 单元）中的三角形网格，每个顶点从其图像位置移动到其棋盘位置，每个三角形均进行仿射映射（`drawTri()`）；当黑板接管时，图片逐渐淡出，而其他镜头的脚点，用它们自己的框架矩阵转换，落在同一块板上（`shotMap()`）。广播公司的 URL 首先从源框架中绘制出来，因为展平将其拖到屏幕中间。
+8. **数据卡** — 板页上重新显示的计数数字：左侧标签，右侧大黄色数字，关键一个上的红色标记圆圈（`notes()`）。
+9. **解说文字记录** — 现场演奏时，带有时间码和翻译的原始语言单词，放在一个小盒子里；听不见的单词成为省略号，永远不会成为猜测（`transcript()`）。
 
-## 10. Material
+<a id="10-material"></a>
+## 10. 材质
 
-1. **Ask the user first** whether they have their own footage (club or academy video, their own camera, a licensed broadcast clip), line-ups, event data or photos, and the rights to use them. Their material comes first.
-2. **Where to look** (judge every file on its own page):
-   - **Wikimedia Commons** (search "goal", the match, the player): many clips are cut from broadcasters' own YouTube uploads under CC BY. Fine: CC0, public domain, CC BY. Not used: CC BY-SA, "no known restrictions", unclear licences.
-   - **A broadcaster's or club's own YouTube channel** when its video page says *Creative Commons Attribution license (reuse allowed)*: check that the channel is the rights holder's official, verified channel (not a re-upload or a fan mirror), save the evidence (channel id, verification, licence field, date checked), and download the native resolution, not an AI-upscaled stream. Third-party re-uploads, fan mirrors, colourised or "restored" versions are never used.
-   - **Facts** (scores, minutes, how a goal was scored): the league's or broadcaster's own match page or video description, then established newspapers; quote them in `FACTS.md`. When sources disagree, use the official list and leave the disputed detail out.
-   - Photos of players: Commons (CC BY / CC0); state the year when the photo isn't from the match.
-3. **Before downloading, tell the user** what you will fetch, from where and under which licence. The finder copied into this style, `demo/tools/footage.py` (`search commons|archive|nasa`, `fetch`, `used`, `md`), logs licence, author, page and the seconds used into `SOURCES.jsonl` and writes `SOURCES.md`; `demo/tools/fetch_sources.sh` shows how a verified YouTube CC BY source is fetched with `uvx yt-dlp`. Wikimedia rate-limits bursts (HTTP 429): one request at a time.
-4. **People on screen**: players, referees and staff in the event are fine; never slow down or freeze on an identifiable spectator.
+1. **首先询问用户** 是否有自己的素材（俱乐部或学院视频、自己的摄影机、许可的广播剪辑）、阵容、赛事数据或照片，以及使用它们的权利。他们的材料是第一位的。
+2. **哪里看**（判断每个文件在自己的页面上）：
+   - **Wikimedia Commons**（搜索“进球”、比赛、球员）：许多剪辑是从广播公司自己的 YouTube 上以 CC BY 方式上传的。精细：CC0、公共领域、CC BY。未使用：CC BY-SA，“无已知限制”，许可证不明确。
+   - **A广播公司或俱乐部自己的YouTube频道**，当其视频页面显示*知识共享归属许可证（允许重复使用）*时：检查该频道是否是权利所有者的官方、经过验证的频道（不是重新上传或粉丝镜像），保存证据（频道ID、验证、许可证字段、检查日期），并下载原始分辨率，而不是AI升级的流。绝不会使用第三方重新上传、扇形镜像、彩色或“恢复”版本。
+   - **事实**（分数、分钟、进球方式）：联赛或广播公司自己的比赛页面或视频描述，然后建立报纸；在 `FACTS.md` 中引用它们。当消息来源不同意时，请使用官方列表并忽略有争议的细节。
+   - 球员照片：Commons（CC BY / CC0）；注明照片不是来自比赛的年份。
+3. **在下载之前，告诉用户** 您将获取什么、从哪里以及在哪个许可证下获取。发现者复制到这种风格，`demo/tools/footage.py`（`search commons|archive|nasa`，`fetch`，`used`，`md`），记录许可证，作者，页数和使用的秒数到`SOURCES.jsonl`并写入`SOURCES.md`； `demo/tools/fetch_sources.sh` 展示了如何使用 `uvx yt-dlp` 获取经过验证的 YouTube CC BY 源。维基媒体速率限制突发 (HTTP 429)：一次一个请求。
+4. **屏幕上的人**：赛事中的选手、裁判和工作人员都很好；切勿放慢速度或凝视可识别的观众。
 
-## 11. Engine
+<a id="11-engine"></a>
+## 11. 发动机
 
-Canvas 2D, one page: `window.render(t)` is async and deterministic, frames load on demand from JPEG sequences (one folder per clip, 90-frame cache). `timeline.json` (segments with clip and source frame range, voice lines) drives the page, `tools/mix.py` and `tools/cues.py`. `window.TEXTS(t)` reports the text that must be read, for `readcheck.mjs`. `core/render/video.mjs` renders at 30 fps.
+Canvas 2D，一页：`window.render(t)` 是异步且确定的，根据 JPEG 序列按需加载帧（每个剪辑一个文件夹，90 帧缓存）。 `timeline.json`（具有剪辑和源帧范围、语音线路的段）驱动页面、`tools/mix.py` 和 `tools/cues.py`。 `window.TEXTS(t)` 报告 `readcheck.mjs` 必须读取的文本。 `core/render/video.mjs` 以 30 fps 渲染。
 
-## 12. Pitfalls
+<a id="12-pitfalls"></a>
+## 12. 陷阱
 
-- **Wrong tracking points** are the biggest risk: reading coordinates off a scaled contact sheet is easily 20–50 px off. Read them on full-resolution crops with a pixel ruler, then check with `?dbg=1`.
-- **Overlays not under the punch transform** slide off the players during a freeze.
-- **Balls vanish**: long shots are a few pixels with motion blur; colour tracking loses them; frames where the ball is invisible are interpolated and the number says "≈".
-- **Numbers the footage can't support** (ball speed, distance run) are not written. Distances only from a homography fitted to visible markings, each shot in its own frame (the camera zooms and pans between shots).
-- **Packaging late by one frame** shows the logo: bugs never fade in over footage.
-- **Split-screen windows sliding in** reveal what's outside them (a logo, a URL): clip each window to its slice in source coordinates, not only to the screen half.
-- **Score state must match the moment**: before the 67th-minute goal it is 3–2, not 3–3.
-- **Names in TTS**: spell them phonetically for the voice ("Zayits", "Saduk") and keep the real spelling in subtitles; record the ASR result for proper names in `lines.json` (`asr`).
-- **Freeze labels echo the subtitle** and live only ~1 s; anything the viewer must read (scores, board rows, the data card) gets ≥ 2.5 s and goes into `TEXTS`.
+- **错误的跟踪点**是最大的风险：从缩放的接触表上读取坐标很容易就会偏离20-50像素。使用像素标尺在全分辨率作物上阅读它们，然后使用 `?dbg=1` 进行检查。
+- **叠加不在冲孔变换下** 在冻结期间从玩家身上滑落。
+- **球消失**：长镜头是一些具有运动模糊的像素；颜色跟踪丢失了它们；球不可见的帧被插值，数字表示“≈”。
+- **镜头不支持的数字**（球速、运行距离）未写入。仅距安装到可见标记的单应性，每个镜头在其自己的框架中（摄影机在镜头之间缩放和平移）。
+- **包装晚了一帧** 显示徽标：错误永远不会在镜头中消失。
+- **滑动的分屏窗口** 显示其外部的内容（徽标、URL）：将每个窗口剪辑到源坐标中的切片，而不仅仅是屏幕的一半。
+- **比分状态必须与时刻**匹配：在第67分钟进球之前，比分是3-2，而不是3-3。
+- TTS**中的** 名称：按照声音的语音拼写（“Zayits”、“Saduk”），并在字幕中保留真实拼写；将专有名称的 ASR 结果记录在 `lines.json` (`asr`) 中。
+- **Freeze 标签与副标题** 相呼应，并且仅存活约 1 秒；观看者必须读取的任何内容（分数、棋盘行、数据卡）都会获得 ≥ 2.5 秒并进入 `TEXTS`。
 
-## 13. Variation space
+<a id="13-variation-space"></a>
+## 13. 变异空间
 
-The agent decides per film: the sport (football, basketball pick-and-roll with screens drawn as bars, tennis rallies with landing zones, F1 overtakes with racing lines — anything with a wide camera that shows the whole play), the moments, the show's fictional name and colours (keeping the three roles), how many freezes.
+代理人根据影片来决定：运动（足球、篮球挡拆（屏幕绘制为条形）、网球集会和着陆区、F1 超车和赛车线 - 任何带有宽摄影机来显示整个比赛的东西）、时刻、节目的虚构名称和颜色（保留三个角色）、冻结次数。
 
-- **Three structures:** chronological build-up to the deep breakdown (secondary moments get light treatments, the decisive one the full rewind-and-freeze); one moment taken apart from three angles; a "what went wrong" defensive breakdown ending on the space map.
-- **Three openings:** the show sting into a match-record card; the goal frame frozen in the first second, then rewind; the stopwatch running over live play.
-- **Three endings:** the top-down board that sums up the moments; the data card with one number circled; the hero shot slowed with the minute and name.
+- **三种结构：**按时间顺序累积到深度击穿（次要时刻亮创作方案，决定性时刻完全倒带和冻结）；从三个角度截取的一瞬间；太空地图上的“出了什么问题”的防御崩溃结束了。
+- **三开：**将秀刺入比赛记录卡；球门框定格在第一秒，然后快退；秒表在现场比赛中运行。
+- **三个结局：**自上而下的板，总结时刻；带有一个数字圈出的数据卡；英雄镜头随着分钟和名字而放慢了速度。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

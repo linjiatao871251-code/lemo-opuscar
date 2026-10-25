@@ -1,70 +1,77 @@
-# Microscope Story — our demo
+<a id="microscope-story--our-demo"></a>
+# 显微镜故事 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Measured Blue* 《量出来的蓝》 (39.5 s) · `microscope.mp4` · source in [`demo/`](demo/)
+示范：*测量的蓝色*《量出来的蓝》（39.5秒）·`microscope.mp4`·来源在[`demo/`](demo/)
 
-One continuous camera takes a stained slice of human liver from the glass slide in the hand down to a single nucleus and back. On the way it counts the blue (collagen) inside two 1 mm circles 1.4 mm apart: 13.5 % and 32.6 %. Chinese on screen, English narration, bilingual subtitles (Chinese line above, English line below). One public whole-slide scan (Ventana-1.bif, PathAI, CC0); every number is measured from the file and listed with its method in [`demo/FACTS.md`](demo/FACTS.md). The film describes measurements only; it makes no diagnosis.
+连续的摄影机从手中的载玻片上取出人类肝脏的染色切片，直至单个细胞核并返回。途中，它会计算两个相距 1.4 毫米的 1 毫米圆圈内的蓝色（胶原蛋白）：13.5% 和 32.6%。中文屏幕，英文旁白，双语字幕（中文上行，英文下行）。一次公共全玻片扫描（Ventana-1.bif、PathAI、CC0）；每个数字都是从文件中测量的，并在[`demo/FACTS.md`](demo/FACTS.md)中列出其方法。 影片仅描述测量结果；它没有做出任何诊断。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Logline: one stained slice the size of a fingernail; the same stain, two circles 1.4 mm apart, 13.5 % blue against 32.6 %, every number counted from the scan itself.
+梗概：一片指甲大小的染色切片；相同的染色，两个相距 1.4 毫米的圆圈，13.5% 蓝色对 32.6%，每个数字都是从扫描本身计算的。
 
-Arc: the object (the slide on a graphite bench, its label, a fleck of tissue: *one glass slide, one slice of human liver*) → the size (a dive to the tissue, a dimension line, 4.80 mm) → the first count (circle A inside a large nodule, a scan front lights every counted pixel, 13.5 %) → the second count (a truck 1.4 mm to circle B, a small nodule walled by thick septa, 32.6 %) → the turn (silence, then both circles framed and held: *2.4 times the blue*) → the smallest scale (a dive to one hepatocyte nucleus, a focal sweep, a ring, 8.5 µm) → the climb back to the glass, the title written on it.
+弧形：物体（石墨工作台上的载玻片、其标签、一小块组织：*一张载玻片、一片人类肝脏*）→ 大小（深入组织、尺寸线，4.80 毫米）→ 第一次计数（大结节内的圆圈 A，每个计数像素的扫描前灯，13.5 %）→ 第二次计数（卡车 1.4 毫米到圆圈 B，由厚隔膜围成的小结节， 32.6 %) → 转弯（沉默，然后两个圆圈都框起来并保持：*2.4 倍蓝色*） → 最小尺度（潜入一个肝细胞核，焦点扫描，一个环，8.5 µm）→ 爬回玻璃，上面写有标题。
 
-Native moves spent: *the dive* as the signature shot (twice: slide → tissue → nodule, and nodule → nucleus), *counting the colour* for both circles, *two circles, one verdict* at the turn, *the focal sweep and the ring* at the nucleus, *the climb back* into the end card.
+风格特有表现手法花费：*潜水*作为标志性镜头（两次：载玻片 → 组织 → 结节，结节 → 核），*计算两个圆圈的颜色*，*两个圆圈，一个判决*在转弯处，*焦点扫描和环*在核处，*爬回*到片尾卡。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-One continuous take; the camera is a similarity transform interpolated as a log spiral between keys. Times in seconds; magnification changes happen where the pyramid level on screen actually changes (4.04, 4.56, 9.94, 10.42, 21.02, 27.52, 27.94, 28.22 going in; six between 33.53 and 34.46 coming out).
+连续拍摄一张； 摄影机是一种相似变换，插值为键之间的对数螺旋。时间以秒为单位；放大倍率变化发生在屏幕上金字塔级别实际变化的地方（4.04、4.56、9.94、10.42、21.02、27.52、27.94、28.22 进入；6 个在 33.53 和 34.46 之间出来）。
 
-| # | Time | Shot | Camera | Native move / note |
+|#|时间|镜头|摄影机|风格特有表现手法/注|
 |---|---|---|---|---|
-| 1 | 0.0–2.67 | the whole slide across a graphite bench, label end on the right; a fleck of tissue labelled 一片人肝组织 / 三色染色 | rack focus in 0–0.95, light pool drifting; 68 → 63.5 mm field, roll 90° | the scanner's own photo of the slide, cleaned, logo filled |
-| 2 | 2.67–5.33 | slide → tissue | dive ×7, roll 90° → 25° (the tissue's long axis comes level); turret clicks at 1.25× and 2.5× | the cover glass turns to clean glass below 30 mm |
-| 3 | 5.33–9.33 | the tissue, a dimension line grows from its centre: 4.80 mm, 人肝组织 · 三色染色 | creep 9.2 → 8.55 mm | first reading |
-| 4 | 9.33–10.67 | tissue → nodule A | dive ×3.2 to 2.7 mm, roll to 18.5° (A–B line level); clicks 5×, 10× | |
-| 5 | 10.67–15.33 | circle A drawn as an arc with ticks (A · 直径 1 mm); 11.0–12.47 a mint scan front crosses it, every counted collagen pixel lights behind it, the reading rolls to 13.5 % and springs at 12.67; raw counts below | locked, creep | counting the colour |
-| 6 | 15.33–16.67 | the septa slide past | truck 1.41 mm at 10× | |
-| 7 | 16.67–20.67 | circle B, the same count: 32.6 %, lands 18.0 | locked, creep | |
-| 8 | 20.67–26.67 | both circles and both readings in frame from 21.67; silence 21.8–22.67; the verdict panel: B 的蓝色占比是 A 的 2.4 倍 / 相隔 1.41 mm · 同一切片 · 同一染色 | pull back to 3.95 mm (click back to 5×), creep | each reading held ≥ 2.5 s before the verdict |
-| 9 | 26.67–29.33 | nodule B → one nucleus | dive ×11, roll to 34°; clicks 10×, 20×, 40× | the counted pixels fade on the way down |
-| 10 | 29.33–32.67 | the frame softens, a focal plane sweeps left → right; a mint ring is drawn round one nucleus with caliper ticks, panel 肝细胞核 · 8.5 µm · 核膜外缘拟合 | creep 345 → 318 µm | the focal sweep and the ring |
-| 11 | 32.67–35.33 | silence 32.3–32.67, then the climb: the scale bar jumps back 20 µm → 5 mm, six quick clicks | pull ×145, roll 34° → 96° | the climb back |
-| 12 | 35.33–39.5 | the glass fills the frame, the slide's edge and a dark sliver of bench at the bottom; title written on the glass | slow drift | end card |
+|1|0.0–2.67|整个滑道穿过石墨工作台，标签端在右侧；一块标记为一片人肝组织/三色染色的组织|机架焦点在0-0.95，光池漂移； 68 → 63.5 mm 视场，滚动 90°|扫描仪自己的幻灯片照片，已清洁，已填充徽标|
+|2|2.67–5.33|载玻片 → 组织|俯冲×7，横滚90°→25°（组织长轴水平）；炮塔咔嗒声为 1.25× 和 2.5×|盖玻片转为30毫米以下的洁净玻璃|
+|3|5.33–9.33|组织，从其中心长出一条尺寸线：4.80毫米，人肝组织·三色染色|蠕变 9.2 → 8.55 毫米|第一读|
+|4|9.33–10.67|组织→结节A|下潜 ×3.2 至 2.7 毫米，横滚至 18.5°（A–B 线水平）；点击次数 5×、10×| |
+|5|10.67–15.33|圆A绘制为带刻度的圆弧（A·直径1毫米）； 11.0–12.47 一个薄荷扫描前沿穿过它，每个计数的胶原蛋白像素在其后面亮起，读数滚动到 13.5%，并跳到 12.67；原始计数如下|锁定、蠕动|数颜色|
+|6|15.33–16.67|隔垫滑过去|卡车 1.41 毫米 (10×)| |
+|7|16.67–20.67|圈 B，相同计数：32.6 %，土地 18.0|锁定、蠕动| |
+|8|20.67–26.67|两个圆圈和两个读数均来自 21.67；沉默 21.8–22.67；评审团： B 的蓝色场景是 A 的 2.4 倍/隔相 1.41 mm · 同一切片 · 同一染色|拉回到 3.95 mm（点击返回 5×），蠕变|每次读数在判决前保持≥2.5秒|
+|9|26.67–29.33|结节B→一核|俯冲×11，横滚至34°；点击次数 10×、20×、40×|计数的像素在下降过程中逐渐消失|
+|10|29.33–32.67|画面柔化，焦平面从左→右扫过；用卡尺刻度在一个细胞核周围画一个薄荷环，面板肝细胞核 · 8.5 µm · 核膜外缘工艺品|蠕变 345 → 318 µm|焦点扫描和环|
+|11|32.67–35.33|沉默 32.3–32.67，然后爬升：比例尺向后跳 20 µm → 5 mm，快速点击六次|拉×145，横滚34°→96°|爬回来|
+|12|35.33–39.5|玻璃充满了框架、滑梯的边缘和底部的一条深色长凳；玻璃上写着标题|缓慢漂移|片尾卡|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-90 BPM, 4/4, one chord per bar: Dsus2 – Bm7 – Gmaj7 – Asus4 (twice), Bm under the verdict, Gmaj7, Em9 for the dive, D major when the nucleus lands, Gmaj7 for the climb, Dsus2 – D for the card. Every designed hit sits on the grid (`demo/tools/cuecheck.py`: 0 ms); turret clicks are foley on the picture's level changes.
+90 BPM，4/4，每小节一个和弦：Dsus2 – Bm7 – Gmaj7 – Asus4（两次），Bm下判决，Gmaj7，Em9为下潜，D大调为核心着陆，Gmaj7为爬升，Dsus2 – D为卡。每个设计的点击都位于网格上（`demo/tools/cuecheck.py`：0毫秒）；炮塔点击是拟音上图片的水平变化。
 
-| Section | Time | Palette | Notes |
+|部分|时间|调色板|笔记|
 |---|---|---|---|
-| Open | 0–2.67 | bowed vibraphone pad, soft vibraphone arpeggio, long pulse bass, a high glass shimmer under the moving light, soft timpani | |
-| Push | 2.67–5.33 | hard-mallet vibraphone in 16ths, pulse bass in 8ths, riser | turret click + servo at each level |
-| Tissue | 5.33–9.33 | pad, quarter-note pulse | pen on glass for the dimension line |
-| Measure | 9.33–20.67 | vibraphone in 8ths, marimba off-beat ticks, quarter pulse | per circle: pen for the arc, a band-passed scan moving left → right with counter ticks that speed up; glockenspiel + timpani when the reading lands (A 12.67, B 18.0); whoosh for the truck |
-| Silence 1 | 21.8–22.67 | room tone only | |
-| Verdict | 22.67 | timpani + gran cassa + glockenspiel B5 + low B in the bass | first sound after the silence |
-| Dive | 26.67–29.33 | 16ths again, riser, three clicks | |
-| Land | 29.33–32.3 | water-glass motif D5–A4–F♯5–E5–D5 with echoes, D major pad, filtered sweep across the stereo field with the focal plane, glockenspiel F♯6 when the reading lands | the only resolution in the film |
-| Silence 2 | 32.3–32.67 | room tone | |
-| Climb | 32.67–35.33 | a long whoosh, six lighter clicks | |
-| Card | 35.33–39.5 | reversed swell into a soft bass drum and bowed cymbal, the glass motif once more, slower; low D | |
+|打开|0–2.67|弓形电颤琴垫、柔和的电颤琴琶音、长脉冲低音、移动灯光下的高玻璃闪烁、柔和的定音鼓| |
+|推|2.67–5.33|16 度硬槌电颤琴、8 度脉冲低音、立管|每个级别的炮塔点击 + 伺服|
+|组织|5.33–9.33|pad，四分音符脉冲|用笔在玻璃上绘制尺寸线|
+|措施|9.33–20.67|八度电颤琴、马林巴另类节拍、四分之一脉冲|每圈：弧线笔，带通扫描从左→右移动，并带有加速的计数器刻度；当读数落地时，钟琴 + 定音鼓（A 12.67，B 18.0）；卡车呼啸而过|
+|沉默1|21.8–22.67|仅房间音| |
+|判决|22.67|定音鼓 + 大卡萨 + 钟琴 B5 + 低音 B|寂静后的第一声声音|
+|潜水|26.67–29.33|再次 16 分，立管，三声咔嗒声| |
+|土地|29.33–32.3|水玻璃图案 D5–A4–F♯5–E5–D5，带回声，D 大调垫，在读数落地时用焦平面过滤扫过立体声场，钟琴 F♯6|影片中唯一的分辨率|
+|沉默2|32.3–32.67|房间音调| |
+|爬|32.67–35.33|一声长长的嗖嗖声，六声轻响| |
+|卡片|35.33–39.5|反转膨胀为柔和的低音鼓和弓形钹，玻璃主题再次变慢；低D| |
 
-Mix (in `mix.py`): stems set against the voice by active RMS (music −11 dB, pulse −14, foley −12, hits −6, room −30), music ducked ~4 dB under speech, gentle bus compression on music, pulse, foley and room only; a 38 Hz high-pass and a −4 dB shelf below 62 Hz on everything but the voice. The film measures −14.0 LUFS, LRA 5.8 LU, peak −1.8 dBFS.
+混音（在 `mix.py` 中）：分轨音频通过主动 RMS 设置针对语音（音乐 −11 dB，脉冲 −14，拟音 −12，命中 −6，房间 −30），音乐在语音下降低约 4 dB，仅对音乐、脉冲、拟音和房间进行温和的总线压缩；除语音外，所有内容均具有 38 Hz 高通和低于 62 Hz 的 −4 dB 架。 影片测量值 −14.0 LUFS，LRA 5.8 LU，峰值 −1.8 dBFS。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Glass #F4F1EC (both the slide photo and the scan normalised to it), bench graphite #0B0D0F → #2A3036, ink #181B1F, frosted panels rgba(12,14,17,0.74) with a 1 px light rim, accent mint rgb(120,240,205) on stain and rgb(0,122,99) on glass.
-- The stain keeps its colour: trichrome red (hepatocyte cytoplasm) and blue (collagen).
-- Props: the slide photo (label and barcode as photographed, the maker's logo filled), the dimension line, two 1 mm circles with their counted-pixel masks, the verdict panel, the nucleus ring, the instrument panel (scale bar, field of view, magnification with a turning nosepiece glyph and a large flash of each new magnification), the source panel.
-- Narrator: Kokoro `af_heart`, speed 0.95.
+- 玻璃#F4F1EC（幻灯片照片和对其进行归一化的扫描），工作台石墨#0B0D0F → #2A3036，墨水#181B1F，磨砂面板rgba（12,14,17,0.74），带有1 px光边框，在污渍上强调薄荷色rgb（120,240,205），在污渍上强调薄荷色rgb（120,240,205）和rgb（0,122,99）玻璃。
+- 染色剂保持其颜色：三色红（肝细胞细胞质）和蓝色（胶原蛋白）。
+- 道具：幻灯片照片（拍摄的标签和条形码，填充制造商的徽标）、尺寸线、两个带有计数像素掩模的 1 毫米圆圈、判决面板、核环、仪表板（比例尺、视野、带有旋转物镜转盘字形的放大倍率和每个新放大倍率的大闪光灯）、源面板。
+- 旁白：Kokoro `af_heart`，速度0.95。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-The camera climbs back until the glass fills the frame; on its empty cover glass, in ink: 量出来的蓝 (Noto Serif SC 600), *Measured Blue*, a rule drawn left to right, `MICROSCOPE STORY · 显微叙事`, `LemoLab × Claude Opus 5.5`, `数据：Ventana-1 · PathAI · CC0`; the tissue fleck sits to the right. 4.2 s. The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+摄影机向后爬，直到玻璃填满框架；在其空盖玻璃上，墨水：量出来的蓝（Noto Serif SC 600），*测量蓝色*，从左到右绘制的规则，`MICROSCOPE STORY · 显微叙事`，`LemoLab × Claude Opus 5.5`，`数据：Ventana-1 · PathAI · CC0`；组织斑点位于右侧。 4.2 秒。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 demo/
@@ -81,7 +88,7 @@ demo/
   FACTS.md, CREDITS, stills/styleframe.jpg
 ```
 
-- `sh demo/build.sh` takes about 5 minutes on Apple silicon (the picture renders in ~20–90 s with 4 workers; the final speech check is the slowest step). In a fresh clone it first downloads the slide (227 MB), rebuilds the plates and measurements (about a minute) and fetches the fonts (Barlow Condensed and IBM Plex Mono from github.com/google/fonts, Noto Sans SC / Noto Serif SC subsets from the Google Fonts API); `FETCH=1` forces all of that again. The slide reader runs in its own `demo/.venv` (tifffile, imagecodecs).
-- Checks it runs: `asr_check.py` with `small.en` (decimals are written as Whisper writes them in each line's `asr`), the script's numbers against the measurements (`export.mjs` fails on a mismatch), the cue grid, single-line subtitle widths with the real fonts (widest 642 px against 960), `readcheck.mjs`, speech-to-text on the final mix, black frames.
-- Plates: slide photo 1251 × 3685 (21.2 µm/px), scan levels 5/4/3 whole with a 0.3 mm feather, level 2 whole (6144 × 5376, 1 µm/px), levels 1 and 0 as 5120 × 3584 crops around the nucleus. About 400 MB of decoded images per render worker.
-- Demo-specific pitfalls: the scanner tray's clips at the slide's far end could only be filled roughly, so that end stays out of frame in every shot; the slide photo's resolution tag was trusted only after the tissue's centroid matched the scan through AOI0 (19 µm); with fields between 2.6 and 2.8 mm the level-2 plate flips in and out, so the circles are held at 2.6–2.7 mm to keep the turret quiet during a reading; the scan direction of the counting mask is computed for the roll in `config.json` and must follow the camera if the roll changes.
+- `sh demo/build.sh` 在 Apple 芯片上大约需要 5 分钟（图片在 4 个工作人员的情况下在约 20-90 秒内渲染；最后的语音检查是最慢的步骤）。在新的克隆中，它首先下载幻灯片（227 MB），重建板和尺寸（大约一分钟）并获取字体（来自 github.com/google/fonts 的 Barlow Condensed 和 IBM Plex Mono，来自 Google Fonts API 的 Noto Sans SC / Noto Serif SC 子集）； `FETCH=1` 再次强制执行所有这些操作。幻灯片阅读器在其自己的 `demo/.venv`（tiff 文件、图像编解码器）中运行。
+- 检查它是否运行：`asr_check.py` 和 `small.en`（小数点按照 Whisper 将其写入每行的 `asr` 中的方式写入）、脚本的数字与测量值（`export.mjs` 因不匹配而失败）、提示网格、带有真实字体的单行字幕宽度（最宽 642 像素） 960)，`readcheck.mjs`，最终混音上的语音转文本，黑框。
+- 板：幻灯片照片 1251 × 3685 (21.2 µm/px)，扫描级别 5/4/3 整体，带有 0.3 毫米羽毛，级别 2 整体（6144 × 5376，1 µm/px），级别 1 和 0 作为核周围的 5120 × 3584 作物。每个渲染工作线程大约 400 MB 的解码图像。
+- 示范特有的缺陷：载玻片远端的扫描仪托盘夹子只能粗略地填充，因此该端部在每个镜头中都处于框架之外；仅当组织质心与通过 AOI0 (19 µm) 的扫描相匹配后，幻灯片照片的分辨率标签才可信；当视场在 2.6 至 2.8 毫米之间时，2 级板会翻转进出，因此圆圈保持在 2.6-2.7 毫米处，以在读数期间保持转塔安静；计数掩码的扫描方向是针对 `config.json` 中的卷计算的，并且如果卷发生变化，则必须遵循摄影机。

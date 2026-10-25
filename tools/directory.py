@@ -134,9 +134,15 @@ def build(version):
             s = open(p, encoding='utf-8').read()
             if SETUP_OLD in s:
                 open(p, 'w', encoding='utf-8').write(s.replace(SETUP_OLD, 'tools/setup.sh'))
-    for rel, old, new in EDITS:
+    locale_path = os.path.join(ROOT, 'tools', 'directory.zh.json')
+    locale_edits = json.load(open(locale_path, encoding='utf-8')) if os.path.exists(locale_path) else {}
+    for edit_index, (rel, old, new) in enumerate(EDITS):
         p = os.path.join(OUT, LIB, rel)
         s = open(p, encoding='utf-8').read()
+        if s.count(old) != 1 and str(edit_index) in locale_edits:
+            localized = locale_edits[str(edit_index)]
+            if localized['path'] != rel: die(f'localized edit {edit_index} has the wrong path')
+            old, new = localized['old'], localized['new']
         if s.count(old) != 1: die(f'{rel}: the text to replace is gone or not unique (update EDITS in tools/directory.py):\n  {old[:120]}')
         open(p, 'w', encoding='utf-8').write(s.replace(old, new))
     # plugin files

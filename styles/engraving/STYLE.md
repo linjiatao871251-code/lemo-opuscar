@@ -1,121 +1,133 @@
-# Copperplate Engraving — Style Prompt
+<a id="copperplate-engraving--style-prompt"></a>
+# 铜版画：风格提示词
 
-> An intaglio plate that engraves itself: a burin cuts swelling lines into copper, a proof is pulled, and the figure builds up — outline, hatching, cross-hatching — until engraved lettering, magnified details and a hand-laid wash make a finished plate.
-> References (grammar only): 19th-century natural-history plates — Haeckel, Audubon, Westwood, the *Britannica* copperplates (centred subject, numbered roundels, roman title over an italic name, "del." / "sculp." credits, the plate mark); Hogarth and Doré for the burin line (hatching that follows the form, crossing only in half-tones); hand-coloured plates for washes laid after printing. Never copy a plate, pose, border or title.
+> 自行雕刻的凹版：刻刀在铜上刻出膨胀的线条，拉出校样，然后形成图形 - 轮廓、剖面线、交叉剖面线 - 直到刻字、放大的细节和手工铺设的水彩晕染制成成品板。
+> 参考文献（仅限语法）：19 世纪的自然历史图版 — Haeckel、Audubon、Westwood、*Britannica* 铜版（居中主题、编号圆形、斜体名称上的罗马标题、“del.”/“sculp.”学分、图版标记）； Hogarth 和 Doré 设计了雕刻线（跟随形状的阴影线，仅以半色调交叉）； 水彩晕染的手工上色板在印刷后铺设。切勿复制车牌、姿势、边框或标题。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-An **intaglio print**: the line is ink held in a groove a burin cut into copper. Three rules:
+**intaglio 印刷**：线条是用墨水固定在刻刀刻成铜的凹槽中的。三个规则：
 
-1. **Tone is made of lines, never of fills.** Light is bare paper; half-tone is one family of parallel lines; shadow a second family crossing it; the deepest dark a third, lozenge-making family. No grey fill anywhere in the ink.
-2. **Every line swells and tapers.** The burin enters fine, bites deeper mid-run and lifts out to a point. Lines thicken where the form turns from the light and vanish where it faces it; contours are cut in several runs and thin where runs hand over. A uniform-width line reads as a pen or vector drawing — never.
-3. **Colour comes afterwards, by hand**: transparent watercolour laid flat region by region over the finished black print, spilling past the lines, pooling at its edges, ink always on top. A film may stay monochrome long; colour arriving is an event.
+1. **色调是由线条组成，而不是填充。** 光是裸纸；半色调是一组平行线；影子第二个家庭穿过它；最黑暗的第三种，菱形制造家族。墨水中的任何地方都没有灰色填充。
+2. **每条线都会膨胀并逐渐变细。** 刻刀进入精细，在运行中咬得更深，然后抬起到一个点。线条在物体背对光线的地方变粗，在面对光线的地方消失；轮廓被切割成多次，并在交接处变薄。均匀宽度的线读起来就像钢笔或矢量图画——从来没有。
+3. **颜色随后由手工完成**：透明水彩画在完成的黑色印刷品上逐个区域平铺，溢出线条，在其边缘汇集，墨水始终在顶部。 影片可能会长时间保持单色；颜色到达是一个事件。
 
-Not a woodcut (black block, white gouges — `woodcut`), not a pen sketch (loose broken lines — `urban-sketch`), not an engineering drawing (`blueprint`), not a sepia filter.
+不是木刻（黑色块，白色凿痕 - `woodcut`），不是钢笔草图（松散的虚线 - `urban-sketch`），不是工程图（`blueprint`），不是棕褐色滤镜。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **The sheet is the world**: 1920×1080 world units of laid paper (cream, ~`#f1e8d2`) with world-space texture (fibres, laid lines, sparse foxing) that zooms with the camera; a pressed, bevelled **plate mark** and a ruled border (rule + hairline) frame it.
-- **Ink** is one warm near-black (~`#1c1510`). Width ratios: outlines heaviest (swelling ×0.45–1.35), first hatching from a hair (~0.18 px) to ~2 px, crossing ~0.8×, third family ~0.6×, hair and stipple finest. Spacing is **relative to the figure** (~1/180 of its height, a little wider per later family) so small figures never go grey.
-- **Swell law** for every hatch line: width × (0.2 + 0.8·sin(πu)^0.7), tapered over its first and last ~22 %. Families switch on by tone thresholds (~0.14, ~0.5, ~0.75 on a 0–1 tone).
-- **One light direction** for the whole film (upper left by convention); heavier outlines away from it; tone fields come from the shape (pillow lighting, analytic spheres and cylinders), never from texture. **Occlusion** is geometric: lines stop at the shapes in front.
-- **Roundels**: double-ruled circle, ruled-machine ground with a white halo round the subject, content authored at a large radius and scaled in. **Leaders**: hairlines from a dot on the part to the rim, routed with clearance, a small italic figure number at the root.
-- **Hand colouring** multiplies over paper and under ink: a few px of spill, slight misregister, tide-line at the wet edge, low-frequency density lift, occasional backruns, granulation; each region blooms from where the brush touched.
-- **Copper** (when shown): polished warm metal, polishing hairlines, a soft reflected window; grooves = dark trough + bright burr toward the light. The **burin** (lozenge steel shaft, bevelled face, mushroom handle) is held low and turned ≤ 15° off the line so the fresh groove shows; **swarf** is a narrowing ribbon curling ahead of the point, one edge lit.
+- **这张纸是世界**：1920×1080世界单位的直纹纸（奶油色，〜`#f1e8d2`），具有世界空间纹理（纤维，直纹线，稀疏的狐狸），可使用摄影机进行缩放；压制的斜面 **板标记** 和直纹边框（直纹 + 细线）将其框起来。
+- **墨色**是一种温暖的近黑色 (~`#1c1510`)。宽度比：轮廓最重（膨胀×0.45–1.35），首先从头发（~0.18 px）孵化到~2 px，交叉~0.8×，第三个家庭~0.6×，头发和点画最细。间距是**相对于图形**（~1/180 的高度，每个后来的系列稍宽一些），因此小图形永远不会变灰。
+- **膨胀定律** 对于每条剖面线：宽度 × (0.2 + 0.8·sin(πu)^0.7)，在其第一个和最后一个 ~22% 上逐渐变细。家庭通过音调阈值开启（0-1 音调上约为 0.14、~0.5、~0.75）。
+- **一个光方向**为整个影片（按惯例位于左上）；远离它的较重的轮廓；色调场来自形状（枕头照明、分析球体和圆柱体），而不是来自纹理。 **闭塞** 是几何的：线条停在前面的形状处。
+- **圆形**：双直纹圆，直纹机地面，主题周围有白色光环，内容以大半径创作并按比例缩放。 **领导者**：从零件上的点到边缘的细线，有间隙，在根部有一个小的斜体数字。
+- **和着色**在纸张上和油墨下倍增：几像素的溢出、轻微套准不准、湿边潮线、低频密度提升、偶尔倒流、颗粒化；每个区域都从画笔接触的地方绽放。
+- **铜**（如图所示）：抛光暖色金属，抛光细纹，柔和的反射窗口；凹槽=暗槽+向光亮毛刺。 **刻刀**（菱形钢轴、斜面、蘑菇手柄）保持较低位置并偏离线 ≤ 15°，以便显示新鲜的凹槽； **切屑** 是一种在尖端前卷曲的窄丝带，一侧发光。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- The print is two values, paper and ink; all tone is line density.
-- Colour is **transparent wash only**, in muted earth and mineral pigments, one stronger pigment at most. Never opaque, never on lettering, rules or paper outside the figure.
-- Reserve it: the whole subject at one moment, or only the part that matters — or none.
-- Example wash sets: an amber insect with blue-grey wings; a map with a sea-green coastal band on buff land; one madder-rose organ on an otherwise black anatomy plate.
+- 印刷品有两个值，纸张和油墨；所有色调都是线密度。
+- 颜色为**透明水彩晕染仅**，在柔和的泥土和矿物颜料中，最多是一种较强的颜料。绝不是不透明的，绝不是在图形之外的刻字、规则或纸张上。
+- 保留它：在某一时刻保留整个主题，或者只保留重要的部分——或者什么都不保留。
+- 示例水彩晕染套装：一只琥珀色昆虫，翅膀为蓝灰色；地图上有浅黄色土地上的海绿色海岸带；黑色解剖板上的一个茜草玫瑰色器官。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Lettering belongs to the plate: **roman capitals** (Bodoni Moda; title ~44–56 px, wide tracking; labels ~15–19 px), **italics** for scientific names (~20–24 px), **script** (Pinyon Script) for notes, fixed size, balanced over two lines, never shrunk.
-- Roman letters are **cut glyph by glyph**; script is **written** in one left-to-right stroke. Nothing fades in.
-- Subtitles: script on a deckled paper slip, bottom centre, ≤ 2 lines, never over a label. Hold ≥ max(1.8 s, speech + 0.6 s). An engraved note stays in frame chars ÷ 12 + 1 s from when it starts writing.
+- 属于该板的字母：**roman 大写字母**（Bodoni Moda；标题〜44–56 px，宽跟踪；标签〜15–19 px），**斜体**学名（〜20–24 px），**脚本**（Pinyon Script）用于笔记，固定大小，两行平衡，永不收缩。
+- 罗马字母为**逐个字形切割字形**；脚本是 **从左到右一笔写成**。没有什么会消失。
+- 字幕：位于装饰纸条上的脚本，底部居中，≤ 2 行，切勿位于标签上方。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。雕刻的音符从开始书写时起会停留在帧字符数 ÷ 12 + 1 秒内。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Cutting order is the animation**: outline → first hatching sweeping across each form → crossing → darks, hair, stipple. Strokes run at constant burin speed, many at once (a few for outlines, dozens for hatching).
-- A long single stroke may be followed by the camera; start it partly cut so no frame is empty. Keep a full build to a few seconds.
-- Roundels fly on an eased arc with a small lift, growing log-linearly to size. Colour blooms from one point with a ragged front and a wet rim that dries; regions staggered.
-- Nothing fades or slides like UI: lines are cut, text cut or written, colour blooms, sheets are pressed, peeled or laid down.
+- **切割顺序是动画**：轮廓→第一个阴影线扫过每个形状→交叉→深色，头发，点画。笔画以恒定的刻刀速度运行，同时进行许多笔画（一些用于轮廓，数十个用于孵化）。
+- 长单笔画后面可能会出现摄影机；开始部分剪切，这样就没有框架是空的。将完整构建保持在几秒钟之内。
+- 圆球以小升力以缓和的弧线飞行，并以对数线性方式增长到尺寸。颜色从一点开始绽放，正面参差不齐，边缘潮湿，但边缘会干燥；地区交错。
+- 没有什么会像用户界面那样褪色或滑动：线条被剪切，文本被剪切或书写，颜色绽放，纸张被按压、剥落或放下。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-The camera is a **loupe over a sheet**. A vocabulary, not a route. Opening and ending come from the topic.
+摄影机是 **放大镜，位于一张** 上。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Loupe following the burin tip | One point of attention; making | a first mark; a signature |
-| Log-zoom pull-out | The line was part of something larger | scale reveal; context |
-| Push to a part, ride with its roundel | Where → what, in one take | an invisible detail; a mechanism |
-| Tilt/pan along the sheet at reading zoom | Labels in order | a parts list; a coastline |
-| Pull back while something flies | Everything placed in relation | acceleration; summary |
-| Locked frame, or a ≤ 2 % breathing push | The plate as document | reading time; colour moving |
-| Raking view across the copper | The groove as depth | the cost of craft |
-| Cut from mirrored copper to true proof | Reversal | a hidden truth; before/after |
+|放大镜跟随刻刀尖端|一个注意点；制作|第一个标记；签名|
+|对数缩放拉出|这条线是更大的东西的一部分|规模揭示；语境|
+|推到一个零件，用它的圆环骑行|哪里→什么，一气呵成|看不见的细节；一种机制|
+|Tilt/pan 沿纸张读取缩放|标签按顺序排列|零件清单；海岸线|
+|当有东西飞翔时向后拉|一切事物都有关联|加速度；概括|
+|锁定框架，或 ≤ 2 % 呼吸推动|板作为文件|阅读时间；色彩移动|
+|俯瞰铜矿|凹槽深度|工艺成本|
+|从镜面铜切割成真正的证明|逆转|隐藏的真相； before/after|
 
-Framing: subject inside the plate mark, labels and roundels in the margins; order details so push-ins never crop a note early. Transitions from printmaking only (proof pulled, tissue guard laid over, region burnished out and re-cut, new sheet on the bed); no dissolves or wipes.
+框架：标牌内的主题、页边距中的标签和圆角；订购详细信息，以便推入程序不会提前裁剪注释。仅从版画制作过渡（拉校样、放置纸巾防护罩、打磨区域并重新切割、床上铺上新床单）；无需溶解或擦拭。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Foley by material**: paper (peel crackle, slip tapped down, tissue rustle, sheet whoosh); press (roller rumble, thump); copper and steel (high band-passed burin hiss with chatter and faint plate ring, swarf pings, a tick on lift, circular scribe, burnishing rub); ink and water (pen scratch, ticks for cut letters, a water plip and wet brush swish). Hatching = micro-scratches denser each pass.
-- **Room**: a quiet workroom (faint clock), paper room once the print exists.
-- **Instruments** (choose): harpsichord, string quartet, solo cello or viola da gamba, lute, chamber organ, glass harmonica for a cold subject. Plucked and dry while lines are cut; bowed or sustained only when something soft arrives; tiny tings for a scribed ring, a low pluck on landing.
-- **Silence** is real: cut room tone too, keep at most one small sound.
-- **Mix**: melody an octave above the voice, music ~half under speech, −14 LUFS. Voice: a quiet curator or naturalist.
+- **Foley（按材质）**：纸（剥离裂纹、滑落声、纸巾沙沙声、纸张嗖嗖声）；按压（滚筒隆隆声、重击声）；铜和钢（高带通刻刀嘶嘶声，伴有颤动和微弱的板环、切屑声、升降机上的滴答声、圆形划线、抛光摩擦）；墨水和水（钢笔划痕、刻字的刻度、水笔和湿刷刷）。孵化=每次通过的微划痕更密集。
+- **房间**：一个安静的工作室（微弱的时钟），印刷品存在后的纸室。
+- **乐器**（选择）：羽管键琴、弦乐四重奏、大提琴独奏或中提琴、鲁特琴、室内风琴、玻璃口琴（适合冷主题）。剪线时拔毛并干燥；只有当柔软的东西到来时才鞠躬或坚持；刻划环的微小叮当声，落地时的低声拨弦声。
+- **沉默**真实：也切掉房间音，最多保留一个小声音。
+- **混音**：旋律高于语音八度，音乐~一半低于语音，−14 LUFS。声音：安静的策展人或博物学家。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The cut.** Burin mid-stroke, swarf rising, nothing else. *Fits:* the first line of a treaty; a watchmaker's scribe; a coast being charted.
-- **The three passes.** Form gains volume pass by pass. *Fits:* a building from its plan; a portrait emerging; a skill improving.
-- **Magnification roundel.** Ring scribed, burnished, re-cut larger, flown to a margin with a leader, label cut on landing. *Fits:* a gear in a clock; a pollen grain; a harbour inset on a chart.
-- **The proof.** Sheet peels off; mirrored copper becomes true paper. *Fits:* a secret out; a draft made final; a coin's die and strike.
-- **States of the plate.** A region burnished out and re-cut. *Fits:* a border redrawn; before/after; a design revision.
-- **Hand colouring.** Washes bloom after the print. *Fits:* one organ lit; a flag on a historical map; a ripening fruit.
-- **Natural size.** A tiny true-scale figure beside the engraving. *Fits:* a seed by its tree; a chip by its circuit; a stamp by its enlargement.
-- **The finished plate.** Every label and credit, locked. *Fits:* a museum label; a frontispiece; a certificate.
+- **切削。** 刻刀中行程，切屑上升，仅此而已。 *适合：*条约的第一行；钟表匠的抄写员；正在绘制海岸图。
+- **三通。** 形式增益量通过通过。 *适合：*一座建筑的平面图；一幅肖像浮现出来；一项技能的提高。
+- **放大圆环。** 环刻划，抛光，重新切割更大，飞到带有引线的边缘，标签在着陆时切割。 *适合：*时钟中的齿轮；花粉粒；海图上的港口插图。
+- **校样。** 片材剥落；镜面铜变成了真正的纸。 *适合：*秘密；最终草案；一枚硬币的模具和铸造。
+- **板的状态。** A 区域抛光并重新切割。 *适合：*重新绘制的边框； before/after；设计修订。
+- **和着色。** 水彩晕染打印后绽放。 *适合：* 一个风琴点燃；历史地图上的旗帜；成熟的果实。
+- **自然尺寸。** 雕刻旁边的微小真实比例人物。 *适合：*树旁的种子；芯片由其电路组成；放大后的邮票。
+- **成品板。** 每个标签和信用，已锁定。 *适合：*博物馆标签；卷首插画；证书。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Uniform width reads as pen → swell hatches, pinch contours between runs (`hatch({swell})`, `outline({run, pinch})`), keep wMin hair-fine.
-- Overlaps without occlusion → pass occluders as `excl` (subtracted ring by ring; even-odd would cancel overlaps).
-- Outline-only parts beside a hatched body → hatch along each part's axis, a dark at every joint.
-- Burin along the cut hides the groove; big skew looks like poking → ≤ 15°. Regular swarf helix reads as a spring → vary winding, twist, light one edge.
-- Reflections over grooves wash them out → copper light first. Roundels authored small freeze sub-pixel → author large, scale in. Leaders hugging the subject read as crossing it → clearance.
-- A long early stroke never draws → the ink's early exit must look ahead by the longest stroke.
-- A push-in cropping a fresh note breaks the reading rule → put consecutive details on one side.
-- Scientific names: TTS may manage, ASR won't → give the checker a plain spelling.
+- 均匀宽度读作笔 → 膨胀舱口，在运行之间捏紧轮廓（`hatch({swell})`，`outline({run, pinch})`），保持 wMin 头发细。
+- 无遮挡的重叠 → 将遮挡器传递为 `excl`（逐环减去；偶数-奇数将取消重叠）。
+- 剖面线主体旁边的仅轮廓零件→沿每个零件的轴剖面线，每个关节处都是黑色的。
+- 沿着切口的雕刻刀隐藏了凹槽；大倾斜看起来像戳 → ≤ 15°。规则的切屑螺旋读作弹簧 → 变化缠绕、扭曲、轻一个边缘。
+- 凹槽水彩晕染上的反射将它们射出 → 首先是铜光。 Roundels 创作了小冻结子像素→创作了大的、缩小的。拥抱该主题的领导者读作穿越它→清除。
+- 早期的长笔画永远不会绘制→墨水的早期退出必须先于最长的笔画。
+- 插入新笔记会破坏阅读规则→将连续的细节放在一侧。
+- 科学名称：TTS 可以，ASR 不行 → 为检查人员提供简单的拼写。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine/`: `burin.js` (`B.Ink` ordered stroke store + `schedule`, `B.hatch`, `B.engraveTone`, `B.contourHatch`, `B.outline`/`B.stroke`, `B.stipple`, `B.fur`, tone fields), `plate.js` (`drawSheet`, `engraveText`, `writeScript`, `roundelFrame`), `wash.js` (`Wash`), `copper.js` (copper, burin, swarf), `index.js` (`engraveShape(svgPath, {at, light, spacing, style})`: any SVG shape → engraved figure). `demo/example/index.html` engraves and colours a four-pointed spark in ~20 lines; code and function table in DEMO.md "Engine reference".
+`demo/engine/`：`burin.js`（`B.Ink`订购行程存储+ `schedule`、`B.hatch`、`B.engraveTone`、`B.contourHatch`、 `B.outline`/`B.stroke`、`B.stipple`、`B.fur`、音调字段）、`plate.js`（`drawSheet`、`engraveText`、`writeScript`、 `roundelFrame`)、`wash.js` (`Wash`)、`copper.js`（铜、刻刀、切屑）、`index.js`（`engraveShape(svgPath, {at, light, spacing, style})`：任何 SVG 形状 → 雕刻图形）。 `demo/example/index.html` 用约 20 行雕刻和着色四尖火花； DEMO.md“发动机参考”中的代码和功能表。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide subject, details, order, opening, ending, camera path, colour, pacing and music. Use cases are **grammar for the order and duration of information**; build your own timeline from the user's facts.
+您决定主题、细节、顺序、开头、结尾、摄影机路径、颜色、节奏和音乐。用例是 **信息顺序和持续时间的语法**；根据用户的事实构建您自己的时间表。
 
-| Use case | Information order | Hold per layer | Length |
+|使用案例|信息订购|每层保持|长度|
 |---|---|---|---|
-| **Museum label / case screen** | title + scientific name → detail + term + note (×N) → where to see it | title ≥ 2.2 s; note ≥ chars/12 + 1 s; final ≥ 4 s | 30–40 s |
-| **"One minute on …"** | question → name → 2–3 facts → one number → follow prompt | number ≥ 2.5 s alone | 35–60 s |
-| **Textbook figure** | figure → parts labelled one by one → caption | label ≥ chars/12 + 1 s | 20–45 s |
-| **Craft heritage** | object → 2–3 craft details → maker / edition | as above | 30–45 s |
-| **Map / site plan** | place → insets → legend → visiting info | inset ≥ 3 s; legend ≥ 4 s | 30–45 s |
+|**博物馆标签/案例屏**|标题+学名→详细信息+术语+注释(×N)→在哪里可以看到|标题≥2.2秒；注 ≥ chars/12 + 1 s；最终≥4秒|30–40 秒|
+|**“一分钟……”**|问题 → 姓名 → 2–3 个事实 → 一个数字 → 按照提示进行操作|单独次数 ≥ 2.5 s|35–60 秒|
+|**课本图**|图 → 各部分一一标注 → 标题|标签 ≥ chars/12 + 1 秒|20–45 秒|
+|**工艺传承**|物体 → 2–3 工艺细节 → 制造商/版本|如上所述|30–45 秒|
+|**地图/场地规划**|地点 → 插图 → 图例 → 参观信息|插入≥3秒；图例 ≥ 4 s|30–45 秒|
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **states of one plate** (one view re-cut three times as a place changes); **a book of plates** (four small plates turned like pages, one fact each, no roundels); **a dissection** (parts labelled in teaching order, colour only on the part taught).
-- Openings: **the finished proof burnished back** to its first line; **on paper at 1×** (title cut first, figure grows below); **raking light over blank copper** as the design is traced.
-- Endings: **plate beside its proof**; **the natural-size figure** held alone; **a blank new sheet** laid on the stack.
+- 结构：**一盘状态**（一视图随位置变化重切3次）； **一本板书**（四个小板翻页一样，每页一个事实，没有圆形）； **a 解剖**（按教学顺序标记的部分，仅在所教部分上使用颜色）。
+- 开口：**成品校样抛光背面**至其第一行； **on论文在1×**（标题先切，图在下面增长）； **将光照射在空白铜** 上，如图所示。
+- 结尾：**证明旁边的铭牌**； **自然尺寸人物**单独持有； **一张空白的新纸**放置在堆叠上。
 
-Swapping `demo/content.json` and rebuilding is a technical check that the engine re-flows, not a way to make a film.
+交换 `demo/content.json` 并重建是发动机回流的技术检查，而不是制造影片的方法。
 
 ---
 
-How our demo was made (story, shots, score, end card, build, content fields): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建、内容字段）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

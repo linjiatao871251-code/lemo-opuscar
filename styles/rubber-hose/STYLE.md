@@ -1,110 +1,122 @@
-# 1930s Rubber Hose Cartoon — Style Prompt
+<a id="1930s-rubber-hose-cartoon--style-prompt"></a>
+# 1930s 橡皮管卡通：风格提示词
 
-> Black-and-white hand-inked cartoons where every object is alive and swings to a hot jazz band.
-> References (grammar only): early Fleischer Studios shorts (c. 1930–33) for "the whole world dances", surreal transformation, the bouncing-ball singalong and ink-and-pen framing devices; *Cuphead* for how a modern team finishes the look and scores it with a big band. Never use an existing cartoon character, name or silhouette, and never copy designs, melodies or logos. **Avoid the "cup-head on a human body with a straw" design**: if your hero is an object, the *whole object is the body*.
+> 黑白手绘卡通，每个物体都栩栩如生，并随着热门爵士乐队的节奏摇摆。
+> 参考资料（仅语法）：早期弗莱舍工作室的短片（约 1930-33 年），内容为“全世界都在跳舞”、超现实主义转型、弹跳球歌唱和墨水笔框架装置； 《茶杯头》讲述了现代团队如何完成外观并与大乐队合作。切勿使用现有的卡通人物、名称或轮廓，切勿复制设计、旋律或徽标。 **避免“用吸管在人体上套上杯头”的设计**：如果你的英雄是一个物体，那么*整个物体就是身体*。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Hand-inked black-and-white animation from the early sound era: characters with **rubber-hose limbs** (equal-width tubes, no elbows, no knees), **white four-finger gloves**, **pie eyes** (black oval pupils with a wedge cut out), huge round shoes, and bodies that squash and stretch like balloons. The backgrounds are soft grey watercolour paintings; the characters are flat white, grey and ink. Everything (furniture, machines, plants, the walls) **breathes in time with the music**. The film looks like a worn 35 mm print projected in a 4:3 gate: flicker, scratches, dust, gate weave, vignette.
+早期有声时代的手绘黑白动画：**橡皮管四肢**（等宽管，无肘，无膝盖）的角色，**白色四指手套**，**pie眼睛**（带有楔形切口的黑色椭圆形瞳孔），巨大的圆鞋，以及像气球一样挤压和伸展的身体。背景是柔和的灰色水彩画；字符为纯白色、灰色和墨水色。一切（家具、机器、植物、墙壁）**都随着音乐**而呼吸。 影片看起来就像在 4:3 门中投影的磨损的 35 毫米印刷品：闪烁、划痕、灰尘、门编织、晕影。
 
-Not a 1950s flat cartoon (no limited animation, no colour, no graphic backgrounds), not a silent film (the synchronised music is the engine), not a "retro filter" over modern animation (no joints, no rendered shading).
+不是 20 世纪 50 年代的平面卡通（没有有限的动画，没有色彩，没有图形背景），不是无声的影片（同步音乐是引擎），不是现代动画的“复古滤镜”（没有关节，没有渲染的阴影）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Frame**: 1920×1080 output with a **4:3 gate** (1440×1080 centred, black pillarbox), gate corners rounded (r ≈ 28 px), soft inner shadow on the gate edge.
-- **Characters**: flat fills, one hard-edged form-shadow band (light grey) on the side away from an upper-left light, ink outline **constant in screen space** at any zoom (transform points first, then stroke; ~6 px at 1080p), light **line boil** (±1.2 px, 3 drawings cycling at 12 fps).
-- **Anatomy kit**:
-  - Limbs: noodle tubes of constant width (about 1/20 of the character's height), one smooth bend, round caps.
-  - Gloves: palm + 3 fat fingers + thumb, flared cuff with a fold line, 3 stitch lines on the back. Outline the union only (stroke all parts thick first, then fill all).
-  - Pie eyes: white oval, big black pupil (≈ 64 % × 74 % of the eye) with a wedge cut toward the upper right; blink with an eyelid in body colour and a lid line.
-  - Mouths: smile with cheek ticks, open grin, "O", wavy (scared), pucker, tongue-out. Shoes: big black ovals with a white toe glint.
-- **Object characters**: the face sits on the body; a **secondary feature carries the mood** (steam, a flame, a lampshade tilt, a spring). A box-shaped object is a real projected 3D shape seen slightly from above, the face mapped onto its front.
-- **Backgrounds**: painted once into a cached canvas at 1.25–1.5× (push-ins stay crisp): flat wash + soft blotches (±5 %) + inner edge darkening + a thin dark-grey outline + paper grain. They never boil. Period motifs: patterned wallpaper, panelled furniture, checker floors, brick, clapboard.
-- **Film damage** (composite pass, not the scene): low-frequency gate weave (±1.2 px) with a rare jump; flicker ±4 %; 0–3 drifting vertical scratches; 3–8 dust specks per frame; an occasional hair; strong vignette; a small jump on every cut; slight blur. Grain in ffmpeg (`mux.sh` grain **3**), not in the page.
+- **框架**：1920×1080 输出，带有 **4:3 门**（1440×1080 居中，黑色邮筒），门角为圆形（r ≈ 28 px），门边缘有柔和的内阴影。
+- **字符**：平面填充，远离左上角光源一侧的一个硬边形状阴影带（浅灰色），墨水轮廓**在任何缩放下在屏幕空间中保持不变**（首先变换点，然后描边；1080p时〜6像素），灯光**line沸腾**（±1.2像素，3张图以12 fps循环）。
+- **解剖套件**：
+  - 四肢：等宽的面条管（大约为人物身高的1/20），一处平滑的弯曲，圆帽。
+  - 手套：手掌+3个粗手指+拇指，喇叭形袖口有折线，背面有3条缝线。仅勾勒出并集的轮廓（首先将所有部分描粗，然后填充所有部分）。
+  - 饼状眼睛：白色椭圆形，黑色大瞳孔（约占眼睛的 64 % × 74 %），右上方有楔形切口；眨眼时眼睑与身体颜色相同，并有眼睑线。
+  - 嘴部：微笑时面颊有抽搐、张开笑容、“O”、波浪形（害怕）、皱起、伸出舌头。鞋子：黑色大椭圆形，脚趾呈白色闪闪发光。
+- **对象人物**：脸坐在身上； **次要特征带有情绪**（蒸汽、火焰、灯罩倾斜、弹簧）。盒子形状的物体是从上方稍微观察的真实投影 3D 形状，面部映射到其正面。
+- **背景**：以 1.25–1.5× 一次绘制到缓存画布中（插入保持清晰）：平坦水彩晕染 + 软斑点 (±5 %) + 内边缘变暗 + 细长的深灰色轮廓 + 纸纹。它们从不沸腾。时代主题：图案壁纸、镶板家具、格子地板、砖、隔板。
+- **胶片损坏**（复合通道，不是场景）：低频门编织（±1.2 px），带有罕见的跳跃；闪烁±4%； 0-3 次漂移垂直划痕；每帧 3–8 个灰尘点；偶尔有头发；强烈的小插图；每次切割都会有一个小跳跃；轻微模糊。 ffmpeg 中的颗粒（`mux.sh` 颗粒 **3**），不在页面中。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Strictly greyscale**: about 6 grey steps plus a separate character white. No hue anywhere, not even in the film damage.
-- **Characters own the extremes**: character whites and ink blacks are brighter and darker than anything in the background. Backgrounds live in the middle greys (walls around mid grey, furniture one or two steps darker). Add a mild contrast boost (≈ 1.1–1.15) in the final composite: 1930s prints are rich black and bright white, never flat grey.
-- Form shadow is one light-grey band, never a gradient.
-- Examples of the grey ramp's temperature: warm paper greys (our demo); cool silver-nitrate greys; a faint sepia print. Pick one and keep it for the whole film.
+- **严格灰度**：大约6个灰度级加上一个单独的字符白色。任何地方都没有色调，即使在影片损坏处也没有。
+- **人物拥有极端**：人物白色和墨黑色比背景中的任何东西都更亮和更暗。背景采用中灰色（中灰色周围的墙壁，家具颜色深一两级）。在最终合成中添加温和的对比度增强 (≈ 1.1–1.15)：1930 年代的印刷品是浓郁的黑色和亮白色，而不是单调的灰色。
+- 形状阴影是一条浅灰色带，而不是渐变。
+- 灰色渐变温度示例：暖纸灰色（我们的示范）；冷硝酸银灰色；淡淡的棕褐色印花。选择一个并将其保留为整个影片。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Subtitles are a period title card**: a small near-black plate with a white double-rule border and dot-and-ring corner ornaments; text in **IM Fell English SC** (~36 px), paper white. Drawn in the scene layer so it weaves and flickers with the film; pops on and off with no fades. Bottom by default, top when the action is low. One card may span two short voice clips; hold ≥ max(1.8 s, speech + 0.6 s).
-- **Titles**: **Shrikhand** fat retro script, white face, heavy ink outline (~14 % of the cap height), ink drop shadow down-right; letters can hop in a travelling wave on the beat. Sub-lines in **Limelight** caps.
+- **字幕是时期标题卡**：一个近乎黑色的小板，带有白色双线边框和点环角装饰； **IM 中的文本为英文 SC** (~36 px)，纸白色。在场景图层中绘制，因此它与影片一起编织和闪烁；弹出和关闭，没有褪色。默认情况下位于底部，当操作较低时位于顶部。一张卡片可以跨越两个短语音片段；保持 ≥ max(1.8 s，语音 + 0.6 s)。
+- **标题**：**Shrikhand**胖复古字体，白色字体，浓墨轮廓（〜帽子高度的14％），墨滴阴影右下；字母可以随着节拍在行波中跳跃。**聚光灯** 帽中的子线。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters on twos** (12 fps); camera moves on ones (24 fps). A stepped camera reads as judder.
-- **Tempo grid**: choose a tempo where one beat is an **even whole number of frames** at 24 fps (8, 10, 12, 16 or 20 frames), so every beat lands on a drawing of the twos.
-- **Breathing**: every idle object squashes and stretches with `cos(2π·beats)`: an extreme on every beat (stretch on the beat, squash on the off-beat), sampled on twos, amplitude ~5–7 %, all props in phase. A peak of joy can raise the amplitude ×3 and squash the whole background painting around the floor line (~2.5 %).
-- **Walk**: one step per beat with a body bob (sad = smaller steps, limp arms). **Run**: legs as a windmill (feet orbit a circle), lean forward, speed lines.
-- **Anticipation–hold–action**: before every big move, crouch (squash to ~0.8), hold (let the band stop), then snap. Impacts get a squash with an exponential spring-back.
-- **Held frames are acting**: a chain of holds, each glance on an eighth note with a woodblock tick, reads as thinking.
-- **Freeze on a band stop**: when the music stops, freeze everything, background breathing included.
+- **双人角色** (12 fps)； 摄影机运动上的 (24 fps)。阶梯状的摄影机读作颤动。
+- **节奏网格**：选择一个节奏，其中一个节拍是**甚至整数帧**，24 fps（8、10、12、16或20帧），因此每个节拍都会落在两个图上。
+- **呼吸**：每个闲置物体都用 `cos(2π·beats)` 挤压和拉伸：每个节拍上的极限（在节拍上拉伸，在非节拍上挤压），两两采样，振幅约 5-7%，所有道具同相。喜悦的峰值可以将振幅提高 3 倍，并将整个背景画压扁在地板线周围（~2.5%）。
+- **走**：每节拍一步，身体摆动（悲伤=步子变小，手臂无力）。 **跑步**：腿像风车（脚绕一圈），身体前倾，速度行。
+- **预期-保持-行动**：在每次大动作之前，蹲下（挤压到~0.8），保持（让带子停止），然后猛击。冲击力会受到指数回弹的挤压。
+- **握持框架正在起作用**：一连串的握持，每扫一眼八分音符上都带有木版勾号，读作思考。
+- **在乐队停止时冻结**：当音乐停止时，冻结一切，包括背景呼吸。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A theatre camera: mostly locked, moving only to follow a runner or to land a gag. Opening and ending come from the topic.
+一家剧院摄影机：大部分都是锁着的，移动只是为了跟随跑步者或搞笑。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Stage-wide, locked, eye level | A proscenium: the set is a stage and everyone on it performs | introducing a place; a group number; a routine |
-| Hard cut to a face close-up | The reaction is the joke | a surprise; a taste; a realisation |
-| Trucking pan beside a runner, eased start and stop | Pursuit, momentum | a chase; a race; a delivery |
-| Medium follow shot (character ≈ 1/4–1/3 of the frame height) | Every step is a note | Mickey-moused climbing, dancing, working |
-| Tilt with a fall or a rise | Gravity as rhythm | a tumble; a rocket; a lift |
-| Slightly high angle, one unbroken shot | The hazard and the answer in one frame | a danger; a stretch; a rescue |
-| Tabletop pan (flat characters in front of a model set turning in depth) | The world is a real place | a street; a carousel; a factory floor |
-| Pull-back from a close-up to a packed medium-full | One feeling spreads to everyone | a celebration; a crowd joining in |
-| Iris in / iris out (grabbable by a character) | The film is an object | a beginning; an ending; a scene change with a gag |
+|全舞台，锁定，视线水平|台口：布景是一个舞台，每个人都在上面表演|介绍一个地方；团体号码；例行公事|
+|脸部特写的硬切|反应就是个笑话|一个惊喜；一种味道；一种实现|
+|跑步者旁边的卡车盘，轻松启动和停止|追求，动力|一场追逐；一场比赛；送货|
+|表现媒介跟随镜头（字符≈框架高度的1/4–1/3）|每一步都是一个注释|米老鼠攀爬、跳舞、工作|
+|随下降或上升而倾斜|以重力为节奏|跌倒；火箭；电梯|
+|角度稍高，一无破损镜头|危险与答案集中在一个框架中|危险；伸展；一次救援|
+|桌面平底锅（模型前面的平面人物在深度转动）|世界是一个真实的地方|一条街道；旋转木马；工厂车间|
+|从特写镜头拉回到包装好的表现媒介-full|一种感觉蔓延到每个人|庆祝活动；一群人加入|
+|虹膜输入/虹膜输出（可由角色抓取）|影片是一个对象|一个开始；一个结局；场景变换，有笑点|
 
-Framing: faces must read, so no far-wide shot for a gag or a musical moment. The destination prop enters frame before the gag lands. Arcs and leaps stay inside the gate at the current zoom. Transitions: iris, a hard cut on a beat, a title card rolling up like a window shade; no dissolves.
+取景：面孔必须被阅读，所以不要用太宽的镜头来搞笑或音乐时刻。目的地道具在笑点落地之前进入画面。在当前缩放下，弧线和跳跃停留在门内。转场：虹膜、节拍上的硬剪辑、像窗帘一样卷起的标题卡；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **1930s hot dance band / ragtime**: stride piano, clarinet, trumpet (open + plunger-mute "wah-wah"), trombone (smears), tuba oom-pah, banjo on 2 & 4, snare with brushes and rolls, xylophone, woodblocks, slide whistle, cymbal, kazoo, washboard, a pit organ. **No string pads, no modern synths.** One short original syncopated theme can be restated in different arrangements.
-- **Mickey-mouse the score, as options**: a band member "answering" a character (trombone raspberry, trumpet laugh); a stop (hard silence, reverb tails too) before a gag or on a stare; a stinger per gag; slide whistle for every stretch or fall; a prop that *is* an instrument; a solo for tenderness; a key change for a lift.
-- **Foley by material** (synthesised): porcelain and glass = hard inharmonic partials + a tiny transient; wood = woodblock; metal = bells and clanks; springs = "boing"; water = filtered noise + rising blips and bubbles; rubber = sawtooth creak through a band-pass.
-- **Voice**: a period character (a radio announcer calling the action, a vaudeville MC, a crooner), few short lines. Radio chain: HP ~260 Hz / LP ~4.6 kHz, tanh saturation, a short room, compression. Duck the music ~8 dB.
-- **Optical soundtrack pass** over music + foley: band-limit ~110 Hz–6.2 kHz, slight wow (~0.6 Hz) and flutter (~7 Hz), soft saturation; then a bed of hiss, crackle and a 24 Hz projector gate clatter, the *only* sound allowed inside a silence.
-- Loudness −14 LUFS (two-pass loudnorm in `core/render/mux.sh`).
+- **1930s 热舞乐队/拉格泰姆**：跨步钢琴、单簧管、小号（打开 + 柱塞静音“哇哇”）、长号（涂抹）、大号 oom-pah、2 号和 4 号班卓琴、带刷子和卷轴的军鼓、木琴、木版、幻灯片口哨、铙钹、卡祖笛、洗衣板、凹坑风琴。 **没有弦乐垫，没有现代合成器。** 一个简短的原始切分音主题可以以不同的安排重述。
+- **米老鼠配乐，作为选项**：乐队成员“回答”一个角色（长号覆盆子，喇叭笑）；在堵嘴或凝视之前停止（硬性沉默，混响尾音）；每个堵嘴有一个毒刺；每次伸展或跌倒时都会发出滑哨声； *是*一种乐器的道具；一段温柔的独奏；电梯的一个关键改变。
+- **Foley by 材料**（合成）：瓷器和玻璃=坚硬的不和谐分音+微小的瞬态；木头=木版画；金属=铃声和叮当声；弹簧=“轰鸣”；水=过滤噪音+上升的光点和气泡；橡胶 = 通过带通的锯齿嘎吱声。
+- **嗓音**：一个时代人物（宣布行动的广播播音员、歌舞杂耍主持人、歌手），几句短台词。无线电链：HP ~260 Hz / LP ~4.6 kHz，tanh 饱和度，短空间，压缩。将音乐降低约 8 dB。
+- **光学音轨通过**音乐+ 拟音：带限〜110 Hz–6.2 kHz，轻微哇音（〜0.6 Hz）和颤动（〜7 Hz），软饱和；然后是一张床的嘶嘶声、噼啪声和 24 Hz 投影仪门的碰撞声，这是寂静中“唯一”的声音。
+- 响度 −14 LUFS（`core/render/mux.sh` 中的双通道响度范数）。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Everything breathes on the beat.** The setting is a character; at the peak the *whole world* can dance in sync, walls included. *Fits content like:* a factory at shift change; a garden after rain; a city waking up.
-- **Mickey-mousing.** Every step is a note; a prop becomes an instrument. *Fits content like:* stairs as a piano; a typewriter as a drum kit; fence posts as a xylophone.
-- **Rubber-hose stretch.** Limbs reach any length in one unbroken shot. *Fits content like:* reaching a top shelf; a long-distance handshake; catching a falling baby bird.
-- **Transformation.** Anything becomes something else mid-motion (a tail into a question mark, a hose into a saxophone). *Fits content like:* an idea turning into a product; a problem into a tool; a word into an object.
-- **The bouncing-ball singalong.** Lyrics on a title card, a ball hopping from word to word on the beat. *Fits content like:* a jingle; a safety rhyme; a slogan to remember.
-- **The film is a physical object.** Title cards roll up like window shades; the iris is grabbed and pulled shut; intertitles get bumped; the frame line slips. *Fits content like:* a brand reveal; a "the end?" twist; a character escaping the cartoon.
-- **The ink bottle.** An artist's pen draws the hero, who then argues with it. *Fits content like:* a making-of; a mascot introduction; a lesson about drawing.
+- **一切都在节拍上呼吸。** 背景是一个角色；在顶峰，“整个世界”可以同步跳舞，包括墙壁。 *适合以下内容：* 换班的工厂；雨后的花园；一座正在苏醒的城市。
+- **米老鼠.** 每一步都是一个注释；道具变成了乐器。 *适合以下内容：*楼梯作为钢琴；打字机作为架子鼓；作为木琴的栅栏柱。
+- **橡胶软管拉伸。** 四肢在一个完整的镜头中达到任何长度。 *适合以下内容：*到达最上面的架子；远距离握手；抓住一只坠落的小鸟。
+- **转型。** 任何东西在运动中都会变成其他东西（尾巴变成问号，软管变成萨克斯管）。 *适合以下内容：*将想法变成产品；将问题转化为工具；一个词变成一个物体。
+- **弹跳球一起唱歌。** 标题卡上的歌词，一个球随着节拍从一个词跳到另一个词。 *适合以下内容：* 一首顺口溜；安全韵律；一个值得记住的口号。
+- **影片是一个物理对象。** 标题卡像窗帘一样卷起；虹膜被抓住并拉紧；字幕被碰撞；框架线滑动。 *适合以下内容：*品牌展示；一个“结束？”捻;一个逃离漫画的角色。
+- **墨水瓶。** 艺术家的笔画出英雄，然后英雄与之争论。 *适合以下内容：*花絮；吉祥物介绍；关于绘画的课程。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Flat grey frames.** Push backgrounds to mid grey, keep pure white and ink for characters, add a contrast boost.
-- **Wide shots kill gags**: a far shot makes characters tiny and Mickey-mousing unreadable. Use medium shots, and a packed medium-full for crowds.
-- "Sad" brows drawn as "angry": define brows by inner / outer end (inner = near the nose), not by left / right.
-- A limb drawn behind a body gets hidden by the silhouette (a handle, a tail): kick and reach outward past it.
-- Painted characters collide with background props at some camera positions: check every shot's last frame.
-- Smoke puffs in a row read as thought bubbles: scatter and grow them.
-- Short voice clips make subtitles flash: merge consecutive lines into one card.
+- **平灰色框架。** 将背景推至中灰色，保持字符的纯白色和墨水，增加对比度。
+- **Wide 镜头杀戮噱头**：远镜头使字符变得很小，米老鼠难以阅读。使用表现媒介镜头和包装好的表现媒介供人群使用。
+- “悲伤”眉毛画成“愤怒”：用内/外端（内=靠近鼻子）来定义眉毛，而不是左/右。
+- 拉到身体后面的肢体被轮廓（手柄、尾巴）隐藏：踢腿并向外伸出越过它。
+- 绘制的角色在某些摄影机位置与背景道具发生碰撞：检查每个镜头的最后一帧。
+- 一排烟雾解读为思想泡泡：分散并扩大它们。
+- 短语音片段使字幕闪烁：将连续的行合并到一张卡片中。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `toon.js` (constant-width ink, line boil, affine stack), `film.js` (gate and film damage, reusable as is), `chars.js` (rigs, pie eyes, gloves, shoes), `cast.js` (breathing props), `bg.js` (cached watercolour backgrounds), `ui.js` (title lettering, title-card subtitles), `mix.py` (foley, radio chain, optical ageing), `music/score.py` (big band via `core/audio/sampler.py`). File map and commands: [DEMO.md](DEMO.md#build-notes).
+在`demo/`中：`toon.js`（等宽墨水，线沸腾，仿射堆栈），`film.js`（门和影片损坏，可按原样重复使用），`chars.js`（装备，馅饼眼，手套，鞋子），`cast.js` （呼吸道具），`bg.js`（缓存水彩背景），`ui.js`（标题刻字，标题卡字幕），`mix.py`（拟音，无线电链，光学老化），`music/score.py`（来自`core/audio/sampler.py`的大乐队）。文件映射和命令：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the location (or several), the cast, the structure, the opening, the ending, the camera path, the tempo and the band's line-up. All far from our demo:
+您可以决定地点（或几个）、演员阵容、结构、开头、结尾、摄影机路径、节奏和乐队阵容。与我们的示范相去甚远：
 
-- Structures: **a singalong** (verse and chorus, the bouncing ball carrying the message while the set acts out each line); **a talent show** (objects take turns on a stage, the smallest wins); **a relay** (a thing passed hand to hand across a town, each hand-off a new instrument on the melody).
-- Openings: **out of the inkwell** (a pen draws the hero, who hops onto the set); **a curtain rise** (the band tuning up; a baton starts the film); **an iris on one eye** (it blinks, the iris widens to show whose eye it is).
-- Endings: **the card pulled over** (a character drags "The End" in front of itself mid-gag); **the film snaps** (the frame burns, a gloved hand splices it for one last bow); **the band packs up** (instruments leave until one note remains).
+- 结构：**一起唱歌**（主歌和副歌，弹跳球在演出每一行时携带信息）； **a才艺表演**（物体轮流上台，最小者获胜）； **a接力**（一件东西在整个城镇中手拉着手传递，每人传递一种新的旋律乐器）。
+- 开口：**从墨水池中出来**（笔画出英雄，英雄跳上布景）； **谢幕**（乐队调音；指挥棒启动影片）； **an 一只眼睛上的虹膜**（它眨眼，虹膜变宽以显示它是谁的眼睛）。
+- 结局：**卡片拉过**（一个角色在笑中将“结局”拖到自己面前）； **影片折断**（框架燃烧，一只戴着手套的手将其拼接成最后一张弓）； **乐队收起**（乐器离开，直到只剩下一个音符）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

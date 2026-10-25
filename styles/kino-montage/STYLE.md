@@ -1,149 +1,163 @@
-# Constructivist Montage — Style Prompt
+<a id="constructivist-montage--style-prompt"></a>
+# 构成主义蒙太奇：风格提示词
 
-> Real archive footage, photographs and documents, printed as one ink-and-paper poster with a single red, and cut on a machine beat. Diagonal bands carry the type; windows cut along the axis hold the film; people are scissored out of photographs and stacked into structures; numbers count, documents are marked in red, and two images collide to make a third idea.
-> References (grammar only): Soviet montage cinema of the 1920s (city symphonies with split screens, counting and machine rhythm; "intellectual" montage where A + B yields a concept), constructivist posters and photomontage (red / black / paper, steep diagonals, photo cut-outs with geometric blocks, type as structure). Never copy their shots, layouts, slogans or lettering, and never name them in the film.
+> 真实的档案片段、照片和文档，用单一红色打印成一张纸质海报，并用机器节拍切割。对角带带有类型；沿轴切割的窗口容纳影片；人物被从照片中剪下来并堆叠成结构；数字计数，文档被标记为红色，两个图像碰撞产生第三个想法。
+> 参考资料（仅限语法）：1920 年代的苏联蒙太奇电影（带有分屏、计数和机器节奏的城市交响乐；A + B 产生概念的“知识分子”蒙太奇）、建构主义海报和蒙太奇照片（红/黑/纸、陡峭的对角线、带有几何块的照片剪纸、类型作为结构）。切勿复制他们的镜头、布局、口号或文字，也切勿在影片中命名他们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-1. **Evidence, recut.** Every picture is real material (archive film, photographs, documents) about the actual subject. The film's argument comes from how they are cut and set, not from illustration.
-2. **One printed sheet.** All material is converted to the same two-tone print (warm ink → paper); red is the only colour and is laid on top as a printed element.
-3. **The beat is the editor.** Cuts, slams, wipes and counts sit on a 120 BPM grid (or the score's tempo); sections accelerate by halving shot length.
-4. **Type is structure.** Words and numbers are beams: on a −18° band, as solid blocks, stacked vertically. Never floating captions.
-5. **The collective over the individual.** Crowds, hands, machines and many small figures; a single face is never the protagonist.
+1. **E证据，重新剪辑。** 每张图片都是关于实际主题的真实材料（档案影片、照片、文档）。 影片的论点来自于它们的切割和镶嵌方式，而不是来自插图。
+2. **一张印刷品。** 所有材料转换为相同的双色调印刷品（暖墨→纸张）；红色是唯一的颜色，作为印刷元素放置在顶部。
+3. **节拍是编辑器。** 剪切、猛击、擦除和计数位于 120 BPM 网格上（或配乐的节奏）；通过将镜头长度减半来加速部分。
+4. **类型是结构。** 文字和数字是梁：在-18°带上，作为实心块，垂直堆叠。切勿浮动字幕。
+5. **集体高于个人。** 人群、手、机器和许多小人物；单一的面孔永远不是主角。
 
-Not **Data Storytelling** or a keynote: no centred headline with bullets, no slide transitions, no header bars; data appears as marked documents, counters and measured bars inside the composition. Not **Swiss Motion Graphics**: asymmetric, diagonal, no grid of white space, no thin rules as decoration. Not **Art Deco** or **60s Spy Titles**: no gold, no fine lines, no jazz. Not a museum slideshow: archive material is never shown "as is" in a neutral frame; it is cut, windowed, stacked and counted.
+不是 **数据故事** 或主题演讲：没有带项目符号的居中标题，没有幻灯片过渡，没有标题栏；数据在合成物中显示为标记文档、计数器和测量条。不是 **瑞士动态图形**：不对称、对角线、没有空白网格、没有细规则作为装饰。不是**装饰艺术**或**60s间谍标题**：没有金色，没有细纹，没有爵士乐。不是博物馆幻灯片：档案材料永远不会在中性框架中“按原样”显示；它被切割、开窗、堆叠和计数。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Four kinds of element only**: **bands** (red or ink, along the axis), **windows** (rectangles or parallelograms holding film or photographs), **cut-outs** (people scissored from photographs with a paper-white border), **type blocks**. Plus one paper-fibre texture over everything.
-- **The print grade** (one function for film, photos and documents): luminance → percentile stretch (film: one pair of percentiles per clip, so it never pumps; 0.7 / 99.5; photos 0.8 / 99.4) → S-curve `x + s·(x−0.5)·(1−|2x−1|)·2`, s = 0.32 (documents 0.18, they keep their paper) → map to ink→paper: `rgb = INK + (PAPER − INK)·g`. Archive film keeps a ±2.5 % per-frame flicker inside its window (`hash(frame)`), photographs and documents do not.
-- **Cut-outs**: a person-segmentation model (u2net_human_seg via onnxruntime) → threshold 0.5 → median filter → largest component → 7 px paper border dilated outside the mask. The border is the medium's own look and hides the model's edge errors. Group photos rarely segment cleanly: use them whole in windows.
-- **Documents**: scans at full resolution, never retyped. They are marked: a red highlighter bar in `multiply` over the exact sentence, a hand-drawn red ellipse round a heading, a red circle on a map. Drawings on a document (a chart, a map) may be lifted off the page and reused, keyed from their paper (`alpha = (205 − luminance) / 90`).
-- **Resolution ceiling**: archive film ≤ 2.5× its source pixels on screen, modern footage ≤ 1.5×, photos ≥ 1 source px per screen px where possible. Prepare clips with `hqdn3d → lanczos → light unsharp` before grading; add grain only in the mux. A 720-line film transfer can fill a 1,700 px window, not a full 1080p frame: frame it (a window, a split strip, an iris) instead of stretching it.
-- **Paper fibre**: a fixed seeded noise canvas multiplied over the frame at α 0.5; film grain 4 added by `mux.sh`.
+- **仅四种元素**：**带**（红色或墨水，沿轴），**窗口**（持有影片或的矩形或平行四边形）照片），**剪纸**（从带有纸白色边框的照片中剪下的人物），**类型块**。在所有东西上加上一层纸纤维纹理。
+- **打印等级**（影片、照片和文档的一项功能）：亮度→百分位数拉伸（影片：每个剪辑一对百分位数，因此它永远不会抽气；0.7 / 99.5；照片0.8 / 99.4）→ S曲线`x + s·(x−0.5)·(1−|2x−1|)·2`，s = 0.32（文档0.18，他们保留纸张）→映射到墨水→纸张：`rgb = INK + (PAPER − INK)·g`。存档影片在其窗口 (`hash(frame)`) 内保持 ±2.5% 的每帧闪烁，而照片和文档则不然。
+- **剪纸**：人物分割模型（u2net_ human_seg，通过 onnxruntime）→ 阈值 0.5 → 中值滤波器 → 最大组件 → 7 px 纸张边框在蒙版外扩张。边框是表现媒介自己的外观，隐藏了模型的边缘错误。集体照片很少能清晰地分割：在窗口中使用它们。
+- **文件**：以全分辨率扫描，从未重新输入。它们被标记为：在确切的句子上用 `multiply` 绘制的红色荧光笔条、围绕标题的手绘红色椭圆、地图上的红色圆圈。文档上的绘图（图表、地图）可以从页面上取下并重复使用，并从其纸张上键入（`alpha = (205 − luminance) / 90`）。
+- **分辨率上限**：存档影片 ≤ 2.5× 屏幕上的源像素，现代素材≤ 1.5×，照片≥ 1 个源像素/屏幕像素（如果可能）。分级前用`hqdn3d → lanczos → light unsharp`准备剪辑；仅在多路复用器中添加谷物。 720 线影片传输可以填充 1,700 px 窗口，而不是完整的 1080p 帧：对其进行框化（窗口、分割条、虹膜）而不是拉伸它。
+- **纸纤维**：固定种子噪声画布以α 0.5乘以框架； 影片由 `mux.sh` 添加的颗粒 4。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-| Role | Value | Use |
+|角色|价值|使用|
 |---|---|---|
-| Red | `#D52B1E` | bands, wedges, blocks, the key number, marker bars, circles and leaders, the one winner in a comparison |
-| Ink | `#141210` | type, beams under each floor, window borders, dark grounds |
-| Paper | `#EDE4D0` | ground, reversed type, cut-out borders |
+|红色的|`#D52B1E`|带、楔形、块、关键数字、标记条、圆圈和引导线、比较中的获胜者|
+|墨水|`#141210`|类型、每层楼下的横梁、窗户边框、深色地面|
+|纸|`#EDE4D0`|接地、反转型、镂空边框|
 
-- Everything photographic is ink-on-paper; nothing else has colour. Red is never laid on red: a red block on a red ground becomes ink.
-- Alternate grounds to make cuts land: paper scene → ink scene → paper. In an acceleration the background itself alternates red / ink per cut.
+- 所有摄影作品都是纸上墨水；没有其他东西有颜色。红色永远不会放在红色上：红色背景上的红色块会变成墨水。
+- 切割土地的替代理由：纸景→水墨景→纸。在加速过程中，背景本身每次切割都会交替出现红色/墨水。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-| Use | Face | Size (1080p) |
+|使用|脸|尺寸（1080p）|
 |---|---|---|
-| Chinese display, slogans | Noto Sans SC 900 (subset) | 110–210 px; stacked vertically 170 px per character |
-| Numbers, English display | Oswald 600–700 | numbers 230–440 px; English lines 30–62 px, letter-spacing 2–10 px, capitals |
-| Source and footage tags | Space Mono Bold (CJK falls back to Noto) | 17–18 px on an ink or red tab, padding 6 |
-| Subtitles | Noto Sans SC 700 40 px over Oswald 500 28 px | bottom left, ink bar at 90 %, a 10 px red tick |
+|中文展示、标语|Noto Sans SC 900（子集）|110–210 像素；每个字符垂直堆叠 170 px|
+|数字、英文显示|奥斯瓦尔德 600–700|数字 230–440 像素；英文行 30–62 px，字母间距 2–10 px，大写|
+|来源和片段标签|Space Mono Bold（CJK 退回到 Noto）|墨水或红色标签上的 17–18 像素，内边距 6|
+|字幕|Noto Sans SC 700 40 px 超过 Oswald 500 28 px|左下角，墨迹栏位于 90%，一个 10 像素的红色勾号|
 
-- **Bilingual pairs**: Chinese block, then one English line in Oswald directly under it (or on the neighbouring band). Each language one line, measured.
-- **Placement**: along the −18° axis on a band, or as an ink / red block; never centred on the frame, never a header. Numbers can be bigger than the words that explain them.
-- **Tags**: every archive window carries its footage tag (`FILM · <TITLE> · <PLACE> <YEAR>`, `PHOTO · <AUTHOR> <YEAR>`), every fact a source tag (`来源 · <PUBLISHER> <YEAR>`). If the footage is not of the subject itself, the tag says what it really is.
-- **Subtitles** stay bottom-left in a 960–1056 px strip; key type keeps above y 930 while narration runs. Subtitles hold ≥ max(1.8 s, speech + 0.6 s). On-screen text follows `readcheck.mjs` (CJK ÷ 4.5 + other ÷ 15 + 1.5 s, fully in frame); a comparison holds every item ≥ 2.5 s before its verdict.
+- **双语对**：中文块，然后在其正下方（或相邻带上）有一条奥斯瓦尔德英文行。每种语言一行，测量。
+- **放置**：沿带上的-18°轴，或作为墨水/红色块；从不以框架为中心，从不以标题为中心。数字可能比解释它们的文字更大。
+- **标签**：每个存档窗口都带有其素材标签（`FILM · <TITLE> · <PLACE> <YEAR>`、`PHOTO · <AUTHOR> <YEAR>`），每个事实都有一个源标签（`来源 · <PUBLISHER> <YEAR>`）。如果镜头不是主题本身，标签就会说明它的真实情况。
+- **字幕** 保持在 960–1056 像素条带的左下角；旁白运行时，键类型保持在 y 930 以上。字幕保持 ≥ max(1.8 s，语音 + 0.6 s)。屏幕文本遵循 `readcheck.mjs`（CJK ÷ 4.5 + 其他 ÷ 15 + 1.5 s，完全在框架内）；比较使每个项目在做出结论之前 ≥ 2.5 秒。
 
-## 5. Edit grammar
+<a id="5-edit-grammar"></a>
+## 5. 编辑语法
 
-- **Grid**: one tempo for picture and score (120 BPM: beat 0.5 s, bar 2 s). Every cut, slam, wipe and count lands on a beat, half-beat or sixteenth. The page exports these times as `window.EV`; the mix reads the same list.
-- **Shot length**: 0.5–2 s for footage; one idea per shot. A section may accelerate by halving: 0.5 → 0.25 → 0.125 s (never shorter than 3 frames). Holds are reserved for reading: a text block, a freeze, a comparison.
-- **Cut rule**: adjacent shots conflict in at least one of direction (left slam / right slam), value (paper / ink ground), or geometry (diagonal band / upright window). Never two paper documents in a row.
-- **Nothing static for more than a second**: inside a hold something moves (film in its window, a counter, a slow push, a frame-within-the-frame). Planned exceptions only: the comparison hold, one silence beat, the end card.
-- **Transitions inside the medium** (pick per cut, don't fade):
-  - *red wipe*: a 260 px red band at 72° (perpendicular to the axis) sweeps the frame in 0.25 s, the next scene revealed behind it; it lands on the downbeat;
-  - *iris*: a red marker circle drawn on a map or photo becomes an aperture and opens onto footage;
-  - *slam*: the next element arrives from outside along the axis in 0.08–0.2 s, ease-out, hard stop, frame shake (amplitude 3–18 px, `exp(−14·Δt)`);
-  - *flash cut*: one frame of 50–80 % paper over a window at a cut or freeze;
-  - *hard cut on the beat* between grounds of opposite value;
-  - *jump-in*: inside a freeze, a cut to a 1.2× crop of the same frame, the annotation scaling with it.
-- **Two silences**: one where the orchestra stops and only an original recording remains, and one true half-bar of nothing (ink frame, one red dot) before the heaviest hit.
+- **网格**：图片和配乐的一种速度（120 BPM：节拍 0.5 秒，小节 2 秒）。每一次切割、猛击、擦拭和计数都会落在一个节拍、半拍或第十六拍上。页面将这些时间导出为`window.EV`；混合读取相同的列表。
+- **镜头长度**：镜头0.5–2秒；每个镜头的一个想法。一个部分可以通过减半加速：0.5 → 0.25 → 0.125 秒（永远不短于 3 帧）。保留用于阅读：文本块、冻结、比较。
+- **剪切规则**：相邻的镜头在方向（左猛击/右猛击）、数值（纸张/墨底）或几何形状（对角带/直立窗口）中的至少一个发生冲突。切勿连续放置两份纸质文档。
+- **没有静态超过一秒**：在一个支架内有东西在移动（影片在其窗口中，一个计数器，一个缓慢的推动，一个框架中的框架）。仅计划的例外：比较保持，一沉默节拍，片尾卡。
+- **介质内的过渡**（每次剪切挑选，不褪色）：
+  - *红色擦除*：72°（垂直于轴）的 260 px 红色带在 0.25 秒内扫过帧，下一个场景在其后面显露出来；它落在悲观的位置；
+  - *虹膜*：在地图或照片上绘制的红色标记圆圈变成光圈并打开镜头；
+  - *slam*：下一个元素在 0.08–0.2 秒内沿轴从外部到达，缓出、硬停止、帧抖动（幅度 3–18 像素，`exp(−14·Δt)`）；
+  - *闪切*：一帧 50–80% 的纸张在窗口上进行剪切或冻结；
+  - *在相反价值的理由之间强行削减节拍；
+  - *跳入*：在冻结内，剪切到同一帧的 1.2× 裁剪，注释随之缩放。
+- **两次沉默**：一次是管弦乐队停止，只剩下原始录音，以及在最重击之前的一个真正的半小节（墨水框，一个红点）。
 
-## 6. Formats (each is a function in `demo/index.html`)
+<a id="6-formats-each-is-a-function-in-demoindexhtml"></a>
+## 6. 格式（每一个都是`demo/index.html`中的一个函数）
 
-| Format | How it looks | How it is built |
+|格式|看起来怎么样|它是如何建造的|
 |---|---|---|
-| **Title package** | a red band slams along the axis; a window cut to the band's edge runs footage; digits stamp one per eighth, the CJK unit in red | `S1`: window clipped to the band's top edge (`onBar`), digits measured and slammed individually, `reg()` registers the group for readcheck |
-| **Lower third** | a red bar from the left edge with Chinese, an ink tab with the English | 92 px bar at y ≈ 760–850, slams in 0.14 s, slides off with the next transition |
-| **Map + iris** | a document map pushes in, a red circle is drawn round the place, the circle opens onto the site | `mapXf()` (scale / focus / angle over time), `mapToScreen()` keeps the circle on the map point; aperture = `arc` clip whose radius grows to the frame |
-| **Vertical title** | CJK characters stacked top to bottom beside a tall window, English rotated 90° | per-character slams 1/16 apart |
-| **Date on a girder** | the date in paper on a red band crossing the footage | text placed on the band's centre line (point + normal offset), rotated by the axis |
-| **Grid** | 3 × 3 windows light one per sixteenth in a spiral, the centre counts 1…9 and lights last in red | cells `back()`-scale in, each a different clip at 1.4–1.8× speed, ping-pong |
-| **Split strips** | the frame rotated to the axis, three strips of two panels each; one panel changes per beat; strips drift in opposite directions | panels ≤ 1,160 px wide so the film stays ≤ 2.5×; red seam on the middle strip |
-| **Freeze + annotation** | flash, freeze, push; a red ellipse drawn on the object, a leader to a red block with the number; a jump-in; the film keeps running in a small red-framed inset | the circle is computed from the zoom focus so it follows the jump; inset = same clip, live |
-| **Document close-up** | a tilted page slams in, a red marker bar crosses the exact sentence, a red block repeats the number huge | marker in `multiply` over the scan's own line coordinates; a tall slot beside it runs footage fast to show speed |
-| **Process staircase** | three windows rising along a diagonal, red triangles between them, a counter climbing to the claim | each window 0.75 s apart; the counter is graphic, only its end value is a fact |
-| **The question** | a document heading on an ink ground, circled in red; a huge red "?" | heading cropped tight so only the words that matter show |
-| **Acceleration + count** | full-frame windows tilted ±4–6°, ground alternating red / ink, a four-digit counter jumping per cut | cut list with shrinking durations; the original sound plays alone |
-| **Multiple exposure** | top-down footage, a second clip in `screen` at 45 %, cut-outs in `multiply`, the answer in a block | exposure window ≤ 1,700 px on a red ground |
-| **Chart from the document** | the page turns 90°, its drawings lift off and stand on one ground line to scale, red dimension lines, numbers, names; held; then the verdict block | outlines keyed from the scan, scaled so tip-to-ground = value × px per unit; the winner tinted red (`source-in`) |
-| **Photomontage tower** (signature) | floors of footage strips slam in from alternate sides every sixteenth, an ink beam under each, a cut-out worker lands on every other; the camera climbs; a crown and a figure on top | `FLOORS` list, camera `y` follows the eased count of built floors; the floor counter runs to the dated anchor, **rests there while its caption is up**, then runs on to the end value |
-| **Silence beat** | ink frame, one red rivet | half a bar; the score and foley are gated to zero |
-| **Result composition** | huge numbers left, a tall slanted window with the finished subject (camera tilts up it), a tilted photo, a red wedge | numbers slam, the last line restamps the key number on red |
+|**产权包**|一条红色带沿着轴线猛烈地撞击；乐队边缘的一个窗口播放着镜头；数字印章为八分之一，CJK 单位为红色|`S1`：窗口夹在带的顶部边缘（`onBar`），单独测量和猛击数字，`reg()` 注册该组以进行读取检查|
+|**下三分之一**|左边缘的红色条带有中文，墨迹标签带有英文|y ≈ 760–850 处的 92 px 条，在 0.14 秒内猛击，随着下一个过渡而滑落|
+|**地图+虹膜**|文档地图推入，在该位置周围绘制一个红色圆圈，该圆圈打开到该站点|`mapXf()`（随时间变化的比例/焦点/角度），`mapToScreen()`将圆保持在地图点上；孔径 = `arc` 剪辑，其半径随框架增长|
+|**垂直标题**|CJK 字符从上到下堆叠在高高的窗户旁边，英文旋转 90°|每个角色将 1/16 分开|
+|**梁上日期**|纸上的日期位于穿过镜头的红色带子上|文本放置在带的中心线上（点+法向偏移），由轴旋转|
+|**网格**|3 × 3 个窗户呈螺旋状亮起，每十六分之一亮起，中心数到 1…9，最后亮起红色|细胞 `back()` 缩小，每个剪辑以 1.4–1.8× 速度进行，乒乓球|
+|**分体条**|框架绕轴旋转，三个条带，每个条带两个面板；每个节拍都会改变一个面板；条带向相反方向漂移|面板 ≤ 1,160 px 宽，因此影片保持 ≤ 2.5×；中间条带上有红缝|
+|**冻结+注释**|闪光、冻结、推送；在对象上绘制的红色椭圆，带有数字的红色块的引导线；跳入； 影片在小红框插图中持续运行|圆是根据变焦焦点计算的，因此它会跟随跳跃；插图 = 同一剪辑，直播|
+|**文档特写**|倾斜的页面猛地插入，红色标记条穿过确切的句子，红色块重复巨大的数字|`multiply` 中扫描自身线坐标上的标记；旁边有一个高槽，可以快速运行素材以显示速度|
+|**工艺楼梯**|三扇窗户沿着对角线升起，它们之间有红色三角形，一个柜台爬到了索赔处|每个窗口间隔 0.75 秒；计数器是图形的，只有它的最终值才是事实|
+|**问题**|墨底上的文件标题，用红色圈出；一个巨大的红色“？”|标题剪得很紧，所以只显示重要的文字|
+|**加速度+计数**|全框窗口倾斜 ±4–6°，地面交替红色/墨水，每次切割都会跳动四位数字计数器|持续时间缩短的切割清单；原声单独播放|
+|**多次曝光**|自上而下的镜头，`screen` 中的第二个剪辑为 45%，`multiply` 中的剪辑，块中的答案|红底上的曝光窗口 ≤ 1,700 px|
+|**文档中的图表**|页面翻转 90°，图画升起并按比例站在一条地线上，红色尺寸线、数字、名称；握住;然后是判决块|从扫描中键入的轮廓，按尖端到地面的比例缩放 = 值 × 每单位像素；获胜者为红色 (`source-in`)|
+|**蒙太奇塔**（签名）|每十六块地板上的镜头条从两侧猛烈撞击，每条底下都有一根墨水束，一个被剪下来的工人落在每条地板上； 摄影机爬升；皇冠和顶部的人物|`FLOORS`列表，摄影机 `y`遵循已建成楼层的宽松计数；楼层计数器运行到指定日期的锚点，**停留在那里，同时其标题为 up**，然后运行到最终值|
+|**静音节拍**|墨框，一颗红色铆钉|半酒吧； 配乐和拟音门控为零|
+|**结果组成**|剩下大量数字，一个高高的倾斜窗口，上面有完成的主题（摄影机将其倾斜），一张倾斜的照片，一个红色楔子|数字猛击，最后一行将关键数字重新标记为红色|
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Score**: an original machine ostinato (eighths, minor, e.g. D–D–F–D–A–D–E–F) in spiccato cellos + staccato bassoon, staccato tuba / trombone on the beat, snare sixteenth taps, xylophone for counts (one rising note per lit cell or built floor), horn / trumpet stabs and a short brass motif, timpani rolls into section changes, gran cassa + gong on the heaviest hit. Sampled CC0 libraries (VSCO 2 CE, VCSL). No piano-and-strings bed.
-- **Original sound alternates with music**: in one section the orchestra stops and a real recording (a rivet gun, a machine, a crowd) carries the cut alone, each burst trimmed to its shot. Bring it in a beat early (J-cut).
-- **Foley for every printed action**: slam = low thump + steel clank; stamp = thump + clack; wipe and iris = whoosh; marker = filtered noise scrub; paper = band-passed rustle; floors and cells = pitched clanks.
-- **Layers**: ambience (a real site / street recording, about 20 dB under the voice, out for the silence), foley ducked 35 % under speech, music ducked 70 % under speech (≈ 10 dB under the voice), narration compressed and levelled by RMS. Master to −14 LUFS with the peaks limited to −1.8 dBFS before `mux.sh`, and a 25 ms fade at sample 0 (an AAC encode overshoots on a hit at the first sample).
-- **Narration** (when the film has one): short declarative lines, newsreel cadence, never more than one sentence over a format; numbers spelled out for TTS, digits in subtitles.
+- **配乐**：一个原始的机器固定音（八度，小调，例如D–D–F–D–A–D–E–F），断奏大提琴+断奏巴松管，断奏大号/长号节拍，军鼓第十六拍，木琴计数（每个点亮单元一个上升音符或内置地板），号角/小号刺和短铜管乐主题，定音鼓滚动成部分变化，大卡萨+锣在最重的打击上。采样的 CC0 库（VSCO 2 CE、VCSL）。没有钢琴和弦乐床。
+- **原始声音与音乐交替**：在一个部分中，管弦乐队停止，真实的录音（一把铆钉枪，一台机器，一群人）单独进行剪辑，每个突发都被修剪到其镜头。提前将其带入节拍（J-cut）。
+- **Foley 对于每个打印动作**：猛击 = 低沉的重击 + 钢铁叮当声；印章=重击+咔嗒声；擦拭和虹膜=嗖嗖；标记=过滤噪音磨砂；纸=带通沙沙声；地板和牢房=叮叮当当的声音。
+- **层数**：氛围（真实现场/街道录音，语音下约 20 dB，出于安静），拟音语音下回避 35 %，音乐语音下回避 70 %（语音下 ≈ 10 dB），由 RMS 压缩和调平的旁白。在 `mux.sh` 之前主控至 −14 LUFS，峰值限制为 −1.8 dBFS，并且在样本 0 处有 25 ms 的淡入淡出（AAC 编码在第一个样本的命中时出现过冲）。
+- **旁白**（当影片有一个时）：简短的陈述性台词，新闻片的节奏，一种格式上永远不会超过一个句子； TTS 拼写的数字、字幕中的数字。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-1. **The document is marked, not quoted**: the actual sentence on the scan gets a red bar; the number then becomes a red block.
-2. **The document becomes the chart**: drawings printed on a page are lifted off, turned and stood on a ground line to scale.
-3. **A + B → idea**: two kinds of image alternate faster and faster (the machine / the hands; a heading / the people it leaves out) until a card or a number states what the collision meant.
-4. **Count the many**: a counter driven by the cuts, a grid that fills cell by cell, a tower floor by floor.
-5. **People build the structure**: cut-out figures stacked into the thing they made (photomontage).
-6. **Silence, then the heaviest hit** into the result.
+1. **该文档已标记，未引用**：扫描上的实际句子得到红条；然后该数字变成红色块。
+2. **文档变成图表**：打印在页面上的图画被提起、翻转并按比例放置在地线上。
+3. **A + B → 想法**：两种图像交替得越来越快（机器/手；标题/它遗漏的人），直到一张卡片或一个数字说明碰撞的含义。
+4. **数数**：一个由切割驱动的计数器，一个逐个单元填充的网格，一个逐层填充的塔。
+5. **人们建造结构**：将剪下来的人物堆叠到他们制作的东西中（蒙太奇照片）。
+6. **沉默，然后重击**进入结果。
 
-## 9. Footage
+<a id="9-footage"></a>
+## 9. 镜头
 
-1. **Ask first.** Before searching, ask the user for their own material: film, video, photographs, scans of documents (reports, brochures, letters, minutes), data. What they give leads; archives fill gaps.
-2. **Where to look, and how to judge the licence** (`demo/tools/footage.py` searches, downloads and records licence, author and source page into `SOURCES.jsonl`; `footage.py md` writes `SOURCES.md`):
-   - **Internet Archive**: read each item's `licenseurl` and description. Public Domain Mark / CC0 / CC BY are usable; *no licence field* is not. For a pre-1978 US film, check the title and end cards for a copyright notice: published 1930 or earlier = public domain in the US by date; published without notice before 1978 = public domain; with a notice, check renewal. Corroborate date and producer elsewhere (a library catalogue, an archive exhibit). Avoid YouTube mirrors, re-uploads with no provenance, colourised or "restored" versions.
-   - **Wikimedia Commons**: read the file page's licence and its source institution. Public domain, CC0, CC BY (credit in full) are usable; CC BY-SA is not used in library demos.
-   - **US National Archives (NARA)**, **Library of Congress**, **NASA**, other US federal agencies: federal works are public domain; check each item's rights statement. "No known restrictions" (LOC, Flickr Commons) is **not** clear enough: name it to the user or find the same image elsewhere with a clear statement.
-   - **Museums with open access** (Met, Rijksmuseum, Smithsonian): CC0 where the object page says so; check that the item is still marked open access.
-   - **University and city libraries** (e.g. Columbia's digitised ephemera on the Internet Archive): use their rights statement; "copyright status undetermined" is not usable.
-3. **Tell the user before downloading**: what (title, years), from where (URL), under which licence and why. Keep `raw/` under about 1.5 GB; download serially (Commons rate-limits).
-4. Record every asset with the seconds used (`footage.py used <name> "<source s> → film s"`), list it in `demo/CREDITS`, and keep the trail for anything judged "no notice".
-5. Footage that is not of the subject itself (another city, another year) may stand in only with a tag that says exactly what it is.
+1. **首先询问。** 在搜索之前，请向用户询问自己的材料：影片、视频、照片、文件扫描件（报告、小册子、信件、会议纪要）、数据。他们提供什么线索；档案填补了空白。
+2. **在哪里看，如何判断license**（`demo/tools/footage.py`搜索、下载并记录license、作者和源页面到`SOURCES.jsonl`；`footage.py md`写`SOURCES.md`）：
+   - **Internet Archive**：阅读每个项目的 `licenseurl` 和说明。公共领域标记 / CC0 / CC BY 可用； *没有许可证字段*不是。对于 1978 年之前的美国影片，请检查标题和片尾卡的版权声明：1930 年或更早出版 = 按日期在美国属于公共领域； 1978 年之前未经通知而出版 = 公共领域；带着通知，检查续订。在其他地方确认日期和制作者（风格库目录、档案展览）。避免使用 YouTube 镜像、无来源地重新上传、彩色版本或“恢复”版本。
+   - **Wikimedia Commons**：读取文件页面的许可证及其来源机构。公共领域、CC0、CC BY（全额学分）均可使用；库示范中未使用 CC BY-SA。
+   - **US 国家档案馆 (NARA)**、**国会风格库**、**NASA**、其他美国联邦机构：联邦作品属于公共领域；检查每个项目的权利声明。 “无已知限制”（LOC，Flickr Commons）是 **不是** 足够清楚：向用户命名或在其他地方找到具有明确声明的相同图像。
+   - **开放访问的博物馆**（Met、Rijksmuseum、Smithsonian）：CC0，对象页面如此说明；检查该项目是否仍标记为开放获取。
+   - **大学和城市风格库**（例如互联网档案馆中哥伦比亚大学的数字化蜉蝣）：使用其权利声明； “版权状态未确定”不可用。
+3. **下载前告诉用户**：什么（标题、年份）、来自哪里（URL）、使用哪个许可证以及原因。将 `raw/` 保持在 1.5 GB 左右；串行下载（共享速率限制）。
+4. 记录每个资产的使用秒数 (`footage.py used <name> "<source s> → film s"`)，将其列在 `demo/CREDITS` 中，并保留任何被判断为“未通知”的踪迹。
+5. 不属于主题本身（另一座城市，另一年）的镜头可能只能用一个准确说明其内容的标签来代替。
 
-## 10. Facts
+<a id="10-facts"></a>
+## 10. 事实
 
-Every number, date and claim on screen or in the voice comes from an official or primary source (a contemporary report, an official brochure, a government record), kept in `demo/FACTS.md` with the URL and the quoted wording. Counters are graphics: only their end values and dated anchors are facts. Where two primary sources disagree (a film's intertitle vs. the official brochure), use one and record the conflict.
+屏幕上或声音中的每个数字、日期和声明均来自官方或主要来源（当代报告、官方手册、政府记录），并保存在 `demo/FACTS.md` 中，并附有 URL 和引用的措辞。计数器是图形：只有它们的最终值和带有日期的锚点才是事实。如果两个主要来源不一致（影片的字幕与官方手册），请使用其中一个并记录冲突。
 
-## 11. Engine
+<a id="11-engine"></a>
+## 11. 发动机
 
-- `demo/index.html`: one Canvas 2D page, stateless `render(t)`; scene functions draw a full frame; wipes draw the old scene, clip, draw the new one, then the band. `txt()` draws and registers rotated text boxes for `readcheck.mjs`; `reg()` registers a group drawn in pieces; `slam()`, `flash()`, `flicker()`, `shake()`, `slant()` (parallelogram windows), `cover()` (focus-point cover fit), `clipImg()` (forward / reverse / ping-pong / speed).
-- `demo/tools/prep.py`: the print grade, clip extraction to 24 fps JPEG sequences (one percentile set per clip), stills, document pages and outline keying, cut-outs. `demo/tools/fonts.py`: fetch the OFL fonts and subset Noto Sans SC to the characters used. `demo/tools/cues.mjs`: subtitle cues from the page's own table, measured one line per language. `demo/audio/mix.py`: score, foley, narration, ambience, master.
-- Checks: `readcheck.mjs`, `asr_check.py` per line, `tools/final_asr.py` on the final mix, `tools/rhythm_report.py` (flat windows, cut points, hit-to-onset alignment), `mux.sh` loudness.
+- `demo/index.html`：一张Canvas 2D页面，无状态`render(t)`；场景功能绘制全框；擦拭绘制旧场景，剪辑，绘制新场景，然后是乐队。 `txt()`为`readcheck.mjs`绘制并注册旋转文本框； `reg()` 登记分组抽签； `slam()`、`flash()`、`flicker()`、`shake()`、`slant()`（平行四边形窗口）、`cover()`（对焦点盖贴合）、`clipImg()`（前进/后退/乒乓/速度）。
+- `demo/tools/prep.py`：打印等级、剪辑提取至 24 fps JPEG 序列（每个剪辑设置一个百分位）、静态图像、文档页面和轮廓键控、剪切。 `demo/tools/fonts.py`：获取 OFL 字体和子集 Noto Sans SC 到所使用的字符。 `demo/tools/cues.mjs`：来自页面自己的表格的字幕提示，每种语言测量一行。 `demo/audio/mix.py`：配乐，拟音，旁白，氛围，大师。
+- 检查：每行 `readcheck.mjs`、`asr_check.py`、最终混音上的 `tools/final_asr.py`、`tools/rhythm_report.py`（平面窗口、切点、命中到起始对齐）、`mux.sh` 响度。
 
-## 12. Pitfalls of the medium
+<a id="12-pitfalls-of-the-medium"></a>
+## 12. 表现媒介的缺陷
 
-- **Upscaled archive film** turns to mush on a 1080p full frame: window it; split strips into panels; keep zooms inside the 2.5× ceiling.
-- **Per-frame grading pumps**: one percentile pair per clip.
-- **Type on a band running off frame**: place it from the band's centre line (point + normal), not by eye.
-- **Red on red**: a red answer block on a red exposure ground disappears; switch it to ink.
-- **A face as hero**: ordinary identifiable workers appear in groups, at work, in quick cuts; no slow motion or close-up protagonist.
-- **Counters read as facts**: label only the end value and dated anchors; a caption beside a counter must match the number shown at every frame (stop the count on the caption's value while it is up).
-- **A number without a unit**: every counter carries its unit in the same layout as elsewhere (小时 / 层 / 人 MEN).
-- **Ink type over a window**: a line that runs past a photo's edge disappears into dark film; give it a paper tab or keep it clear of the window.
-- **The verdict covering what was compared**: place it where no item is, after the hold.
-- **Too many documents**: one marked sentence per document shot; a page with three highlights is a slide.
-- **Short labels in an acceleration** fail reading time by design: keep text out of the 1/8-beat cuts; put the result in a held block after.
-- **A hit at sample 0** overshoots in the AAC encode: fade the first 25 ms.
+- **升级档案胶片** 在 1080p 全画幅上变得混乱：打开它；将条带分割成面板；将变焦保持在 2.5 倍上限以内。
+- **每帧分级泵**：每个夹子一对。
+- **在离开框架的带子上键入**：从带子的中心线（点 + 法线）放置它，而不是通过眼睛。
+- **红色上红色**：红色曝光地面上的红色答案块消失；将其切换为墨水。
+- **A面孔作为英雄**：普通可识别的工人成群出现，在工作中，在快速剪辑中；没有慢动作或特写主角。
+- **计数器读作事实**：仅标记最终值和日期锚点；计数器旁边的标题必须与每帧显示的数字相匹配（在标题值增加时停止计数）。
+- **A 没有单位的数字**：每个柜台都以与其他地方相同的布局（/层/人MEN）显示其单位。
+- **窗口上的墨水类型**：穿过照片边缘的线条消失在黑暗中影片；给它一个纸标签或将其远离窗口。
+- **比较的结果**：将其​​放置在保持后没有物品的地方。
+- **文档太多**：每个文档有一个标记的句子镜头；具有三个亮点的页面是幻灯片。
+- **加速中的短标签**设计导致读取时间失败：将文本排除在1/8-beat剪切之外；之后将结果放入保留块中。
+- **A 在 AAC 编码中出现样本 0** 过冲：前 25 毫秒淡入淡出。
 
-## 13. Variation space
+<a id="13-variation-space"></a>
+## 13. 变异空间
 
-The agent decides per film: structure, which archive and documents, which formats (not all of them in one film), the axis angle (−15° to −30°), the red's exact hue, tempo (100–140 BPM), whether there is narration (intertitles only is valid), the signature build (a tower, a bridge span, a crowd forming a word, a map filling in).
+代理根据影片决定：结构、哪个存档和文档、哪种格式（并非所有都在一个影片中）、轴角度（−15° 到 −30°）、红色的确切色调、节奏（100–140 BPM）、是否有旁白（仅字幕有效）、签名构建（一座塔、一座桥跨度、一群人形成一个词、一个地图填写）。
 
-- **Three structures:** a calendar machine (one counter runs the whole film and stops at milestones); a document that asks and footage that answers (the turn at the middle); one object's journey through a process, then the scale of the whole.
-- Subjects that fit: construction and engineering histories, industrial anniversaries, mass events, labour and collective effort, infrastructure openings, any "many people, one machine rhythm" story with archive film and documents behind it.
+- **三种结构：**一台日历机（一个计数器运行整个影片并在里程碑处停止）；提出问题的文件和给出答案的录像（中间的转弯）；一个物体经历一个过程的旅程，然后是整体的规模。
+- 适合的主题：建筑和工程历史、工业周年纪念日、群众活动、劳动和集体努力、基础设施开放、任何“多人，一台机器节奏”的故事以及档案影片及其背后的文档。
 
-Our demo: [DEMO.md](DEMO.md).
+我们的示范：[DEMO.md](DEMO.md)。

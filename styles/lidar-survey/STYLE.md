@@ -1,116 +1,128 @@
-# LiDAR Survey — Style Prompt
+<a id="lidar-survey--style-prompt"></a>
+# 点云测绘：风格提示词
 
-> Real airborne laser points of a real place, floating in the dark as a measured cloud; a scan line or a cutting plane passes through them and the points condense into a solid, raking-lit surface, which is then measured with hairline instruments. One designed camera move carries the whole film: the cloud is something you fly through, not a picture you look at.
-> References (grammar only): survey and archaeology lidar visualisations (colour as height, the canopy removed); architectural section drawings (a cut, dimensioned); museum film cadence (one held reading per screen). Copy none of their layouts, ramps, typefaces or music, and never name them in the film.
+> 真实地点的真实机载激光点，像测量的云一样漂浮在黑暗中；扫描线或切割平面穿过它们，这些点凝结成一个坚固的、倾斜照明的表面，然后用细线仪器进行测量。一个设计的摄影机运动承载了整个影片：云是你飞过的东西，而不是你看到的图片。
+> 参考资料（仅语法）：调查和考古激光雷达可视化（颜色为高度，顶篷已移除）；建筑剖面图（切割、标注尺寸）；博物馆影片节奏（每个屏幕有一个阅读器）。请勿复制其布局、坡道、字体或音乐，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **The cloud is the data**: every point is a real return at its measured position; points appear, glow, lift away or give way to a surface, but are never moved into a shape.
-- **Points become a surface**: a front (scan line, cutting plane) behind which the cloud condenses into a solid model of the same place.
-- **Classification is a lever**: ground, vegetation, buildings, water are layers to peel, isolate and recolour.
-- **Measurement in hairlines**: one reading at a time, in the accent, attached to what it measures; numbers from the points or an official source.
-- **Dark, quiet, exact**: near-black ground, restrained colour, no glow except at the front.
+- **云是数据**：每个点都是其测量位置的真实返回；点出现、发光、离开或让位于表面，但永远不会移动成形状。
+- **点变成表面**：前面（扫描线、切割平面），后面的云凝结成同一位置的实体模型。
+- **分类是一个杠杆**：地面、植被、建筑物、水是剥离、隔离和重新着色的层。
+- **发际线测量**：一次读一读，用重音，附在所测量的内容上；来自积分或官方来源的数字。
+- **黑暗、安静、精确**：接近黑色的底色，色彩内敛，除了正面之外没有发光。
 
-Not Sci-fi Hologram HUD (no invented interface: the points are real, sparse where the survey was), not Satellite Briefing (photographs from above; here a 3D cloud flown through), not Blueprint, not Low-poly Isometric, not Glass Product Render.
+不是科幻全息图 HUD（没有发明的界面：点是真实的，调查所在的地方稀疏），不是卫星简报（从上面拍摄的照片；这里有 3D 云飞过），不是蓝图，不是低多边形等距，不是玻璃产品渲染。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Points**: GL points sized in world units (0.12–0.3 m), floor of one output pixel, soft discs, opaque and depth-tested (additive only for a ghost layer); colour from height or class, value from intensity; distance fog.
-- **Quantise for the browser**: uint16 positions (2 cm / 1 cm) plus a byte each for height above ground, class, intensity, seed.
-- **Height above ground** for every return (minus a ground model triangulated from class-2 returns) drives the colour ramp, the cutting plane and the ruler.
-- **The solid surface**: a 0.5–1 m mesh of the ground or surface model, smooth normals, baked short-radius AO, a low raking sun (20–35°), faint contours, crests lightened. Display exaggeration of micro relief (×2–3) only with an on-screen note; measure on undistorted data.
-- **The front**: one world-space plane (one uniform) shared by the point and surface shaders; points ahead of it brighten, a thin seam glows behind it and the surface fills in over tens of metres.
-- **The cutting plane** (by height above ground): returns above it lift away and fade, a ring glows where it meets the trees, a ruler on the frame edge tracks it.
-- **Marks on the surface** (traced features, section lines) are a distance field in the surface shader, kept hairline with `fwidth`; readings, leaders and charts are a 2D overlay through the same world → screen function.
-- **A survey window**: outside the measured area the cloud stays as dim points instead of ending in black.
-- **Post**: 2× render, high-threshold bloom (only fronts and seams), vignette; no grain (points are already fine detail; encode at a higher CRF).
+- **积分**：以世界单位大小 (0.12–0.3 m) 表示的 GL 点，一个输出像素的底面，软盘，不透明且经过深度测试（仅针对重影层添加）；颜色来自高度或类别，价值来自强度；远处雾。
+- **浏览器的Quantise**：uint16位置（2厘米/1厘米）加上每个字节，用于表示离地高度、类别、强度、种子。
+- **每个回波的离地高度**（减去从 2 类回波三角测量的地面模型）驱动色带、切割平面和标尺。
+- **实体表面**：地面或表面模型的0.5–1 m网格，平滑法线，烘焙短半径AO，低倾斜太阳（20–35°），模糊轮廓，波峰变亮。仅通过屏幕注释显示夸张的微浮雕 (×2–3)；测量未失真的数据。
+- **正面**：点着色器和面着色器共享的一个世界空间平面（一个统一的）；它前面的点变亮，后面有一条细缝发光，表面填满了数十米。
+- **切割平面**（按离地高度）：返回到其上方升起并消失，环在与树木相遇的地方发光，框架边缘上的尺子跟踪它。
+- **表面上的标记**（追踪特征、剖面线）是表面着色器中的距离场，用`fwidth`保持细线；读数、领先者和图表是通过同一个世界 → 屏幕功能的 2D 覆盖。
+- **A 测量窗口**：在测量区域之外，云保持为暗点而不是以黑色结束。
+- **邮政**：2×渲染，高阈值绽放（仅正面和接缝），晕影；无颗粒（点已经是精细的细节；以更高的 CRF 进行编码）。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Background near-black with a cold tint; never pure black, never a gradient sky.
-- Points: one ramp by height or class, desaturated (deep green-teal → pale; or grey → white); intensity modulates value, not hue. No rainbow elevation ramps.
-- The front and seams: one cool near-white; it is light, not a colour.
-- The solid surface: warm neutral (stone, clay, plaster), lit; its colour never competes with the accent.
-- One accent (amber) reserved for what was found and measured: traced features, the reading, the section line. A second, cooler hue only in a comparison chart.
+- 背景接近黑色，带有冷色调；从来没有纯黑色，从来没有渐变的天空。
+- 点：按高度或等级划分的一个坡道，去饱和度（深绿→浅色；或灰色→白色）；强度调节明度，而不是色调。没有彩虹海拔坡道。
+- 正面和接缝：冷色近白色；它是光，不是颜色。
+- 固体表面：暖中性（石头、粘土、石膏）、有光；它的颜色永远不会与口音相冲突。
+- 一种强调色（琥珀色）保留用于发现和测量的内容：描绘的特征、读数、剖面线。第二种较冷的色调仅在比较图中出现。
 
-Example (our demo): background #05080A, canopy #1F3F35 → #5C9A7A → #E2F3DC, ground returns #C8B38C, surface #BDB5A6, front #D4FFF0, accent #FFB347, chart green #83C495.
+示例（我们的示范）：背景 #05080A，顶篷 #1F3F35 → #5C9A7A → #E2F3DC，地面返回 #C8B38C，表面 #BDB5A6，前面 #D4FFF0，重音 #FFB347，图表绿色 #83C495。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Roles**: light condensed numerals for readings (110–130 px, e.g. Barlow Condensed 300); a monospace for instruments, coordinates, counts and source lines (19–22 px, e.g. IBM Plex Mono); a sans for labels in the film's language (24–36 px, e.g. Noto Sans SC 500). OFL, self-hosted, CJK subset to the characters used.
-- **Instruments** in one corner: place, coordinates, area, data source, point count, any exaggeration; they change only when the medium does.
-- **Readings** in the right third beside what they measure: label, number, source/method line; a leader when the feature is in frame; a rolling counter reports its landing value.
-- **Subtitles**: a transcript strip bottom-left (2 px rule, plate fading right), one line per language measured with the real font, split rather than wrapped; if bilingual, the film's language on top.
-- Nothing below 19 px at 1080p. Hold subtitles ≥ max(1.8 s, speech + 0.6 s); labels ≥ characters ÷ 4.5 + 1.5 s (CJK), letters ÷ 15 + 1.5 s (Latin).
+- **角色**：用​​于读数的浅压缩数字（110–130 px，例如 Barlow Condensed 300）；用于仪器、坐标、计数和源行的等宽字体（19-22 像素，例如 IBM Plex Mono）； a sans 表示影片语言中的标签（24–36 像素，例如 Noto Sans SC 500）。 OFL，自托管，所用字符的 CJK 子集。
+- **仪器**在一角：地点、坐标、面积、数据源、点数、任意夸张；仅当表现媒介发生变化时，它们才会发生变化。
+- **读数**位于测量对象旁边的右侧第三个位置：标签、编号、source/method线；当要素在框架内时为领导者；滚动计数器报告其着陆值。
+- **字幕**：左下角的转录条（2 px规则，板向右淡出），每种语言一行用真实字体测量，分割而不是包裹；如果是双语，则影片的语言位于顶部。
+- 1080p 时没有低于 19 像素的内容。保持字幕≥ max(1.8 s, 语音 + 0.6 s);标签 ≥ 字符 ÷ 4.5 + 1.5 秒（CJK），字母 ÷ 15 + 1.5 秒（拉丁语）。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- On ones, 24 fps; the camera never stops; keys as a C1 spline in target / distance / heading / pitch (no `lookAt` from nadir).
-- The front moves on an ease, slowest where the subject is; a cutting plane steps on the beat (eased steps, short holds) so the layers read.
-- Points appear behind a front or by height, never by random fade-in across the whole frame.
-- Readings land with a small pop; traced features light up along their length in order.
-- Never moves: the points relative to each other (no wobble, no noise displacement), the instruments' positions.
+- 在 1 上，24 fps； 摄影机永不停息；键作为目标/距离/航向/俯仰中的 C1 样条线（没有来自最低点的 `lookAt`）。
+- 正面移动缓慢，主体所在的位置最慢；切割平面踩着节拍（缓步、短停），以便读取各层。
+- 点出现在前面或高度后面，而不是在整个帧中随机淡入。
+- 读数落地时会发出轻微的爆裂声；追踪的特征沿着其长度按顺序亮起。
+- 从不移动：点相对于彼此（无摆动，无噪音位移），仪器的位置。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Locked nadir with slow push | "this is what a photo shows" | a claim to test; a before; an ending that returns to the map |
-| Crane down with tilt to oblique | entering the data; the place has height | the switch from picture to cloud |
-| Low oblique close to the cloud (10–20° pitch, 90–150 m) | volume; things standing up | canopy, buildings, a facade, a cliff |
-| Slow orbit | studying, the plane doing the work | a peel; a scan; a held reading |
-| Rising pull-back | scale reveal of what was found | a network, a site plan, a corridor |
-| Lateral track | travelling a feature | a wall, a road, a pipeline, a coast |
-| Push to a section | the detail that proves it | a cross-section, a clearance, a height |
+|缓慢推动锁定最低点|“这就是照片所显示的”|要求进行测试；之前；返回地图的结局|
+|起重机向下倾斜|输入数据；这个地方有高度|从图片到云端的切换|
+|近云低斜（10-20°俯仰，90-150 m）|体积;东西站起来|天篷、建筑​​物、立面、悬崖|
+|慢轨道|学习，飞机做作业|果皮；扫描；举行的阅读|
+|上涨回调|规模揭示所发现的内容|网络、场地规划、走廊|
+|横向轨道|旅行功能|一堵墙，一条路，一条制作流程，一条海岸|
+|推送到一个部分|证明这一点的细节|横截面、间隙、高度|
 
-Subject ≥ a third of the frame height at key moments; readings right third; instruments in a corner; nothing in the subtitle strip. Transitions are fronts and planes, never crossfades or hard cuts inside the cloud.
+关键时刻被摄体≥画面高度的三分之一；右第三读数；角落里的乐器；字幕条上什么也没有。过渡是正面和平面，而不是云内的交叉淡入淡出或硬剪切。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instrument sounds**: FM pings, fine crackle as points arrive, noise sweeps tied to a front, ticks that divide (8ths → 16ths → 32nds) to accelerate, a descending pitched blip per peeled layer, a ratchet while a counter rolls, a ping when a reading lands.
-- **Weight and synthesis**: timpani, bass drum, gran cassa for condensations and cuts, a reversed swell into the main impact; low-passed detuned-saw pads; a pulse bass with audible 2nd/3rd harmonics.
-- **Dry and wet**: one option is electronics while the subject is still points, and a single organic, wooden or bowed timbre (marimba, bowed vibraphone) for the found features once the surface exists.
-- **Beds**: the place's own ambience (wind in leaves, water, traffic) at the start and the end as J- and L-cuts; a thin air bed in between.
-- **Silence**: a near silence (air only) before the main reveal; the first sound after it is the impact.
-- **Mix**: voice ~10 dB over the music and ducking it; impacts outside the bus compressor; −14 LUFS, true peak ≤ −1.2 dBTP. Voice: a calm, plain narrator, short declarative lines.
+- **乐器声音**：FM ping声，点到达时的细爆裂声，与前面相关的噪声扫描，划分（8分→16分→32分）以加速的滴答声，每个剥离层的下降音调光点，计数器滚动时的棘轮，读数落地时的ping声。
+- **重量和合成**：定音鼓、低音鼓、大卡萨用于压缩和剪切，反向膨胀进入主冲击；低通失谐锯垫；带有 2nd/3rd 谐波的脉冲低音。
+- **干和湿**：一种选择是电子产品，而主题仍然是点，以及一旦表面存在就发现的特征的单一有机、木质或弓形音色（马林巴、弓形颤音琴）。
+- **床位**：开始和结束时场所自身的氛围（树叶中的风、水、交通），如 J 型和 L 型剪切；中间有一张薄薄的空气床。
+- **沉默**：主要揭示之前近乎寂静（仅空气）；之后的第一个声音是撞击声。
+- **混音**: voice ~10 dB over the music and 音量闪避 it;客车压缩机外部的影响； −14 LUFS，真实峰值 ≤ −1.2 dBTP。声音：平静、平实的叙述者，简短的陈述台词。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-- **Photo to points.** A scan line crosses an aerial photo; behind it the place is points. *Fits content like:* a site visit before a design; what the satellite misses; a quarry's real volume.
-- **The canopy peel.** A plane descends by height above ground, returns above it lift away layer by layer, a ruler tracks it. *Fits content like:* archaeology under forest; a hidden trail; flood channels; landslide scars.
-- **Points condense.** A front turns the remaining points into a solid surface; found features light up in order. *Fits content like:* a building scan to a BIM shell; a cliff to a hazard model; a street to a vehicle clearance model.
-- **The section.** A plane crosses one feature; the profile glows and a dimensioned chart of the real returns hangs beside it. *Fits content like:* a levee's height; a bridge's clearance; a road cut.
-- **The window.** The measured area is a stage inside the unmeasured cloud. *Fits content like:* a parcel; a corridor; a site boundary.
-- **The regrowth.** The removed layer returns as a ghost over what was found. *Fits content like:* an ending; a clearing before/after; a buried pipe under a street.
+- **照片到点。** 扫描线穿过航拍照片；后面的地方就是点。 *适合以下内容：*设计前的现场访问；卫星错过了什么；采石场的实际体积。
+- **天篷剥落。** 一架飞机按距地面高度下降，返回上方，一层层升起，一把尺子跟踪它。 *适合以下内容：*森林下的考古；隐藏的踪迹；防洪渠道；山体滑坡的伤痕。
+- **点凝聚。** A锋将剩余点变成实体面；发现功能按顺序亮起。 *适合以下内容：* 建筑扫描到 BIM 外壳；危险模型的悬崖；街道到车辆清关模型。
+- **截面。** 一个平面穿过一个特征；个人资料会发光，旁边悬挂着真实回报的尺寸图表。 *适合以下内容：*堤坝的高度；桥梁净空；一条路被切断。
+- **窗口。** 测量区域是未测量云内的一个阶段。 *适合以下内容：* 包裹；走廊；站点边界。
+- **重新生长。** 被移除的层像幽灵一样返回到所发现的东西上。 *适合以下内容：*结尾；清算before/after；街道下埋设的管道。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Finding data for a new place**: USGS 3DEP (US) as Entwine Point Tiles per project at `https://s3-us-west-2.amazonaws.com/usgs-lidar-public/<project>/ept.json`, projects and footprints in `boundaries/resources.geojson` of github.com/hobuinc/usgs-lidar; bare-earth scouting through the 3DEP elevation ImageServer. OpenTopography (catalogue of many collections, licence per dataset). AHN (Netherlands, CC0). National portals, e.g. England's Environment Agency LiDAR (OGL), France IGN LiDAR HD (Licence Ouverte), Spain PNOA-LiDAR (CC BY 4.0), Finland NLS (CC BY 4.0), New Zealand LINZ (CC BY 4.0); read each portal's terms. Fetch a subset by box and depth, not whole tiles.
-- **Licences**: public domain, CC0, CC BY and attribution-only government licences are fine, with credit in `CREDITS`. ODbL, CC BY-SA, "no known restrictions" (not CC0) or non-commercial terms: name them to the user and ask first. Never commercial scans or Google 3D tiles. Ask the user for their own scans (a site survey, a drone or terrestrial scan, their BIM) when the film is about their asset. Never stand in a generated or invented cloud for real evidence.
-- **Facts**: keep a FACTS.md in the project folder (claim, source URL, quoted wording, or the measurement method) and deliver it with the film.
-- **Coordinates**: EPT copies are often Web Mercator: convert to a local east/north/up frame first; check the vertical datum against known ground.
-- **Leaf-off vs leaf-on**: leaf-off lidar reaches the ground but its canopy is sparse; say which season each layer is.
-- **Classification is the provider's**: class 1 mixes vegetation, buildings and noise; drop 7 and 18; finish a cut below 0 m or low vegetation stays as stripes.
-- **A dense cloud reads as a flat carpet** from afar: go close and low for volume; let the distance fog out.
-- **Scan striping** is real texture; don't frame a reveal on it at grazing angles.
-- **Traced features are interpretation**: say "traced", keep the tracing in a data file, snap it to the data, leave faint candidates out.
-- **Privacy**: crop out houses and yards; keep the survey window on public or uninhabited land.
+- **寻找新地点的数据**：USGS 3DEP（美国）作为`https://s3-us-west-2.amazonaws.com/usgs-lidar-public/<project>/ept.json`每个项目的缠绕点瓷砖，github.com/hobuinc/usgs-lidar的`boundaries/resources.geojson`中的项目和足迹；通过 3DEP 高程 ImageServer 进行裸地侦察。 OpenTopography（许多集合的目录，每个数据集的许可证）。 AHN（荷兰，CC0）。国家门户网站，例如英国环境局 LiDAR (OGL)、法国 IGN LiDAR HD（Licence Ouverte）、西班牙 PNOA-LiDAR (CC BY 4.0)、芬兰 NLS (CC BY 4.0)、新西兰 LINZ (CC BY 4.0)；阅读每个门户的条款。按框和深度获取子集，而不是整个图块。
+- **许可证**：公共领域、CC0、CC BY 和仅归属的政府许可证都可以，信用在 `CREDITS`。 ODbL、CC BY-SA、“无已知限制”（非 CC0）或非商业术语：向用户命名并首先询问。切勿商业扫描或 Google 3D 图块。当影片与用户的资产相关时，要求用户进行自己的扫描（现场勘察、无人机或地面扫描、BIM）。永远不要站在生成或发明的云中寻找真实的证据。
+- **事实**：将 FACTS.md 保留在项目文件夹中（声明、源 URL、引用的措辞或测量方法），并与影片一起交付。
+- **坐标**：EPT副本通常是Web墨卡托：首先转换为本地east/north/up框架；根据已知地面检查垂直基准。
+- **Leaf-off 与 leaf-on**：leaf-off 激光雷达到达地面，但其冠层稀疏；说出每一层属于哪个季节。
+- **分类是提供商的**：1类混合植被、建筑物和噪声；下降7和18；完成 0 米以下的切割或低植被保持为条纹。
+- **浓密的云朵从远处看就像平坦的地毯**：靠近并降低音量；让距离变得模糊。
+- **扫描条纹**为真实纹理；不要以掠射角度在其上框出显示。
+- **Traced 特征解释**：说“跟踪”，将跟踪保存在数据文件中，将其捕捉到数据，将微弱的候选者排除在外。
+- **隐私**：裁剪房屋和庭院；将调查窗口保持在公共或无人居住的土地上。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-- `demo/film.js`: point shader (front, cutting plane, lift, ghost, window), surface shader (light, AO, contours, feature field, section), photo shader, camera spline (`camAt`), overlay (`reading`, `drawSection`, `subtitles`, readcheck registry).
-- `demo/tools/`: `fetch_ept.py` (EPT subset), `terrain.py` (local frame, DTM), `walls.py` (relief model), `trace.py` (snap a tracing, measure), `profile.py` (section from raw returns), `build_data.py` (binaries + facts).
-- **Extra packages and packs** (beyond `setup.sh deps voice music`): Python `laspy`, `lazrs` (LAZ decoding), `scikit-image` (relief and ridge tools), `fonttools` + `brotli` (CJK subset). They are not in the library's `.venv`: the agent installs them itself into a private venv in the project folder (the demo uses `demo/assets/raw/.venv`), never into `$LIB/.venv`. Fonts come from github.com/google/fonts (ofl/), fetched by script.
-- Minimal example, not in the demo: a building scan. Points coloured by class, a vertical front sweeping the street; behind it a 1 m surface model; one reading (roof height above the street).
+- `demo/film.js`：点着色器（正面、切割平面、提升、重影、窗口）、表面着色器（光线、AO、轮廓、特征场、剖面）、照片着色器、摄影机样条线（`camAt`）、叠加（`reading`、`drawSection`、 `subtitles`，读取检查注册表）。
+- `demo/tools/`：`fetch_ept.py`（EPT子集）、`terrain.py`（本地框架、DTM）、`walls.py`（浮雕模型）、`trace.py`（捕捉跟踪、测量）、`profile.py`（原始返回部分）、 `build_data.py`（二进制文件+事实）。
+- **Extra 软件包和包**（超出 `setup.sh deps voice music`）：Python `laspy`、`lazrs`（LAZ 解码）、`scikit-image`（浮雕和山脊工具）、`fonttools` + `brotli`（CJK 子集）。它们不在库的 `.venv` 中：代理将它们本身安装到项目文件夹中的私有 venv 中（示范使用 `demo/assets/raw/.venv`），而不是安装到 `$LIB/.venv` 中。字体来自 github.com/google/fonts (ofl/)，由脚本获取。
+- 最小的例子，不在示范中：建筑物扫描。点按阶级着色，垂直的正面扫过街道；后面有一个 1 m 的表面模型；一份读数（屋顶距街道的高度）。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-The agent decides the place and dataset, which classes to peel or keep, the fronts and their directions, the camera route, the readings, the accent within the colour logic, and whether a photo or a map opens the film.
+代理决定地点和数据集、剥离或保留哪些类别、正面及其方向、摄影机路线、读数、颜色逻辑中的重音，以及是否通过照片或地图打开影片。
 
-- **Structures**: a corridor flown end to end with three readings; two surveys of one place (erosion, construction) swapped by a front; one object scanned, cut and dimensioned.
-- **Openings**: a black frame the scan paints in line by line; a street-level photograph that dissolves into its own returns; a top-down map that tilts up into the cloud.
-- **Endings**: the cloud pulls back to show the whole survey tile; the removed layer returns as a ghost; the last reading holds while the points fade to the instruments.
+- **结构**：一条从头到尾飞行的走廊，具有三个读数；对一个地点（侵蚀、建设）的两次调查被锋面交换；对一件物体进行扫描、切割和尺寸标注。
+- **开口**：扫描逐行绘制的黑色框架；一张街头照片，融入了它自己的回报；倾斜到云中的自上而下的地图。
+- **结局**：云拉回以显示整个调查图块；被移除的层像幽灵一样返回；最后的读数保持不变，同时仪器上的点逐渐消失。
 
 ---
 
-How our demo was made (story, shots, score, title card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、标题卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

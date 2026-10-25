@@ -1,15 +1,17 @@
-# Real-instrument toolchain: sampler (samples) + pluck (physically modelled plucked strings)
+<a id="real-instrument-toolchain-sampler-samples--pluck-physically-modelled-plucked-strings"></a>
+# 真实乐器工具链：采样器（样本）+拨弦（物理建模的拨弦）
 
-For writing **original scores** for Lemo-Opuscar style films. Everything is synthesised offline with numpy/soxr at **48 kHz**, with the same conventions as `sfx.py` (`SR`, `add()`, `limit()`).
-The goal is "sounds like a real instrument": use samples wherever possible (97 instruments, real recordings), and fill in the folk plucked strings the sample libraries lack (guqin, pipa, shamisen…) with physical modelling (11 presets).
+用于为 Lemo-Opuscar 风格影片编写 **原始乐谱**。所有内容均通过 numpy/soxr 在 **48 kHz** 下离线合成，与 `sfx.py` 相同的约定（`SR`、`add()`、`limit()`）。
+目标是“听起来像真正的乐器”：尽可能使用样本（97种乐器，真实录音），并用物理建模（11个预设）填充采样音色库缺乏的民谣拨弦（古琴，琵琶，三味线......）。
 
-- Preview: the repo has no ready-made preview files (`core/audio/*.wav` is not in git, and not in the sample packs either). After downloading a sample pack, use the pattern in section 1 to play a small root-fifth-octave motif on each instrument and render a stretch to listen to yourself
-- Sample libraries: `core/audio/instruments/` (lossless FLAC; each library keeps its original LICENSE/README). Not in git; download per library, only the ones the film uses: `sh tools/fetch.sh instruments <lib>` (`vsco2ce` 395 MB, `vcsl` 271 MB, `salamander` 218 MB, `freepats` 397 MB, `karoryfer` 74 MB), or `instruments all` (about 1.4 GB). The Source column in section 5 is the library an instrument lives in: VSCO 2 CE → `vsco2ce`, VCSL → `vcsl`, Salamander → `salamander`, FreePats and MuldjordKit → `freepats`, Karoryfer → `karoryfer`
-- Index: `core/audio/instruments/index.json` (every library's pack ships a copy: pitch, velocity layer, onset point and level of every sample; ready to use on import, no rebuild needed)
+- 预览：该存储库没有现成的预览文件（`core/audio/*.wav` 不在 git 中，也不在示例包中）。下载样本包后，使用第 1 部分中的模式在每个乐器上演奏一个小的根五度八度音节主题，并渲染一个伸展来聆听自己的声音
+- 采样音色库: `core/audio/instruments/`（无损 FLAC；每个库都保留其原始内容LICENSE/README）。不在 git 中；按库下载，仅下载影片用途：`sh tools/fetch.sh instruments <lib>` (`vsco2ce` 395 MB, `vcsl` 271 MB, `salamander` 218 MB, `freepats` 397 MB, `karoryfer` 74 MB), or `instruments all`（约 1.4 GB）。第 5 部分中的源列是仪器所在的库：VSCO 2 CE →`vsco2ce`, VCSL →`vcsl`, 蝾螈 →`salamander`、FreePats 和 MuldjordKit →`freepats`, 卡罗里弗 →`karoryfer`
+- 索引：`core/audio/instruments/index.json`（每个库的包都会附带一份副本：每个样本的音高、速度层、起始点和电平；导入即可使用，无需重建）
 
 ---
 
-## 1. Thirty-second start
+<a id="1-thirty-second-start"></a>
+## 1.三十秒启动
 
 ```python
 import sys; sys.path.insert(0, '.')   # run from the repo root
@@ -33,61 +35,63 @@ mix = S.room(mix, size=.45, mix=.18)                # simple convolution reverb 
 sf.write('cue.wav', mix, SR)
 ```
 
-> Calling `note()/hit()/pluck()` on their own gives **mono float32 @48k**, length ≈ `dur + release`; place it into a stereo buffer with `sfx.add(buf, x, t, gain, pan)`.
+> 自行调用 `note()/hit()/pluck()` 得到 **mono float32 @48k**，长度 ≈ `dur + release`；将其放入 `sfx.add(buf, x, t, gain, pan)` 的立体声缓冲区中。
 
 ---
 
-## 2. Using sampler.py
+<a id="2-using-samplerpy"></a>
+## 2.使用sampler.py
 
-| Function | What it does |
+|功能|它的作用|
 |---|---|
-| `load(name)` | Loads an instrument by name (lazy + cached; the first call reads only the index, samples are read from disk when used). Returns an `Inst`; `print` shows range / velocity layers / variants |
-| `note(inst, pitch, dur, vel=.8, release=None, attack=0, var=None)` | Single note. `pitch` can be `'C#4'` `'Db3'` `'Bb-1'` or a midi number (**C4=60**; fractions allowed = microtones). `dur` = how long the note is held; `release` = release time in seconds after the note stops (default per instrument); `attack>0` adds a fade-in for string pads |
-| `hit(inst, name_or_index=None, vel=.8, dur=None)` | Unpitched hit. Variant names can be given as a prefix / without underscores (`'kick'`→`kick_drum_left`, `'hihat_open'`); an integer = the n-th variant (`hit('timpani', 2)` = the 3rd drum); `dur` truncates (with a 30 ms fade-out). Also works on pitched instruments: `hit('piano','A3')` plays the whole natural decay |
-| `chord(inst, pitches, dur, vel, strum=0)` | Chord (mono); `strum>0` delays each note in turn (arpeggio / strum) |
-| `render(events, dur=None, master=True)` | Score → stereo. Events are tuples `(t, inst, pitch, dur, vel, pan[, gain])` or dicts (may carry `release`/`attack`/`var`) |
-| `room(x, size=.5, mix=.2, predelay=.015, damp=.5)` | Convolution reverb with a decorrelated exponentially decaying noise IR; `size` 0–1 → RT60 0.4–3.4 s; returns (N,2) of the same length |
-| `credits(names)` | From the list of instruments you used, generates the end-credit CREDITS lines (the required CC BY wording + CC0 acknowledgements) |
-| `info(name=None)` / `instruments(fam=None)` | Prints an overview / lists names (`fam` takes 弦乐 strings / 木管 woodwinds / 铜管 brass / 打击 percussion / 键盘 keyboards / 拨弦 plucked / 民族 folk) |
-| `midi(p)` / `hz(p)` / `name(m)` / `seed(n)` | Note-name utilities; `seed` fixes the round-robin randomness (same call order → same result) |
-| `build_index(names=None, force=False)` | Rescans the samples and rebuilds `index.json` (only needed if samples were swapped or added; ~15 s; needs librosa: `requirements-dev.txt`) |
+|`load(name)`|按名称加载仪器（惰性+缓存；第一次调用仅读取索引，使用时从磁盘读取样本）。返回 `Inst`； `print` 显示范围/速度层/变体|
+|`note(inst, pitch, dur, vel=.8, release=None, attack=0, var=None)`|单注。 `pitch` 可以是 `'C#4'` `'Db3'` `'Bb-1'` 或 midi 数字（**C4=60**；允许的分数 = 微音）。 `dur` = 纸币持有多长时间； `release` = 音符停止后的释放时间（以秒为单位）（每个乐器的默认值）； `attack>0` 为弦乐垫添加淡入|
+|`hit(inst, name_or_index=None, vel=.8, dur=None)`|无音击中。变体名称可以作为前缀/不带下划线（`'kick'`→`kick_drum_left`，`'hihat_open'`）；整数 = 第 n 个变体（`hit('timpani', 2)` = 第 3 个鼓）； `dur` 截断（30 毫秒淡出）。也适用于高音乐器：`hit('piano','A3')` 演奏整个自然衰减|
+|`chord(inst, pitches, dur, vel, strum=0)`|和弦（单声道）； `strum>0` 依次延迟每个音符（琶音/扫弦）|
+|`render(events, dur=None, master=True)`|配乐 → 立体声。事件是元组 `(t, inst, pitch, dur, vel, pan[, gain])` 或字典（可能携带 `release`/`attack`/`var`）|
+|`room(x, size=.5, mix=.2, predelay=.015, damp=.5)`|具有去相关指数衰减噪声 IR 的卷积混响； `size` 0–1 → RT60 0.4–3.4 秒；返回相同长度的 (N,2)|
+|`credits(names)`|从您使用的工具列表中，生成最终信用 CREDITS 行（所需的 CC BY 措辞 + CC0 确认）|
+|`info(name=None)` / `instruments(fam=None)`|打印概述/列出名称（`fam` 采用弦乐弦乐/木管木管乐器/铜管黄铜/打击打击乐/键盘键盘/拨弦拨弦/民族民谣）|
+|`midi(p)` / `hz(p)` / `name(m)` / `seed(n)`|注释名称实用程序； `seed` 修复了循环随机性（相同的调用顺序→相同的结果）|
+|`build_index(names=None, force=False)`|重新扫描样本并重建 `index.json`（仅在交换或添加样本时才需要；约 15 秒；需要 librosa：`requirements-dev.txt`）|
 
-**What it does behind the scenes**
-- **Sample selection**: weighs both "closest to the target note" and "closest velocity layer" (cost = semitone distance + 4×velocity difference, with a small extra penalty for transposing up); multiple round-robins in the same cell rotate randomly, avoiding the machine-gun effect.
-- **Transposition**: `soxr` HQ resampling (which also converts 44.1k to 48k). Keep transposition within ±4 semitones (samples are usually every 2–3 semitones, so the default stays within that range). Notes outside the sampled range still sound, but the timbre turns "cartoonish".
-- **Velocity**: multi-layer instruments pick the layer first, then fine-tune ±4 dB within the layer; single-layer instruments scale gain by velocity and slightly darken the highs when played softly (real instruments are darker when played softly).
-- **Long-note extension** (the `sustained, extendable` type): when `dur` exceeds the recording's length, grains of 0.4–1 s are taken at random from the recording's stable section, **aligned by cross-correlation at the fundamental period**, then spliced with 100 ms raised-cosine crossfades, and each grain's level is matched to the stable-section mean, so there is no hard cut and no looping "hum" periodicity. FreePats' accordion/bagpipe come with loop points; their loop regions are used directly.
-- **Note-off**: after `dur`, an exponential decay over `release` (-60 dB) + 5 ms to zero; decaying instruments (piano, pizzicato, marimba…) decay naturally before `dur`, and when `dur` arrives they are "damped" over the release time. For glockenspiel/tubular bells/gong and the like, if you want them to ring on, write a long `dur` or a large `release`.
-- **Level**: every instrument is already normalised from measurements of its recordings (sustained by the RMS of the loudest 0.4 s window, decaying by a 0.1 s window, percussion by each variant's peak), so at `vel=.8` the instruments are roughly equally loud (within ±6 dB). Balance directly with `vel`/`gain` when writing the score.
-- **Pitch calibration**: every sample in the index has its fundamental measured with yin. In many VSCO/VCSL folders the file names are **an octave lower** than the actual pitch (e.g. `VlnEns_susVib_A2` is actually A3), while Karoryfer's erhu/bass file names are **an octave higher**: all of this is corrected automatically from the measurements (`octave_fix` in index.json), and samples off equal temperament by 8–80 cents are fine-tuned to equal temperament (Salamander uses its official Retuned table). **Just write the actual pitch.**
+**它在幕后做什么**
+- **样本选择**：权衡“最接近目标音符”和“最接近力度层”（成本=半音距离+ 4×力度差，上移调时有一个小的额外惩罚）；同一单元内的多个循环随机轮换，避免机枪效应。
+- **换位**：`soxr` HQ 重采样（也将 44.1k 转换为 48k）。将移调保持在 ±4 个半音范围内（样本通常每 2-3 个半音一个，因此默认值保持在该范围内）。采样范围之外的音符仍然可以发出声音，但音色变得“卡通化”。
+- **速度**：多层乐器先拾取该层，然后在层内微调±4 dB；单层乐器按力度缩放增益，并在轻柔演奏时使高音稍微变暗（真实乐器在轻柔演奏时会更暗）。
+- **长音符扩展**（`sustained, extendable`类型）：当`dur`超过录音长度时，从录音稳定部分随机取出0.4-1秒的颗粒，**通过基频互相关对齐period**，然后与 100 ms 升余弦交叉渐变拼接，每个颗粒的级别与稳定部分均值相匹配，因此没有硬剪切，也没有循环“嗡嗡声”周期性。 FreePats 的 accordion/bagpipe 带有循环点；它们的循环区域被直接使用。
+- **注释**：在 `dur` 之后，`release` (-60 dB) + 5 ms 到零的指数衰减；衰减乐器（钢琴、拨奏、马林巴……）在 `dur` 之前自然衰减，当 `dur` 到达时，它们在释放时间内“衰减”。对于glockenspiel/tubular bells/gong之类的，如果你想让它们响铃，就写一个长的`dur`或一个大的`release`。
+- **等级**：每个乐器都已经根据其录音测量进行了归一化（由最响亮的 0.4 秒窗口的 RMS 维持，通过 0.1 秒窗口衰减，通过每个变体的峰值进行打击），因此在 `vel=.8` 处，乐器的响度大致相同（±6 dB 以内）。写入配乐时直接用`vel`/`gain`进行平衡。
+- **音调校准**：索引中的每个样本都有用阴测量的基波。在许多 VSCO/VCSL 文件夹中，文件名是 **an 八度，比实际音高低**（例如 `VlnEns_susVib_A2` 实际上是 A3），而 Karoryfer 的 erhu/bass 文件名是 **an 八度更高的**：所有这些都是根据测量结果自动校正的（index.json中的`octave_fix`），并且平均律的样本经过8-80音分的微调以达到平均律（Salamander使用其官方重新调音表）。 **写实际音高即可。**
 
 ---
 
-## 3. Using pluck.py (physically modelled plucked strings)
+<a id="3-using-pluckpy-physically-modelled-plucked-strings"></a>
+## 3.使用pluck.py（物理模型拨弦）
 
 ```python
 P.pluck(preset, pitch, dur=None, vel=.8, **kw)   # → mono float32 @48k; dur=None lets it decay out naturally
 P.strum(preset, pitches, dur, vel=.8, spread=.025, up=False)   # strum / arpeggio
 ```
 
-| Preset | Description | Notes |
+|预设|描述|笔记|
 |---|---|---|
-| `guqin` | guqin | Silk strings, long sustain (~7 s), low-frequency body resonance; supports stopped-note slides with `bend` and yin-nao (吟猱) vibrato with `vib`, **silk-string friction noise is added automatically while sliding**; `harmonic=True` = harmonics (pure, bell-like) |
-| `pipa` | pipa | Bright plectrum attack, decay ~2.5 s; `trem=12~16` = lunzhi (轮指, rolled-finger tremolo) |
-| `shamisen` | shamisen | Plectrum + skin slap + **sawari buzz from the string touching the bridge** (`buzz` 0–1, `thr` adjustable; measured spectral centroid of the sustain 1.5k→2.0k Hz) |
-| `koto` | koto (Japanese zither) | `bend` can do oshide (押手, pressing the string to raise the pitch) |
-| `banjo` | banjo | Drum-head resonance, fast decay, stiff steel strings |
-| `acoustic_guitar` | steel-string folk guitar | Pair with `strum()` for strumming |
-| `nylon_guitar` | nylon-string guitar | Warm (sampled version: `guitar_nylon`) |
-| `upright_bass_pizz` | double bass pizzicato | Dull fingertip thump + low-frequency body (sampled version: `jazz_bass`, more realistic) |
-| `harp` | harp | Plucked at the string's midpoint, warm (sampled version: `harp`) |
-| `kalimba` | kalimba | Modal synthesis: tine partials 1 : 5.93 : 16.6 + fingernail click + resonator box (sampled version: `kalimba`) |
-| `music_box` | music box | Modal synthesis: comb-tooth partials 1 : 6.27 : 17.55, slight beating between paired teeth, mechanical "tick", short metallic decay |
+|`guqin`|古琴|丝弦，长延音（~7秒），低频体共鸣；支持`bend`的停音符滑动和`vib`的吟猱颤音，**滑动时自动添加丝弦摩擦噪音**； `harmonic=True` = 谐波（纯、钟状）|
+|`pipa`|琵琶|亮拨片攻击，衰减~2.5 s； `trem=12~16` = 轮指（轮指，卷指颤音）|
+|`shamisen`|三味线|拨片+皮肤拍击+**sawari嗡嗡声来自接触琴马的琴弦**（`buzz` 0–1，`thr`可调；测得的延音频谱质心1.5k→2.0k Hz）|
+|`koto`|古筝（日本古筝）|`bend` 可以做押手（押手，按下琴弦提高音高）|
+|`banjo`|班卓琴|鼓面共鸣，快速衰减，钢弦僵硬|
+|`acoustic_guitar`|钢弦民谣吉他|与 `strum()` 配对进行扫弦|
+|`nylon_guitar`|尼龙弦吉他|温暖（采样版：`guitar_nylon`）|
+|`upright_bass_pizz`|低音提琴拨奏|沉闷的指尖重击+低频体（采样版：`jazz_bass`，更真实）|
+|`harp`|竖琴|在琴弦的中点弹奏，温暖（采样版本：`harp`）|
+|`kalimba`|卡林巴琴|模态合成：齿音分音 1 : 5.93 : 16.6 + 指甲点击 + 共鸣箱（采样版本：`kalimba`）|
+|`music_box`|音乐盒|模态合成：梳齿部分 1 : 6.27 : 17.55，配对齿之间轻微跳动，机械“滴答声”，短暂的金属腐烂|
 
-Common keywords:
-- `bend=[(t, semitones), ...]` piecewise-linear pitch envelope (relative to `pitch`); `glide=(target pitch, seconds)` glides to a note; `vib=(Hz, depth in semitones, start s)` vibrato / yin-nao
-- `trem=Hz` lunzhi / yaozhi (轮指/摇指, tremolo: repeated plucks, velocity slightly randomised); `harmonic=True` harmonics
-- Override physical parameters: `t60` (seconds for the fundamental to decay to -60 dB), `damp` (0–0.9, higher = darker), `pos` (pluck position 0–0.5, smaller = brighter), `bright`, `buzz`/`thr`, `bmix` (body proportion), `noise`, `release`
+常用关键词：
+- `bend=[(t, semitones), ...]` 分段线性音高包络（相对于 `pitch`）； `glide=(target pitch, seconds)` 滑向音符； `vib=(Hz, depth in semitones, start s)` 颤音 / 音闹
+- `trem=Hz` 伦之/腰之（轮指/摇指，颤音：重复拨弦，力度稍微随机）； `harmonic=True` 谐波
+- 覆盖物理参数：`t60`（基波衰减到 -60 dB 的秒数）、`damp`（0–0.9，较高 = 较暗）、`pos`（拨动位置 0–0.5，较小 = 较亮）、`bright`、 `buzz`/`thr`、`bmix`（车身比例）、`noise`、`release`
 
 ```python
 # a guqin phrase: open string → stopped note sliding up → yin vibrato → harmonic
@@ -102,232 +106,247 @@ add(buf, P.pluck('shamisen', 'C4', .6, .8, buzz=.7), 2, .8, .3)
 
 ---
 
-## 4. Licences and end-credit attribution (must read)
+<a id="4-licences-and-end-credit-attribution-must-read"></a>
+## 4. 许可证和最终信用归属（必读）
 
-| Library | Folder | Licence | What the credits must say |
+|风格库|文件夹|执照|学分必须说明什么|
 |---|---|---|---|
-| VS Chamber Orchestra: Community Edition (Versilian Studios, github.com/sgossner/VSCO-2-CE) | `instruments/vsco2ce/` | **CC0 1.0** | Not required; the author would like credit to "Versilian Studios / Sam Gossner" (the pipe organ is by Ivy Audio / Simon Dalzell) |
-| Versilian Community Sample Library (github.com/sgossner/VCSL) | `instruments/vcsl/` | **CC0 1.0** | Not required |
-| FreePats (freepats.zenvoid.org): classical guitar, ukulele, clean electric guitar, fingered electric bass, kalimba, hang, accordion, glass harp, old piano, bagpipe, world percussion | `instruments/freepats/<name>/` | **CC0 1.0** | Not required |
-| Karoryfer Samples (github.com/sfzinstruments): erhu aliexpress-erhu, jazz double bass Sneakybass, alto sax Weresax | `instruments/karoryfer/` | **CC0 1.0** | Not required |
-| **Salamander Grand Piano V3** (Alexander Holm; FreePats FLAC version) | `instruments/salamander/` | **CC BY 3.0** | **Required whenever you use `piano`** ↓ |
-| **MuldjordKit** (Lars Muldjord; FreePats version) | `instruments/freepats/muldjord_kit/` | **CC BY 4.0** | **Required whenever you use `drum_kit`** ↓ |
+|VS 室内乐团：社区版（Versilian Studios，github.com/sgossner/VSCO-2-CE）|`instruments/vsco2ce/`|**CC0 1.0**|不需要；作者感谢“Versilian Studios / Sam Gossner”（管风琴由 Ivy Audio / Simon Dalzell 制作）|
+|Versilian 社区采样音色库 (github.com/sgossner/VCSL)|`instruments/vcsl/`|**CC0 1.0**|不需要|
+|FreePats (freepats.zenvoid.org)：古典吉他、四弦琴、干净电吉他、指拨电贝司、卡林巴、手风琴、玻璃竖琴、旧钢琴、风笛、世界打击乐|`instruments/freepats/<name>/`|**CC0 1.0**|不需要|
+|Karoryfer 样本 (github.com/sfzinstruments)：二胡、爵士低音提琴 Sneakybass、中音萨克斯 Weresax|`instruments/karoryfer/`|**CC0 1.0**|不需要|
+|**Salamander 大钢琴 V3**（Alexander Holm；FreePats FLAC 版本）|`instruments/salamander/`|**CC BY 3.0**|**使用 `piano`** 时必填 ↓|
+|**MuldjordKit**（Lars Muldjord；FreePats 版本）|`instruments/freepats/muldjord_kit/`|**CC BY 4.0**|**使用 `drum_kit`** 时必填 ↓|
 
-If you use `piano`, write this in CREDITS exactly:
+如果您使用 `piano`，请在 CREDITS 中准确写入：
 
 ```
 Piano: "Salamander Grand Piano V3" by Alexander Holm, licensed under CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
 ```
 
-If you use `drum_kit`, write this in CREDITS exactly:
+如果您使用 `drum_kit`，请在 CREDITS 中准确写入：
 
 ```
 Drums: "MuldjordKit" by Lars Muldjord (drumgizmo.org), FreePats version, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 ```
 
-Suggested (for the CC0 parts, optional, one line is enough): `Samples (CC0): Versilian Studios VSCO 2 CE & VCSL, FreePats, Karoryfer Samples`.
-Easiest: `print('\n'.join(S.credits(['piano', 'cellos', 'drum_kit'])))` generates them automatically. `pluck.py` is pure synthesis, with no licence requirements.
+建议（对于CC0部件，可选，一行就足够了）：`Samples (CC0): Versilian Studios VSCO 2 CE & VCSL, FreePats, Karoryfer Samples`。
+最简单：`print('\n'.join(S.credits(['piano', 'cellos', 'drum_kit'])))` 自动生成它们。 `pluck.py` 是纯合成，没有许可证要求。
 
-Processing applied to the samples (all within what the licences allow): the VSCO/VCSL/Karoryfer WAVs were converted **losslessly** to FLAC (verified identical sample by sample); for Salamander only 5 of the 16 velocity layers are kept (v2/v6/v10/v13/v16); the photos in the FreePats packs (some CC BY-NC) were deleted, keeping only audio and sfz/notes.
-
----
-
-## 5. Available instruments
-
-"Sampled range" is the range the recordings actually cover (corrected to the actual sounding pitch, C4=60); a few steps beyond it still works, only with longer transposition. "Velocity layers" = the number of recorded layers for the same note on that instrument (1 = velocity simulated by gain + darkening alone).
-
-### Strings
-
-| Name | Description | Source | Licence | Sampled range | Velocity layers | Type |
-|---|---|---|---|---|---|---|
-| `violins` | violin section, sustained (vibrato) | VSCO 2 CE | CC0 1.0 | G3–D6 | 2 | sustained, extendable |
-| `violins_trem` | violin section, tremolo | VSCO 2 CE | CC0 1.0 | G3–D6 | 2 | sustained, extendable |
-| `violins_pizz` | violin section, pizzicato | VSCO 2 CE | CC0 1.0 | G3–D6 | 2 | natural decay |
-| `violins_spic` | violin section, spiccato (short notes) | VSCO 2 CE | CC0 1.0 | G3–D6 | 2 | natural decay |
-| `violin` | solo violin, sustained | VSCO 2 CE | CC0 1.0 | G3–C7 | 2 | sustained, extendable |
-| `violin_pizz` | solo violin, pizzicato | VSCO 2 CE | CC0 1.0 | G3–C7 | 2 | natural decay |
-| `violas` | viola section, sustained | VSCO 2 CE | CC0 1.0 | C3–D6 | 2 | sustained, extendable |
-| `violas_pizz` | viola section, pizzicato | VSCO 2 CE | CC0 1.0 | C3–D6 | 2 | natural decay |
-| `cellos` | cello section, sustained | VSCO 2 CE | CC0 1.0 | C2–F5 | 2 | sustained, extendable |
-| `cellos_pizz` | cello section, pizzicato | VSCO 2 CE | CC0 1.0 | C2–F5 | 2 | natural decay |
-| `cellos_spic` | cello section, spiccato | VSCO 2 CE | CC0 1.0 | C2–F5 | 2 | natural decay |
-| `contrabass` | double bass, sustained | VSCO 2 CE | CC0 1.0 | F#1–B3 | 2 | sustained, extendable |
-| `contrabass_pizz` | double bass, classical pizzicato | VSCO 2 CE | CC0 1.0 | E1–B3 | 2 | natural decay |
-| `harp` | harp | VCSL | CC0 1.0 | E1–F7 | 4 | natural decay |
-
-### Woodwinds
-
-| Name | Description | Source | Licence | Sampled range | Velocity layers | Type |
-|---|---|---|---|---|---|---|
-| `flute` | flute, sustained | VSCO 2 CE | CC0 1.0 | C4–C7 | 1 | sustained, extendable |
-| `flute_stac` | flute, staccato | VSCO 2 CE | CC0 1.0 | A4–C7 | 4 | natural decay |
-| `piccolo` | piccolo | VSCO 2 CE | CC0 1.0 | G5–G7 | 1 | sustained, extendable |
-| `clarinet` | clarinet, sustained | VSCO 2 CE | CC0 1.0 | D3–F#6 | 3 | sustained, extendable |
-| `clarinet_stac` | clarinet, staccato | VSCO 2 CE | CC0 1.0 | D3–F6 | 3 | natural decay |
-| `oboe` | oboe, sustained | VSCO 2 CE | CC0 1.0 | A#3–F6 | 2 | sustained, extendable |
-| `oboe_stac` | oboe, staccato | VSCO 2 CE | CC0 1.0 | A#3–F6 | 3 | natural decay |
-| `bassoon` | bassoon, sustained | VSCO 2 CE | CC0 1.0 | A#1–D#5 | 2 | sustained, extendable |
-| `bassoon_stac` | bassoon, staccato | VSCO 2 CE | CC0 1.0 | A#1–C5 | 2 | natural decay |
-| `recorder` | alto recorder (baroque) | VCSL | CC0 1.0 | F4–E6 | 1 | sustained, extendable |
-| `ocarina` | ocarina | VCSL | CC0 1.0 | A4–C#6 | 1 | sustained, extendable |
-| `tenor_sax` | tenor sax, vibrato | VCSL | CC0 1.0 | A#2–D6 | 1 | sustained, extendable |
-| `tenor_sax_nv` | tenor sax, straight tone | VCSL | CC0 1.0 | G#2–E6 | 2 | sustained, extendable |
-| `tenor_sax_stac` | tenor sax, staccato | VCSL | CC0 1.0 | G#2–E6 | 2 | natural decay |
-| `alto_sax` | alto sax (Weresax) | Karoryfer | CC0 1.0 | C#3–G#5 | 2 | sustained, extendable |
-| `harmonica` | chromatic harmonica | VCSL | CC0 1.0 | C3–C7 | 1 | sustained, extendable |
-
-### Brass
-
-| Name | Description | Source | Licence | Sampled range | Velocity layers | Type |
-|---|---|---|---|---|---|---|
-| `trumpet` | trumpet, sustained | VSCO 2 CE | CC0 1.0 | F3–C6 | 2 | sustained, extendable |
-| `trumpet_stac` | trumpet, staccato | VSCO 2 CE | CC0 1.0 | F3–C6 | 3 | natural decay |
-| `trumpet_mute` | trumpet, straight mute | VSCO 2 CE | CC0 1.0 | A#3–A5 | 2 | sustained, extendable |
-| `horn` | French horn, sustained | VSCO 2 CE | CC0 1.0 | A1–F5 | 4 | sustained, extendable |
-| `horn_stac` | French horn, staccato | VSCO 2 CE | CC0 1.0 | A1–F5 | 3 | natural decay |
-| `trombone` | trombone, sustained | VSCO 2 CE | CC0 1.0 | A#1–F4 | 3 | sustained, extendable |
-| `trombone_stac` | trombone, staccato | VSCO 2 CE | CC0 1.0 | A#1–F4 | 4 | natural decay |
-| `tuba` | tuba, sustained | VSCO 2 CE | CC0 1.0 | F1–D4 | 3 | sustained, extendable |
-| `tuba_stac` | tuba, staccato | VSCO 2 CE | CC0 1.0 | A1–D4 | 2 | natural decay |
-
-### Percussion
-
-| Name | Description | Source | Licence | Sampled range | Velocity layers | Type |
-|---|---|---|---|---|---|---|
-| `timpani` | timpani (5 drums; pitch = main vibration mode (1,1), measured from the spectrum); variants: `drum1` `drum2` `drum3` `drum4` `drum5` | VSCO 2 CE | CC0 1.0 | F2–G3 | 3 | natural decay |
-| `glockenspiel` | glockenspiel | VCSL | CC0 1.0 | G5–C8 | 3 | natural decay |
-| `xylophone` | xylophone | VCSL | CC0 1.0 | G4–C8 | 2 | natural decay |
-| `marimba` | marimba | VCSL | CC0 1.0 | F2–C7 | 3 | natural decay |
-| `vibraphone` | vibraphone, soft mallets | VCSL | CC0 1.0 | F3–E6 | 2 | natural decay |
-| `vibraphone_hard` | vibraphone, hard mallets | VCSL | CC0 1.0 | F3–E6 | 2 | natural decay |
-| `vibraphone_bowed` | vibraphone, bowed (airy long notes) | VCSL | CC0 1.0 | A3–E6 | 1 | sustained, extendable |
-| `tubular_bells` | tubular bells | VCSL | CC0 1.0 | C4–E5 | 5 | natural decay |
-| `hand_chimes` | hand chimes (soft bell tone) | VCSL | CC0 1.0 | C4–C7 | 1 | natural decay |
-| `kalimba` | kalimba (thumb piano) | FreePats | CC0 1.0 | F3–C#5 | 1 | natural decay |
-| `mbira` | mbira / Tanzanian kalimba (grittier; the original instrument is not in equal temperament, tuned to equal temperament from measurements) | VCSL | CC0 1.0 | G2–C#7 | 1 | natural decay |
-| `hang` | hang (D minor, sounds best on the instrument's own notes only) | FreePats | CC0 1.0 | A3–D5 | 1 | natural decay |
-| `glass` | glass harp | FreePats | CC0 1.0 | A#4–F6 | 1 | natural decay |
-| `bass_drum` | concert bass drum (7 velocity layers) | VSCO 2 CE | CC0 1.0 | — | 7 | unpitched |
-| `gran_cassa` | bass drum 2 (with rolls / crescendos); variants: `hit` `roll` `roll_fast` `cresc` `rub` | VCSL | CC0 1.0 | — | 5 | unpitched |
-| `snare` | snare drum (orchestral); variants: `on` `off` `roll` `roll_off` | VSCO 2 CE | CC0 1.0 | — | 5 | unpitched |
-| `snare2` | snare drum 2 (close-miked); variants: `on` `off` `roll` `stick` `taps` | VCSL | CC0 1.0 | — | 5 | unpitched |
-| `toms` | toms (high/low × sticks/mallets); variants: `high` `low` `high_mallet` `low_mallet` `roll` | VCSL | CC0 1.0 | — | 3 | unpitched |
-| `crash` | crash cymbals (orchestral) | VSCO 2 CE | CC0 1.0 | — | 4 | unpitched |
-| `clash` | crash cymbals 2; variants: `crash` `short` | VCSL | CC0 1.0 | — | 4 | unpitched |
-| `sus_cymbal` | suspended cymbal (soft mallet/stick/bell/roll/crescendo/bow); variants: `hit` `stick` `bell` `roll` `cresc` `bow` `scrape` | VCSL | CC0 1.0 | — | 4 | unpitched |
-| `gong` | large gong / tam-tam | VSCO 2 CE | CC0 1.0 | — | 4 | unpitched |
-| `gong2` | gong 2 (including small gong, scrapes); variants: `big` `small` `scrape` | VCSL | CC0 1.0 | — | 4 | unpitched |
-| `triangle` | triangle; variants: `open` `muted` `semi` `roll` | VCSL | CC0 1.0 | — | 2 | unpitched |
-| `tambourine` | tambourine | VSCO 2 CE | CC0 1.0 | — | 2 | unpitched |
-| `claves` | claves | VSCO 2 CE | CC0 1.0 | — | 3 | unpitched |
-| `cowbell` | cowbell | VSCO 2 CE | CC0 1.0 | — | 4 | unpitched |
-| `sleighbells` | sleigh bells | VSCO 2 CE | CC0 1.0 | — | 1 | unpitched |
-| `log_drum` | log drum / slit drum; variants: `hi` `lo` | VSCO 2 CE | CC0 1.0 | — | 3 | unpitched |
-| `woodblock` | woodblock; variants: `a` `b` `c` | VCSL | CC0 1.0 | — | 4 | unpitched |
-| `frame_drum` | hand drum / frame drum; variants: `large` `small` `large_muted` `small_muted` `hand` | VCSL | CC0 1.0 | — | 2 | unpitched |
-| `hihat` | hi-hat; variants: `closed` `open` `loose` `pedal` | VCSL | CC0 1.0 | — | 4 | unpitched |
-| `cajon` | cajón; variants: `bass` `slap` `tone` | VCSL | CC0 1.0 | — | 3 | unpitched |
-| `conga` | conga; variants: `conga` `quinto` `tumba` `muted` | VCSL | CC0 1.0 | — | 4 | unpitched |
-| `claps` | hand claps; variants: `group` `solo` | VCSL | CC0 1.0 | — | 4 | unpitched |
-| `shaker` | shaker; variants: `down` `up` `slap` `roll` | VCSL | CC0 1.0 | — | 1 | unpitched |
-| `nepal_bells` | Nepalese hand bells | VCSL | CC0 1.0 | — | 1 | unpitched |
-| `world_perc` | world percussion (cajón/bongo/egg shaker/castanets/darbuka etc., variants in info()); variants: `cajon_flamenco_1` `cajon_flamenco_3` `cajon_flamenco_2` `bongo_muted` `bongo_high` `bongo_low_low_velocity` `bongo_low_high_velocity` `egg_shaker_slow` `egg_shaker_fast` `egg_shaker_soft` `tambourine` `tambourine_fast` `hand_clap` `claves` `castanets` `conga` `low_conga` `high_conga` `muted_conga` `muted_low_conga` `maracas_fw` `maracas_bw` `darbuka_doom` `darbuka_tak` `darbuka_pa` | FreePats | CC0 1.0 | — | 2 | unpitched |
-| `drum_kit` | pop drum kit MuldjordKit (CC BY 4.0); variants: `kick_drum_left` `kick_drum_right` `snare_1` `snare_2` `hi_hat_closed` `hi_hat_open` `ride_left` `ride_bell_left` `ride_right` `ride_bell_right` `crash_left` `crash_right` `china` `tom_1` `tom_2` `tom_3` `tom_4` `snare_rest_1` `snare_rest_2` | MuldjordKit | CC BY 4.0 | — | 16 | unpitched |
-
-### Keyboards
-
-| Name | Description | Source | Licence | Sampled range | Velocity layers | Type |
-|---|---|---|---|---|---|---|
-| `piano` | Salamander grand piano (Yamaha C5, 5 velocity layers) | Salamander | CC BY 3.0 | A0–C8 | 5 | natural decay |
-| `upright` | upright piano (warm, slightly worn) | VSCO 2 CE | CC0 1.0 | C1–G7 | 3 | natural decay |
-| `honky_tonk` | old player piano (saloon honky-tonk flavour) | FreePats | CC0 1.0 | G#0–B7 | 1 | natural decay |
-| `harpsichord` | harpsichord (Italian) | VCSL | CC0 1.0 | F#1–B5 | 1 | natural decay |
-| `organ` | pipe organ, full manual (with the 16' stop, heavy) | VSCO 2 CE | CC0 1.0 | C2–C7 | 1 | sustained, extendable |
-| `organ_soft` | pipe organ, soft manual stops | VSCO 2 CE | CC0 1.0 | C2–C7 | 1 | sustained, extendable |
-| `organ_pedal` | pipe organ, pedal bass (pitch as measured) | VSCO 2 CE | CC0 1.0 | F#1–F#4 | 1 | sustained, extendable |
-| `accordion` | button accordion | FreePats | CC0 1.0 | B2–G5 | 1 | sustained, extendable |
-
-### Plucked strings
-
-| Name | Description | Source | Licence | Sampled range | Velocity layers | Type |
-|---|---|---|---|---|---|---|
-| `guitar_nylon` | nylon-string classical guitar | FreePats | CC0 1.0 | G1–C6 | 1 | natural decay |
-| `ukulele` | ukulele | FreePats | CC0 1.0 | B2–C6 | 1 | natural decay |
-| `electric_guitar` | clean electric guitar | FreePats | CC0 1.0 | C2–C#6 | 3 | natural decay |
-| `electric_bass` | electric bass, fingered | FreePats | CC0 1.0 | E1–D#2 | 1 | natural decay |
-| `jazz_bass` | double bass, jazz pizzicato (Sneakybass) | Karoryfer | CC0 1.0 | C1–C4 | 1 | natural decay |
-| `strumstick` | Strumstick, dulcimer-style folk plucked instrument (steel-string folk feel) | VCSL | CC0 1.0 | D3–A5 | 3 | natural decay |
-| `dan_tranh` | Vietnamese zither Đàn tranh (same family as the guzheng, can stand in for a guzheng) | VCSL | CC0 1.0 | B2–B5 | 3 | natural decay |
-| `dan_tranh_trem` | Vietnamese zither, yaozhi (摇指, tremolo) | VCSL | CC0 1.0 | B2–B5 | 1 | sustained, extendable |
-
-### Folk
-
-| Name | Description | Source | Licence | Sampled range | Velocity layers | Type |
-|---|---|---|---|---|---|---|
-| `erhu` | erhu, sustained | Karoryfer | CC0 1.0 | D4–A5 | 1 | sustained, extendable |
-| `erhu_stac` | erhu, short bow | Karoryfer | CC0 1.0 | D4–A5 | 1 | natural decay |
-| `bagpipe` | bagpipe (chanter; G2/G3 are the drones) | FreePats | CC0 1.0 | G2–G5 | 1 | sustained, extendable |
-
-### Physical modelling (pluck.py)
-
-`guqin` `pipa` `shamisen` `koto` `banjo` `acoustic_guitar` `nylon_guitar` `upright_bass_pizz` `harp` `kalimba` `music_box`: any pitch (C4=60, fractions allowed), see section 3.
-
-### Aliases
-
-`strings`→violins, `cello`→cellos, `viola`→violas, `double_bass`→contrabass, `upright_bass_pizz`→jazz_bass, `french_horn`→horn, `glock`→glockenspiel, `vibes`→vibraphone, `chimes`→tubular_bells, `grand_piano`→piano, `acoustic_guitar`→guitar_nylon (in sampler; in pluck, `acoustic_guitar` is the steel-string model), `guzheng`/`zither`→dan_tranh, `sax`→tenor_sax, `kick`→bass_drum, `cymbal`→crash, `tamtam`→gong, `celesta`→glockenspiel (there is no celesta sample; the glockenspiel is closest).
+应用于样本的处理（全部在许可证允许的范围内）：VSCO/VCSL/Karoryfer WAV 被转换为 **无损的** 到 FLAC（逐个样本验证相同）；对于 Salamander，仅保留 16 个速度层中的 5 个 (v2/v6/v10/v13/v16)； FreePats 包中的照片（一些 CC BY-NC）已被删除，仅保留音频和 sfz/notes.
 
 ---
 
-## 6. Picking instruments by style (quick reference)
+<a id="5-available-instruments"></a>
+## 5. 可用仪器
 
-| The feel you want | Suggested combination |
+“采样范围”是录音实际覆盖的范围（修正为实际音高，C4=60）；超出几步它仍然有效，只是换位时间更长。 “力度层” = 该乐器上同一音符的记录层数（1 = 仅通过增益 + 变暗模拟的力度）。
+
+<a id="strings"></a>
+### 弦乐
+
+|姓名|描述|来源|执照|采样范围|速度层|类型|
+|---|---|---|---|---|---|---|
+|`violins`|小提琴部分，持续（颤音）|VSCO 2 CE|CC0 1.0|G3–D6|2|持续的、可扩展的|
+|`violins_trem`|小提琴部分、颤音|VSCO 2 CE|CC0 1.0|G3–D6|2|持续的、可扩展的|
+|`violins_pizz`|小提琴部分，拨奏|VSCO 2 CE|CC0 1.0|G3–D6|2|自然腐烂|
+|`violins_spic`|小提琴部分，留奏（短音符）|VSCO 2 CE|CC0 1.0|G3–D6|2|自然腐烂|
+|`violin`|小提琴独奏，持续|VSCO 2 CE|CC0 1.0|G3–C7|2|持续的、可扩展的|
+|`violin_pizz`|小提琴独奏、拨奏|VSCO 2 CE|CC0 1.0|G3–C7|2|自然腐烂|
+|`violas`|中提琴部分，持续|VSCO 2 CE|CC0 1.0|C3-D6|2|持续的、可扩展的|
+|`violas_pizz`|中提琴部分，拨奏|VSCO 2 CE|CC0 1.0|C3-D6|2|自然腐烂|
+|`cellos`|大提琴部分，持续|VSCO 2 CE|CC0 1.0|C2–F5|2|持续的、可扩展的|
+|`cellos_pizz`|大提琴部分，拨奏|VSCO 2 CE|CC0 1.0|C2–F5|2|自然腐烂|
+|`cellos_spic`|大提琴部分，留奏|VSCO 2 CE|CC0 1.0|C2–F5|2|自然腐烂|
+|`contrabass`|低音提琴，持续|VSCO 2 CE|CC0 1.0|F#1–B3|2|持续的、可扩展的|
+|`contrabass_pizz`|低音提琴、古典拨奏|VSCO 2 CE|CC0 1.0|E1-B3|2|自然腐烂|
+|`harp`|竖琴|VCSL|CC0 1.0|E1-F7|4|自然腐烂|
+
+<a id="woodwinds"></a>
+### 木管乐器
+
+|姓名|描述|来源|执照|采样范围|速度层|类型|
+|---|---|---|---|---|---|---|
+|`flute`|长笛，持续|VSCO 2 CE|CC0 1.0|C4–C7|1|持续的、可扩展的|
+|`flute_stac`|长笛、断奏|VSCO 2 CE|CC0 1.0|A4-C7|4|自然腐烂|
+|`piccolo`|短笛|VSCO 2 CE|CC0 1.0|G5–G7|1|持续的、可扩展的|
+|`clarinet`|单簧管，持续|VSCO 2 CE|CC0 1.0|D3–F#6|3|持续的、可扩展的|
+|`clarinet_stac`|单簧管、断奏|VSCO 2 CE|CC0 1.0|D3-F6|3|自然腐烂|
+|`oboe`|双簧管，持续|VSCO 2 CE|CC0 1.0|A#3–F6|2|持续的、可扩展的|
+|`oboe_stac`|双簧管、断奏|VSCO 2 CE|CC0 1.0|A#3–F6|3|自然腐烂|
+|`bassoon`|巴松管，持续的|VSCO 2 CE|CC0 1.0|A#1–D#5|2|持续的、可扩展的|
+|`bassoon_stac`|巴松管、断奏|VSCO 2 CE|CC0 1.0|A#1–C5|2|自然腐烂|
+|`recorder`|中音竖笛（巴洛克）|VCSL|CC0 1.0|F4-E6|1|持续的、可扩展的|
+|`ocarina`|陶笛|VCSL|CC0 1.0|A4–C#6|1|持续的、可扩展的|
+|`tenor_sax`|次中音萨克斯、颤音|VCSL|CC0 1.0|A#2–D6|1|持续的、可扩展的|
+|`tenor_sax_nv`|次中音萨克斯，直音|VCSL|CC0 1.0|G#2–E6|2|持续的、可扩展的|
+|`tenor_sax_stac`|次中音萨克斯、断奏|VCSL|CC0 1.0|G#2–E6|2|自然腐烂|
+|`alto_sax`|中音萨克斯 (Weresax)|卡罗里弗|CC0 1.0|C#3–G#5|2|持续的、可扩展的|
+|`harmonica`|半音阶口琴|VCSL|CC0 1.0|C3–C7|1|持续的、可扩展的|
+
+<a id="brass"></a>
+### 黄铜
+
+|姓名|描述|来源|执照|采样范围|速度层|类型|
+|---|---|---|---|---|---|---|
+|`trumpet`|小号，持续|VSCO 2 CE|CC0 1.0|F3-C6|2|持续的、可扩展的|
+|`trumpet_stac`|小号、断奏|VSCO 2 CE|CC0 1.0|F3-C6|3|自然腐烂|
+|`trumpet_mute`|喇叭，直静音|VSCO 2 CE|CC0 1.0|A#3–A5|2|持续的、可扩展的|
+|`horn`|圆号，持续|VSCO 2 CE|CC0 1.0|A1-F5|4|持续的、可扩展的|
+|`horn_stac`|圆号、断奏|VSCO 2 CE|CC0 1.0|A1-F5|3|自然腐烂|
+|`trombone`|长号，持续|VSCO 2 CE|CC0 1.0|A#1–F4|3|持续的、可扩展的|
+|`trombone_stac`|长号、断奏|VSCO 2 CE|CC0 1.0|A#1–F4|4|自然腐烂|
+|`tuba`|大号，持续|VSCO 2 CE|CC0 1.0|F1-D4|3|持续的、可扩展的|
+|`tuba_stac`|大号、断奏|VSCO 2 CE|CC0 1.0|A1-D4|2|自然腐烂|
+
+<a id="percussion"></a>
+### 打击乐器
+
+|姓名|描述|来源|执照|采样范围|速度层|类型|
+|---|---|---|---|---|---|---|
+|`timpani`|定音鼓（5 个鼓；音高 = 主振动模式 (1,1)，从频谱测量）；变种： `drum1` `drum2` `drum3` `drum4` `drum5`|VSCO 2 CE|CC0 1.0|F2-G3|3|自然腐烂|
+|`glockenspiel`|钟琴|VCSL|CC0 1.0|G5–C8|3|自然腐烂|
+|`xylophone`|木琴|VCSL|CC0 1.0|G4–C8|2|自然腐烂|
+|`marimba`|马林巴琴|VCSL|CC0 1.0|F2–C7|3|自然腐烂|
+|`vibraphone`|电颤琴、软木槌|VCSL|CC0 1.0|F3-E6|2|自然腐烂|
+|`vibraphone_hard`|电颤琴、硬木槌|VCSL|CC0 1.0|F3-E6|2|自然腐烂|
+|`vibraphone_bowed`|弓形电颤琴（轻快的长音符）|VCSL|CC0 1.0|A3-E6|1|持续的、可扩展的|
+|`tubular_bells`|管状钟|VCSL|CC0 1.0|C4-E5|5|自然腐烂|
+|`hand_chimes`|手铃（轻柔的铃声）|VCSL|CC0 1.0|C4–C7|1|自然腐烂|
+|`kalimba`|卡林巴琴（拇指钢琴）|自由拍拍|CC0 1.0|F3–C#5|1|自然腐烂|
+|`mbira`|mbira / 坦桑尼亚卡林巴（更坚韧；原始乐器不是等律，通过测量调为等律）|VCSL|CC0 1.0|G2–C#7|1|自然腐烂|
+|`hang`|hang（D小调，仅在乐器本身的音符上听起来最好）|自由拍拍|CC0 1.0|A3-D5|1|自然腐烂|
+|`glass`|玻璃竖琴|自由拍拍|CC0 1.0|A#4–F6|1|自然腐烂|
+|`bass_drum`|音乐会低音鼓（7 个力度层）|VSCO 2 CE|CC0 1.0|—|7|未定调的|
+|`gran_cassa`|低音鼓 2（带滚动/渐强）；变种： `hit` `roll` `roll_fast` `cresc` `rub`|VCSL|CC0 1.0|—|5|未定调的|
+|`snare`|小军鼓（管弦乐）；变种： `on` `off` `roll` `roll_off`|VSCO 2 CE|CC0 1.0|—|5|未定调的|
+|`snare2`|小军鼓 2（近距离拾音）；变种： `on` `off` `roll` `stick` `taps`|VCSL|CC0 1.0|—|5|未定调的|
+|`toms`|汤姆斯（high/low × sticks/mallets）；变种： `high` `low` `high_mallet` `low_mallet` `roll`|VCSL|CC0 1.0|—|3|未定调的|
+|`crash`|碎钹（管弦乐）|VSCO 2 CE|CC0 1.0|—|4|未定调的|
+|`clash`|碎音钹 2；型号：`crash` `short`|VCSL|CC0 1.0|—|4|未定调的|
+|`sus_cymbal`|悬钹（软mallet/stick/bell/roll/crescendo/bow）；变体：`hit` `stick` `bell` `roll` `cresc` `bow` `scrape`|VCSL|CC0 1.0|—|4|未定调的|
+|`gong`|大锣/担担|VSCO 2 CE|CC0 1.0|—|4|未定调的|
+|`gong2`|锣2（包括小锣、刮）；变种： `big` `small` `scrape`|VCSL|CC0 1.0|—|4|未定调的|
+|`triangle`|三角形;变种： `open` `muted` `semi` `roll`|VCSL|CC0 1.0|—|2|未定调的|
+|`tambourine`|手鼓|VSCO 2 CE|CC0 1.0|—|2|未定调的|
+|`claves`|克拉夫斯|VSCO 2 CE|CC0 1.0|—|3|未定调的|
+|`cowbell`|牛铃|VSCO 2 CE|CC0 1.0|—|4|未定调的|
+|`sleighbells`|雪橇铃|VSCO 2 CE|CC0 1.0|—|1|未定调的|
+|`log_drum`|原木滚筒/狭缝滚筒；型号：`hi` `lo`|VSCO 2 CE|CC0 1.0|—|3|未定调的|
+|`woodblock`|雕版;变种： `a` `b` `c`|VCSL|CC0 1.0|—|4|未定调的|
+|`frame_drum`|手鼓/框鼓；变种： `large` `small` `large_muted` `small_muted` `hand`|VCSL|CC0 1.0|—|2|未定调的|
+|`hihat`|踩镲；变种： `closed` `open` `loose` `pedal`|VCSL|CC0 1.0|—|4|未定调的|
+|`cajon`|卡洪鼓；变种： `bass` `slap` `tone`|VCSL|CC0 1.0|—|3|未定调的|
+|`conga`|康加舞；变种： `conga` `quinto` `tumba` `muted`|VCSL|CC0 1.0|—|4|未定调的|
+|`claps`|拍手；型号：`group` `solo`|VCSL|CC0 1.0|—|4|未定调的|
+|`shaker`|摇床；变种： `down` `up` `slap` `roll`|VCSL|CC0 1.0|—|1|未定调的|
+|`nepal_bells`|尼泊尔手铃|VCSL|CC0 1.0|—|1|未定调的|
+|`world_perc`|世界打击乐（cajón/bongo/egg shaker/castanets/darbuka 等，info() 中的变体）；变体：`cajon_flamenco_1` `cajon_flamenco_3` `cajon_flamenco_2` `bongo_muted` `bongo_high` `bongo_low_low_velocity` `bongo_low_high_velocity` `egg_shaker_slow` `egg_shaker_fast` `egg_shaker_soft` `tambourine` `tambourine_fast` `hand_clap` `claves` `castanets` `conga` `low_conga` `high_conga` `muted_conga` `muted_low_conga` `maracas_fw` `maracas_bw` `darbuka_doom` `darbuka_tak` `darbuka_pa`|自由拍拍|CC0 1.0|—|2|未定调的|
+|`drum_kit`|流行鼓套件 MuldjordKit (CC BY 4.0)；变体：`kick_drum_left` `kick_drum_right` `snare_1` `snare_2` `hi_hat_closed` `hi_hat_open` `ride_left` `ride_bell_left` `ride_right` `ride_bell_right` `crash_left` `crash_right` `china` `tom_1` `tom_2` `tom_3` `tom_4` `snare_rest_1` `snare_rest_2`|穆尔乔德套件|抄送4.0|—|16|未定调的|
+
+<a id="keyboards"></a>
+### 键盘
+
+|姓名|描述|来源|执照|采样范围|速度层|类型|
+|---|---|---|---|---|---|---|
+|`piano`|Salamander 三角钢琴（雅马哈 C5，5 个力度层）|蝾|抄送3.0|A0-C8|5|自然腐烂|
+|`upright`|立式钢琴（温暖，略有磨损）|VSCO 2 CE|CC0 1.0|C1-G7|3|自然腐烂|
+|`honky_tonk`|老演奏家钢琴（酒吧风格）|自由拍拍|CC0 1.0|G#0–B7|1|自然腐烂|
+|`harpsichord`|大键琴（意大利语）|VCSL|CC0 1.0|F#1–B5|1|自然腐烂|
+|`organ`|管风琴，全手动（带 16' 挡块，重型）|VSCO 2 CE|CC0 1.0|C2–C7|1|持续的、可扩展的|
+|`organ_soft`|管风琴，软手动停止|VSCO 2 CE|CC0 1.0|C2–C7|1|持续的、可扩展的|
+|`organ_pedal`|管风琴、踏板贝斯（测量音高）|VSCO 2 CE|CC0 1.0|F#1–F#4|1|持续的、可扩展的|
+|`accordion`|按钮手风琴|自由拍拍|CC0 1.0|B2-G5|1|持续的、可扩展的|
+
+<a id="plucked-strings"></a>
+### 拨弦
+
+|姓名|描述|来源|执照|采样范围|速度层|类型|
+|---|---|---|---|---|---|---|
+|`guitar_nylon`|尼龙弦古典吉他|自由拍拍|CC0 1.0|G1–C6|1|自然腐烂|
+|`ukulele`|尤克里里|自由拍拍|CC0 1.0|B2-C6|1|自然腐烂|
+|`electric_guitar`|干净的电吉他|自由拍拍|CC0 1.0|C2–C#6|3|自然腐烂|
+|`electric_bass`|电贝司，指法|自由拍拍|CC0 1.0|E1–D#2|1|自然腐烂|
+|`jazz_bass`|低音提琴、爵士拨奏（Sneakybass）|卡罗里弗|CC0 1.0|C1–C4|1|自然腐烂|
+|`strumstick`|扫弦器，扬琴风格的民间弹拨乐器（钢弦民谣感觉）|VCSL|CC0 1.0|D3–A5|3|自然腐烂|
+|`dan_tranh`|越南古筝 Đàn tranh （与古筝同族，可代替古筝）|VCSL|CC0 1.0|B2-B5|3|自然腐烂|
+|`dan_tranh_trem`|越南古筝，摇指（摇指，颤音）|VCSL|CC0 1.0|B2-B5|1|持续的、可扩展的|
+
+<a id="folk"></a>
+### 民间
+
+|姓名|描述|来源|执照|采样范围|速度层|类型|
+|---|---|---|---|---|---|---|
+|`erhu`|二胡，持续|卡罗里弗|CC0 1.0|D4–A5|1|持续的、可扩展的|
+|`erhu_stac`|二胡、短弓|卡罗里弗|CC0 1.0|D4–A5|1|自然腐烂|
+|`bagpipe`|风笛（吟唱者；G2/G3 是无人机）|自由拍拍|CC0 1.0|G2-G5|1|持续的、可扩展的|
+
+<a id="physical-modelling-pluckpy"></a>
+### 物理建模（pluck.py）
+
+`guqin` `pipa` `shamisen` `koto` `banjo` `acoustic_guitar` `nylon_guitar` `upright_bass_pizz` `harp` `kalimba` `music_box`：任何螺距（C4=60，允许分数），请参见第 3 节。
+
+<a id="aliases"></a>
+### 别名
+
+`strings`→小提琴，`cello`→大提琴，`viola`→中提琴，`double_bass`→低音提琴，`upright_bass_pizz`→爵士低音，`french_horn`→喇叭， `glock`→钟琴、`vibes`→颤音琴、`chimes`→管铃、`grand_piano`→钢琴、`acoustic_guitar`→吉他_尼龙（在采样器中；在拨弦中，`acoustic_guitar`是钢弦型号）、`guzheng`/`zither`→dan_tranh、`sax`→次中音_萨克斯、`kick`→低音鼓、`cymbal`→碰撞、`tamtam`→锣、 `celesta`→钟琴（没有钢片琴样本；钟琴最接近）。
+
+---
+
+<a id="6-picking-instruments-by-style-quick-reference"></a>
+## 6. 按风格挑选乐器（快速参考）
+
+|你想要的感觉|建议组合|
 |---|---|
-| Orchestral / epic / documentary | `violins` `violas` `cellos` `contrabass` as the bed (`attack=.3~.8` fade-in) + `horn` `trombone` `tuba` + `timpani` `gran_cassa` `sus_cymbal:roll` `gong`; for light, brisk passages use `violins_spic` `cellos_pizz` `flute_stac` |
-| Fairy tale / gentle / handmade | `glockenspiel` `celesta→glockenspiel` `pluck:music_box` `kalimba` `harp` `vibraphone` `hand_chimes` `ukulele` `guitar_nylon` + `clarinet` `flute` |
-| Chinese | Samples: `erhu` `dan_tranh` (as guzheng) `dan_tranh_trem` (yaozhi tremolo) `gong2:small` `frame_drum` `log_drum` `woodblock`; modelled: `pluck:guqin` (with slides/harmonics) `pluck:pipa` (lunzhi tremolo); there are no dizi/xiao samples, use `flute` `recorder` `ocarina` instead |
-| Japanese | `pluck:shamisen` `pluck:koto` + `flute`/`recorder` (in place of shakuhachi) + `gran_cassa` `frame_drum:large` `toms:low_mallet` (there is no CC0/CC BY taiko; layer these to build one) |
-| Jazz / café | `piano` `jazz_bass` `alto_sax` `tenor_sax` `trumpet_mute` `vibraphone_hard` + `drum_kit:ride` `drum_kit:hihat` `snare2:taps` `claps` |
-| Retro / old film / saloon | `honky_tonk` `upright` `accordion` `harmonica` `banjo` `clarinet` `tuba_stac` `strumstick` |
-| Baroque / court | `harpsichord` `organ_soft` `recorder` `violin` `cellos` `oboe` `bassoon` |
-| Church / sacred | `organ` `organ_pedal` `tubular_bells` `hand_chimes` `vibraphone_bowed` + a long `room(size=.8)` |
-| Pop / upbeat | `drum_kit` `electric_bass` `electric_guitar` `piano` `glockenspiel` `claps` `shaker` `tambourine` |
-| World / folk | `world_perc` (cajón/bongo/darbuka/castanets/shaker) `cajon` `conga` `mbira` `hang` `bagpipe` `pluck:banjo` `guitar_nylon` |
-| Cold / ethereal / sci-fi | `vibraphone_bowed` `glass` `hang` `sus_cymbal:bow` `violins_trem` (low velocity) + `room(size=.9, mix=.35)` |
+|管弦乐/史诗/纪录片|`violins` `violas` `cellos` `contrabass` 作为床（`attack=.3~.8` 淡入）+ `horn` `trombone` `tuba` + `timpani` `gran_cassa` `sus_cymbal:roll` `gong`;对于轻快的通道，请使用 `violins_spic` `cellos_pizz` `flute_stac`|
+|童话/温柔/手工|`glockenspiel` `celesta→glockenspiel` `pluck:music_box` `kalimba` `harp` `vibraphone` `hand_chimes` `ukulele` `guitar_nylon` + `clarinet` `flute`|
+|中国人|样品：`erhu` `dan_tranh`（古筝） `dan_tranh_trem`（遥指颤音） `gong2:small` `frame_drum` `log_drum` `woodblock`；型号：`pluck:guqin`（带slides/harmonics）`pluck:pipa`（伦智颤音）；没有 dizi/xiao 样本，请使用 `flute` `recorder` `ocarina` 代替|
+|日本人|`pluck:shamisen` `pluck:koto` + `flute`/`recorder`（代替尺八）+ `gran_cassa` `frame_drum:large` `toms:low_mallet`（没有CC0/CC BY taiko；将这些分层构建一个）|
+|爵士乐/咖啡厅|`piano` `jazz_bass` `alto_sax` `tenor_sax` `trumpet_mute` `vibraphone_hard` + `drum_kit:ride` `drum_kit:hihat` `snare2:taps` `claps`|
+|复古/老影片/轿车|`honky_tonk` `upright` `accordion` `harmonica` `banjo` `clarinet` `tuba_stac` `strumstick`|
+|巴洛克/宫廷|`harpsichord` `organ_soft` `recorder` `violin` `cellos` `oboe` `bassoon`|
+|教堂/神圣|`organ` `organ_pedal` `tubular_bells` `hand_chimes` `vibraphone_bowed` + 长`room(size=.8)`|
+|流行/乐观|`drum_kit` `electric_bass` `electric_guitar` `piano` `glockenspiel` `claps` `shaker` `tambourine`|
+|世界/民间|`world_perc` (cajón/bongo/darbuka/castanets/shaker) `cajon` `conga` `mbira` `hang` `bagpipe` `pluck:banjo` `guitar_nylon`|
+|冷酷/空灵/科幻|`vibraphone_bowed` `glass` `hang` `sus_cymbal:bow` `violins_trem`（低速）+ `room(size=.9, mix=.35)`|
 
 ---
 
-## 7. Known issues / cautions
+<a id="7-known-issues--cautions"></a>
+## 7. 已知问题/注意事项
 
-- **`organ` (all stops out) includes the 16′**: the measured fundamental is an octave below the key name (pyin measures D3 for key D4); this is the organ's natural weight. If you want "key name = actual pitch", use `organ_soft`. `organ_pedal` pitches are given as measured.
-- **Tubular bells `tubular_bells`**: a tubular bell's "strike tone" is a virtual pitch (the missing fundamental of partials 4/5/6 in the ratio 2:3:4); checked against the spectrum and correct, but pyin reports it an octave/fifth high, which is normal.
-- **Timpani `timpani`**: only 5 drums (main vibration mode measured from the spectrum at about F2, B2, D3, E3, G3); `note('timpani', X)` transposes from the nearest drum; the most natural use is `hit('timpani', 'drum1'...)` or writing only notes between F2 and G3.
-- **Hang `hang`**: the original instrument is in D minor (A3 D4 E4 F4 G4 A4 C5 D5 etc.); it sounds best on its own notes; other notes are transposed, and the overtones shift with them.
-- **`tenor_sax` (vibrato version) has a slow attack**: for short notes use `tenor_sax_stac`/`tenor_sax_nv`; the `contrabass` sustained recordings contain real bow-change swells (about once every 2.3 s).
-- **Long-note extension** has been tested at the 25 s scale: the extended section's level differs from the original recording's median by <1 dB, and level jumps between adjacent 0.1 s windows are mostly ≤3 dB (violin section/sax swing up to ~6 dB because of their own vibrato). For extremely long (>1 minute) sustained notes, retrigger in segments or overlap them with an `attack` fade-in.
-- **Missing instruments**: no CC0/CC BY licensed samples were found for **taiko, a Chinese gong-and-drum set (big drum/cymbals/small gong as a full set), celesta, music box samples, acoustic steel-string guitar samples, dizi/xiao/shakuhachi** (Floe/SCC taiko is CC BY-SA, so it is excluded under the licence policy). Substitutes: taiko→`gran_cassa`+`frame_drum`+`toms:low_mallet`; gong→`gong`/`gong2:small`; celesta→`glockenspiel` (low velocity); music box→`pluck:music_box`; steel-string guitar→`pluck:acoustic_guitar`/`strumstick`.
-- Files missing from the download: the FreePats ukulele's `chuck.wav` (muted strum) was restored with 7-Zip; nothing else is missing.
-- The first call to `pluck` JIT-compiles (numba, ~0.5 s, result cached in `core/audio/__pycache__`); `sampler` takes ~10 ms the first time it reads a sample, then serves it from the memory cache (transposition results are cached too).
-- Stereo: samples are mixed down to mono when read (one uniform interface); spatial feel comes from `pan` + `room()`.
-
----
-
-## 8. Self-checks done (no listening was possible: everything rests on data)
-
-**What was verified**
-1. **Pitch**: every sample of all 97 sampled instruments had its fundamental measured with yin and written into `index.json`; the octave conventions of the file names were corrected by an octave-consistency vote (VSCO/VCSL mostly +12, Karoryfer −12, timpani from the main spectral vibration mode). The first note of 61 instruments was **rendered on its own and spot-checked with librosa.pyin: 59/61 within ±50 cents, passing ones with median deviation +3.7 cents and maximum 16 cents**; both "failures" are known and checked: tubular bells (virtual pitch; the 2:3:4 spectral partials confirm the strike tone is right) and `organ` (16′ stop, fundamental an octave low). Spot-checking the same 61 first notes directly in the finished mix: 57/61 pass; the other 4 (glockenspiel, tubular bells, erhu, banjo) were disturbed by the previous instrument's decay or are virtual pitches, and are all correct when rendered alone / checked against the spectrum (glockenspiel rendered alone: spectral peak = D6 +12 cents).
-2. **Physical modelling**: 11 presets × 2–3 pitches all hit by pyin (within ±1 cent); the pyin trace of the guqin `bend` matches the setting (0.8→1.4 s sliding from 50 to 52); harmonic pitches correct; pipa lunzhi measured at 13.3 per second (set to 14); shamisen sawari on/off spectral centroid of the sustain 2030 Hz / 1500 Hz; decay times guqin≈4.3 s, pipa≈2.1 s, shamisen≈0.9 s, banjo≈1.0 s (T60 extrapolated from -30 dB).
-3. **Finished-mix numbers**: 85.5 s, 48 kHz stereo, no NaN/Inf, peak −2.0 dBFS, 0 clipped samples; median 0.5 s RMS −24 dBFS.
-4. **Long-note extension**: violin section/cello section/flute/trumpet/horn/clarinet/oboe/accordion/bagpipe/erhu/sax/organ rendered as 14–25 s long notes; the extended sections have no silent holes and their level matches the original recording (see the figures in the item above).
-5. **Every instrument** has actually been loaded and rendered once (no exceptions, no NaN), every percussion variant hit once, and peaks normalised per variant to ~0.4.
-
-**What could not be verified**
-- Whether the subjective timbre is "convincing", whether the mix sounds good, whether velocity-layer switching is smooth, whether the extension splices have audible phase/timbre jumps: these can only be judged indirectly from data. Listen with your own ears the first time you use them (one small motif per instrument is enough).
-- The "folk flavour" of the physical models (the guqin's loose, deep tone, the shamisen's sawari texture) was tuned only by physical parameters and spectral trends, never compared by ear with real recordings.
-- Microtones, and the timbre of notes transposed more than ±6 semitones beyond the sampled range.
+- **`organ`（全部止损）包括 16′**：测量的基波比键名称低一个八度（pyin 测量键 D4 的 D3）；这是器官的自然重量。如果您想要“键名称 = 实际音高”，请使用 `organ_soft`。 `organ_pedal` 螺距按测量值给出。
+- **管钟`tubular_bells`**：管钟的“敲音”是虚拟音高（比例为2:3:4的分音4/5/6缺失的基音）；对照频谱检查并正确，但 pyin 报告 octave/fifth 高，这是正常的。
+- **定音鼓`timpani`**：只有5个鼓（从F2、B2、D3、E3、G3左右的频谱测得的主要振动模式）； `note('timpani', X)` 从最近的鼓移调；最自然的用法是 `hit('timpani', 'drum1'...)` 或在 F2 和 G3 之间只写音符。
+- **Hang `hang`**：原乐器为D小调（A3 D4 E4 F4 G4 A4 C5 D5等）；它本身的音符听起来最好；其他音符被移调，泛音也随之改变。
+- **`tenor_sax`（颤音版）起音较慢**：对于短音符，请使用`tenor_sax_stac`/`tenor_sax_nv`； `contrabass` 持续录音包含真正的弓变化膨胀（大约每 2.3 秒一次）。
+- **长音符扩展**已在25秒尺度上进行了测试：扩展部分的电平与原始录音的中位数不同，相差<1 dB, and level jumps between adjacent 0.1 s windows are mostly ≤3 dB (violin section/sax swing up to ~6 dB because of their own vibrato). For extremely long (>1分钟）持续音符，分段重新触发或与`attack`淡入重叠。
+- **缺失乐器**：未发现**太鼓、中国锣鼓（大drum/cymbals/small锣为全套）、钢片琴、音乐盒样本、原声钢弦吉他样本等CC0/CC BY授权样本， dizi/xiao/shakuhachi**（Floe/SCC taiko 是 CC BY-SA，因此不属于许可政策范围）。替补：太鼓→`gran_cassa`+`frame_drum`+`toms:low_mallet`；锣→`gong`/`gong2:small`;钢片琴→`glockenspiel`（低速）；音乐盒→`pluck:music_box`；钢弦吉他→`pluck:acoustic_guitar`/`strumstick`。
+- 下载中丢失的文件：使用 7-Zip 恢复了 FreePats 尤克里里的 `chuck.wav`（静音扫弦）；没有别的东西丢失了。
+- 第一次调用 `pluck` JIT 编译（numba，约 0.5 秒，结果缓存在 `core/audio/__pycache__` 中）； `sampler` 第一次读取样本大约需要 10 毫秒，然后从内存缓存中提供它（转置结果也被缓存）。
+- 立体声：读取时样本混合为单声道（一个统一的接口）；空间感来自`pan` + `room()`。
 
 ---
 
-## 9. Directory layout
+<a id="8-self-checks-done-no-listening-was-possible-everything-rests-on-data"></a>
+## 8. 完成自检（无法监听：一切都取决于数据）
+
+**已验证什么**
+1. **沥青**：所有97个采样乐器的每个样本都用阴测量了基波并写入`index.json`；文件名的八度约定通过八度一致性投票进行了纠正（VSCO/VCSL 主要是+12，Karoryfer -12，来自主频谱振动模式的定音鼓）。 61 种乐器的第一个音符是 **自行渲染，并通过 librosa.pyin 进行抽查：59/61 在 ±50 音分之内，合格的中位偏差为 +3.7 音分，最大为 16 音分**；两个“故障”都是已知和经过检查的：管状钟（虚拟音高；2:3:4 频谱分音确认敲击音调正确）和 `organ`（16' 停止，基音低八度）。直接在成品混音中抽查相同的 61 个第一个音符：57/61 通过；其他 4 个（钟琴、管钟、二胡、班卓琴）受到前一乐器衰减的干扰或者是虚拟音高，并且在单独渲染/对照频谱检查时都是正确的（单独渲染的钟琴：频谱峰值 = D6 +12 音分）。
+2. **物理建模**：11个预设×2-3个音高全部由pyin击中（±1音分以内）；古琴 `bend` 的 pyin 轨迹与设置相符（0.8→1.4 s 从 50 滑动到 52）；和声音高正确；琵琶论志测得每秒13.3（设置为14）；三味线锯片 on/off 维持 2030 Hz / 1500 Hz 的频谱质心；衰减时间古琴≈4.3 s，琵琶≈2.1 s，三味线≈0.9 s，班卓琴≈1.0 s（T60 从-30 dB 推断）。
+3. **成品混音数字**：85.5秒，48 kHz立体声，无NaN/Inf，峰值-2.0 dBFS，0个削波样本；中值 0.5 s RMS -24 dBFS。
+4. **长音符扩展**：小提琴section/cello section/flute/trumpet/horn/clarinet/oboe/accordion/bagpipe/erhu/sax/organ呈现为14-25秒长音符；扩展部分没有静音孔，其电平与原始录音匹配（请参见上一项中的数字）。
+5. **每个乐器** 实际上已加载并渲染一次（无例外，无 NaN），每个打击乐变体敲击一次，每个变体的峰值标准化为 ~0.4。
+
+**无法验证的内容**
+- 主观音色是否“有说服力”、混音是否好听、力度层切换是否流畅、扩展拼接处是否有听得见的phase/timbre跳跃声：这些只能从数据间接判断。第一次使用它们时，用自己的耳朵聆听（每个乐器一个小主题就足够了）。
+- 物理模型的“民间风味”（古琴松散、深沉的音色，三味线的锯成纹理）仅通过物理参数和频谱趋势进行调整，从未通过耳朵与真实录音进行比较。
+- 微音和音符音色的移调超出了采样范围 ±6 个半音。
+
+---
+
+<a id="9-directory-layout"></a>
+## 9. 目录布局
 
 ```
 core/audio/
@@ -342,6 +361,6 @@ core/audio/
     karoryfer/          erhu / Sneakybass / Weresax  74 MB
 ```
 
-Source links: VSCO 2 CE https://github.com/sgossner/VSCO-2-CE · VCSL https://github.com/sgossner/VCSL · Salamander https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html · FreePats https://freepats.zenvoid.org/ · Karoryfer https://github.com/sfzinstruments (aliexpress-erhu / karoryfer.sneakybass / karoryfer.weresax)
+源码链接：VSCO 2 CE https://github.com/sgossner/VSCO-2-CE · VCSL https://github.com/sgossner/VCSL · Salamander https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html · FreePats https://freepats.zenvoid.org/ · Karoryfer https://github.com/sfzinstruments (aliexpress-erhu / karoryfer.sneakybass / karoryfer.weresax)
 
-Availability: the sample libraries must be downloaded first (`sh tools/fetch.sh instruments <lib>`, see the top of this file). When a library that hasn't been downloaded is used, `sampler` raises an error naming the command to run. `sampler.py` needs only the core-tier Python packages; `pluck.py` needs numba (`setup.sh deps music`).
+可用性：必须首先下载采样音色库（`sh tools/fetch.sh instruments <lib>`，请参阅此文件的顶部）。当使用尚未下载的库时，`sampler` 会在命名要运行的命令时引发错误。 `sampler.py` 只需要核心层Python包； `pluck.py` 需要 numba (`setup.sh deps music`)。

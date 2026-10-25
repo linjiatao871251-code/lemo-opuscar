@@ -1,122 +1,134 @@
-# Mid-century Cartoon — Style Prompt
+<a id="mid-century-cartoon--style-prompt"></a>
+# 50s 扁平卡通：风格提示词
 
-> 1950s flat colour and limited animation for "follow along" films: colour printed a few pixels off its broken ink line, bodies that hold still while hands do the work, abstract colour-block rooms, a calm classroom narrator, and a cool-jazz combo.
-> References (grammar only): UPA's early-1950s shorts (*Gerald McBoing-Boing*, *Rooty Toot Toot*): colour and line on separate cels, geometric people, colour-plane backgrounds, limited animation. 1950s classroom films (Coronet, Encyclopaedia Britannica): direct address, one sentence per picture, numbered cards. Charley Harper and Mary Blair: soft atomic-age complements, geometric figures. 1950s appliance manuals: numbered medallions, curved arrows, round call-outs, sunbursts. Copy none of their characters, drawings, lettering or music, and never name them in a film.
+> 1950 年代的平面色彩和“跟随”的有限动画影片：色彩打印在断墨线上几个像素、手工作时保持静止的身体、抽象的色块房间、平静的课堂旁白和酷炫的爵士乐组合。
+> 参考资料（仅语法）：UPA 20 世纪 50 年代早期的短片（*Gerald McBoing-Boing*、*Rooty Toot Toot*）：单独的胶片上的颜色和线条、几何人物、彩色平面背景、有限的动画。 1950 年代的教室影片（Coronet，大英百科全书）：直接地址，每张图片一句话，编号卡片。查理·哈珀和玛丽·布莱尔：软原子时代的补充，几何图形。 20 世纪 50 年代的电器手册：编号徽章、弯曲箭头、圆形标注、旭日纹。请勿复制他们的任何字符、图画、文字或音乐，也切勿在影片中命名他们。
 
-A **scene style**: it performs a real use (a set-up guide, a how-to, a recipe card, a safety card) rather than telling a story. The viewer should come away able to do the thing. See §11 for the jobs.
+**场景风格**：它执行实际用途（设置指南、操作方法、食谱卡、安全卡），而不是讲述故事。观众应该能够做到这一点。有关职位信息，请参阅第 11 节。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Flat, printed-looking colour with a thin, breathing ink line that never quite closes. **Every fill is a separate "cel" printed a few px off its line**, re-rolled on twos, so the picture shimmers like hand-registered paint while the camera glides. Light dry-brush tooth, paper grain, warm vignette.
+平坦的、印刷般的颜色，带有一条永远不会完全闭合的细细的、会呼吸的墨线。 **每个填充都是一个单独的“cel”，打印在其线条上几个像素**，重新卷成两半，所以当摄影机滑动时，图片像手工注册的油漆一样闪闪发光。轻干刷牙齿、纸纹、温暖的小插图。
 
-People and things are geometric: egg or bean heads with the nose part of the face outline, simple garments in two or three flat colours, four-finger cartoon gloves. **A presenter's body is a held drawing: only arms, hands, eyes and mouth animate.** Rooms are not drawn: a scene is one colour plane, a floor band, a horizon line with gaps, and one or two props.
+人和事物都是几何形状的：鸡蛋头或豆头，鼻子部分是脸部轮廓，简单的衣服有两三种单色，四指卡通手套。 **A 演示者的身体是一幅手持绘图：只有手臂、手、眼睛和嘴巴有动画。** 房间没有绘制：场景是一个彩色平面、一条地板带、一条带间隙的地平线和一个或两个道具。
 
-Not the 1930s rubber-hose cartoon (no black-and-white, no bouncing world, no hot jazz). Not a whiteboard explainer: it shows *how to do*, not *why*. The pictures are printed, not written on.
+不是 20 世纪 30 年代的橡皮管卡通片（没有黑白、没有跳跃的世界、没有热门爵士乐）。不是白板解释器：它显示*如何做*，而不是*为什么*。图片是打印出来的，不是写在上面的。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Off-register cels**: fill drawn with a small offset (a few px, down-right) from its line; the offset jitters ±1–2 px on twos. Keep it on everything, text included; switch it off only for a crisp diagram.
-- **Line**: 3–5 px ink ribbons with ±40 % width breathing and 12–25 % breaks. Characters ~4 px, props 3–4.5 px, walls in plans thicker and broken. Hands: one outline around the union of palm and fingers, thin finger separations.
-- **Shading**: one flat darker plane clipped inside a shape, never a gradient. Drop shadows are a copy of the shape offset down-right in a paper shade at ~50 %.
-- **Ornaments**: 4-point atomic sparkles, 8–18-point starbursts, sunburst rays (~30 wedges, semi-transparent), boomerang and kidney shapes, polka dots.
-- **Grain**: light; print, not film.
+- **寄存器外单元格**：以相对于其线条的小偏移量（几个像素，右下）绘制的填充；偏移抖动为 ±1–2 px（每对）。将其保留在所有内容上，包括文字；仅为了清晰的图表而将其关闭。
+- **线**：3–5 px 色带，带 ±40 % 宽度呼吸和 12–25 % 断裂。角色 ~4 px，道具 3–4.5 px，计划中的墙壁更厚且破碎。手：手掌和手指的结合处有一个轮廓，手指的间距很细。
+- **阴影**：一个平坦的深色平面夹在形状内，绝不是渐变。阴影是纸质阴影中右下偏移约 50% 的形状的副本。
+- **装饰品**：4点原子闪光、8-18点星爆、旭日射线（约30个楔形，半透明）、回旋镖和肾形、圆点。
+- **粮食**：光；打印，而不是影片。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **A warm paper ground, a warm near-black ink, soft atomic-age complements.** Nothing pure or neon.
-- **One ground colour per scene**: a lighter tint for walls, a darker shade for floors. Never place the product on its own colour, never the presenter on their own accent.
-- **The product keeps one colour through the whole film**; the accent (a presenter's garment, stars, bullets) is a different hue. Step grounds rotate through the rest.
-- Examples: *coral / mustard / turquoise* on cream; *tomato / olive / powder blue* on oatmeal; *plum / lime / sand* on off-white.
+- **A 温暖的纸质地面，温暖的近乎黑色的墨水，柔和的原子时代补充。** 没有纯粹或霓虹灯。
+- **每个场景一个底色**：墙壁颜色较浅，地板颜色较深。切勿将产品放在自己的颜色上，也不要将演讲者放在自己的口音上。
+- **产品整片保持一种颜色**；口音（主持人的服装、星星、子弹）是不同的色调。台阶地面通过其余部分旋转。
+- 例如：奶油色上*珊瑚色/芥末色/绿松石色*； *番茄/橄榄色/粉蓝色*燕麦片； *梅子色/石灰色/沙色*，灰白色。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Roles: a 1950s script for a kicker (Oleo Script Bold); a slab serif (Alfa Slab One) for titles, numerals and headers, in ink over an offset colour plate; a geometric sans (Jost 500/600) for body, details, labels and captions.
-- **Caption card**: a paper-coloured rounded slab with a thin ink border (its colour cel offset too), small turning stars at the ends, ~40 px sans, bottom-centre. Fades in quickly with a small rise. Hold ≥ max(1.8 s, speech + 0.6 s, chars/12 + 1 s).
-- **Step header**: an ink disc with a paper numeral, a small letter-spaced "STEP n OF N", and the step title with a cream plate; it slides in on twos.
-- **Detail tags**: a paper card with a star bullet, popping on the action beat next to the call-out. Data lands on the picture, never as a slide.
+- 角色： 20 世纪 50 年代踢球手脚本（Oleo Script Bold）；用于标题、数字和标题的板衬线 (Alfa Slab One)，在胶印色板上用墨水书写；正文、详细信息、标签和标题采用几何无衬线 (Jost 500/600)。
+- **说明卡**：纸色圆形板，带有薄墨水边框（其彩色胶片偏移也是如此），末端有小旋转星星，〜40 px sans，底部中心。快速淡入并有小幅上升。保持 ≥ 最大值（1.8 秒，语音 + 0.6 秒，chars/12 + 1 秒）。
+- **步骤标题**：墨盘，上面有纸质数字，小写字母间隔“STEP n OF N”，以及奶油色盘的步骤标题；它成双滑入。
+- **详细标签**：带有星形子弹的纸卡，在标注旁边的动作节拍上弹出。数据落在图片上，而不是幻灯片。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **On twos:** poses, hand shapes and the cel jitter change at 12 fps. The camera, iris wipes, arrows, plan routes and rays move at 24 fps.
-- **Held body, moving hands:** switch poses with a single in-between. A hand action has anticipation (pull back or lift), a fast action (0.15–0.25 s, eased out), a follow-through (recoil, settle, lift away) and lands exactly on a beat.
-- **Pop-ins:** medallions, tags, labels and titles scale in with a back-ease (~0.25 s, strong overshoot).
-- **Reaching the floor**: a kneel pose with 2-bone IK keeps the hands on the object while it moves; never stretch standing arms.
-- **Lettering**: a script writes on left→right with a clip; headers slide in on twos.
+- **双人：** 姿势、手部形状和 cel 抖动以 12 fps 的速度变化。 摄影机、虹膜擦拭、箭头、计划路线和光线以 24 fps 的速度移动。
+- **握持身体、移动双手：**之间有一个单一的开关姿势。手部动作有预期（拉回或抬起）、快速动作（0.15-0.25 秒，缓和）、后续动作（反冲、稳定、抬起）并准确落在节拍上。
+- **弹出窗口：** 奖章、标签、标签和标题随着后缓（~0.25 秒，强烈超调）缩放。
+- **到达地板**：具有2骨IK的跪姿在物体移动时将手保持在物体上；切勿伸展站立的手臂。
+- **刻字**：脚本左→右书写，带有剪辑；标题成双滑入。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-The camera is "the stand": never handheld. A vocabulary, not a route. Opening and ending come from the topic.
+摄影机是“支架”：绝不手持。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Slow push (a few %) | Collecting the eye | a product on its stage; a result settling |
-| Iris through a medallion | The number *is* the door | a change of step; a change of rule |
-| Round call-out with a leader line | Context and detail at once | a hand action; a screen; a small part |
-| Tilt with a pointing finger | The finger leads the frame | the one action that matters most |
-| Push into a device, pan along signal rings | Person → interface → device | pairing; connecting |
-| Iris from a round object into a top view | Circle to circle, function to plan | a button starting a job; a lid opening; a dial |
-| Pull-back with counter-rotation from a detail to a plan | One lane becomes a pattern | a route, a schedule, a garden, a floor plan |
-| Colour-block wipe (side, bottom-up) | Turning the manual's page | a tip; a summary; a new card |
-| Split frame in two colour blocks | Right vs wrong, before vs after | a safety rule; an upgrade |
-| Dead still ≥ 3 s | "This is the frame to screenshot" | a summary; a CTA; a QR code |
-| Iris-out onto one object | The last circle | a closing on the product, the logo, the result |
+|缓慢推动（百分之几）|收集眼睛|舞台上的产品；结果解决|
+|透过奖章的虹膜|号码*是*门|改变步骤；规则的改变|
+|带引导线的圆形标注|上下文和细节同时存在|手部动作；一个屏幕；一小部分|
+|用手指倾斜|手指引导框架|最重要的一项行动|
+|推入设备，沿着信号环平移|人→接口→设备|配对；连接|
+|虹膜从圆形物体到顶视图|圈子到圈子，功能到规划|开始工作的按钮；盖子开口；一个表盘|
+|从细节到计划的反向旋转拉回|一条车道成为一种模式|路线、时间表、花园、平面图|
+|色块擦拭（侧面，自下而上）|翻动手册页|小费；总结；一张新卡|
+|将框架分割为两个色块|对与错、之前与之后|安全规则；升级|
+|静止时间≥3s|“这是要截图的框架”|总结；号召性用语；一个二维码|
+|光圈输出到一个物体上|最后一圈|产品、标志、结果的结束语|
 
-Key subjects ≥ 1/3 frame height and clear of the caption band. Transitions are circles, colour-block wipes and cuts on a beat; no dissolves.
+关键主题 ≥ 1/3 框架高度并且远离字幕带。过渡是圆圈、色块擦拭和节拍剪切；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-Three layers, always:
-- **Music**: an original West-Coast cool-jazz combo: flute or muted trumpet, vibraphone (chords, arpeggios, glissandi, tremolo), pizzicato walking bass, brushes (sticks on the ride for energy), celesta, bongos or finger snaps. Not ragtime, not a spy big band, not piano and strings. Options: give **every step its own vibraphone chord** and bring them back one per summary item; halve or double the feel instead of changing tempo; move up a step for a payoff.
-- **Silence as a tool**: cut *everything*, ambience included, for the beat before the most important action, so the first sound after it (the click, the pour) is the step. Room tone alone before a summary.
-- **Foley by material**: cardboard creaks and thumps, appliance plastic knocks and clicks, floor scrapes, glass and ceramic clinks, pours, damped rubber stamps for medallions, paper swishes for wipes, slide whistles for dimension arrows, rising pips for "connected", pen scratches for a route, an iris "shhk".
-- **Ambience**: warm room tone (low-passed brown noise, very quiet), a mantel-clock tick on the grid; a device's motor hum can take over when it works.
-- **Mix**: J/L cuts (lines start before their iris, tails ring on); narration compressed on top, music ducks ~8 dB, foley unducked, −14 LUFS.
-- **Voice**: calm classroom authority, one clause per line ("Step one. Set it against a wall."). Whisper-check every line; accents can blur key nouns.
+三层，始终：
+- **音乐**：原创的西海岸酷爵士乐组合：长笛或静音小号、颤音琴（和弦、琶音、滑音、颤音）、拨奏低音贝斯、刷子（在演奏中提供能量）、钢片琴、手鼓或打响指。不是拉格泰姆，不是间谍大乐队，不是钢琴和弦乐。选项：为 **每一步提供自己的电颤琴和弦** 并为每个摘要项带回一个；将感觉减半或加倍，而不是改变节奏；向上移动一步以获得回报。
+- **沉默作为工具**：剪切*一切*，包括氛围，对于最重要的动作之前的节拍，因此它之后的第一个声音（咔哒声，倒水声）是步骤。室音独前总结。
+- **Foley（按材料分类）**：纸板嘎吱声和重击声、器具塑料敲击声和咔哒声、地板刮擦声、玻璃和陶瓷叮当声、倒水声、奖章用阻尼橡皮图章、擦拭纸用纸擦拭、尺寸箭头用滑动口哨、“连接”用上升点、路线用笔划痕、虹膜“嘘”。
+- **环境**：温暖的房间音调（低通棕色噪音，非常安静），壁炉架时钟在网格上滴答作响；设备工作时，电机的嗡嗡声会接管。
+- **混音**：J/L 剪切（线条在虹膜之前开始，尾部响起）；旁白压缩在顶部，音乐闪避 ~8 dB，拟音未闪避，−14 LUFS。
+- **嗓音**：冷静的课堂权威，每行一个子句（“第一步。将其靠墙放置。”）。悄悄检查每一行；重音可能会模糊关键名词。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-Each move serves information. A menu: use the ones your film needs.
+每一步都提供信息。菜单：使用您的影片需要的菜单。
 
-- **Off-register colour** makes an info card hand-made and warm. *Fits content like:* museum rules; a bank app screen; hotel check-in.
-- **Limited animation points the eye**: the still body leaves the hand as the only mover, and the hand *is* the step (one hand action per step, on a beat). *Fits content like:* threading a sewing machine; changing a bike tyre; setting a thermostat.
-- **The round call-out** is the close-up; the step's data lands inside or on it on the action beat. *Fits content like:* a dosage on a measuring cup; a torque value on a bolt; a PIN on a keypad.
-- **The numbered medallion** marks hierarchy and opens the next step; it stamps onto the outgoing subject and the camera goes through it. *Fits content like:* a pool's five rules; a checklist for a flight; stages of a recycling sort.
-- **The payoff turns function into ornament**: a real process (a route, a watering schedule, a seating plan) draws itself region by region and, seen whole, reads as an atomic-age textile. *Fits content like:* a sprinkler's coverage; a delivery round; a week of medication.
+- **非套准颜色** 使信息卡手工制作且温暖。 *适合以下内容：*博物馆规则；银行应用程序屏幕；酒店办理入住手续。
+- **有限的动画吸引眼球**：静止的身体让手作为唯一的移动者，而手*就是*步骤（每一步一个手的动作，一个节拍）。 *适合以下内容：*给缝纫机穿线；更换自行车轮胎；设置恒温器。
+- **圆形标注**为特写；步骤的数据落在动作节拍上或内部。 *适合以下内容：*量杯上的剂量；螺栓上的扭矩值；键盘上的 PIN。
+- **编号徽章**标记层次结构并打开下一步；它会在传出的主题上盖章，然后摄影机会通过它。 *适合以下内容：* 泳池的五个规则；航班清单；回收分类的阶段。
+- **回报将功能变成装饰品**：一个真实的过程（路线、浇水时间表、座位计划）逐个区域地绘制自己，从整体上看，就像原子时代的纺织品。 *适合以下内容：*洒水器的覆盖范围；一轮交付；用药一周。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- A route that ignores obstacles → follow the product's real rules; flow streamlines bend around obstacles and never cross. Lay it one region per beat, not all at once.
-- A separate nose wedge looks glued on → one open spline from the bridge round the skull, closed at the nose tip.
-- Thin arms read as sticks from the neck → shoulders at the torso corners, sleeves as a thick ink ribbon with a colour ribbon on top.
-- Fat-blob fingers turn the hand into a cloud → stroke every part first, fill second (one union outline), slender fingers with separation lines.
-- Zooming the world triples the ink → close-ups in call-out circles drawn at native scale.
-- Detail text without reading time → move the data into the detail, the context into the title and the voice; chars/12 + 1 s.
-- A transition drawing the next scene before its start → clamp local time to just past the start.
+- 无视障碍的路线→遵循产品的真实规则；流动流线绕过障碍物弯曲并且永不交叉。每个节拍放置一个区域，而不是一次全部放置。
+- 一个单独的鼻楔看起来粘在→一根来自头骨周围的鼻桥的开放花键上，在鼻尖处封闭。
+- 细细的手臂从脖子到躯干角落的肩膀，解读为棍棒，袖子解读为一条厚厚的墨带，上面有一条彩色丝带。
+- 胖手指将手变成云→先抚平每个部分，然后填充（一个联合轮廓），细长的手指有分隔线。
+- 缩放世界使墨水增加三倍→以原始比例绘制的标注圆圈中的特写镜头。
+- 无需阅读时间的详细文本→将数据移入细节，将上下文移入标题和语音； chars/12 + 1 秒。
+- 在开始之前绘制下一个场景的过渡→将本地时间限制在刚刚过去的开始处。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine/toon.js` (the style: `setClock`, `shape` for any shape in the style, `ink` ribbons, `plane`, two-plate `text`, `fit`, the manual `arrow`, ornaments, the global register `REG`), `demo/engine/chars.js` (presenter, glove hands, the demo product), `demo/engine/icons.js` (18 icons). `demo/film.js` has liftable helpers: `callout()`, `medallionAt()`, `tag()`, `stepHeader()`, the flow-route generator `laneY()` + `buildPath()`, and the transition block (medallion iris, button iris, colour-block wipe, iris-out). API table and a minimal example: [DEMO.md](DEMO.md#engine-reference).
+`demo/engine/toon.js`（风格：`setClock`、`shape`为任何形状风格、`ink`丝带、`plane`、两板式`text`、`fit`、说明书`arrow`，装饰品，全局注册`REG`），`demo/engine/chars.js`（演示者，手套手，示范产品），`demo/engine/icons.js`（18个图标）。 `demo/film.js` 具有可升降辅助装置：`callout()`、`medallionAt()`、`tag()`、`stepHeader()`、流路发生器 `laneY()` + `buildPath()` 和过渡块（圆形光圈、按钮）虹膜、色块擦除、虹膜输出）。 API 表和一个最小示例：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the thing, the presenter (or none), which steps and in what order, the opening, the ending, the camera path, the colours, the pacing and the music. Use cases are **grammar for the order and duration of information**; build your own timeline from the user's facts.
+您可以决定事情、演示者（或没有）、哪些步骤和顺序、开头、结尾、摄影机路径、颜色、节奏和音乐。用例是 **信息顺序和持续时间的语法**；根据用户的事实构建您自己的时间表。
 
-| Use case | Information order | Hold per layer | Length |
+|使用案例|信息订购|每层保持|长度|
 |---|---|---|---|
-| **Product set-up guide** | product name → title → step title → step detail on the action beat → payoff → tip → CTA | title ≥ 4 s; step title the whole step; detail ≥ chars/12 + 1 s; summary ≥ 3 s clean | 30–40 s, 2–5 steps |
-| **Safety / rules card** | rule number → rule → one "why"; a held figure, a medallion, a gesture, a pictogram per rule | 3–4 s per rule | 20–40 s, 3–6 rules |
-| **Recipe or ritual card** | step → quantity/time → result; side view, call-out on the hands, result as a top-view pattern | 3–5 s per step | 30–45 s |
-| **Onboarding for an app or service** | screen action → setting value → confirmation stamp; the screen lives in the call-out | 3–4 s per action | 20–30 s |
-| **Store or event notice** | headline → time/place → CTA; colour-block wipes between cards | ≥ 3 s per card | 15–25 s |
+|**产品设置指南**|产品名称 → 标题 → 步骤标题 → 动作节拍上的步骤详细信息 → 收益 → 提示 → CTA|标题≥4秒；步骤标题整个步骤；细节 ≥ chars/12 + 1 秒；摘要 ≥ 3 s 干净|30–40 秒，2–5 步|
+|**安全/规则卡**|规则编号→规则→一个“为什么”；每个规则都有一个手持的图形、一个奖章、一个手势、一个象形图|每条规则 3–4 秒|20–40 秒，3–6 条规则|
+|**食谱或仪式卡**|步骤 → quantity/time → 结果；侧视图，手上的标注，结果为顶视图图案|每步 3–5 秒|30–45 秒|
+|**应用程序或服务的入门**|屏幕动作→设定值→确认标记；屏幕位于标注中|每个动作 3–4 秒|20–30 秒|
+|**店铺或活动通知**|标题 → time/place → CTA；卡片之间的色块擦拭布|每张卡≥3秒|15–25 秒|
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **a rules card with no product**, one held figure and a medallion per rule; **a recipe on a tabletop**, seen from the side, ending in a top view; **a do / don't split**, each rule shown twice in two colour blocks.
-- Openings: **the finished result first**, then "here's how"; **the problem in one gesture** (a hand fumbling a cable); **a numbered list** stamped on, then opened item by item.
-- Endings: **a checklist ticking itself**; **the hands at rest** beside the finished thing; **a QR code** held dead still in a starburst.
+- 结构：**一张没有产品的规则卡**，每条规则一个持有的人物和一个奖章； **桌面上的食谱**，从侧面看，最后是俯视图； **a 做/不拆分**，每个规则在两个色块中显示两次。
+- 开口：**，先完成结果**，然后“这里是如何”； **一个手势的问题**（一只手摸索电缆）； **盖有** 编号的列表，然后逐项打开。
+- 结局：**a 清单本身勾选**； **双手休息**在成品旁边； **a 二维码** 在星芒中静止不动。
 
-Swapping `demo/content.json` and rebuilding is a technical check that the engine re-flows, not a way to make a film.
+交换 `demo/content.json` 并重建是发动机回流的技术检查，而不是制造影片的方法。
 
 ---
 
-How our demo was made (story, shots, score, end card, build, content fields): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建、内容字段）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

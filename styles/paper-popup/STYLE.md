@@ -1,117 +1,129 @@
-# Paper Pop-up Book — Style Prompt
+<a id="paper-pop-up-book--style-prompt"></a>
+# 纸片立体书：风格提示词
 
-> A pop-up book on a real desk becomes a stage: flat cut-paper actors with white borders perform in front of paper sets that spring up from the page, under real lamp light and a real macro lens.
-> References (grammar only): the *Paper Mario* series (flat cut-paper actors with a white border in a 3D diorama, bubbles that type on with blips, action ratings); Robert Sabuda / Matthew Reinhart pop-up books (layered V-folds, pieces rising back to front, pull-tabs); macro "tiny world on a real desk" photography. Never copy their characters, logos, UI or music, and never name them in the film.
+> 真实桌子上的立体书变成了一个舞台：带有白色边框的平面剪纸演员在从页面弹出的纸组前表演，在真实的灯光和真实的微距镜头下。
+> 参考资料（仅语法）：*Paper Mario* 系列（3D 立体模型中带有白色边框的平面剪纸演员、带有光点的气泡、动作评级）；罗伯特·萨布达 / 马修·莱因哈特立体书（分层 V 形折叠、从后到前升起的碎片、拉环）；微距“真实桌子上的小世界”摄影。切勿复制他们的角色、徽标、UI 或音乐，也切勿在影片中命名他们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Two worlds in one frame. **The real world** at human scale: a photoreal surface lit by an HDRI room, a few real objects, a macro lens (shallow focus, warm practical light, soft contact shadows). **The paper world**: a hardcover book in that room; when it opens, one board stands up as the **backdrop** and the lower page is the ground. Every set piece is a **flat cut-paper card** that lies on the page and **pops up** around its bottom edge. Characters are cut paper too: a few centimetres tall, flat, with a thick off-white border, a grey cardboard edge and grain.
+一个框架中的两个世界。 **人体尺度的真实世界**：由HDRI房间照明的照片级真实表面、一些真实物体、微距镜头（浅焦、温暖实用的光线、柔和的接触阴影）。 **纸的世界**：那个房间里的一本精装书；当它打开时，一块板立起来作为**背景**，下面的页面是地面。每件套装都是一张位于页面上的 **平面剪纸卡**，**在其底部边缘弹出**。人物也是剪纸的：几厘米高，扁平，有厚厚的灰白色边框，灰色纸板边缘和纹理。
 
-What sells it is the **mismatch of scale and material**: flat, saturated, outlined paper cartoons under real light, casting cut-out-shaped shadows and going soft in real lens blur. Keep the paper graphic; let light and lens make it real.
+它卖的是**比例和材质的不匹配**：在真实光线下平坦、饱和、勾勒出轮廓的纸质卡通，投射出剪裁形状的阴影，并在真实镜头模糊中变得柔和。保留纸质图形；让光线和镜头让它变得真实。
 
-Not a papercut silhouette film (no one-colour lace, no backlight), not a 3D cartoon (nothing modelled round), not claymation (paper hinges, folds, curls and slides; it never squishes).
+不是剪纸剪影影片（没有单色花边，没有背光），不是 3D 卡通（没有任何圆形模型），不是粘土动画（纸铰链、折叠、卷曲和幻灯片；它永远不会压扁）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Real units** (metres): page 0.3–0.5 m wide, actors 3–5 cm, near plane a few mm, so HDRI, shadows and depth of field behave like a real macro shot.
-- **Cut-paper finish**: Canvas2D art with a dark ink outline; its silhouette dilated (drawn at many angles on several rings, recoloured `source-in`) into a grey cardboard edge offset slightly down (thickness) and a wide off-white border; a shared paper grain on top (`source-atop`).
-- **Drawing**: one dark-brown ink (never black), thick outline + thinner detail line, round joins; shading = one hard **crescent** (fill with shade, refill shifted with base); wobbly shapes (low-harmonic noise), never perfect geometry; simple faces.
-- **Pop-up pieces**: planes with art on the front and plain paper on the back (same alpha); `alphaTest` + `alphaToCoverage`; a custom depth material with the alpha map so **the shadow is the cut-out silhouette**. Anything "3D" is several flat cards (front/back layers, triangles hinged on a keel).
-- **The book** is modelled: cloth cover with foil title (roughness/metalness map), page block with edge lines, a curling leaf.
-- **Real world**: HDRI environment and softly blurred background, real wood or fabric, a few CC0 props. **Neutral tone mapping** (ACES shifts paper colours).
-- **Depth of field by hand**: CoC = aperture × (1/focus − 1/z), spiral gather that keeps far samples off a sharp foreground (stock bokeh looks fake at this scale); then light bloom, vignette, warmth.
+- **真实单位**（米）：页面0.3-0.5米宽，演员3-5厘米，近平面几毫米，因此HDRI、阴影和景深表现得像真正的宏镜头。
+- **剪纸饰面**：带有深色墨水轮廓的Canvas2D艺术；它的轮廓扩大（在几个环上以多个角度绘制，重新着色`source-in`）成灰色纸板边缘稍微向下偏移（厚度）和宽的灰白色边框；顶部有共享的纸纹 (`source-atop`)。
+- **绘画**：一种深棕色墨水（绝不是黑色），粗轮廓+细细节线，圆形连接；阴影=一个硬**新月**（填充阴影，填充随底座移动）；不稳定的形状（低谐波噪声），永远不会完美的几何形状；简单的面孔。
+- **弹出件**：正面有艺术品，背面有普通纸的飞机（相同的alpha）； `alphaTest` + `alphaToCoverage`；具有 alpha 贴图的自定义深度材质，因此 **阴影是剪切轮廓**。任何“3D”都是几张平板卡（front/back 层，铰接在龙骨上的三角形）。
+- **这本书**的模型是：带有箔标题的布封面（roughness/metalness地图），带有边缘线的页块，卷曲的叶子。
+- **真实世界**：HDRI环境和柔和模糊的背景，实木或织物，一些CC0道具。 **中性色调映射**（ACES改变纸张颜色）。
+- **手动景深**：CoC = 光圈 × (1/focus − 1/z)，螺旋聚集，使远处的样本远离清晰的前景（在这个比例下，库存散景看起来很假）；然后是光的绽放、小插图、温暖。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- Saturated children's-book colour, **never neon**; the real world stays natural and slightly warm so paper pops against it.
-- **One dominant hue family per spread**, so a page turn is also a colour change; a few accents (a red, a yellow, a gold) recur across spreads to stitch the book together.
-- Ink dark brown, border off-white, card backs plain paper.
-- Unfinished or "outside the story" pages lose colour: graphite on cream. Night is a change of the paper art; the real lamp keeps its warmth.
+- 饱和的儿童读物颜色，**never 霓虹灯**；现实世界保持自然且略带温暖，因此纸张会在其上弹出。
+- **每个展开一个主色调系列**，因此翻页也是颜色变化；一些口音（红色、黄色、金色）反复出现在跨页上，将这本书缝合在一起。
+- 墨水深棕色，边框灰白色，卡片背面普通纸。
+- 未完成或“故事之外”的页面失去颜色：奶油色上的石墨。夜，是纸艺的变迁；真正的灯保持它的温暖。
 
-Examples of spread families: green meadow under sky blue; pink-and-lilac market with mint accents; ochre desert with a turquoise oasis.
+分散家庭的例子：天蓝色下的绿色草地；带有薄荷味的粉色和淡紫色市场；赭色沙漠和绿松石绿洲。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Rounded OFL faces: a rounded sans for subtitles, bubbles, signs (e.g. Fredoka); a chunky display face for cover, banners, action words (e.g. Lilita One); a storybook serif for taglines (e.g. IM Fell English); a playful Chinese face (e.g. ZCOOL KuaiLe) with the Latin face in its stack.
-- **Narration subtitles**: bottom centre, ~40 px, cream with a thick dark-brown outline and soft shadow, second language smaller below. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Speech bubbles** live in the paper world: white card, ink outline, tail projected each frame to the speaker; pop in with overshoot, type on with blips.
-- **Titles are paper objects**: a cardboard sign dropping on strings and swinging; the cover itself is the film title. Action words (italic display, gradient, double stroke, rays) sparingly, like a game rating.
-- Subset Chinese fonts to the characters used; re-subset after every text change.
+- 圆形 OFL 面孔：用于字幕、气泡、标志的圆形 sans（例如 Fredoka）；用于封面、横幅、动作词的厚实显示面（例如 Lilita One）；标语的故事书衬线（例如 IM Fell English）；一张俏皮的中国面孔（例如ZCOOL KuaiLe），其中有一张拉丁面孔。
+- **旁白字幕**：底部中心，约40像素，奶油色，带有厚厚的深棕色轮廓和柔和的阴影，第二语言下方较小。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **语音气泡**生活在纸质世界：白卡、墨水轮廓、尾部将每一帧投影到扬声器；弹出时出现过冲，输入时出现光点。
+- **标题是纸质物体**：一个纸板标志落在绳子上并摆动；封面本身的标题是影片。动作词（斜体显示、渐变、双笔划、射线）很少，就像游戏评级一样。
+- 将中文字体子集化为所使用的字符；每次文本更改后重新设置子集。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- On ones (60 fps suits the smooth macro camera), all a pure function of `t`. Paper moves stiffly; life comes from easing: `back()` overshoot for pop-ups, springs for things on strings, squash and stretch on characters.
-- **Pop-ups rise back to front** (delay grows with distance from the reader), far pieces lying back, near ones folding forward face-down; they fold down in the same order.
-- Plants and light props sway a few hundredths of a radian around their base.
-- **Characters are flat cards redrawn per quantized pose** (walk phase, arms, eyes, mouth, look, blink); walk phase follows distance walked, so feet don't slide.
-- **Turning around = a `scale.x` flip** between front and back drawings; never `rotation.y`. Jumps: parabolic arcs, squash at both ends, a paper puff on landing.
-- **Page turn**: a many-segment strip whose bend is integrated along its length, so it curls like paper.
-- Never moves: the room.
+- 在那些（60 fps 适合平滑宏摄影机）上，所有这些都是 `t` 的纯功能。纸张移动僵硬；生命来自缓动：`back()` 弹出窗口过冲，字符串上的弹簧，字符上的挤压和拉伸。
+- **弹出窗口回到前面**（延迟随着与阅读器的距离而增加），远的部分向后躺着，近的部分向前折叠面朝下；它们以相同的顺序向下折叠。
+- 植物和灯光道具围绕其底座摆动百分之几弧度。
+- **角色是按量化姿势重新绘制的平面卡片**（行走阶段、手臂、眼睛、嘴巴、看、眨眼）；步行阶段遵循步行距离，因此脚不会滑动。
+- **转身=前后图之间的`scale.x`翻转**；从来没有 `rotation.y`。跳跃：抛物线弧线，两端挤压，落地时像纸一样。
+- **翻页**：多段条带，其弯曲沿其长度是一体的，因此它像纸一样卷曲。
+- 永远不会动：房间。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-One virtual macro camera keyed as position / target / fov / aperture / focus with monotone-cubic interpolation; a new key list = a hard cut. A vocabulary, not a route. Opening and ending come from the topic.
+一个虚拟宏摄影机，通过单调三次插值作为位置/目标/视场/光圈/焦点进行键控；新的关键列表=硬剪辑。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Eye-level macro track, shallow focus | being inside the story at the actors' size | a walk; a conversation; a chase |
-| Pull up to a 3/4 view of the spread | the mechanism, the map | a page turn; a new setting; a plan |
-| Descending dolly from human height | entering the book's scale | an arrival; zooming into one part of a system |
-| Push-in on a face | feeling | a wish; a fear; a decision |
-| Reverse shot from inside the book to the blurred room | the world beyond the page is huge | curiosity; an outside threat; a reader watching |
-| Rack focus paper ↔ real object | paper and reality touch | cause and effect; a real product in a paper story |
-| Top-down over the open spread | a board game, a diagram | a route; two sides of the gutter compared |
-| Locked frame on a pull-tab | the trick is the event | before/after; a count |
-| Rising crane leaving the book small | scale, distance | aftermath; a summary; time passing |
+|眼平微距轨迹，浅焦|以演员的尺寸融入故事之中|散步；一次谈话；一场追逐|
+|上拉至 3/4 价差视图|机制、地图|翻页；新的设置；一个计划|
+|从人类高度下降的小车|输入本书的规模|到达；放大系统的一部分|
+|推入脸部|感觉|一个愿望；恐惧；一个决定|
+|将镜头从书内反转到模糊的房间|书页之外的世界很大|好奇心;外部威胁；一位读者在观看|
+|架焦纸↔实物|纸与现实的接触|因果;纸质故事中的真实产品|
+|自上而下的开放价差|棋盘游戏、图表|一条路线；排水沟两侧比较|
+|拉环上的锁定框架|诀窍在于事件|before/after；一个计数|
+|起重机升起，书本变小|尺度、距离|后果;总结；时间流逝|
 
-Actors in focus, room objects as soft foreground or background; keep near pop-ups out of the lens path. Transitions: page turns, a book closing and reopening, a hard cut on a paper sound; never a video dissolve inside the book.
+焦点中的演员、房间物体作为柔和的前景或背景；使弹出窗口附近远离镜头路径。过渡：翻页、书本关闭和重新打开、纸张上的硬切声音；永远不会有视频溶解在书中。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Paper foley is the signature**: page swish, cardboard thump, pop-up snap (short sine sweep + crinkle), fold and crease, pull-tab slide, footsteps as tiny taps with crinkle, slat flaps, string-drop tinks; the book's spine creak and closing thump. All synthesizable from the page's event list.
-- **Character voices as typing blips**: one waveform and pitch range per character, a blip every other letter.
-- **Narration**: one warm storyteller, picture-book sentences; pronunciations kept apart from displayed text.
-- **Music**: whimsical, acoustic or toy-like: music box, pizzicato strings, clarinet, glockenspiel, ukulele, toy piano, brushes. Options: a warmer cue for anything in the real room; a bar-aligned internal edit of a library track so its ending lands on a picture event; a pull-tab's clicks setting a cue's pulse.
-- **Ambience**: room tone and a clock for the room; one bed per spread for the paper world.
-- **Silence** = the book held still with only room tone; before a turn that matters, or a hesitation.
-- **Mix**: voice high-passed, compressed, well above music; music ducked under speech with smooth release; limit SFX per channel; −14 LUFS.
+- **纸拟音是签名**：翻页、纸板重击、弹出式按动（短正弦扫描+皱纹）、折叠和折痕、拉片滑动、带有皱纹的小水龙头的脚步声、板条翻盖、绳子掉落叮当声；这本书的书脊嘎吱作响，合上时发出重击声。所有这些都可以从页面的事件列表中合成。
+- **字符语音作为打字提示**：每个字符一个波形和音调范围，每隔一个字母一个提示。
+- **旁白**：一位温暖的说书人，绘本般的句子；发音与显示的文本分开。
+- **音乐**：异想天开、原声或玩具般的：音乐盒、拨弦琴、单簧管、钟琴、尤克里里、玩具钢琴、画笔。选项：对真实房间中的任何事物提供更温暖的提示；对库曲目进行小节对齐的内部编辑，使其结尾落在图片事件上；拉环的咔嗒声设置了提示的脉冲。
+- **环境**：房间音和房间时钟；纸世界的每张床一张。
+- **沉默** = 书保持静止，只有室内音调；在重要的转折或犹豫之前。
+- **混音**：语音高通、压缩，远高于音乐；音乐隐藏在演讲中，释放流畅；限制每个通道的 SFX； −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **The book opens**: creak, the board swings up, the world pops up back to front. *Fits content like:* a project launch; a first school day; a recipe book.
-- **Page turn = scene change**: old pieces fold down as new ones spring up. *Fits content like:* stages of a process; a farm's seasons; chapters of a biography.
-- **Pull-tab mechanisms**: flipping slats, a sun on a stick, sliding strips, a hinged door, pieces on strings. *Fits content like:* a forecast; old way/new way; a lock opening.
-- **Paper as character**: crumpled, smoothed, refolded, torn, taped. *Fits content like:* a mistake becoming a lesson; recycling; a rejected draft becoming the design.
-- **The edge of the page**: crossing between paper and the room, either way. *Fits content like:* a character stepping into a phone on the desk; a real object entering the story; a drawing coming true.
-- **The real object plays a part**: a lamp as a sun, a mug as a tower. *Fits content like:* a product at home; the reader's presence; real clock time.
-- **Typed bubbles and ratings**. *Fits content like:* a tutorial; a quiz; a small victory.
+- **书打开**：吱吱，木板摆动起来，世界从后向前弹出。 *适合以下内容：* 项目启动；第一天上学；一本食谱书。
+- **翻页=场景变化**：旧的作品折叠起来，新的作品涌现。 *适合以下内容：*流程的各个阶段；农场的季节；传记的章节。
+- **拉片机构**：翻转板条、挂在棍子上的太阳、滑动条、铰链门、绳子上的部件。 *适合以下内容：* 预测；旧的 way/new 方式；一个锁的开口。
+- **纸作为字符**：皱巴巴的、平滑的、重新折叠的、撕破的、用胶带粘住的。 *适合以下内容：* 错误成为教训；回收；被拒绝的草稿成为设计。
+- **页面的边缘**：纸张和房间之间的交叉点，无论哪种方式。 *适合以下内容：* 角色走进桌上的电话；一个真实的物体进入故事；一幅图画成真。
+- **实物扮演角色**：一盏灯作为太阳，一个杯子作为塔。 *适合以下内容：* 家里的产品；读者在场；真实时钟时间。
+- **键入的气泡和评级**。 *适合以下内容：* 教程；测验；一个小小的胜利。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- `rotation.y` shows a card edge-on, then its blank back → `scale.x` flip. Negative scale also swaps front/back materials → draw mirrored props instead.
-- A one-plane container hides its contents → back card + front card, contents between.
-- Near-lens foreground pop-ups fill the frame with blur → move them or close the aperture.
-- Rectangle shadows kill the illusion → alpha-mapped depth material on every card; tight shadow bias and a big shadow map against acne on thin cards.
-- A turning page goes black facing away from lights → emissive map = colour map.
-- ACES shifts paper colours → Neutral.
-- Headless Chrome falls back to software WebGL → GPU ANGLE flags; ES modules need HTTP.
-- Redrawing character canvases each frame → redraw only on pose change.
-- Chinese subsets miss new characters and Latin glyphs → re-subset; Latin face in the stack.
+- `rotation.y` 显示卡片正面朝上，然后其空白背面 → `scale.x` 翻转。负比例也会交换 front/back 材质 → 绘制镜像道具。
+- 一个平面容器隐藏其内容→后卡+前卡，其间的内容。
+- 镜头附近的前景弹出窗口使画面充满模糊→移动它们或关闭光圈。
+- 矩形阴影消除了错觉 → 每张卡上都有 alpha 映射的深度材质；紧密的阴影偏差和针对薄卡片上痤疮的大阴影贴图。
+- 翻页背对着灯光变黑 → 发射贴图 = 彩色贴图。
+- ACES 将纸张颜色改为中性。
+- Headless Chrome 退回到软件 WebGL → GPU ANGLE 标志； ES 模块需要 HTTP。
+- 重画角色画布每一帧 → 仅在姿势变化时重画。
+- 中文子集丢失新字符和拉丁字形→重新子集；堆栈中的拉丁面孔。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/` (three.js r170 + Canvas2D): `paper.js` (cut finish, grain, crescent, blobs), `cutmesh.js` (cut mesh with paper back and cut-out shadow, strings, particles), `book.js` (`setOpen(θ)`, `setLeaf(u)` curling page), `art.js` (drawings at a fixed px/m), `actors.js` (posable flat characters, a foldable plane), `sets.js` (spreads, back-to-front pop scheduling), `post.js` (hand DOF → bloom → vignette), `hud.js` (subtitles, bubbles, banners), `lib.js` (easing, `back`, `spring`, `track`), `render.mjs` (stills / events / video). API table and a minimal new-spread example: DEMO.md "Engine reference".
+在 `demo/` (three.js r170 + Canvas2D) 中：`paper.js`（切割面、颗粒、新月形、斑点）、`cutmesh.js`（带纸背的切割网格和切割阴影、字符串、颗粒）、`book.js` （`setOpen(θ)`、`setLeaf(u)`卷页）、`art.js`（固定px/m绘图）、`actors.js`（可摆姿势的平面人物、可折叠平面）、`sets.js`（跨页、从后到前弹出排程）、 `post.js`（手动自由度→绽放→晕影），`hud.js`（字幕，气泡，横幅），`lib.js`（缓动，`back`，`spring`，`track`）， `render.mjs`（剧照/事件/视频）。 API 表和一个最小的新传播示例：DEMO.md“引擎参考”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the book, the room, the characters (or none), the spreads and mechanisms, the opening, the ending, the camera path and each spread's palette. All far from our demo:
+您可以决定书、房间、角色（或没有）、跨页和机制、开头、结尾、摄影机路径以及每个跨页的调色板。与我们的示范相去甚远：
 
-- Structures: **the almanac** (one spread per month or stage, each pull-tab left running so the book fills with motion); **two books facing each other**, characters trading objects across the gap; **one spread pulled again and again**, each pull a step of how something is made.
-- Openings: **mid-turn** (a page already curling, we land in chapter three); **inside the gutter** (low along the fold as the first piece rises over the lens); **a mechanism alone** (a tab slides by itself before any character appears).
-- Endings: **the book closes** (pieces fold in reverse, a puff of air, stillness); **one piece stays up** (everything folds but the card that is the point); **the shelf** (the camera finds this book among many).
+- 结构：**年历**（每月或每个阶段一份跨页，每个拉片都保持运行，以便书中充满运动）； **两本书面对面**，人物隔着间隙交易对象； **同一跨页反复拉动**，每一次拉动一步都是如何做成的。
+- 开口：**中转**（页面已经卷曲，我们进入第三章）； **在排水沟内**（当第一块上升到镜头上方时，沿着折叠线较低）； **单独的机制**（在任何字符出现之前选项卡会自行滑动）。
+- 结局：**书关闭了**（碎片反向折叠，一股空气，静止）；**一件留在上面**（除了重点牌外，所有牌都弃牌）；**架子**（这摄影机在众多书籍中找到这本书）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

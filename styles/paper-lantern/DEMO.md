@@ -1,116 +1,124 @@
-# Paper-cut Lightbox — our demo
+<a id="paper-cut-lightbox--our-demo"></a>
+# 剪纸灯箱——我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *一个月饼的相思 · A Mooncake's Longing* (121.8 s) · `paper-lantern.mp4` · source in [`demo/`](demo/) · engine: three.js 0.170 (WebGL, SSAA 2×, VSM soft shadows, custom DoF + bloom compositor), Canvas2D-drawn paper layers, headless Chrome frame capture.
+示范：*一个月饼的相思·月饼的向往*（121.8秒）·`paper-lantern.mp4`·来源在[`demo/`](demo/)·引擎：three.js 0.170（WebGL，SSAA 2×，VSM软阴影，自定义 DoF + 布隆合成器）、Canvas2D 绘制的纸层、无头 Chrome 帧捕获。
 
 
-**The demo narration is Mandarin Chinese** (edge-tts `zh-CN-XiaoxiaoNeural`) with Chinese subtitles. The library default is English with Kokoro (`core/tts/`); "Score structure" and "Engine reference" show how to switch. The demo runs 2 minutes; 45–120 s all work in this style.
+**示范旁白为普通话** (edge-tts `zh-CN-XiaoxiaoNeural`)，配有中文字幕。库默认为英文Kokoro（`core/tts/`）； “配乐结构”和“引擎参考”显示了如何切换。 示范运行2分钟； 45-120秒都适合这种风格。
 
-**Voice licence exception.** The demo's narration was generated with Microsoft's Edge neural TTS (via the open-source `edge-tts` client), whose terms for redistributing the audio are unclear, so the voice track of `paper-lantern.mp4` is **not covered by the library's CC BY 4.0 licence** for demo films. We plan to re-voice it with Kokoro. In your own film, use Kokoro (`core/tts/`) or a voice you have the right to use; keep `tts.py` only as a timing sketch.
+**语音许可异常。**示范的旁白是用微软的Edge神经TTS（通过开源`edge-tts`客户端）生成的，其重新分配音频的条款尚不清楚，因此`paper-lantern.mp4`的语音轨道是**不在风格库的 CC BY 4.0 许可证**（针对示范影片）的范围内。我们计划用 Kokoro 重新配音。在您自己的影片中，使用Kokoro（`core/tts/`）或您有权使用的声音；仅保留 `tts.py` 作为时序草图。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-The film opens on the real lightbox on a table and pushes into it. The box cavity is **0.56 × 0.33 m, 0.16 m deep**. The film is bookended by the **real world**: a walnut table in a dark room, the lit lightbox in a wooden frame, a tea set and a plate of real mooncakes lit by the box's spill light. The first shot pushes from the room into the box; the last pulls back out.
+影片在桌子上的真实灯箱上打开并推入其中。箱腔为**0.56×0.33 m，深0.16 m**。 影片的结尾是 **现实世界**：黑暗房间里的一张胡桃木桌、木制框架中的发光灯箱、一套茶具和一盘由盒子溢出的灯光照亮的真正月饼。第一个镜头从房间推入盒子；最后一个拉回来。
 
-How the demo used the medium's powers:
+示范如何使用表现媒介的力量：
 
-| Native power | Story use |
+|原生电源|故事运用|
 |---|---|
-| **Light turns on** | The opening is literally switching the lamp on: moon, then far layers, then windows light up one by one. "Lights coming on" = a story beginning, a home, someone waiting. |
-| **Depth = distance** | Stacked layers of mountains, rivers, cities make *distance* visible. Journeys, longing, "far away" stories are native. |
-| **Silhouettes** | People are black cut-outs with a few jointed parts (an arm, a sleeve). Faceless figures read as everyone — good for folk tales, family, festivals. |
-| **Windows** | A lit window with a silhouette inside is the strongest image this style has. Two lit windows sharing one moon is the demo's thesis shot. |
-| **Paper text** | Titles, letters and poems are paper too: vertical brush calligraphy on a cut strip, revealed column by column, with a red seal. |
-| **The box itself** | Pulling out to the real table at the end says "this was a keepsake / a story told at home". |
+|**灯亮**|开口实际上就是打开灯：月亮，然后是远处的层，然后窗户一一亮起来。 “灯亮了”=一个故事的开始，一个家，有人在等待。|
+|**深度 = 距离**|层层叠叠的山川、河流、城市让“距离”可见。旅程、渴望、“远方”的故事都是本土的。|
+|**剪影**|人物是带有一些关节部分（手臂、袖子）的黑色剪纸。不露面的人物与每个人一样阅读——适合民间故事、家庭、节日。|
+|**视窗**|明亮的窗户，里面有剪影，是这种风格最强烈的形象。两扇明亮的窗户共享一个月亮是示范的论文镜头。|
+|**纸质文字**|标题、信件和诗歌也是纸质的：在切条上竖写毛笔书法，一栏一栏地显示，并盖有红色印章。|
+|**盒子本身**|最后拉到真正的桌子上说“这是一个纪念品/一个在家里讲述的故事”。|
 
-**Story shape (proven in the demo):** room → lamp on → push into the box, title → origin (grandma's kitchen, the mooncake is pressed) → a bit of culture (a Ming-dynasty scroll quote) → the absence (an empty seat) → the journey (train across layered mountains, a myth told on the way, a box passing the other way) → arrival in the far city → the letter → **the twist: the other box was going the other way** (mutual longing — two windows, one moon) → a classical poem → pull out of the box, "中秋快乐".
+**故事形态（在示范中得到证明）：**房间→灯亮→推入盒子，标题→起源（奶奶的厨房，压月饼）→一点文化（明代卷轴）→缺席（一个空座位）→旅程（火车穿越层层山脉，途中讲述一个神话，一个盒子经过另一条路） → 到达远城 → 信 → **转折：另一个盒子走向另一条路**（相互渴望——两窗一月） → 一首古典诗 → 从盒子里拿出“中秋快乐”。
 
-Adapting any topic: find the **two places** and the **one light** they share (a moon, a lighthouse, a window). Build each place as a layer stack; build one travel sequence between them; end with both lit at once.
+适应任何主题：找到**两个地方**和**一盏灯**他们共享（一个月亮，一座灯塔，一扇窗户）。将每个地方构建为层堆栈；在它们之间构建一个旅行序列；结束时两者同时点亮。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening | Room wide (z 1.45) on the dark box → lamp on → 7 s ease-in-out push through the frame to z ≈ 0.56, then keep creeping in. Focus pulls from the front layer to the village. |
-| In-box shots | Nearly frontal, slow dolly in/out (`aim(cam, [px,py,pz, tx,ty,tz], t)`), hand-held micro-drift `hand ≈ .0006 m`. Aperture 12–26 (in `post()`), focus on the story layer so foreground reeds and back mountains soften. |
-| Top-down inserts | The mooncake press and the open gift box are shot as flat top-down layer stacks (same engine, different set). |
-| Train | Lateral travel: layers scroll at speeds proportional to depth (parallax). |
-| Ending | Push inside the box, then a pull back out to the table (z 0.5 → 1.08), tea set enters frame, title 「中秋快乐」 fades in inside the box, credits under it, 1.2 s fade to black. |
+|开幕|暗箱上的房间宽 (z 1.45) → 灯亮 → 7 秒缓入出将框架推至 z ≈ 0.56，然后继续爬入。焦点从前层拉到村庄。|
+|箱内镜头|近正面、慢速移动车 in/out (`aim(cam, [px,py,pz, tx,ty,tz], t)`)、手持式微漂移 `hand ≈ .0006 m`。光圈 12-26（在 `post()` 中），聚焦于故事层，使前景芦苇和后山柔化。|
+|自上而下插入|月饼压榨机和打开的礼品盒为镜头，为平面自上而下的叠层（相同的引擎，不同的设置）。|
+|火车|横向移动：图层以与深度（视差）成比例的速度滚动。|
+|结束|推入盒子内，然后拉回桌子上（z 0.5 → 1.08），茶具进入画面，标题“中秋快乐”淡入盒子内，其下方有字幕，1.2 秒淡为黑色。|
 
-Motion as built in the demo:
+示范中内置的运动：
 
-- **Everything moves like paper on a stick**: layers slide (x/y), rotate about a pivot (`ax/ay` anchor = joint), scale in from 0 along one axis ("written out"), or light up. No squash and stretch, no morphing.
-- **Jointed figures**: a body sheet + a separate arm sheet anchored at the shoulder (`GRAN_SHOULDER`, `GIRL_SHOULDER`, `SUSHI_SHOULDER` in `people.js`); animate `rotation.z` only.
-- **Light cues are the big motion**: lamp-on sequence in S01 — moon (0.5–3.2 s) → sky → each layer's translucency staggered by 0.42 s → key light → windows → lanterns flicker (`1 + .06·sin(7.3t)·sin(3.1t)`).
-- **Text reveal**: paper strips grow from their anchor edge (`reveal()` in `s13_note.js` scales the mesh *and* the texture repeat so glyphs are not squashed), timed to the spoken word.
-- **Hard action beats land on whisper word times**: the wooden mould slams on 「啪」(`E.word('L04', 13)`), the 「圆」 character flashes on its word, the light arcs grow from 「互」.
-- **Transitions**: 0.5–1.2 s dissolves between shots (`in: { type: 'dissolve', dur }`), an `iris` mode exists (circular wipe from `center`). The signature transition is a **near-plane auspicious-cloud curtain** (`cloudCurtain()` in `s17_sushi.js`) closing over the last 1.2 s of a shot and opening on the next — the two halves must meet exactly at their front edges.
+- **一切都像纸一样移动**：层滑动（x/y），围绕枢轴旋转（`ax/ay`锚点=关节），沿着一个轴从0开始缩放（“写出”），或者点亮。没有挤压和拉伸，没有变形。
+- **关节人物**：身体片+固定在肩部的独立手臂片（`GRAN_SHOULDER`、`GIRL_SHOULDER`、`people.js`中的`SUSHI_SHOULDER`）；仅动画 `rotation.z`。
+- **灯光线索是大动作**：S01中的灯亮顺序——月亮（0.5–3.2秒）→天空→每层半透明度交错0.42秒→主光→窗户→灯笼闪烁（`1 + .06·sin(7.3t)·sin(3.1t)`）。
+- **文本显示**：纸条从其锚定边缘生长（`s13_note.js`中的`reveal()`缩放网格*和*纹理重复，因此字形不会被压扁），与口语同步。
+- **硬动作击中低语单词时间**：木模猛击「啪」(`E.word('L04', 13)`)，「圆」字在其上闪烁，光弧从「互」长出。
+- **过渡**：0.5–1.2 s 在镜头 (`in: { type: 'dissolve', dur }`) 之间溶解，存在 `iris` 模式（从 `center` 开始的圆形擦除）。标志性过渡是 **n 近平面吉祥云幕**（`s17_sushi.js` 中的 `cloudCurtain()`）在镜头的最后 1.2 秒内关闭并在下一个时打开 - 两半必须在其前边缘完全相遇。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-**Voice (demo, Mandarin):** `edge-tts`, voice `zh-CN-XiaoxiaoNeural`, rate `+10%`, pitch `-2Hz` (`demo/tts.py`); per-line `rate` overrides in `script.json` (L01 `+5%`, quoted letters `+2%`, the poem L23 **`-12%`**, closing line `-6%`). Output is trimmed at 2 % of peak (20 ms pre-roll, 120 ms tail) → 48 kHz mono `vo/<id>.wav` + `vo/dur.json`.
-- **Polyphonic characters**: feed TTS a homophone via a `say` field and keep the real text for subtitles: 「相思的"相"」→ `say: 原来，相思的香，是互相的香。` (TTS otherwise reads xiàng).
-- **Proof**: `demo/asr.py` (faster-whisper **medium**, zh) prints OK/DIFF per line; DIFFs that are homophones or numerals (八月十五 → 8月15, 她 → 他) are fine — listen to the rest.
-- **Word timings**: `demo/words.py <ids…>` → `vo/words.json` (whisper word timestamps). Shots read them via `E.word(id, k)`; **k is a whisper token index, not a character index** (whisper groups 「我们」 as one token) — print the list and count.
+**语音（示范，普通话）：**`edge-tts`，语音`zh-CN-XiaoxiaoNeural`，速率`+10%`，音高`-2Hz`（`demo/tts.py`）；每行`rate`覆盖`script.json`（L01 `+5%`，引用字母`+2%`，诗L23**`-12%`**，结束行`-6%`）。输出修剪为峰值的 2%（20 ms 前滚，120 ms 尾部）→ 48 kHz 单声道 `vo/<id>.wav` + `vo/dur.json`。
+- **多音字符**：通过`say`字段输入TTS同音字，并保留字幕的真实文本：「相思的"相"」→ `say: 原来，相思的香，是互相的香。`（TTS否则读xiàng）。
+- **证明**：`demo/asr.py`（faster-whisper**中等的**，zh）每行打印OK/DIFF；同音异义词或数字的 DIFF（八月十五→8月15，她→他）很好——听其余的。
+- **字计时**：`demo/words.py <ids…>` → `vo/words.json`（耳语字时间戳）。 镜头通过 `E.word(id, k)` 读取它们； **k 是一个耳语标记索引，而不是字符索引**（耳语组“我们”作为一个标记）——打印列表并计数。
 
-**Voice (English, library default):** write `lines.json` with `{id, text, voice, speed}`, run `core/tts/tts.py` (Kokoro, e.g. `bf_emma` / `af_heart`, speed ≈ .9) into `demo/vo/`, then `core/tts/asr_check.py` which writes `vo/dur.json` and a compatible `vo/words.json` (English word indices). Put the same ids/text into `script.json`. See "Switching to English" under Engine reference for the subtitle-split change.
+**Voice（英文，库默认）：** 用 `{id, text, voice, speed}` 写入 `lines.json`，运行 `core/tts/tts.py`（Kokoro，例如 `bf_emma` / `af_heart`，速度 ≈ .9）进入`demo/vo/`，然后是 `core/tts/asr_check.py`，其中写入 `vo/dur.json` 和兼容的 `vo/words.json`（英文单词索引）。将相同的ids/text放入`script.json`中。有关字幕分割更改，请参阅引擎参考下的“切换到英语”。
 
-**Music:** Kevin MacLeod — **"Ripples"** (guzheng, 0 → ~37 s) handing over to **"Nu Flute"** (dizi + strings) with a 4.5 s crossfade; both CC BY 4.0 (incompetech.com). The handover is solved backwards so Nu Flute's own 70 s swell lands on the poem: `T_FLU = C.L23.at − 70 + .3`. Nu Flute −3.3 dB relative. 2 s fade in, 3 s fade out. Why these: pentatonic, no drums (percussive energy < 0.02) — the librosa numbers are in `demo/music/analysis.json`.
+**音乐：**Kevin MacLeod —**“涟漪”**（古筝，0→~37秒）移交给**“女笛”**（笛子+弦乐） 4.5 秒交叉淡入淡出；均为 CC BY 4.0 (incompetech.com)。交接是向后解决的，因此女笛自己的 70 年代浪潮落在了这首诗上：`T_FLU = C.L23.at − 70 + .3`。 Nu 长笛相对 -3.3 dB。 2 秒淡入，3 秒淡出。为什么是这些：五声音阶，无鼓（打击乐能量 < 0.02）——librosa 编号为 `demo/music/analysis.json`。
 
-**Mix (`demo/mix.py`):** voice → downsampled-envelope compressor (−22 dB, 3:1) → HP 70 Hz → RMS −18 dB; music RMS −27.5 dB with **5.5 dB ducking** under speech (0.25 s smoothed envelope); procedural foley at −24…−34 dB: switch click + rising shimmer (lamp on), wooden-mould thud + puff, chimes on reveals, paper rustles, lid thud, train bed (rumble + 0.62 s "clack-clack"), whoosh for the passing train and cloud curtain, city hum, a bite crunch. Everything is placed from `out/timeline.json` (line starts) and `vo/words.json`. Peak-limited to −1 dBFS; the final mux normalises to **−14 LUFS** (two-pass loudnorm in `core/render/mux.sh`).
+**Mix (`demo/mix.py`)：**语音 → 下采样包络压缩器 (−22 dB, 3:1) → HP 70 Hz → RMS −18 dB；语音下音乐 RMS −27.5 dB，**5.5 dB 闪避 **（0.25 s 平滑包络）；程序拟音在−24…−34 dB：开关点击+闪烁上升（灯亮）、木模撞击声+噼啪声、揭开钟声、纸张沙沙声、盖子撞击声、火车床（隆隆声+0.62秒“咔哒声”）、驶过的火车和云幕的嗖嗖声、城市的嗡嗡声、咬碎的嘎吱声。所有内容均从 `out/timeline.json`（行开始）和 `vo/words.json` 放置。峰值限制为−1 dBFS；最终的复用器归一化为 **−14 LUFS**（`core/render/mux.sh` 中的两通响度范数）。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-**Units and layout.** Everything is in metres, y up. Box cavity `BOX = { w: .56, h: .33, d: .16 }` (`src/room.js`). Layers sit at z from about **−0.14 (sky) to 0 (front)**; in-box camera at z ≈ 0.3–0.56 with fov 26°. Full-bleed layers inside the box are `.558 × .328` — **never larger than the cavity**, or they poke through the wooden frame in the room shots.
+**单位和布局。** 一切都以米为单位，向上。盒腔`BOX = { w: .56, h: .33, d: .16 }`（`src/room.js`）。各层位于z处，从**−0.14（天空）到0（前面）**；盒内摄影机，z ≈ 0.3–0.56，视场角 26°。盒子内的全出血层是 `.558 × .328` — **，永远不会大于腔体**，或者它们会刺穿房间镜头中的木框架。
 
-**Layer stack for a night exterior (S01):**
-| z | Layer | Colour | backlight `trans` |
+**夜间外观层堆叠（S01）：**
+|z|层|颜色|背光`trans`|
 |---|---|---|---|
-| −.135 | sky gradient (unlit, `skyPanel`) + stars | `#0a1330 → #172a58 → #2e4478 → #43598a` | — |
-| −.125 | moon disc + additive halo | `#fffaf0 / #fff0cf / #f7dca4` | — |
-| −.112 | auspicious clouds (祥云) | `#c3cbe8` | .9 |
-| −.098 | far karst mountains, carved contour slits | `#6a86c2` | .7 |
-| −.080 | mid mountains | `#3f5a92` | .45 |
-| −.062 | village (江南 houses) + emissive windows | `#5a70a6` walls / `#1b284f` roofs, glow `#ffb862` | .25 |
-| −.046 | river + moon trail (emissive) | `#22325e`, trail `#e9cf96` | .3 |
-| −.030 | osmanthus tree + bridge, emissive blossoms | `#17224a`, flowers `#d9a24a` | .12 |
-| −.014 | foreground bank + reeds | `#0e1532` | .05 |
-| +.004 | hanging lanterns (emissive) | `#0d1328`, glow `#ff8a48` | .05 |
+|−.135|天空渐变（未点亮，`skyPanel`）+星星|`#0a1330 → #172a58 → #2e4478 → #43598a`|—|
+|−.125|月盘+附加光环|`#fffaf0 / #fff0cf / #f7dca4`|—|
+|−.112|祥云|`#c3cbe8`|.9|
+|−.098|远处喀斯特山脉，雕刻轮廓缝隙|`#6a86c2`|.7|
+|−.080|中山|`#3f5a92`|.45|
+|−.062|村庄（江南房屋）+自发光窗|`#5a70a6` 墙壁 / `#1b284f` 屋顶，发光 `#ffb862`|.25|
+|−.046|河流+月亮轨迹（发射）|`#22325e`，踪迹 `#e9cf96`|.3|
+|−.030|桂花树+小桥，发光的花朵|`#17224a`，鲜花`#d9a24a`|.12|
+|−.014|前景岸+芦苇|`#0e1532`|.05|
+|+.004|悬挂灯笼（发光）|`#0d1328`，发光`#ff8a48`|.05|
 
-Rule: **back layers bright + translucent, front layers dark + opaque**. Interiors use the same ladder in warm browns (kitchen wall `#b08058`, props `#6e3b1f`, figure `#2e170d`, lamp glow `#ffc878`); the far city uses violets (`#2a2456`, windows `#e8cc90`).
+规则：**后层亮+半透明，前层暗+不透明**。室内使用相同的暖棕色梯子（厨房墙`#b08058`，道具`#6e3b1f`，人物`#2e170d`，灯发光`#ffc878`）；远城使用紫罗兰（`#2a2456`，Windows `#e8cc90`）。
 
-**Accents:** seal red `#b3302a`, gold title paper `#f1dbac` / `#f3d998`, box red `#9e2a20`, a single blue box `#2a4f7a` for the granddaughter's reply.
+**强调：**印章红色`#b3302a`，金色标题纸`#f1dbac` / `#f3d998`，盒子红色`#9e2a20`，单个蓝色盒子`#2a4f7a`用于孙女的回复。
 
-**Paper finish** (`finish()` in `src/paper.js`): tiled fibre grain (`GRAIN`, 512², α .9, `source-atop`), top rim band `rgba(255,236,200,.35)` shifted 3 px, bottom shade `rgba(0,0,0,.28)` shifted 3 px. Canvas resolution `PPM = 5200` px/m.
+**纸张表面处理**（`src/paper.js`中的`finish()`）：平铺纤维纹理（`GRAIN`，512²，α .9，`source-atop`），顶部边缘带`rgba(255,236,200,.35)`移动3 px，底部阴影 `rgba(0,0,0,.28)` 移动 3 px。画布分辨率 `PPM = 5200` px/m.
 
-**Backlight shader** (`paperMat()`): `emissive += albedo × lightCol × trans × uLit × fall × (.35 + 1.3·cloud)`, `fall = mix(.22, 1, exp(−d²/R²))` around the per-shot light point `uLight` (usually the moon). `cloud` is a tiled pulp-mottle texture (`CLOUD()`). Emissive windows come from a second Canvas (`glowDraw`, white = light) scaled by `glow` and gated by `uGlowLit` (0→1 to "switch on").
+**背光着色器** (`paperMat()`)：`emissive += albedo × lightCol × trans × uLit × fall × (.35 + 1.3·cloud)`、`fall = mix(.22, 1, exp(−d²/R²))`围绕每个镜头光点`uLight`（通常是月亮）。 `cloud` 是一种平铺的纸浆斑纹纹理 (`CLOUD()`)。发射窗口来自第二个画布（`glowDraw`，白色 = 光），由 `glow` 缩放并由 `uGlowLit` 门控（0→1 到“打开”）。
 
-**Fonts** (`demo/fonts/`, OFL): Ma Shan Zheng `FONT.brush` for titles/poems, Zhi Mang Xing `FONT.xing` for running script, Long Cang `FONT.hand` for the child's handwriting, Noto Serif SC `FONT.song` for subtitles and credits.
+**字体**（`demo/fonts/`，OFL）：马山正`FONT.brush`为titles/poems，纸芒行`FONT.xing`为行书，龙苍`FONT.hand`为孩子手写体，Noto Serif SC `FONT.song` 用于字幕和制作人员名单。
 
-**Real-world set** (`lightbox()` in `src/room.js`): extruded walnut frame (Poly Haven `american_walnut_veneer`, tint `#8a6a52`), black paper lining inside, walnut table, dark radial wall `#2a2018 → #0a0806`, a `RectAreaLight` spill `#ffc98a` (intensity 6–7) at the box mouth, hemisphere fill `.25`, Poly Haven `tea_set_01` (teapot, cup, saucer, plate) and two procedural 3D mooncakes (cylinder + bump-mapped face from `cakeFace`).
+**真实套装**（`src/room.js`中的`lightbox()`）：挤压胡桃木框架（Poly Haven `american_walnut_veneer`，色调`#8a6a52`），黑色纸内衬，胡桃木桌子，深色径向墙`#2a2018 → #0a0806`、盒口处的 `RectAreaLight` 溢出物 `#ffc98a`（强度 6-7）、半球填充 `.25`、Poly Haven `tea_set_01`（茶壶、杯子、碟子、盘子）和两个程序 3D 月饼（圆柱体 + 凹凸贴图面，来自`cakeFace`）。
 
-## Titles, subtitles & end card
+<a id="titles-subtitles--end-card"></a>
+## 标题、字幕 & 片尾卡
 
-- Burned-in DOM subtitle (`#sub` in `index.html`): Noto Serif SC 500, 40 px, `#fbf3e4`, letter-spacing .06em, 74 px from the bottom, soft black shadow; fades in 0.15 s before the line, out 0.3 s after. Lines longer than 21 characters split at the comma nearest the middle; trailing punctuation is dropped and inner `，。：` become full-width spaces.
-- **Lines that appear as paper in the picture are not subtitled** (`"sub": false` in `script.json`): grandma's letter (L17) and the poem (L23). Don't show the same words twice.
-- Title: vertical Ma Shan Zheng on a paper strip inside the box (「一个月饼 / 的相思」) with a red seal 「中秋」, fading in after the second line.
-- End card: 「中秋快乐」 paper title inside the box + red seal 「团圆」; the credit block (`#credit`, 19 px, two lines: music / assets / fonts) fades in 0.6 s after the last line.
-- **Sign-off (this library's demo only):** our demo's end card carries **"LemoLab × Claude Opus 5.5"** as a **paper-cut strip inside the lightbox**, not as overlay text: `sign` sheet in `src/shots/s18_finale.js` — `w .26, h .02`, centred at `y −.1515` on the dark foreground bank, `z −.024` (in front of the bank layer, near the final focus plane), `text(…, .0115, FONT.song, { fill: '#f3d998', weight: 600 })`, `trans .3`, `shadow/recv: false`. It fades in over `tT + 1.0 → tT + 2.0` (1 s after 「中秋快乐」 starts, ≈116.6–117.6 s) and stays to the end, so it reads as part of the lamp while the credit block sits on the table below. It belongs to the library's own demos: a user's film carries no LemoLab credit, no strip like this and no copy of this end card.
-- `paper-lantern.srt` holds all 25 lines (including the two in-picture ones) at their spoken times.
+- 内置 DOM 字幕（`index.html` 中的 `#sub`）：Noto Serif SC 500、40 px、`#fbf3e4`、字母间距 0.06em、距底部 74 px、柔和的黑色阴影；行前 0.15 秒淡入，行后 0.3 秒淡出。长度超过 21 个字符的行在最靠近中间的逗号处分割；尾随标点符号被删除，内部 `，。：` 变为全角空格。
+- **图中出现为纸的线条没有副标题**（`script.json` 中的`"sub": false`）：奶奶的信（L17）和诗（L23）。不要两次显示相同的单词。
+- 标题：盒子内的纸条上有竖马山正（「一个月饼/的相思」），盖有红色印章「中秋」，第二行后逐渐淡出。
+- 片尾卡：盒内纸题“中秋快乐”+红印章“团圆”；字幕块（`#credit`，19 像素，两行：音乐/资源/字体）在最后一行后 0.6 秒内淡出。
+- **签核（仅此库的示范）：**，我们的示范的片尾卡携带**“LemoLab × Claude Opus 5.5”**作为**灯箱内的剪纸条**，不作为覆盖文本：`src/shots/s18_finale.js`中的`sign`表 - `w .26, h .02`，以深色前景银行上的`y −.1515`为中心，`z −.024`（在堤岸层，靠近最终焦平面），`text(…, .0115, FONT.song, { fill: '#f3d998', weight: 600 })`、`trans .3`、`shadow/recv: false`。它在 `tT + 1.0 → tT + 2.0`（《中秋快乐》开始后 1 秒，约 116.6–117.6 秒）内淡入并保持到最后，因此当信用块位于下面的桌子上时，它会作为灯的一部分读取。它属于风格库自己的示范：用​​户的影片没有 LemoLab 署名，没有这样的条带，也没有该片尾卡的副本。
+- `paper-lantern.srt` 保留了全部 25 行（包括图中的两行）的说话时间。
 
-## Pitfalls we hit (demo record)
+<a id="pitfalls-we-hit-demo-record"></a>
+## 我们遇到的陷阱（示范记录）
 
-- **`destination-out` cut-outs need an opaque fillStyle**: set `x.fillStyle = '#000'` (or any opaque colour) before punching holes; a transparent or glow-white fill leaves the hole half-cut. `props.js` `cut(x, fn)` does it for you.
-- **VSM shadows leak light bleeding / self-shadow halos**: layers that must not take part (titles, lanterns in front, light arcs, curtains) need **both** `shadow: false` **and** `recv: false`.
-- **Additive glows**: a transparent radial-gradient `CanvasTexture` shows a visible square edge. Use the analytic `ShaderMaterial` falloff (`burst()` in `paper.js`) for light spilling out of an opened box.
-- **Near-plane cloud curtain**: compute the closing position so the two curtains' **front edges** touch (`±.035` offset in `s16_mutual.js`), otherwise a slit of the old shot shows through.
-- **Layers bigger than the cavity** poke through the wooden frame in room shots — keep full-bleed sheets ≤ `.558 × .328`.
-- **Grade uniforms must not be sticky**: if `Pipe.final()` writes `lift`/`gain` only when a shot's `grade()` returns them, a shot without them inherits the previous shot's values and the result depends on which frame a render worker started on (visible grade pops at worker boundaries, e.g. 60.9 s / S09 and 101.5 s / S16). So every missing grade key falls back to `GRADE0` (`post.js`: lift `[0, .005, .018]` cool night default, gain `[1.03, 1, .95]`), and renders are identical for any worker count. Night exteriors rely on the defaults; interiors must return their warm `lift` explicitly (as S08 does).
-- Whisper medium mishears Chinese homophones (八月 → 8月, 她 → 他, 婵娟 → 禅绢); judge DIFFs by ear, not by string match.
-- Headless Chrome must run with GPU flags (`--use-angle=gl --enable-gpu --ignore-gpu-blocklist`, `render/browser.mjs`); SwiftShader is ~6× slower.
+- **`destination-out` 切口需要不透明填充风格**：在打孔之前设置 `x.fillStyle = '#000'`（或任何不透明颜色）；透明或亮白色的填充物使孔呈半切状。 `props.js` `cut(x, fn)` 为您做到这一点。
+- **VSM阴影漏光渗色/自阴影光晕**：不得参与的图层（标题、前面的灯笼、光弧、窗帘）需要**两个都**`shadow: false`**和** `recv: false`。
+- **添加剂发光**：透明径向渐变`CanvasTexture`显示可见的方形边缘。使用解析 `ShaderMaterial` 衰减（`paper.js` 中的 `burst()`）来处理从打开的盒子溢出的光。
+- **近平面云幕**：计算关闭位置，以便两个窗帘的**前边缘**接触（`±.035`在`s16_mutual.js`中的偏移），否则旧镜头的狭缝显示通过。
+- **比空腔大的层**穿过房间镜头的木框架——保持全出血床单≤`.558 × .328`。
+- **年级制服不得粘**：如果`Pipe.final()`仅在镜头的`grade()`返回时写入`lift`/`gain`，则没有它们的镜头会继承之前的镜头的值，结果取决于渲染工作器在哪个帧上启动（工作器边界处的可见等级弹出，例如 60.9 s / S09 和 101.5 s / S16）。因此，每个缺失的等级键都会回落到 `GRADE0`（`post.js`：提升 `[0, .005, .018]` 凉爽之夜默认值，增益 `[1.03, 1, .95]`），并且对于任何工人数量，渲染都是相同的。夜间外观依赖于默认值；内饰必须明确返回其温暖的 `lift`（如 S08 所做的那样）。
+- 私语表现媒介听错中文同音字（八月→8月，她→他，婵娟→禅绢）；通过耳朵判断 DIFF，而不是通过字符串匹配。
+- Headless Chrome 必须使用 GPU 标志运行（`--use-angle=gl --enable-gpu --ignore-gpu-blocklist`、`render/browser.mjs`）； SwiftShader 速度慢约 6 倍。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/paper-lantern/demo/
@@ -126,7 +134,7 @@ styles/paper-lantern/demo/
   music/            analysis.json (librosa numbers); km_Ripples.mp3 + km_Nu_Flute.mp3 (incompetech, git-ignored)
 ```
 
-All commands from the repo root (`lemo-opuscar/`). Python = `.venv/bin/python`; `edge-tts` must be on `PATH` (user-level `pip install edge-tts`; it is not in `.venv`).
+来自存储库根 (`lemo-opuscar/`) 的所有命令。 Python = `.venv/bin/python`; `edge-tts` 必须位于 `PATH` 上（用户级 `pip install edge-tts`；它不在 `.venv` 中）。
 
 ```sh
 D=styles/paper-lantern/demo
@@ -152,36 +160,37 @@ node $D/render/video.mjs --workers 6       # → $D/out/video.mp4 (segments writ
 sh core/render/mux.sh $D/out/video.mp4 $D/out/mix.wav styles/paper-lantern/paper-lantern.mp4 30 0
 ```
 
-Review loop: stills of every shot at its key word time → sheet (`ffmpeg … tile=6x5`) → fix → only then the full render. Check the room shots (first 10 s, last 8 s) at full SSAA; they carry the "it's a real object" illusion.
+审查循环：每个镜头在其关键字时间的剧照 → 表 (`ffmpeg … tile=6x5`) → 修复 → 然后完整渲染。以全SSAA检查房间镜头（前10秒，后8秒）；他们带有“这是一个真实的物体”的错觉。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-**Page contract** (`src/main.js`): exposes `window.READY`, `window.DUR`, `window.render(t)` (deterministic per frame), `window.CUES` (line cues), `window.PLAN` (shot table). Query `?ssaa=N` (default 2).
+**页面合约** (`src/main.js`)：公开`window.READY`、`window.DUR`、`window.render(t)`（每帧确定性）、`window.CUES`（线条提示）、 `window.PLAN`（镜头表）。查询`?ssaa=N`（默认2）。
 
-**Timeline**: lines start at 2.6 s; each line lasts its `dur.json` length followed by `GAP[id]` seconds (`GAP` table in `main.js`, e.g. `L02: 4.2` for the title beat, `L25: 5.0` for the ending). Shots are anchored to lines in `src/shots/index.js`; changing a voice line re-times everything automatically.
+**时间轴**：行从 2.6 秒开始；每行持续其 `dur.json` 长度，后跟 `GAP[id]` 秒（`main.js` 中的 `GAP` 表，例如 `L02: 4.2` 表示标题节拍，`L25: 5.0` 表示结尾）。 镜头锚定到 `src/shots/index.js` 中的线；更改语音线路会自动重新计时。
 
-**Shot context `E`** (passed to `build`): `dur`, `T0`, `C` (all cues), `env` (PMREM room env map), `W` (words), `cue(id)` / `cueEnd(id)` (line start/end in shot-local seconds), `word(id, k)` (shot-local start of whisper token k).
+**Shot 上下文 `E`**（传递到 `build`）：`dur`、`T0`、`C`（所有线索）、`env`（PMREM 房间） env 映射）、`W`（单词）、`cue(id)` / `cueEnd(id)`（镜头中的 start/end 行 - 本地秒）、`word(id, k)`（镜头 - 耳语令牌 k 的本地开始）。
 
-| Module | Key API | Notes |
+|模块|关键API|笔记|
 |---|---|---|
-| `paper.js` | `sheet({ U, w, h, draw, glowDraw?, glow, glowCol, trans, z, x, y, ax, ay, shadow, recv, finish, ppm, bumpDraw? })` | One paper layer. `draw(x, k)` paints in metres (origin centre, y up). `glowDraw` paints the emissive map (white = light, black = mask). `trans` = backlight translucency. `ax/ay` = pivot. Returns a Mesh; `m.material.userData.u` has `uTrans`, `uGlowLit`, `uClip` (circle clip `[cx, cy, r, inside?]`). |
-| | `skyPanel({ w, h, z, stops, stars, starMinY, gain })` | Unlit gradient back panel. |
-| | `moon({ x, y, z, r, gain, halo, haloGain, art? })`, `setMoon(m, k)` | Disc + additive halo; `k` = brightness 0…1+. |
-| | `text(x, s, px, py, size, font, o)`, `vtext(…)` | Text in metre space (vertical for `vtext`). |
-| | `burst(w, h, col)` → `m.userData.set(k)` | Analytic additive glow. |
-| | `paint(w, h, draw, ppm)`, `finish(c, o)`, `tex(c)`, `PPM`, `GRAIN`, `CLOUD()` | Low-level canvas helpers. |
-| `stage.js` | `stage({ light, lightR, lightCol, key, keyCol, keyPos, keyTarget, keyAngle, amb, ambCol, shadowR, fov, bg })` → `{ scene, U, cam, key, amb, add(...) }` | Scene + top LED spot (VSM, 2048², radius 10) + ambient + backlight uniforms `U`. |
-| | `aim(cam, [px,py,pz, tx,ty,tz], t, { hand, handF, roll, fov })` | Camera with hand-held drift. |
-| | `dispose(scene)` | Called by the scheduler when a shot leaves. |
-| `post.js` | `Pipe.shot(scene, cam, { focus, aper, maxCoc, bloom: { strength, radius, threshold } }, target)` | MSAA4 half-float → CoC → 96-tap gather DoF → UnrealBloom. `focus` = distance in metres. |
-| | `Pipe.final({ mixB, mode, center, expo, fade, vig, sat, contrast, lift, gain })` | Dissolve / iris, grade, vignette, neutral tone map, sRGB. Keys a shot omits fall back to `GRADE0` every frame. |
-| `room.js` | `await lightbox(S, E, { spill, spillCol })` → `{ g, frame, spill, table, props }`, `BOX` | Real-world box, table, tea set, mooncakes. Textures load from `/core/assets/polyhaven/`. |
-| `art.js` | `karst`, `ridge`, `xiangyun`, `waves`, `waterTop`, `osmanthus`, `pine`, `willow`, `reeds`, `jiangnanHouse(x, o, g)`, `pavilion`, `lantern(x, o, g)`, `mooncake`, `FONT` | Paper-cut motifs; functions with `g` draw their windows into the glow canvas. |
-| `people.js` | `grannyStand/Sit`, `girlStand/Sit`, `childStand`, `sushi`, `change` (Chang'e), `rabbit`, `arm(x, s, a, b)`, `spline`, `ribbon`, `*_SHOULDER` | Silhouette figures, scale `s` = height in m. |
-| `props.js` | `cut(x, fn)`, `roundWindow`, `steamers`, `stove`, `jar`, `bowl`, `teapot`, `pendant`, `calendar`, `table`, `chair`, `boxFront`, `label`, `cake3q` | Interior props. |
-| `lib.js` | `ss`, `seg`, `eio`, `eo`, `ei`, `back`, `spring`, `lerp`, `clamp`, `mulberry`, `vnoise`, `track`, `env` | Deterministic helpers. |
+|`paper.js`|`sheet({ U, w, h, draw, glowDraw?, glow, glowCol, trans, z, x, y, ax, ay, shadow, recv, finish, ppm, bumpDraw? })`|一层纸。 `draw(x, k)` 以米为单位绘制（原点中心，y 向上）。 `glowDraw` 绘制发射贴图（白色 = 光，黑色 = 遮罩）。 `trans` = 背光半透明。 `ax/ay` = 枢轴。返回一个网格； `m.material.userData.u`有`uTrans`、`uGlowLit`、`uClip`（圆夹`[cx, cy, r, inside?]`）。|
+| |`skyPanel({ w, h, z, stops, stars, starMinY, gain })`|不发光的渐变背板。|
+| |`moon({ x, y, z, r, gain, halo, haloGain, art? })`、`setMoon(m, k)`|圆盘+附加光环； `k` = 亮度 0…1+。|
+| |`text(x, s, px, py, size, font, o)`、`vtext(…)`|米空间中的文本（`vtext` 为垂直）。|
+| |`burst(w, h, col)` → `m.userData.set(k)`|分析添加剂发光。|
+| |`paint(w, h, draw, ppm)`、`finish(c, o)`、`tex(c)`、`PPM`、`GRAIN`、`CLOUD()`|低级画布助手。|
+|`stage.js`|`stage({ light, lightR, lightCol, key, keyCol, keyPos, keyTarget, keyAngle, amb, ambCol, shadowR, fov, bg })` → `{ scene, U, cam, key, amb, add(...) }`|场景 + 顶部 LED 聚光灯（VSM，2048²，半径 10）+ 环境光 + 背光制服 `U`。|
+| |`aim(cam, [px,py,pz, tx,ty,tz], t, { hand, handF, roll, fov })`|摄影机带手持漂移。|
+| |`dispose(scene)`|当镜头离开时由调度程序调用。|
+|`post.js`|`Pipe.shot(scene, cam, { focus, aper, maxCoc, bloom: { strength, radius, threshold } }, target)`|MSAA4 半浮点 → CoC → 96 点收集 DoF → UnrealBloom。 `focus` = 距离（以米为单位）。|
+| |`Pipe.final({ mixB, mode, center, expo, fade, vig, sat, contrast, lift, gain })`|溶解/虹膜、等级、晕影、中性色调贴图、sRGB。 镜头的关键帧每帧都会忽略回退到 `GRADE0`。|
+|`room.js`|`await lightbox(S, E, { spill, spillCol })` → `{ g, frame, spill, table, props }`, `BOX`|现实世界的盒子、桌子、茶具、月饼。纹理从 `/core/assets/polyhaven/` 加载。|
+|`art.js`|`karst`、`ridge`、`xiangyun`、`waves`、`waterTop`、`osmanthus`、`pine`、`willow`、`reeds`、 `jiangnanHouse(x, o, g)`、`pavilion`、`lantern(x, o, g)`、`mooncake`、`FONT`|剪纸图案；使用 `g` 的函数将窗口绘制到发光画布中。|
+|`people.js`|`grannyStand/Sit`、`girlStand/Sit`、`childStand`、`sushi`、`change`（嫦娥）、`rabbit`、`arm(x, s, a, b)`、`spline`、 `ribbon`, `*_SHOULDER`|剪影人物，比例 `s` = 高度（米）。|
+|`props.js`|`cut(x, fn)`、`roundWindow`、`steamers`、`stove`、`jar`、`bowl`、`teapot`、`pendant`、`calendar`、 `table`、`chair`、`boxFront`、`label`、`cake3q`|室内道具。|
+|`lib.js`|`ss`、`seg`、`eio`、`eo`、`ei`、`back`、`spring`、`lerp`、`clamp`、 `mulberry`、`vnoise`、`track`、`env`|确定性助手。|
 
-**Minimal shot** (a moonlit hill with one lit window; add it to `SHOTS()` as `{ id: 'S99', start: L('L05') - .3, in: { type: 'dissolve', dur: .8 }, build: s99.build }`):
+**最小镜头**（月光下的小山，有一个被照亮的窗户；将其添加到`SHOTS()`作为`{ id: 'S99', start: L('L05') - .3, in: { type: 'dissolve', dur: .8 }, build: s99.build }`）：
 
 ```js
 import { sheet, skyPanel, moon, setMoon } from '../paper.js';
@@ -215,4 +224,4 @@ export function build(E) {
 }
 ```
 
-**Switching to English**: in `main.js` the subtitle splitter assumes Chinese (`st.length > 21`, split on `[，。：]`, punctuation → full-width space). For English change it to split at the `, ` nearest the middle when longer than ~42 characters and keep punctuation; set `#sub` to a Latin serif (e.g. add an OFL font such as Cormorant to `fonts/`) at ~38 px. `E.word(id, k)` then counts English words. Everything else (timeline, mix, render) is language-agnostic.
+**切换到英文**：在`main.js`中，字幕分割器假定为中文（`st.length > 21`，在`[，。：]`上分割，标点→全角空格）。对于英语，当长度超过 42 个字符时，将其更改为在最靠近中间的 `, ` 处拆分，并保留标点符号；将 `#sub` 设置为拉丁衬线（例如，添加 OFL 字体，如 Cormorant 到 `fonts/`），约为 38 像素。 `E.word(id, k)` 然后计算英语单词数。其他一切（时间轴、混合、渲染）都是与语言无关的。

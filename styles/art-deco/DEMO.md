@@ -1,76 +1,83 @@
-# Art Deco — our demo
+<a id="art-deco--our-demo"></a>
+# 装饰艺术 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Midnight at the Starlight Hotel* (58.4 s) · `art-deco.mp4` · source in [`demo/`](demo/)
+示范：*星光酒店的午夜*（58.4 秒）·`art-deco.mp4`·来源[`demo/`](demo/)
 
 
-The original brief for the demo: a 40–60 second film in the Art Deco style; the director decides story, shots, score, sound and titles.
+示范的原始简介：装饰艺术风格的 40-60 秒影片；导演决定故事、镜头、配乐、声音和标题。
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-A bellboy, Pip, must carry a sealed letter to the rooftop before midnight on New Year's Eve 1930. A small, urgent errand in a grand place. A mechanical obstacle (the elevator is OUT OF ORDER) turns panic into resolve. A rising middle with a tempo change (the stairs = Charleston). A true silence before the climax (the clock hits XII, the band stops, the letter tumbles). The climax is counted light: twelve strikes of midnight = the twelve letters of THE STARLIGHT lighting one by one.
+1930 年除夕夜，行李员皮普必须在午夜之前将一封密封的信件送到屋顶。这是在一个宏伟的地方执行的一项小而紧急的差事。机械障碍（电梯故障）将恐慌转变为决心。节奏变化的上升中音（楼梯=查尔斯顿）。高潮前真正的寂静（时钟敲响十二点，乐队停止，字母翻滚）。高潮是数光：午夜的十二下=星光的十二个字母一一点亮。
 
-**The music is the plot:** the letter holds the band's new song; the theme is only heard in fragments until the conductor opens it, and the 13th beat is the first full statement. Echo at the end: the hero who looked up at a dark sign now stands inside the lit one; a button gag closes the loop (the elevator dings IN SERVICE — too late).
+**音乐就是剧情：**信里拿着乐队的新歌；在指挥打开之前，只能听到主题的片段，第 13 拍是第一个完整的陈述。最后的回声：抬头看着黑暗标志的英雄现在站在亮着的标志里面；一个按钮堵住了循环（电梯在运行中发出叮当声——太晚了）。
 
-How the style's native powers were spent in this story:
+这种风格的固有力量是如何在这个故事中发挥作用的：
 
-| Native power | Demo use |
+|原生电源|示范用途|
 |---|---|
-| The centre axis | Every transition is a door: the title arch splits open, stair doors burst, kitchen swing doors bang, elevator doors close into the end card. |
-| Counted light | The bulb sign lights letter by letter, one per bell. |
-| Machine symmetry | A Busby Berkeley overhead: fans opening on eighth notes become a sunburst, then lock into a clock face. Used as the release after the climax. |
-| Dials & numbers | Floor indicator, clock face, floor medallions, year badge: floor 30, 11:55, 1930 carry the plot without narration. |
-| Period radio | An announcer as narrator, moved through acoustic spaces (street horn → desk radio → stairwell PA → live mic) so the audience hears the hero getting closer to the source. |
+|中心轴|每个过渡都是一扇门：标题拱门裂开，楼梯门爆裂，厨房旋转门砰地一声，电梯门关闭到片尾卡。|
+|计数光|灯泡标志一个字母一个字母地亮，每个铃一个字母。|
+|机器对称性|头顶上是巴斯比伯克利分校：扇形从八分音符开始变成旭日形，然后锁定在钟面上。用作高潮后的释放。|
+|拨号盘和数字|楼层指示器、钟面、楼层徽章、年份徽章：1930 年 11 点 55 分，第 30 层，讲述了没有旁白的情节。|
+|时代电台|播音员作为旁白，在声学空间（街道喇叭→桌上收音机→楼梯间扩音器→现场麦克风）中移动，以便观众听到英雄越来越接近声源。|
 
-The recipe we used to adapt it (for this demo): find the threshold (doors), the deadline (a clock), the counted reveal (a sign, floor numbers), and the thing the finale unlocks (a song).
+我们用来调整它的方法（对于这个示范）：找到门槛（门），截止日期（时钟），计数的显示（标志，楼层数字），以及结局解锁的东西（一首歌）。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| Beat | Camera |
+|打|摄影机|
 |---|---|
-| Opening (3 s hook) | A single gold point explodes into rays and stepped arches; slow 6 % push. Title bar blooms on the orchestra hit. |
-| Transition grammar | **Symmetric split**: the outgoing frame becomes two door leaves hinged at the edges that swing open from the seam (arch, stair doors, kitchen doors). The revolving door is its rotary cousin (glass wings wipe). The film closes with elevator doors sliding shut over the live shot. |
-| Establishing | Extreme low-angle Cassandre tilt from the dark sign at the top of the tower down to the tiny hero on the street: goal, difficulty and the dark sign (the setup of the ending) in one move. |
-| Obstacle | Medium on the plaque dropping; a slow push on the face during the silence while he straightens his cap. |
-| Signature 1 | The stairwell as an **architectural section**: rise with him, pull out until the whole tower is a cutaway and he is a red dot with speed lines, push back in on the "30" floor medallion, match-cut to a spinning silver tray in the kitchen. |
-| Silence | Insert of the tower clock's minute hand clicking to XII; the letter tumbling in slow motion past the dark letters. |
-| Climax | Twelve bells: catch (ECU glove) → conductor (tear the seal, insert of the score, baton up) → low oblique of the sign as letters light one per strike → close-up as the last T lights behind the hero, gold light across his face. |
-| Signature 2 | **Busby Berkeley**: an oblique high angle as 8 dancers open their fans one per eighth note, then straight overhead, 8-way mirrored and slowly rotating; the fans lock into a clock face with two gold hands at XII. |
-| Scale reveal | Pull back from the sign to the whole tower, the city and fireworks (echoes the opening tilt). |
-| Ending | Elevator doors slide shut over the live shot; the end card plaque sits on the closed doors. |
+|开口（3S钩）|单个金点爆炸成射线和阶梯式拱门；缓慢 6% 推动。标题栏在管弦乐队的热门歌曲中绽放。|
+|过渡语法|**对称分体**：输出框架成为两个门扇，铰接在从接缝处摆动打开的边缘（拱门、楼梯门、厨房门）。旋转门是它的旋转门（玻璃翼擦拭）。 影片关闭时，电梯门在带电的镜头上滑动关闭。|
+|建立|极度低角度的卡桑德尔倾斜，从塔顶的黑暗标志向下倾斜到街上的小英雄：目标、难度和黑暗标志（结局的设置）一举两得。|
+|障碍|表现媒介上牌匾掉落；沉默中，他拉直帽子，缓慢地推了一下他的脸。|
+|签名1|楼梯间是**建筑剖面**：和他一起上升，拉出直到整个塔是一个剖面图，他是一个带有速度线的红点，推回“30”地板奖章，匹配切割到厨房里旋转的银托盘。|
+|沉默|塔钟分针插入 XII；这封信以慢动作翻滚着，越过黑色的字母。|
+|高潮|十二个铃：接住（ECU手套）→指挥（撕开封条，插入配乐，警棍向上）→标志的低斜线，字母每次敲击一个灯→特写，英雄身后最后一个T灯，金光掠过他的脸。|
+|签名2|**Busby Berkeley**：8个舞者以八分之一音符打开扇子时的倾斜高角度，然后笔直在头顶上，8向镜像并缓慢旋转；球迷们锁定在十二号处有两只金色指针的钟面。|
+|规模揭示|从标牌拉回整个塔楼、城市和烟火（呼应开场倾斜）。|
+|结束|电梯门滑关过带电镜头； 片尾卡牌匾位于紧闭的门上。|
 
-Performance beats: the elevator button pressed three times (once, twice, mash); the throw has a wind-up, release and a near-fall over the railing; the cap knocked off by a tray lands back on his head one bar later while he doesn't even look. In the opening the gold lines grow at the speed of the clarinet glissando (slow → fast), landing on the downbeat hit. After all letters are lit, a 16th-note chase runs across the whole sign.
+表演节拍：电梯按钮按三下（一次、两次、混搭）；投掷有一个卷起、释放和险些跌倒在栏杆上的过程；一小节后，被托盘撞落的帽子又落在了他的头上，而他甚至没有看。在开头，金线以单簧管滑奏的速度增长（慢→快），落在悲观的打击上。所有字母点亮后，16 分音符追逐贯穿整个标志。
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Score first**: `timeline.js` is the single source of truth (116 BPM foxtrot → 16 beats accelerating to 138 BPM Charleston → stop → 12 bells on the 116 grid → the song in D♭). `tools/cuecheck.py` checks 53 picture sync points against `music/score.json` (max offset 0.5 ms).
-- **Orchestration as used**: piano lead (Salamander), clarinet (low trill + two-octave glissando curtain-raiser), strings (tremolo bed, upward rushes), muted trumpet commentary ("wah-wah" on the plaque), brushes → sticks in the Charleston, walking pizz bass, tubular bells (B♭) for midnight, harp/piano glissandi for each fan, trombone + sax for the final chorus.
-- **Planting the theme**: title = piano bar 1; street = muted trumpet tries two bars and is cut off; kitchen = the hero whistles the first four notes; finale = the full song.
-- **Distance automation**: the band plays on the 30th floor, so it is low-passed at 2.5 kHz on the street, 1.2 kHz in the lobby (through the floor), opens up as he climbs, full-range and dry on the roof.
-- **Announcer in five spaces** (Kokoro `bm_fable`): street horn (band-pass 320–3.8 kHz, soft drive, slap echo) → desk radio → stairwell PA (long reverb) → kitchen radio → live mic (full range). Heavy horn distortion made "five minutes to midnight" unintelligible in the full mix, so the drive was reduced.
-- **Foley as used**: brass button click, bronze plaque clang + chain rattle, iron stair treads on eighth notes, marble heels, silver trays, wooden swing doors + spring twang, paper flutter, glove slap, knife-switch "chunk" + filament hum per letter, relay ticks for the chase, firework whistles.
-- **Silences**: after "Out of order?!" only the lobby clock ticks twice (next sound: the Charleston snare); after the tower clock clicks to XII only wind and the fluttering letter (next sound: the first bell, the most important sound in the film); one beat of held breath after bell 12 (next: tutti).
-- **J/L-cuts**: radio tuning noise before the arch opens; the echo of "Out of order?!" rolls up the stairwell; the kitchen radio starts during the stairwell; rooftop wind enters a bar before the kitchen doors; bell 12's tail rings into the tutti.
-- Mix: music ducked ≈ −9 dB under voice (−6 dB under the live announcer), beds −6 dB; −14 LUFS, grain 3.
+- **得分第一**：`timeline.js`是唯一的事实来源（116 BPM狐步→16节拍加速到138 BPM Charleston→停止→116网格上的12个铃声→D♭中的歌曲）。 `tools/cuecheck.py` 对照 `music/score.json` 检查 53 个图像同步点（最大偏移 0.5 ms）。
+- **使用的编曲**：钢琴主音（火蜥蜴），单簧管（低音颤音+两个八度的滑奏拉开帷幕），弦乐（颤音床，向上冲），静音小号注释（匾额上的“哇哇”），查尔斯顿的画笔→木棍，行走的比兹贝斯，管钟(B♭) 午夜，harp/piano 滑音为每位乐迷，长号+萨克斯为最后的副歌。
+- **种植主题**：标题=钢琴小节1； street = 静音小号尝试了两个小节并被切断；厨房=英雄吹响了前四个音符；结局=完整歌曲。
+- **远程自动化**：乐队在30楼演奏，因此在街道上为2.5 kHz低通，在大厅为1.2 kHz（穿过地板），在他爬上时开放，在屋顶上为全频和干燥。
+- **五个空间的播音员** (Kokoro `bm_fable`)：街道喇叭（带通 320–3.8 kHz、软驱动、拍击回声）→ 桌面收音机→ 楼梯间 PA（长混响）→ 厨房收音机→ 现场麦克风（全频）。严重的喇叭失真使完整混音中的“距午夜五分钟”变得难以理解，因此驱动器被降低。
+- **Foley使用**：黄铜按钮点击声，青铜牌匾叮当声+链子嘎嘎声，八分音符上的铁楼梯踏板，大理石脚跟，银色托盘，木制平开门+弹簧声，纸颤动，手套拍打，刀开关“块”+每个字母的细丝嗡嗡声，追逐的继电器滴答声，烟花哨声。
+- **段落**：在“故障？！”之后只有大厅的时钟滴答两声（下一个声音：查尔斯顿军鼓）；塔钟敲响十二后，只有风声和飘动的字母（下一个声音：第一个钟声，影片中最重要的声音）；十二点钟后屏住呼吸一拍（下一个：合奏）。
+- **J/L 切割**：拱门打开前的无线电调谐噪音； “出了故障？！”的回声。滚上楼梯间；厨房收音机在楼梯间启动；屋顶风从厨房门前进入酒吧；铃 12 的尾部响起合奏。
+- 混音：人声下的音乐回避 ≈ −9 dB（现场播音员下的 −6 dB），床位 −6 dB； −14 LUFS，颗粒 3。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-- Ground: warm black `#0d0b09`, lacquer `#060504`; night sky `#0a0e16` → horizon emerald `#10231f`.
-- Gold: `#6F5220` (shadow) → `#C9A24B` (base) → `#F3D98B` (light) → `#FFF4D2` (specular).
-- Accents: burgundy `#8E1B2E` (the hero's uniform, the only large saturated area), emerald `#1D6B57` (fans, door panels, night), ivory `#F2E8D5` (the letter, gloves, carpet).
-- Scenes: the lobby in one-point perspective with a mode-7 floor; the rooftop sign in two-point perspective from below with a tiny pinhole camera.
-- Pip: 7 heads tall, tapered streamline body, faceted lacquer planes; silhouette marks: tilted pillbox cap + chin strap, a V of brass buttons, the sealed letter always in hand.
-- Other props: the OUT OF ORDER plaque, the tower clock, the bulb sign THE STARLIGHT, the conductor and the score, waiters with silver trays, 8 dancers with emerald fans, fireworks.
-- Reference stills (rebuilt by `build.sh`, same renderer as the film): [`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg), Pip's model sheet (turnaround on a 7-head scale, silhouette check, six expressions, key poses, palette swatches, the letter); [`demo/stills/kit_v2.jpg`](demo/stills/kit_v2.jpg), the component kit (title bar, numerals and clocks, sunburst, arch frames, patterns, bulb marquee, subtitle cards), each labelled with its engine call; style frames [`demo/stills/frame_v2_lobby.jpg`](demo/stills/frame_v2_lobby.jpg) (the one-point lobby with the mode-7 floor) and [`demo/stills/frame_v2_roof.jpg`](demo/stills/frame_v2_roof.jpg) (the bulb sign from below in two-point perspective).
+- 地面：暖黑`#0d0b09`，亮漆`#060504`；夜空`#0a0e16`→地平线翡翠`#10231f`。
+- 金色：`#6F5220`（阴影）→ `#C9A24B`（基础）→ `#F3D98B`（光）→ `#FFF4D2`（镜面）。
+- 口音：酒红色`#8E1B2E`（英雄制服，唯一大饱和区域），翠绿`#1D6B57`（风扇，门板，夜晚），象牙色`#F2E8D5`（字母，手套，地毯）。
+- 场景：7楼单点透视大堂；从下面看两点透视的屋顶标志，有一个小针孔摄影机。
+- 笔尖：7头高，锥体流线型，刻面漆面；剪影标志：倾斜的药盒帽+下巴带，V形黄铜纽扣，密封的信始终在手中。
+- 其他道具：“OUT OF ORDER”牌匾、塔钟、灯泡标志“星光”、售票员和配乐、拿着银托盘的服务员、8 个拿着翡翠扇子的舞者、烟花。
+- 参考剧照（由 `build.sh` 重建，与影片相同的渲染器）：[`demo/stills/modelsheet_v2.jpg`](demo/stills/modelsheet_v2.jpg)、Pip 的角色设定表（7 头比例上的角色转面图、轮廓检查、六个表情、关键姿势、调色板样本、信件）； [`demo/stills/kit_v2.jpg`](demo/stills/kit_v2.jpg)，组件套件（标题栏、数字和时钟、旭日、拱形框架、图案、灯泡选框、字幕卡），每个都标有其引擎调用； 风格定帧 [`demo/stills/frame_v2_lobby.jpg`](demo/stills/frame_v2_lobby.jpg)（模式7层的一点大厅）和[`demo/stills/frame_v2_roof.jpg`](demo/stills/frame_v2_roof.jpg)（两点视角下方的灯泡标志）。
 
-## Titles & end card
+<a id="titles--end-card"></a>
+## 标题 & 片尾卡
 
-- Subtitle card speaker icons: a gold ribbon mic for the announcer, a burgundy pillbox cap for the hero.
-- Title: MIDNIGHT / AT THE STARLIGHT HOTEL in a gold title bar over the stepped arch, a 1930 diamond year badge, NEW YEAR'S EVE label.
-- End card: a lacquer plaque on the closed elevator doors: title, ART DECO, LEMO-OPUSCAR, "LemoLab × Claude Opus 5.5", asset credits. This sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card.
+- 字幕卡扬声器图标：播音员的金丝带麦克风，英雄的酒红色药盒帽。
+- 标题：《午夜/星光酒店》，位于阶梯拱门上方的金色标题栏、1930 年钻石年徽章、新年前夜标签。
+- 片尾卡：关闭的电梯门上的漆牌：标题、装饰艺术、LEMO-OPUSCAR、“LemoLab × Claude Opus 5.5”、资产积分。此签核仅属于本库的示范；用户的影片没有 LemoLab 积分，也没有该卡的副本。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
 ```
 styles/art-deco/demo/
@@ -84,43 +91,44 @@ styles/art-deco/demo/
   music/score.py   original score → score.wav + stems + score.json      mix.py   voices in 5 spaces + foley + beds + ducking
   tools/           cuecheck.py · subs.py · pitch.py · dump_timeline.mjs
 ```
-1. Write the tempo grid and the cue table first; hand them to a music sub-agent and draw in parallel.
-2. Build the engine and the hero model sheet, then one scene per location, then one function per shot. Review single shots with `?scene=frames.shotTest&shot=<name>`.
-3. `sh demo/build.sh` rebuilds everything: timeline → TTS → pitch → whisper → score → cue check → mix → srt → render (≈15 s with 4 workers for 1401 frames) → mux (−14 LUFS, grain 3) → stills.
-4. Review at 1 s intervals with `still.mjs --range 0:58:1` + `sheet.py`, then frame strips at 0.15–0.2 s for every key action.
+1. 先写出节奏网格和cue表；将它们交给音乐分代理并并行绘制。
+2. 构建引擎和英雄角色设定表，然后每个位置一个场景，然后每个镜头一个函数。使用 `?scene=frames.shotTest&shot=<name>` 查看单个镜头。
+3. `sh demo/build.sh` 重建一切：时间轴 → TTS → 音调 → Whisper 语音识别 → 配乐 → 提示检查 → 混合 → srt → 渲染（约 15 秒，4 个工作人员处理 1401 帧）→ 复用器（−14 LUFS，颗粒 3）→ 剧照。
+4. 使用 `still.mjs --range 0:58:1` + `sheet.py` 以 1 秒的间隔进行查看，然后以 0.15–0.2 秒的速度对每个关键操作进行帧条带。
 
-Pitfalls tied to this demo's props:
-- The first transition to the end card slid the elevator doors in over a flat brown "interior", which read as a blank frame; only the leaves are drawn now, closing over the live shot.
-- The opening (one gold point on black) tripped `blackdetect`; the background sunburst wedges and glow were lifted.
-- Pip at ¼ frame height in the bell shots was too small for the emotional peak; the last bell got a close-up.
-- Three-digit hex turned the emerald fans blue-violet.
+与示范的道具相关的陷阱：
+- 向片尾卡的第一次过渡是将电梯门滑入平坦的棕色“内部”，其读作是一个空白框架；现在只画了叶子，结束了现场镜头。
+- 开局（黑底金点）绊倒了`blackdetect`；背景旭日楔形和辉光被提升。
+- 钟镜头中 1/4 帧高度处的点对于情绪峰值来说太小；最后一个钟声有一个特写。
+- 三位数的十六进制将翡翠扇子变成了蓝紫色。
 
-## Engine reference
+<a id="engine-reference"></a>
+## 发动机参考
 
-All drawing is Canvas2D, deterministic in `t`. Import from `demo/engine/`.
+所有绘图都是Canvas2D，在`t`中是确定性的。从 `demo/engine/` 导入。
 
 **deco.js**
-| Function | Purpose |
+|功能|目的|
 |---|---|
-| `C` | palette (`ink black night gold0 gold1 gold2 goldHi ivory emerald burg plum skin bulb…`) |
-| `goldGrad(g, x0,y0,x1,y1, {sheen, hot, tint})` | banded metal gradient; animate `sheen` −0.2→1.2 for a light sweep |
-| `gline(g, pts, {w, part, closed, glow, double, sheen, alpha, color})` | the engraved gold keyline; `part` 0→1 draws it on; `color` = any hex for the one-colour exception |
-| `airbrush(g, pts|Path2D, {base, dark, light, dir, rim})` | hard-edged airbrushed fill |
-| `sunburst(g, cx, cy, {rays, r0, r1, mode:'lines'|'wedges', a0, a1, rot, part})` | radial backgrounds |
-| `stepArchPts(cx, base, w, h, {steps, crown})` / `archFrame(g, cx, base, w, h, {rings, gap, fill, burst, part})` | ziggurat arches and arch frames |
-| `fan`, `fishScale`, `chevrons`, `sparkle`, `speedLines`, `glow`, `beam`, `vignette` | motif library |
-| `drawShape(g, pts, {color, halo, trail, glints, part})` | **any path in the deco manner**: airbrushed gold (or `color`) fill + gold keyline + optional sunburst halo, speed-line trail and glints |
-| `starPts(cx, cy, r, k, rot, n)` | four-point star path |
+|`C`|调色板 (`ink black night gold0 gold1 gold2 goldHi ivory emerald burg plum skin bulb…`)|
+|`goldGrad(g, x0,y0,x1,y1, {sheen, hot, tint})`|带状金属梯度；动画 `sheen` −0.2→1.2 进行轻扫|
+|`gline(g, pts, {w, part, closed, glow, double, sheen, alpha, color})`|雕刻的金色钥匙线； `part` 0→1 取上； `color` = 单色例外的任意十六进制|
+|`airbrush(g, pts|Path2D, {base, dark, light, dir, rim})`|硬边喷枪填充|
+|`sunburst(g, cx, cy, {rays, r0, r1, mode:'lines'|'wedges', a0, a1, rot, part})`|放射状背景|
+|`stepArchPts(cx, base, w, h, {steps, crown})` / `archFrame(g, cx, base, w, h, {rings, gap, fill, burst, part})`|金字形神塔拱门和拱门框架|
+|`fan`、`fishScale`、`chevrons`、`sparkle`、`speedLines`、`glow`、`beam`、`vignette`|主题库|
+|`drawShape(g, pts, {color, halo, trail, glints, part})`|**any 装饰风格路径**：喷绘金色（或 `color`）填充 + 金色键线 + 可选的旭日光环、速度线轨迹和闪光|
+|`starPts(cx, cy, r, k, rot, n)`|四点星轨|
 
-**type.js**: `goldText(g, text, x, y, {size, font, track, sheen})` · `titleBar(g, text, cx, cy, {p, out, size, sub, wings})` (animated in/out) · `decoDigits(g, '11:59', x, y, size)` · `yearBadge(g, '1930', cx, cy, r, {p})` · `floorMedallion(g, '30', cx, cy, r, {sub})` · `dial(g, cx, cy, r, value, {labels})` (semicircle floor indicator, value 0..1) · `clockFace(g, cx, cy, r, {h, m, s, roman})` · `subtitleCard(g, text, {p, out, speaker:'radio'|'boy'})`.
+**type.js**：`goldText(g, text, x, y, {size, font, track, sheen})`·`titleBar(g, text, cx, cy, {p, out, size, sub, wings})`（动画in/out）·`decoDigits(g, '11:59', x, y, size)`·`yearBadge(g, '1930', cx, cy, r, {p})`· `floorMedallion(g, '30', cx, cy, r, {sub})` · `dial(g, cx, cy, r, value, {labels})`（半圆楼层指示器，值0..1） · `clockFace(g, cx, cy, r, {h, m, s, roman})` · `subtitleCard(g, text, {p, out, speaker:'radio'|'boy'})`。
 
-**bulbs.js**: `buildSign(text, {font, size, spacing})` (any text → glyph skeleton → evenly spaced bulbs, cached) · `drawSign(g, sign, x, y, scale, {lit, channel, color})` · `litAll(v)` · `litSequence(t, times[], {flash, chaseFrom, chaseSpeed})` (letter i switches on at `times[i]`, then chases).
+**bulbs.js**：`buildSign(text, {font, size, spacing})`（任何文本→字形骨架→均匀间隔的灯泡，缓存）·`drawSign(g, sign, x, y, scale, {lit, channel, color})`·`litAll(v)`·`litSequence(t, times[], {flash, chaseFrom, chaseSpeed})`（字母i在`times[i]`，然后追击）。
 
-**cam.js**: `makeCam({x, y, z, f, yaw, pitch, roll})` → `{P(X,Y,Z), scaleAt(X,Y,Z)}` · `cardTransform(g, cam, TL, TR, BL, w, h)` (map a flat card onto a 3D quad).
+**cam.js**：`makeCam({x, y, z, f, yaw, pitch, roll})` → `{P(X,Y,Z), scaleAt(X,Y,Z)}` · `cardTransform(g, cam, TL, TR, BL, w, h)`（将平面卡映射到 3D 四边形上）。
 
-**chars.js** (demo characters): `drawFigure(g, {x, y, s, view:'side'|'q'|'front'|'back', face, ...pose})` · `POSES`, `FRONT_POSES`, `lerpPose`, `runCycle(phase)`, `runFront(phase)` · `drawDancer`, `drawDancerTop`, `envelope`, `clef`.
+**chars.js**（示范字符）：`drawFigure(g, {x, y, s, view:'side'|'q'|'front'|'back', face, ...pose})`·`POSES`、`FRONT_POSES`、`lerpPose`、`runCycle(phase)`、 `runFront(phase)`·`drawDancer`、`drawDancerTop`、`envelope`、`clef`。
 
-**The one colour.** To keep one element in its own colour, pass `color` — it is used for the fill, keyline and glow while everything else stays gold:
+**一种颜色。** 要使一个元素保持其自己的颜色，请传递 `color` — 它用于填充、键线和发光，而其他所有内容都保持金色：
 
 ```js
 import * as D from './engine/deco.js';

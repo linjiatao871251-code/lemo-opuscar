@@ -1,127 +1,139 @@
-# Sci-fi Hologram HUD — Style Prompt
+<a id="sci-fi-hologram-hud--style-prompt"></a>
+# 科幻全息界面：风格提示词
 
-> An object is scanned into a glowing wireframe. Target boxes lock onto its parts; each opens in a local exploded view, a leader pulls out, and its number rolls from garbage glyphs into the real value. It may light up, once, into a solid hologram.
-> References (grammar only): the *Iron Man* / *Avengers* HUDs (target boxes, callouts, rolling numbers, layered depth); the *Oblivion* interfaces (one colour, hairlines, space); CAD exploded views. Copy none of their layouts, icons, fonts or colours.
+> 对象被扫描成发光线框。目标盒锁定其部件；每个都以局部分解视图打开，一个领导者拉出，其数字从垃圾字形滚动到实际值。它可能会点亮一次，形成固体全息图。
+> 参考资料（仅语法）：*钢铁侠* / *复仇者联盟* HUD（目标框、标注、滚动数字、分层深度）； *Oblivion* 界面（单一颜色、细线、空间）； CAD 分解图。请勿复制其布局、图标、字体或颜色。
 
-A **scene style**: it does a practical job (a spec walkthrough, a teardown, a loop screen) for any object with parts. See §11 for the jobs.
+**场景风格**：它对任何带有零件的对象进行实际工作（规范演练、拆解、循环屏幕）。有关职位信息，请参阅第 11 节。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-The subject is always a **line wireframe made of light** above a round projector pad on a near-black stage, never a rendered object. Everything reads as *scanned data*: a scan plane grows the model, parts pull apart along their assembly axes, numbers are *computed* on screen.
+主题始终是一个**由光制成的线框**在近乎黑色的舞台上的圆形投影仪垫上方，从来都不是渲染的对象。一切都读作“扫描数据”：扫描平面生长模型，零件沿装配轴拉开，数字在屏幕上“计算”。
 
-Three depth layers are always present: a **background dot grid** (slow parallax), the **subject** with its pad and floor, and the **foreground HUD** (corner brackets, rulers that parallax faster, status text).
+始终存在三个深度层：**背景点网格**（慢视差），**主体**及其垫和地板，以及**前景HUD**（角括号，标尺，视差更快，状态文本）。
 
-Not a type-driven keynote (dark-keynote), not a drafting sheet (blueprint), not a product render (glass-product). The subject stays a wireframe; it may gain translucent faces once, and even then the lines stay on top.
+不是类型驱动的主题演讲（暗主题演讲），不是绘图表（蓝图），也不是产品渲染（玻璃产品）。主题保持线框；它可能会获得一次半透明的面，即使如此，线条仍保留在顶部。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Stage**: near-black tinted by the hue, a radial lift behind the subject, a fading dot grid, a strong vignette.
-- **Projector pad** in true perspective: concentric rings (one bright, one dashed), ticks, faint rays; it rotates slowly and spins with any turntable move.
-- **Wireframe**: additive ~1.3 px strokes in a few alpha levels set by **depth fog** (near bright, far ~25 %), plus two low-res glow passes.
-- **Hot edges** (near-white of the hue) only for what matters now: the scan front, inner pieces flagged `hot` when opened, a light wave, a part being pinged.
-- **Real CAD topology**: tubes are rings plus longitudinal lines. **Every part is physically connected**: a floating piece is noticed first.
-- **Solid hologram**: faces filled with a screen-space **Fresnel** × a scrolling **interlace**; lines thicken as it ignites; a light wave climbs the model. A **beam** (one path, nonzero winding) with faint rays and dust.
-- **HUD furniture**: corner brackets, parallaxing rulers, subject // mode top left, a live status line top right, telemetry at the bottom.
-- **Text never sits on the wireframe**: every text block has its own **dark plate** (translucent near-black, 1 px border, corner ticks); the camera still keeps the subject clear of text.
+- **阶段**：色调接近黑色，主体后面的径向升力，褪色的点网格，强烈的晕影。
+- **投影垫**真实视角：同心环（一亮，一虚）、刻度、微弱光线；它缓慢旋转并随着转盘的任何移动而旋转。
+- **线框**：在由**深度雾**设置的几个alpha级别中添加约1.3像素的描边（近亮，远约25％），加上两个低分辨率发光通道。
+- **热边缘**（接近白色的色调）仅适用于现在重要的事情：扫描正面，打开时标记为`hot`的内部部件，光波，被探测的部件。
+- **真实CAD拓扑**：管子是环形加纵向线。 **每个部件都是物理连接的**：首先注意到一个浮动部件。
+- **实体全息图**：充满屏幕空间的面孔**菲涅尔**×滚动**交错**；点燃时线条变粗；光波爬上模型。带有微弱光线和灰尘的 **光束**（单路径，非零缠绕）。
+- **HUD 家具**：角括号，视差标尺，主题//模式左上角，实时状态行右上角，遥测在底部。
+- **文本永远不会在线框上**：每个文本块都有自己的**暗板**（半透明近乎黑色，1 px边框，角勾）； 摄影机仍然保持文本主题清晰。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **One cold hue plus one warm accent**, both parameters (e.g. mint/orange, violet/lime, ice-blue/red; choose from the subject).
-- The hue carries lines, HUD and fills. The **accent is spent on locked values only**: a number turns accent-coloured at the frame it becomes true. Nothing else ever uses it.
-- White is heat: near-white edges and one-frame flashes mark what is active. Everything at rest sits in the hue's alpha levels.
-- One object may keep its own colour (the single-colour exception, `keep`), for a brand mark, never for decoration.
+- **一种冷色调加一种暖色调**，两个参数（例如mint/orange、violet/lime、ice-blue/red；从主题中选择）。
+- 色调带有线条、HUD 和填充。 **accent 仅用于锁定值**：数字在其变为真时变为强调色。没有其他东西使用过它。
+- 白色是热度：接近白色的边缘和一帧闪烁标志着活动状态。静止的一切都位于色调的 Alpha 级别。
+- 一件物品可以保留自己的颜色（单色例外，`keep`），用于品牌标记，绝不用于装饰。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Rajdhani, all caps: Light for big numbers and the product name (wide tracking), Medium/SemiBold for labels. Share Tech Mono for micro data (coordinates, counters, zoom).
-- Numbers are **monospaced** so rolls never jitter; the decimal point is a small square (a glowing "." reads as a comma).
-- Subtitles are HUD: a dark plate with corner brackets and "voiceprint" bars moving with the speech, near-white Rajdhani Medium, bottom centre; in just before the voice, hold ≥ max(1.8 s, speech + 0.6 s).
-- The title is part of the scene (no title card): the name rolls in like a value, then code, category and tagline.
+- Rajdhani，全部大写：浅色表示大数字和产品名称（宽跟踪），Medium/SemiBold 用于标签。分享 Tech Mono 的微数据（坐标、计数器、缩放）。
+- 数字为 **等宽**，因此卷不会抖动；小数点是一个小正方形（发光的“.”读作逗号）。
+- 字幕是 HUD：带有角括号和随演讲移动的“声纹”条的深色板，近乎白色的 Rajdhani 表现媒介，底部中心；在声音之前，保持 ≥ max(1.8 s, 语音 + 0.6 s)。
+- 标题是场景的一部分（没有标题卡）：名称像值一样滚动，然后是代码、类别和口号。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Everything on ones at 24 fps.** Only glyph scrambling steps, every frame.
-- **Target lock**: oversized, rotated 45°, faint; snaps to fit in ~0.2 s (cubic ease-out), flashes white 3 frames on the downbeat.
-- **Explode** along each piece's assembly axis: the shell slides *along its own axis*, the contents stay in place and glow. Open over a beat or two, close fast.
-- **Leader**: anchor ring → diagonal → horizontal to the card in ~0.5 s. **Rolling value**: characters lock right-to-left and turn accent on the downbeat with a one-frame flash.
-- **Chip dock**: a finished value slides into a side rail and stays until the end.
-- **The camera follows the box**: cubic ease, starting *before* the next lock, **real motion blur** only inside the whip (sub-frames, 180° shutter); HUD stays sharp.
-- **No cuts or fades inside the scene**: only the scan plane (scanning in or erasing) and a loupe iris. A **glitch** of three frames at most once, on the biggest change.
+- **一切都以 24 fps 进行。** 每帧仅字形置乱步骤。
+- **目标锁**：超大，旋转45°，微弱；捕捉到约 0.2 秒（三次缓出），在强拍时闪烁白色 3 帧。
+- **爆炸** 沿着每个部件的组装轴：外壳*沿着其自己的轴*滑动，内容物保持在原位并发光。打开一两拍，快速关闭。
+- **领导者**：锚环→对角线→与卡水平，约0.5秒。 **滚动值**：角色从右向左锁定，并通过一帧闪光将重音转向强拍。
+- **芯片底座**：成品滑入侧轨并停留到最后。
+- **摄影机跟随盒子**：立方轻松，在下一个锁定之前*开始，**真实运动模糊**仅在鞭子内（子帧，180°快门）； HUD 保持锐利。
+- **场景内没有剪切或淡出**：只有扫描平面（扫描或擦除）和放大镜光圈。一个**毛刺**最多三帧一次，变化最大。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-An orbit camera (yaw, pitch, distance, narrow fov) with a screen position for the target, so the subject can sit beside text. A vocabulary, not a route. Opening and ending come from the topic.
+轨道摄影机（偏航、俯仰、距离、窄视场），具有目标的屏幕位置，因此主体可以坐在文本旁边。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| High 3/4, slow orbit craning down | Examination; a scan plane reads as an ellipse | a scan-in; a survey |
-| Top-down plan view | Layout, order | a parts inventory; an assembly sequence |
-| Eye-level profile, locked | The object as it stands in use | a height; a before/after |
-| Push-in, then drift, 3/4 | This part matters; internals come towards the lens | the key spec; a flaw |
-| Whip following the target box | Attention jumps to the next part | a list of parts |
-| Orbit around a part's own axis | Axial structure only reads in rotation | rotors, stacks, hinges, lenses |
-| Lateral dolly along a long part | Length, a path | a beam; a cable run |
-| Pull back + loupe (frame in frame) | Where (wide) and what (loupe) | small parts; a sensor |
-| Crane to eye level or back up | Status change: the object stands up or settles | a transformation; scale |
-| Turntable 360° | Every side | a whole object; a symmetry |
-| Nearly static, slow dolly | Reading time without a dead frame | a spec sheet; a checklist |
+|高3/4，慢轨道下降|考试;扫描平面读取为椭圆形|扫描输入；一项调查|
+|自上而下的平面图|布局、顺序|零件库存；装配顺序|
+|眼睛水平轮廓，锁定|使用中的对象|高度； before/after|
+|推入式，然后漂移，3/4|这部分很重要；内部构件朝向镜头|关键规格；一个缺陷|
+|鞭子跟随目标框|注意力跳到下一部分|零件清单|
+|绕零件自身轴旋转|轴向结构只能旋转读取|转子、叠片、铰链、透镜|
+|沿着长部件横向移动|长度，一条路径|横梁；电缆线路|
+|回拉+放大镜（框中框）|地点（广角）和内容（放大镜）|小零件；一个传感器|
+|吊至视线水平或倒车|状态变化：物体站立或沉降|转变；规模|
+|转盘360°|每一面|一个完整的物体；对称性|
+|几乎静止、缓慢的移动车|无死帧的阅读时间|规格表；清单|
 
-Framing: the subject is ≥ ⅓ of frame height at every key moment. Cards on one side, the chip rail on the other, subtitles bottom centre, a loupe above them: never colliding. Shorten explode vectors rather than fly a piece into text.
+取景：每个关键时刻被摄体距离画面高度≥⅓。一侧是卡片，另一侧是芯片导轨，字幕位于底部中心，上方有放大镜：永远不会碰撞。缩短爆炸向量，而不是将片段飞入文本中。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music first**, on a grid (a bar = one information beat); locks land on downbeats, checked against the score.
-- **Synth palette**: saw/square arpeggio with ping-pong delay (scooped 1–4 kHz for the voice), square pulse, 8th bass, synth hats and claps, detuned saw pads.
-- **Density follows information.** Tools to pick from, in any order (most films need two or three): half-time for reading time; one beat of **true digital silence** (nothing, not even UI blips); a drop (808-style glide + wide saw chord) for the biggest change; a layer added or removed per part; deceleration by longer note values; a key change; a single sustained tone under a long hold.
-- **Foley follows the material**: light = sines and FM blips **in the key**; machines = servo slides, pneumatic puffs, hydraulic hiss, metal tinks (J-cuts); a lock = thump + clack + two-tone beep; rolls tick at frame rate. Ambience: projector hum (40/80/120 Hz) and room tone.
-- **Voice**: calm, confident. Duck music *and* foley with a **held** envelope (no pumping between words); lock transients escape. −14 LUFS.
+- **音乐第一**，在网格上（一个小节=一个信息节拍）；锁定落在悲观的位置，对照配乐进行检查。
+- **合成器调色板**：saw/square琶音，带乒乓延迟（声音为1-4 kHz），方波脉冲，第八低音，合成器帽子和拍手，失谐锯垫。
+- **密度遵循信息。** 可以任意顺序选择的工具（大多数影片需要两个或三个）：读取时间减半；一拍**真正的数字静音**（什么都没有，甚至没有UI提示）；最大的变化是下降（808式滑音+宽锯弦）；每个部分添加或删除的层；较长音符值的减速；一个关键的改变；长时间按住时发出的单一持续音。
+- **Foley 遵循材料**：光 = 正弦波和 FM 光点 **在按键中**；机器 = 伺服滑轨、气动泡芙、液压嘶嘶声、金属叮当声（J 形切割）；锁=重击声+咔哒声+两声蜂鸣声；以帧速率滚动。环境：投影仪嗡嗡声 (40/80/120 Hz) 和房间音调。
+- **嗓音**：冷静、自信。 Duck 音乐*和* 拟音，带有 **握住** 包络（单词之间无泵送）；锁定瞬变逃逸。 −14 LUFS。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-Each move serves information, not story. A menu: use the ones your film needs.
+每一步都提供信息，而不是故事。菜单：使用您的影片需要的菜单。
 
-- **Scan growth = "this is real data."** *Fits content like:* a coffee machine; a satellite; an architectural model.
-- **Target lock = "look here now."** The box is the camera. *Fits content like:* a car's sensors; a laptop's ports; a robot arm's joints.
-- **Local explode = "why the number is true."** *Fits content like:* the burr set of a grinder; the layers of a running shoe sole; the elements of a camera lens.
-- **Rolling digits = the payoff beat.** *Fits content like:* a brew temperature; a tolerance in microns; a price.
-- **Chip accumulation = reading time.** *Fits content like:* 3–5 facts that must all be read.
-- **Loupe = two scales at once.** *Fits content like:* a screw inside a watch; a chip on a board; a valve in an engine.
-- **Solid hologram + beam = "the whole is ready."** Once, if at all. *Fits content like:* a launch reveal; a finished assembly; a v2 replacing v1.
+- **Scan Growth =“这是真实数据。”** *适合以下内容：*咖啡机；一颗卫星；一个建筑模型。
+- **目标锁定=“现在看这里。”** 这个盒子是摄影机。 *适合以下内容：* 汽车传感器；笔记本电脑的端口；机器人手臂的关节。
+- **Localexplode =“为什么这个数字是真的。”** *适合的内容如下：*磨床的毛刺组；跑鞋鞋底的层数； 摄影机镜头的元件。
+- **滚动数字 = 支付节拍。** *适合以下内容：* 酿造温度；微米级公差；一个价格。
+- **芯片积累=阅读时间。** *适合内容如下：* 3-5个必须全部阅读的事实。
+- **Loupe = 同时使用两个刻度。** *适合以下内容：*手表内的螺丝；板上的芯片；发动机中的阀门。
+- **实体全息图+光束=“整体准备就绪。”** 一次，如果有的话。 *适合以下内容：* 发布揭晓；完成的组件； v2 取代 v1。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Target boxes balloon → rest pose, skip `internal` pieces, long attachments `box:false`.
-- Long diagonal leaders point at the wrong part → ring on the part body, flash the part.
-- Two parallel boxes moving don't read as an explode → shell slides on its axis, contents stay and glow.
-- A part built from generic boxes doesn't read as that part → give it its characteristic silhouette.
-- Voice masked by foley, not music → duck foley too, hold the duck through word gaps.
-- UI blips inside a silence break it → check cues against silence windows.
-- A whip written inside the next segment plays as a hard cut → start it in the previous one.
+- 目标箱气球→休息姿势，跳过`internal`件，长附件`box:false`。
+- 长对角引线指向错误的零件→零件主体上的环，使零件闪烁。
+- 两个平行移动的盒子不会被解读为爆炸 → 外壳在其轴上滑动，内容物停留并发光。
+- 由通用盒子构建的部件并不像该部件那样→赋予其特征轮廓。
+- 声音被拟音掩盖，而不是音乐 → 鸭子拟音也是如此，通过单词间隙抓住鸭子。
+- 沉默中的 UI 闪烁打破了沉默→检查沉默窗口的提示。
+- 写在下一段中的鞭子作为硬剪辑→在前一段中开始。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine/holo.js` (wireframe engine: projection, scan, explode, Fresnel faces, glow, pad, scan plane, `normalizeModel`, `modelFromPath` to extrude any 2D path), `demo/engine/hud.js` (theme, plate, target box, leader, rolling text, spec card, chip, marker, beam, subtitle, chrome, glitch), `demo/models/mkmodel.mjs` (primitives: tube, ring, disc, box, wheel, cells…). Models are normalised on load, so cameras work for any object. API, model format and an example: [DEMO.md](DEMO.md#engine-reference).
+`demo/engine/holo.js`（线框引擎：投影、扫描、爆炸、菲涅耳面、发光、焊盘、扫描平面、`normalizeModel`、`modelFromPath` 挤出任何 2D 路径）、`demo/engine/hud.js`（主题、板、目标框、引线、滚动文本、规格卡、芯片、标记、光束、字幕、镀铬、故障）、 `demo/models/mkmodel.mjs`（基元：管、环、盘、盒、轮、单元……）。模型在负载上进行标准化，因此相机适用于任何对象。 API、模型格式和示例：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the object, its model, which parts and in what order, the opening, the ending, the camera path, the colours, the pacing and the music. Use cases are **grammar for the order and duration of information**; build your own timeline from the user's facts.
+您决定对象、其模型、哪些部分和顺序、开头、结尾、摄影机路径、颜色、节奏和音乐。用例是 **信息顺序和持续时间的语法**；根据用户的事实构建您自己的时间表。
 
-| Use case | Information order | Hold per layer | Length |
+|使用案例|信息订购|每层保持|长度|
 |---|---|---|---|
-| **Spec walkthrough** | Name + tagline → one spec per part (label, value, unit, detail) → weight / price → CTA | Title ≥ 5 s; value ≥ 2.5 s, then docked; final sheet ≥ 3 s | 30–40 s, 2–5 parts |
-| **Loop screen** | Name → 3–5 specs → CTA, no voice; last frame = first | 3 s per spec, 5 s final | 20–30 s loop |
-| **Teardown** | Part → what it does → one number; internals only when opened | 4–6 s per part | 40–60 s |
-| **Upgrade** | Part → old value (dim) → new value (accent); old part scan-erased, new one scanned in | 3 s per upgrade | 20–30 s |
-| **Assembly order** | Step number → part name; parts snap home one by one | one bar per part | 20–40 s |
+|**规格演练**|名称+标语→每个零件一个规格（标签、价值、单位、详细信息）→重量/价格→CTA|标题≥5秒；值≥2.5s，则对接；最终片材≥3秒|30–40 秒，2–5 部分|
+|**环屏**|名称 → 3–5 个规格 → CTA，无语音；最后一帧 = 第一帧|每个规格 3 秒，最终 5 秒|20–30 秒循环|
+|**拆解**|部分→它的作用→一个数字；仅在打开时内部|每个部分 4–6 秒|40–60 秒|
+|**升级**|部分→旧值（暗淡）→新值（重音）；旧部分扫描删除，新部分扫描进去|每次升级 3 秒|20–30 秒|
+|**装配订单**|步骤号→零件名称；零件一一扣回家|每个部分一根小节|20–40 秒|
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **a loop screen** that never names a product and cycles five sensors; **a teardown** one layer deeper per shot until the core is a single hot piece; **an upgrade** where two versions share the pad and every number rolls from old to new.
-- Openings: **a part first** (one component locked in close-up; the rest scans out from it); **a flat outline** (a 2D silhouette extrudes into the wireframe, `modelFromPath`); **plan view** (top-down, the pad as a dial, the object arriving as its footprint).
-- Endings: **one value at eye level** (the wireframe dims around the single number that matters); **knolling** (parts fly into a labelled top-down layout); **power-down** (edges cool, HUD panels switch off until only the pad glows).
+- 结构：**a循环屏幕**，从不命名产品并循环五个传感器； **a 拆解**每镜头更深一层，直到核心成为单个热件；**an 升级**，其中两个版本共享垫，每个号码从旧滚动到新。
+- 开口：**a 第一部分**（一个组件锁定在特写中；其余组件从中扫描出来）； **a 平面轮廓**（2D 轮廓挤出到线框中，`modelFromPath`）； **平面图**（自上而下，键盘作为表盘，到达的物体作为其足迹）。
+- 结局：**视线水平的一个值**（线框在重要的单个数字周围变暗）；**小丘**（部件飞入带标签的自上而下布局）；**掉电**（边缘冷却，HUD 面板关闭，直到只有垫子发光）。
 
-Swapping `demo/content.json` and rebuilding is a technical check that the engine re-flows, not a way to make a film.
+交换 `demo/content.json` 并重建是发动机回流的技术检查，而不是制造影片的方法。
 
 ---
 
-How our demo was made (story, shots, score, end card, build, content fields): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建、内容字段）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

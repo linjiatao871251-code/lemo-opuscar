@@ -1,106 +1,114 @@
-# Living Screencast — our demo
+<a id="living-screencast--our-demo"></a>
+# 生活截屏 — 我们的示范
 
-One example among many. Don't reuse its story, arc, shots, props or timings.
+众多例子中的一个。请勿重复使用其故事、弧线、镜头、道具或时间安排。
 
-Demo: *Clawd Moves In* (59.4 s) · `living-screencast.mp4` · source in [`demo/`](demo/) · Claude Code in the Claude app, with Clawd (the Claude Code pixel mascot) as the protagonist. Unofficial fan film; Anthropic did not make or endorse it.
+示范：*Clawd 移入*（59.4 秒） · `living-screencast.mp4` · 来源在 [`demo/`](demo/) · Claude 应用程序中的 Claude Code，以 Clawd（Claude Code 像素吉祥物）为主角。非官方风扇影片； Anthropic 并未制作或认可它。
 
 
-## Story & structure
+<a id="story--structure"></a>
+## 故事与结构
 
-Clawd, the Claude Code pixel mascot, climbs out of the terminal logo and moves into the Claude app, then acts out four features in four chapters: **01 Just say it** (plain-language prompt with an @-mention, reading files), **02 Plan first** (Plan mode; nothing changes until you say go), **03 Review** (the diff, a line comment, the revision), **04 Checks its own work** (the preview, the dark-mode toggle, parallel sessions). The slogan closes it: "Say it. Plan it. Review it. Ship it." Every interaction was checked against the official desktop documentation.
+Clawd，Claude Code 像素吉祥物，从终端徽标中爬出，进入 Claude 应用程序，然后在四个章节中表演四个功能： **01 Just say it**（带有 @ 提及的简单语言提示，读取文件），**02 首先计划**（计划模式；没有任何改变，直到你说去），**03 Review**（差异，行注释，修订），**04检查其自己的工作**（预览，暗模式切换，并行会话）。口号结束了它：“说出来。计划它。审查它。交付它。”每个交互都根据官方桌面文档进行检查。
 
-The brief the demo was made from (the old "six rules", now spread over STYLE.md §1–§6):
+示范的摘要（旧的“六条规则”，现在分布在 STYLE.md §1–§6）：
 
-| Rule | Why |
+|规则|为什么|
 |---|---|
-| **Real UI, redrawn** | Every label, mode name and shortcut matches the real product. No screenshots, no lorem ipsum. The demo code, diff and test output are coherent, and the "app under test" really changes. |
-| **Recording-software camera** | One continuous take inside the screen. Push in on the action, drift slightly, and whip-pan between panes. Zoom never drops below 1, so we never see outside the monitor. Cuts happen only under chapter transitions. |
-| **Pixel grid is sacred** | The mascot, its props (pencil, "!", sparkles, heart, dust) and its trails share one square-pixel grid with crisp edges. It scales with the camera. Its position snaps to half-pixels, so its motion feels stepped. |
-| **Gravity = top edges of UI** | The mascot only ever stands on the top edge of a real element: input box, menu, file row, diff line, button, CI bar, the title's letters. Position comes from **measuring the live DOM** every frame, never hand-placed coordinates. |
-| **Cause and effect** | Every mascot action triggers a real UI state change, and every user action is a cursor move, click or keystroke shown on a KeyCastr-style HUD. |
-| **Information layers** | A chapter pill (01–04), the keystroke HUD, frosted-glass caption pills, and an optional "▶▶ 4×" time-lapse tag. Nothing else overlays the screen. |
+|**真实UI，重绘**|每个标签、模式名称和快捷方式均与真实产品匹配。没有屏幕截图，没有 lorem ipsum。 示范代码、差异和测试输出是一致的，并且“被测应用程序”确实发生了变化。|
+|**录音软件摄像头**|屏幕内的连续拍摄。推动动作，稍微漂移，然后在窗格之间快速平移。变焦永远不会低于 1，因此我们永远看不到显示器之外的情况。剪切仅发生在章节转换下。|
+|**像素网格是神圣的**|吉祥物、它的道具（铅笔、“！”、闪光、心形、灰尘）及其轨迹共享一个边缘清晰的方形像素网格。它可与摄影机一起扩展。它的位置捕捉​​到半像素，因此它的运动感觉是阶梯式的。|
+|**重力=UI**的顶部边缘|吉祥物仅位于真实元素的顶部边缘：输入框、菜单、文件行、差异行、按钮、CI 栏、标题字母。位置来自**每帧测量实时 DOM**，绝不手动放置坐标。|
+|**因果**|每个吉祥物动作都会触发真实的 UI 状态更改，每个用户操作都是在 KeyCastr 风格的 HUD 上显示的光标移动、单击或击键。|
+|**信息层**|章节丸 (01–04)、击键 HUD、磨砂玻璃标题丸以及可选的“▶▶ 4×”延时标签。没有其他东西覆盖屏幕。|
 
-### Director's toolkit, as the demo spent it (all ten used)
+<a id="directors-toolkit-as-the-demo-spent-it-all-ten-used"></a>
+### 导演工具包，为示范用了它（十个都用了）
 
-1. **Match-cut origin story.** The terminal logo's quadrant block characters (`▐▛███▜▌`) are the mascot's pixels 1:1. Each tall quadrant morphs into a square pixel, and the character climbs out of the terminal, leaving a dashed outline behind.
-2. **Diegetic title.** The product name drops in as the app's empty-state heading, and the mascot lands on its letters on the downbeat.
-3. **Staging on a moving floor.** The mascot follows the typing caret, jumps onto the @-mention popup, and rides the sent message as it flies up the chat.
-4. **Time-lapse with a tag.** Reading files runs at 4× with a flashing tag and rack focus: the chat is blurred and the pane is sharp.
-5. **Spotlight freeze.** On the key promise ("nothing changes until you say go") the camera pushes in and a vignette isolates the *No files changed* badge.
-6. **Directional motion blur only on whips.** It is derived from camera speed and applied as an anisotropic Gaussian on an **untransformed wrapper**. Slow moves stay sharp.
-7. **The film itself changes state.** The dark-mode toggle's reveal doesn't stop at the preview. The circle keeps growing over the whole app and desktop, and the rest of the film is in dark mode. At the end, the mascot's last stomp brings the light back from its own feet.
-8. **Cell division.** The new session splits the window, and the mascot splits into two with a pixel burst.
-9. **Karaoke-ball end card.** The mascot hops from word to word of the slogan, landing on each word as it is spoken.
-10. **The cursor and the mascot are characters.** The cursor "pets" the mascot on the head: it squashes, closes its eyes, and a heart pops up.
+1. **匹配剪辑起源故事。** 终端标志的象限块字符（`▐▛███▜▌`）是吉祥物的像素1:1。每个高象限都会变成一个正方形像素，角色爬出终端，留下虚线轮廓。
+2. **饮食标题。** 产品名称作为应用程序的空状态标题出现，吉祥物以悲观的方式落在其字母上。
+3. **在移动的地板上登台。** 吉祥物跟随输入插入符号，跳到@提及弹出窗口，并在聊天时骑乘发送的消息。
+4. **带标签的延时拍摄。** 读取文件以 4 倍速度运行，带有闪烁的标签和机架焦点：聊天模糊，窗格清晰。
+5. **Spotlight 冻结。** 根据关键承诺（“除非您说走，否则一切不会改变”），摄影机会推入，并用一个小插图隔离“无文件更改”徽章。
+6. **仅在鞭子上进行定向运动模糊。** 它源自摄影机速度，并在 **未变换的包装器** 上作为各向异性高斯应用。缓慢的动作保持敏锐。
+7. **影片本身会更改状态。** 暗模式切换的显示不会在预览时停止。整个应用程序和桌面上的圆圈不断扩大，影片的其余部分处于黑暗模式。最后，吉祥物的最后一跺脚将光从它自己的脚上带了回来。
+8. **细胞分裂。** 新会话分割窗口，吉祥物通过像素突发一分为二。
+9. **卡拉 OK 球片尾卡.** 吉祥物在口号中从一个单词跳到另一个单词，在说出每个单词时着陆。
+10. **光标和吉祥物都是角色。** 光标“宠”在吉祥物的头上：它被压扁，闭上眼睛，弹出一颗心。
 
-The demo's sprite is an **18×10** grid unfolded 1:1 from the terminal logo's quadrant characters; its props (pencil, "!", sparkles, heart, dust) share that grid.
+示范的精灵是一个**18×10**网格，从终端标志的象限字符1:1展开；它的道具（铅笔、“！”、火花、心、灰尘）共享该网格。
 
-## Shots
+<a id="shots"></a>
+## 镜头
 
-| # | Time | Picture / Clawd | Camera / move |
+|#|时间|图片/克劳德|摄影机 / 移动|
 |---|---|---|---|
-| 1 | 0:00 | `claude` typed in a terminal; the logo's blocks come alive and Clawd climbs out, leaving a dashed outline | locked on the terminal → match-cut origin |
-| 2 | 0:05 | The Claude app window opens; Clawd lands on the empty-state heading, the title | diegetic title on the downbeat |
-| 3 | 0:09 | **01** typing, @ file popup; Clawd stands on the input box, then rides the sent message | push-in to the caret; moving floor |
-| 4 | 0:14 | Clawd runs along the file tree, read rows highlight | 4× time-lapse tag + rack focus |
-| 5 | 0:19 | **02** ⇧⌘M mode menu; Clawd on top of the menu watches Plan get picked | push-in on the menu |
-| 6 | 0:23 | Plan pane; Clawd writes item 4 with a pixel pencil; *No files changed* badge | spotlight freeze |
-| 7 | 0:29 | **03** `+24 −3` stat bar; Clawd cheers on it; the cursor clicks Review | whip-pan to the diff (motion blur) |
-| 8 | 0:32 | Diff: comment on line 6, ⌘↵; Clawd lies on the comment box reading | push-in |
-| 9 | 0:37 | The line is rewritten, "!" over Clawd, stats become +13 | locked |
-| 10 | 0:42 | **04** preview; Clawd stomps the toggle, dark spreads from the button over the whole app and desktop | the film changes state |
-| 11 | 0:50 | ⌘N new session; the window splits, Clawd splits into three (CI green, tests 50/50, new session) | pull back; cell division |
-| 12 | 0:56 | End card: karaoke-ball slogan; the last stomp brings the light back from Clawd's feet | locked |
+|1|0:00|在终端中输入 `claude`；标志的方块变得生动起来，克劳德爬了出来，留下了虚线轮廓|锁定终端→匹配剪切原点|
+|2|0:05|克劳德应用程序窗口打开；克劳德落在空状态标题上，标题|悲观的叙事标题|
+|3|0:09|**01** 打字，@文件弹出； Clawd 站在输入框上，然后骑着发送的消息|推入插入符号；移动地板|
+|4|0:14|Clawd 沿着文件树运行，读取行突出显示|4×延时标签+机架对焦|
+|5|0:19|**02** ⇧⌘M 模式菜单；克劳德在菜单顶部观察计划被选择|在菜单上推入|
+|6|0:23|计划窗格； Clawd 用像素铅笔写下第 4 项； *没有文件更改*徽章|聚光灯冻结|
+|7|0:29|**03** `+24 −3` 统计栏；克劳德为此欢呼；光标单击“审阅”|快速平移到差异（运动模糊）|
+|8|0:32|差异：第 6 行注释，⌘↵；克劳德躺在评论框上阅读|推入式|
+|9|0:37|该行被重写，“！”超过克劳德，统计数据变为+13|锁定|
+|10|0:42|**04** 预览； Clawd 踩下开关，黑色从按钮蔓延到整个应用程序和桌面|影片改变状态|
+|11|0:50|⌘N个新会话；窗口分裂，Clawd 分裂成三部分（CI 绿色，测试 50/50，新会话）|拉回来；细胞分裂|
+|12|0:56|片尾卡：卡拉OK球口号；最后一跺脚让克劳德的脚恢复了光亮|锁定|
 
-## Score structure
+<a id="score-structure"></a>
+## 配乐结构
 
-- **Score in two resolutions.** The hi-fi layer (piano, upright bass, drum kit, glockenspiel, real samples) is the world. The chiptune square wave is the mascot's voice.
-- **Score structure:**
-    - The band enters when the mascot lands on the title.
-    - Each chapter transition gets a tom fill and a crash.
-    - The last chapter drops the drums to build tension.
-    - The dark-mode stomp crossfades the whole band into a low-passed "night" version.
-    - The split screen becomes a left/right duet (piano left, chiptune right).
-    - The end-card words are chiptune notes; the final stomp opens the filter on a big major-9 chord.
-- **Foley:** keyboard (a thock plus a click, with human timing jitter), trackpad clicks, pane swishes, popup pops, CI ticks, a shutter for screenshots. Mascot steps, jumps and landings are 8-bit.
-- **VO:** calm, one feature per line, product names verified with whisper. Keep effects off word onsets: a keypress landing on "Start" masked the word.
+- **两种分辨率的分数。** 高保真层（钢琴、立式贝司、架子鼓、钟琴、真实样本）就是世界。芯片音乐方波是吉祥物的声音。
+- **分数结构：**
+    - 当吉祥物落在标题上时，乐队入场。
+    - 每一章的过渡都会充满轰鸣声和崩溃声。
+    - 最后一章放下鼓来营造紧张气氛。
+    - 黑暗模式踩踏将整个乐队交叉淡入淡出为低通“夜间”版本。
+    - 分屏变成 left/right 二重奏（左钢琴，右芯片音乐）。
+    - 结束卡词是chiptune音符；最后的踩踏打开大九和弦上的滤波器。
+- **拟音：** 键盘（敲击加点击，带有人为计时抖动）、触控板点击、窗格滑动、弹出窗口、CI 滴答声、屏幕截图快门。吉祥物的步数、跳跃和落地都是 8 位的。
+- **VO：** 冷静，每行一个功能，产品名称经过耳语验证。保持单词开头的效果：按下“开始”键会掩盖该单词。
 
-Tempo ~104 BPM (the treatment's plan). The end-card words are chiptune notes C5 E5 G5 C6 in `sound.py`.
+节奏 ~104 BPM（创作方案的计划）。结束卡字是`sound.py`中的chiptune音符C5 E5 G5 C6。
 
-Mascot timings in the demo: anticipation crouch 0.14 s with squash 0.28; walk at 9 steps/s. The full acting notes:
+示范中的吉祥物计时：预期蹲下 0.14 秒，挤压 0.28；走在 9 steps/s. 完整表演笔记：
 
-- **Jumps:** anticipation crouch (0.14 s, squash 0.28), stretch on take-off, tucked legs in the air, a landing squash with a damped bounce, and dust puffs.
-- **Idle:** a tiny squash on every beat of the score, so the character breathes in time with the music. It blinks at irregular intervals.
-- **Walk:** 9 steps/s leg alternation. The direction flips the sprite.
-- **Eyes carry the acting:** n / l / r / u / d / wide / happy / shut / blink. They look at what matters: the popup, the cursor, the line being revised.
-- **Arms:** down / up (cheer) / wave. Props sit on the same grid.
+- **跳跃：** 预期蹲伏（0.14 秒，挤压 0.28）、起飞时伸展、将双腿夹在空中、带有阻尼弹跳的着陆挤压和灰尘喷发。
+- **闲置的：** 配乐的每个节拍上都有一个小挤压，因此角色可以与音乐同步呼吸。它以不规则的间隔闪烁。
+- **行走：** 9 steps/s 腿交替。方向翻转精灵。
+- **E眼睛携带动作：** n/l/r/u/d/宽/快乐/关闭/眨眼。他们关注重要的事情：弹出窗口、光标、正在修改的行。
+- **武器：** 向下/向上（欢呼）/挥手。道具位于同一网格上。
 
-Voice: Kokoro `am_michael`, speed 1.0 (other voices read "Claude" as "Clod"). A keypress landing on "Start" masked the word, hence the rule to keep effects off word onsets.
+语音：Kokoro `am_michael`，速度1.0（其他语音将“Claude”读作“Clod”）。按下“开始”键会掩盖该单词，因此规则是要避免对单词开头产生影响。
 
-## Palette & props
+<a id="palette--props"></a>
+## 调色板和道具
 
-The Claude app's light theme (ink `#1F1E1C`, clay `#D97757`, `--clay2` `#BD5D3A` for the stressed slogan word) and its real dark theme after the toggle (ink `#EEEAE2`, clay `#E08565`), all as CSS variables in `demo/index.html`. Clawd in brand clay `#D97757` with `#B85F40` shading and `#2A2622` eyes; pencil yellow `#F2C14E`, heart `#E0543A`, check `#2F9E4F` (`demo/clawd.js`). Fonts: Inter, Newsreader, JetBrains Mono (OFL). The "app under test" is a small tomato-timer project (`~/tomato-timer`); the UI shows the model name as it appeared in the app.
+Claude 应用程序的浅色主题（ink `#1F1E1C`、clay `#D97757`、`--clay2` `#BD5D3A` 表示强调的口号词）及其切换后的真正深色主题（ink `#EEEAE2`、clay `#E08565`），全部作为 CSS 变量`demo/index.html`。品牌粘土 `#D97757` 爪，带有 `#B85F40` 阴影和 `#2A2622` 眼睛；铅笔黄色`#F2C14E`，心形`#E0543A`，检查`#2F9E4F`（`demo/clawd.js`）。字体：Inter、Newsreader、JetBrains Mono (OFL)。 “被测应用程序”是一个小型番茄定时器项目（`~/tomato-timer`）； UI 显示应用程序中出现的型号名称。
 
-**Rights.** Unofficial fan film: it uses the official Claude Code mascot and redraws the Claude app's interface closely. The end card says "Unofficial fan film". A user's film should show their own product and mascot, or an original pixel character.
+**权利。** 非官方粉丝影片：使用官方Claude Code吉祥物，紧密重绘Claude应用界面。 片尾卡表示“非官方粉丝影片”。用户的影片应显示他们自己的产品和吉祥物，或原始像素字符。
 
-## End card
+<a id="end-card"></a>
+## 端卡
 
-Clawd hops across "Say it. Plan it. Review it. Ship it." word by word as it is spoken (Newsreader 64 px, the last word in clay italic), then "Claude Code · in the Claude app" and a small credit line (`film.js`, end-card function): "LemoLab × Claude Opus 5.5 · Unofficial fan film · Voice · Fonts", plus the sample credits (Salamander Grand Piano V3, MuldjordKit, Versilian Studios, Karoryfer). The "LemoLab × Claude Opus 5.5" sign-off belongs to this library's demo only; a user's film carries no LemoLab credit and no copy of this card (remove that line when adapting `film.js`).
+克劳德跳过“说出来。计划它。审查它。交付它。”逐字逐句地朗读（Newsreader 64 px，最后一个单词为粘土斜体），然后是“Claude Code · in the Claude app”和一个小信用额度（`film.js`，结束卡功能）：“LemoLab × Claude Opus 5.5 · Unofficial fan 影片 · Voice · Fonts”，加上样本信用（Salamander Grand Piano V3、MuldjordKit、Versilian Studios、Karoryfer）。 “LemoLab × Claude Opus 5.5”签名仅属于该库的示范；用户的影片不带有 LemoLab 积分，也没有该卡的副本（在调整 `film.js` 时删除该行）。
 
-## Build notes
+<a id="build-notes"></a>
+## 构建笔记
 
-- `demo/film.js` is the timeline. VO lines are placed at fixed times, and every visual beat hangs off a spoken word (`W(id, word)`). It holds the camera moves, the `Actor` (mascot) segments, the `Cursor`, and the sound events.
-- `demo/ui.js` turns state into HTML for the terminal and the Claude app.
-- `demo/clawd.js` holds the sprite grid, poses and pixel props.
-- `demo/main.js` handles the light and dark layers, DOM anchor measurement, motion blur, and the HUD (captions, keys, pixel wipes, spotlight).
-- `demo/sound.py` builds the score, foley and VO from `events.json`, with ducking.
-- Run everything with `sh styles/living-screencast/demo/build.sh`. The full render takes about 30 s.
+- `demo/film.js` 是时间线。旁白台词放置在固定的时间，每个视觉节拍都挂着一个口头单词（`W(id, word)`）。它包含摄影机运动、`Actor`（吉祥物）段、`Cursor` 和声音事件。
+- `demo/ui.js` 将终端和 Claude 应用程序的状态转换为 HTML。
+- `demo/clawd.js` 保存精灵网格、姿势和像素道具。
+- `demo/main.js` 处理明暗层、DOM 锚点测量、运动模糊和 HUD（标题、按键、像素擦除、聚光灯）。
+- `demo/sound.py` 使用音量闪避从 `events.json` 构建配乐、拟音和 VO。
+- 使用 `sh styles/living-screencast/demo/build.sh` 运行一切。完整渲染大约需要 30 秒。
 
-Other files: `demo/lines.json` (VO lines), `demo/tools/asr_check.py` (whisper check + word timestamps, `sh demo/build.sh --vo`), `demo/tools/mixcheck.py`, `demo/tools/subs.mjs` (captions → `.srt`). `build.sh` also renders the style frame (40.9 s) and the poster (8.9 s).
+其他文件：`demo/lines.json`（VO 行）、`demo/tools/asr_check.py`（Whisper 语音检查 + 单词时间戳，`sh demo/build.sh --vo`）、`demo/tools/mixcheck.py`、`demo/tools/subs.mjs`（字幕 → `.srt`）。 `build.sh` 还渲染风格定帧（40.9 秒）和海报（8.9 秒）。
 
-Don'ts we wrote for this demo (now STYLE.md §9):
+我们为此示范（现在为 STYLE.md §9）写的不要：
 
-- Don't invent features or rename modes. If a button isn't in the docs, it isn't in the film.
-- Don't let the mascot float in empty space, cover text the viewer should read, or sit under a caption.
-- Don't use screenshots, blur-filter "fake depth" on text you want read, or zoom out past the screen.
-- Don't put a hand, arm or finger on screen. The cursor is the user.
+- 不要发明功能或重命名模式。如果按钮不在文档中，则它不在影片中。
+- 不要让吉祥物漂浮在空白处，遮盖观看者应该阅读的文字，或者位于标题下方。
+- 不要使用屏幕截图，对要阅读的文本进行模糊过滤“假深度”，或者缩小屏幕。
+- 请勿将手、手臂或手指放在屏幕上。光标就是用户。

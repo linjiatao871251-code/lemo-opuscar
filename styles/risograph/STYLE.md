@@ -1,123 +1,135 @@
-# Risograph Print — Style Prompt
+<a id="risograph-print--style-prompt"></a>
+# Risograph 孔版印刷：风格提示词
 
-> Animation that looks printed, frame by frame, on a stencil duplicator: two or three translucent spot inks overprinted on warm paper, halftone dots, ink grain, and plates that never quite line up.
-> References (grammar only): Tom Haugomat's riso illustrations (colour fields and silhouettes, a small figure in a large world, extra colours made by overprinting); Jacques Tati's *Jour de fête* (comedy staged small in a wide frame, everyday sounds as rhythm); real riso prints (translucent inks, misregistration, pinholes, feed streaks). Copy none of their characters, compositions or palettes.
+> 动画看起来是在模板复印机上逐帧打印的：两到三个半透明专色油墨套印在暖纸上、半色调点、油墨颗粒和从未完全对齐的印版上。
+> 参考资料（仅语法）：Tom Haugomat 的 riso 插图（色域和轮廓、大世界中的小人物、套印产生的额外颜色）；雅克·塔蒂 (Jacques Tati) 的《Jour de fête》（喜剧，在大框架中上演，日常听起来像节奏）；真实的 riso 印刷品（半透明油墨、套准错误、针孔、进纸条纹）。请勿复制他们的任何角色、构图或调色板。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A risograph prints **one colour at a time**: each colour is its own stencil ("plate") with its own drum of translucent ink. That one fact makes the look:
+立体版画**一次一种颜色**：每种颜色都有自己的模板（“印版”）和自己的半透明油墨鼓。这一事实使我们看起来：
 
-- **A tiny palette**: 2–3 spot inks on warm off-white paper.
-- **Overprint mixing**: inks multiply, so two inks make a third colour and all three approach black; a tint of one ink over a solid of another gives the brightest mixes.
-- **Misregistration**: every plate lands a few pixels off; edges show slivers of paper or a coloured halo.
-- **Halftone dots** for mid-tones, each plate on its own screen angle; **imperfect ink**: pinholes in solids, streaks along the feed direction, blotchy density.
-- **Flat shapes, no outlines**: forms are colour fields and silhouettes.
+- **A 小调色板**：暖灰白色纸张上的 2-3 点墨水。
+- **叠印混合**：油墨相乘，因此两种油墨产生第三种颜色，并且所有三种颜色都接近黑色；将一种油墨的色调覆盖在另一种油墨的固体上可以产生最明亮的混合效果。
+- **套准错误**：每个印版都会偏离几个像素；边缘显示纸条或彩色光环。
+- **H半色调网点**为中间色调，每个印版都有自己的加网角度； **不完美的油墨**：固体中有针孔，沿进纸方向有条纹，斑点密度。
+- **扁平形状，无轮廓**：形式是色域和轮廓。
 
-Not flat vector art with a noise overlay (every colour comes from the plates), not CMYK pop-art halftone (no process colours, no keyline), not screen-print posters (riso ink is translucent and grainy, not opaque). **Never** show the RISO brand, logo or machine trade dress; ink names are colour references only.
+不是带有噪声叠加的平面矢量艺术（每种颜色都来自印版），不是 CMYK 流行艺术半色调（无印刷色，无基线），不是丝网印刷海报（riso 墨水是半透明和颗粒状的，而不是不透明的）。 **绝不** 显示 RISO 品牌、标志或机器商业外观；墨水名称仅供颜色参考。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-**Pipeline.** Draw each frame into **one RGB canvas where each channel is one plate's density** (R = ink 1, G = ink 2, B = ink 3; 0 = none, 1 = solid). `source-over` gives true **knockouts**; `globalCompositeOperation = 'lighter'` adds ink only to the channels you set: a true **overprint**. A WebGL2 shader "prints" it:
+**管道。**将每个帧绘制到**one RGB 画布中，其中每个通道是一个板的密度**（R = 墨水 1，G = 墨水 2，B = 墨水 3；0 = 无，1 = 实心）。 `source-over` 给出真正的 **淘汰赛**； `globalCompositeOperation = 'lighter'` 仅将墨水添加到您设置的通道：真正的 **叠印**。 WebGL2 着色器“打印”它：
 
-- per plate: offset in px + tiny rotation → misregistration;
-- halftone: cosine spot function on a rotated grid, period ~6–8 px at 1080p, anti-aliased threshold; densities ≥ ~0.9 print solid; screen angles ≥ 15° apart;
-- grain on the dot threshold, pinholes in solids, density varying with a feed-direction streak and a slow blot noise;
-- composite `paper × Π mix(1, ink_i, coverage_i)`, with faint paper fibre;
-- dots anchored to the **paper** (screen), not to objects: a pan slides the image under a fixed screen, as if each frame were printed anew;
-- a per-plate **gate** and a **roller sweep** (moving edge, slightly heavier ink band) let a plate arrive mid-shot.
+- 每板：以 px 为单位的偏移 + 微小旋转 → 重合失调；
+- 半色调：旋转网格上的余弦点函数，1080p 时周期约为 6-8 像素，抗锯齿阈值；密度 ≥ ~0.9 打印实心；屏幕角度间隔 ≥ 15°；
+- 点阈值上的颗粒、固体中的针孔、密度随进给方向条纹变化以及缓慢的印迹噪声；
+- 复合材料 `paper × Π mix(1, ink_i, coverage_i)`，带有微弱纸纤维；
+- 点固定在 **纸**（屏幕）上，而不是固定在物体上：平底锅将图像滑到固定屏幕下，就好像每个帧都被重新打印一样；
+- 每个印版的 **门**和**滚轮扫描**（移动边缘，稍重的墨带）让印版到达镜头的中部。
 
-**Composition rules.**
-- Every area uses **at most two plates, at most one of them as a tint**. Three halftones on top of each other = mud.
-- Big flat shapes, lots of solid paper and solid ink; halftone in a few stepped bands (e.g. 20 / 40 / 60 / 100 %) for skies, shadows, distance.
-- Characters get a **paper-white knockout halo** (4–5 px): stamp their layer in a ring with `filter: brightness(0)` (zero ink = paper), then draw them. Plates misregister around it, so it picks up coloured fringes like a real trap.
-- One horizon, one big flat field or disc, one small figure; the figure's head against the flattest colour in the frame.
-- Design for the **one-plate version**: every main colour contains some of the first plate, so a one-ink frame still reads as a complete silhouette. A deliberate exception stays blank paper until its plate arrives: a reveal.
+**组成规则.**
+- 每个区域最多使用两个板 **，最多其中一个作为色调**。三个半色调相互叠加 = 泥浆。
+- 大而扁平的形状，大量的实心纸和实心墨水；天空、阴影、距离的半色调（例如 20 / 40 / 60 / 100 %）。
+- 角色获得 **纸白色淘汰光环**（4–5 像素）：用 `filter: brightness(0)`（零墨水 = 纸）将其图层印在环中，然后绘制它们。它周围的印版不重合，因此它会像真正的陷阱一样拾取彩色条纹。
+- 一条地平线，一大片平地或圆盘，一个小图形；人物的头部与画面中最平坦的颜色相对应。
+- **one-plate 版本** 的设计：每种主要颜色都包含一些第一个色板，因此单墨水框架仍然读取为完整的轮廓。一个故意的例外是在它的盘子到达之前保持空白：揭晓。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **2–3 spot inks, never more**, plus paper; every other colour is an overprint or a tint. No gradients except stepped halftone.
-- Pick inks whose pairs mix into useful colours; at least one must carry a silhouette alone.
-- Paper is warm off-white (around `#F4EEE2`), never pure white; paper white is a colour too (knockouts, highlights, subtitles).
-- Light neutral surfaces (skin): a light tint of the palest ink. Dots of a saturated ink on skin look like a rash.
-- Save the full overprint (every plate, densest mixes) for the moment that earns it.
-- Example ink sets: Blue `#0078BF` + Yellow `#FFE800` + Fluorescent Pink `#FF48B0`; Teal `#00838A` + Fluorescent Orange `#FF7477`; Federal Blue `#3D5588` + Red `#FF665E` + Sunflower `#FFB511`.
+- **2-3专色墨水，不再是**，加上纸张；所有其他颜色都是套印或色调。除阶梯式半色调外没有渐变。
+- 选择可混合成有用颜色的墨水；至少一个人必须独自携带一个剪影。
+- 纸张是暖灰白色（`#F4EEE2`左右），绝不是纯白色；纸白色也是一种颜色（挖空、高光、字幕）。
+- 浅色中性表面（皮肤）：最浅墨水的浅色调。皮肤上的饱和墨水点看起来像皮疹。
+- 保存完整的套印（每个印版，最密集的混合），以备不时之需。
+- 示例墨水组：蓝色 `#0078BF` + 黄色 `#FFE800` + 荧光粉色 `#FF48B0`；青色 `#00838A` + 荧光橙 `#FF7477`；联邦蓝`#3D5588`+红色`#FF665E`+向日葵`#FFB511`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Type is printed**: titles and subtitles live on one plate, so they misregister and grain with it. A title can be printed on two plates with a visible offset: the riso double-hit.
-- Fonts (OFL): heavy grotesque for titles (e.g. Bricolage Grotesque 800), geometric sans for captions (e.g. Jost 500–700). Preload every weight before `READY`.
-- Subtitles: a **paper-white knockout strip** (zero ink, small radius) with text on one plate, ~40–46 px; its edges catch misregistration fringes. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Prints don't fade: titles arrive with a roller wipe or on a beat and leave on a cut.
+- **类型打印为**：标题和副标题位于一个印版上，因此它们套准不准且有颗粒感。标题可以打印在两个带有可见偏移的印版上：riso 双击。
+- 字体 (OFL)：标题使用粗体字体（例如 Bricolage Grotesque 800），标题使用几何无字体（例如 Jost 500–700）。在 `READY` 之前预加载每个重量。
+- 字幕：一个 **纸白色剔除条**（零墨水，小半径），一个板上有文字，约 40–46 像素；它的边缘会捕捉到重合失调的条纹。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 印刷品不会褪色：标题通过滚筒擦拭或节拍到达，然后通过剪切留下。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Characters act on twos** (12 fps); **camera moves on ones** (24 fps): a stepped camera reads as judder.
-- **Registration is not jittered every frame.** One fixed set of offsets per shot (±1–3 px). A **kick** (≈ 8–14 px, decaying in ~0.25 s with slight ringing) on an accent; a **drift** up to ~25 px through a held moment, snapping back on the downbeat.
-- Grain boils partly (about a third re-rolls per print); sheet streaks and blots change only at cuts.
-- Simple cycles on few drawings; secondary motion (scarf, flag, tail) as a travelling sine wave.
+- **角色在两个人身上行动**（12 fps）； **相机在** (24 fps) 上移动：步进的摄影机读取为抖动。
+- **配准不会每帧抖动。** 每个镜头一组固定偏移（±1–3 像素）。带有重音的 **踢**（约 8–14 像素，在约 0.25 秒内衰减，并伴有轻微的振铃）； **漂移** 在保持时刻上升约 25 像素，迅速恢复悲观情绪。
+- 谷物部分沸腾（每次打印约三分之一重新滚动）；纸张条纹和污点仅在切割时发生变化。
+- 几张图纸上的简单循环；二次运动（围巾、旗帜、尾巴）作为行进的正弦波。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Wide lateral tracking, small figure, empty sky | Travel, routine, room | a commute; a process line; a title |
-| Static wide, the subject crosses the frame | Comedy of scale | a gag; an arrival; a crowd |
-| Locked composition: horizon, disc, figure | Stillness, awe | a decision; a reveal; the film's one pause |
-| Ground-level low angle, big foreground shapes | Energy, abundance | a burst; a harvest; a launch |
-| Medium two-shot held for a look | Reaction | a joke landing; a deal; a disagreement |
-| Straight top-down, long shadows | Pattern, a map | a schedule; a floor plan; a game board |
-| Push into a halftone field until dots are shapes | Entering the print | a close look at data; a memory; a cell |
-| Pull back to reveal the paper | It was one sheet | a series; an archive; a summing-up |
-| Match cut on a flat shape | Continuity through form | a time jump; cause and effect; before/after |
+|宽横向追踪、小身材、空旷的天空|旅行、日常、房间|通勤；一条生产线；一个标题|
+|静态广角，拍摄对象穿过画面|规模喜剧|一个笑话；到达；一群人|
+|锁定构图：地平线、圆盘、图形|静谧、敬畏|决定；揭示； 影片的一次停顿|
+|地面低角度、大前景形状|能源、丰富|爆发；一次收获；发射|
+|表现媒介两把镜头举行看看|反应|一个笑话着陆；一笔交易；分歧|
+|直上而下，长阴影|图案、地图|时间表；平面图；一个游戏板|
+|推入半色调区域，直到点变成形状|输入打印内容|仔细观察数据；一段记忆；一个细胞|
+|向后拉以露出纸张|这是一张|一系列；档案；一个总结|
+|在平面形状上匹配切割|形式的连续性|时间跳跃；因果; before/after|
 
-Framing: lots of paper and solid ink, text on empty sky or a knockout strip. Transitions: overprint growths, roller sweeps, shape match cuts, hard cuts on beats. Never a cross-dissolve, never a soft digital wipe.
+框架：大量纸张和固体墨水，空旷的天空或淘汰带上的文字。过渡：叠印增长、滚轮扫描、形状匹配剪切、节拍上的硬剪切。绝不交叉溶解，绝不软数字擦拭。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Instruments**, as options: warm, dry, handmade, slightly lo-fi: upright or electric bass, vibraphone or marimba, nylon guitar, whistled or hummed melody, Rhodes, toy piano, brushed kit, shaker and rim clave, a small drum machine through tape saturation.
-- **Layering like plates** (an option): each new plate brings one instrument, and they can leave one by one.
-- **The machine is the signature foley**: feed "shhk", drum "ka-chunk" at a plate arrival, motor hum, a sheet landing on a stack, a guillotine cut. Other foley dry, close and papery, following the story's materials.
-- **Silence**: a held bar with reverb tails cut, at most ambience or one distant sound; it pairs with a registration drift, and the snap brings everything back.
-- **Mix**: dry and close; music ducks ~8 dB under voice; −14 LUFS. Voice relaxed and conversational, short lines, verified with whisper. No grain added at mux: it is in the print.
+- **乐器**，可选：温暖，干燥，手工制作，稍微低保真：立式或电贝司，电颤琴或马林巴，尼龙吉他，吹口哨或哼唱的旋律，罗兹，玩具钢琴，拉丝套件，摇床和边缘clave，通过磁带饱和的小型鼓机。
+- **像板一样分层**（可选）：每个新板带一台仪器，可以一件一件离开。
+- **这台机器是标志性的foley**：送料“shhk”，在板材到达时鼓“ka-chunk”，电机嗡嗡声，一张纸落在一堆上，断头台切割。其他拟音干燥、紧密、纸质，遵循故事的材料。
+- **沉默**：带有混响尾部剪切的固定条，最多是氛围声或一种远处的声音；它与配准漂移配对，然后按扣即可恢复一切。
+- **混音**：干燥、封闭；音乐在声音下减弱约 8 dB； −14 LUFS。声音轻松且对话，简短的台词，用耳语验证。 mux 中没有添加颗粒：它在打印中。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Plates as narrative.** The world gains a plate at each turning point. *Fits content like:* a product arriving as a new ink; a city history, one ink per era; colour returning during a recovery.
-- **Two inks, a third where they meet.** *Fits content like:* a merger; a duet; two data sets whose overlap is the finding.
-- **Overprint transition.** A shape of one ink grows over the frame, turning everything beneath into the mix, then shrinks into the next scene's key shape. *Fits content like:* a pill dissolving; a spotlight becoming a moon; a stamp becoming a map pin.
-- **Registration as rhythm and feeling.** Kicks on accents, drift in a held moment, snap on the downbeat. *Fits content like:* nerves before a speech; dizziness; a memory coming into focus.
-- **Reflections as separated plates.** Each plate wobbles on its own phase. *Fits content like:* a shop window; heat over a road; a coffee surface.
-- **Knockout reveal.** A shape made only of missing ink; its plate arrives later. *Fits content like:* a missing piece; a secret; a logo hidden in plain sight.
-- **Halftone scale.** Dots grow into shapes as the camera pushes in. *Fits content like:* population; rainfall; a crowd that turns out to be people.
-- **It is a sheet of paper.** The print can be stacked, folded, cut or pinned; grain boils like a flipbook of prints. *Fits content like:* a zine; a poster series; a flyer passed hand to hand.
+- **盘子作为叙述。** 世界在每个转折点都会获得一个盘子。 *适合以下内容：* 产品以新墨水形式到达；一段城市历史，一个时代一墨；恢复期间颜色恢复。
+- **两种墨水，第三种墨水在它们相遇的地方。** *适合以下内容：*合并；*二重唱；两个数据集的重叠就是结果。
+- **叠印过渡。** 一种墨水的形状在框架上生长，将下面的所有内容变成混合，然后收缩为下一个场景的关键形状。 *适合以下内容：*药丸溶解；聚光灯变成月亮；邮票成为地图图钉。
+- **记录为节奏和感觉。** 强调重音，在保持的时刻漂移，在悲观的节奏上猛击。 *适合以下内容：*演讲前的紧张；头晕;记忆逐渐清晰。
+- **作为分离板的反射。** 每个板在其自己的相位上摆动。 *适合以下内容：*商店橱窗；道路上的热量；咖啡表面。
+- **Knockout 揭晓。** 仅由缺失墨水制成的形状；它的盘子稍后到达。 *适合以下内容：*缺失的一块；一个秘密；隐藏在众目睽睽之下的标志。
+- **H半色调比例。** 随着摄影机的推进，点会变成形状。*适合以下内容：*人口；*雨量;一群人原来是人。
+- **是一张纸。** 打印件可以堆叠、折叠、剪切或钉住；谷物像印刷品一样沸腾。 *适合以下内容：* 杂志；海报系列；一张传单被人们亲手传递。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Three halftoned plates in one area = mud → two plates, one tint.
-- `fract(p*vec2(233.34,851.73))` draws vertical stripes across solids at 1080p → a well-mixed hash (`fract(vec3(p.xyx)*.1031)` family).
-- Per-frame registration jitter and sheet streaks flicker and blow up file size → fixed offsets per shot, kicks on accents, sheet noise at cuts, partial boil.
-- JPEG screenshots (4:2:0) smear saturated dots → PNG frames into a lossless yuv444 intermediate, encoded once with `-tune grain`; check at 100 % and 50 % for moiré.
-- The halo layer must copy the canvas transform, or zoomed shots draw the subject at the wrong scale.
-- Additive `over()` inside a transparent layer loses its meaning → overprint on the plate canvas.
-- A main colour without the first plate floats loose in one-ink frames → build palette recipes up from the one-ink silhouette.
-- `evenodd` fills of arches fill solid → trace the inner edge in the opposite direction.
+- 一个区域中的三个半色调板 = 泥 → 两个板，一种色调。
+- `fract(p*vec2(233.34,851.73))` 以 1080p 的分辨率在实体上绘制垂直条纹 → 混合良好的散列（`fract(vec3(p.xyx)*.1031)` 系列）。
+- 每帧配准抖动和纸张条纹闪烁并放大文件大小 → 根据镜头固定偏移、重音踢动、剪切时的纸张噪声、部分沸腾。
+- JPEG截图（4:2:0）涂抹饱和点→PNG帧转化为无损yuv444中间体，用`-tune grain`编码一次；在 100 % 和 50 % 下检查莫尔条纹。
+- 光晕层必须复制画布变换，或者缩放镜头以错误的比例绘制主题。
+- 透明层内的添加剂 `over()` 失去了意义 → 套印在版画布上。
+- 没有第一个印版的主颜色在单墨水框架中松散地漂浮→从单墨水轮廓构建调色板配方。
+- `evenodd` 拱形填充实心→沿相反方向描出内边缘。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `riso.js` (print shader: plates, halftone, grain, registration, kicks and drift, gates, roller sweeps, reflection wobble), `draw.js` (`ink(b,y,p)` densities, `over()` overprint, `layer()` paper halo, 2-bone IK, limbs), `sheet.js` (model sheet with a "plates = story" row via `S.mask`), `tools/video_png.mjs` (PNG frames → lossless intermediate), `tools/mux.sh`. Minimal new frame: two plates (R = teal, G = orange); a solid teal hill, an orange disc drawn with `lighter` so it darkens where it crosses the hill, a 40 % teal sky band, a figure knocked out with `layer()`.
+在 `demo/` 中：`riso.js`（打印着色器：印版、半色调、颗粒、套准、踢动和漂移、门、辊扫描、反射摆动）、`draw.js`（`ink(b,y,p)` 密度、`over()` 叠印、`layer()` 纸张）光环、2 骨 IK、四肢）、`sheet.js`（角色设定表，通过 `S.mask` 具有“板 = 故事”行）、`tools/video_png.mjs`（PNG 帧 → 无损中间）、`tools/mux.sh`。最小新框架：两块板（R = 青色，G = 橙色）；一座坚实的青色山丘，一个用 `lighter` 绘制的橙色圆盘，因此它在穿过山丘的地方变暗，一条 40% 的青色天空带，一个用 `layer()` 敲除的图形。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the inks and what each plate means, the structure, characters (or none), opening, ending, camera path and pacing. All far from our demo:
+您可以决定墨水和每个板块的含义、结构、字符（或无）、开头、结尾、摄影机路径和节奏。与我们的示范相去甚远：
 
-- Structures: **two inks in dialogue** (two subjects alternate shots and only overlap at the end, making the third colour); **subtraction** (start at full overprint, lose a plate at each loss, end in one ink); **a zine** (each shot a page turned, each page a different two-plate pairing).
-- Openings: **a knockout** (a blank shape in a full-colour field, filled by its plate seconds later); **dots first** (extreme close-up of halftone that pulls back into an image); **ghosts converge** (three colour ghosts drift together and snap into a readable frame on the first beat).
-- Endings: **one ink left** (plates lift away until the last line stands in one colour); **the print on a wall** (the last frame becomes a poster pasted up inside the world it showed); **a folded sheet** (the print folds into something the story needs: a boat, an envelope, a ticket).
+- 结构：**对话中的两种墨水**（两个主体交替镜头，仅在最后重叠，形成第三种颜色）； **减法**（从满套印开始，每损失一个印版，以一种油墨结束）； **杂志**（每镜头翻一页，每一页不同的两板配对）。
+- 空缺：**a 淘汰赛**（全彩区域中的空白形状，几秒钟后由其板填充）； **首先点**（拉回到图像中的半色调的极端特写）； **重影汇聚**（三个彩色重影漂移在一起，并在第一拍时捕捉到可读帧）。
+- 结局：**还剩一墨水**（盘子升起，直到最后一行呈现一种颜色）；**墙上的印刷品**（最后一帧成为一张海报，粘贴在它所展示的世界中）；**一张折叠的床单**（印刷品折叠成故事所需的东西：一艘船、一个信封、一张票）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

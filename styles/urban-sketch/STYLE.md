@@ -1,124 +1,136 @@
-# Urban Sketch · Pen & Wash — Style Prompt
+<a id="urban-sketch--pen--wash--style-prompt"></a>
+# 钢笔淡彩：风格提示词
 
-> A sketchbook page drawn on location: fine sepia fineliner lines that wobble, overshoot and never quite close, with loose transparent watercolour dropped on top. The colour sits slightly off the lines, spills over them, and dissolves into cream cold-press paper at the page edge.
-> References (grammar only):
-> - Urban-sketching sketchbook pages: line first, then wash; colour off-register; handwritten date and place in the corner; the page edge breaking up into dabs.
-> - *Paperman* (2012): a monochrome world with one coloured object.
-> - *The Red Balloon* (1956): an object as the protagonist, the camera following it across a city.
-> - Jazz waltz (the Vince Guaraldi school): 3/4 swing, walking bass, brushes, a woodwind lead.
+> 现场绘制的素描本页面：精美的棕褐色细线线条，摆动、过冲且永远不会非常接近，上面滴有松散的透明水彩画。颜色稍微偏离线条，溢出到线条上，并溶解在页面边缘的奶油色冷压纸中。
+> 参考文献（仅语法）：
+> - 城市素描速写本页面：先行，然后水彩晕染；套色不准；角落里手写的日期和地点；页面边缘分裂成小块。
+> - *Paperman* (2012)：一个只有一个彩色物体的单色世界。
+> - *红气球*（1956）：一个物体作为主角，摄影机跟随它穿越城市。
+> - 爵士华尔兹（Vince Guaraldi 学派）：3/4 摇摆、行走贝司、刷子、木管乐器主奏。
 >
-> Nothing is copied from these: no characters, melodies, layouts or type.
+> 没有任何内容被复制：没有角色、旋律、布局或类型。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-Reportage drawing, made on location in a few minutes. Two layers that stay visibly separate:
+报告文学绘图，在几分钟内完成。两层明显分开：
 
-1. **Ink.** One thin, near-constant line (a 0.3–0.5 mm fineliner) in dark sepia. It wobbles slightly, overshoots corners by a few pixels, breaks mid-stroke, and suggests rather than describes: a few window marks instead of a grid, scalloped fragments instead of a whole tree outline.
-2. **Wash.** Transparent watercolour glazed on top, **misregistered** by 1–3 px from the line, sometimes spilling past it, leaving paper white for highlights and figures (reserves). Dried edges are darker (pigment pools at the rim), and pigment granulates into the paper tooth.
+1. **墨水。** 深棕褐色的一根细的、近乎恒定的线条（0.3–0.5 毫米细线）。它会轻微晃动，超出角落几个像素，中途中断，并且建议而不是描述：一些窗口标记而不是网格，扇形碎片而不是整个树轮廓。
+2. **洗。**透明水彩釉在顶部，**注册错误** 距离线 1-3 像素，有时溢出它，使纸张白色用于高光和图形（保留）。干燥的边缘颜色更深（边缘处有颜料池），并且颜料颗粒进入纸牙中。
 
-**The page is part of the image**: warm cream cold-press paper with large-scale mottling and fine tooth. Nothing is painted edge to edge; the painting frays into leaf-sized dabs and white holes, leaving margins for handwriting.
+**该页面是图片的一部分**：温奶油色冷压纸，有大面积斑纹和细齿。没有任何东西是从边到边画的；这幅画磨损成叶子大小的斑点和白洞，留下了可供手写的空白。
 
-Not Watercolor Brush (no line-free wet-in-wet painting, no painterly edges without ink), not Whiteboard (no marker, no explainer diagrams), not Chinese Ink Wash (no brush calligraphy, no monochrome ink tones). Line and wash, both, always.
+不是水彩笔（没有无线湿画，没有无墨的绘画边缘），不是白板（没有记号笔，没有解释图），不是水墨水彩晕染（没有毛笔书法，没有单色墨调）。线和水彩晕染，两者，始终。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper**: two octaves of fbm mottling (a few %), a tooth tile multiplied over everything, figures included.
-- **Ink**: ~96 % coverage; world line width thinner far, thicker near (e.g. 1.3–3.4 px); wobble ~1 px; overshoot 3–8 px; a third to half of long strokes get one small gap. Strokes are baked with their **draw time per pixel**, so the shader plays back stroke order.
-- **Wash**: 2–3 rough-edged layers, multiply, alpha ~0.4–0.65, offset from the line by about one line width, a dried edge at 30–40 %; granulation = pigment × (0.82 + 0.36 · fbm).
-- **Colour arrival field**: every pixel has a time at which colour reaches it. The wash is revealed through it with a ragged wet front (darkened band just behind the front) and noisy edges. Figures bloom from a point with a noisy circular clip.
-- **Foliage**: pale base wash, then light and shadow masses, then small leaf dabs coloured by light direction, holes at the rim, scalloped ink only on the outline.
-- **Sky**: a few big soft washes at low alpha, fading upward; clouds are reserves with a tinted belly.
-- **Buildings**: local colour; shadow side mixed ~45 % with a cool violet-grey; distant blocks mixed ~50 % with a haze colour.
-- **Figures**: a 3D skeleton in orthographic projection; torso from cross-sections; limbs as organic tapered tubes; hair and head as one mass; face left blank (one nose tick in profile); shadow side mixed with violet.
-- **Page edge**: a noisy boundary, a white-dab band inside, a coloured-dab spray outside.
-- Deterministic: same seed, same marks.
+- **纸张**：两个八度的FBM斑点（百分之几），牙齿瓦片乘以所有东西，包括数字。
+- **墨色**：~96% 覆盖率；世界线宽度远处较细，近处较粗（例如 1.3–3.4 px）；摆动 ~1 px；超出 3–8 像素；三分之一到一半的长行程会出现一个小间隙。笔画是用每像素 **绘制时间** 进行烘焙的，因此着色器会回放笔画顺序。
+- **晕染**：2-3个粗边层，乘以，alpha ~0.4-0.65，偏离线约一个线宽，干燥边缘为30-40%；颗粒度=色素×(0.82+0.36·fbm)。
+- **颜色到达字段**：每个像素都有一个颜色到达的时间。通过它可以看到水彩晕染具有参差不齐的湿前部（前部后面的深色带）和嘈杂的边缘。人物从一个带有嘈杂的圆形剪辑的点绽放。
+- **叶子**：浅色底色水彩晕染，然后是光影块，然后是小叶子，按光线方向涂色，边缘有孔，仅在轮廓上有扇形墨水。
+- **天空**：几个大软水彩晕染在低alpha，向上淡出；云是腹部有色的储备。
+- **建筑物**：当地色彩；阴影面与冷紫灰色混合约 45%；远处的方块混合了约 50% 的雾色。
+- **人物**：正投影的3D骨架；躯干横截面；四肢为有机锥形管；头发和头部是一体的；脸部空白（侧面有一个鼻子勾号）；阴影面与紫罗兰色混合。
+- **页面边缘**：嘈杂的边界，内部有白色斑点带，外部有彩色斑点喷雾。
+- 确定性：相同的种子，相同的标记。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Ink is one colour** (dark sepia or warm black); it never changes.
-- **Wash is local colour, lightly**: few pigments, mixed on the page; shadows are the local colour mixed toward one shared cool violet; distance mixes toward one haze.
-- **Paper white is the brightest value**; it is reserved, never painted.
-- **Colour can be withheld**: a page may be ink-only with colour as an event (one tinted object, colour arriving with a cause).
-- Example palettes: park in summer (lawn `#c3c96f`, leaves `#7fa04a`, sky `#9fbcd6`, limestone `#d8c6a0`); harbour morning (sea `#7fa6b8`, hulls `#c9573f`, rope `#c8a86b`, sky `#bcd0dc`); winter market (roofs `#8b93a6`, lights `#e2b04a`, awnings `#b8483e`, snow = paper).
+- **墨水为一种颜色**（深棕褐色或暖黑色）；它永远不会改变。
+- **水洗是局部色彩，淡淡的**：颜料很少，在页面上混合；阴影是局部颜色混合成一种共享的冷紫罗兰色；距离混合成一片薄雾。
+- **纸白色为最亮值**；它是保留的，从未被绘制过。
+- **颜色可以被保留**：页面可能是仅墨水的，颜色作为事件（一个有色对象，颜色到达有原因）。
+- 调色板示例：夏季公园（草坪 `#c3c96f`、树叶 `#7fa04a`、天空 `#9fbcd6`、石灰石 `#d8c6a0`）；港口早晨（海`#7fa6b8`，船体`#c9573f`，绳索`#c8a86b`，天空`#bcd0dc`）；冬季市场（屋顶`#8b93a6`，灯`#e2b04a`，遮阳篷`#b8483e`，雪=纸）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **All text is handwriting on the page**, written on left to right with pen sound, and moves with the camera: a corner note (e.g. Reenie Beanie: day, time, weather, place), titles and colophon in a casual hand (e.g. Caveat 500–600), left-aligned in the blank margin.
-- **Subtitles**, if there is a voice: handwritten lines in the page margin or a caption strip written into the lower margin, never a generic overlay box. Hold ≥ max(1.8 s, speech + 0.6 s).
-- The style works well without any voice.
+- **页面上的所有文字都是手写体**，从左到右书写，有钢笔声音，并随摄影机移动：角注（例如 Reenie Beanie：日期、时间、天气、地点）、标题和版权页，以随意的手写体书写（例如，Caveat 500–600），在空白处左对齐保证金。
+- **字幕**，如果有声音：页边距中的手写线或写在下边距中的字幕条，绝不是通用的覆盖框。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 这种风格在没有任何声音的情况下效果很好。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Figures boil at 12 fps** (line wobble and wash seeds change every 1/12 s). The static page does not boil (it is a real page); the camera moves every frame, smoothly.
-- **Performance**: anticipation, action, follow-through; footsteps on the beat.
-- **Invisible forces are drawn**: wind as ink curls that draw on and erase from the tail, trailing dabs; sound as ink lines; heat as wavy strokes.
-- **Colour never snaps**: it blooms from a point or arrives through the field.
-- Stroke-order draw-on for anything that "appears".
+- **人物以 12 fps** 沸腾（线摆动和水彩晕染种子每 1/12 秒就会改变）。静态页面不沸腾（是真实页面）； 摄影机运动每一帧都很顺利。
+- **绩效**：预期、行动、跟进；脚步声在节拍上。
+- **无形的力量被吸引**：风如墨卷，在尾部、拖尾的轻拍上绘画和擦除；声音如墨线；热像波浪一样。
+- **颜色永不折断**：它从一个点绽放或穿过田野到达。
+- 任何“出现”的东西都按笔画顺序绘制。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A 2D camera over a large page (e.g. 5120 × 2880). Designed moves use cubic easing; follow shots use a critically damped spring on a lead-ahead target, so the camera lags like a hand-held follow. A vocabulary, not a route. Opening and ending come from the topic.
+大页面上的 2D 摄影机（例如 5120 × 2880）。设计动作采用立方缓动；跟随镜头在超前目标上使用临界阻尼弹簧，因此摄影机会像手持跟随一样滞后。是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Push-in | attention; a detail observed | a face; a sign; a small event |
-| Lateral follow on a spring | travel, pursuit | an object carried; a walker; a vehicle |
-| Crane up | a new level, a view opening | a skyline; a tree; a balcony |
-| Whip-tilt with slight roll | sudden change of direction | a fall; a gust; a surprise |
-| Punch-in with a short shake | impact | a catch; a collision; a door slam |
-| Pull back to the whole page | scale; the sketch as an object | a summary; a place in full |
-| Tilt into the margin | from picture to words | notes; a date; a title |
-| Slow pan across a line-only area | the world before colour | a quiet start; memory |
-| Hold while the pen draws | the act of noticing | a subject being drawn |
-| Page turn to a new spread | another time or place | a travel diary; a sequence of days |
+|推入式|注意力;观察到的一个细节|一张脸；一个标志；一个小事件|
+|弹簧横向跟随|旅行、追求|携带的物体；步行者；一辆车|
+|吊起|新的高度、新的视野|天际线；一棵树；一个阳台|
+|鞭状倾斜并轻微滚动|突然改变方向|跌倒；一阵风；一个惊喜|
+|短暂摇晃即可打卡|影响|一个捕获；碰撞；关门声|
+|拉回整个页面|规模;草图作为一个对象|总结；一个完整的地方|
+|倾斜到边缘|从图片到文字|笔记;一个日期；一个标题|
+|缓慢平移仅包含线条的区域|色彩出现之前的世界|安静的开始；记忆|
+|画笔时按​​住|注意到的行为|正在绘制的主题|
+|翻页至新跨页|另一个时间或地点|旅行日记；一连串的日子|
 
-Framing: subjects ≥ ⅓ of frame height at story beats; a small key object gets a faint paper halo (reserve) so it reads over busy foliage. Transitions: camera travel on the page, page turns, or colour arriving; no dissolves.
+取景：故事节拍中主体 ≥ ⅓ 的取景高度；一个小的关键物体有一个微弱的纸光晕（保留），所以它可以在繁忙的树叶上阅读。过渡：摄影机在页面上移动、翻页或颜色到达；没有溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Ambience from the place**: paper room tone first, then the location once it has colour (birds, traffic, harbour gulls, market chatter). J-cut a place's sound a bar before we see it.
-- **Pen on cold-press paper**: band-passed noise (~1.6–7.5 kHz) with a fibre texture and grain clicks, one burst per real stroke; thousands overlap into a hiss during a fast sketch; brighter short strokes read like a hi-hat.
-- **Water and brush**: a wet brush "shhh" for blooms, a jar rinse, a drip.
-- **Foley follows objects** at sketch scale: fabric or paper flapping for things in the wind (rate and level from speed, pan from screen x), steps on the beat, bells, splashes.
-- **Music families**: a jazz waltz (walking bass in three, brushes, piano, clarinet or flute); a café accordion trio; solo nylon guitar; a string quartet pizzicato; a brass band for crowds. One colour instrument per area of the page works well.
-- **Silence as a tool**: a bar of true silence (ambience included) at the height of suspense; the first sound after it is the next gesture.
-- **Mix**: music ducks under key hits; foley high-passed ~90 Hz; −14 LUFS, moderate LRA.
+- **地点的氛围**：首先是纸质房间的色调，然后是一旦有颜色的地点（鸟类、交通、港口的海鸥、市场的喧闹）。在我们看到某个地方之前，就把它剪成一个酒吧。
+- **冷压纸上的钢笔**：带通噪声（~1.6–7.5 kHz），具有纤维纹理和颗粒咔哒声，每个真实笔画爆发一次；在快速素描中，数千个重叠成嘶嘶声；更明亮的短笔画读起来就像踩镲。
+- **水和刷子**：用​​于花朵的湿刷“嘘”，冲洗罐子，滴水。
+- **Foley 以草图比例跟随物体**：织物或纸张随风飘动（来自速度的速率和水平，来自屏幕 x 的平移）、节奏、铃声、飞溅。
+- **音乐家族**：爵士华尔兹（三首行走贝司、刷子、钢琴、单簧管或长笛）；咖啡馆手风琴三重奏；独奏尼龙吉他；弦乐四重奏拨奏；为大众服务的铜管乐队页面的每个区域使用一种颜色工具效果很好。
+- **沉默作为工具**：悬念高度时真正的沉默（包括氛围）；之后的第一个声音是下一个手势。
+- **混音**：音乐在关键打击下闪动； 拟音高通 ~90 Hz； −14 LUFS，中等 LRA。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Line before colour.** The pen draws a subject in real stroke order, then the wash drops in; the drawing is the spectacle. *Fits content like:* a cathedral façade; a chef plating a dish; a street musician.
-- **Colour as arrival.** Wash spreads from a source with a wet front, so an event paints the page; figures stay frozen line drawings until colour touches them. *Fits content like:* a sunrise over a harbour; a parade moving down a street; the lights of a market switching on.
-- **The one coloured thing.** A colourless sketch with a single tinted object that becomes the protagonist. *Fits content like:* a red umbrella in the rain; a yellow taxi; a child's kite.
-- **The page as frame.** Pull back until the whole page shows, edges dissolving, handwritten notes in the margin. *Fits content like:* a travel diary entry; a neighbourhood portrait; a day in a place.
-- **Carrot people.** Distant crowds as one wash blob, two leg lines and a head dot. *Fits content like:* a station at rush hour; a stadium; a beach.
+- **颜色之前的行。** 笔按真实笔画顺序绘制主题，然后水彩晕染插入；绘画就是奇观。 *适合以下内容：* 大教堂外观；厨师正在摆盘；街头音乐家。
+- **到达时的颜色。** 水彩晕染从湿锋源传播，因此事件绘制页面；人物会保持冻结的线条图，直到颜色接触到它们。 *适合以下内容：*港口上空的日出；游行队伍沿着街道行进；市场的灯亮了。
+- **单一颜色的东西。** 一张无色草图，其中一个有色物体成为主角。 *适合的内容如下：*雨中的红伞；黄色出租车；孩子的风筝。
+- **以页面为框架。** 向后拉，直到整个页面显示出来，边缘消失，页边空白处有手写笔记。 *适合以下内容：* 旅行日记条目；邻里肖像；在一个地方的一天。
+- **胡萝卜人。** 远处的人群是一个水彩晕染斑点，两条腿线和一个头点。 *适合以下内容：*高峰时段的车站；体育场；一个海滩。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Straight edges in the colour field** from clipping by a bounding box → clip by the actual noisy distance.
-- **Rectangular masks around complex silhouettes** leave notches → mask with the real stepped silhouette.
-- **Characters losing colour** when they move into unpainted areas → sample arrival once (or tie it to the event), never at the current position.
-- **Static ink can't be occluded by later washes** → erase far ink inside nearer shapes before drawing; use carrot people for far crowds.
-- **IK feet pinned while blending poses** splay the legs → blend foot targets toward under-hip.
-- **Front-facing heads go bald** → draw the hair mass, then knock the face out of it.
-- **Big canvases in headless Chrome**: pack ink and time into RGBA byte textures yourself and upload the arrival field as a filterable float texture (`R16F`).
-- **Painting edge to edge** kills the sketchbook feel → leave margins and fray the edge.
+- **色域中的直边** 通过边界框裁剪 → 通过实际噪声距离裁剪。
+- **围绕复杂轮廓的矩形蒙版** 留下凹口 → 具有真实阶梯轮廓的蒙版。
+- **当角色进入未绘制区域时失去颜色**→样本到达一次（或将其与事件联系起来），从不在当前位置。
+- **静态墨水不能被以后的清洗所遮挡**→在绘制之前擦除较近形状内较远的墨水；对远处的人群使用胡萝卜人。
+- **IK 脚固定，同时混合姿势** 张开双腿 → 将脚部目标混合到臀部下方。
+- **正面头秃**→画出头发团，然后把脸敲出来。
+- **无头 Chrome 中的大画布**：自行将墨水和时间打包到 RGBA 字节纹理中，并将到达字段作为可过滤浮动纹理上传 (`R16F`)。
+- **边到边绘画**消除了素描本的感觉→留下边距并磨损边缘。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/engine.js` (deterministic): `penStroke` + `drawPen` (fineliner with wobble, overshoot, gaps, draw-on), `rasterPen` (bakes stroke order into an ink + time layer), `wash`, `reserve`, `dab` / `foliage`, `arrivalField` (colour arrival per cell from sources), `compositor` (WebGL page: paper × wash revealed by arrival × ink revealed by stroke time), `figure` + `drawPrims` (sketched people), `sketchShape` (any shape in this style in one call), `handwrite`. `demo/poses.js` holds a pose library. API table and a minimal example that draws something new: [DEMO.md](DEMO.md#engine-reference).
+`demo/engine.js`（确定性）：`penStroke` + `drawPen`（带有摆动、过冲、间隙、绘制的细线）、`rasterPen`（将笔划顺序烘焙到墨水+时间层中）、`wash`、`reserve`、 `dab` / `foliage`、`arrivalField`（来自来源的每个单元的颜色到达）、`compositor`（WebGL 页面：纸张 × 水彩晕染通过到达显示 × 墨水通过笔画时间显示）、`figure` + `drawPrims` （素描人物），`sketchShape`（一次调用此风格的任何形状），`handwrite`。 `demo/poses.js` 拥有一个姿势库。 API 表和一个绘制新内容的最小示例：[DEMO.md](DEMO.md#engine-reference)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the place, the subjects, what colour does (always there, withheld, arriving), the voice (or none), the music family, the camera path, the opening, the ending and the length.
+你可以决定地点、主题、颜色（总是在那里、保留、到达）、声音（或没有）、音乐家族、摄影机路径、开头、结尾和长度。
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **a travel diary** of five pages, one per day, each page turned by the wind or a hand; **a single street corner** drawn at four times of day, the wash changing while the ink stays; **a recipe** where each ingredient is drawn from life at the market and the final dish is painted last.
-- Openings: **the blank page** with only the handwritten date, then the first line of the horizon; **a close-up of a coffee cup** on the page's edge, pulling back to find the city drawn behind it; **rain dots** landing on the paper and blooming into the first washes.
-- Endings: **the sketchbook closes** on the page; **the last figure walks off the page** into the blank margin; **the colour drains** back to ink as the evening comes, leaving one lit window.
+- 结构：**a旅行日记**，共五页，每天一页，每页随风或用手翻动； **一个单一的街角**在一天的四个时间绘制，水彩晕染在墨水停留的同时发生变化； **a 食谱**，其中每种成分均取自市场上的生活，最后的菜肴是最后绘制的。
+- 开口：**空白页**只有手写日期，然后是地平线的第一行； **页面边缘的咖啡杯** 的特写，拉回来发现后面画着城市； **雨点**落在纸上并绽放成第一个水彩晕染。
+- 结局：**素描本关闭**在页面上；**最后一个数字离开页面**进入空白边距；**颜色流失**夜幕降临时，又回到墨迹，留下一扇亮着的窗户。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

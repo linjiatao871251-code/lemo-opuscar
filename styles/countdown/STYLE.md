@@ -1,130 +1,142 @@
-# Live Countdown Split-screen — Style Prompt
+<a id="live-countdown-split-screen--style-prompt"></a>
+# 实时倒计时分屏：风格提示词
 
-> An edit style, not a look. Real footage of one event with a known zero (a launch, a verdict, a final whistle, polls closing), shown in real time: screen time equals event time, a clock ticks every second, and the screen splits into more and more cells as the moment nears, every cell showing the same second. At zero the cells merge into one picture and the clock flips.
-> References (grammar only): the real-time clock and splitting screens of the TV series *24*; the multi-camera archive panels and mission-time codes of the documentary *Apollo 11* (2019). Never copy their type, colours, sounds, graphics or shots, and never name them in the film.
+> 是编辑风格，而不是外观。已知零事件的真实镜头（发射、判决、终场哨声、投票结束），实时显示：屏幕时间等于事件时间，时钟每秒滴答作响，随着时刻临近，屏幕分成越来越多的单元，每个单元显示同一秒。在零时，细胞合并成一张图片，时钟翻转。
+> 参考资料（仅语法）：电视剧*24*的实时时钟和分屏；纪录片 *Apollo 11* (2019) 的多摄影机档案面板和任务时间代码。切勿复制其类型、颜色、声音、图形或镜头，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-1. **Real time.** One continuous stretch of the event, never cut, never re-ordered, never sped up. Slow-motion sources are played back at real speed. The clock and the picture can be checked against each other at any frame.
-2. **The clock is the lead.** It ticks every whole second (sound and a falling digit), it says who is in control, and it changes state at zero.
-3. **Cells show the same second.** Every video cell is synced to the clock, or says plainly that it is not (§8, "sync badge").
-4. **The layout is the edit.** Cuts are layout changes, and every layout change lands on a real spoken call or event in the native sound, not on the music.
-5. **More cells, closer to zero; one picture at zero.** The number of cells is the tension curve.
+1. **实时。** 事件的一个连续延伸，永不中断，永不重新排序，永不加速。慢动作源以实际速度播放。时钟和图片可以在任何帧上相互检查。
+2. **时钟是领先的。** 它每整秒滴答一声（声音和下降的数字），它表明谁在控制，并且它在零处改变状态。
+3. **Cells 显示相同的秒。** 每个视频单元都与时钟同步，或者明确表示它不是（§8，“同步标记”）。
+4. **布局是编辑。** 剪切是布局更改，每个布局更改都基于真实的语音通话或原生声音事件，而不是音乐。
+5. **更多的电池，更接近于零；一张图片为零。** 细胞数就是张力曲线。
 
-Not a montage (time jumps), not a security wall (the layout never moves), not a flashback structure (real time cannot go back), not a slide deck (cells that don't follow events, text filling the cells, centred titles with page turns).
+不是蒙太奇（时间跳跃），不是安全墙（布局永远不会移动），不是闪回结构（实时无法倒退），不是幻灯片（不跟随事件的单元格，填充单元格的文本，带有翻页的居中标题）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Three kinds of material at once**: video cameras of the same moment (2–8), documents (a fact sheet, a filing, a schedule: shown as paper, never retyped as a slide), and photographs (the people of the day). Our own type explains them; type printed in the material is only picture.
-- **Data drawn by us**: checklists, bars, a flight or process profile, a second countdown to the next milestone. Every number comes from an official source (§10).
-- **Cells**: hard rectangles on near-black `#06080A`, 24 px outer margin, 8–9 px gutters, 1 px border `rgba(222,232,238,.16)`, a light radial vignette (to 36 % black) on video cells. No rounded corners, no drop shadows, no 3D.
-- **Camera chip** top-left of every cell: dark plate 84 %, a square dot (orange = synced video, grey = unsynced or still), code (`CAM 4`, `DOC`, `LIST`), Chinese name, small English name.
-- **Burned-in text in the sources** (broadcast bugs, camera IDs, timers, tracker readouts) is cropped by a per-shot usable region, or blurred out (ffmpeg `delogo`) after it has been used for syncing. Never shown as if it were ours.
-- **One grade for every source** (ffmpeg): `eq=contrast=1.07:saturation=0.9:gamma=0.97:brightness=-0.01,colorbalance=rs=-0.02:bs=0.03:rh=0.03:bh=-0.02`, then film grain 1 at the master (`mux.sh … 1`). Cool shadows, slightly warm highlights: control rooms and launch pads look like one film.
-- **Resolution**: modern footage at most 1.5× its source pixels; for a punch-in, extract that stretch at a higher resolution from the 4K source instead of enlarging a 1080p frame. Documents at ≥ 1 source pixel per screen pixel.
+- **同时提供三种材料**：同一时刻的摄像机（2-8）、文件（情况说明书、档案、时间表：以纸张形式显示，从未以幻灯片形式重新打印）和照片（当时的人物）。我们自己的类型解释了它们；材料中打印的类型仅为图片。
+- **我们绘制的数据**：清单、条形图、飞行或过程概况、下一个里程碑的第二次倒计时。每个数字均来自官方来源（§10）。
+- **细胞**：近乎黑色的 `#06080A` 上的硬矩形，24 px 外边距，8–9 px 装订线，1 px 边框 `rgba(222,232,238,.16)`，视频单元上的浅色径向晕影（至 36% 黑色）。没有圆角、没有阴影、没有 3D。
+- **相机芯片**每个单元的左上角：暗板84％，一个方点（橙色=同步视频，灰色=不同步或静止），代码（`CAM 4`，`DOC`，`LIST`），中文名称，小英文名称。
+- **源中的烧录文本**（广播错误、摄影机 ID、定时器、跟踪器读数​​）被每个镜头可用区域裁剪，或在用于同步后模糊化（ffmpeg `delogo`）。从来没有表现得好像它是我们的。
+- **每个源一个等级** (ffmpeg)：`eq=contrast=1.07:saturation=0.9:gamma=0.97:brightness=-0.01,colorbalance=rs=-0.02:bs=0.03:rh=0.03:bh=-0.02`，然后影片在主控处为 1 (`mux.sh … 1`)。冷色调的阴影，略带暖色调的高光：控制室和发射台看起来像影片。
+- **分辨率**：现代素材最多为其源像素的1.5倍；对于打孔，请从 4K 源中以更高分辨率提取拉伸，而不是放大 1080p 帧。每个屏幕像素 ≥ 1 源像素的文档。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-| Role | Value |
+|角色|价值|
 |---|---|
-| Ground | `#06080A`; panels `#0B0E11` |
-| Main text | `#F2F5F7`; secondary `#7C878D` |
-| Accent: the T− sign, synced dots, ticks done, event flags, the active control segment | `#FF5B1F` |
-| Speaking light, "heard" tags | `#FF3B30` |
-| Plates over full-screen footage | `rgba(6,8,10,.80)` |
-| After zero, the clock block | ground `#FF5B1F`, text `#0A0B0C` (inverted) |
+|地面|`#06080A`；面板 `#0B0E11`|
+|正文|`#F2F5F7`；次级 `#7C878D`|
+|重音：T− 符号、同步点、刻度完成、事件标志、活动控制段|`#FF5B1F`|
+|说话轻快，“听到”标签|`#FF3B30`|
+|全屏画面上的图版|`rgba(6,8,10,.80)`|
+|零后，时钟块|接地 `#FF5B1F`，文字 `#0A0B0C`（倒置）|
 
-Orange means "now / synced / done". Grey means "pending / not synced". Nothing else is coloured; colour belongs to the footage.
+橙色意味着“现在/已同步/已完成”。灰色表示“待处理/未同步”。没有其他东西是有颜色的；颜色属于素材。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Clock digits: a condensed sans with fixed-width digit slots (ours: Barlow Condensed SemiBold, drawn digit by digit in equal slots so the clock never jitters); size up to 132 px, the T−/T+ sign at 0.85×, tenths at 0.41× in grey, a ten-segment sub-second bar under it.
-- Chinese: a sturdy sans (ours: Noto Sans SC 500/700, subset). English text: a clean grotesque (Barlow). Labels, codes and English small print: a monospace (IBM Plex Mono). All OFL, in the project's `fonts/`.
-- **The live transcript is the subtitle.** A fixed box (bottom right, or a cell in the grid): a speaking light and the speaker type (commentary / loop / narrator — the narrator, our own voice, is marked in orange so it is never mistaken for the event's audio), the English line appearing word by word at the spoken times (0.08 s fade per word, a block cursor), the Chinese line whole when its cue starts. **One line per language, never wrapped**: a long sentence becomes two cues; each cue ≥ max(1.8 s, speech + 0.6 s). Transcribe only what is said; mark doubtful words in `FACTS.md`.
-- Reading time for everything else: CJK ÷ 4.5 + other ÷ 15 + 1.5 s from the moment it is complete (`readcheck.mjs`). A comparison (two bars, two numbers) stays fully on screen ≥ 2.5 s.
+- 时钟数字：具有固定宽度数字槽的压缩 sans（我们的：Barlow Condensed SemiBold，在相等的槽中逐位绘制，因此时钟永远不会抖动）；尺寸最大为 132 px，T−/T+ 符号位于 0.85×，十分之一位于 0.41×，呈灰色，其下方有一个十段亚秒条。
+- 中文：坚固的 sans（我们的：Noto Sans SC 500/700，子集）。英文文本：干净的怪诞（巴洛）。标签、代码和英文小字体：等宽字体 (IBM Plex Mono)。所有 OFL，都在项目的 `fonts/` 中。
+- **实时文字记录是字幕。**固定框（右下角，或网格中的单元格）：讲话灯和扬声器类型（评论/循环/叙述者 - 叙述者，我们自己的声音，以橙色标记，因此永远不会被误认为是活动的音频），在说出的时间逐字出现的英语台词（每个字淡入 0.08 秒，块光标），提示开始时整行中文。**每种语言一行，从不换行**：一个长句子变成两个提示；每个提示 ≥ max(1.8 s, 语音 + 0.6 s)。仅转录所说内容；标记`FACTS.md`中可疑的单词。
+- 其他所有内容的阅读时间：CJK ÷ 4.5 + 其他 ÷ 15 + 1.5 秒（从完成之日算起）(`readcheck.mjs`)。比较（两个条，两个数字）在屏幕上完全停留 ≥ 2.5 秒。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- 30 fps. Clock: on each whole second the new digits drop 14 px in 0.12 s (ease-out); the sub-second bar empties one segment per 0.1 s (fills after zero).
-- Re-layout: 0.34 s `easeInOutCubic`. Cells that stay interpolate their rectangles; new cells open from their left edge; leaving cells close to the left; a new cell flashes a 3 px orange border for ~0.2 s when it lands. A grid filling up pops one cell per spoken count in 0.30 s.
-- Swaps (one source replaces another in the same rectangle) wipe in from the left. Hard cuts only between full-screen sources.
-- Photographs push in ≤ 6 % over their whole stay; names pop one by one 0.16 s apart. Documents move their window down a row in 0.45 s; the highlight sweeps left to right in 0.35 s.
-- Never: slow push-ins on video to fake motion, page-turn transitions, centred pop-up words, speed ramps.
+- 30 帧/秒。时钟：每一整秒，新数字在 0.12 秒内下降 14 像素（缓出）；亚秒条每 0.1 秒清空一个段（在零后填充）。
+- 重新布局：0.34 秒 `easeInOutCubic`。留下的单元格插入它们的矩形；新单元从左边缘打开；让单元格靠近左侧；新的单元格落地时会闪烁 3 px 橙色边框约 0.2 秒。填满的网格会在 0.30 秒内每说出一个计数就会弹出一个单元格。
+- 交换（一个源替换同一矩形中的另一个源）从左侧擦除。仅在全屏源之间进行硬剪切。
+- 整个住宿期间照片的推送率≤6%；名字间隔 0.16 秒一一弹出。文档在 0.45 秒内将窗口向下移动一行；高光在 0.35 秒内从左向右扫过。
+- 从不：视频中缓慢插入假动作、翻页过渡、居中弹出文字、速度斜坡。
 
-## 6. Edit grammar
+<a id="6-edit-grammar"></a>
+## 6. 编辑语法
 
-- **Screen time = event time.** One mapping, `M = t − T0`, for the whole film. Each camera has its own source offset (`s = M + c`) measured once and baked into the frame extraction (`demo/tools/prep.sh`): frames are named by film frame number, so the page never computes sync.
-- **Cut points are calls.** Each layout change starts on the first word of a real call in the native audio ("ten", "go for…", "ignition", a name) or on an event visible in the footage. The music follows; it never sets a cut.
-- **Cell count rises toward zero**: 1 → 2 → 3–4 → many (6–9, the clock itself becomes the centre cell, the transcript a cell) → **one** at zero → a few again after zero (the event's consequences) → one under the title. The shortest layouts are nearest to zero.
-- **Inside a cell, the source cuts itself** (a broadcast switching cameras): keep it; we only cut the layout.
-- **Silence before zero**: the music drops out a quarter-second before zero; only the native sound and the clock remain.
-- Full-screen moments carry the clock and transcript as plates at the bottom; a gradient (0 → 75 % black) under them.
+- **屏幕时间 = 事件时间。** 整个影片的一个映射 `M = t − T0`。每个摄影机都有自己的源偏移量 (`s = M + c`)，测量一次并纳入帧提取 (`demo/tools/prep.sh`)：帧由影片帧号命名，因此页面从不计算同步。
+- **剪切点是呼叫。** 每个布局更改都从本机音频中真实呼叫的第一个单词（“十”、“去……”、“点火”、名称）或镜头中可见的事件开始。音乐随之而来；它永远不会削减。
+- **细胞计数向零上升**：1 → 2 → 3–4 → 许多（6–9，时钟本身成为中心细胞，转录物为一个细胞）→ **一** 为零→ 零后又出现几个（事件的后果）→ 标题下的一个。最短的布局最接近于零。
+- **在小区内，源自行切断**（广播切换摄像机）：保留；我们只剪切布局。
+- **零前静音**：零前四分之一秒音乐停止；只剩下原生声音和时钟。
+- 全屏时刻在底部显示时钟和文字记录；在它们下面有一个渐变（0 → 75% 黑色）。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-Layers, top to bottom:
+层数，从上到下：
 
-1. **Native sound** — the event's own audio (commentary, radio loops, crowd), high-pass 90 Hz, compressed, always on top; never ducked.
-2. **Narrator** (sparingly, only in gaps of the native sound, never over it): clean and close, a different gender or accent from the event's voices; Kokoro, every line through `asr_check.py`.
-3. **The clock**: a tick every whole second (two alternating pitches around 1.5–1.9 kHz, panned ±15 %), louder in the last ten seconds, a soft single pitch after zero.
-4. **Interface foley** from `window.EV`: re-layout whoosh + metallic snap; cell pop snap; checklist tock; event-flag whoosh; full-screen cut thump.
-5. **Score**, 60 BPM so one beat = one second = one tick: a low synth drone whose low-pass opens toward zero, a bass drum per beat, off-beat hats, a tom per spoken count, timpani roll into zero, silence, then a low brass major chord with bass drum, crash and tubular bell at zero; after zero a new texture (pizzicato bass ostinato, lighter tick). Low brass, timpani, toms, tubular bells, glockenspiel; no piano-and-strings pad.
-- Mix: music about 8–10 dB under the native sound and ducked under speech; the ignition (or the event's own climax sound) is the loudest moment; master −14 LUFS via a pre-limited mix so `mux.sh` meets the true-peak target.
-- **Changing the music** (e.g. a Suno track): never move the clock or the cuts; choose or stretch a track so a downbeat lands exactly on zero and a section change lands on T−10, and keep the quarter-second silence before zero.
+1. **原生声音** — 活动自己的音频（评论、广播循环、人群），高通 90 Hz，压缩，始终位于顶部；从来没有躲过。
+2. **旁白**（有节制地，仅在原生声音的间隙中，切勿超过它）：干净且接近，与事件声音不同的性别或口音； Kokoro，每一条线都经过`asr_check.py`。
+3. **时钟**：每整秒一次滴答声（大约1.5–1.9 kHz的两个交替音调，平移±15%），最后十秒声音更大，零后一个柔和的单音调。
+4. **界面foley**来自`window.EV`：重新布局嗖嗖+金属按扣；细胞弹出快照；核对清单；事件标志嗖嗖地响；全屏切扑通。
+5. **配乐**，60 BPM，所以一拍=一秒=一滴答声：低音合成器的低音，低通向零打开，每拍一个低音鼓，另类帽子，每口计数一个通鼓，定音鼓滚到零，静音，然后是低音铜管大和弦，低音鼓，碰撞和管钟为零；零后一个新的纹理（拨奏低音固定音，较轻的滴答声）。低音铜管乐器、定音鼓、通鼓、管钟、钟琴；没有钢琴和弦乐垫。
+- 混音：音乐比本地声音低约 8-10 dB，并在讲话时被隐藏；点火（或事件本身的高潮声音）是最响亮的时刻；通过预先限制的混合主控−14 LUFS，因此`mux.sh`满足真正的峰值目标。
+- **更改音乐**（例如 Suno 曲目）：切勿移动时钟或剪辑；选择或拉伸曲目，以便强拍恰好落在零上，而部分变化落在 T−10 上，并保持零之前四分之一秒的静音。
 
-## 8. Native moves (and how to build them)
+<a id="8-native-moves-and-how-to-build-them"></a>
+## 8. 风格特有表现手法（以及如何构建它们）
 
-- **Many into one.** At zero, every cell moves to its tile of the full frame (a 3×3 grid becomes nine 640×360 tiles) while each tile cross-fades to the same full-screen shot, chips and borders vanish in the first half, a warm white flash (`rgba(255,248,236,.7)`, decay τ ≈ 0.11 s) peaks, and the clock and transcript slide from their grid cells back to the bottom. 0.42 s. *Fits:* a verdict read out; the goal at the final whistle.
-- **Clock inversion.** At zero the clock block flips from dark with an orange T− to orange with dark T+, and its header changes (countdown → elapsed). *Fits:* polls closing, a store opening.
-- **Control strip.** Segments in the clock header (who has control: ground → vehicle → mission control; prosecution → jury → judge); the active one fills orange on the call that hands it over, with a short flash. The story's turns live here.
-- **The grid fills on the count.** Empty grid slots show as dashed "standby" frames; each spoken number opens one camera. *Fits:* "three, two, one" before a premiere.
-- **Sync badge.** Top-right of each video cell: `● 实时同步 LIVE SYNC` (synced), `○ 同一时段 · 未逐帧同步 SAME WINDOW` (hatched, grey: footage from the same minutes without a usable clock), `慢动作还原 1× REAL-TIME` (slow-motion re-timed). Honesty is part of the look.
-- **Planned vs heard checklist.** Official milestones with their planned times tick as the clock passes them; when the native audio actually says one, a red "heard −32.1" tag with a small waveform appears beside it. *Fits:* a court schedule against what was said; a train timetable against the platform announcement.
-- **Second countdown.** After zero, a smaller clock counts to the next official milestone (`−1:47 to booster separation, expected T+2:09`) along a schematic profile drawn by time, not distance. *Fits:* the next race split; the next ballot count.
-- **Event flag.** An orange bar with black type slides in at the bottom of the relevant cell on its call (`RS-25 ×4 启动 ENGINE START · T−6.36`), held ≥ the reading time.
-- **Punch-in on a call.** A hard digital punch-in on the relevant detail when the commentary names it, from a higher-resolution extraction of the same source.
-- **Document by rows.** A paper close-up shows two or three rows; a highlight bar and an annotation band below the paper translate the row; the window moves only between rows (its edges in the white space).
+- **多为一。** 在零时，每个单元移动到全帧的图块（3×3网格变成九个640×360图块），而每个图块交叉淡入淡出到相同的全屏镜头，碎片和边框在前半部分消失，暖白色闪光（`rgba(255,248,236,.7)`，衰减） τ ≈ 0.11 s) 达到峰值，时钟和转录本从网格单元滑回底部。 0.42 秒。 *适合：*宣读的判决；终场哨声响起时的进球。
+- **时钟反转。** 在零时，时钟块从带有橙色 T− 的黑色翻转为带有黑色 T+ 的橙色，并且其标头发生变化（倒计时 → 已过）。 *适合：*民意调查结束、商店开业。
+- **控制条。** 时钟头中的分段（谁控制：地面→车辆→任务控制；起诉→陪审团→法官）；活动的呼叫在移交呼叫时呈橙色，并短暂闪烁。故事的转折就在这里发生。
+- **网格在计数时填充。** 空网格槽显示为虚线“备用”框；每个说出的号码打开一个摄影机。 *适合：*首映前“三，二，一”。
+- **同步徽章。** 每个视频单元的右上角：`● 实时同步 LIVE SYNC`（同步）、`○ 同一时段 · 未逐帧同步 SAME WINDOW`（阴影线、灰色：同一分钟的素材，没有可用时钟）、`慢动作还原 1× REAL-TIME`（慢动作重新定时）。诚实是外表的一部分。
+- **计划与听说清单。** 官方里程碑及其计划时间随着时间流逝而滴答作响；当本机音频实际说出“1”时，旁边会出现一个带有小波形的红色“heard -32.1”标签。 *适合：*与所说内容相符的法庭时间表；根据站台公告的火车时刻表。
+- **第二次倒计时。** 零后，较小的时钟沿着按时间而不是距离绘制的示意性轮廓计数到下一个官方里程碑（`−1:47 to booster separation, expected T+2:09`）。 *适合：*下一场比赛；下一次计票。
+- **事件标志。** 调用时，黑色字体的橙色条滑入相关单元格的底部 (`RS-25 ×4 启动 ENGINE START · T−6.36`)，保持时间≥读取时间。
+- **在通话中插入。** 当评论提到相关细节时，从同一来源的更高分辨率提取中对相关细节进行硬数字插入。
+- **按行排列的文档。** 纸张特写显示两行或三行；纸张下方的突出显示栏和注释带会翻译该行；窗口仅在行之间移动（其边缘在空白区域）。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **Unsyncable footage** (an edited "rover" reel with no clock or event to align on). Never fake it: label the cell "same window · not frame-synced", keep it out of the countdown's key seconds or use it only where nothing it shows contradicts the time, and say so in `FACTS.md`. Look first for a source with a burned-in timer, a visible ignition / flash / whistle, or the same audio.
-- **Measuring zero.** Never trust metadata. Combine two independent marks: a visible event (ignition flash, a broadcast countdown bug's flip) and the spoken word timing ("booster" at zero). Re-measure on the file you actually cut: `ffmpeg -ss … -c copy` starts on the previous keyframe.
-- **Audio and picture of one file can disagree** (a switched feed whose audio lagged its video by ~1 s). Sync each camera on its picture.
-- **Slow-motion sources**: measure the factor from two events with a known gap (e.g. engine start to booster ignition = 6.36 s) and re-time with `setpts=PTS/k`.
-- **Burned-in text**: broadcast bugs, camera numbers, timers, tracker data. Define per-shot usable regions (they change when the source cuts) or `delogo` them; check every source cut with a frame-difference scan.
-- **A static wide shot for ten seconds** reads as flat. Give every 1–2 seconds a new element (a cell, a tick on the list, a flag, a punch-in), not a fake camera move.
-- **Spoilers in the subtitle**: a whole-sentence Chinese line reveals the end of a count early. Split counts into separate cues.
-- **The clock jitters** if digits are proportional: draw them in fixed slots.
-- **Hot peaks** from broadcast audio and the ignition hit miss the true-peak target: pre-limit the mix at about −4 dBFS after normalising to −14 LUFS.
-- **Logos.** No agency insignia as a graphic; cut slates and bugs; the film says it is unofficial.
+- **不同步的镜头**（编辑过的“漫游者”卷轴，没有时钟或事件可以对齐）。切勿伪造：将单元格标记为“同一窗口·不帧同步”，将其保留在倒计时的关键秒之外，或者仅在其显示的内容与时间不矛盾的情况下使用它，并在 `FACTS.md` 中如此说明。首先寻找带有内置定时器、可见点火/闪光/口哨或相同音频的信号源。
+- **测量为零。** 永远不要相信元数据。组合两个独立的标记：可见事件（点火闪光、广播倒计时错误的翻转）和口语计时（“助推器”为零）。重新测量您实际剪切的文件：`ffmpeg -ss … -c copy` 从上一个关键帧开始。
+- **一个文件的音频和图片可能不一致**（一种切换源，其音频滞后于视频约 1 秒）。将每个摄影机同步到其图片上。
+- **慢动作源**：测量具有已知间隙的两个事件的系数（例如发动机启动到增压点火= 6.36秒）并使用`setpts=PTS/k`重新计时。
+- **烧入文本**：广播错误、摄影机数字、计时器、跟踪器数据。定义每个镜头可用区域（当源剪切时它们会改变）或 `delogo` 它们；使用帧差扫描检查每个源剪辑。
+- **A 静态宽镜头十秒** 读取为平坦。每 1-2 秒给出一个新元素（一个单元格、列表上的勾号、一个标志、一个打卡），而不是假的摄影机运动。
+- **副标题剧透**：一整句中文台词提前透露了计数的结束。将计数拆分为单独的提示。
+- **如果数字成比例，则时钟抖动**：将它们绘制在固定槽中。
+- 来自广播音频的 **热点峰值** 和点火命中错过了真正的峰值目标：在归一化为 -14 LUFS 后，将混音预限制在约 -4 dBFS。
+- **标志。** 无机构徽章作为图形；砍掉石板和虫子； 影片表示它是非官方的。
 
-## 10. Materials, sources, facts, engine
+<a id="10-materials-sources-facts-engine"></a>
+## 10. 材料、来源、事实、引擎
 
-**Materials — ask first.** Before searching, ask the user whether they have their own material of the event: footage from several angles, recordings of the audio, photos, documents (schedules, filings, results), data. What they give comes first and is credited as they say.
+**材料 — 首先询问。** 在搜索之前，询问用户是否有自己的事件材料：多个角度的镜头、音频录音、照片、文档（日程表、归档、结果）、数据。正如他们所说，他们的付出是第一位的，并且会被记入。
 
-**If not, where to look** (each item's own page decides; record it):
-- **NASA** (images.nasa.gov, svs.gsfc.nasa.gov): U.S. federal government works, public domain in the U.S.; fine to use. Don't use NASA insignia as graphics or imply endorsement; check each item for third-party material.
-- **Other U.S. federal agencies** (NOAA, National Archives, DoD DVIDS): public domain, same check for third-party material.
-- **Internet Archive**: only items whose own record shows public domain (pre-1931 U.S. publications, U.S. government works) or CC0 / CC BY; skip `youtube-*` / "mirrortube" uploads and anything of unclear origin.
-- **Wikimedia Commons**: read each file page; CC0, public domain and CC BY are fine (credit CC BY in full); CC BY-SA and "no known restrictions" are not fine without the user's explicit agreement.
-- **Library of Congress**: check each item's rights statement; "no known restrictions" is not CC0.
-- Not usable: re-uploads without a source, restored or colourised versions, news-agency footage, anything whose licence is not stated.
+**如果没有，去哪里找**（每一项自己的页面决定；记录一下）：
+- **NASA**（images.nasa.gov、svs.gsfc.nasa.gov）：美国联邦政府作品，美国公共领域；很好用。请勿使用 NASA 徽章作为图形或暗示认可；检查每个项目是否有第三方材料。
+- **其他美国联邦机构**（NOAA、国家档案馆、DoD DVIDS）：公共领域，对第三方材料进行同样的检查。
+- **Internet Archive**：仅其自身记录显示公共领域的项目（1931 年之前的美国出版物、美国政府作品）或 CC0 / CC BY；跳过 `youtube-*` /“mirrortube”上传和任何来源不明的内容。
+- **Wikimedia Commons**：读取每个文件页面； CC0、公共领域和 CC BY 都可以（完整记下 CC BY）；未经用户明确同意，CC BY-SA 和“无已知限制”是不行的。
+- **国会风格库**：检查每个项目的权利声明； “无已知限制”不是 CC0。
+- 不可用：未经来源重新上传、恢复或着色版本、新闻机构镜头、任何未注明许可的内容。
 
-**Before downloading, tell the user** what you will fetch, from where and under which licence, in one message. Then fetch only the seconds you need: `python3 demo/tools/grab.py <nasa_id> <orig|large> <start> <duration> <name> [--copy]` reads an HTTP range of a NASA original; `python3 demo/tools/footage.py search|fetch|used|md` searches NASA, Commons and the Internet Archive and records licence, author and page in `SOURCES.jsonl` / `SOURCES.md` automatically. Keep `raw/` under about 1.5 GB.
+**在下载之前，请在一条消息中告诉用户** 您将要获取什么、从哪里以及在哪个许可证下获取。然后仅获取您需要的秒数：`python3 demo/tools/grab.py <nasa_id> <orig|large> <start> <duration> <name> [--copy]` 读取 NASA 原始数据的 HTTP 范围； `python3 demo/tools/footage.py search|fetch|used|md` 搜索 NASA、Commons 和 Internet Archive，并自动在 `SOURCES.jsonl` / `SOURCES.md` 中记录许可证、作者和页面。将 `raw/` 保持在约 1.5 GB 以下。
 
-**Facts**: a `FACTS.md` (claim, URL, quoted wording, or the measurement) covering every number, time, name and call on screen and in the narration; official sources only; planned times and actual (heard) times are kept apart. Check the script against it before the last render.
+**事实**：`FACTS.md`（声明、URL、引用的措辞或测量）涵盖屏幕上和旁白中的每个数字、时间、姓名和呼叫；仅官方来源；计划时间和实际（听到的）时间是分开的。在最后一次渲染之前检查脚本。
 
-**Engine** (copy into the project): `demo/index.html` (Canvas 2D: `LAY` layout keyframes with `grid` / `merge` / `cut` / `swap`, `camRegion()` usable regions, `crop()` cover framing, `drawClock()`, `drawTx()`, `drawCheck()`, `drawDoc()`, `drawProfile()`, `drawThrust()`, `window.EV` for the mix, `window.TEXTS` for `readcheck`, `window.SUBFIT` for the one-line subtitle check), `demo/tools/prep.sh` (the sync table → frames), `demo/tools/subs.mjs` (cues → `audio/cues.json`, one-line and duration check), `demo/audio/mix.py` (native sound, ticks, foley, score, ducking, pre-master), `demo/tools/final_asr.py` (Whisper on the finished film), `demo/tools/fetch_fonts.py`.
+**引擎**（复制到项目中）：`demo/index.html`（Canvas 2D：`LAY` 布局关键帧，带有 `grid` / `merge` / `cut` / `swap`、`camRegion()` 可用区域、`crop()` 盖框架、`drawClock()`、`drawTx()`、`drawCheck()`、`drawDoc()`、`drawProfile()`、 `drawThrust()`、`window.EV` 用于混音、`window.TEXTS` 用于 `readcheck`、`window.SUBFIT` 用于单行字幕检查）、`demo/tools/prep.sh`（同步表 → 帧）、`demo/tools/subs.mjs`（提示 → `audio/cues.json`，单行和持续时间检查），`demo/audio/mix.py`（原生声音，滴答声，拟音，配乐，音量闪避，预母带），`demo/tools/final_asr.py`（成品影片上的耳语）， `demo/tools/fetch_fonts.py`。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-The agent decides per film: the event, where real time starts and ends, the number of cameras, which documents and data, the control segments, the narrator's lines (or none), the closing layout.
+代理根据影片决定：事件、实时开始和结束的位置、摄像机的数量、哪些文档和数据、控制片段、叙述者的台词（或无）、结束布局。
 
-- **Clocks**: T−/T+; a match clock; a wall clock (HH:MM:SS) for a news day; a countdown to a deadline that then counts up as "overtime".
-- **Three structures**: rising cells to a merge (this demo); one cell that splits outward after zero (results arriving from many places); two parallel countdowns side by side that meet at zero (two teams, two cities).
-- **Three openings**: a single wide shot and the first call; the clock alone on black, then the first camera opens; a document (the schedule) with the first item ticking.
-- **Three endings**: the inverted clock over one full-screen shot; the grid refilling with consequences, then one title; the second countdown reaching its own zero.
+- **时钟**：T−/T+；比赛时钟；新闻日的挂钟 (HH:MM:SS)；截止日期倒计时，然后算作“加班”。
+- **三种结构**：上升单元格进行合并（本示范）；一个细胞在零后向外分裂（结果来自许多地方）；两个并行的倒计时在零处相遇（两支球队，两个城市）。
+- **三开**：单宽镜头并首调用；时钟单独变黑，然后第一个摄影机打开；第一项勾选的文档（时间表）。
+- **三种结局**：一屏全屏倒置时钟镜头；网格重新填满结果，然后是一个标题；第二次倒计时归零。
 
 ---
 
-How our demo was made (story, layouts, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、布局、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

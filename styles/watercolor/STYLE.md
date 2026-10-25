@@ -1,111 +1,123 @@
-# Watercolor Brush — Style Prompt
+<a id="watercolor-brush--style-prompt"></a>
+# 水彩笔刷：风格提示词
 
-> A hand-painted journal page that paints itself: translucent brush strokes with dry-brush flying white on warm cotton paper, hand-written notes beside what is painted, nothing drawn with a vector line.
-> References (grammar only): naturalist field-journal and botanical-plate watercolours (specimen + note); long horizontal handscroll panoramas (one continuous painted world); the textbook "transect" diagram (a gradient read across space). Borrow the grammar, never a specific artwork, character or layout.
+> 手绘日记页，会自行绘画：在温暖的棉纸上用干刷飞白进行半透明笔触，在绘画内容旁边手写注释，没有用矢量线绘制任何内容。
+> 参考文献（仅语法）：自然主义田野日记和植物板水彩画（标本+注释）；长水平手卷全景图（一个连续的绘画世界）；教科书“横断面”图（跨空间的梯度读取）。借用语法，而不是特定的艺术作品、角色或布局。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **One sheet of warm, fibrous paper** under everything; it is also the eraser (paper-coloured mist washes things away).
-- **Everything is individual brush strokes**: a variable-width ribbon at partial opacity plus a few thin **bristle tracks** that break into dashes (flying white). Strokes overlap and darken where they cross, like transparent pigment. No vector outlines; a darker edge stroke along a form is the only "line".
-- **Things paint themselves in**, stroke by stroke, structure before detail (trunk → branches → leaves; outline wash → shadow → accent).
-- **An annotation layer** in a hand the painter would write with: labels with pen leader lines, a small measured value, a quiet title.
-- Tone: calm, curious, precise. Numbers are real; the palette can carry data.
+- **一张温暖的纤维纸** 在所有东西下面；它也是橡皮擦（纸色雾水彩晕染东西走）。
+- **一切都是单独的笔触**：部分不透明的可变宽度丝带加上一些细**鬃毛轨迹**，分解成破折号（飞白）。笔画重叠并在交叉处变暗，就像透明颜料一样。无矢量轮廓；沿着表格的深色边缘笔画是唯一的“线”。
+- **事物在**中描绘自己，一笔一笔，结构先于细节（树干→树枝→树叶；轮廓水彩晕染→阴影→重音）。
+- **注释层** 画家用手书写：带笔引导线的标签、小测量值、安静的标题。
+- 语气：平静、好奇、精确。数字是真实的；调色板可以承载数据。
 
-Not ink wash (colour, not ink tones; no calligraphic brush-as-gesture), not impasto (no thick paint, no knife), not a children's picture book (no crayon, no cute outlines), not vector illustration with a watercolour texture laid on top.
+不是墨水水彩晕染（颜色，不是墨色调；没有毛笔作为手势），不是厚涂（没有厚油漆，没有刀），不是儿童图画书（没有蜡笔，没有可爱的轮廓），不是上面有水彩纹理的矢量插图。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Paper**: a pre-generated image (warm base, three octaves of smooth noise ±3.5 %, a few thousand short curved fibres, fine grain, light vignette), drawn first every frame.
-- **Stroke** (`engine.js` `mk`/`drawS`): a ribbon whose width follows a profile (`brush`, `leaf`, `even`, `tip`, `trunk`) with ~±22 % value-noise roughness, filled as a thin wash (≈ 0.55–0.6 body opacity when bristles are present), plus 3–9 bristle tracks at 30–85 % opacity, each with a random dash pattern and a random early end: that is the flying white. A stroke can be painted up to any fraction of its length (a moving brush tip).
-- **Wash**: the same polygon painted in 3 passes with jittered vertices at a third of the opacity each, so edges darken where passes disagree (a pooled watercolour edge).
-- **Depth by layers**: several parallax layers of washes and painted objects; farther = smaller, lighter, less saturated; paper-coloured mist bands between layers.
-- **Cache finished objects as sprites**; draw stroke by stroke only what is being painted or transformed.
-- **Everything is a pure function of `t`**; any stroke made inside `render(t)` is built under a fixed seed.
+- **纸张**：每帧首先绘制的预生成图像（温暖的基底、三个八度的平滑噪声±3.5％、几千条短弯曲纤维、细颗粒、浅晕影）。
+- **笔触** (`engine.js` `mk`/`drawS`)：宽度遵循轮廓的色带 (`brush`、`leaf`、`even`、 `tip`、`trunk`），具有 ~±22 % 值噪声粗糙度，填充为薄水彩晕染（当存在刷毛时，主体不透明度约为 0.55–0.6），加上 30–85 % 不透明度的 3–9 刷毛轨迹，每个都有一个随机的破折号图案和一个随机的早期结束：这就是飞白。笔划可以绘制到其长度的任何部分（移动的画笔笔尖）。
+- **晕染**：在 3 个通道中绘制相同的多边形，每个通道的不透明度为三分之一，抖动顶点，因此通道不一致的地方边缘会变暗（汇集的水彩边缘）。
+- **按图层划分的深度**：水彩晕染和绘制对象的几个视差图层；更远=更小、更轻、饱和度更低；各层之间有纸色的雾带。
+- **将完成的对象缓存为精灵**；仅一笔一笔地绘制正在绘制或变换的内容。
+- **一切都是`t`**的纯函数； `render(t)` 内进行的任何笔画均在固定种子下构建。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **Paper is the white.** Never paint pure white; light is unpainted paper.
-- **Transparent layering**: darker = more passes, not a darker pigment on top. Keep 3–5 hues per scene plus ink.
-- **Ink** (a warm near-black and a lighter brown) for lines, text, edges and stems only.
-- **Colour may carry the data or the mood**: blend sky, ground and background by position or time so the palette itself changes with the subject. Map ramps quantised into 4–6 bands read as paint, continuous ramps read as software.
-- **One accent** (a vermilion, a rain blue) reserved for one element that recurs: a stamp, a marker, a key object.
-- Examples: arid-to-wet — red ochre → sage → straw → blue-grey → deep green; a harbour at dawn — `#f3e2c8` sky, `#9fb4c4` water, `#5f7486` hulls, accent `#c8442a` buoys; a vegetable garden — `#e8e0c0` soil light, `#8ea860` leaves, `#4e6e3c` shade, accent `#d9632e` pumpkins.
+- **纸为白色。** 切勿涂纯白色；光是未涂漆的纸。
+- **透明分层**：较暗=更多通道，而不是顶部较暗的颜料。每个场景保留 3-5 种色调加上墨水。
+- **墨色**（温暖的近黑色和浅棕色）仅适用于线条、文本、边缘和分轨音频。
+- **颜色可以承载数据或情绪**：按位置或时间混合天空、地面和背景，因此调色板本身随主题而变化。地图渐变量化为 4-6 个带，解读为油漆，连续渐变解读为软件。
+- **一个重音**（朱红色，雨蓝色）保留给一个重复出现的元素：邮票，标记，关键物体。
+- 例如：从干旱到潮湿——红赭色→鼠尾草色→稻草色→蓝灰色→深绿色；黎明时的港口 — `#f3e2c8` 天空、`#9fb4c4` 水、`#5f7486` 船体、重点 `#c8442a` 浮标；菜园 — `#e8e0c0` 土壤光、`#8ea860` 叶子、`#4e6e3c` 阴影、`#d9632e` 南瓜。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- An elegant serif (e.g. Cormorant Garamond) for titles and subtitles, a handwriting face (e.g. Caveat) for notes, a small mono (e.g. IBM Plex Mono, wide tracking) for measured labels, Noto Serif SC for Chinese (subset to the characters used).
-- Hand notes are drawn twice over a paper-coloured halo, revealed left to right like writing, with a pen leader line that grows to its specimen.
-- **Subtitles** sit on the paper, not in a box: centred at the bottom, serif italic ~36 px (2 balanced lines max), a second-language line beneath at ~2/3 size, ink at ~78 % over a paper-coloured halo. Hold ≥ max(1.8 s, speech + 0.6 s).
-- Numbers are spelled out in the TTS text and written as digits on screen.
+- 用于标题和副标题的优雅衬线（例如 Cormorant Garamond），用于注释的手写字体（例如 Caveat），用于测量标签的小型单声道（例如 IBM Plex Mono，宽跟踪），用于中文的 Noto Serif SC（所用字符的子集）。
+- 手写笔记在纸色光环上绘制两次，像书写一样从左到右显示，并有一条笔引导线延伸至其样本。
+- **字幕**位于纸上，而不是在盒子中：在底部居中，衬线斜体约36像素（最多2条平衡线），下方有第二语言线，尺寸约2/3，墨水在纸色光环上约78％。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- 数字在 TTS 文本中拼写出来并在屏幕上以数字形式书写。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **Painting-in is the main motion**: an object's progress is a function of where it sits on screen or of a cue; strokes in a list each take a slice of that progress, so structure appears first.
-- **Sway** only after an object is finished: a small horizontal skew (`sin(1.15t+φ) + .4 sin(2.7t+2φ)`), ~0.006 for trees, 0.01–0.03 for grass.
-- **Brush-edge wipes**: a wavy vertical clip reveals a whole scene; lines grow by stroke progress; labels open with a left-to-right clip.
-- **Mist** erases: paper-coloured layers with a wavy rising edge.
-- Animated creatures and events may be phased to the music's beat grid so landings hit the beat.
-- Smooth easing (`ss`, `eio`, `eo`, `ei`); 60 fps suits the slow, fluid brush; nothing jitters.
+- **绘画是主要运动**：对象的进度是其位于屏幕上的位置或提示的函数；列表中的每个笔划都会占用该进度的一部分，因此结构首先出现。
+- **摇摆** 仅在对象完成后：小的水平倾斜 (`sin(1.15t+φ) + .4 sin(2.7t+2φ)`)，树木为 ~0.006，草为 0.01–0.03。
+- **刷边擦拭布**：波浪形垂直夹子揭示了整个场景；线条随着笔画的进展而增长；标签用从左到右的剪辑打开。
+- **薄雾** 擦除：具有波浪状上升边缘的纸色层。
+- 动画生物和事件可能会按照音乐的节拍网格进行分阶段，以便着陆符合节拍。
+- 光滑缓动（`ss`、`eio`、`eo`、`ei`）； 60 fps 适合缓慢、流畅的画笔；没有什么不安。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. The picture is one painted sheet; cutting is rare. Opening and ending come from the topic.
+是词汇，而不是路线。这幅画是一张彩绘纸；切割很少见。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Long lateral dolly over a continuous world | a gradient; a journey; cause and consequence | a transect; a route; a timeline |
-| Vertical tilt along one object | scale; measurement | a tall tree; a building; a depth |
-| Locked sheet, things painted in | study; attention | a specimen plate; a recipe; a diagram |
-| Slow push into a detail | the observer leaning in | a seed; an insect; a hand-written note |
-| Pull-back to a map or diagram | the whole re-framed | where it all happened; a system |
-| Mist wash to blank paper | chapter end; time passing | a season; forgetting; a new place |
-| Page turn / new sheet slides over | a new entry in the journal | a new day; a new species; a new case |
-| Change in time on a locked view | growth; decay; history | a season cycle; before/after; deep time |
+|连续世界上的长横向移动|梯度；一次旅行；原因和结果|横断面；一条路线；时间线|
+|沿一个物体垂直倾斜|规模;测量|一棵高大的树；一座建筑物；一个深度|
+|锁定的床单，画的东西|学习;注意力|样品板；食谱；一个图表|
+|慢慢推进细节|观察者倾斜|一颗种子；昆虫；手写的便条|
+|拉回到地图或图表|整个重新构架|一切发生的地方；一个系统|
+|将水彩晕染雾化到白纸上|章节结束；时间流逝|一个季节；忘记；一个新地方|
+|翻页/新页滑过|日记中的新条目|新的一天；一个新物种；一个新案例|
+|锁定视图上的时间变化|生长;衰变;历史|季节循环； before/after；深度时间|
 
-Framing: generous paper margins; one hero subject per view with its note; labels never cover the subject. Transitions: brush-edge wipes, mist, a page turn, or a continuous camera move; no hard video cuts, no dissolves between unrelated pictures.
+装框：宽大的纸边距；每次观看一张画面主体及其注释；标签永远不会涵盖主题。过渡：刷边擦拭、薄雾、翻页或连续摄影机运动；没有硬视频剪切，没有不相关图片之间的溶解。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Music**: acoustic and gentle: felt piano, fingerpicked guitar, woodwinds, light strings, glockenspiel, kalimba, soft pads. A licensed track can be edited with beat-aligned jumps; the picture can then take its beat grid.
-- **Foley made from the scene's matter**: a paper brush rustle for each painting-in (band-passed noise, light tremolo, a panned sweep); pencil scratch for notes; a soft thump for a stamp; page flips; nature beds and creatures of the subject (birds, wind, rain plinks, water, insects, fire crackle).
-- **Silence**: the brush lifted: music out, only paper and room; it frames a single painted moment.
-- **Mix character**: voice forward (RMS a few dB over the music), music ducked ~4 dB under voice with a smoothed envelope, a short soft reverb, final −14 LUFS. Kokoro voices are peaky (~17 dB peak-to-RMS): limit before level-matching.
-- **Voice**: warm, unhurried documentary read, one line per idea.
+- **音乐**：原声且柔和：毛毡钢琴、指弹吉他、木管乐器、轻弦乐器、钟琴、卡林巴、软垫。可以使用节拍对齐的跳跃来编辑获得许可的曲目；然后图片就可以采用它的节拍网格。
+- **由场景材料制成的拟音**：每次绘画时都有纸刷沙沙声（带通噪音、轻颤音、声像扫描）；铅笔划痕做笔记；轻柔地敲击邮票；翻页；自然床和主题生物（鸟类、风、雨声、水、昆虫、火爆裂声）。
+- **沉默**：画笔抬起：音乐灭了，只有纸和房间；它勾勒出一个单一的绘画时刻。
+- **混合特性**：语音前移（RMS比音乐高几dB），音乐在语音下降低约4 dB，带有平滑的包络，短的软混响，最终−14 LUFS。 Kokoro 声音很尖（~17 dB 峰值至 RMS）：电平匹配之前的限制。
+- **嗓音**：温暖、从容的纪录片阅读，每个想法一行。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Painting-in as reveal.** A new thing appears stroke by stroke as it enters. *Fits content like:* the stages of a building; the ingredients of a dish; the organs of a body.
-- **Burst.** A whole group paints in at once (≤ 1 s) for a peak. *Fits content like:* a festival crowd; a field in bloom; a city lighting up.
-- **Palette as data.** Sky, ground and background blend by a measured value. *Fits content like:* pollution along a river; temperature by altitude; noise across a city.
-- **Specimen + note.** One hero object with a hand-written label and leader line. *Fits content like:* a tool kit; a wine region's grapes; parts of a bicycle.
-- **Mist erase.** The world washes back to paper. *Fits content like:* forgetting; a dream ending; a site demolished.
-- **Map in time.** A painted map whose fills change continuously through years. *Fits content like:* a language spreading; a coastline eroding; a railway network growing.
-- **Painted transformation.** Objects cross-fade to a burnt, wet or aged sprite and regrow. *Fits content like:* a wildfire and recovery; a flood; a restoration.
+- **画入即显。** 一个新事物一笔一划地进入。 *适合以下内容：*建筑物的阶段；菜肴的配料；身体的器官。
+- **爆裂。** 整个组立即（≤ 1 s）绘制一个峰值。 *适合以下内容：*节日人群；一片盛开的田野；一座城市被点亮。
+- **调色板作为数据。** 天空、地面和背景通过测量值混合。 *适合以下内容：*沿河污染；温度随海拔高度变化；整个城市的噪音。
+- **样本+注释。** 一个带有手写标签和引出线的英雄对象。 *适合以下内容：*工具包；葡萄酒产区的葡萄；自行车的零件。
+- **雾擦除。** 世界水彩晕染回到纸上。 *适合以下内容：*忘记；梦想的结局；一个站点被拆除。
+- **时间地图。** 一张绘制的地图，其填充物多年来不断变化。 *适合以下内容：*语言传播；海岸线被侵蚀；铁路网不断发展。
+- **绘制变换。** 对象交叉淡入淡出为烧焦、潮湿或老化的精灵并重新生长。 *适合以下内容：*野火和恢复；洪水；恢复。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Offscreen wash strips too short flatten tall shapes into flat tops and expose seams on tilts → size strips well beyond the frame.
-- A translucent wash that ends at its canvas edge shows a hard seam under other layers → extend below the frame and fade to paper with a gradient.
-- Classic scripts share one global scope: touching a `const` before its declaration in async init leaves `READY` false and every screenshot times out → build everything inside the init; read `[pageerror]` lines.
-- The stroke builder consumes the global RNG: any stroke created in `render(t)` must be wrapped in `withSeed` or parallel workers disagree.
-- Thousands of strokes per frame are too slow → sprite cache.
-- Beat-locked animation must be re-derived when the music edit changes.
-- New CJK subtitle characters fall back to another font until the subset is rebuilt.
+- 屏幕外水彩晕染条带太短，将高的形状压平为平顶，并在倾斜时暴露接缝 → 尺寸条带远远超出框架。
+- 终止于画布边缘的半透明水彩晕染在其他层下显示出硬接缝 → 延伸到框架下方并以渐变方式淡入纸张。
+- 经典脚本共享一个全局作用域：在 async init 中声明之前触及 `const` 会使 `READY` 为 false，并且每个屏幕截图都会超时 → 在 init 内构建所有内容；读取 `[pageerror]` 行。
+- 笔划构建器使用全局 RNG：在 `render(t)` 中创建的任何笔划都必须包装在 `withSeed` 中，否则并行工作人员会不同意。
+- 每帧数千笔画太慢→精灵缓存。
+- 当音乐编辑发生变化时，必须重新导出节拍锁定动画。
+- 新的 CJK 字幕字符会回退到另一种字体，直到重建子集。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `engine.js` (RNG, easing, noise, monotone keyframe tracks; the stroke engine `mk`, `drawS`, `drawList`, `sprite`, `clump`, `edgeOf`, `withSeed`), `plants.js` (plant and prop generators, local coordinates, root at 0,0), `scene.js` (layers, wash strips `washPoly`, world placement `add`, annotations `hand` / `leader` / `note`), `main.js` (map, mist, HUD, subtitles, `render(t)`, async init → `READY`), `paper.py`, `fetch_fonts.mjs`, `mix.py`, `render.mjs`. API table and a minimal example: [DEMO.md](DEMO.md) "Engine reference".
+在`demo/`中：`engine.js`（RNG、缓动、噪声、单调关键帧轨道；行程引擎`mk`、`drawS`、`drawList`、`sprite`、 `clump`、`edgeOf`、`withSeed`)、`plants.js`（植物和道具生成器、本地坐标、根位于 0,0）、`scene.js`（图层、水彩晕染条带 `washPoly`、世界放置`add`，注释`hand` / `leader` / `note`），`main.js`（地图，薄雾，HUD，字幕，`render(t)`，异步初始化→`READY`）， `paper.py`、`fetch_fonts.mjs`、`mix.py`、`render.mjs`。 API 表和最小示例：[DEMO.md](DEMO.md)“引擎参考”。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the subject, the structure, what gets painted, the palette logic, whether anything is measured, the opening, the ending and the camera. All far from our demo:
+你决定主题、结构、画什么、调色板逻辑、是否测量任何东西、开头、结尾和摄影机。与我们的示范相去甚远：
 
-- Structures: **a journal kept over one year** (locked page per month, each painted over the last); **anatomy of one object** (a single specimen dissected into labelled parts, each part a painted close-up); **a recipe or process** (steps painted top to bottom on one tall sheet, tilting down).
-- Openings: **a finished painting** that we then watch being painted backwards to its first stroke, and forwards again; **a close-up of wet pigment** spreading, pulled back to show what it became; **a hand-written question** on blank paper, answered by painting.
-- Endings: **the page left unfinished**, brush lifted mid-stroke; **a close-up of one detail** as the rest fades to paper; **the sheet dries and is filed** into a stack of other pages.
+- 结构：**a日记保存一年以上**（每月锁页，每页画过最后一页）； **一个物体的解剖学**（单个标本被解剖成标记的部分，每个部分都有一个彩绘特写）； **a 配方或过程**（在一张高纸上从上到下绘制步骤，向下倾斜）。
+- 开场：**a 完成绘画**，然后我们看到向后绘画到第一笔，然后再次向前； **湿颜料**扩散的特写，拉回来显示它变成了什么； **在白纸上手写问题**，通过绘画作答。
+- 结局：**页未完成**，画笔中途抬起； **一个细节的特写镜头**，其余部分逐渐消失在纸上； **该纸张干燥后，将** 归档到一堆其他页面中。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

@@ -1,123 +1,135 @@
-# Liminal Found Footage — Style Prompt
+<a id="liminal-found-footage--style-prompt"></a>
+# 后室 / 新怪谈：风格提示词
 
-> Camcorder tapes recovered from empty, endless, fluorescent-lit spaces. Rules instead of monsters.
-> Genre reference (grammar only): "the Backrooms" internet folklore and new-weird / rule-horror; 1990s consumer camcorder footage. **Never** use the word "Backrooms", wiki "Level" numbers, community entity names, or any existing organisation or logo inside the film. Everything on screen (rules, forms, company voice, any presence) is original.
+> 从空荡荡、无边无际、荧光灯照明的空间中回收的摄像机磁带。规则而不是怪物。
+> 类型参考（仅语法）：“幕后”互联网民间传说和新奇/规则恐怖； 20 世纪 90 年代消费级摄像机镜头。 **绝不** 使用“幕后”一词、wiki“级别”编号、社区实体名称或影片内的任何现有组织或徽标。屏幕上的所有内容（规则、表格、公司声音、任何存在）都是原创的。
 
-Suits short films; the length follows the walk, and the dread thins out once nothing new goes wrong.
+适合短款影片；行走的距离越长，一旦没有新的问题出现，恐惧就会消失。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-- **One first-person camcorder recording** (1990s VHS, 4:3), handheld, continuous.
-- **An empty, familiar-but-wrong interior** that repeats: an office, a hotel floor, a school, a mall, a parking level, a hospital wing. Humming fluorescent light, no people.
-- **Dread from emptiness, repetition, bureaucratic rules, and the camera's own machinery failing at the wrong moment.** Nothing chases anyone. A chill on the back of the neck, not a jump.
-- **The medium is the storyteller**: focus, exposure, tape damage and the on-screen display carry the plot.
+- **一台第一人称摄像机录制**（1990 年代 VHS，4:3），手持式，连续。
+- **一个空荡荡的、熟悉但错误的内部空间**，重复着：办公室、酒店楼层、学校、购物中心、停车场、医院翼楼。荧光灯嗡嗡作响，没有人。
+- **害怕空虚、重复、官僚规则，以及摄影机自己的机器在错误的时刻失败。** 没有什么可以追赶任何人。后颈一凉，不由跳了起来。
+- **表现媒介是讲故事的人**：对焦、曝光、磁带损坏和屏幕显示承载着情节。
 
-Not a horror film (no monster close-ups, no gore, no jump scares, no score stings), not an ASCII/CRT terminal piece (the artefacts are tape and lens, not phosphor and scanlines), not a ruin (clean is part of the style).
+不是恐怖片影片（没有怪物特写，没有血腥，没有跳跃恐慌，没有配乐刺痛），不是 ASCII/CRT 终端件（文物是胶带和镜头，不是荧光粉和扫描线），不是废墟（干净是风格的一部分）。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-- **Frame**: 4:3 pillarboxed in 1920×1080. Render 3D at low resolution (e.g. 720×540) and let the VHS pass upscale; low resolution hides CG cleanliness.
-- **Space**: axis-aligned partitions on a grid with random gaps and stubs, pillars, a drop ceiling of tiles with recessed light panels at regular intervals. A hand-authored route through procedurally filled space, so every doorway shows more emptiness.
-- **Lighting = thousands of lights, no shadows**: store every panel's colour and intensity in a float texture; each fragment sums the nearest panels (emitter cosine × Lambert / (d² + ε)) plus a bounce term. No occlusion: this light is flat. Per-light variation (a few % warm/cool/green), a few % dead, a few % flickering. Ambient occlusion darkens seams.
-- **Fog follows local light**: fog colour × (local light / average). Where lights are dead the haze is dark, so a silhouette there reads as a *hole in the light*. Background = fog × ~0.15, so corridors dissolve into darkness, never a bright wall.
-- **Restrained decay**: tide-marks at the foot of some walls, a discoloured band under the ceiling, rare peeling seams, a few yellowed or missing tiles, dead insects in diffusers. Percentages in single digits.
-- **Printed matter**: office laser-print on yellowed paper, condensed sans headers, form numbers and revisions, numbered rules, a polite closing line from "Management". Pinned or taped.
-- **VHS camcorder pass** (not a CRT): small line jitter (≤ 0.25 px low-frequency wobble), a head-switching band, tracking tears on demand, barrel + vignette on the image but **not** the OSD, luma blur + edge ringing, chroma smeared right, light smear, drifting white balance, AGC noise in darks, dropouts, lifted blacks, soft clip. Noise at tape rate (30 fps). No scanlines, no RGB mask.
-- **OSD**: a hand-made bitmap font with a black outline: REC dot, battery, time and date. A camcorder title generator uses the same font, larger.
+- **框架**：4:3 邮筒式，1920×1080。以低分辨率（例如 720×540）渲染 3D，并让 VHS 通过高档；低分辨率掩盖了 CG 的清洁度。
+- **空间**：网格上的轴对齐分区，具有随机间隙和短柱、柱子、瓷砖吊顶，间隔固定有嵌入式灯板。一条手工编写的路线穿过程序填充的空间，因此每个门口都显得更加空虚。
+- **Lighting = 数千个灯光，无阴影**：将每个面板的颜色和强度存储在浮动纹理中；每个片段将最近的面板（发射器余弦 × 兰伯特 / (d² + ε)）加上反弹项相加。无遮挡：该光是平坦的。每个灯的变化（百分之几warm/cool/green），百分之几死，百分之几闪烁。环境遮挡使接缝变暗。
+- **雾跟随局部光**：雾颜色×（局部光/平均）。在灯光暗淡的地方，雾霾是黑暗的，所以那里的轮廓看起来就像“光中的一个洞”。背景 = 雾 × ~0.15，因此走廊会融入黑暗，而不是明亮的墙壁。
+- **抑制腐烂**：一些墙脚处的潮痕、天花板下变色的带子、罕见的剥落接缝、一些泛黄或缺失的瓷砖、扩散器中的死昆虫。百分比以个位数表示。
+- **印刷品**：办公室激光打印在泛黄的纸上，压缩无标题，表格编号和修订，编号规则，来自“管理”的礼貌结束语。用别针或胶带固定。
+- **VHS摄像机通过**（不是CRT）：小线抖动（≤0.25 px低频摆动），头切换带，按需跟踪撕裂，图像上有桶状+晕影，但**不是** OSD，亮度模糊+边缘振铃，色度向右涂抹、浅涂抹、白平衡漂移、黑暗中的 AGC 噪声、漏失、黑色提升、软剪辑。磁带速率 (30 fps) 时的噪声。没有扫描线，没有 RGB 蒙版。
+- **OSD**：带有黑色轮廓的手工位图字体：REC点、电池、时间和日期。摄像机标题生成器使用相同的字体，但更大。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- **One dominant sickly hue** from the location's materials (mustard wallpaper, institutional green, hospital blue, beige laminate), with a darker trim and a mottled floor of the same family; ceiling and light panels near-white and slightly warm.
-- **Exactly one saturated colour**: a signal such as a red alarm lamp, a green emergency sign, an amber warning light. It is the only thing that blooms (drive its emissive high enough to cross the bloom threshold).
-- White balance drifts; colour is never graded clean.
-- Example material palettes: wallpaper `#d5bd66`, trim `#4d3d26`, carpet `#8c763c`; pool tile `#9fc7c0`, grout `#e6ece6`, water `#5e8f96`; school corridor `#b9c49a`, lockers `#6f7f66`, linoleum `#a89a7d`.
+- **一种病态的主色调**来自该地点的材料（芥末壁纸、机构绿、医院蓝、米色层压板），搭配深色装饰和同一系列的斑驳地板；天花板和灯板接近白色，略带温暖。
+- **恰好一种饱和颜色**：诸如红色警报灯、绿色紧急标志、琥珀色警告灯等信号。它是唯一会绽放的东西（将其发射率提高到足以跨越绽放阈值）。
+- 白平衡漂移；颜色永远不会被分级干净。
+- 材质调色板示例：壁纸 `#d5bd66`、装饰 `#4d3d26`、地毯 `#8c763c`；泳池瓷砖 `#9fc7c0`、灌浆 `#e6ece6`、水 `#5e8f96`；学校走廊`#b9c49a`，储物柜`#6f7f66`，油毡`#a89a7d`。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- **Closed captions (CEA-608 style)**: a monospace (e.g. IBM Plex Mono 600) ~42 px, white on a solid black box per row, ≤ 32 characters, centred inside the 4:3 frame above the OSD. Untouched by tape noise (the TV decodes them). Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Speaker marks**: `[PA]` for announcements, italics for the operator, SDH descriptions in brackets (`[LIGHTS FLICKER]`, `[TAPE NOISE]`, `[SILENCE]`).
-- **Rules on notices are not captioned**: they are the picture. Readable at 1080p, ≥ 3–4 s uncovered. For close-ups **lower the camera so the lens is parallel to the page**; pitching down at a vertical sheet shears words into fake italics.
-- The **title** is camcorder title-generator text over the first shot.
+- **隐藏式字幕（CEA-608 风格）**：等宽字体（例如 IBM Plex Mono 600）~42 像素，每行实心黑框上的白色，≤ 32 个字符，在 OSD 上方的 4:3 框架内居中。不受磁带噪音影响（电视对其进行解码）。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **扬声器标记**：`[PA]`用于公告，斜体表示运营商，SDH描述在括号中（`[LIGHTS FLICKER]`、`[TAPE NOISE]`、`[SILENCE]`）。
+- **关于通知的规则没有标题**：它们是图片。在 1080p 下可读，无遮盖时间≥ 3–4 秒。对于特写镜头 **将摄影机降低，使镜头与页面平行**；在垂直的纸张上向下倾斜会将单词剪切成假斜体。
+- **标题** 是第一个镜头上的摄像机标题生成器文本。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **One continuous handheld take.** Cuts happen only where the tape breaks: power-on roll-in, tracking tear, REC off.
-- **Handheld** = walking gait (head bob a few cm, sway, small roll) + breathing (~0.27 Hz) + tremor noise at a few frequencies whose amplitude follows a **fear** curve. At a held breath, **freeze all of it**.
-- **Looking down** shows only shoe toes and floor, never legs.
-- **Autofocus** = focus distance animated with overshoot: blur → lock → slip → lock. Blur comes from pulling focus *near*. Zoom narrows the FOV and opens the aperture.
-- **Lights flicker** as short blackouts (~0.1 s); auto-exposure catches up with a lag (~0.45 s) and gain noise pumps.
-- Things move by themselves slowly (a door over >1 s, eased), never snap.
+- **一次连续手持拍摄。** 仅在磁带断裂处进行剪切：开机转入、跟踪撕裂、REC 关闭。
+- **手持式**= 行走步态（头部摆动几厘米、摇摆、小幅滚动）+ 呼吸（~0.27 Hz）+ 某些频率的震颤噪声，其幅度遵循**害怕**曲线。屏住呼吸，**将其全部冻结**。
+- **往下看**只显示鞋头和地板，不显示腿。
+- **自动对焦** = 具有过冲动画的焦距：模糊 → 锁定 → 滑动 → 锁定。模糊来自于将焦点拉近*。变焦缩小视场并打开光圈。
+- **灯光闪烁** 为短暂停电（~0.1 秒）；自动曝光会出现滞后（~0.45 秒）并增益噪声泵。
+- 物体会缓慢地自行移动（门超过 1 秒，缓和），不会折断。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | What it expresses | Can serve |
+|移动|它表达了什么|可以服务|
 |---|---|---|
-| Walking POV down a corridor | routine, the endless | establishing the space; time passing |
-| Slow pan off a detail to the space | scale; the space goes on | a reveal; a first look |
-| Glance down at the feet | obedience, avoidance | obeying a rule; not looking |
-| Crouch and hold on printed text | reading; bureaucracy | a rule; a contradiction |
-| Zoom + focus hunt into the distance | seeing / not seeing | a presence; a doubt |
-| Identical framing after a tear, only the OSD changed | time removed | a jump; a loss |
-| Turn a corner, hold still | a threshold | an exit; a choice |
-| Slow push-in with no sound | the pull of something | a door; a sign |
-| Backing away while filming | retreat, fear | leaving a room; a rule broken |
-| Camera set down on a surface, static, recording alone | abandonment | the operator gone; a long wait |
-| Whip toward a sound, then nothing | expectation denied | a noise with no source |
+|沿着走廊走 POV|例行公事，无休无止|建立空间；时间流逝|
+|缓慢地将细节平移到空间|规模;空间继续|揭示；第一眼看|
+|低头看脚|服从、回避|遵守规则；不看|
+|蹲下并按住打印文本|阅读;官僚|一条规则；矛盾|
+|变焦+对焦寻找远方|看见/没看见|存在；一个疑问|
+|撕裂后的相同帧，仅 OSD 发生变化|时间已删除|一次跳跃；损失|
+|拐个弯，保持不动|一个门槛|一个出口；一个选择|
+|缓慢推入，无声音|某物的拉力|一扇门；一个标志|
+|拍摄时后退|退却、恐惧|离开房间；规则被打破|
+|摄影机放置在表面上，静态，单独记录|放弃|操作员走了；漫长的等待|
+|朝着有声音的方向鞭打，然后什么也没有|期望被拒绝|无源噪音|
 
-Framing: text readable and uncovered; any presence small, far, and in a region of dead lights. Transitions: tape events only.
+框架：文本可读且未被覆盖；任何小、远、光线昏暗的区域中的存在。过渡：仅限磁带事件。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **No score.** Only what the tape would have recorded. Music exists only inside the world (hold music, a radio through walls, a tinny PA jingle), filtered and reverberant, possibly slowing with tape wow.
-- **Fluorescent bed**: 120 Hz (or 100 Hz) + harmonics, a buzzy band-passed component, a faint ballast whine, bad-tube bursts; gated by the same light curve as the picture; closer in small rooms.
-- **PA voice**: calm, corporate, through a ceiling speaker (band-pass ~300–3500 Hz, cone resonance, saturation, room reverb), dry enough to stay intelligible. A short original chime before announcements; after a time jump, chime and voice may drift flat.
-- **Operator**: a few short, quiet lines with proximity bass and breath; breathing whose rate follows fear; a held breath and one long exhale.
-- **Foley by material**: carpet steps (low thud + wet squelch) or hard-floor squeaks, cloth rustles, camcorder clack and motor, zoom servo, AF ticks, ballast tink on flickers, a stick-slip hinge, a drag overhead, a vending machine, a pipe.
-- **Silence**: digital zero for a second or more (tails included), captioned `[SILENCE]`, is the strongest tool. A soft scare at most: everything restriking at once when sound returns.
-- **Drone** options: a low brown-noise band with beating sines rising slowly; the room tone itself pitch-shifting; nothing.
-- **Mix**: bed and in-world music ≈ −8 dB under voices. −14 LUFS; no added grain (the noise is in the picture).
+- **No 配乐.** 仅磁带将记录的内容。音乐只存在于世界内部（放音乐、穿墙收音机、扩音器叮当声），经过过滤和回响，可能会因为磁带而减慢哇。
+- **荧光床**：120赫兹（或100赫兹）+谐波，嗡嗡声带通分量，微弱的镇流器呜呜声，坏管突发；由与图片相同的光曲线进行选通；在小房间里更近。
+- **PA 声音**：冷静、有团队精神，通过天花板扬声器（带通 ~300–3500 Hz、锥体共振、饱和度、房间混响），足够干燥以保持清晰。公告前短暂的原创铃声；时间跳跃后，铃声和声音可能会变得平缓。
+- **操作员**：一些短而安静的线条，具有接近的低音和呼吸；呼吸的频率随着恐惧而变化；屏住呼吸，长长地呼出一口气。
+- **Foley（按材料）**：地毯台阶（低沉的重击声+湿静噪）或硬地板的吱吱声、布的沙沙声、摄像机的咔嗒声和电机的声音、变焦伺服系统、自动对焦滴答声、镇流器闪烁的叮当声、粘滑铰链、头顶上的拖动、自动售货机、管道。
+- **沉默**：一秒或更长时间的数字零（包括尾部），标题为`[SILENCE]`，是最强的工具。顶多是一种轻微的恐惧：当声音返回时，一切都立即重新发生。
+- **无人机** 选项：低棕噪声带，跳动正弦缓慢上升；房间音调本身会发生音调变化；没有什么。
+- **混音**：声音下的床和世界音乐 ≈ −8 dB。 −14 LUFS；没有添加颗粒（噪音在图片中）。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs.
+菜单：使用您的故事需要的菜单。
 
-- **Autofocus / auto-exposure hunting.** Something is there only while focus is correct. *Fits content like:* a missing pet on a hotel floor; a figure in an empty stadium; a shape at the end of a hospital corridor.
-- **Tape tracking damage.** A tear is a cut the universe made; same framing after, but the clock jumped, the battery drained, a light died. *Fits content like:* a night-watch log; a lost weekend in a mall; a house that ages between tapes.
-- **The OSD is plot.** REC, battery, date and time code are evidence. *Fits content like:* an alibi; a countdown; a dated inspection.
-- **Rules as text in frame.** Notices and PA announcements start ordinary, drift wrong, contradict each other, and finally address the viewer. *Fits content like:* a pool's safety rules; a school fire drill; a museum after hours.
-- **Emptiness and repetition.** The same notice in a different place; the same room with one detail changed; a corridor into fog. *Fits content like:* a moving-day walkthrough; an airport at 4 a.m.; an office after layoffs.
-- **The thing that is almost human.** A distant silhouette wrong by 15–40 % (small head, long neck, narrow high shoulders, long arms), drawn as organic curves on a billboard, moving slowly. *Fits content like:* a mannequin that is not; a night guard; a reflection that lags.
+- **自动对焦/自动曝光狩猎。** 只有当焦点正确时才会有东西。 *适合以下内容：* 酒店楼层失踪的宠物；空荡荡的体育场里的一个人影；医院走廊尽头的形状。
+- **磁带跟踪损坏。** 撕裂是宇宙造成的伤口；之后同样的取景，但是时钟跳动，电池耗尽，一盏灯熄灭了。 *适合以下内容：* 守夜日志；在商场度过一个失落的周末；一座在磁带之间老化的房子。
+- **OSD 是绘图。** REC、电池、日期和时间代码是证据。 *适合以下内容：*不在场证明；倒计时；注明日期的检查。
+- **规则作为框架中的文本。** 通知和 PA 公告一开始很普通，然后出现错误，相互矛盾，最后向观众讲话。 *适合以下内容：*泳池的安全规则；学校消防演习；下班后的博物馆。
+- **E空虚和重复。** 不同地方的相同通知；同一个房间，只有一个细节发生了变化；一条走廊进入雾中。 *适合以下内容：*搬家日演练；凌晨 4 点到达机场；裁员后的办公室。
+- **几乎是人类的东西。** 错误15-40%的远处剪影（小头，长脖子，窄高肩膀，长手臂），在广告牌上绘制为有机曲线，缓慢移动。 *适合以下内容：* 不适合的人体模型；夜间警卫；滞后的反映。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- **A fully bright scene reads as a hospital corridor** → partitions with gaps; far areas fall dark.
-- **Lights leak through walls** (no occlusion) → a dead zone needs every light within ~±5 m dead, and the space behind it dim.
-- **Background shows as a bright rectangle** at a corridor's end → background = fog × ~0.15.
-- **Uniform fog lifts silhouettes to grey** → fog follows local light.
-- **Line wobble skews text; pitching down italicises it** → ≤ 0.25 px wobble; lower the camera.
-- **Primitive-built figures read as toys**, primitive legs as tubes → organic silhouettes; show only shoe toes.
-- **Pure red never blooms** at low emissive (low luminance) → drive it far higher.
-- **Normalising a filtered signal by its pre-filter peak** blows up a bus → normalise the processed signal.
-- **Heavy PA reverb destroys intelligibility** → ASR-check processed lines and the full mix.
-- **Billboards stamp dark rectangles** in AO → exclude them.
-- **Time-compressing a finished timeline** → keyframes in original time mapped through one warp function, including hard-coded times elsewhere.
+- **完全明亮的场景看起来像医院走廊** → 有间隙的隔断；远处的区域变暗。
+- **灯光透过墙壁泄漏**（无遮挡）→死区需要〜±5 m内的每个灯光都死掉，并且其后面的空间变暗。
+- **背景在走廊尽头显示为明亮的矩形**→背景=雾×~0.15。
+- **均匀的雾将轮廓提升为灰色** → 雾跟随局部光。
+- **线条摆动倾斜文本；向下倾斜斜体** → ≤ 0.25 px 摆动；降低摄影机。
+- **原始人像读作玩具**，原始腿像管子→有机轮廓；只显示鞋头。
+- **纯红色从不绽放**在低发射（低亮度）→驱动它更高。
+- **通过预滤波器峰值对滤波后的信号进行归一化** 会炸毁总线 → 对处理后的信号进行归一化。
+- **HHeavy PA 混响破坏了清晰度** → ASR 检查处理过的线路和完整的混音。
+- **广告牌在 AO 中标记深色矩形** → 排除它们。
+- **对完成的时间线进行时间压缩** → 通过一个扭曲函数映射原始时间中的关键帧，包括其他地方的硬编码时间。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-`demo/world.js` (layout, light DataTexture, custom lighting and fog shaders, props), `demo/tex.js` (procedural wallpaper, carpet, ceiling, panels, notices, signs), `demo/vhs.js` (VHS camcorder ShaderPass), `demo/osd.js` (bitmap font, REC, battery, clock, title generator), `demo/subs.js` (608 captions), `demo/thing2d.js` (organic silhouette), `demo/story.js` (timeline, camera keyframes, focus / fear curves, time warp), `demo/main.js` (renderer, post chain GTAO + DOF + bloom → VHS, handheld rig). File map and build: [DEMO.md](DEMO.md#build-notes).
+`demo/world.js`（布局、灯光 DataTexture、自定义照明和雾着色器、道具）、`demo/tex.js`（程序壁纸、地毯、天花板、面板、通知、标志）、`demo/vhs.js`（VHS 摄像机 ShaderPass）、`demo/osd.js`（位图字体、REC、电池、时钟、标题生成器）、 `demo/subs.js`（608 个字幕）、`demo/thing2d.js`（有机轮廓）、`demo/story.js`（时间线、摄影机关键帧、聚焦/恐惧曲线、时间扭曲）、`demo/main.js`（渲染器、后链 GTAO + DOF + 光晕 → VHS、手持式） 骨骼绑定结构）。文件映射和构建：[DEMO.md](DEMO.md#build-notes)。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the location and its materials, the procedure or reason for filming, the rules, the route, the presence (or none), the signal colour, the opening, the ending and the length.
+您可以决定地点及其材料、拍摄的程序或原因、规则、路线、存在（或不存在）、信号颜色、开头、结尾和长度。
 
-All far from our demo:
+与我们的示范相去甚远：
 
-- Structures: **two tapes** (the same route filmed twice, a year apart; the second tape finds what changed); **a real-estate walkthrough** where every room is described cheerfully by the operator while the house keeps adding rooms; **a checklist read aloud** item by item, each item ticked on a clipboard in frame, until an item is not on the list.
-- Openings: **mid-sentence** (the tape starts with the operator already talking, tracking still rolling in); **a test pattern** and a date slate before the camera is picked up; **the lens cap on**, sound only, until the cap comes off.
-- Endings: **battery dies** (the icon blinks, the frame freezes on the dead cell); **the camera is set down** and keeps recording an empty room; **the tape loops** back to the first shot, now with the operator's shoes visible in it.
+- 结构：**两盘录像带**（同一路线拍摄两次，相隔一年；第二盘录像带发现发生了什么变化）； **房地产攻略**，每个房间都被操作员愉快地描述，而房子不断增加房间；大声朗读**清单**，逐项读出，每一项都在框架内的剪贴板上打勾，直到清单上没有一项。
+- 开头：**句子中间**（磁带开始时操作员已经在讲话，跟踪仍在滚动）； **a 测试图案**和摄影机之前的日期板被拾取；**将镜头盖装在** 上，仅发出声音，直至镜头盖脱落。
+- 结局：**电池死亡**（图标闪烁，画面冻结在死亡电池上）； **、摄影机设置**并持续记录空房间； **磁带将** 循环回到第一个镜头，现在可以看到操作员的鞋子。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。

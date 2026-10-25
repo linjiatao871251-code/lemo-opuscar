@@ -1,122 +1,134 @@
-# Shadow Puppetry — Style Prompt
+<a id="shadow-puppetry--style-prompt"></a>
+# 皮影戏：风格提示词
 
-> Chinese shadow theatre: translucent dyed-hide puppets, carved like lace, pressed against a cotton screen and lit from behind by oil lamps.
-> References (grammar only): Lotte Reiniger's *The Adventures of Prince Achmed* (1926) for profile acting and lace-like scenery; Shaanxi / Huayin shadow theatre for carving, colour and gong-and-drum rhythm. Never reproduce a specific historical puppet, melody or recording, and never name them in the film.
+> 中国皮影戏：半透明的染色皮木偶，像蕾丝一样雕刻，压在棉质屏风上，并用油灯从后面照亮。
+> 参考资料（仅语法）：Lotte Reiniger 的 *The Adventures of Prince Achmed* (1926)，其中包含侧面表演和蕾丝般的风景；陕西/华阴皮影戏的雕刻、色彩和锣鼓节奏。切勿复制特定的历史木偶、旋律或录音，也切勿在影片中命名它们。
 
-## 1. Essence, and what it is not
+<a id="1-essence-and-what-it-is-not"></a>
+## 1. 本质及其不是什么
 
-A white cloth screen; behind it, flat puppets cut from **translucent dyed hide**, lit by an **oil lamp**. Colour arrives *by transmitted light*: dyes glow like stained glass, carved holes shine brightest, overlaps go darker. Puppets are jointed with **visible thread rivets** and moved by **thin rods** (neck and hands) that show as soft grey lines just off the screen. It is live theatre, not stop-motion: the screen **flickers with the lamp**, puppets **tremble in the hand**, loose parts **swing on their rivets**.
+白布屏风；在它后面，是用 **半透明染色皮革** 切割而成的扁平木偶，由 **油灯** 照明。颜色*通过透射光*到达：染料像彩色玻璃一样发光，雕刻的孔最亮，重叠部分变暗。木偶由 **可见螺纹铆钉** 连接，并由 **细杆**（颈部和手）移动，在屏幕上显示为柔和的灰色线条。这是现场戏剧，而不是定格动画：屏幕**随着灯**的闪烁，木偶**在手中颤抖**，松动的零件**在铆钉上摆动**。
 
-Not a black silhouette film (colour is the second protagonist), not paper-cut (the light comes *through*), not stained glass (no lead lines; pieces move and overlap), not flat vector cut-out animation.
+不是黑色剪影影片（颜色是第二主角），不是剪纸（光线*穿过*），不是彩色玻璃（没有引线；碎片移动和重叠），不是平面矢量剪纸动画。
 
-## 2. Materials & rendering
+<a id="2-materials--rendering"></a>
+## 2. 材质与渲染
 
-**Rendering model.** Per pixel: `image = tonemap( lampLight × hideTransmission × clothTexture )`.
-- `hideTransmission`: a 2D canvas that starts **white**; every piece is drawn with `multiply`. Holes stay white, overlaps darken by themselves.
-- `lampLight`: per lamp a broad lobe plus a tight hotspot (~6 : 1), each flickering independently (a few % of ~7 Hz value noise plus a faster sine). Warm light, never white.
-- `tonemap = 1 − exp(−hdr)`, exposure ∝ `1/√(lamps lit)`: more lamps bleach the frame but keep it readable. Lamp count is a dial the story can turn.
-- **Cloth**: procedural weave (sin × sin, noise-warped), fibre speckle, low-frequency density blotches, darker edges at the frame. **Post**: warm-tinted bloom, a **warm vignette** (toward brown, never grey), slight saturation, soft S-curve, light grain; heat haze only when the story burns.
+**渲染模型。** 每像素：`image = tonemap( lampLight × hideTransmission × clothTexture )`。
+- `hideTransmission`：以 **白色的** 开头的 2D 画布；每件作品都绘制有`multiply`。孔保持白色，重叠部分自行变暗。
+- `lampLight`：每个灯有一个宽波瓣加上一个紧密的热点（〜6：1），每个灯独立闪烁（〜7 Hz值噪声的百分之几加上更快的正弦）。温暖的光，绝不是白色的。
+- `tonemap = 1 − exp(−hdr)`，曝光∝ `1/√(lamps lit)`：更多的灯漂白了框架，但保持可读。灯数是故事可以转动的表盘。
+- **布**：程序编织（sin × sin，噪声扭曲）、纤维斑点、低频密度斑点、框架处较暗的边缘。 **邮政**：暖色绽放，**温暖的晕影**（偏棕色，绝不灰色），轻微饱和度，柔和的S曲线，浅颗粒；只有当故事燃烧时才会产生热雾。
 
-**Hide and carving.** Multiply a tileable hide texture (mottling, fibres, specks) into each piece and restore its alpha with `destination-in` so holes survive. **Carving is density**: leave thin strips, cut out most of the area. Cut vocabulary: crescent rows (scales, tiles), diamond lattice, coin holes (round hole, square of hide inside), cloud collars and scrolls, tapered slits (cracks, rain, fur), strata along a ridge, leaf holes in a canopy. A dark carved outline (1.5–2.4 px) on every region. With `destination-out`, set `fillStyle = '#000'` first: fill alpha decides how much is cut.
+**Hide 和雕刻。**将可平铺的皮革纹理（斑点、纤维、斑点）乘以每块，并使用 `destination-in` 恢复其 alpha，以便孔得以保留。**雕刻是密度**：留下细条，切掉大部分区域。切割词汇：新月形行（鳞片、瓷砖）、菱形格子、钱币孔（圆形孔、内部方形兽皮）、云领和卷轴、锥形缝隙（裂缝、雨水、毛皮）、沿山脊的地层、树冠上的叶孔。每个区域都有深色雕刻轮廓（1.5–2.4 像素）。对于 `destination-out`，首先设置 `fillStyle = '#000'`：填充 alpha 决定剪切多少。
 
-**Figures are jointed puppets**: 8–12 pieces, head ~1.2× natural with large headwear, sleeves in a different dye from the torso, round joint lobes with a rivet (dark ring + pale knot), arms by 2-bone IK from hand targets, held objects as separate pieces on the hand line. Sympathetic figures have *open-cut faces* (features as thin strips around a hole); antagonists solid faces.
+**人物是有关节的木偶**：8-12件，头部约1.2×自然，带有大头饰，袖子的染料与躯干不同，带有铆钉的圆形关节叶（深色环+浅结），手臂由来自手部目标的2骨IK制成，将物体作为手线上的单独部件。富有同情心的人物有“开放式面孔”（特征是孔周围有细条）；对手坚实的面孔。
 
-**Scenery** is carved set pieces on mostly empty lit cloth: one lace piece per element, a narrow carved ground strip, separate liftable strips for water or sky. Fire, smoke and moving water are carved pieces on rods, swapped and shaken, never particles.
+**风景** 是在大部分空的亮布上雕刻的布景：每个元素一块蕾丝片，一条狭窄的雕刻地面条，用于水或天空的单独的可升降条。火、烟和流动的水都是在棒上雕刻的碎片，交换和摇动，而不是颗粒。
 
-**Stage and backstage.** A lacquered frame (lintel, pillars, warm spill on its inner edges), optional blurred audience heads. Backstage = the same transmission canvas with the camera mirrored (`x → −x`), dark wood around, hanging lamps (additive flame glow; snuffed ones trailing dark smoke), hands and sleeves as **silhouettes with a warm rim** (mask minus mask shifted away from the light), rods sharp.
+**舞台和后台。**漆面框架（门楣、柱子、其内边缘有温暖的溢出物），可选模糊的观众头部。后台=与摄影机镜像（`x → −x`）相同的传输画布，周围深色木材，吊灯（附加火焰辉光；熄灭的尾随黑烟），手和袖子与**轮廓一样，带有温暖的边缘**（面罩减去远离光线的面罩），杆锋利。
 
-## 3. Colour logic
+<a id="3-colour-logic"></a>
+## 3. 色彩逻辑
 
-- All colour is **transmitted**: a dye filters warm lamplight, so nothing is brighter than the lamp and every hue leans warm.
-- 3–5 saturated dyes + **raw hide** (the neutral) + **ink** (outlines, hair, boots). Holes are the brightest value.
-- Overlap is darkness: plan which pieces cross.
-- Brightness comes from the number of lamps, not grading. Night is fewer lamps, never added blue.
-- Thin things that must read (strings, shafts, text) are dark: pale pieces vanish on a bright cloth.
-- Example sets: *court* (vermilion, ochre, malachite); *river* (indigo, jade, one ochre); *harvest* (flame orange, gold, one green).
+- 所有颜色都是**传输的**：染料过滤温暖的灯光，因此没有什么比灯光更亮，并且每种色调都偏温暖。
+- 3–5 饱和染料 + **生皮**（中性）+ **墨水**（轮廓、头发、靴子）。孔是最亮的值。
+- 重叠就是黑暗：计划哪些部分交叉。
+- 亮度来自于灯的数量，而不是分级。夜晚是灯少了，从来不加蓝光。
+- 必须阅读的薄的东西（绳子、轴、文本）是深色的：浅色的碎片消失在明亮的布上。
+- 示例集：*court*（朱红色、赭色、孔雀石）； *河流*（靛蓝、翡翠、一赭色）； *收获*（火焰橙色、金色、绿色）。
 
-## 4. Type & subtitles
+<a id="4-type--subtitles"></a>
+## 4. 文字和字幕
 
-- Subtitles belong to the theatre: a **storyteller's placard** (narrow dark-lacquer board, thin gold line, small carved seal), a label on a rod, or letters carved into hide. Classical OFL serif (e.g. Cormorant Garamond 600), 40–50 px, cream on dark, short slide in. Hold ≥ max(1.8 s, speech + 0.6 s).
-- **Titles are puppets**: dark hide plaques with letters cut out (`fillText` + `destination-out`, so words glow), a carved border, carried on rods, pressed on to enter, lifted off to exit.
+- 字幕属于剧院：**说书人的标语牌**（窄黑漆板、细金线、小刻印）、杆上的标签或刻在皮革上的字母。经典 OFL 衬线（例如 Cormorant Garamond 600），40–50 像素，深色奶油色，短滑入。保持 ≥ 最大（1.8 秒，语音 + 0.6 秒）。
+- **标题是木偶**：深色皮革饰板，上面刻有字母（`fillText` + `destination-out`，所以文字会发光），雕刻边框，装在杆上，按下即可进入，抬起即可退出。
 
-## 5. Motion quality
+<a id="5-motion-quality"></a>
+## 5. 运动质量
 
-- **24 fps continuous** for puppets and camera; only swapped effect pieces (fire, water) step at 12 fps.
-- **Hand tremor** on every puppet (a few px, ~0.02 rad, low-frequency), stronger under tension.
-- Body glides with the main rod; **legs, plumes, tassels are simulated** (damped pendulums / spring chains driven by body acceleration, pre-simulated at a fixed rate for determinism).
-- Operatic phrasing: shuffling run → hop → crouch → **freeze pose on a percussion accent** (~1 s, only loose parts quiver) → head turn.
-- Faces never change; attitude = head angle + body tilt (up = resolve, down = sorrow).
-- **Press on / lift off**: arrivals come large and blurred onto the cloth and snap sharp (~0.5 s); exits grow, blur and fade (~1 s).
-- A new lamp flares with overshoot; a snuffed lamp gutters with fast flicker.
-- Never moves: the cloth, the frame. Nothing morphs: pieces rotate on rivets, slide on rods, or are swapped.
+- **24 fps 连续** 用于木偶和摄影机；仅以 12 fps 的速度交换效果件（火、水）。
+- 每个木偶上的 **和震颤**（几个像素，~0.02 rad，低频），在张力下更强。
+- 机体随主杆滑动； **腿、羽毛、流苏被模拟**（由身体加速度驱动的阻尼摆/弹簧链，以固定速率预先模拟以确定性）。
+- 歌剧乐句：拖着脚步跑→跳→蹲下→**以打击乐口音冻结姿势**（约1秒，只有松散的部分颤抖）→转头。
+- 面孔永远不会改变；态度=头部角度+身体倾斜（向上=决心，向下=悲伤）。
+- **按下/抬起**：到达物变大并模糊到布料上并突然锐利（〜0.5秒）；退出增长、模糊和褪色（~1 秒）。
+- 新灯闪烁并出现过冲；一盏熄灭的灯快速闪烁。
+- 永远不会移动：布、框架。没有任何变形：零件在铆钉上旋转，在杆上滑动，或者交换。
 
+<a id="6-camera-grammar"></a>
 ## 6. Camera grammar
 
-A vocabulary, not a route. Opening and ending come from the topic.
+是词汇，而不是路线。开头和结尾都来自于主题。
 
-| Move | Expresses | Can serve |
+|移动|表达|可以服务|
 |---|---|---|
-| Audience seat (whole stage, heads below) | "This is a show" | a legend; a lesson; a framed memory |
-| Push through the frame onto the cloth | Entering the tale | a story within a story; focus |
-| Lateral pan across a wide cloth | Extent, a place laid out | a journey; a disaster's reach; a procession |
-| Follow a puppet, slight zoom | Being with one figure | a pursuit; a working day |
-| **Crash zoom** of a few frames on a percussion hit | The drum becomes the camera | an entrance; a pose; a reveal |
-| Whip pan along a moving piece | Cause to effect | a message sent; a strike |
-| **Locked wide** | Every step of a change is seen | counting; repetition; stages |
-| Medium-close, empty cloth between two pieces | Distance, hesitation | a choice; a parting |
-| Close on a carved detail | Craft as meaning | a vow; a tool; a clue |
-| Tilt from ground strip to top of cloth | Height, hierarchy | a tower; heaven and earth |
-| Truck round to the back (mirror view) | The trick revealed | behind the scenes; who pulls the strings |
-| Pull back from cloth into the dark room | The tale becomes an object | aftermath; a story ending for the night |
+|观众席（整个舞台，头在下方）|“这是一场表演”|一个传奇；一个教训；框架记忆|
+|将框架推到布料上|进入故事|故事中的故事；重点|
+|横向平移穿过宽布|范围，布置的地方|一次旅行；灾难的影响；游行|
+|跟随木偶，轻微缩放|与一个身影在一起|一种追求；一个工作日|
+|**撞击变焦** 打击乐中的几帧|鼓变为摄影机|一个入口；一个姿势；揭示|
+|沿着移动的部件搅动平底锅|因果关系|已发送的消息；罢工|
+|**锁宽**|每一步的改变都是看得见的|计数；重复；阶段|
+|表现媒介-两片之间紧密、空布|距离、犹豫|一个选择；一次离别|
+|靠近雕刻细节|工艺作为意义|一个誓言；一个工具；一条线索|
+|从地条倾斜到布料顶部|身高、层次|一座塔；天地|
+|卡车转向后方（后视镜）|诡计揭晓|幕后；谁在幕后操纵|
+|从布上拉回暗室|故事变成了一个物体|后果;一个晚上结束的故事|
 
-Puppets in profile; most of the cloth stays empty. When zoomed in, clamp the camera to the screen rectangle (no black bars); push on frame centre unless diving into a lamp. Transitions: lamps dimming, a blurred foreground pillar wipe, a piece lifting off in light, a flash to warm white; never a generic crossfade or digital wipe.
+木偶的侧面；大部分布料都是空的。放大时，将摄影机夹在屏幕矩形上（无黑条）；推动框架中心，除非潜入灯中。转场：灯光变暗，模糊的前景柱子擦拭，一块在灯光下升起，闪烁到暖白色；绝不是通用的交叉淡入淡出或数字擦除。
 
+<a id="7-sound-palette"></a>
 ## 7. Sound palette
 
-- **Percussion first, not piano and strings** (gong-and-drum pattern thinking, 锣鼓经): low barrel drum, hard high clapper drum (woodblock), cymbals, small gong with rising pitch ("tai"), big gong with falling pitch ("kuang"); also a bamboo clapper board, pellet drum, sanxian pluck, a bamboo flute for quiet.
-- **Bowed and reed voices**: a bright nasal fiddle (erhu-like: pitched up, nasal formant, pitch-curve resampling for slides and vibrato), plain pentatonic (**huan-yin**) or sorrowful microtonal (**ku-yin**: raised 4th, lowered 7th); a shrill suona-like reed (oboe + 1.2–3 kHz formant + saturation) at most once.
-- **Techniques, as options**: a single tap inside a silence; one big gong per decisive hit; a heartbeat drum under dread; accelerating rolls into an entrance; one hit per visual step; a gong scrape to change space; a hard stop (≤ 30 ms, tails included).
-- **Silence**: hard-cut the whole bed; at most one sound inside (a breath, a tap, a sizzle).
-- **Foley follows the materials**: wooden clapper (醒木), match strike, lamp "fwoomp" and "pfft" + sizzle, rod taps on cloth, dry leather flaps on lift-off, leather steps, creaks of hide and wood props, leather thwacks, cloth rustle, backstage room tone.
-- **Voice**: a storyteller, few short lines, small-theatre reverb; music ducked ~12 dB, foley ~4 dB, voice ≥ 12 dB above the bed; −14 LUFS; check each line with whisper alone and on the final mix.
+- **打击乐先，不是钢琴和弦乐**（锣鼓模式思维，锣鼓经）：低筒鼓，硬高梆子鼓（木板），钹，小锣上高（“太”），大锣下高（“匡”）；还有竹拍板、丸鼓、三弦拨弦、竹笛等安静之用。
+- **弓声和簧片声**：明亮的鼻小提琴（类似二胡：调高，鼻共振峰，幻灯片和颤音的音调曲线重采样），纯五声音阶（**欢饮**）或悲伤的微音调（**苦印**：第 4 层升高，第 7 层降低）；尖锐的类似唢呐的簧片（双簧管 + 1.2-3 kHz 共振峰 + 饱和度）最多一次。
+- **技术，作为选项**：在沉默中单击一下；每一次决定性的打击都会有一个大锣；恐惧下的心跳鼓；加速滚入入口；每个视觉步骤一次点击；锣刮改变空间；硬停止（≤ 30 ms，包括尾部）。
+- **沉默**：硬剪整床；里面最多有一个声音（呼吸声、敲击声、嘶嘶声）。
+- **Foley 遵循材料**：木板（醒木）、火柴敲响、灯“fwoomp”和“pfft”+嘶嘶声、杆在布上的敲击声、起飞时干燥的皮革瓣、皮革台阶、皮革和木道具的吱吱声、皮革的撞击声、布的沙沙声、后台房间的音调。
+- **嗓音**：讲故事的人，简短的台词，小剧场的混响；音乐闪避 ~12 dB，拟音 ~4 dB，床上方声音 ≥ 12 dB； −14 LUFS；单独使用耳语和在最终混音上检查每条线路。
 
+<a id="8-native-moves"></a>
 ## 8. Native moves
 
-A menu: use the ones your story needs; put the strongest at the peak.
+菜单：使用您的故事需要的菜单；把最强者放在巅峰。
 
-- **The light is the world.** Lamp count drives heat and colour. *Fits content like:* city lights spreading at night; a fever rising and falling; servers switching on one by one.
-- **Off the screen = big and blurry.** A piece pulled toward the lamp grows and blurs. *Fits content like:* a rumour growing; a memory fading; a deadline pressing onto the cloth and snapping sharp.
-- **Go behind the screen.** Lamp, hands, rods. *Fits content like:* how a product is really made; who controls a market; a teacher revealing the method.
-- **Carved and translucent.** Holes glow, overlaps darken, open faces vs solid. *Fits content like:* an x-ray of a system; good and bad actors in a fable; layers of a city.
-- **Hand-held.** Tremor and swinging parts. *Fits content like:* a nervous interview; a tightrope; a toddler's first steps.
-- **Piece swap.** One carved piece on a rod replaced by another. *Fits content like:* seasons; a machine's states; weather over a harvest.
-- **Strip lift-off.** A band of scenery lifted to reveal another. *Fits content like:* geological layers; before/after a flood; an old town under a new one.
+- **光就是世界。** 灯数驱动热量和颜色。 *适合以下内容：*城市灯光在夜间蔓延；发烧忽高忽低；服务器一一开启。
+- **屏幕外 = 大而模糊。** 一块被拉向灯的部分会变大并模糊。 *适合以下内容：*谣言不断增长；记忆衰退；截止日期压在布料上并锐利地折断。
+- **走到屏幕后面。** 灯，手，杆。 *适合以下内容：*产品是如何制造的；谁控制市场；老师透露方法。
+- **雕刻且半透明。** 孔发光，重叠变暗，开放面与实心面。 *适合以下内容：* 系统的 X 射线；寓言中的好演员和坏演员；城市的层次。
+- **手持式。** 震颤和摆动部件。 *适合以下内容：*紧张的采访；走钢丝；幼儿迈出的第一步。
+- **件交换。** 杆上的一个雕刻件被另一件替换。 *适合以下内容：*季节；机器的状态；收获的天气。
+- **地带升空。** 一条风景带升空，露出另一幅风景。 *适合以下内容：*地质层； before/after 洪水；新城下的旧城。
 
-## 9. Pitfalls of the medium
+<a id="9-pitfalls-of-the-medium"></a>
+## 9. 表现媒介的缺陷
 
-- Flat clip-art look → hide texture, denser openwork, deeper dyes, carved outlines everywhere.
-- Figures unreadable in profile → bigger head, fuller lower body, collar piece, contrasting sleeves.
-- Radiating shapes read as saw blades or petals → flame tongues with a fat base, belly and hooked tip, alternating curl.
-- Grey corners when overexposed → warm vignette.
-- Thin pale pieces vanish → make them dark.
-- Mirror view flips pieces when rotation uses the x scale for both axes → x scale for x, y scale for y.
-- Smoke with `lighter` is invisible on bright cloth → dark wisps, warm additive only near a lamp.
-- Push-in centred on an edge lamp shoves figures out → push on frame centre.
-- Beds leaking into a silence → hard-cut them.
-- Headless screenshots time out under GPU load → retry.
+- 平面剪贴画外观 → 隐藏纹理、更密集的镂空、更深的染料、无处不在的雕刻轮廓。
+- 人物侧面难以辨认→头部更大、下半身更丰满、领子、袖子形成鲜明对比。
+- 放射状形状解读为锯片或花瓣→带有肥厚底部、腹部和钩状尖端的火焰舌头，交替卷曲。
+- 曝光过度时出现灰色角落 → 温暖的小插图。
+- 薄薄的苍白碎片消失→使它们变暗。
+- 当旋转使用两个轴的 x 比例 → x 比例为 x，y 比例为 y 时，镜像视图会翻转碎片。
+- `lighter` 的烟雾在明亮的布上是看不见的 → 深色的缕缕，仅在灯附近有温暖的添加剂。
+- 以边灯为中心推入，将图形推出 → 推到框架中心。
+- 床铺陷入寂静→硬剪。
+- 无头屏幕截图在 GPU 负载下超时 → 重试。
 
-## 10. Engine
+<a id="10-engine"></a>
+## 10. 发动机
 
-In `demo/`: `carve.js` (piece sprites, `cut` / `cutLine` / `cutTaper`, pattern library, hide texture, rivets), `gl.js` (WebGL2 compositor: lamp field × transmission × cloth, mirror, bloom, haze, warm fade), `stage.js` (frame, audience, pillar wipe, cut-letter plaques), `backstage.js` (rim-lit silhouettes, flame, smoke), `hud.js` (placard), `scenery.js` (landscape pieces, ground strip, fire), plus the jointed rig with IK and pendulum parts; `?test=model|frame|hands` draws sheets from the real engine. A first test unlike the demo: carve a lantern-seller with a lattice basket, press it onto one lamp, light three more and watch the frame bleach.
+在`demo/`中：`carve.js`（块精灵，`cut` / `cutLine` / `cutTaper`，图案库，隐藏纹理，铆钉），`gl.js`（WebGL2合成器：灯场×透射×布料，镜子，绽放，雾霾、暖色褪色）、`stage.js`（框架、观众、柱子擦拭、刻字牌）、`backstage.js`（边缘照明轮廓、火焰、烟雾）、`hud.js`（标语牌）、`scenery.js`（景观件、地面带、火），以及带 IK 的连接骨骼绑定结构和摆部件； `?test=model|frame|hands` 从真实引擎中绘制图纸。与示范不同的第一个测试是：用格子篮雕刻一个灯笼，将其压到一盏灯上，再点亮三盏灯，然后观察框架漂白。
 
-## 11. Variation space
+<a id="11-variation-space"></a>
+## 11. 变异空间
 
-You decide the story, the figures (or none), what the lamp means, what leaves the screen, the opening, the ending, the camera path, the dyes and the pacing. All far from our demo:
+您可以决定故事、人物（或没有）、灯的含义、离开屏幕的内容、开头、结局、摄影机路径、染料和节奏。与我们的示范相去甚远：
 
-- Structures: **a procession** (one long pan; each figure adds a dye until the cloth is a full street); **two puppeteers** (rival hands argue through their puppets; backstage shows who is winning); **a workshop** (a puppet is carved, dyed and riveted on the cloth, then performs its own making).
-- Openings: **backstage first** (rim-lit hands and rods before the front); **one hole of light** (the screen all dark hide; one carved hole glows and widens); **mid-show** (the camera finds a performance already in full percussion).
-- Endings: **the lamp is carried away** (the cloth darkens from one side); **the puppets rest** (lifted off one by one, laid flat on a dim table); **the audience leaves** (the heads stand and go, the cloth still glowing).
+- 结构：**a 游行**（一个长盘；每个人物都添加一种染料，直到布料铺满一条街道）； **两个木偶师**（对手通过木偶争论；后台显示谁赢了）； **a工作坊**（木偶在布料上雕刻、染色、铆接，然后自己制作）。
+- 空缺：**首先后台**（边缘照明的手和前面的杆）；**一孔光**（屏幕全黑隐藏；一个雕刻的孔发光并变宽）；**演出中段**（这摄影机找到已经完全打击乐的表演）。
+- 结局：**灯被带走**（布从一侧变暗）； **木偶休息**（一个接一个地升起，平放在昏暗的桌子上）； **观众离开**（头站着走，布仍然发光）。
 
 ---
 
-How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md). Read it after your treatment exists.
+我们的示范是如何制作的（故事、镜头、配乐、片尾卡、构建）：[DEMO.md](DEMO.md)。请在您的创作方案存在后阅读。
